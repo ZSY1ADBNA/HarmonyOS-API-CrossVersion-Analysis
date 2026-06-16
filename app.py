@@ -1,9 +1,9 @@
 """HarmonyOS API 跨版本分析 — Web Dashboard"""
-import sys, json, os, re
+import sys, json, os, re, ssl
 from pathlib import Path
 from flask import Flask, jsonify, request, render_template
 from neo4j import GraphDatabase
-from openai import OpenAI
+import urllib.request
 
 app = Flask(__name__)
 
@@ -346,23 +346,47 @@ ORDER BY module, type, name
 如果用户只是闲聊或问与API数据无关的问题，cypher填null，answer正常回复。
 """
 
-client = None
+DEEPSEEK_API_KEY = None
 
-def get_client():
-    global client
-    if client is None:
-        api_key = os.environ.get("DEEPSEEK_API_KEY", "")
-        if not api_key:
-            # Try .env file
-            env_file = Path(__file__).parent / ".env"
-            if env_file.exists():
-                for line in env_file.read_text(encoding='utf-8').splitlines():
-                    if line.startswith("DEEPSEEK_API_KEY="):
-                        api_key = line.split("=", 1)[1].strip().strip('"').strip("'")
-        if not api_key:
-            return None
-        client = OpenAI(api_key=api_key, base_url="https://api.deepseek.com")
-    return client
+def load_api_key():
+    global DEEPSEEK_API_KEY
+    api_key = os.environ.get("DEEPSEEK_API_KEY", "")
+    if not api_key:
+        env_file = Path(__file__).parent / ".env"
+        if env_file.exists():
+            for line in env_file.read_text(encoding='utf-8').splitlines():
+                if line.startswith("DEEPSEEK_API_KEY="):
+                    api_key = line.split("=", 1)[1].strip().strip('"').strip("'")
+    DEEPSEEK_API_KEY = api_key or None
+    return DEEPSEEK_API_KEY
+
+
+def call_deepseek(messages, max_tokens=1024):
+    """Call DeepSeek API via urllib (handles Windows SSL issues)."""
+    api_key = DEEPSEEK_API_KEY or load_api_key()
+    if not api_key:
+        return None
+
+    ctx = ssl.create_default_context()
+    ctx.check_hostname = False
+    ctx.verify_mode = ssl.CERT_NONE
+
+    data = json.dumps({
+        "model": "deepseek-chat",
+        "messages": messages,
+        "max_tokens": max_tokens,
+    }).encode("utf-8")
+
+    req = urllib.request.Request(
+        "https://api.deepseek.com/v1/chat/completions",
+        data=data,
+        headers={
+            "Authorization": f"Bearer {api_key}",
+            "Content-Type": "application/json",
+        },
+    )
+    resp = urllib.request.urlopen(req, timeout=60, context=ctx)
+    return json.loads(resp.read())
 
 
 @app.route("/api/chat", methods=["POST"])
@@ -373,8 +397,9 @@ def api_chat():
     if not msg:
         return jsonify({"error": "消息不能为空"}), 400
 
-    c = get_client()
-    if c is None:
+    if not DEEPSEEK_API_KEY:
+        load_api_key()
+    if not DEEPSEEK_API_KEY:
         return jsonify({
             "answer": "⚠️ 未配置 AI。请在项目目录创建 `.env` 文件，写入：\n```\nDEEPSEEK_API_KEY=sk-你的DeepSeek密钥\n```\n获取密钥：https://platform.deepseek.com/api_keys",
             "cypher": None, "results": None
@@ -387,13 +412,8 @@ def api_chat():
     messages.append({"role": "user", "content": msg})
 
     try:
-        resp = c.chat.completions.create(
-            model="deepseek-chat",
-            max_tokens=1024,
-            messages=messages,
-        )
-
-        raw = resp.choices[0].message.content.strip()
+        resp = call_deepseek(messages)
+        raw = resp["choices"][0]["message"]["content"].strip()
 
         # Parse JSON from response
         json_match = re.search(r'```(?:json)?\s*(\{.*?\})\s*```', raw, re.DOTALL)
