@@ -1,0 +1,2439 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.TelephonyKit",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "namespace",
+      "名称": "radio",
+      "所属模块": "@kit.TelephonyKit",
+      "功能描述": "Provides interfaces for applications to obtain the network state, cell information, signal information, and device ID of the wireless cellular network (WCN), and provides a callback registration mechanism to listen for changes of the network, cell, and signal status of the WCN.",
+      "注释信息": [
+        "@namespace radio",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 6"
+      ],
+      "层级": 1,
+      "上级": "@kit.TelephonyKit",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getRadioTech",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains radio access technology (RAT) of the registered network. The system returns RAT of the packet service (PS) and circuit service (CS) domain. ranging from 0 to the maximum card slot index number supported by the device. the RAT of PS domain and CS domain of registered network. The values of RAT are as follows: <ul> <li>{@code RadioTechnology#RADIO_TECHNOLOGY_UNKNOWN} <li>{@code RadioTechnology#RADIO_TECHNOLOGY_GSM} <li>{@code RadioTechnology#RADIO_TECHNOLOGY_1XRTT} <li>{@code RadioTechnology#RADIO_TECHNOLOGY_WCDMA} <li>{@code RadioTechnology#RADIO_TECHNOLOGY_HSPA} <li>{@code RadioTechnology#RADIO_TECHNOLOGY_HSPAP} <li>{@code RadioTechnology#RADIO_TECHNOLOGY_TD_SCDMA} <li>{@code RadioTechnology#RADIO_TECHNOLOGY_EVDO} <li>{@code RadioTechnology#RADIO_TECHNOLOGY_EHRPD} <li>{@code RadioTechnology#RADIO_TECHNOLOGY_LTE} <li>{@code RadioTechnology#RADIO_TECHNOLOGY_LTE_CA} <li>{@code RadioTechnology#RADIO_TECHNOLOGY_IWLAN} <li>{@code RadioTechnology#RADIO_TECHNOLOGY_NR} </ul> 2. Incorrect parameter types.",
+      "注释信息": [
+        "@permission ohos.permission.GET_NETWORK_INFO",
+        "@param { number } slotId - Indicates the card slot index number,",
+        "@param { AsyncCallback<NetworkRadioTech> } callback - Returns",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Service connection failed.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error.",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "radio",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [
+        {
+          "名称": "slotId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the card slot index number,"
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<NetworkRadioTech>",
+          "必填": true,
+          "说明": "Returns"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Service connection failed."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getRadioTech",
+      "返回值": "Promise<NetworkRadioTech>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains radio access technology (RAT) of the registered network. The system returns RAT of the packet service (PS) and circuit service (CS) domain. ranging from 0 to the maximum card slot index number supported by the device. The values of RAT are as follows: <ul> <li>{@code RadioTechnology#RADIO_TECHNOLOGY_UNKNOWN} <li>{@code RadioTechnology#RADIO_TECHNOLOGY_GSM} <li>{@code RadioTechnology#RADIO_TECHNOLOGY_1XRTT} <li>{@code RadioTechnology#RADIO_TECHNOLOGY_WCDMA} <li>{@code RadioTechnology#RADIO_TECHNOLOGY_HSPA} <li>{@code RadioTechnology#RADIO_TECHNOLOGY_HSPAP} <li>{@code RadioTechnology#RADIO_TECHNOLOGY_TD_SCDMA} <li>{@code RadioTechnology#RADIO_TECHNOLOGY_EVDO} <li>{@code RadioTechnology#RADIO_TECHNOLOGY_EHRPD} <li>{@code RadioTechnology#RADIO_TECHNOLOGY_LTE} <li>{@code RadioTechnology#RADIO_TECHNOLOGY_LTE_CA} <li>{@code RadioTechnology#RADIO_TECHNOLOGY_IWLAN} <li>{@code RadioTechnology#RADIO_TECHNOLOGY_NR} </ul> 2. Incorrect parameter types.",
+      "注释信息": [
+        "@permission ohos.permission.GET_NETWORK_INFO",
+        "@param { number } slotId - Indicates the card slot index number,",
+        "@returns { Promise<NetworkRadioTech> } Returns the RAT of PS domain and CS domain of registered network.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Service connection failed.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error.",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "radio",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [
+        {
+          "名称": "slotId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the card slot index number,"
+        }
+      ],
+      "return_description": "Returns the RAT of PS domain and CS domain of registered network.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Service connection failed."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getRadioTechSync",
+      "返回值": "NetworkRadioTech",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains radio access technology (RAT) of the registered network. ranging from 0 to the maximum card slot index number supported by the device. 2. Incorrect parameter types.",
+      "注释信息": [
+        "@permission ohos.permission.GET_NETWORK_INFO",
+        "@param { number } slotId - Indicates the card slot index number,",
+        "@returns { NetworkRadioTech } Returns the RAT of PS domain and CS domain of registered network.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Operation failed. Cannot connect to service.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error code.",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 18"
+      ],
+      "层级": 1,
+      "上级": "radio",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [
+        {
+          "名称": "slotId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the card slot index number,"
+        }
+      ],
+      "return_description": "Returns the RAT of PS domain and CS domain of registered network.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Operation failed. Cannot connect to service."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error code."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getNetworkState",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the network state of the registered network. ranging from 0 to the maximum card slot index number supported by the device. 2. Incorrect parameter types.",
+      "注释信息": [
+        "@permission ohos.permission.GET_NETWORK_INFO",
+        "@param { number } slotId - Indicates the card slot index number,",
+        "@param { AsyncCallback<NetworkState> } callback - Indicates the callback for getting network registration state.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Service connection failed.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error.",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 6"
+      ],
+      "层级": 1,
+      "上级": "radio",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [
+        {
+          "名称": "slotId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the card slot index number,"
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<NetworkState>",
+          "必填": true,
+          "说明": "Indicates the callback for getting network registration state."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Service connection failed."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getNetworkState",
+      "返回值": "Promise<NetworkState>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the network state of the registered network. ranging from 0 to the maximum card slot index number supported by the device. if no slotId is provided, the default slotId is 0. 2. Incorrect parameter types.",
+      "注释信息": [
+        "@permission ohos.permission.GET_NETWORK_INFO",
+        "@param { number } slotId - Indicates the card slot index number,",
+        "@returns { Promise<NetworkState> } Returns the NetworkState object.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Service connection failed.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error.",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 6"
+      ],
+      "层级": 1,
+      "上级": "radio",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [
+        {
+          "名称": "slotId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the card slot index number,"
+        }
+      ],
+      "return_description": "Returns the NetworkState object.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Service connection failed."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getNetworkState",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the network state of the registered network. 2. Incorrect parameter types.",
+      "注释信息": [
+        "@permission ohos.permission.GET_NETWORK_INFO",
+        "@param { AsyncCallback<NetworkState> } callback - Indicates the callback for getting network registration state.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Service connection failed.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error.",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 6"
+      ],
+      "层级": 1,
+      "上级": "radio",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<NetworkState>",
+          "必填": true,
+          "说明": "Indicates the callback for getting network registration state."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Service connection failed."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getNetworkSelectionMode",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the network search mode of the SIM card in a specified slot. index number supported by the device. the network search mode of the SIM card. Available values are as follows: <ul> <li>{@link NetworkSelectionMode#NETWORK_SELECTION_UNKNOWN} <li>{@link NetworkSelectionMode#NETWORK_SELECTION_AUTOMATIC} <li>{@link NetworkSelectionMode#NETWORK_SELECTION_MANUAL} <ul> 2. Incorrect parameter types.",
+      "注释信息": [
+        "@param { number } slotId - Indicates the card slot index number, ranging from 0 to the maximum card slot",
+        "@param { AsyncCallback<NetworkSelectionMode> } callback - Indicates the callback for getting",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Service connection failed.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error.",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 6"
+      ],
+      "层级": 1,
+      "上级": "radio",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [
+        {
+          "名称": "slotId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the card slot index number, ranging from 0 to the maximum card slot"
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<NetworkSelectionMode>",
+          "必填": true,
+          "说明": "Indicates the callback for getting"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Service connection failed."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getNetworkSelectionMode",
+      "返回值": "Promise<NetworkSelectionMode>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the network search mode of the SIM card in a specified slot. index number supported by the device. Available values are as follows: <ul> <li>{@link NetworkSelectionMode#NETWORK_SELECTION_UNKNOWN} <li>{@link NetworkSelectionMode#NETWORK_SELECTION_AUTOMATIC} <li>{@link NetworkSelectionMode#NETWORK_SELECTION_MANUAL} <ul> 2. Incorrect parameter types.",
+      "注释信息": [
+        "@param { number } slotId - Indicates the card slot index number, ranging from 0 to the maximum card slot",
+        "@returns { Promise<NetworkSelectionMode> } Returns the network search mode of the SIM card.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Service connection failed.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error.",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 6"
+      ],
+      "层级": 1,
+      "上级": "radio",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [
+        {
+          "名称": "slotId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the card slot index number, ranging from 0 to the maximum card slot"
+        }
+      ],
+      "return_description": "Returns the network search mode of the SIM card.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Service connection failed."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getISOCountryCodeForNetwork",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the ISO-defined country code of the country where the registered network is deployed. ranging from 0 to the maximum card slot index number supported by the device. defined in ISO 3166-2; returns an empty string if the device is not registered with any network. 2. Incorrect parameter types.",
+      "注释信息": [
+        "@param { number } slotId - Indicates the card slot index number,",
+        "@param { AsyncCallback<string> } callback - Indicates the callback for getting the country code",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Service connection failed.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error.",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "radio",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [
+        {
+          "名称": "slotId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the card slot index number,"
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<string>",
+          "必填": true,
+          "说明": "Indicates the callback for getting the country code"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Service connection failed."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getISOCountryCodeForNetwork",
+      "返回值": "Promise<string>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the ISO-defined country code of the country where the registered network is deployed. ranging from 0 to the maximum card slot index number supported by the device. Returns an empty string if the device is not registered with any network. 2. Incorrect parameter types.",
+      "注释信息": [
+        "@param { number } slotId - Indicates the card slot index number,",
+        "@returns { Promise<string> } Returns the country code defined in ISO 3166-2.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Service connection failed.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error.",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "radio",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [
+        {
+          "名称": "slotId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the card slot index number,"
+        }
+      ],
+      "return_description": "Returns the country code defined in ISO 3166-2.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Service connection failed."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getISOCountryCodeForNetworkSync",
+      "返回值": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the ISO-defined country code of the country where the registered network is deployed. ranging from 0 to the maximum card slots supported by the device. Returns an empty string if the device is not registered with any network.",
+      "注释信息": [
+        "@param { number } slotId - Indicates the card slot index number,",
+        "@returns { string } Returns the country code defined in ISO 3166-2.",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "radio",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [
+        {
+          "名称": "slotId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the card slot index number,"
+        }
+      ],
+      "return_description": "Returns the country code defined in ISO 3166-2.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getPrimarySlotId",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the index number of the card slot where the primary card is located if multiple SIM cards are inserted. The primary card is the SIM card inserted in the card slot that uses data services by default. the primary card slot. 2. Incorrect parameter types.",
+      "注释信息": [
+        "@param { AsyncCallback<number> } callback - Indicates the callback for getting the index number of",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Service connection failed.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error.",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "radio",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<number>",
+          "必填": true,
+          "说明": "Indicates the callback for getting the index number of"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Service connection failed."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getPrimarySlotId",
+      "返回值": "Promise<number>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the index number of the card slot where the primary card is located if multiple SIM cards are inserted. The primary card is the SIM card inserted in the card slot that uses data services by default.",
+      "注释信息": [
+        "@returns { Promise<number> } Returns the index number of the primary card slot.",
+        "@throws { BusinessError } 8300002 - Service connection failed.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error.",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "radio",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [],
+      "return_description": "Returns the index number of the primary card slot.",
+      "error_codes": [
+        {
+          "code": "8300002",
+          "description": "Service connection failed."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getSignalInformation",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the list of signal strength information of the registered network corresponding to a specified SIM card. index number supported by the device. the instance list of the child classes derived from {@link SignalInformation}. 2. Incorrect parameter types.",
+      "注释信息": [
+        "@param { number } slotId - Indicates the card slot index number, ranging from 0 to the maximum card slot",
+        "@param { AsyncCallback<Array<SignalInformation>> } callback - Indicates the callback for getting",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Service connection failed.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error.",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "radio",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [
+        {
+          "名称": "slotId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the card slot index number, ranging from 0 to the maximum card slot"
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<Array<SignalInformation>>",
+          "必填": true,
+          "说明": "Indicates the callback for getting"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Service connection failed."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getSignalInformation",
+      "返回值": "Promise<Array<SignalInformation>>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the list of signal strength information of the registered network corresponding to a specified SIM card. index number supported by the device. the child classes derived from {@link SignalInformation}. 2. Incorrect parameter types.",
+      "注释信息": [
+        "@param { number } slotId - Indicates the card slot index number, ranging from 0 to the maximum card slot",
+        "@returns { Promise<Array<SignalInformation>> } Returns the callback for getting the instance list of",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Service connection failed.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error.",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "radio",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [
+        {
+          "名称": "slotId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the card slot index number, ranging from 0 to the maximum card slot"
+        }
+      ],
+      "return_description": "Returns the callback for getting the instance list of",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Service connection failed."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getSignalInformationSync",
+      "返回值": "Array<SignalInformation>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the list of signal strength information of the registered network corresponding to a specified SIM card. card slots supported by the device. the child classes derived from {@link SignalInformation}.",
+      "注释信息": [
+        "@param { number } slotId - Indicates the card slot index number, ranging from 0 to the maximum",
+        "@returns { Array<SignalInformation> } Returns the callback for getting the instance list of",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "radio",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [
+        {
+          "名称": "slotId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the card slot index number, ranging from 0 to the maximum"
+        }
+      ],
+      "return_description": "Returns the callback for getting the instance list of",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "isNrSupported",
+      "返回值": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Checks whether the device supports 5G New Radio (NR).",
+      "注释信息": [
+        "@returns { boolean } Returns {@code true} if the device supports 5G NR; returns {@code false} otherwise.",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 7",
+        "@deprecated since 9",
+        "@useinstead telephony.radio#isNRSupported"
+      ],
+      "层级": 1,
+      "上级": "radio",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [],
+      "return_description": "Returns {@code true} if the device supports 5G NR; returns {@code false} otherwise.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "isNrSupported",
+      "返回值": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Checks whether the device supports 5G New Radio (NR) by according card slot. index number supported by the device.",
+      "注释信息": [
+        "@param { number } slotId - Indicates the card slot index number, ranging from 0 to the maximum card slot",
+        "@returns { boolean } Returns {@code true} if the device supports 5G NR; returns {@code false} otherwise.",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead telephony.radio#isNRSupported"
+      ],
+      "层级": 1,
+      "上级": "radio",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [
+        {
+          "名称": "slotId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the card slot index number, ranging from 0 to the maximum card slot"
+        }
+      ],
+      "return_description": "Returns {@code true} if the device supports 5G NR; returns {@code false} otherwise.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "isNRSupported",
+      "返回值": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Checks whether the device supports 5G New Radio (NR).",
+      "注释信息": [
+        "@returns { boolean } Returns {@code true} if the device supports 5G NR; returns {@code false} otherwise.",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "radio",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [],
+      "return_description": "Returns {@code true} if the device supports 5G NR; returns {@code false} otherwise.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "isNRSupported",
+      "返回值": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Checks whether the device supports 5G New Radio (NR) by according card slot. index number supported by the device.",
+      "注释信息": [
+        "@param { number } slotId - Indicates the card slot index int, ranging from 0 to the maximum card slot",
+        "@returns { boolean } Returns {@code true} if the device supports 5G NR; returns {@code false} otherwise.",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "radio",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [
+        {
+          "名称": "slotId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the card slot index int, ranging from 0 to the maximum card slot"
+        }
+      ],
+      "return_description": "Returns {@code true} if the device supports 5G NR; returns {@code false} otherwise.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "isRadioOn",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Checks whether the radio service is enabled. ranging from 0 to the maximum card slot index number supported by the device. Returns {@code false} otherwise. 2. Incorrect parameter types.",
+      "注释信息": [
+        "@permission ohos.permission.GET_NETWORK_INFO",
+        "@param { number } slotId - Indicates the card slot index number,",
+        "@param { AsyncCallback<boolean> } callback - Returns {@code true} If the radio service is enabled.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Service connection failed.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error.",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "radio",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [
+        {
+          "名称": "slotId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the card slot index number,"
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<boolean>",
+          "必填": true,
+          "说明": "Returns {@code true} If the radio service is enabled."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Service connection failed."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "isRadioOn",
+      "返回值": "Promise<boolean>",
+      "所属模块": "未知模块",
+      "功能描述": "Checks whether the radio service is enabled. ranging from 0 to the maximum card slot index number supported by the device. 2. Incorrect parameter types.",
+      "注释信息": [
+        "@permission ohos.permission.GET_NETWORK_INFO",
+        "@param { number } slotId - Indicates the card slot index number,",
+        "@returns { Promise<boolean> } Returns {@code true} If the radio service is enabled; returns {@code false} otherwise.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Service connection failed.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error.",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "radio",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [
+        {
+          "名称": "slotId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the card slot index number,"
+        }
+      ],
+      "return_description": "Returns {@code true} If the radio service is enabled; returns {@code false} otherwise.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Service connection failed."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "isRadioOn",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Checks whether the radio service is enabled. Returns {@code false} otherwise. 2. Incorrect parameter types.",
+      "注释信息": [
+        "@permission ohos.permission.GET_NETWORK_INFO",
+        "@param { AsyncCallback<boolean> } callback - Returns {@code true} If the radio service is enabled.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Service connection failed.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error.",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "radio",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<boolean>",
+          "必填": true,
+          "说明": "Returns {@code true} If the radio service is enabled."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Service connection failed."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getOperatorName",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Get the operator name of the specified SIM card slot. ranging from 0 to the maximum card slot index number supported by the device. 2. Incorrect parameter types.",
+      "注释信息": [
+        "@param { number } slotId - Indicates the card slot index number,",
+        "@param { AsyncCallback<string> } callback - Indicates the callback for getting the operator name.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Service connection failed.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error.",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "radio",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [
+        {
+          "名称": "slotId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the card slot index number,"
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<string>",
+          "必填": true,
+          "说明": "Indicates the callback for getting the operator name."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Service connection failed."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getOperatorName",
+      "返回值": "Promise<string>",
+      "所属模块": "未知模块",
+      "功能描述": "Get the operator name of the specified SIM card slot. ranging from 0 to the maximum card slot index number supported by the device. 2. Incorrect parameter types.",
+      "注释信息": [
+        "@param { number } slotId - Indicates the card slot index number,",
+        "@returns { Promise<string> } Returns the operator name.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Service connection failed.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error.",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "radio",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [
+        {
+          "名称": "slotId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the card slot index number,"
+        }
+      ],
+      "return_description": "Returns the operator name.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Service connection failed."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getOperatorNameSync",
+      "返回值": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Get the operator name of the specified SIM card slot. ranging from 0 to the maximum card slot index number supported by the device.",
+      "注释信息": [
+        "@param { number } slotId - Indicates the card slot index number,",
+        "@returns { string } Returns the operator name.",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "radio",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [
+        {
+          "名称": "slotId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the card slot index number,"
+        }
+      ],
+      "return_description": "Returns the operator name.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "NetworkRadioTech",
+      "所属模块": "未知模块",
+      "功能描述": "Describes the radio access technology (RAT) of registered network.",
+      "注释信息": [
+        "@interface NetworkRadioTech",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "radio",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "psRadioTech",
+      "属性类型": "RadioTechnology",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates radio access technology (RAT) of packet service (PS) domain.",
+      "注释信息": [
+        "@type { RadioTechnology }",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "NetworkRadioTech",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "csRadioTech",
+      "属性类型": "RadioTechnology",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates radio access technology (RAT) of circuit service (CS) domain.",
+      "注释信息": [
+        "@type { RadioTechnology }",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "NetworkRadioTech",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "RadioTechnology",
+      "所属模块": "未知模块",
+      "功能描述": "Describes the radio access technology.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 6"
+      ],
+      "层级": 2,
+      "上级": "radio",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "RADIO_TECHNOLOGY_UNKNOWN",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates unknown radio access technology (RAT).",
+      "注释信息": [
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 6"
+      ],
+      "层级": 2,
+      "上级": "RadioTechnology",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "RADIO_TECHNOLOGY_GSM",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that RAT is global system for mobile communications (GSM), including GSM, general packet radio system (GPRS), and enhanced data rates for GSM evolution (EDGE).",
+      "注释信息": [
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 6"
+      ],
+      "层级": 2,
+      "上级": "RadioTechnology",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "RADIO_TECHNOLOGY_1XRTT",
+      "值": "2",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that RAT is code division multiple access (CDMA), including Interim Standard 95 (IS95) and Single-Carrier Radio Transmission Technology (1xRTT).",
+      "注释信息": [
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 6"
+      ],
+      "层级": 2,
+      "上级": "RadioTechnology",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "RADIO_TECHNOLOGY_WCDMA",
+      "值": "3",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that RAT is wideband code division multiple address (WCDMA).",
+      "注释信息": [
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 6"
+      ],
+      "层级": 2,
+      "上级": "RadioTechnology",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "RADIO_TECHNOLOGY_HSPA",
+      "值": "4",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that RAT is high-speed packet access (HSPA), including HSPA, high-speed downlink packet access (HSDPA), and high-speed uplink packet access (HSUPA).",
+      "注释信息": [
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 6"
+      ],
+      "层级": 2,
+      "上级": "RadioTechnology",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "RADIO_TECHNOLOGY_HSPAP",
+      "值": "5",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that RAT is evolved high-speed packet access (HSPA+), including HSPA+ and dual-carrier HSPA+ (DC-HSPA+).",
+      "注释信息": [
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 6"
+      ],
+      "层级": 2,
+      "上级": "RadioTechnology",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "RADIO_TECHNOLOGY_TD_SCDMA",
+      "值": "6",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that RAT is time division-synchronous code division multiple access (TD-SCDMA).",
+      "注释信息": [
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 6"
+      ],
+      "层级": 2,
+      "上级": "RadioTechnology",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "RADIO_TECHNOLOGY_EVDO",
+      "值": "7",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that RAT is evolution data only (EVDO), including EVDO Rev.0, EVDO Rev.A, and EVDO Rev.B.",
+      "注释信息": [
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 6"
+      ],
+      "层级": 2,
+      "上级": "RadioTechnology",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "RADIO_TECHNOLOGY_EHRPD",
+      "值": "8",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that RAT is evolved high rate packet data (EHRPD).",
+      "注释信息": [
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 6"
+      ],
+      "层级": 2,
+      "上级": "RadioTechnology",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "RADIO_TECHNOLOGY_LTE",
+      "值": "9",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that RAT is long term evolution (LTE).",
+      "注释信息": [
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 6"
+      ],
+      "层级": 2,
+      "上级": "RadioTechnology",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "RADIO_TECHNOLOGY_LTE_CA",
+      "值": "10",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that RAT is LTE carrier aggregation (LTE-CA).",
+      "注释信息": [
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 6"
+      ],
+      "层级": 2,
+      "上级": "RadioTechnology",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "RADIO_TECHNOLOGY_IWLAN",
+      "值": "11",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that RAT is interworking WLAN (I-WLAN).",
+      "注释信息": [
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 6"
+      ],
+      "层级": 2,
+      "上级": "RadioTechnology",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "RADIO_TECHNOLOGY_NR",
+      "值": "12",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that RAT is 5G new radio (NR).",
+      "注释信息": [
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 6"
+      ],
+      "层级": 2,
+      "上级": "RadioTechnology",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "SignalInformation",
+      "所属模块": "未知模块",
+      "功能描述": "Returns child class objects specific to the network type.",
+      "注释信息": [
+        "@interface SignalInformation",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 6"
+      ],
+      "层级": 2,
+      "上级": "radio",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "signalType",
+      "属性类型": "NetworkType",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the network type corresponding to the signal.",
+      "注释信息": [
+        "@type { NetworkType }",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 6"
+      ],
+      "层级": 2,
+      "上级": "SignalInformation",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "signalLevel",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the signal level of the current network.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 6"
+      ],
+      "层级": 2,
+      "上级": "SignalInformation",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "dBm",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "rsrp for LTE and NR; dbm for CDMA and EVDO; rscp for WCDMA; rssi for GSM.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "SignalInformation",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "NetworkType",
+      "所属模块": "未知模块",
+      "功能描述": "Describes the network type.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 6"
+      ],
+      "层级": 2,
+      "上级": "radio",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "NETWORK_TYPE_UNKNOWN",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates unknown network type.",
+      "注释信息": [
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 6"
+      ],
+      "层级": 2,
+      "上级": "NetworkType",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "NETWORK_TYPE_GSM",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the network type is GSM.",
+      "注释信息": [
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 6"
+      ],
+      "层级": 2,
+      "上级": "NetworkType",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "NETWORK_TYPE_CDMA",
+      "值": "2",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the network type is CDMA.",
+      "注释信息": [
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 6"
+      ],
+      "层级": 2,
+      "上级": "NetworkType",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "NETWORK_TYPE_WCDMA",
+      "值": "3",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the network type is WCDMA.",
+      "注释信息": [
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 6"
+      ],
+      "层级": 2,
+      "上级": "NetworkType",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "NETWORK_TYPE_TDSCDMA",
+      "值": "4",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the network type is TD-SCDMA.",
+      "注释信息": [
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 6"
+      ],
+      "层级": 2,
+      "上级": "NetworkType",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "NETWORK_TYPE_LTE",
+      "值": "5",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the network type is LTE.",
+      "注释信息": [
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 6"
+      ],
+      "层级": 2,
+      "上级": "NetworkType",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "NETWORK_TYPE_NR",
+      "值": "6",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the network type is 5G NR.",
+      "注释信息": [
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 6"
+      ],
+      "层级": 2,
+      "上级": "NetworkType",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "NetworkState",
+      "所属模块": "未知模块",
+      "功能描述": "Describes the network registration state.",
+      "注释信息": [
+        "@interface NetworkState",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 6"
+      ],
+      "层级": 2,
+      "上级": "radio",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "longOperatorName",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the operator name in the long alphanumeric format of the registered network. Returns the operator name in the long alphanumeric format as a string; returns an empty string if no operator name is obtained.",
+      "注释信息": [
+        "@type { string }",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 6"
+      ],
+      "层级": 2,
+      "上级": "NetworkState",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "shortOperatorName",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the operator name in the short alphanumeric format of the registered network. Returns the operator name in the short alphanumeric format as a string; returns an empty string if no operator name is obtained.",
+      "注释信息": [
+        "@type { string }",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 6"
+      ],
+      "层级": 2,
+      "上级": "NetworkState",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "plmnNumeric",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the PLMN code of the registered network. Returns the PLMN code as a string; returns an empty string if no operator name is obtained.",
+      "注释信息": [
+        "@type { string }",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 6"
+      ],
+      "层级": 2,
+      "上级": "NetworkState",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "isRoaming",
+      "属性类型": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Checks whether the device is roaming.",
+      "注释信息": [
+        "@type { boolean }",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 6"
+      ],
+      "层级": 2,
+      "上级": "NetworkState",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "regState",
+      "属性类型": "RegState",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the network registration status of the device.",
+      "注释信息": [
+        "@type { RegState }",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 6"
+      ],
+      "层级": 2,
+      "上级": "NetworkState",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "cfgTech",
+      "属性类型": "RadioTechnology",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the radio Access technology after config conversion.",
+      "注释信息": [
+        "@type { RadioTechnology }",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 8"
+      ],
+      "层级": 2,
+      "上级": "NetworkState",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "nsaState",
+      "属性类型": "NsaState",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the NSA network registration status of the device. Returns the NSA network registration status {@code NsaState}.",
+      "注释信息": [
+        "@type { NsaState }",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 6"
+      ],
+      "层级": 2,
+      "上级": "NetworkState",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "isCaActive",
+      "属性类型": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the status of CA. Returns {@code true} if CA is actived; returns {@code false} otherwise.",
+      "注释信息": [
+        "@type { boolean }",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 6"
+      ],
+      "层级": 2,
+      "上级": "NetworkState",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "isEmergency",
+      "属性类型": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Checks whether this device is allowed to make emergency calls only. Returns {@code true} if this device is allowed to make emergency calls only; returns {@code false} otherwise.",
+      "注释信息": [
+        "@type { boolean }",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 6"
+      ],
+      "层级": 2,
+      "上级": "NetworkState",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "RegState",
+      "所属模块": "未知模块",
+      "功能描述": "Describes the network registration state.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 6"
+      ],
+      "层级": 2,
+      "上级": "radio",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "REG_STATE_NO_SERVICE",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates a state in which a device cannot use any service.",
+      "注释信息": [
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 6"
+      ],
+      "层级": 2,
+      "上级": "RegState",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "REG_STATE_IN_SERVICE",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates a state in which a device can use services properly.",
+      "注释信息": [
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 6"
+      ],
+      "层级": 2,
+      "上级": "RegState",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "REG_STATE_EMERGENCY_CALL_ONLY",
+      "值": "2",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates a state in which a device can use only the emergency call service.",
+      "注释信息": [
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 6"
+      ],
+      "层级": 2,
+      "上级": "RegState",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "REG_STATE_POWER_OFF",
+      "值": "3",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the cellular radio is powered off.",
+      "注释信息": [
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 6"
+      ],
+      "层级": 2,
+      "上级": "RegState",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "NsaState",
+      "所属模块": "未知模块",
+      "功能描述": "Describes the nsa state.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 6"
+      ],
+      "层级": 2,
+      "上级": "radio",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "NSA_STATE_NOT_SUPPORT",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that a device is idle under or is connected to an LTE cell that does not support NSA.",
+      "注释信息": [
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 6"
+      ],
+      "层级": 2,
+      "上级": "NsaState",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "NSA_STATE_NO_DETECT",
+      "值": "2",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that a device is idle under an LTE cell supporting NSA but not NR coverage detection.",
+      "注释信息": [
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 6"
+      ],
+      "层级": 2,
+      "上级": "NsaState",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "NSA_STATE_CONNECTED_DETECT",
+      "值": "3",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that a device is connected to an LTE network under an LTE cell that supports NSA and NR coverage detection.",
+      "注释信息": [
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 6"
+      ],
+      "层级": 2,
+      "上级": "NsaState",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "NSA_STATE_IDLE_DETECT",
+      "值": "4",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that a device is idle under an LTE cell supporting NSA and NR coverage detection.",
+      "注释信息": [
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 6"
+      ],
+      "层级": 2,
+      "上级": "NsaState",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "NSA_STATE_DUAL_CONNECTED",
+      "值": "5",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that a device is connected to an LTE + NR network under an LTE cell that supports NSA.",
+      "注释信息": [
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 6"
+      ],
+      "层级": 2,
+      "上级": "NsaState",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "NSA_STATE_SA_ATTACHED",
+      "值": "6",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that a device is idle under or is connected to an NG-RAN cell while being attached to 5GC.",
+      "注释信息": [
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 6"
+      ],
+      "层级": 2,
+      "上级": "NsaState",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "CellInformation",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains current cell information.",
+      "注释信息": [
+        "@interface CellInformation",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 8"
+      ],
+      "层级": 2,
+      "上级": "radio",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "networkType",
+      "属性类型": "NetworkType",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the network type of the serving cell. An application can call this method to determine the network type that the child class uses.",
+      "注释信息": [
+        "@type { NetworkType }",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 8"
+      ],
+      "层级": 2,
+      "上级": "CellInformation",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "signalInformation",
+      "属性类型": "SignalInformation",
+      "所属模块": "未知模块",
+      "功能描述": "An abstract method of the parent class whose implementation depends on the child classes. Returned child class objects vary according to the network type. Returns child class objects specific to the network type.",
+      "注释信息": [
+        "@type { SignalInformation }",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 8"
+      ],
+      "层级": 2,
+      "上级": "CellInformation",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "NetworkSelectionMode",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the network selection mode.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 6"
+      ],
+      "层级": 2,
+      "上级": "radio",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "NETWORK_SELECTION_UNKNOWN",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the network is unavailable for registration.",
+      "注释信息": [
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 6"
+      ],
+      "层级": 2,
+      "上级": "NetworkSelectionMode",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "NETWORK_SELECTION_AUTOMATIC",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the network is unavailable for registration.",
+      "注释信息": [
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 6"
+      ],
+      "层级": 2,
+      "上级": "NetworkSelectionMode",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "NETWORK_SELECTION_MANUAL",
+      "值": "2",
+      "所属模块": "未知模块",
+      "功能描述": "Manual network selection modes.",
+      "注释信息": [
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 6"
+      ],
+      "层级": 2,
+      "上级": "NetworkSelectionMode",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    }
+  ]
+}

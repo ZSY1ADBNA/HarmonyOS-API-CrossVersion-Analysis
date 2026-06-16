@@ -1,0 +1,607 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.AbilityKit",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "namespace",
+      "名称": "missionManager",
+      "所属模块": "@kit.AbilityKit",
+      "功能描述": "This module provides the capability to manage abilities and obtaining system task information.",
+      "注释信息": [
+        "@namespace missionManager",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Mission",
+        "@systemapi",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "@kit.AbilityKit",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Mission",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Register the missionListener to ams. 2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_MISSIONS",
+        "@param { 'mission' } type - mission.",
+        "@param { MissionListener } listener - Indicates the MissionListener to be registered.",
+        "@returns { number } Returns the index number of the MissionListener.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Not system application.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Mission",
+        "@systemapi",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "missionManager",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Mission",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'mission'",
+          "必填": true,
+          "说明": "mission."
+        },
+        {
+          "名称": "listener",
+          "类型": "MissionListener",
+          "必填": true,
+          "说明": "Indicates the MissionListener to be registered."
+        }
+      ],
+      "return_description": "Returns the index number of the MissionListener.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Not system application."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unregister the missionListener to ams. 2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_MISSIONS",
+        "@param { 'mission' } type - mission.",
+        "@param { number } listenerId - Indicates the listener id to be unregistered.",
+        "@param { AsyncCallback<void> } callback - The callback of off.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Not system application.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 16300002 - The specified mission listener does not exist.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Mission",
+        "@systemapi",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "missionManager",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Mission",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'mission'",
+          "必填": true,
+          "说明": "mission."
+        },
+        {
+          "名称": "listenerId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the listener id to be unregistered."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "The callback of off."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Not system application."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "16300002",
+          "description": "The specified mission listener does not exist."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Unregister the missionListener to ams. 2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_MISSIONS",
+        "@param { 'mission' } type - mission.",
+        "@param { number } listenerId - Indicates the listener id to be unregistered.",
+        "@returns { Promise<void> } The promise returned by the function.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Not system application.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 16300002 - The specified mission listener does not exist.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Mission",
+        "@systemapi",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "missionManager",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Mission",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'mission'",
+          "必填": true,
+          "说明": "mission."
+        },
+        {
+          "名称": "listenerId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the listener id to be unregistered."
+        }
+      ],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Not system application."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "16300002",
+          "description": "The specified mission listener does not exist."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getMissionInfo",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Get the missionInfo with the given missionId. 2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_MISSIONS",
+        "@param { string } deviceId - Indicates the device to be queried.",
+        "@param { number } missionId - Indicates mission id to be queried.",
+        "@param { AsyncCallback<MissionInfo> } callback - The callback is used to return the MissionInfo of the given id.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Not system application.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Mission",
+        "@systemapi",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "missionManager",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Mission",
+      "parameters": [
+        {
+          "名称": "deviceId",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates the device to be queried."
+        },
+        {
+          "名称": "missionId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates mission id to be queried."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<MissionInfo>",
+          "必填": true,
+          "说明": "The callback is used to return the MissionInfo of the given id."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Not system application."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getMissionInfo",
+      "返回值": "Promise<MissionInfo>",
+      "所属模块": "未知模块",
+      "功能描述": "Get the missionInfo with the given missionId. 2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_MISSIONS",
+        "@param { string } deviceId - Indicates the device to be queried.",
+        "@param { number } missionId - Indicates mission id to be queried.",
+        "@returns { Promise<MissionInfo> } Returns the MissionInfo of the given id.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Not system application.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Mission",
+        "@systemapi",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "missionManager",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Mission",
+      "parameters": [
+        {
+          "名称": "deviceId",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates the device to be queried."
+        },
+        {
+          "名称": "missionId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates mission id to be queried."
+        }
+      ],
+      "return_description": "Returns the MissionInfo of the given id.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Not system application."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getMissionInfos",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Get missionInfos in the given deviceId with maximum number of numMax. 2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_MISSIONS",
+        "@param { string } deviceId - Indicates the device to be queried.",
+        "@param { number } numMax - Indicates the maximum number of returned missions.",
+        "@param { AsyncCallback<Array<MissionInfo>> } callback - The callback is used to return the array of the MissionInfo.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Not system application.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Mission",
+        "@systemapi",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "missionManager",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Mission",
+      "parameters": [
+        {
+          "名称": "deviceId",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates the device to be queried."
+        },
+        {
+          "名称": "numMax",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the maximum number of returned missions."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<Array<MissionInfo>>",
+          "必填": true,
+          "说明": "The callback is used to return the array of the MissionInfo."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Not system application."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getMissionInfos",
+      "返回值": "Promise<Array<MissionInfo>>",
+      "所属模块": "未知模块",
+      "功能描述": "Get missionInfos in the given deviceId with maximum number of numMax. 2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_MISSIONS",
+        "@param { string } deviceId - Indicates the device to be queried.",
+        "@param { number } numMax - Indicates the maximum number of returned missions.",
+        "@returns { Promise<Array<MissionInfo>> } Returns the array of the MissionInfo.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Not system application.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Mission",
+        "@systemapi",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "missionManager",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Mission",
+      "parameters": [
+        {
+          "名称": "deviceId",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates the device to be queried."
+        },
+        {
+          "名称": "numMax",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the maximum number of returned missions."
+        }
+      ],
+      "return_description": "Returns the array of the MissionInfo.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Not system application."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getMissionSnapShot",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Get the mission snapshot with the given missionId. the given id. 2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_MISSIONS",
+        "@param { string } deviceId - Indicates the device to be queried.",
+        "@param { number } missionId - Indicates mission id to be queried.",
+        "@param { AsyncCallback<MissionSnapshot> } callback - The callback is used to return the MissionSnapshot of",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Not system application.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Mission",
+        "@systemapi",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "missionManager",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Mission",
+      "parameters": [
+        {
+          "名称": "deviceId",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates the device to be queried."
+        },
+        {
+          "名称": "missionId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates mission id to be queried."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<MissionSnapshot>",
+          "必填": true,
+          "说明": "The callback is used to return the MissionSnapshot of"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Not system application."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getMissionSnapShot",
+      "返回值": "Promise<MissionSnapshot>",
+      "所属模块": "未知模块",
+      "功能描述": "Get the mission snapshot with the given missionId. 2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_MISSIONS",
+        "@param { string } deviceId - Indicates the device to be queried.",
+        "@param { number } missionId - Indicates mission id to be queried.",
+        "@returns { Promise<MissionSnapshot> } Returns the MissionSnapshot of the given id.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Not system application.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Mission",
+        "@systemapi",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "missionManager",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Mission",
+      "parameters": [
+        {
+          "名称": "deviceId",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates the device to be queried."
+        },
+        {
+          "名称": "missionId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates mission id to be queried."
+        }
+      ],
+      "return_description": "Returns the MissionSnapshot of the given id.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Not system application."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getLowResolutionMissionSnapShot",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Get the mission low resolution snapshot with the given missionId. the given id. 2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_MISSIONS",
+        "@param { string } deviceId - Indicates the device to be queried.",
+        "@param { number } missionId - Indicates mission id to be queried.",
+        "@param { AsyncCallback<MissionSnapshot> } callback - The callback is used to return the MissionSnapshot of",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Not system application.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Mission",
+        "@systemapi",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "missionManager",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Mission",
+      "parameters": [
+        {
+          "名称": "deviceId",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates the device to be queried."
+        },
+        {
+          "名称": "missionId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates mission id to be queried."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<MissionSnapshot>",
+          "必填": true,
+          "说明": "The callback is used to return the MissionSnapshot of"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Not system application."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        }
+      ],
+      "版本": "API5.0"
+    }
+  ]
+}

@@ -1,0 +1,1720 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.BasicServicesKit",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "namespace",
+      "名称": "serialManager",
+      "所属模块": "@kit.BasicServicesKit",
+      "功能描述": "Provides APIs for managing USB-to-virtual serial ports and implementing USB-to-virtual serial port communication.",
+      "注释信息": [
+        "@namespace serialManager",
+        "@syscap SystemCapability.USB.USBManager.Serial",
+        "@since 19"
+      ],
+      "层级": 1,
+      "上级": "@kit.BasicServicesKit",
+      "since_version": "19",
+      "system_capability": "SystemCapability.USB.USBManager.Serial",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getPortList",
+      "返回值": "Readonly<SerialPort>[]",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the serial port device list.",
+      "注释信息": [
+        "@returns { Readonly<SerialPort>[]} Returns the list of serial port devices obtained.",
+        "@syscap SystemCapability.USB.USBManager.Serial",
+        "@since 19"
+      ],
+      "层级": 1,
+      "上级": "serialManager",
+      "since_version": "19",
+      "system_capability": "SystemCapability.USB.USBManager.Serial",
+      "parameters": [],
+      "return_description": "Returns the list of serial port devices obtained.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "hasSerialRight",
+      "返回值": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Checks whether a serial port device has the access right. The system applications have the access right by default. 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { number} portId ID of the target device. For details, see <b>SerialPort.portId</b>.",
+        "@returns {boolean} Returns <b class=\"+ topic/ph hi-d/b \" id=\"b48481049115520\">true</b> if the device has the right; returns <b class=\"+ topic/ph hi-d/b \" id=\"b192241323195610\">false</b> otherwise.",
+        "@throws { BusinessError } 401 Parameter error. Possible causes:",
+        "@throws { BusinessError } 14400005 Database operation exception.",
+        "@throws { BusinessError } 31400001 Serial port management exception.",
+        "@throws { BusinessError } 31400003 PortId does not exist.",
+        "@syscap SystemCapability.USB.USBManager.Serial",
+        "@since 19"
+      ],
+      "层级": 1,
+      "上级": "serialManager",
+      "since_version": "19",
+      "system_capability": "SystemCapability.USB.USBManager.Serial",
+      "parameters": [
+        {
+          "名称": "portId",
+          "类型": "number",
+          "必填": true,
+          "说明": "ID of the target device. For details, see <b>SerialPort.portId</b>."
+        }
+      ],
+      "return_description": "Returns <b class=\"+ topic/ph hi-d/b \" id=\"b48481049115520\">true</b> if the device has the right; returns <b class=\"+ topic/ph hi-d/b \" id=\"b192241323195610\">false</b> otherwise.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": ""
+        },
+        {
+          "code": "14400005",
+          "description": ""
+        },
+        {
+          "code": "31400001",
+          "description": ""
+        },
+        {
+          "code": "31400003",
+          "description": ""
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "requestSerialRight",
+      "返回值": "Promise<boolean>",
+      "所属模块": "未知模块",
+      "功能描述": "Requests the right for accessing a serial port device from the user. The system applications do not need to call this API. The value <b class=\"+ topic/ph hi-d/b \" id=\"b529434412284\">true</b> means the user allows the access; the value <b class=\"+ topic/ph hi-d/b \" id=\"b89755211297\">false</b> means the opposite. 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { number} portId ID of the target device. For details, see <b>SerialPort.portId</b>.",
+        "@returns { Promise<boolean>} Promise used to return the result.",
+        "@throws { BusinessError } 401 Parameter error. Possible causes:",
+        "@throws { BusinessError } 14400005 Database operation exception.",
+        "@throws { BusinessError } 31400001 Serial port management exception.",
+        "@throws { BusinessError } 31400003 PortId does not exist.",
+        "@syscap SystemCapability.USB.USBManager.Serial",
+        "@since 19"
+      ],
+      "层级": 1,
+      "上级": "serialManager",
+      "since_version": "19",
+      "system_capability": "SystemCapability.USB.USBManager.Serial",
+      "parameters": [
+        {
+          "名称": "portId",
+          "类型": "number",
+          "必填": true,
+          "说明": "ID of the target device. For details, see <b>SerialPort.portId</b>."
+        }
+      ],
+      "return_description": "Promise used to return the result.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": ""
+        },
+        {
+          "code": "14400005",
+          "description": ""
+        },
+        {
+          "code": "31400001",
+          "description": ""
+        },
+        {
+          "code": "31400003",
+          "description": ""
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "cancelSerialRight",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Cancels the access right for a serial port device. This API will not cancel the default access right of system applications. 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { number} portId ID of the target device. For details, see <b>SerialPort.portId</b>.",
+        "@throws { BusinessError } 401 Parameter error. Possible causes:",
+        "@throws { BusinessError } 14400005 Database operation exception.",
+        "@throws { BusinessError } 31400001 Serial port management exception.",
+        "@throws { BusinessError } 31400002 Access denied. Call requestSerialRight to request user authorization first.",
+        "@throws { BusinessError } 31400003 PortId does not exist.",
+        "@syscap SystemCapability.USB.USBManager.Serial",
+        "@since 19"
+      ],
+      "层级": 1,
+      "上级": "serialManager",
+      "since_version": "19",
+      "system_capability": "SystemCapability.USB.USBManager.Serial",
+      "parameters": [
+        {
+          "名称": "portId",
+          "类型": "number",
+          "必填": true,
+          "说明": "ID of the target device. For details, see <b>SerialPort.portId</b>."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": ""
+        },
+        {
+          "code": "14400005",
+          "description": ""
+        },
+        {
+          "code": "31400001",
+          "description": ""
+        },
+        {
+          "code": "31400002",
+          "description": ""
+        },
+        {
+          "code": "31400003",
+          "description": ""
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "open",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Opens a serial port device. 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { number} portId ID of the target device. For details, see <b>SerialPort.portId</b>.",
+        "@throws { BusinessError } 401 Parameter error. Possible causes:",
+        "@throws { BusinessError } 31400001 Serial port management exception.",
+        "@throws { BusinessError } 31400002 Access denied. Call requestSerialRight to request user authorization first.",
+        "@throws { BusinessError } 31400003 PortId does not exist.",
+        "@throws { BusinessError } 31400004 The serial port device is occupied.",
+        "@syscap SystemCapability.USB.USBManager.Serial",
+        "@since 19"
+      ],
+      "层级": 1,
+      "上级": "serialManager",
+      "since_version": "19",
+      "system_capability": "SystemCapability.USB.USBManager.Serial",
+      "parameters": [
+        {
+          "名称": "portId",
+          "类型": "number",
+          "必填": true,
+          "说明": "ID of the target device. For details, see <b>SerialPort.portId</b>."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": ""
+        },
+        {
+          "code": "31400001",
+          "description": ""
+        },
+        {
+          "code": "31400002",
+          "description": ""
+        },
+        {
+          "code": "31400003",
+          "description": ""
+        },
+        {
+          "code": "31400004",
+          "description": ""
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "close",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Closes a serial port device. 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { number} portId ID of the target device. For details, see <b>SerialPort.portId</b>.",
+        "@throws { BusinessError } 401 Parameter error. Possible causes:",
+        "@throws { BusinessError } 31400001 Serial port management exception.",
+        "@throws { BusinessError } 31400003 PortId does not exist.",
+        "@throws { BusinessError } 31400005 The serial port device is not opened. Call the open API first.",
+        "@syscap SystemCapability.USB.USBManager.Serial",
+        "@since 19"
+      ],
+      "层级": 1,
+      "上级": "serialManager",
+      "since_version": "19",
+      "system_capability": "SystemCapability.USB.USBManager.Serial",
+      "parameters": [
+        {
+          "名称": "portId",
+          "类型": "number",
+          "必填": true,
+          "说明": "ID of the target device. For details, see <b>SerialPort.portId</b>."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": ""
+        },
+        {
+          "code": "31400001",
+          "description": ""
+        },
+        {
+          "code": "31400003",
+          "description": ""
+        },
+        {
+          "code": "31400005",
+          "description": ""
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getAttribute",
+      "返回值": "Readonly<SerialAttribute>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the communication parameters of a serial port device. 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { number} portId ID of the target device. For details, see <b>SerialPort.portId</b>.",
+        "@returns { Readonly<SerialAttribute>} Communication parameters obtained, which are read-only.",
+        "@throws { BusinessError } 401 Parameter error. Possible causes:",
+        "@throws { BusinessError } 31400001 Serial port management exception.",
+        "@throws { BusinessError } 31400003 PortId does not exist.",
+        "@throws { BusinessError } 31400005 The serial port device is not opened. Call the open API first.",
+        "@syscap SystemCapability.USB.USBManager.Serial",
+        "@since 19"
+      ],
+      "层级": 1,
+      "上级": "serialManager",
+      "since_version": "19",
+      "system_capability": "SystemCapability.USB.USBManager.Serial",
+      "parameters": [
+        {
+          "名称": "portId",
+          "类型": "number",
+          "必填": true,
+          "说明": "ID of the target device. For details, see <b>SerialPort.portId</b>."
+        }
+      ],
+      "return_description": "Communication parameters obtained, which are read-only.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": ""
+        },
+        {
+          "code": "31400001",
+          "description": ""
+        },
+        {
+          "code": "31400003",
+          "description": ""
+        },
+        {
+          "code": "31400005",
+          "description": ""
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "setAttribute",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Sets the communication parameters for a serial port device. 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { number} portId ID of the target device. For details, see <b>SerialPort.portId</b>.",
+        "@param { SerialAttribute} attribute Communication parameters to set.",
+        "@throws { BusinessError } 401 Parameter error. Possible causes:",
+        "@throws { BusinessError } 31400001 Serial port management exception.",
+        "@throws { BusinessError } 31400003 PortId does not exist.",
+        "@throws { BusinessError } 31400005 The serial port device is not opened. Call the open API first.",
+        "@syscap SystemCapability.USB.USBManager.Serial",
+        "@since 19"
+      ],
+      "层级": 1,
+      "上级": "serialManager",
+      "since_version": "19",
+      "system_capability": "SystemCapability.USB.USBManager.Serial",
+      "parameters": [
+        {
+          "名称": "portId",
+          "类型": "number",
+          "必填": true,
+          "说明": "ID of the target device. For details, see <b>SerialPort.portId</b>."
+        },
+        {
+          "名称": "attribute",
+          "类型": "SerialAttribute",
+          "必填": true,
+          "说明": "Communication parameters to set."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": ""
+        },
+        {
+          "code": "31400001",
+          "description": ""
+        },
+        {
+          "code": "31400003",
+          "description": ""
+        },
+        {
+          "code": "31400005",
+          "description": ""
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "read",
+      "返回值": "Promise<number>",
+      "所属模块": "未知模块",
+      "功能描述": "Reads data from a serial port device. This API uses a promise to return the result. The default value <b class=\"+ topic/ph hi-d/b \" id=\"b98612056312\">0</b> indicates that there is no time limit for data reading. 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. <br>1. The transfer was canceled. <br>2. The device offered more data than allowed.",
+      "注释信息": [
+        "@param { number} portId ID of the target device. For details, see <b>SerialPort.portId</b>.",
+        "@param { Uint8Array } buffer Buffer for storing the data read, with a maximum length of 8192 bytes.",
+        "@param { number } timeout Timeout duration for reading data. The value is a non-negative number.",
+        "@returns { Promise<number> } Promise used to return the length of the data read.",
+        "@throws { BusinessError } 401 Parameter error. Possible causes:",
+        "@throws { BusinessError } 31400001 Serial port management exception.",
+        "@throws { BusinessError } 31400003 PortId does not exist.",
+        "@throws { BusinessError } 31400005 The serial port device is not opened. Call the open API first.",
+        "@throws { BusinessError } 31400006 Data transfer timed out.",
+        "@throws { BusinessError } 31400007 I/O exception. Possible causes:",
+        "@syscap SystemCapability.USB.USBManager.Serial",
+        "@since 19"
+      ],
+      "层级": 1,
+      "上级": "serialManager",
+      "since_version": "19",
+      "system_capability": "SystemCapability.USB.USBManager.Serial",
+      "parameters": [
+        {
+          "名称": "portId",
+          "类型": "number",
+          "必填": true,
+          "说明": "ID of the target device. For details, see <b>SerialPort.portId</b>."
+        },
+        {
+          "名称": "buffer",
+          "类型": "Uint8Array",
+          "必填": true,
+          "说明": "Buffer for storing the data read, with a maximum length of 8192 bytes."
+        },
+        {
+          "名称": "timeout",
+          "类型": "number",
+          "必填": true,
+          "说明": "Timeout duration for reading data. The value is a non-negative number."
+        }
+      ],
+      "return_description": "Promise used to return the length of the data read.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": ""
+        },
+        {
+          "code": "31400001",
+          "description": ""
+        },
+        {
+          "code": "31400003",
+          "description": ""
+        },
+        {
+          "code": "31400005",
+          "description": ""
+        },
+        {
+          "code": "31400006",
+          "description": ""
+        },
+        {
+          "code": "31400007",
+          "description": ""
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "readSync",
+      "返回值": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Reads data from a serial port device. This API returns the result synchronously. The default value <b class=\"+ topic/ph hi-d/b \" id=\"b25229382302\">0</b> indicates that there is no time limit for data reading. 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. <br>1. The transfer was canceled. <br>2. The device offered more data than allowed.",
+      "注释信息": [
+        "@param { number} portId ID of the target device. For details, see <b>SerialPort.portId</b>.",
+        "@param { Uint8Array } buffer Buffer for storing the data read, with a maximum length of 8192 bytes.",
+        "@param { number } timeout Timeout duration for reading data. The value is a non-negative number.",
+        "@returns {number} Length of the data read.",
+        "@throws { BusinessError } 401 Parameter error. Possible causes:",
+        "@throws { BusinessError } 31400001 Serial port management exception.",
+        "@throws { BusinessError } 31400003 PortId does not exist.",
+        "@throws { BusinessError } 31400005 The serial port device is not opened. Call the open API first.",
+        "@throws { BusinessError } 31400006 Data transfer timed out.",
+        "@throws { BusinessError } 31400007 I/O exception. Possible causes:",
+        "@syscap SystemCapability.USB.USBManager.Serial",
+        "@since 19"
+      ],
+      "层级": 1,
+      "上级": "serialManager",
+      "since_version": "19",
+      "system_capability": "SystemCapability.USB.USBManager.Serial",
+      "parameters": [
+        {
+          "名称": "portId",
+          "类型": "number",
+          "必填": true,
+          "说明": "ID of the target device. For details, see <b>SerialPort.portId</b>."
+        },
+        {
+          "名称": "buffer",
+          "类型": "Uint8Array",
+          "必填": true,
+          "说明": "Buffer for storing the data read, with a maximum length of 8192 bytes."
+        },
+        {
+          "名称": "timeout",
+          "类型": "number",
+          "必填": true,
+          "说明": "Timeout duration for reading data. The value is a non-negative number."
+        }
+      ],
+      "return_description": "Length of the data read.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": ""
+        },
+        {
+          "code": "31400001",
+          "description": ""
+        },
+        {
+          "code": "31400003",
+          "description": ""
+        },
+        {
+          "code": "31400005",
+          "description": ""
+        },
+        {
+          "code": "31400006",
+          "description": ""
+        },
+        {
+          "code": "31400007",
+          "description": ""
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "write",
+      "返回值": "Promise<number>",
+      "所属模块": "未知模块",
+      "功能描述": "Writes data to a serial port device. This API uses a promise to return the result. The default value <b class=\"+ topic/ph hi-d/b \" id=\"b2661577365\">0</b> indicates that there is no time limit for data writing. 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. <br>1. The transfer was canceled. <br>2. The device offered more data than allowed.",
+      "注释信息": [
+        "@param { number} portId ID of the target device. For details, see <b>SerialPort.portId</b>.",
+        "@param { Uint8Array } buffer Buffer for storing the data written, with a maximum length of 128 KB.",
+        "@param { number } timeout Timeout duration for writing data. The value is a non-negative number.",
+        "@returns { Promise<number> } Promise used to return the length of the data written.",
+        "@throws { BusinessError } 401 Parameter error. Possible causes:",
+        "@throws { BusinessError } 31400001 Serial port management exception.",
+        "@throws { BusinessError } 31400003 PortId does not exist.",
+        "@throws { BusinessError } 31400005 The serial port device is not opened. Call the open API first.",
+        "@throws { BusinessError } 31400006 Data transfer timed out.",
+        "@throws { BusinessError } 31400007 I/O exception. Possible causes:",
+        "@syscap SystemCapability.USB.USBManager.Serial",
+        "@since 19"
+      ],
+      "层级": 1,
+      "上级": "serialManager",
+      "since_version": "19",
+      "system_capability": "SystemCapability.USB.USBManager.Serial",
+      "parameters": [
+        {
+          "名称": "portId",
+          "类型": "number",
+          "必填": true,
+          "说明": "ID of the target device. For details, see <b>SerialPort.portId</b>."
+        },
+        {
+          "名称": "buffer",
+          "类型": "Uint8Array",
+          "必填": true,
+          "说明": "Buffer for storing the data written, with a maximum length of 128 KB."
+        },
+        {
+          "名称": "timeout",
+          "类型": "number",
+          "必填": true,
+          "说明": "Timeout duration for writing data. The value is a non-negative number."
+        }
+      ],
+      "return_description": "Promise used to return the length of the data written.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": ""
+        },
+        {
+          "code": "31400001",
+          "description": ""
+        },
+        {
+          "code": "31400003",
+          "description": ""
+        },
+        {
+          "code": "31400005",
+          "description": ""
+        },
+        {
+          "code": "31400006",
+          "description": ""
+        },
+        {
+          "code": "31400007",
+          "description": ""
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "writeSync",
+      "返回值": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Writes data to a serial port device. This API returns the result synchronously. The default value <b class=\"+ topic/ph hi-d/b \" id=\"b45639213380\">0</b> indicates that there is no time limit for data writing. 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. <br>1. The transfer was canceled. <br>2. The device offered more data than allowed.",
+      "注释信息": [
+        "@param { number} portId ID of the target device. For details, see <b>SerialPort.portId</b>.",
+        "@param { Uint8Array } buffer Buffer for storing the data written, with a maximum length of 128 KB.",
+        "@param { number } timeout Timeout duration for writing data. The value is a non-negative number.",
+        "@returns { number } Length of the data written.",
+        "@throws { BusinessError } 401 Parameter error. Possible causes:",
+        "@throws { BusinessError } 31400001 Serial port management exception.",
+        "@throws { BusinessError } 31400003 PortId does not exist.",
+        "@throws { BusinessError } 31400005 The serial port device is not opened. Call the open API first.",
+        "@throws { BusinessError } 31400006 Data transfer timed out.",
+        "@throws { BusinessError } 31400007 I/O exception. Possible causes:",
+        "@syscap SystemCapability.USB.USBManager.Serial",
+        "@since 19"
+      ],
+      "层级": 1,
+      "上级": "serialManager",
+      "since_version": "19",
+      "system_capability": "SystemCapability.USB.USBManager.Serial",
+      "parameters": [
+        {
+          "名称": "portId",
+          "类型": "number",
+          "必填": true,
+          "说明": "ID of the target device. For details, see <b>SerialPort.portId</b>."
+        },
+        {
+          "名称": "buffer",
+          "类型": "Uint8Array",
+          "必填": true,
+          "说明": "Buffer for storing the data written, with a maximum length of 128 KB."
+        },
+        {
+          "名称": "timeout",
+          "类型": "number",
+          "必填": true,
+          "说明": "Timeout duration for writing data. The value is a non-negative number."
+        }
+      ],
+      "return_description": "Length of the data written.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": ""
+        },
+        {
+          "code": "31400001",
+          "description": ""
+        },
+        {
+          "code": "31400003",
+          "description": ""
+        },
+        {
+          "code": "31400005",
+          "description": ""
+        },
+        {
+          "code": "31400006",
+          "description": ""
+        },
+        {
+          "code": "31400007",
+          "description": ""
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "SerialPort",
+      "所属模块": "未知模块",
+      "功能描述": "Represents a serial port device.",
+      "注释信息": [
+        "@typedef SerialPort",
+        "@syscap SystemCapability.USB.USBManager.Serial",
+        "@since 19"
+      ],
+      "层级": 2,
+      "上级": "serialManager",
+      "since_version": "19",
+      "system_capability": "SystemCapability.USB.USBManager.Serial",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "portId",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Serial port device ID.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.USB.USBManager.Serial",
+        "@since 19"
+      ],
+      "层级": 2,
+      "上级": "SerialPort",
+      "since_version": "19",
+      "system_capability": "SystemCapability.USB.USBManager.Serial",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "deviceName",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Serial port device name.",
+      "注释信息": [
+        "@type { string }",
+        "@syscap SystemCapability.USB.USBManager.Serial",
+        "@since 19"
+      ],
+      "层级": 2,
+      "上级": "SerialPort",
+      "since_version": "19",
+      "system_capability": "SystemCapability.USB.USBManager.Serial",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "SerialAttribute",
+      "所属模块": "未知模块",
+      "功能描述": "Represents the communication parameters of a serial port device.",
+      "注释信息": [
+        "@typedef SerialAttribute",
+        "@syscap SystemCapability.USB.USBManager.Serial",
+        "@since 19"
+      ],
+      "层级": 2,
+      "上级": "serialManager",
+      "since_version": "19",
+      "system_capability": "SystemCapability.USB.USBManager.Serial",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "baudRate",
+      "属性类型": "BaudRates",
+      "所属模块": "未知模块",
+      "功能描述": "Baud rate.",
+      "注释信息": [
+        "@type { BaudRates }",
+        "@syscap SystemCapability.USB.USBManager.Serial",
+        "@since 19"
+      ],
+      "层级": 2,
+      "上级": "SerialAttribute",
+      "since_version": "19",
+      "system_capability": "SystemCapability.USB.USBManager.Serial",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "dataBits",
+      "属性类型": "DataBits",
+      "所属模块": "未知模块",
+      "功能描述": "Data bits.",
+      "注释信息": [
+        "@type { DataBits }",
+        "@default DATABIT_8",
+        "@syscap SystemCapability.USB.USBManager.Serial",
+        "@since 19"
+      ],
+      "层级": 2,
+      "上级": "SerialAttribute",
+      "since_version": "19",
+      "system_capability": "SystemCapability.USB.USBManager.Serial",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "parity",
+      "属性类型": "Parity",
+      "所属模块": "未知模块",
+      "功能描述": "Parity bit.",
+      "注释信息": [
+        "@type { Parity }",
+        "@default NONE",
+        "@syscap SystemCapability.USB.USBManager.Serial",
+        "@since 19"
+      ],
+      "层级": 2,
+      "上级": "SerialAttribute",
+      "since_version": "19",
+      "system_capability": "SystemCapability.USB.USBManager.Serial",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "stopBits",
+      "属性类型": "StopBits",
+      "所属模块": "未知模块",
+      "功能描述": "Stop bits.",
+      "注释信息": [
+        "@type { StopBits }",
+        "@default STOPBIT_1",
+        "@syscap SystemCapability.USB.USBManager.Serial",
+        "@since 19"
+      ],
+      "层级": 2,
+      "上级": "SerialAttribute",
+      "since_version": "19",
+      "system_capability": "SystemCapability.USB.USBManager.Serial",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "BaudRates",
+      "所属模块": "未知模块",
+      "功能描述": "Enumerates the baud rates of a serial port device, in bit/s.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.USB.USBManager.Serial",
+        "@since 19"
+      ],
+      "层级": 2,
+      "上级": "serialManager",
+      "since_version": "19",
+      "system_capability": "SystemCapability.USB.USBManager.Serial",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "BAUDRATE_50",
+      "值": "50",
+      "所属模块": "未知模块",
+      "功能描述": "The baud rate is 50 bit/s.",
+      "注释信息": [
+        "@syscap SystemCapability.USB.USBManager.Serial",
+        "@since 19"
+      ],
+      "层级": 2,
+      "上级": "BaudRates",
+      "since_version": "19",
+      "system_capability": "SystemCapability.USB.USBManager.Serial",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "BAUDRATE_75",
+      "值": "75",
+      "所属模块": "未知模块",
+      "功能描述": "The baud rate is 75 bit/s.",
+      "注释信息": [
+        "@syscap SystemCapability.USB.USBManager.Serial",
+        "@since 19"
+      ],
+      "层级": 2,
+      "上级": "BaudRates",
+      "since_version": "19",
+      "system_capability": "SystemCapability.USB.USBManager.Serial",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "BAUDRATE_110",
+      "值": "110",
+      "所属模块": "未知模块",
+      "功能描述": "The baud rate is 110 bit/s.",
+      "注释信息": [
+        "@syscap SystemCapability.USB.USBManager.Serial",
+        "@since 19"
+      ],
+      "层级": 2,
+      "上级": "BaudRates",
+      "since_version": "19",
+      "system_capability": "SystemCapability.USB.USBManager.Serial",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "BAUDRATE_134",
+      "值": "134",
+      "所属模块": "未知模块",
+      "功能描述": "The baud rate is 134 bit/s.",
+      "注释信息": [
+        "@syscap SystemCapability.USB.USBManager.Serial",
+        "@since 19"
+      ],
+      "层级": 2,
+      "上级": "BaudRates",
+      "since_version": "19",
+      "system_capability": "SystemCapability.USB.USBManager.Serial",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "BAUDRATE_150",
+      "值": "150",
+      "所属模块": "未知模块",
+      "功能描述": "The baud rate is 150 bit/s.",
+      "注释信息": [
+        "@syscap SystemCapability.USB.USBManager.Serial",
+        "@since 19"
+      ],
+      "层级": 2,
+      "上级": "BaudRates",
+      "since_version": "19",
+      "system_capability": "SystemCapability.USB.USBManager.Serial",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "BAUDRATE_200",
+      "值": "200",
+      "所属模块": "未知模块",
+      "功能描述": "The baud rate is 200 bit/s.",
+      "注释信息": [
+        "@syscap SystemCapability.USB.USBManager.Serial",
+        "@since 19"
+      ],
+      "层级": 2,
+      "上级": "BaudRates",
+      "since_version": "19",
+      "system_capability": "SystemCapability.USB.USBManager.Serial",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "BAUDRATE_300",
+      "值": "300",
+      "所属模块": "未知模块",
+      "功能描述": "The baud rate is 300 bit/s.",
+      "注释信息": [
+        "@syscap SystemCapability.USB.USBManager.Serial",
+        "@since 19"
+      ],
+      "层级": 2,
+      "上级": "BaudRates",
+      "since_version": "19",
+      "system_capability": "SystemCapability.USB.USBManager.Serial",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "BAUDRATE_600",
+      "值": "600",
+      "所属模块": "未知模块",
+      "功能描述": "The baud rate is 600 bit/s.",
+      "注释信息": [
+        "@syscap SystemCapability.USB.USBManager.Serial",
+        "@since 19"
+      ],
+      "层级": 2,
+      "上级": "BaudRates",
+      "since_version": "19",
+      "system_capability": "SystemCapability.USB.USBManager.Serial",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "BAUDRATE_1200",
+      "值": "1200",
+      "所属模块": "未知模块",
+      "功能描述": "The baud rate is 1200 bit/s.",
+      "注释信息": [
+        "@syscap SystemCapability.USB.USBManager.Serial",
+        "@since 19"
+      ],
+      "层级": 2,
+      "上级": "BaudRates",
+      "since_version": "19",
+      "system_capability": "SystemCapability.USB.USBManager.Serial",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "BAUDRATE_1800",
+      "值": "1800",
+      "所属模块": "未知模块",
+      "功能描述": "The baud rate is 1800 bit/s.",
+      "注释信息": [
+        "@syscap SystemCapability.USB.USBManager.Serial",
+        "@since 19"
+      ],
+      "层级": 2,
+      "上级": "BaudRates",
+      "since_version": "19",
+      "system_capability": "SystemCapability.USB.USBManager.Serial",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "BAUDRATE_2400",
+      "值": "2400",
+      "所属模块": "未知模块",
+      "功能描述": "The baud rate is 2400 bit/s.",
+      "注释信息": [
+        "@syscap SystemCapability.USB.USBManager.Serial",
+        "@since 19"
+      ],
+      "层级": 2,
+      "上级": "BaudRates",
+      "since_version": "19",
+      "system_capability": "SystemCapability.USB.USBManager.Serial",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "BAUDRATE_4800",
+      "值": "4800",
+      "所属模块": "未知模块",
+      "功能描述": "The baud rate is 4800 bit/s.",
+      "注释信息": [
+        "@syscap SystemCapability.USB.USBManager.Serial",
+        "@since 19"
+      ],
+      "层级": 2,
+      "上级": "BaudRates",
+      "since_version": "19",
+      "system_capability": "SystemCapability.USB.USBManager.Serial",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "BAUDRATE_9600",
+      "值": "9600",
+      "所属模块": "未知模块",
+      "功能描述": "The baud rate is 9600 bit/s.",
+      "注释信息": [
+        "@syscap SystemCapability.USB.USBManager.Serial",
+        "@since 19"
+      ],
+      "层级": 2,
+      "上级": "BaudRates",
+      "since_version": "19",
+      "system_capability": "SystemCapability.USB.USBManager.Serial",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "BAUDRATE_19200",
+      "值": "19200",
+      "所属模块": "未知模块",
+      "功能描述": "The baud rate is 19200 bit/s.",
+      "注释信息": [
+        "@syscap SystemCapability.USB.USBManager.Serial",
+        "@since 19"
+      ],
+      "层级": 2,
+      "上级": "BaudRates",
+      "since_version": "19",
+      "system_capability": "SystemCapability.USB.USBManager.Serial",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "BAUDRATE_38400",
+      "值": "38400",
+      "所属模块": "未知模块",
+      "功能描述": "The baud rate is 38400 bit/s.",
+      "注释信息": [
+        "@syscap SystemCapability.USB.USBManager.Serial",
+        "@since 19"
+      ],
+      "层级": 2,
+      "上级": "BaudRates",
+      "since_version": "19",
+      "system_capability": "SystemCapability.USB.USBManager.Serial",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "BAUDRATE_57600",
+      "值": "57600",
+      "所属模块": "未知模块",
+      "功能描述": "The baud rate is 57600 bit/s.",
+      "注释信息": [
+        "@syscap SystemCapability.USB.USBManager.Serial",
+        "@since 19"
+      ],
+      "层级": 2,
+      "上级": "BaudRates",
+      "since_version": "19",
+      "system_capability": "SystemCapability.USB.USBManager.Serial",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "BAUDRATE_115200",
+      "值": "115200",
+      "所属模块": "未知模块",
+      "功能描述": "The baud rate is 115200 bit/s.",
+      "注释信息": [
+        "@syscap SystemCapability.USB.USBManager.Serial",
+        "@since 19"
+      ],
+      "层级": 2,
+      "上级": "BaudRates",
+      "since_version": "19",
+      "system_capability": "SystemCapability.USB.USBManager.Serial",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "BAUDRATE_230400",
+      "值": "230400",
+      "所属模块": "未知模块",
+      "功能描述": "The baud rate is 230400 bit/s.",
+      "注释信息": [
+        "@syscap SystemCapability.USB.USBManager.Serial",
+        "@since 19"
+      ],
+      "层级": 2,
+      "上级": "BaudRates",
+      "since_version": "19",
+      "system_capability": "SystemCapability.USB.USBManager.Serial",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "BAUDRATE_460800",
+      "值": "460800",
+      "所属模块": "未知模块",
+      "功能描述": "The baud rate is 460800 bit/s.",
+      "注释信息": [
+        "@syscap SystemCapability.USB.USBManager.Serial",
+        "@since 19"
+      ],
+      "层级": 2,
+      "上级": "BaudRates",
+      "since_version": "19",
+      "system_capability": "SystemCapability.USB.USBManager.Serial",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "BAUDRATE_500000",
+      "值": "500000",
+      "所属模块": "未知模块",
+      "功能描述": "The baud rate is 500000 bit/s.",
+      "注释信息": [
+        "@syscap SystemCapability.USB.USBManager.Serial",
+        "@since 19"
+      ],
+      "层级": 2,
+      "上级": "BaudRates",
+      "since_version": "19",
+      "system_capability": "SystemCapability.USB.USBManager.Serial",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "BAUDRATE_576000",
+      "值": "576000",
+      "所属模块": "未知模块",
+      "功能描述": "The baud rate is 576000 bit/s.",
+      "注释信息": [
+        "@syscap SystemCapability.USB.USBManager.Serial",
+        "@since 19"
+      ],
+      "层级": 2,
+      "上级": "BaudRates",
+      "since_version": "19",
+      "system_capability": "SystemCapability.USB.USBManager.Serial",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "BAUDRATE_921600",
+      "值": "921600",
+      "所属模块": "未知模块",
+      "功能描述": "The baud rate is 921600 bit/s.",
+      "注释信息": [
+        "@syscap SystemCapability.USB.USBManager.Serial",
+        "@since 19"
+      ],
+      "层级": 2,
+      "上级": "BaudRates",
+      "since_version": "19",
+      "system_capability": "SystemCapability.USB.USBManager.Serial",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "BAUDRATE_1000000",
+      "值": "1000000",
+      "所属模块": "未知模块",
+      "功能描述": "The baud rate is 1000000 bit/s.",
+      "注释信息": [
+        "@syscap SystemCapability.USB.USBManager.Serial",
+        "@since 19"
+      ],
+      "层级": 2,
+      "上级": "BaudRates",
+      "since_version": "19",
+      "system_capability": "SystemCapability.USB.USBManager.Serial",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "BAUDRATE_1152000",
+      "值": "1152000",
+      "所属模块": "未知模块",
+      "功能描述": "The baud rate is 1152000 bit/s.",
+      "注释信息": [
+        "@syscap SystemCapability.USB.USBManager.Serial",
+        "@since 19"
+      ],
+      "层级": 2,
+      "上级": "BaudRates",
+      "since_version": "19",
+      "system_capability": "SystemCapability.USB.USBManager.Serial",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "BAUDRATE_1500000",
+      "值": "1500000",
+      "所属模块": "未知模块",
+      "功能描述": "The baud rate is 1500000 bit/s.",
+      "注释信息": [
+        "@syscap SystemCapability.USB.USBManager.Serial",
+        "@since 19"
+      ],
+      "层级": 2,
+      "上级": "BaudRates",
+      "since_version": "19",
+      "system_capability": "SystemCapability.USB.USBManager.Serial",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "BAUDRATE_2000000",
+      "值": "2000000",
+      "所属模块": "未知模块",
+      "功能描述": "The baud rate is 2000000 bit/s.",
+      "注释信息": [
+        "@syscap SystemCapability.USB.USBManager.Serial",
+        "@since 19"
+      ],
+      "层级": 2,
+      "上级": "BaudRates",
+      "since_version": "19",
+      "system_capability": "SystemCapability.USB.USBManager.Serial",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "BAUDRATE_2500000",
+      "值": "2500000",
+      "所属模块": "未知模块",
+      "功能描述": "The baud rate is 2500000 bit/s.",
+      "注释信息": [
+        "@syscap SystemCapability.USB.USBManager.Serial",
+        "@since 19"
+      ],
+      "层级": 2,
+      "上级": "BaudRates",
+      "since_version": "19",
+      "system_capability": "SystemCapability.USB.USBManager.Serial",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "BAUDRATE_3000000",
+      "值": "3000000",
+      "所属模块": "未知模块",
+      "功能描述": "The baud rate is 3000000 bit/s.",
+      "注释信息": [
+        "@syscap SystemCapability.USB.USBManager.Serial",
+        "@since 19"
+      ],
+      "层级": 2,
+      "上级": "BaudRates",
+      "since_version": "19",
+      "system_capability": "SystemCapability.USB.USBManager.Serial",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "BAUDRATE_3500000",
+      "值": "3500000",
+      "所属模块": "未知模块",
+      "功能描述": "The baud rate is 3500000 bit/s.",
+      "注释信息": [
+        "@syscap SystemCapability.USB.USBManager.Serial",
+        "@since 19"
+      ],
+      "层级": 2,
+      "上级": "BaudRates",
+      "since_version": "19",
+      "system_capability": "SystemCapability.USB.USBManager.Serial",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "BAUDRATE_4000000",
+      "值": "4000000",
+      "所属模块": "未知模块",
+      "功能描述": "The baud rate is 4000000 bit/s.",
+      "注释信息": [
+        "@syscap SystemCapability.USB.USBManager.Serial",
+        "@since 19"
+      ],
+      "层级": 2,
+      "上级": "BaudRates",
+      "since_version": "19",
+      "system_capability": "SystemCapability.USB.USBManager.Serial",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "DataBits",
+      "所属模块": "未知模块",
+      "功能描述": "Enumerates the data bits of a serial port device.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.USB.USBManager.Serial",
+        "@since 19"
+      ],
+      "层级": 2,
+      "上级": "serialManager",
+      "since_version": "19",
+      "system_capability": "SystemCapability.USB.USBManager.Serial",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "DATABIT_8",
+      "值": "8",
+      "所属模块": "未知模块",
+      "功能描述": "The number of data bits is 8.",
+      "注释信息": [
+        "@syscap SystemCapability.USB.USBManager.Serial",
+        "@since 19"
+      ],
+      "层级": 2,
+      "上级": "DataBits",
+      "since_version": "19",
+      "system_capability": "SystemCapability.USB.USBManager.Serial",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "DATABIT_7",
+      "值": "7",
+      "所属模块": "未知模块",
+      "功能描述": "The number of data bits is 7.",
+      "注释信息": [
+        "@syscap SystemCapability.USB.USBManager.Serial",
+        "@since 19"
+      ],
+      "层级": 2,
+      "上级": "DataBits",
+      "since_version": "19",
+      "system_capability": "SystemCapability.USB.USBManager.Serial",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "DATABIT_6",
+      "值": "6",
+      "所属模块": "未知模块",
+      "功能描述": "The number of data bits is 6.",
+      "注释信息": [
+        "@syscap SystemCapability.USB.USBManager.Serial",
+        "@since 19"
+      ],
+      "层级": 2,
+      "上级": "DataBits",
+      "since_version": "19",
+      "system_capability": "SystemCapability.USB.USBManager.Serial",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "DATABIT_5",
+      "值": "5",
+      "所属模块": "未知模块",
+      "功能描述": "The number of data bits is 5.",
+      "注释信息": [
+        "@syscap SystemCapability.USB.USBManager.Serial",
+        "@since 19"
+      ],
+      "层级": 2,
+      "上级": "DataBits",
+      "since_version": "19",
+      "system_capability": "SystemCapability.USB.USBManager.Serial",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "Parity",
+      "所属模块": "未知模块",
+      "功能描述": "Enumerates the parity bits of a serial port device.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.USB.USBManager.Serial",
+        "@since 19"
+      ],
+      "层级": 2,
+      "上级": "serialManager",
+      "since_version": "19",
+      "system_capability": "SystemCapability.USB.USBManager.Serial",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "PARITY_NONE",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "No parity.",
+      "注释信息": [
+        "@syscap SystemCapability.USB.USBManager.Serial",
+        "@since 19"
+      ],
+      "层级": 2,
+      "上级": "Parity",
+      "since_version": "19",
+      "system_capability": "SystemCapability.USB.USBManager.Serial",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "PARITY_ODD",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Odd parity.",
+      "注释信息": [
+        "@syscap SystemCapability.USB.USBManager.Serial",
+        "@since 19"
+      ],
+      "层级": 2,
+      "上级": "Parity",
+      "since_version": "19",
+      "system_capability": "SystemCapability.USB.USBManager.Serial",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "PARITY_EVEN",
+      "值": "2",
+      "所属模块": "未知模块",
+      "功能描述": "Even parity.",
+      "注释信息": [
+        "@syscap SystemCapability.USB.USBManager.Serial",
+        "@since 19"
+      ],
+      "层级": 2,
+      "上级": "Parity",
+      "since_version": "19",
+      "system_capability": "SystemCapability.USB.USBManager.Serial",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "PARITY_MARK",
+      "值": "3",
+      "所属模块": "未知模块",
+      "功能描述": "Mark parity, whose parity bit is always <b class=\"+ topic/ph hi-d/b \" id=\"b1627884485115\">1</b>.",
+      "注释信息": [
+        "@syscap SystemCapability.USB.USBManager.Serial",
+        "@since 19"
+      ],
+      "层级": 2,
+      "上级": "Parity",
+      "since_version": "19",
+      "system_capability": "SystemCapability.USB.USBManager.Serial",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "PARITY_SPACE",
+      "值": "4",
+      "所属模块": "未知模块",
+      "功能描述": "Space parity, whose parity bit is always <b class=\"+ topic/ph hi-d/b \" id=\"b1551818484291\">0</b>.",
+      "注释信息": [
+        "@syscap SystemCapability.USB.USBManager.Serial",
+        "@since 19"
+      ],
+      "层级": 2,
+      "上级": "Parity",
+      "since_version": "19",
+      "system_capability": "SystemCapability.USB.USBManager.Serial",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "StopBits",
+      "所属模块": "未知模块",
+      "功能描述": "Enumerates the stop bits for serial port communication.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.USB.USBManager.Serial",
+        "@since 19"
+      ],
+      "层级": 2,
+      "上级": "serialManager",
+      "since_version": "19",
+      "system_capability": "SystemCapability.USB.USBManager.Serial",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "STOPBIT_1",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "The number of stop bits is 1.",
+      "注释信息": [
+        "@syscap SystemCapability.USB.USBManager.Serial",
+        "@since 19"
+      ],
+      "层级": 2,
+      "上级": "StopBits",
+      "since_version": "19",
+      "system_capability": "SystemCapability.USB.USBManager.Serial",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "STOPBIT_2",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "The number of stop bits is 2.",
+      "注释信息": [
+        "@syscap SystemCapability.USB.USBManager.Serial",
+        "@since 19"
+      ],
+      "层级": 2,
+      "上级": "StopBits",
+      "since_version": "19",
+      "system_capability": "SystemCapability.USB.USBManager.Serial",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    }
+  ]
+}

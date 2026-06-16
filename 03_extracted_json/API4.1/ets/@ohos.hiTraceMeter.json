@@ -1,0 +1,138 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.PerformanceAnalysisKit",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "namespace",
+      "名称": "hiTraceMeter",
+      "所属模块": "@kit.PerformanceAnalysisKit",
+      "功能描述": "Provides interfaces to trace a task for performance measure, the logs can be capture by the bytrace cmdline available on the device. <p>This interfaces trace the start, end, and value changes of key processes that last for at least 3 ms. <p>Example: Track the beginning of a context: <pre>{@code hiTraceMeter.startTrace(\"checkName\", 111); }</pre> Track the end of a context: <pre>{@code hiTraceMeter.finishTrace(\"checkName\", 111); }</pre> To trace the number of layers, which is 3: <pre>{@code hiTraceMeter.traceByValue(\"curLayer\", 3); }</pre> <p>Each {@code startTrace} matches one {@code finishTrace}, and they must have the same name and taskId.",
+      "注释信息": [
+        "@namespace hiTraceMeter",
+        "@syscap SystemCapability.HiviewDFX.HiTrace",
+        "@since 8"
+      ],
+      "层级": 1,
+      "上级": "@kit.PerformanceAnalysisKit",
+      "since_version": "8",
+      "system_capability": "SystemCapability.HiviewDFX.HiTrace",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "startTrace",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Records a trace marking it as the start of a task, can with the expected completion time between startTrace and finishTrace. This method is invoked at the start of a transaction to indicate that a task has started, whose name is specified by {@code name}, and the taskId is used to distinguish the tasks. It must be followed by {@link #finishTrace}, the name and taskId need to be the same.",
+      "注释信息": [
+        "@param { string } name Indicates the task name.",
+        "@param { number } taskId The unique id used to distinguish the tasks and match with the id in follow finishTrace.",
+        "@syscap SystemCapability.HiviewDFX.HiTrace",
+        "@since 8"
+      ],
+      "层级": 1,
+      "上级": "hiTraceMeter",
+      "since_version": "8",
+      "system_capability": "SystemCapability.HiviewDFX.HiTrace",
+      "parameters": [
+        {
+          "名称": "name",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates the task name."
+        },
+        {
+          "名称": "taskId",
+          "类型": "number",
+          "必填": true,
+          "说明": "The unique id used to distinguish the tasks and match with the id in follow finishTrace."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "finishTrace",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Records a trace and marks it as the end of a task. This method is invoked at the end of a transaction to indicate that a task has ended, whose name is specified by {@code name}. This method must be invoked after the the startTrace. {@code taskId} of startTrace.",
+      "注释信息": [
+        "@param { string } name Indicates the task name. It must be the same with the {@code name} of startTrace.",
+        "@param { number } taskId The unique id used to distinguish the tasks and must be the same with the .",
+        "@syscap SystemCapability.HiviewDFX.HiTrace",
+        "@since 8"
+      ],
+      "层级": 1,
+      "上级": "hiTraceMeter",
+      "since_version": "8",
+      "system_capability": "SystemCapability.HiviewDFX.HiTrace",
+      "parameters": [
+        {
+          "名称": "name",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates the task name. It must be the same with the {@code name} of startTrace."
+        },
+        {
+          "名称": "taskId",
+          "类型": "number",
+          "必填": true,
+          "说明": "The unique id used to distinguish the tasks and must be the same with the ."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "traceByValue",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Records a trace for generating a count, such as clock pulse and the number of layers.",
+      "注释信息": [
+        "@param { string } name Indicates the name used to identify the count.",
+        "@param { number } count Indicates the number of the count.",
+        "@syscap SystemCapability.HiviewDFX.HiTrace",
+        "@since 8"
+      ],
+      "层级": 1,
+      "上级": "hiTraceMeter",
+      "since_version": "8",
+      "system_capability": "SystemCapability.HiviewDFX.HiTrace",
+      "parameters": [
+        {
+          "名称": "name",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates the name used to identify the count."
+        },
+        {
+          "名称": "count",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the number of the count."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    }
+  ]
+}

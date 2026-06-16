@@ -1,0 +1,738 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.DriverDevelopmentKit",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "namespace",
+      "名称": "deviceManager",
+      "所属模块": "@kit.DriverDevelopmentKit",
+      "功能描述": "This module provides the capability of manage external device.",
+      "注释信息": [
+        "@namespace deviceManager",
+        "@syscap SystemCapability.Driver.ExternalDevice",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "@kit.DriverDevelopmentKit",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Driver.ExternalDevice",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "queryDevices",
+      "返回值": "Array<Readonly<Device>>",
+      "所属模块": "未知模块",
+      "功能描述": "Query the external device list.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_EXTENSIONAL_DEVICE_DRIVER",
+        "@param { number } busType - The bus type of device to be queried.",
+        "@returns { Array<Readonly<Device>> } External device list.",
+        "@throws { BusinessError } 201 - The permission check failed.",
+        "@throws { BusinessError } 22900001 - ExternalDeviceManager service exception or busType parameter error.",
+        "@syscap SystemCapability.Driver.ExternalDevice",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "deviceManager",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Driver.ExternalDevice",
+      "parameters": [
+        {
+          "名称": "busType",
+          "类型": "number",
+          "必填": true,
+          "说明": "The bus type of device to be queried."
+        }
+      ],
+      "return_description": "External device list.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "The permission check failed."
+        },
+        {
+          "code": "22900001",
+          "description": "ExternalDeviceManager service exception or busType parameter error."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "bindDevice",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Bind the device based on the device information returned by queryDevices(). success. including device ID and remote object. 3.Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_EXTENSIONAL_DEVICE_DRIVER",
+        "@param { number } deviceId - Device id on the device list returned by queryDevices().",
+        "@param { AsyncCallback<number> } onDisconnect - Callback is invoked when device is disconnected after bind",
+        "@param { AsyncCallback<{ deviceId: number, remote: rpc.IRemoteObject}> } callback - Indicates the bind result",
+        "@throws { BusinessError } 201 - The permission check failed.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.",
+        "@throws { BusinessError } 22900001 - ExternalDeviceManager service exception.",
+        "@syscap SystemCapability.Driver.ExternalDevice",
+        "@since 10",
+        "@deprecated since 19",
+        "@useinstead ohos.driver.deviceManager/deviceManager#bindDriverWithDeviceId"
+      ],
+      "层级": 2,
+      "上级": "deviceManager",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Driver.ExternalDevice",
+      "parameters": [
+        {
+          "名称": "deviceId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Device id on the device list returned by queryDevices()."
+        },
+        {
+          "名称": "onDisconnect",
+          "类型": "AsyncCallback<number>",
+          "必填": true,
+          "说明": "Callback is invoked when device is disconnected after bind"
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "AsyncCallback<{ deviceId: number, remote: rpc.IRemoteObject}> } callback - Indicates the bind result"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "The permission check failed."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types."
+        },
+        {
+          "code": "22900001",
+          "description": "ExternalDeviceManager service exception."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "bindDeviceDriver",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Bind the device based on the device information returned by queryDevices(). success. remote object. 3.Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_EXTENSIONAL_DEVICE_DRIVER",
+        "@param { number } deviceId - Device id on the device list returned by queryDevices().",
+        "@param { AsyncCallback<number> } onDisconnect - Callback is invoked when device is disconnected after bind",
+        "@param { AsyncCallback<RemoteDeviceDriver> } callback - Indicates the bind result including device ID and",
+        "@throws { BusinessError } 201 - The permission check failed.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.",
+        "@throws { BusinessError } 22900001 - ExternalDeviceManager service exception.",
+        "@syscap SystemCapability.Driver.ExternalDevice",
+        "@since 11",
+        "@deprecated since 19",
+        "@useinstead ohos.driver.deviceManager/deviceManager#bindDriverWithDeviceId"
+      ],
+      "层级": 1,
+      "上级": "deviceManager",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Driver.ExternalDevice",
+      "parameters": [
+        {
+          "名称": "deviceId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Device id on the device list returned by queryDevices()."
+        },
+        {
+          "名称": "onDisconnect",
+          "类型": "AsyncCallback<number>",
+          "必填": true,
+          "说明": "Callback is invoked when device is disconnected after bind"
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<RemoteDeviceDriver>",
+          "必填": true,
+          "说明": "Indicates the bind result including device ID and"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "The permission check failed."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types."
+        },
+        {
+          "code": "22900001",
+          "description": "ExternalDeviceManager service exception."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "bindDevice",
+      "返回值": "Promise<",
+      "所属模块": "未知模块",
+      "功能描述": "Bind the device based on the device information returned by queryDevices(). success. ID and remote object. 3.Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_EXTENSIONAL_DEVICE_DRIVER",
+        "@param { number } deviceId - Device id on the device list returned by queryDevices().",
+        "@param { AsyncCallback<number> } onDisconnect - Callback is invoked when device is disconnected after bind",
+        "@returns { Promise<{ deviceId: number, remote: rpc.IRemoteObject}> } Indicates the bind result including device",
+        "@throws { BusinessError } 201 - The permission check failed.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.",
+        "@throws { BusinessError } 22900001 - ExternalDeviceManager service exception.",
+        "@syscap SystemCapability.Driver.ExternalDevice",
+        "@since 10",
+        "@deprecated since 19",
+        "@useinstead ohos.driver.deviceManager/deviceManager#bindDriverWithDeviceId"
+      ],
+      "层级": 2,
+      "上级": "deviceManager",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Driver.ExternalDevice",
+      "parameters": [
+        {
+          "名称": "deviceId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Device id on the device list returned by queryDevices()."
+        },
+        {
+          "名称": "onDisconnect",
+          "类型": "AsyncCallback<number>",
+          "必填": true,
+          "说明": "Callback is invoked when device is disconnected after bind"
+        }
+      ],
+      "return_description": "> } Indicates the bind result including device",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "The permission check failed."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types."
+        },
+        {
+          "code": "22900001",
+          "description": "ExternalDeviceManager service exception."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "bindDeviceDriver",
+      "返回值": "Promise<RemoteDeviceDriver>",
+      "所属模块": "未知模块",
+      "功能描述": "Bind the device based on the device information returned by queryDevices(). success. 3.Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_EXTENSIONAL_DEVICE_DRIVER",
+        "@param { number } deviceId - Device id on the device list returned by queryDevices().",
+        "@param { AsyncCallback<number> } onDisconnect - Callback is invoked when device is disconnected after bind",
+        "@returns { Promise<RemoteDeviceDriver> } Indicates the bind result including device ID and remote object.",
+        "@throws { BusinessError } 201 - The permission check failed.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.",
+        "@throws { BusinessError } 22900001 - ExternalDeviceManager service exception.",
+        "@syscap SystemCapability.Driver.ExternalDevice",
+        "@since 11",
+        "@deprecated since 19",
+        "@useinstead ohos.driver.deviceManager/deviceManager#bindDriverWithDeviceId"
+      ],
+      "层级": 1,
+      "上级": "deviceManager",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Driver.ExternalDevice",
+      "parameters": [
+        {
+          "名称": "deviceId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Device id on the device list returned by queryDevices()."
+        },
+        {
+          "名称": "onDisconnect",
+          "类型": "AsyncCallback<number>",
+          "必填": true,
+          "说明": "Callback is invoked when device is disconnected after bind"
+        }
+      ],
+      "return_description": "Indicates the bind result including device ID and remote object.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "The permission check failed."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types."
+        },
+        {
+          "code": "22900001",
+          "description": "ExternalDeviceManager service exception."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "unbindDevice",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unbind the device based on the device information returned by queryDevices().",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_EXTENSIONAL_DEVICE_DRIVER",
+        "@param { number } deviceId - Device id on the device list returned by queryDevices().",
+        "@param { AsyncCallback<number> } callback - Indicates the unbind result invoked when unbind is finished.",
+        "@throws { BusinessError } 201 - The permission check failed.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.",
+        "@throws { BusinessError } 22900001 - ExternalDeviceManager service exception.",
+        "@syscap SystemCapability.Driver.ExternalDevice",
+        "@since 10",
+        "@deprecated since 19",
+        "@useinstead ohos.driver.deviceManager/deviceManager#unbindDriverWithDeviceId"
+      ],
+      "层级": 1,
+      "上级": "deviceManager",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Driver.ExternalDevice",
+      "parameters": [
+        {
+          "名称": "deviceId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Device id on the device list returned by queryDevices()."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<number>",
+          "必填": true,
+          "说明": "Indicates the unbind result invoked when unbind is finished."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "The permission check failed."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types."
+        },
+        {
+          "code": "22900001",
+          "description": "ExternalDeviceManager service exception."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "unbindDevice",
+      "返回值": "Promise<number>",
+      "所属模块": "未知模块",
+      "功能描述": "Unbind the device based on the device information returned by queryDevices(). 3.Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_EXTENSIONAL_DEVICE_DRIVER",
+        "@param { number } deviceId - Device id on the device list returned by queryDevices().",
+        "@returns { Promise<number> } - Indicates the unbind result invoked when unbind is finished.",
+        "@throws { BusinessError } 201 - The permission check failed.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.",
+        "@throws { BusinessError } 22900001 - ExternalDeviceManager service exception.",
+        "@syscap SystemCapability.Driver.ExternalDevice",
+        "@since 10",
+        "@deprecated since 19",
+        "@useinstead ohos.driver.deviceManager/deviceManager#unbindDriverWithDeviceId"
+      ],
+      "层级": 1,
+      "上级": "deviceManager",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Driver.ExternalDevice",
+      "parameters": [
+        {
+          "名称": "deviceId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Device id on the device list returned by queryDevices()."
+        }
+      ],
+      "return_description": "- Indicates the unbind result invoked when unbind is finished.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "The permission check failed."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types."
+        },
+        {
+          "code": "22900001",
+          "description": "ExternalDeviceManager service exception."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "bindDriverWithDeviceId",
+      "返回值": "Promise<RemoteDeviceDriver>",
+      "所属模块": "未知模块",
+      "功能描述": "Bind the device based on the device information returned by queryDevices(). success.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_DDK_DRIVERS",
+        "@param { number } deviceId - Device id on the device list returned by queryDevices().",
+        "@param { AsyncCallback<number> } onDisconnect - Callback is invoked when device is disconnected after bind",
+        "@returns { Promise<RemoteDeviceDriver> } Indicates the bind result including device ID and remote object.",
+        "@throws { BusinessError } 201 - The permission check failed.",
+        "@throws { BusinessError } 26300001 - ExternalDeviceManager service exception.",
+        "@throws { BusinessError } 26300002 - The driver service does not allow any client to bind.",
+        "@syscap SystemCapability.Driver.ExternalDevice",
+        "@since 19"
+      ],
+      "层级": 1,
+      "上级": "deviceManager",
+      "since_version": "19",
+      "system_capability": "SystemCapability.Driver.ExternalDevice",
+      "parameters": [
+        {
+          "名称": "deviceId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Device id on the device list returned by queryDevices()."
+        },
+        {
+          "名称": "onDisconnect",
+          "类型": "AsyncCallback<number>",
+          "必填": true,
+          "说明": "Callback is invoked when device is disconnected after bind"
+        }
+      ],
+      "return_description": "Indicates the bind result including device ID and remote object.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "The permission check failed."
+        },
+        {
+          "code": "26300001",
+          "description": "ExternalDeviceManager service exception."
+        },
+        {
+          "code": "26300002",
+          "description": "The driver service does not allow any client to bind."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "unbindDriverWithDeviceId",
+      "返回值": "Promise<number>",
+      "所属模块": "未知模块",
+      "功能描述": "Unbind the device based on the device information returned by queryDevices().",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_DDK_DRIVERS",
+        "@param { number } deviceId - Device id on the device list returned by queryDevices().",
+        "@returns { Promise<number> } - Indicates the unbind result invoked when unbind is finished.",
+        "@throws { BusinessError } 201 - The permission check failed.",
+        "@throws { BusinessError } 26300001 - ExternalDeviceManager service exception.",
+        "@throws { BusinessError } 26300003 - There is no binding relationship.",
+        "@syscap SystemCapability.Driver.ExternalDevice",
+        "@since 19"
+      ],
+      "层级": 1,
+      "上级": "deviceManager",
+      "since_version": "19",
+      "system_capability": "SystemCapability.Driver.ExternalDevice",
+      "parameters": [
+        {
+          "名称": "deviceId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Device id on the device list returned by queryDevices()."
+        }
+      ],
+      "return_description": "- Indicates the unbind result invoked when unbind is finished.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "The permission check failed."
+        },
+        {
+          "code": "26300001",
+          "description": "ExternalDeviceManager service exception."
+        },
+        {
+          "code": "26300003",
+          "description": "There is no binding relationship."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "BusType",
+      "所属模块": "未知模块",
+      "功能描述": "Enumerates the bus types.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.Driver.ExternalDevice",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "deviceManager",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Driver.ExternalDevice",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "USB",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "USB device type",
+      "注释信息": [
+        "@syscap SystemCapability.Driver.ExternalDevice",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "BusType",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Driver.ExternalDevice",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "Device",
+      "所属模块": "未知模块",
+      "功能描述": "Represents a device.",
+      "注释信息": [
+        "@typedef Device",
+        "@syscap SystemCapability.Driver.ExternalDevice",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "deviceManager",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Driver.ExternalDevice",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "busType",
+      "属性类型": "BusType",
+      "所属模块": "未知模块",
+      "功能描述": "Bus type of the device.",
+      "注释信息": [
+        "@type { BusType }",
+        "@syscap SystemCapability.Driver.ExternalDevice",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "Device",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Driver.ExternalDevice",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "deviceId",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Device ID.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.Driver.ExternalDevice",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "Device",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Driver.ExternalDevice",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "description",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Description of the device.",
+      "注释信息": [
+        "@type { string }",
+        "@syscap SystemCapability.Driver.ExternalDevice",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "Device",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Driver.ExternalDevice",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "USBDevice",
+      "父类": "Device",
+      "所属模块": "未知模块",
+      "功能描述": "Represents a USB device.",
+      "注释信息": [
+        "@typedef USBDevice",
+        "@extends Device",
+        "@syscap SystemCapability.Driver.ExternalDevice",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "deviceManager",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Driver.ExternalDevice",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "vendorId",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Vendor ID.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.Driver.ExternalDevice",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "USBDevice",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Driver.ExternalDevice",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "productId",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Product ID.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.Driver.ExternalDevice",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "USBDevice",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Driver.ExternalDevice",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "RemoteDeviceDriver",
+      "所属模块": "未知模块",
+      "功能描述": "Driver of the remote device bound with <b>deviceId</b>.",
+      "注释信息": [
+        "@typedef RemoteDeviceDriver",
+        "@syscap SystemCapability.Driver.ExternalDevice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "deviceManager",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Driver.ExternalDevice",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "deviceId",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Device ID.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.Driver.ExternalDevice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "RemoteDeviceDriver",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Driver.ExternalDevice",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "remote",
+      "属性类型": "rpc.IRemoteObject",
+      "所属模块": "未知模块",
+      "功能描述": "Remote driver object.",
+      "注释信息": [
+        "@type { rpc.IRemoteObject }",
+        "@syscap SystemCapability.Driver.ExternalDevice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "RemoteDeviceDriver",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Driver.ExternalDevice",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    }
+  ]
+}

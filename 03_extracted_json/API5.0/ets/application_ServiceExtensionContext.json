@@ -1,0 +1,3854 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.AbilityKit",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "class",
+      "名称": "ServiceExtensionContext",
+      "父类": "ExtensionContext",
+      "所属模块": "@kit.AbilityKit",
+      "功能描述": "The context of service extension. It allows access to serviceExtension-specific resources.",
+      "注释信息": [
+        "@extends ExtensionContext",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@systemapi",
+        "@stagemodelonly",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "@kit.AbilityKit",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "startAbility",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Service extension uses this method to start a specific ability. If the caller application is in foreground, you can use this method to start ability; If the caller application is in the background, you need to apply for permission:ohos.permission.START_ABILITIES_FROM_BACKGROUND. If the target ability is visible, you can start the target ability; If the target ability is invisible, you need to apply for permission:ohos.permission.START_INVISIBLE_ABILITY to start target invisible ability. If the target ability is in cross-device, you need to apply for permission:ohos.permission.DISTRIBUTED_DATASYNC. 2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { Want } want - Indicates the ability to start.",
+        "@param { AsyncCallback<void> } callback - The callback of startAbility.",
+        "@throws { BusinessError } 201 - The application does not have permission to call the interface.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 16000001 - The specified ability does not exist.",
+        "@throws { BusinessError } 16000002 - Incorrect ability type.",
+        "@throws { BusinessError } 16000004 - Failed to start the invisible ability.",
+        "@throws { BusinessError } 16000005 - The specified process does not have the permission.",
+        "@throws { BusinessError } 16000006 - Cross-user operations are not allowed.",
+        "@throws { BusinessError } 16000008 - The crowdtesting application expires.",
+        "@throws { BusinessError } 16000009 - An ability cannot be started or stopped in Wukong mode.",
+        "@throws { BusinessError } 16000010 - The call with the continuation and prepare continuation flag is forbidden.",
+        "@throws { BusinessError } 16000011 - The context does not exist.",
+        "@throws { BusinessError } 16000012 - The application is controlled.",
+        "@throws { BusinessError } 16000013 - The application is controlled by EDM.",
+        "@throws { BusinessError } 16000019 - No matching ability is found.",
+        "@throws { BusinessError } 16000050 - Internal error.",
+        "@throws { BusinessError } 16000053 - The ability is not on the top of the UI.",
+        "@throws { BusinessError } 16000055 - Installation-free timed out.",
+        "@throws { BusinessError } 16000071 - App clone is not supported.",
+        "@throws { BusinessError } 16000072 - App clone or multi-instance is not supported.",
+        "@throws { BusinessError } 16000073 - The app clone index is invalid.",
+        "@throws { BusinessError } 16000076 - The app instance key is invalid.",
+        "@throws { BusinessError } 16000077 - The number of app instances reaches the limit.",
+        "@throws { BusinessError } 16000078 - The multi-instance is not supported.",
+        "@throws { BusinessError } 16000079 - The APP_INSTANCE_KEY cannot be specified.",
+        "@throws { BusinessError } 16000080 - Creating a new instance is not supported.",
+        "@throws { BusinessError } 16200001 - The caller has been released.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@systemapi",
+        "@stagemodelonly",
+        "@since 14"
+      ],
+      "层级": 1,
+      "上级": "ServiceExtensionContext",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "want",
+          "类型": "Want",
+          "必填": true,
+          "说明": "Indicates the ability to start."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "The callback of startAbility."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "The application does not have permission to call the interface."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "16000001",
+          "description": "The specified ability does not exist."
+        },
+        {
+          "code": "16000002",
+          "description": "Incorrect ability type."
+        },
+        {
+          "code": "16000004",
+          "description": "Failed to start the invisible ability."
+        },
+        {
+          "code": "16000005",
+          "description": "The specified process does not have the permission."
+        },
+        {
+          "code": "16000006",
+          "description": "Cross-user operations are not allowed."
+        },
+        {
+          "code": "16000008",
+          "description": "The crowdtesting application expires."
+        },
+        {
+          "code": "16000009",
+          "description": "An ability cannot be started or stopped in Wukong mode."
+        },
+        {
+          "code": "16000010",
+          "description": "The call with the continuation and prepare continuation flag is forbidden."
+        },
+        {
+          "code": "16000011",
+          "description": "The context does not exist."
+        },
+        {
+          "code": "16000012",
+          "description": "The application is controlled."
+        },
+        {
+          "code": "16000013",
+          "description": "The application is controlled by EDM."
+        },
+        {
+          "code": "16000019",
+          "description": "No matching ability is found."
+        },
+        {
+          "code": "16000050",
+          "description": "Internal error."
+        },
+        {
+          "code": "16000053",
+          "description": "The ability is not on the top of the UI."
+        },
+        {
+          "code": "16000055",
+          "description": "Installation-free timed out."
+        },
+        {
+          "code": "16000071",
+          "description": "App clone is not supported."
+        },
+        {
+          "code": "16000072",
+          "description": "App clone or multi-instance is not supported."
+        },
+        {
+          "code": "16000073",
+          "description": "The app clone index is invalid."
+        },
+        {
+          "code": "16000076",
+          "description": "The app instance key is invalid."
+        },
+        {
+          "code": "16000077",
+          "description": "The number of app instances reaches the limit."
+        },
+        {
+          "code": "16000078",
+          "description": "The multi-instance is not supported."
+        },
+        {
+          "code": "16000079",
+          "description": "The APP_INSTANCE_KEY cannot be specified."
+        },
+        {
+          "code": "16000080",
+          "description": "Creating a new instance is not supported."
+        },
+        {
+          "code": "16200001",
+          "description": "The caller has been released."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "startAbility",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Service extension uses this method to start a specific ability. If the caller application is in foreground, you can use this method to start ability; If the caller application is in the background, you need to apply for permission:ohos.permission.START_ABILITIES_FROM_BACKGROUND. If the target ability is visible, you can start the target ability; If the target ability is invisible, you need to apply for permission:ohos.permission.START_INVISIBLE_ABILITY to start target invisible ability. If the target ability is in cross-device, you need to apply for permission:ohos.permission.DISTRIBUTED_DATASYNC. 2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { Want } want - Indicates the ability to start.",
+        "@param { StartOptions } options - Indicates the start options.",
+        "@param { AsyncCallback<void> } callback - The callback of startAbility.",
+        "@throws { BusinessError } 201 - The application does not have permission to call the interface.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 16000001 - The specified ability does not exist.",
+        "@throws { BusinessError } 16000004 - Failed to start the invisible ability.",
+        "@throws { BusinessError } 16000005 - The specified process does not have the permission.",
+        "@throws { BusinessError } 16000006 - Cross-user operations are not allowed.",
+        "@throws { BusinessError } 16000008 - The crowdtesting application expires.",
+        "@throws { BusinessError } 16000009 - An ability cannot be started or stopped in Wukong mode.",
+        "@throws { BusinessError } 16000011 - The context does not exist.",
+        "@throws { BusinessError } 16000012 - The application is controlled.",
+        "@throws { BusinessError } 16000013 - The application is controlled by EDM.",
+        "@throws { BusinessError } 16000019 - No matching ability is found.",
+        "@throws { BusinessError } 16000050 - Internal error.",
+        "@throws { BusinessError } 16000053 - The ability is not on the top of the UI.",
+        "@throws { BusinessError } 16000055 - Installation-free timed out.",
+        "@throws { BusinessError } 16000071 - App clone is not supported.",
+        "@throws { BusinessError } 16000072 - App clone or multi-instance is not supported.",
+        "@throws { BusinessError } 16000073 - The app clone index is invalid.",
+        "@throws { BusinessError } 16000076 - The app instance key is invalid.",
+        "@throws { BusinessError } 16000077 - The number of app instances reaches the limit.",
+        "@throws { BusinessError } 16000078 - The multi-instance is not supported.",
+        "@throws { BusinessError } 16000079 - The APP_INSTANCE_KEY cannot be specified.",
+        "@throws { BusinessError } 16000080 - Creating a new instance is not supported.",
+        "@throws { BusinessError } 16200001 - The caller has been released.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@systemapi",
+        "@stagemodelonly",
+        "@since 14"
+      ],
+      "层级": 1,
+      "上级": "ServiceExtensionContext",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "want",
+          "类型": "Want",
+          "必填": true,
+          "说明": "Indicates the ability to start."
+        },
+        {
+          "名称": "options",
+          "类型": "StartOptions",
+          "必填": true,
+          "说明": "Indicates the start options."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "The callback of startAbility."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "The application does not have permission to call the interface."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "16000001",
+          "description": "The specified ability does not exist."
+        },
+        {
+          "code": "16000004",
+          "description": "Failed to start the invisible ability."
+        },
+        {
+          "code": "16000005",
+          "description": "The specified process does not have the permission."
+        },
+        {
+          "code": "16000006",
+          "description": "Cross-user operations are not allowed."
+        },
+        {
+          "code": "16000008",
+          "description": "The crowdtesting application expires."
+        },
+        {
+          "code": "16000009",
+          "description": "An ability cannot be started or stopped in Wukong mode."
+        },
+        {
+          "code": "16000011",
+          "description": "The context does not exist."
+        },
+        {
+          "code": "16000012",
+          "description": "The application is controlled."
+        },
+        {
+          "code": "16000013",
+          "description": "The application is controlled by EDM."
+        },
+        {
+          "code": "16000019",
+          "description": "No matching ability is found."
+        },
+        {
+          "code": "16000050",
+          "description": "Internal error."
+        },
+        {
+          "code": "16000053",
+          "description": "The ability is not on the top of the UI."
+        },
+        {
+          "code": "16000055",
+          "description": "Installation-free timed out."
+        },
+        {
+          "code": "16000071",
+          "description": "App clone is not supported."
+        },
+        {
+          "code": "16000072",
+          "description": "App clone or multi-instance is not supported."
+        },
+        {
+          "code": "16000073",
+          "description": "The app clone index is invalid."
+        },
+        {
+          "code": "16000076",
+          "description": "The app instance key is invalid."
+        },
+        {
+          "code": "16000077",
+          "description": "The number of app instances reaches the limit."
+        },
+        {
+          "code": "16000078",
+          "description": "The multi-instance is not supported."
+        },
+        {
+          "code": "16000079",
+          "description": "The APP_INSTANCE_KEY cannot be specified."
+        },
+        {
+          "code": "16000080",
+          "description": "Creating a new instance is not supported."
+        },
+        {
+          "code": "16200001",
+          "description": "The caller has been released."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "startAbility",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Service extension uses this method to start a specific ability. If the caller application is in foreground, you can use this method to start ability; If the caller application is in the background, you need to apply for permission:ohos.permission.START_ABILITIES_FROM_BACKGROUND. If the target ability is visible, you can start the target ability; If the target ability is invisible, you need to apply for permission:ohos.permission.START_INVISIBLE_ABILITY to start target invisible ability. If the target ability is in cross-device, you need to apply for permission:ohos.permission.DISTRIBUTED_DATASYNC. 2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { Want } want - Indicates the ability to start.",
+        "@param { StartOptions } [options] - Indicates the start options.",
+        "@returns { Promise<void> } The promise returned by the function.",
+        "@throws { BusinessError } 201 - The application does not have permission to call the interface.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 16000001 - The specified ability does not exist.",
+        "@throws { BusinessError } 16000002 - Incorrect ability type.",
+        "@throws { BusinessError } 16000004 - Failed to start the invisible ability.",
+        "@throws { BusinessError } 16000005 - The specified process does not have the permission.",
+        "@throws { BusinessError } 16000006 - Cross-user operations are not allowed.",
+        "@throws { BusinessError } 16000008 - The crowdtesting application expires.",
+        "@throws { BusinessError } 16000009 - An ability cannot be started or stopped in Wukong mode.",
+        "@throws { BusinessError } 16000010 - The call with the continuation and prepare continuation flag is forbidden.",
+        "@throws { BusinessError } 16000011 - The context does not exist.",
+        "@throws { BusinessError } 16000012 - The application is controlled.",
+        "@throws { BusinessError } 16000013 - The application is controlled by EDM.",
+        "@throws { BusinessError } 16000019 - No matching ability is found.",
+        "@throws { BusinessError } 16000050 - Internal error.",
+        "@throws { BusinessError } 16000053 - The ability is not on the top of the UI.",
+        "@throws { BusinessError } 16000055 - Installation-free timed out.",
+        "@throws { BusinessError } 16000071 - App clone is not supported.",
+        "@throws { BusinessError } 16000072 - App clone or multi-instance is not supported.",
+        "@throws { BusinessError } 16000073 - The app clone index is invalid.",
+        "@throws { BusinessError } 16000076 - The app instance key is invalid.",
+        "@throws { BusinessError } 16000077 - The number of app instances reaches the limit.",
+        "@throws { BusinessError } 16000078 - The multi-instance is not supported.",
+        "@throws { BusinessError } 16000079 - The APP_INSTANCE_KEY cannot be specified.",
+        "@throws { BusinessError } 16000080 - Creating a new instance is not supported.",
+        "@throws { BusinessError } 16200001 - The caller has been released.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@systemapi",
+        "@stagemodelonly",
+        "@since 14"
+      ],
+      "层级": 1,
+      "上级": "ServiceExtensionContext",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "want",
+          "类型": "Want",
+          "必填": true,
+          "说明": "Indicates the ability to start."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "StartOptions } [options] - Indicates the start options."
+        }
+      ],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "The application does not have permission to call the interface."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "16000001",
+          "description": "The specified ability does not exist."
+        },
+        {
+          "code": "16000002",
+          "description": "Incorrect ability type."
+        },
+        {
+          "code": "16000004",
+          "description": "Failed to start the invisible ability."
+        },
+        {
+          "code": "16000005",
+          "description": "The specified process does not have the permission."
+        },
+        {
+          "code": "16000006",
+          "description": "Cross-user operations are not allowed."
+        },
+        {
+          "code": "16000008",
+          "description": "The crowdtesting application expires."
+        },
+        {
+          "code": "16000009",
+          "description": "An ability cannot be started or stopped in Wukong mode."
+        },
+        {
+          "code": "16000010",
+          "description": "The call with the continuation and prepare continuation flag is forbidden."
+        },
+        {
+          "code": "16000011",
+          "description": "The context does not exist."
+        },
+        {
+          "code": "16000012",
+          "description": "The application is controlled."
+        },
+        {
+          "code": "16000013",
+          "description": "The application is controlled by EDM."
+        },
+        {
+          "code": "16000019",
+          "description": "No matching ability is found."
+        },
+        {
+          "code": "16000050",
+          "description": "Internal error."
+        },
+        {
+          "code": "16000053",
+          "description": "The ability is not on the top of the UI."
+        },
+        {
+          "code": "16000055",
+          "description": "Installation-free timed out."
+        },
+        {
+          "code": "16000071",
+          "description": "App clone is not supported."
+        },
+        {
+          "code": "16000072",
+          "description": "App clone or multi-instance is not supported."
+        },
+        {
+          "code": "16000073",
+          "description": "The app clone index is invalid."
+        },
+        {
+          "code": "16000076",
+          "description": "The app instance key is invalid."
+        },
+        {
+          "code": "16000077",
+          "description": "The number of app instances reaches the limit."
+        },
+        {
+          "code": "16000078",
+          "description": "The multi-instance is not supported."
+        },
+        {
+          "code": "16000079",
+          "description": "The APP_INSTANCE_KEY cannot be specified."
+        },
+        {
+          "code": "16000080",
+          "description": "Creating a new instance is not supported."
+        },
+        {
+          "code": "16200001",
+          "description": "The caller has been released."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "openLink",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Service extension uses this method to start a specific ability by implicit want. If the caller application is in foreground, you can use this method to start ability; If the caller application is in the background, you need to apply for permission:ohos.permission.START_ABILITIES_FROM_BACKGROUND. If the target ability is visible, you can start the target ability; If the target ability is invisible, you need to apply for permission:ohos.permission.START_INVISIBLE_ABILITY to start target invisible ability. If the target ability is in cross-device, you need to apply for permission:ohos.permission.DISTRIBUTED_DATASYNC. 2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { string } link - Indicates the ability to start.",
+        "@param { OpenLinkOptions } [options] - Indicates the open link options.",
+        "@returns { Promise<void> } The promise returned by the function.",
+        "@throws { BusinessError } 201 - The application does not have permission to call the interface.",
+        "@throws { BusinessError } 202 - The application is not system-app, can not use system-api.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 16000001 - The specified ability does not exist.",
+        "@throws { BusinessError } 16000002 - Incorrect ability type.",
+        "@throws { BusinessError } 16000004 - Failed to start the invisible ability.",
+        "@throws { BusinessError } 16000005 - The specified process does not have the permission.",
+        "@throws { BusinessError } 16000006 - Cross-user operations are not allowed.",
+        "@throws { BusinessError } 16000008 - The crowdtesting application expires.",
+        "@throws { BusinessError } 16000009 - An ability cannot be started or stopped in Wukong mode.",
+        "@throws { BusinessError } 16000010 - The call with the continuation flag is forbidden.",
+        "@throws { BusinessError } 16000011 - The context does not exist.",
+        "@throws { BusinessError } 16000012 - The application is controlled.",
+        "@throws { BusinessError } 16000013 - The application is controlled by EDM.",
+        "@throws { BusinessError } 16000019 - No matching ability is found.",
+        "@throws { BusinessError } 16200001 - The caller has been released.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@systemapi",
+        "@stagemodelonly",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "ServiceExtensionContext",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "link",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates the ability to start."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "OpenLinkOptions } [options] - Indicates the open link options."
+        }
+      ],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "The application does not have permission to call the interface."
+        },
+        {
+          "code": "202",
+          "description": "The application is not system-app, can not use system-api."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "16000001",
+          "description": "The specified ability does not exist."
+        },
+        {
+          "code": "16000002",
+          "description": "Incorrect ability type."
+        },
+        {
+          "code": "16000004",
+          "description": "Failed to start the invisible ability."
+        },
+        {
+          "code": "16000005",
+          "description": "The specified process does not have the permission."
+        },
+        {
+          "code": "16000006",
+          "description": "Cross-user operations are not allowed."
+        },
+        {
+          "code": "16000008",
+          "description": "The crowdtesting application expires."
+        },
+        {
+          "code": "16000009",
+          "description": "An ability cannot be started or stopped in Wukong mode."
+        },
+        {
+          "code": "16000010",
+          "description": "The call with the continuation flag is forbidden."
+        },
+        {
+          "code": "16000011",
+          "description": "The context does not exist."
+        },
+        {
+          "code": "16000012",
+          "description": "The application is controlled."
+        },
+        {
+          "code": "16000013",
+          "description": "The application is controlled by EDM."
+        },
+        {
+          "code": "16000019",
+          "description": "No matching ability is found."
+        },
+        {
+          "code": "16200001",
+          "description": "The caller has been released."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "startAbilityAsCaller",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Service extension start an ability using the original caller information. If the caller application is in foreground, you can use this method to start ability; If the caller application is in the background, you need to apply for permission:ohos.permission.START_ABILITIES_FROM_BACKGROUND. If the target ability is visible, you can start the target ability; If the target ability is invisible, you need to apply for permission:ohos.permission.START_INVISIBLE_ABILITY to start target invisible ability. If the target ability is in cross-device, you need to apply for permission:ohos.permission.DISTRIBUTED_DATASYNC. 2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { Want } want - Indicates the ability to start.",
+        "@param { AsyncCallback<void> } callback - The callback of startAbility.",
+        "@throws { BusinessError } 201 - The application does not have permission to call the interface.",
+        "@throws { BusinessError } 202 - The application is not system-app, can not use system-api.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 16000001 - The specified ability does not exist.",
+        "@throws { BusinessError } 16000002 - Incorrect ability type.",
+        "@throws { BusinessError } 16000004 - Failed to start the invisible ability.",
+        "@throws { BusinessError } 16000005 - The specified process does not have the permission.",
+        "@throws { BusinessError } 16000006 - Cross-user operations are not allowed.",
+        "@throws { BusinessError } 16000008 - The crowdtesting application expires.",
+        "@throws { BusinessError } 16000009 - An ability cannot be started or stopped in Wukong mode.",
+        "@throws { BusinessError } 16000010 - The call with the continuation and prepare continuation flag is forbidden.",
+        "@throws { BusinessError } 16000011 - The context does not exist.",
+        "@throws { BusinessError } 16000012 - The application is controlled.",
+        "@throws { BusinessError } 16000013 - The application is controlled by EDM.",
+        "@throws { BusinessError } 16000050 - Internal error.",
+        "@throws { BusinessError } 16000053 - The ability is not on the top of the UI.",
+        "@throws { BusinessError } 16000055 - Installation-free timed out.",
+        "@throws { BusinessError } 16000071 - App clone is not supported.",
+        "@throws { BusinessError } 16000072 - App clone or multi-instance is not supported.",
+        "@throws { BusinessError } 16000073 - The app clone index is invalid.",
+        "@throws { BusinessError } 16000076 - The app instance key is invalid.",
+        "@throws { BusinessError } 16000077 - The number of app instances reaches the limit.",
+        "@throws { BusinessError } 16000078 - The multi-instance is not supported.",
+        "@throws { BusinessError } 16000079 - The APP_INSTANCE_KEY cannot be specified.",
+        "@throws { BusinessError } 16000080 - Creating a new instance is not supported.",
+        "@throws { BusinessError } 16200001 - The caller has been released.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@systemapi",
+        "@stagemodelonly",
+        "@since 14"
+      ],
+      "层级": 1,
+      "上级": "ServiceExtensionContext",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "want",
+          "类型": "Want",
+          "必填": true,
+          "说明": "Indicates the ability to start."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "The callback of startAbility."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "The application does not have permission to call the interface."
+        },
+        {
+          "code": "202",
+          "description": "The application is not system-app, can not use system-api."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "16000001",
+          "description": "The specified ability does not exist."
+        },
+        {
+          "code": "16000002",
+          "description": "Incorrect ability type."
+        },
+        {
+          "code": "16000004",
+          "description": "Failed to start the invisible ability."
+        },
+        {
+          "code": "16000005",
+          "description": "The specified process does not have the permission."
+        },
+        {
+          "code": "16000006",
+          "description": "Cross-user operations are not allowed."
+        },
+        {
+          "code": "16000008",
+          "description": "The crowdtesting application expires."
+        },
+        {
+          "code": "16000009",
+          "description": "An ability cannot be started or stopped in Wukong mode."
+        },
+        {
+          "code": "16000010",
+          "description": "The call with the continuation and prepare continuation flag is forbidden."
+        },
+        {
+          "code": "16000011",
+          "description": "The context does not exist."
+        },
+        {
+          "code": "16000012",
+          "description": "The application is controlled."
+        },
+        {
+          "code": "16000013",
+          "description": "The application is controlled by EDM."
+        },
+        {
+          "code": "16000050",
+          "description": "Internal error."
+        },
+        {
+          "code": "16000053",
+          "description": "The ability is not on the top of the UI."
+        },
+        {
+          "code": "16000055",
+          "description": "Installation-free timed out."
+        },
+        {
+          "code": "16000071",
+          "description": "App clone is not supported."
+        },
+        {
+          "code": "16000072",
+          "description": "App clone or multi-instance is not supported."
+        },
+        {
+          "code": "16000073",
+          "description": "The app clone index is invalid."
+        },
+        {
+          "code": "16000076",
+          "description": "The app instance key is invalid."
+        },
+        {
+          "code": "16000077",
+          "description": "The number of app instances reaches the limit."
+        },
+        {
+          "code": "16000078",
+          "description": "The multi-instance is not supported."
+        },
+        {
+          "code": "16000079",
+          "description": "The APP_INSTANCE_KEY cannot be specified."
+        },
+        {
+          "code": "16000080",
+          "description": "Creating a new instance is not supported."
+        },
+        {
+          "code": "16200001",
+          "description": "The caller has been released."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "startAbilityAsCaller",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Service extension start an ability using the original caller information. If the caller application is in foreground, you can use this method to start ability; If the caller application is in the background, you need to apply for permission:ohos.permission.START_ABILITIES_FROM_BACKGROUND. If the target ability is visible, you can start the target ability; If the target ability is invisible, you need to apply for permission:ohos.permission.START_INVISIBLE_ABILITY to start target invisible ability. If the target ability is in cross-device, you need to apply for permission:ohos.permission.DISTRIBUTED_DATASYNC. 2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { Want } want - Indicates the ability to start.",
+        "@param { StartOptions } options - Indicates the start options.",
+        "@param { AsyncCallback<void> } callback - The callback of startAbility.",
+        "@throws { BusinessError } 201 - The application does not have permission to call the interface.",
+        "@throws { BusinessError } 202 - The application is not system-app, can not use system-api.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 16000001 - The specified ability does not exist.",
+        "@throws { BusinessError } 16000004 - Failed to start the invisible ability.",
+        "@throws { BusinessError } 16000005 - The specified process does not have the permission.",
+        "@throws { BusinessError } 16000006 - Cross-user operations are not allowed.",
+        "@throws { BusinessError } 16000008 - The crowdtesting application expires.",
+        "@throws { BusinessError } 16000009 - An ability cannot be started or stopped in Wukong mode.",
+        "@throws { BusinessError } 16000011 - The context does not exist.",
+        "@throws { BusinessError } 16000012 - The application is controlled.",
+        "@throws { BusinessError } 16000013 - The application is controlled by EDM.",
+        "@throws { BusinessError } 16000050 - Internal error.",
+        "@throws { BusinessError } 16000053 - The ability is not on the top of the UI.",
+        "@throws { BusinessError } 16000055 - Installation-free timed out.",
+        "@throws { BusinessError } 16000071 - App clone is not supported.",
+        "@throws { BusinessError } 16000072 - App clone or multi-instance is not supported.",
+        "@throws { BusinessError } 16000073 - The app clone index is invalid.",
+        "@throws { BusinessError } 16000076 - The app instance key is invalid.",
+        "@throws { BusinessError } 16000077 - The number of app instances reaches the limit.",
+        "@throws { BusinessError } 16000078 - The multi-instance is not supported.",
+        "@throws { BusinessError } 16000079 - The APP_INSTANCE_KEY cannot be specified.",
+        "@throws { BusinessError } 16000080 - Creating a new instance is not supported.",
+        "@throws { BusinessError } 16200001 - The caller has been released.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@systemapi",
+        "@stagemodelonly",
+        "@since 14"
+      ],
+      "层级": 1,
+      "上级": "ServiceExtensionContext",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "want",
+          "类型": "Want",
+          "必填": true,
+          "说明": "Indicates the ability to start."
+        },
+        {
+          "名称": "options",
+          "类型": "StartOptions",
+          "必填": true,
+          "说明": "Indicates the start options."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "The callback of startAbility."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "The application does not have permission to call the interface."
+        },
+        {
+          "code": "202",
+          "description": "The application is not system-app, can not use system-api."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "16000001",
+          "description": "The specified ability does not exist."
+        },
+        {
+          "code": "16000004",
+          "description": "Failed to start the invisible ability."
+        },
+        {
+          "code": "16000005",
+          "description": "The specified process does not have the permission."
+        },
+        {
+          "code": "16000006",
+          "description": "Cross-user operations are not allowed."
+        },
+        {
+          "code": "16000008",
+          "description": "The crowdtesting application expires."
+        },
+        {
+          "code": "16000009",
+          "description": "An ability cannot be started or stopped in Wukong mode."
+        },
+        {
+          "code": "16000011",
+          "description": "The context does not exist."
+        },
+        {
+          "code": "16000012",
+          "description": "The application is controlled."
+        },
+        {
+          "code": "16000013",
+          "description": "The application is controlled by EDM."
+        },
+        {
+          "code": "16000050",
+          "description": "Internal error."
+        },
+        {
+          "code": "16000053",
+          "description": "The ability is not on the top of the UI."
+        },
+        {
+          "code": "16000055",
+          "description": "Installation-free timed out."
+        },
+        {
+          "code": "16000071",
+          "description": "App clone is not supported."
+        },
+        {
+          "code": "16000072",
+          "description": "App clone or multi-instance is not supported."
+        },
+        {
+          "code": "16000073",
+          "description": "The app clone index is invalid."
+        },
+        {
+          "code": "16000076",
+          "description": "The app instance key is invalid."
+        },
+        {
+          "code": "16000077",
+          "description": "The number of app instances reaches the limit."
+        },
+        {
+          "code": "16000078",
+          "description": "The multi-instance is not supported."
+        },
+        {
+          "code": "16000079",
+          "description": "The APP_INSTANCE_KEY cannot be specified."
+        },
+        {
+          "code": "16000080",
+          "description": "Creating a new instance is not supported."
+        },
+        {
+          "code": "16200001",
+          "description": "The caller has been released."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "startAbilityAsCaller",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Service extension start an ability using the original caller information. If the caller application is in foreground, you can use this method to start ability; If the caller application is in the background, you need to apply for permission:ohos.permission.START_ABILITIES_FROM_BACKGROUND. If the target ability is visible, you can start the target ability; If the target ability is invisible, you need to apply for permission:ohos.permission.START_INVISIBLE_ABILITY to start target invisible ability. If the target ability is in cross-device, you need to apply for permission:ohos.permission.DISTRIBUTED_DATASYNC. 2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { Want } want - Indicates the ability to start.",
+        "@param { StartOptions } options - Indicates the start options.",
+        "@returns { Promise<void> } The promise returned by the function.",
+        "@throws { BusinessError } 201 - The application does not have permission to call the interface.",
+        "@throws { BusinessError } 202 - The application is not system-app, can not use system-api.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 16000001 - The specified ability does not exist.",
+        "@throws { BusinessError } 16000002 - Incorrect ability type.",
+        "@throws { BusinessError } 16000004 - Failed to start the invisible ability.",
+        "@throws { BusinessError } 16000005 - The specified process does not have the permission.",
+        "@throws { BusinessError } 16000006 - Cross-user operations are not allowed.",
+        "@throws { BusinessError } 16000008 - The crowdtesting application expires.",
+        "@throws { BusinessError } 16000009 - An ability cannot be started or stopped in Wukong mode.",
+        "@throws { BusinessError } 16000010 - The call with the continuation and prepare continuation flag is forbidden.",
+        "@throws { BusinessError } 16000011 - The context does not exist.",
+        "@throws { BusinessError } 16000012 - The application is controlled.",
+        "@throws { BusinessError } 16000013 - The application is controlled by EDM.",
+        "@throws { BusinessError } 16000050 - Internal error.",
+        "@throws { BusinessError } 16000053 - The ability is not on the top of the UI.",
+        "@throws { BusinessError } 16000055 - Installation-free timed out.",
+        "@throws { BusinessError } 16000071 - App clone is not supported.",
+        "@throws { BusinessError } 16000072 - App clone or multi-instance is not supported.",
+        "@throws { BusinessError } 16000073 - The app clone index is invalid.",
+        "@throws { BusinessError } 16000076 - The app instance key is invalid.",
+        "@throws { BusinessError } 16000077 - The number of app instances reaches the limit.",
+        "@throws { BusinessError } 16000078 - The multi-instance is not supported.",
+        "@throws { BusinessError } 16000079 - The APP_INSTANCE_KEY cannot be specified.",
+        "@throws { BusinessError } 16000080 - Creating a new instance is not supported.",
+        "@throws { BusinessError } 16200001 - The caller has been released.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@systemapi",
+        "@stagemodelonly",
+        "@since 14"
+      ],
+      "层级": 1,
+      "上级": "ServiceExtensionContext",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "want",
+          "类型": "Want",
+          "必填": true,
+          "说明": "Indicates the ability to start."
+        },
+        {
+          "名称": "options",
+          "类型": "StartOptions",
+          "必填": true,
+          "说明": "Indicates the start options."
+        }
+      ],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "The application does not have permission to call the interface."
+        },
+        {
+          "code": "202",
+          "description": "The application is not system-app, can not use system-api."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "16000001",
+          "description": "The specified ability does not exist."
+        },
+        {
+          "code": "16000002",
+          "description": "Incorrect ability type."
+        },
+        {
+          "code": "16000004",
+          "description": "Failed to start the invisible ability."
+        },
+        {
+          "code": "16000005",
+          "description": "The specified process does not have the permission."
+        },
+        {
+          "code": "16000006",
+          "description": "Cross-user operations are not allowed."
+        },
+        {
+          "code": "16000008",
+          "description": "The crowdtesting application expires."
+        },
+        {
+          "code": "16000009",
+          "description": "An ability cannot be started or stopped in Wukong mode."
+        },
+        {
+          "code": "16000010",
+          "description": "The call with the continuation and prepare continuation flag is forbidden."
+        },
+        {
+          "code": "16000011",
+          "description": "The context does not exist."
+        },
+        {
+          "code": "16000012",
+          "description": "The application is controlled."
+        },
+        {
+          "code": "16000013",
+          "description": "The application is controlled by EDM."
+        },
+        {
+          "code": "16000050",
+          "description": "Internal error."
+        },
+        {
+          "code": "16000053",
+          "description": "The ability is not on the top of the UI."
+        },
+        {
+          "code": "16000055",
+          "description": "Installation-free timed out."
+        },
+        {
+          "code": "16000071",
+          "description": "App clone is not supported."
+        },
+        {
+          "code": "16000072",
+          "description": "App clone or multi-instance is not supported."
+        },
+        {
+          "code": "16000073",
+          "description": "The app clone index is invalid."
+        },
+        {
+          "code": "16000076",
+          "description": "The app instance key is invalid."
+        },
+        {
+          "code": "16000077",
+          "description": "The number of app instances reaches the limit."
+        },
+        {
+          "code": "16000078",
+          "description": "The multi-instance is not supported."
+        },
+        {
+          "code": "16000079",
+          "description": "The APP_INSTANCE_KEY cannot be specified."
+        },
+        {
+          "code": "16000080",
+          "description": "Creating a new instance is not supported."
+        },
+        {
+          "code": "16200001",
+          "description": "The caller has been released."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "startAbilityWithAccount",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Service extension uses this method to start a specific ability with account. If the caller application is in foreground, you can use this method to start ability; If the caller application is in the background, you need to apply for permission:ohos.permission.START_ABILITIES_FROM_BACKGROUND. If the target ability is visible, you can start the target ability; If the target ability is invisible, you need to apply for permission:ohos.permission.START_INVISIBLE_ABILITY to start target invisible ability. If the target ability is in cross-device, you need to apply for permission:ohos.permission.DISTRIBUTED_DATASYNC. 2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.INTERACT_ACROSS_LOCAL_ACCOUNTS",
+        "@param { Want } want - Indicates the ability to start.",
+        "@param { number } accountId - Indicates the accountId to start.",
+        "@param { AsyncCallback<void> } callback - The callback of startAbilityWithAccount.",
+        "@throws { BusinessError } 201 - The application does not have permission to call the interface.",
+        "@throws { BusinessError } 202 - The application is not system-app, can not use system-api.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 16000001 - The specified ability does not exist.",
+        "@throws { BusinessError } 16000002 - Incorrect ability type.",
+        "@throws { BusinessError } 16000004 - Failed to start the invisible ability.",
+        "@throws { BusinessError } 16000005 - The specified process does not have the permission.",
+        "@throws { BusinessError } 16000006 - Cross-user operations are not allowed.",
+        "@throws { BusinessError } 16000008 - The crowdtesting application expires.",
+        "@throws { BusinessError } 16000009 - An ability cannot be started or stopped in Wukong mode.",
+        "@throws { BusinessError } 16000010 - The call with the continuation and prepare continuation flag is forbidden.",
+        "@throws { BusinessError } 16000011 - The context does not exist.",
+        "@throws { BusinessError } 16000012 - The application is controlled.",
+        "@throws { BusinessError } 16000013 - The application is controlled by EDM.",
+        "@throws { BusinessError } 16000019 - No matching ability is found.",
+        "@throws { BusinessError } 16000050 - Internal error.",
+        "@throws { BusinessError } 16000053 - The ability is not on the top of the UI.",
+        "@throws { BusinessError } 16000055 - Installation-free timed out.",
+        "@throws { BusinessError } 16000071 - App clone is not supported.",
+        "@throws { BusinessError } 16000072 - App clone or multi-instance is not supported.",
+        "@throws { BusinessError } 16000073 - The app clone index is invalid.",
+        "@throws { BusinessError } 16000076 - The app instance key is invalid.",
+        "@throws { BusinessError } 16000077 - The number of app instances reaches the limit.",
+        "@throws { BusinessError } 16000078 - The multi-instance is not supported.",
+        "@throws { BusinessError } 16000079 - The APP_INSTANCE_KEY cannot be specified.",
+        "@throws { BusinessError } 16000080 - Creating a new instance is not supported.",
+        "@throws { BusinessError } 16200001 - The caller has been released.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@systemapi",
+        "@stagemodelonly",
+        "@since 14"
+      ],
+      "层级": 1,
+      "上级": "ServiceExtensionContext",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "want",
+          "类型": "Want",
+          "必填": true,
+          "说明": "Indicates the ability to start."
+        },
+        {
+          "名称": "accountId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the accountId to start."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "The callback of startAbilityWithAccount."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "The application does not have permission to call the interface."
+        },
+        {
+          "code": "202",
+          "description": "The application is not system-app, can not use system-api."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "16000001",
+          "description": "The specified ability does not exist."
+        },
+        {
+          "code": "16000002",
+          "description": "Incorrect ability type."
+        },
+        {
+          "code": "16000004",
+          "description": "Failed to start the invisible ability."
+        },
+        {
+          "code": "16000005",
+          "description": "The specified process does not have the permission."
+        },
+        {
+          "code": "16000006",
+          "description": "Cross-user operations are not allowed."
+        },
+        {
+          "code": "16000008",
+          "description": "The crowdtesting application expires."
+        },
+        {
+          "code": "16000009",
+          "description": "An ability cannot be started or stopped in Wukong mode."
+        },
+        {
+          "code": "16000010",
+          "description": "The call with the continuation and prepare continuation flag is forbidden."
+        },
+        {
+          "code": "16000011",
+          "description": "The context does not exist."
+        },
+        {
+          "code": "16000012",
+          "description": "The application is controlled."
+        },
+        {
+          "code": "16000013",
+          "description": "The application is controlled by EDM."
+        },
+        {
+          "code": "16000019",
+          "description": "No matching ability is found."
+        },
+        {
+          "code": "16000050",
+          "description": "Internal error."
+        },
+        {
+          "code": "16000053",
+          "description": "The ability is not on the top of the UI."
+        },
+        {
+          "code": "16000055",
+          "description": "Installation-free timed out."
+        },
+        {
+          "code": "16000071",
+          "description": "App clone is not supported."
+        },
+        {
+          "code": "16000072",
+          "description": "App clone or multi-instance is not supported."
+        },
+        {
+          "code": "16000073",
+          "description": "The app clone index is invalid."
+        },
+        {
+          "code": "16000076",
+          "description": "The app instance key is invalid."
+        },
+        {
+          "code": "16000077",
+          "description": "The number of app instances reaches the limit."
+        },
+        {
+          "code": "16000078",
+          "description": "The multi-instance is not supported."
+        },
+        {
+          "code": "16000079",
+          "description": "The APP_INSTANCE_KEY cannot be specified."
+        },
+        {
+          "code": "16000080",
+          "description": "Creating a new instance is not supported."
+        },
+        {
+          "code": "16200001",
+          "description": "The caller has been released."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "startAbilityWithAccount",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Service extension uses this method to start a specific ability with account. If the caller application is in foreground, you can use this method to start ability; If the caller application is in the background, you need to apply for permission:ohos.permission.START_ABILITIES_FROM_BACKGROUND. If the target ability is visible, you can start the target ability; If the target ability is invisible, you need to apply for permission:ohos.permission.START_INVISIBLE_ABILITY to start target invisible ability. If the target ability is in cross-device, you need to apply for permission:ohos.permission.DISTRIBUTED_DATASYNC. 2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.INTERACT_ACROSS_LOCAL_ACCOUNTS",
+        "@param { Want } want - Indicates the ability to start.",
+        "@param { number } accountId - Indicates the accountId to start.",
+        "@param { StartOptions } options - Indicates the start options.",
+        "@param { AsyncCallback<void> } callback - The callback of startAbilityWithAccount.",
+        "@throws { BusinessError } 201 - The application does not have permission to call the interface.",
+        "@throws { BusinessError } 202 - The application is not system-app, can not use system-api.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 16000001 - The specified ability does not exist.",
+        "@throws { BusinessError } 16000004 - Failed to start the invisible ability.",
+        "@throws { BusinessError } 16000005 - The specified process does not have the permission.",
+        "@throws { BusinessError } 16000006 - Cross-user operations are not allowed.",
+        "@throws { BusinessError } 16000008 - The crowdtesting application expires.",
+        "@throws { BusinessError } 16000009 - An ability cannot be started or stopped in Wukong mode.",
+        "@throws { BusinessError } 16000011 - The context does not exist.",
+        "@throws { BusinessError } 16000012 - The application is controlled.",
+        "@throws { BusinessError } 16000013 - The application is controlled by EDM.",
+        "@throws { BusinessError } 16000019 - No matching ability is found.",
+        "@throws { BusinessError } 16000050 - Internal error.",
+        "@throws { BusinessError } 16000053 - The ability is not on the top of the UI.",
+        "@throws { BusinessError } 16000055 - Installation-free timed out.",
+        "@throws { BusinessError } 16000071 - App clone is not supported.",
+        "@throws { BusinessError } 16000072 - App clone or multi-instance is not supported.",
+        "@throws { BusinessError } 16000073 - The app clone index is invalid.",
+        "@throws { BusinessError } 16000076 - The app instance key is invalid.",
+        "@throws { BusinessError } 16000077 - The number of app instances reaches the limit.",
+        "@throws { BusinessError } 16000078 - The multi-instance is not supported.",
+        "@throws { BusinessError } 16000079 - The APP_INSTANCE_KEY cannot be specified.",
+        "@throws { BusinessError } 16000080 - Creating a new instance is not supported.",
+        "@throws { BusinessError } 16200001 - The caller has been released.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@systemapi",
+        "@stagemodelonly",
+        "@since 14"
+      ],
+      "层级": 1,
+      "上级": "ServiceExtensionContext",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "want",
+          "类型": "Want",
+          "必填": true,
+          "说明": "Indicates the ability to start."
+        },
+        {
+          "名称": "accountId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the accountId to start."
+        },
+        {
+          "名称": "options",
+          "类型": "StartOptions",
+          "必填": true,
+          "说明": "Indicates the start options."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "The callback of startAbilityWithAccount."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "The application does not have permission to call the interface."
+        },
+        {
+          "code": "202",
+          "description": "The application is not system-app, can not use system-api."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "16000001",
+          "description": "The specified ability does not exist."
+        },
+        {
+          "code": "16000004",
+          "description": "Failed to start the invisible ability."
+        },
+        {
+          "code": "16000005",
+          "description": "The specified process does not have the permission."
+        },
+        {
+          "code": "16000006",
+          "description": "Cross-user operations are not allowed."
+        },
+        {
+          "code": "16000008",
+          "description": "The crowdtesting application expires."
+        },
+        {
+          "code": "16000009",
+          "description": "An ability cannot be started or stopped in Wukong mode."
+        },
+        {
+          "code": "16000011",
+          "description": "The context does not exist."
+        },
+        {
+          "code": "16000012",
+          "description": "The application is controlled."
+        },
+        {
+          "code": "16000013",
+          "description": "The application is controlled by EDM."
+        },
+        {
+          "code": "16000019",
+          "description": "No matching ability is found."
+        },
+        {
+          "code": "16000050",
+          "description": "Internal error."
+        },
+        {
+          "code": "16000053",
+          "description": "The ability is not on the top of the UI."
+        },
+        {
+          "code": "16000055",
+          "description": "Installation-free timed out."
+        },
+        {
+          "code": "16000071",
+          "description": "App clone is not supported."
+        },
+        {
+          "code": "16000072",
+          "description": "App clone or multi-instance is not supported."
+        },
+        {
+          "code": "16000073",
+          "description": "The app clone index is invalid."
+        },
+        {
+          "code": "16000076",
+          "description": "The app instance key is invalid."
+        },
+        {
+          "code": "16000077",
+          "description": "The number of app instances reaches the limit."
+        },
+        {
+          "code": "16000078",
+          "description": "The multi-instance is not supported."
+        },
+        {
+          "code": "16000079",
+          "description": "The APP_INSTANCE_KEY cannot be specified."
+        },
+        {
+          "code": "16000080",
+          "description": "Creating a new instance is not supported."
+        },
+        {
+          "code": "16200001",
+          "description": "The caller has been released."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "startAbilityWithAccount",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Service extension uses this method to start a specific ability with account. If the caller application is in foreground, you can use this method to start ability; If the caller application is in the background, you need to apply for permission:ohos.permission.START_ABILITIES_FROM_BACKGROUND. If the target ability is visible, you can start the target ability; If the target ability is invisible, you need to apply for permission:ohos.permission.START_INVISIBLE_ABILITY to start target invisible ability. If the target ability is in cross-device, you need to apply for permission:ohos.permission.DISTRIBUTED_DATASYNC. 2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.INTERACT_ACROSS_LOCAL_ACCOUNTS",
+        "@param { Want } want - Indicates the ability to start.",
+        "@param { number } accountId - Indicates the accountId to start.",
+        "@param { StartOptions } [options] - Indicates the start options.",
+        "@returns { Promise<void> } The promise returned by the function.",
+        "@throws { BusinessError } 201 - The application does not have permission to call the interface.",
+        "@throws { BusinessError } 202 - The application is not system-app, can not use system-api.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 16000001 - The specified ability does not exist.",
+        "@throws { BusinessError } 16000002 - Incorrect ability type.",
+        "@throws { BusinessError } 16000004 - Failed to start the invisible ability.",
+        "@throws { BusinessError } 16000005 - The specified process does not have the permission.",
+        "@throws { BusinessError } 16000006 - Cross-user operations are not allowed.",
+        "@throws { BusinessError } 16000008 - The crowdtesting application expires.",
+        "@throws { BusinessError } 16000009 - An ability cannot be started or stopped in Wukong mode.",
+        "@throws { BusinessError } 16000010 - The call with the continuation and prepare continuation flag is forbidden.",
+        "@throws { BusinessError } 16000011 - The context does not exist.",
+        "@throws { BusinessError } 16000012 - The application is controlled.",
+        "@throws { BusinessError } 16000013 - The application is controlled by EDM.",
+        "@throws { BusinessError } 16000019 - No matching ability is found.",
+        "@throws { BusinessError } 16000050 - Internal error.",
+        "@throws { BusinessError } 16000053 - The ability is not on the top of the UI.",
+        "@throws { BusinessError } 16000055 - Installation-free timed out.",
+        "@throws { BusinessError } 16000071 - App clone is not supported.",
+        "@throws { BusinessError } 16000072 - App clone or multi-instance is not supported.",
+        "@throws { BusinessError } 16000073 - The app clone index is invalid.",
+        "@throws { BusinessError } 16000076 - The app instance key is invalid.",
+        "@throws { BusinessError } 16000077 - The number of app instances reaches the limit.",
+        "@throws { BusinessError } 16000078 - The multi-instance is not supported.",
+        "@throws { BusinessError } 16000079 - The APP_INSTANCE_KEY cannot be specified.",
+        "@throws { BusinessError } 16000080 - Creating a new instance is not supported.",
+        "@throws { BusinessError } 16200001 - The caller has been released.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@systemapi",
+        "@stagemodelonly",
+        "@since 14"
+      ],
+      "层级": 1,
+      "上级": "ServiceExtensionContext",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "want",
+          "类型": "Want",
+          "必填": true,
+          "说明": "Indicates the ability to start."
+        },
+        {
+          "名称": "accountId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the accountId to start."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "StartOptions } [options] - Indicates the start options."
+        }
+      ],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "The application does not have permission to call the interface."
+        },
+        {
+          "code": "202",
+          "description": "The application is not system-app, can not use system-api."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "16000001",
+          "description": "The specified ability does not exist."
+        },
+        {
+          "code": "16000002",
+          "description": "Incorrect ability type."
+        },
+        {
+          "code": "16000004",
+          "description": "Failed to start the invisible ability."
+        },
+        {
+          "code": "16000005",
+          "description": "The specified process does not have the permission."
+        },
+        {
+          "code": "16000006",
+          "description": "Cross-user operations are not allowed."
+        },
+        {
+          "code": "16000008",
+          "description": "The crowdtesting application expires."
+        },
+        {
+          "code": "16000009",
+          "description": "An ability cannot be started or stopped in Wukong mode."
+        },
+        {
+          "code": "16000010",
+          "description": "The call with the continuation and prepare continuation flag is forbidden."
+        },
+        {
+          "code": "16000011",
+          "description": "The context does not exist."
+        },
+        {
+          "code": "16000012",
+          "description": "The application is controlled."
+        },
+        {
+          "code": "16000013",
+          "description": "The application is controlled by EDM."
+        },
+        {
+          "code": "16000019",
+          "description": "No matching ability is found."
+        },
+        {
+          "code": "16000050",
+          "description": "Internal error."
+        },
+        {
+          "code": "16000053",
+          "description": "The ability is not on the top of the UI."
+        },
+        {
+          "code": "16000055",
+          "description": "Installation-free timed out."
+        },
+        {
+          "code": "16000071",
+          "description": "App clone is not supported."
+        },
+        {
+          "code": "16000072",
+          "description": "App clone or multi-instance is not supported."
+        },
+        {
+          "code": "16000073",
+          "description": "The app clone index is invalid."
+        },
+        {
+          "code": "16000076",
+          "description": "The app instance key is invalid."
+        },
+        {
+          "code": "16000077",
+          "description": "The number of app instances reaches the limit."
+        },
+        {
+          "code": "16000078",
+          "description": "The multi-instance is not supported."
+        },
+        {
+          "code": "16000079",
+          "description": "The APP_INSTANCE_KEY cannot be specified."
+        },
+        {
+          "code": "16000080",
+          "description": "Creating a new instance is not supported."
+        },
+        {
+          "code": "16200001",
+          "description": "The caller has been released."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "startServiceExtensionAbility",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Starts a new service extension ability. If the target service extension ability is visible, you can start the target service extension ability; If the target service extension ability is invisible, you need to apply for permission:ohos.permission.START_INVISIBLE_ABILITY to start target invisible service extension ability. If the target service extension ability is in cross-device, you need to apply for permission:ohos.permission.DISTRIBUTED_DATASYNC. 2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { Want } want - Indicates the want info to start.",
+        "@param { AsyncCallback<void> } callback - The callback of startServiceExtensionAbility.",
+        "@throws { BusinessError } 201 - The application does not have permission to call the interface.",
+        "@throws { BusinessError } 202 - The application is not system-app, can not use system-api.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 16000001 - The specified ability does not exist.",
+        "@throws { BusinessError } 16000002 - Incorrect ability type.",
+        "@throws { BusinessError } 16000004 - Failed to start the invisible ability.",
+        "@throws { BusinessError } 16000005 - The specified process does not have the permission.",
+        "@throws { BusinessError } 16000006 - Cross-user operations are not allowed.",
+        "@throws { BusinessError } 16000008 - The crowdtesting application expires.",
+        "@throws { BusinessError } 16000011 - The context does not exist.",
+        "@throws { BusinessError } 16000012 - The application is controlled.",
+        "@throws { BusinessError } 16000013 - The application is controlled by EDM.",
+        "@throws { BusinessError } 16000019 - No matching ability is found.",
+        "@throws { BusinessError } 16000050 - Internal error.",
+        "@throws { BusinessError } 16200001 - The caller has been released.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@systemapi",
+        "@stagemodelonly",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "ServiceExtensionContext",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "want",
+          "类型": "Want",
+          "必填": true,
+          "说明": "Indicates the want info to start."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "The callback of startServiceExtensionAbility."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "The application does not have permission to call the interface."
+        },
+        {
+          "code": "202",
+          "description": "The application is not system-app, can not use system-api."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "16000001",
+          "description": "The specified ability does not exist."
+        },
+        {
+          "code": "16000002",
+          "description": "Incorrect ability type."
+        },
+        {
+          "code": "16000004",
+          "description": "Failed to start the invisible ability."
+        },
+        {
+          "code": "16000005",
+          "description": "The specified process does not have the permission."
+        },
+        {
+          "code": "16000006",
+          "description": "Cross-user operations are not allowed."
+        },
+        {
+          "code": "16000008",
+          "description": "The crowdtesting application expires."
+        },
+        {
+          "code": "16000011",
+          "description": "The context does not exist."
+        },
+        {
+          "code": "16000012",
+          "description": "The application is controlled."
+        },
+        {
+          "code": "16000013",
+          "description": "The application is controlled by EDM."
+        },
+        {
+          "code": "16000019",
+          "description": "No matching ability is found."
+        },
+        {
+          "code": "16000050",
+          "description": "Internal error."
+        },
+        {
+          "code": "16200001",
+          "description": "The caller has been released."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "startServiceExtensionAbility",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Starts a new service extension ability. If the target service extension ability is visible, you can start the target service extension ability; If the target service extension ability is invisible, you need to apply for permission:ohos.permission.START_INVISIBLE_ABILITY to start target invisible service extension ability. If the target service extension ability is in cross-device, you need to apply for permission:ohos.permission.DISTRIBUTED_DATASYNC. 2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { Want } want - Indicates the want info to start.",
+        "@returns { Promise<void> } The promise returned by the function.",
+        "@throws { BusinessError } 201 - The application does not have permission to call the interface.",
+        "@throws { BusinessError } 202 - The application is not system-app, can not use system-api.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 16000001 - The specified ability does not exist.",
+        "@throws { BusinessError } 16000002 - Incorrect ability type.",
+        "@throws { BusinessError } 16000004 - Failed to start the invisible ability.",
+        "@throws { BusinessError } 16000005 - The specified process does not have the permission.",
+        "@throws { BusinessError } 16000006 - Cross-user operations are not allowed.",
+        "@throws { BusinessError } 16000008 - The crowdtesting application expires.",
+        "@throws { BusinessError } 16000011 - The context does not exist.",
+        "@throws { BusinessError } 16000012 - The application is controlled.",
+        "@throws { BusinessError } 16000013 - The application is controlled by EDM.",
+        "@throws { BusinessError } 16000019 - No matching ability is found.",
+        "@throws { BusinessError } 16000050 - Internal error.",
+        "@throws { BusinessError } 16200001 - The caller has been released.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@systemapi",
+        "@stagemodelonly",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "ServiceExtensionContext",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "want",
+          "类型": "Want",
+          "必填": true,
+          "说明": "Indicates the want info to start."
+        }
+      ],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "The application does not have permission to call the interface."
+        },
+        {
+          "code": "202",
+          "description": "The application is not system-app, can not use system-api."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "16000001",
+          "description": "The specified ability does not exist."
+        },
+        {
+          "code": "16000002",
+          "description": "Incorrect ability type."
+        },
+        {
+          "code": "16000004",
+          "description": "Failed to start the invisible ability."
+        },
+        {
+          "code": "16000005",
+          "description": "The specified process does not have the permission."
+        },
+        {
+          "code": "16000006",
+          "description": "Cross-user operations are not allowed."
+        },
+        {
+          "code": "16000008",
+          "description": "The crowdtesting application expires."
+        },
+        {
+          "code": "16000011",
+          "description": "The context does not exist."
+        },
+        {
+          "code": "16000012",
+          "description": "The application is controlled."
+        },
+        {
+          "code": "16000013",
+          "description": "The application is controlled by EDM."
+        },
+        {
+          "code": "16000019",
+          "description": "No matching ability is found."
+        },
+        {
+          "code": "16000050",
+          "description": "Internal error."
+        },
+        {
+          "code": "16200001",
+          "description": "The caller has been released."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "startServiceExtensionAbilityWithAccount",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Starts a new service extension ability with account. If the target service extension ability is visible, you can start the target service extension ability; If the target service extension ability is invisible, you need to apply for permission:ohos.permission.START_INVISIBLE_ABILITY to start target invisible service extension ability. If the target service extension ability is in cross-device, you need to apply for permission:ohos.permission.DISTRIBUTED_DATASYNC. 2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.INTERACT_ACROSS_LOCAL_ACCOUNTS",
+        "@param { Want } want - Indicates the want info to start.",
+        "@param { number } accountId - Indicates the account to start.",
+        "@param { AsyncCallback<void> } callback - The callback of startServiceExtensionAbilityWithAccount.",
+        "@throws { BusinessError } 201 - The application does not have permission to call the interface.",
+        "@throws { BusinessError } 202 - The application is not system-app, can not use system-api.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 16000001 - The specified ability does not exist.",
+        "@throws { BusinessError } 16000002 - Incorrect ability type.",
+        "@throws { BusinessError } 16000004 - Failed to start the invisible ability.",
+        "@throws { BusinessError } 16000005 - The specified process does not have the permission.",
+        "@throws { BusinessError } 16000006 - Cross-user operations are not allowed.",
+        "@throws { BusinessError } 16000008 - The crowdtesting application expires.",
+        "@throws { BusinessError } 16000011 - The context does not exist.",
+        "@throws { BusinessError } 16000012 - The application is controlled.",
+        "@throws { BusinessError } 16000013 - The application is controlled by EDM.",
+        "@throws { BusinessError } 16000019 - No matching ability is found.",
+        "@throws { BusinessError } 16000050 - Internal error.",
+        "@throws { BusinessError } 16200001 - The caller has been released.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@systemapi",
+        "@stagemodelonly",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "ServiceExtensionContext",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "want",
+          "类型": "Want",
+          "必填": true,
+          "说明": "Indicates the want info to start."
+        },
+        {
+          "名称": "accountId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the account to start."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "The callback of startServiceExtensionAbilityWithAccount."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "The application does not have permission to call the interface."
+        },
+        {
+          "code": "202",
+          "description": "The application is not system-app, can not use system-api."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "16000001",
+          "description": "The specified ability does not exist."
+        },
+        {
+          "code": "16000002",
+          "description": "Incorrect ability type."
+        },
+        {
+          "code": "16000004",
+          "description": "Failed to start the invisible ability."
+        },
+        {
+          "code": "16000005",
+          "description": "The specified process does not have the permission."
+        },
+        {
+          "code": "16000006",
+          "description": "Cross-user operations are not allowed."
+        },
+        {
+          "code": "16000008",
+          "description": "The crowdtesting application expires."
+        },
+        {
+          "code": "16000011",
+          "description": "The context does not exist."
+        },
+        {
+          "code": "16000012",
+          "description": "The application is controlled."
+        },
+        {
+          "code": "16000013",
+          "description": "The application is controlled by EDM."
+        },
+        {
+          "code": "16000019",
+          "description": "No matching ability is found."
+        },
+        {
+          "code": "16000050",
+          "description": "Internal error."
+        },
+        {
+          "code": "16200001",
+          "description": "The caller has been released."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "startServiceExtensionAbilityWithAccount",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Starts a new service extension ability with account. If the target service extension ability is visible, you can start the target service extension ability; If the target service extension ability is invisible, you need to apply for permission:ohos.permission.START_INVISIBLE_ABILITY to start target invisible service extension ability. If the target service extension ability is in cross-device, you need to apply for permission:ohos.permission.DISTRIBUTED_DATASYNC. 2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.INTERACT_ACROSS_LOCAL_ACCOUNTS",
+        "@param { Want } want - Indicates the want info to start.",
+        "@param { number } accountId - Indicates the account to start.",
+        "@returns { Promise<void> } The promise returned by the function.",
+        "@throws { BusinessError } 201 - The application does not have permission to call the interface.",
+        "@throws { BusinessError } 202 - The application is not system-app, can not use system-api.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 16000001 - The specified ability does not exist.",
+        "@throws { BusinessError } 16000002 - Incorrect ability type.",
+        "@throws { BusinessError } 16000004 - Failed to start the invisible ability.",
+        "@throws { BusinessError } 16000005 - The specified process does not have the permission.",
+        "@throws { BusinessError } 16000006 - Cross-user operations are not allowed.",
+        "@throws { BusinessError } 16000008 - The crowdtesting application expires.",
+        "@throws { BusinessError } 16000011 - The context does not exist.",
+        "@throws { BusinessError } 16000012 - The application is controlled.",
+        "@throws { BusinessError } 16000013 - The application is controlled by EDM.",
+        "@throws { BusinessError } 16000019 - No matching ability is found.",
+        "@throws { BusinessError } 16000050 - Internal error.",
+        "@throws { BusinessError } 16200001 - The caller has been released.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@systemapi",
+        "@stagemodelonly",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "ServiceExtensionContext",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "want",
+          "类型": "Want",
+          "必填": true,
+          "说明": "Indicates the want info to start."
+        },
+        {
+          "名称": "accountId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the account to start."
+        }
+      ],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "The application does not have permission to call the interface."
+        },
+        {
+          "code": "202",
+          "description": "The application is not system-app, can not use system-api."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "16000001",
+          "description": "The specified ability does not exist."
+        },
+        {
+          "code": "16000002",
+          "description": "Incorrect ability type."
+        },
+        {
+          "code": "16000004",
+          "description": "Failed to start the invisible ability."
+        },
+        {
+          "code": "16000005",
+          "description": "The specified process does not have the permission."
+        },
+        {
+          "code": "16000006",
+          "description": "Cross-user operations are not allowed."
+        },
+        {
+          "code": "16000008",
+          "description": "The crowdtesting application expires."
+        },
+        {
+          "code": "16000011",
+          "description": "The context does not exist."
+        },
+        {
+          "code": "16000012",
+          "description": "The application is controlled."
+        },
+        {
+          "code": "16000013",
+          "description": "The application is controlled by EDM."
+        },
+        {
+          "code": "16000019",
+          "description": "No matching ability is found."
+        },
+        {
+          "code": "16000050",
+          "description": "Internal error."
+        },
+        {
+          "code": "16200001",
+          "description": "The caller has been released."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "stopServiceExtensionAbility",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Stops other service extension ability. If the target service extension ability is visible, you can stop the target service extension ability; If the target service extension ability is invisible, you need to apply for permission:ohos.permission.START_INVISIBLE_ABILITY to stop target invisible service extension ability. If the target service extension ability is in cross-device, you need to apply for permission:ohos.permission.DISTRIBUTED_DATASYNC. 2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { Want } want - Indicates the want info to start.",
+        "@param { AsyncCallback<void> } callback - The callback of stopServiceExtensionAbility.",
+        "@throws { BusinessError } 201 - The application does not have permission to call the interface.",
+        "@throws { BusinessError } 202 - The application is not system-app, can not use system-api.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 16000001 - The specified ability does not exist.",
+        "@throws { BusinessError } 16000002 - Incorrect ability type.",
+        "@throws { BusinessError } 16000004 - Failed to start the invisible ability.",
+        "@throws { BusinessError } 16000005 - The specified process does not have the permission.",
+        "@throws { BusinessError } 16000006 - Cross-user operations are not allowed.",
+        "@throws { BusinessError } 16000011 - The context does not exist.",
+        "@throws { BusinessError } 16000050 - Internal error.",
+        "@throws { BusinessError } 16200001 - The caller has been released.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@systemapi",
+        "@stagemodelonly",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "ServiceExtensionContext",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "want",
+          "类型": "Want",
+          "必填": true,
+          "说明": "Indicates the want info to start."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "The callback of stopServiceExtensionAbility."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "The application does not have permission to call the interface."
+        },
+        {
+          "code": "202",
+          "description": "The application is not system-app, can not use system-api."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "16000001",
+          "description": "The specified ability does not exist."
+        },
+        {
+          "code": "16000002",
+          "description": "Incorrect ability type."
+        },
+        {
+          "code": "16000004",
+          "description": "Failed to start the invisible ability."
+        },
+        {
+          "code": "16000005",
+          "description": "The specified process does not have the permission."
+        },
+        {
+          "code": "16000006",
+          "description": "Cross-user operations are not allowed."
+        },
+        {
+          "code": "16000011",
+          "description": "The context does not exist."
+        },
+        {
+          "code": "16000050",
+          "description": "Internal error."
+        },
+        {
+          "code": "16200001",
+          "description": "The caller has been released."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "stopServiceExtensionAbility",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Stops other service extension ability. If the target service extension ability is visible, you can stop the target service extension ability; If the target service extension ability is invisible, you need to apply for permission:ohos.permission.START_INVISIBLE_ABILITY to stop target invisible service extension ability. If the target service extension ability is in cross-device, you need to apply for permission:ohos.permission.DISTRIBUTED_DATASYNC. 2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { Want } want - Indicates the want info to start.",
+        "@returns { Promise<void> } The promise returned by the function.",
+        "@throws { BusinessError } 201 - The application does not have permission to call the interface.",
+        "@throws { BusinessError } 202 - The application is not system-app, can not use system-api.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 16000001 - The specified ability does not exist.",
+        "@throws { BusinessError } 16000002 - Incorrect ability type.",
+        "@throws { BusinessError } 16000004 - Failed to start the invisible ability.",
+        "@throws { BusinessError } 16000005 - The specified process does not have the permission.",
+        "@throws { BusinessError } 16000006 - Cross-user operations are not allowed.",
+        "@throws { BusinessError } 16000011 - The context does not exist.",
+        "@throws { BusinessError } 16000050 - Internal error.",
+        "@throws { BusinessError } 16200001 - The caller has been released.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@systemapi",
+        "@stagemodelonly",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "ServiceExtensionContext",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "want",
+          "类型": "Want",
+          "必填": true,
+          "说明": "Indicates the want info to start."
+        }
+      ],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "The application does not have permission to call the interface."
+        },
+        {
+          "code": "202",
+          "description": "The application is not system-app, can not use system-api."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "16000001",
+          "description": "The specified ability does not exist."
+        },
+        {
+          "code": "16000002",
+          "description": "Incorrect ability type."
+        },
+        {
+          "code": "16000004",
+          "description": "Failed to start the invisible ability."
+        },
+        {
+          "code": "16000005",
+          "description": "The specified process does not have the permission."
+        },
+        {
+          "code": "16000006",
+          "description": "Cross-user operations are not allowed."
+        },
+        {
+          "code": "16000011",
+          "description": "The context does not exist."
+        },
+        {
+          "code": "16000050",
+          "description": "Internal error."
+        },
+        {
+          "code": "16200001",
+          "description": "The caller has been released."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "stopServiceExtensionAbilityWithAccount",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Stops other service extension ability with account. If the target service extension ability is visible, you can stop the target service extension ability; If the target service extension ability is invisible, you need to apply for permission:ohos.permission.START_INVISIBLE_ABILITY to stop target invisible service extension ability. If the target service extension ability is in cross-device, you need to apply for permission:ohos.permission.DISTRIBUTED_DATASYNC. 2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.INTERACT_ACROSS_LOCAL_ACCOUNTS",
+        "@param { Want } want - Indicates the want info to start.",
+        "@param { number } accountId - Indicates the accountId to start.",
+        "@param { AsyncCallback<void> } callback - The callback of stopServiceExtensionAbilityWithAccount.",
+        "@throws { BusinessError } 201 - The application does not have permission to call the interface.",
+        "@throws { BusinessError } 202 - The application is not system-app, can not use system-api.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 16000001 - The specified ability does not exist.",
+        "@throws { BusinessError } 16000002 - Incorrect ability type.",
+        "@throws { BusinessError } 16000004 - Failed to start the invisible ability.",
+        "@throws { BusinessError } 16000005 - The specified process does not have the permission.",
+        "@throws { BusinessError } 16000006 - Cross-user operations are not allowed.",
+        "@throws { BusinessError } 16000011 - The context does not exist.",
+        "@throws { BusinessError } 16000050 - Internal error.",
+        "@throws { BusinessError } 16200001 - The caller has been released.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@systemapi",
+        "@stagemodelonly",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "ServiceExtensionContext",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "want",
+          "类型": "Want",
+          "必填": true,
+          "说明": "Indicates the want info to start."
+        },
+        {
+          "名称": "accountId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the accountId to start."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "The callback of stopServiceExtensionAbilityWithAccount."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "The application does not have permission to call the interface."
+        },
+        {
+          "code": "202",
+          "description": "The application is not system-app, can not use system-api."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "16000001",
+          "description": "The specified ability does not exist."
+        },
+        {
+          "code": "16000002",
+          "description": "Incorrect ability type."
+        },
+        {
+          "code": "16000004",
+          "description": "Failed to start the invisible ability."
+        },
+        {
+          "code": "16000005",
+          "description": "The specified process does not have the permission."
+        },
+        {
+          "code": "16000006",
+          "description": "Cross-user operations are not allowed."
+        },
+        {
+          "code": "16000011",
+          "description": "The context does not exist."
+        },
+        {
+          "code": "16000050",
+          "description": "Internal error."
+        },
+        {
+          "code": "16200001",
+          "description": "The caller has been released."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "stopServiceExtensionAbilityWithAccount",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Stops other service extension ability with account. If the target service extension ability is visible, you can stop the target service extension ability; If the target service extension ability is invisible, you need to apply for permission:ohos.permission.START_INVISIBLE_ABILITY to stop target invisible service extension ability. If the target service extension ability is in cross-device, you need to apply for permission:ohos.permission.DISTRIBUTED_DATASYNC. 2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.INTERACT_ACROSS_LOCAL_ACCOUNTS",
+        "@param { Want } want - Indicates the want info to start.",
+        "@param { number } accountId - Indicates the accountId to start.",
+        "@returns { Promise<void> } The promise returned by the function.",
+        "@throws { BusinessError } 201 - The application does not have permission to call the interface.",
+        "@throws { BusinessError } 202 - The application is not system-app, can not use system-api.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 16000001 - The specified ability does not exist.",
+        "@throws { BusinessError } 16000002 - Incorrect ability type.",
+        "@throws { BusinessError } 16000004 - Failed to start the invisible ability.",
+        "@throws { BusinessError } 16000005 - The specified process does not have the permission.",
+        "@throws { BusinessError } 16000006 - Cross-user operations are not allowed.",
+        "@throws { BusinessError } 16000011 - The context does not exist.",
+        "@throws { BusinessError } 16000050 - Internal error.",
+        "@throws { BusinessError } 16200001 - The caller has been released.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@systemapi",
+        "@stagemodelonly",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "ServiceExtensionContext",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "want",
+          "类型": "Want",
+          "必填": true,
+          "说明": "Indicates the want info to start."
+        },
+        {
+          "名称": "accountId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the accountId to start."
+        }
+      ],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "The application does not have permission to call the interface."
+        },
+        {
+          "code": "202",
+          "description": "The application is not system-app, can not use system-api."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "16000001",
+          "description": "The specified ability does not exist."
+        },
+        {
+          "code": "16000002",
+          "description": "Incorrect ability type."
+        },
+        {
+          "code": "16000004",
+          "description": "Failed to start the invisible ability."
+        },
+        {
+          "code": "16000005",
+          "description": "The specified process does not have the permission."
+        },
+        {
+          "code": "16000006",
+          "description": "Cross-user operations are not allowed."
+        },
+        {
+          "code": "16000011",
+          "description": "The context does not exist."
+        },
+        {
+          "code": "16000050",
+          "description": "Internal error."
+        },
+        {
+          "code": "16200001",
+          "description": "The caller has been released."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "terminateSelf",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Destroys this service extension. 2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { AsyncCallback<void> } callback - The callback of terminateSelf.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 16000009 - An ability cannot be started or stopped in Wukong mode.",
+        "@throws { BusinessError } 16000011 - The context does not exist.",
+        "@throws { BusinessError } 16000050 - Internal error.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@systemapi",
+        "@stagemodelonly",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "ServiceExtensionContext",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "The callback of terminateSelf."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "16000009",
+          "description": "An ability cannot be started or stopped in Wukong mode."
+        },
+        {
+          "code": "16000011",
+          "description": "The context does not exist."
+        },
+        {
+          "code": "16000050",
+          "description": "Internal error."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "terminateSelf",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Destroys this service extension.",
+      "注释信息": [
+        "@returns { Promise<void> } The promise returned by the function.",
+        "@throws { BusinessError } 16000009 - An ability cannot be started or stopped in Wukong mode.",
+        "@throws { BusinessError } 16000011 - The context does not exist.",
+        "@throws { BusinessError } 16000050 - Internal error.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@systemapi",
+        "@stagemodelonly",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "ServiceExtensionContext",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "16000009",
+          "description": "An ability cannot be started or stopped in Wukong mode."
+        },
+        {
+          "code": "16000011",
+          "description": "The context does not exist."
+        },
+        {
+          "code": "16000050",
+          "description": "Internal error."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "connectServiceExtensionAbility",
+      "返回值": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Connects an ability to a service extension ability. If the target service extension ability is visible, you can connect the target service extension ability; If the target service extension ability is invisible, you need to apply for permission:ohos.permission.START_INVISIBLE_ABILITY to connect target invisible service extension ability. If the target service extension ability is in cross-device, you need to apply for permission:ohos.permission.DISTRIBUTED_DATASYNC. <p>This method can be called by an ability or service extension, but the destination of the connection must be a service extension. You must implement the {@link ConnectOptions} interface to obtain the proxy of the target service extension when the Service extension is connected.</p> 2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { Want } want - Indicates the service extension to connect.",
+        "@param { ConnectOptions } options - Indicates the callback of connection.",
+        "@returns { number } Returns the connection id.",
+        "@throws { BusinessError } 201 - The application does not have permission to call the interface.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 16000001 - The specified ability does not exist.",
+        "@throws { BusinessError } 16000002 - Incorrect ability type.",
+        "@throws { BusinessError } 16000004 - Failed to start the invisible ability.",
+        "@throws { BusinessError } 16000005 - The specified process does not have the permission.",
+        "@throws { BusinessError } 16000006 - Cross-user operations are not allowed.",
+        "@throws { BusinessError } 16000008 - The crowdtesting application expires.",
+        "@throws { BusinessError } 16000011 - The context does not exist.",
+        "@throws { BusinessError } 16000050 - Internal error.",
+        "@throws { BusinessError } 16000053 - The ability is not on the top of the UI.",
+        "@throws { BusinessError } 16000055 - Installation-free timed out.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@systemapi",
+        "@stagemodelonly",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "ServiceExtensionContext",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "want",
+          "类型": "Want",
+          "必填": true,
+          "说明": "Indicates the service extension to connect."
+        },
+        {
+          "名称": "options",
+          "类型": "ConnectOptions",
+          "必填": true,
+          "说明": "Indicates the callback of connection."
+        }
+      ],
+      "return_description": "Returns the connection id.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "The application does not have permission to call the interface."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "16000001",
+          "description": "The specified ability does not exist."
+        },
+        {
+          "code": "16000002",
+          "description": "Incorrect ability type."
+        },
+        {
+          "code": "16000004",
+          "description": "Failed to start the invisible ability."
+        },
+        {
+          "code": "16000005",
+          "description": "The specified process does not have the permission."
+        },
+        {
+          "code": "16000006",
+          "description": "Cross-user operations are not allowed."
+        },
+        {
+          "code": "16000008",
+          "description": "The crowdtesting application expires."
+        },
+        {
+          "code": "16000011",
+          "description": "The context does not exist."
+        },
+        {
+          "code": "16000050",
+          "description": "Internal error."
+        },
+        {
+          "code": "16000053",
+          "description": "The ability is not on the top of the UI."
+        },
+        {
+          "code": "16000055",
+          "description": "Installation-free timed out."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "connectServiceExtensionAbilityWithAccount",
+      "返回值": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Connects an ability to a service extension ability with account. If the target service extension ability is visible, you can connect the target service extension ability; If the target service extension ability is invisible, you need to apply for permission:ohos.permission.START_INVISIBLE_ABILITY to connect target invisible service extension ability. If the target service extension ability is in cross-device, you need to apply for permission:ohos.permission.DISTRIBUTED_DATASYNC. <p>This method can be called by an ability or service extension, but the destination of the connection must be a service extension. You must implement the {@link ConnectOptions} interface to obtain the proxy of the target service extension when the Service extension is connected.</p> 2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.INTERACT_ACROSS_LOCAL_ACCOUNTS",
+        "@param { Want } want - Indicates the service extension to connect.",
+        "@param { number } accountId - Indicates the account to connect.",
+        "@param { ConnectOptions } options - Indicates the callback of connection.",
+        "@returns { number } Returns the connection id.",
+        "@throws { BusinessError } 201 - The application does not have permission to call the interface.",
+        "@throws { BusinessError } 202 - The application is not system-app, can not use system-api.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 16000001 - The specified ability does not exist.",
+        "@throws { BusinessError } 16000002 - Incorrect ability type.",
+        "@throws { BusinessError } 16000004 - Failed to start the invisible ability.",
+        "@throws { BusinessError } 16000005 - The specified process does not have the permission.",
+        "@throws { BusinessError } 16000006 - Cross-user operations are not allowed.",
+        "@throws { BusinessError } 16000008 - The crowdtesting application expires.",
+        "@throws { BusinessError } 16000011 - The context does not exist.",
+        "@throws { BusinessError } 16000050 - Internal error.",
+        "@throws { BusinessError } 16000053 - The ability is not on the top of the UI.",
+        "@throws { BusinessError } 16000055 - Installation-free timed out.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@systemapi",
+        "@stagemodelonly",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "ServiceExtensionContext",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "want",
+          "类型": "Want",
+          "必填": true,
+          "说明": "Indicates the service extension to connect."
+        },
+        {
+          "名称": "accountId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the account to connect."
+        },
+        {
+          "名称": "options",
+          "类型": "ConnectOptions",
+          "必填": true,
+          "说明": "Indicates the callback of connection."
+        }
+      ],
+      "return_description": "Returns the connection id.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "The application does not have permission to call the interface."
+        },
+        {
+          "code": "202",
+          "description": "The application is not system-app, can not use system-api."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "16000001",
+          "description": "The specified ability does not exist."
+        },
+        {
+          "code": "16000002",
+          "description": "Incorrect ability type."
+        },
+        {
+          "code": "16000004",
+          "description": "Failed to start the invisible ability."
+        },
+        {
+          "code": "16000005",
+          "description": "The specified process does not have the permission."
+        },
+        {
+          "code": "16000006",
+          "description": "Cross-user operations are not allowed."
+        },
+        {
+          "code": "16000008",
+          "description": "The crowdtesting application expires."
+        },
+        {
+          "code": "16000011",
+          "description": "The context does not exist."
+        },
+        {
+          "code": "16000050",
+          "description": "Internal error."
+        },
+        {
+          "code": "16000053",
+          "description": "The ability is not on the top of the UI."
+        },
+        {
+          "code": "16000055",
+          "description": "Installation-free timed out."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "disconnectServiceExtensionAbility",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Disconnect an ability from a service extension, in contrast to {@link connectAbility}. 2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { number } connection - the connection id returned from connectAbility api.",
+        "@param { AsyncCallback<void> } callback - The callback of disconnectAbility.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 16000011 - The context does not exist.",
+        "@throws { BusinessError } 16000050 - Internal error.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@systemapi",
+        "@stagemodelonly",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "ServiceExtensionContext",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "connection",
+          "类型": "number",
+          "必填": true,
+          "说明": "the connection id returned from connectAbility api."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "The callback of disconnectAbility."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "16000011",
+          "description": "The context does not exist."
+        },
+        {
+          "code": "16000050",
+          "description": "Internal error."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "disconnectServiceExtensionAbility",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Disconnect an ability from a service extension, in contrast to {@link connectAbility}. 2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { number } connection - the connection id returned from connectAbility api.",
+        "@returns { Promise<void> } The promise returned by the function.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 16000011 - The context does not exist.",
+        "@throws { BusinessError } 16000050 - Internal error.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@systemapi",
+        "@stagemodelonly",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "ServiceExtensionContext",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "connection",
+          "类型": "number",
+          "必填": true,
+          "说明": "the connection id returned from connectAbility api."
+        }
+      ],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "16000011",
+          "description": "The context does not exist."
+        },
+        {
+          "code": "16000050",
+          "description": "Internal error."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "startAbilityByCall",
+      "返回值": "Promise<Caller>",
+      "所属模块": "未知模块",
+      "功能描述": "Get the caller object of the startup capability. If the local device starts a new ability, you need to apply for permission:ohos.permission.ABILITY_BACKGROUND_COMMUNICATION to use this method. If the caller application is in foreground, you can use this method to start ability; If the caller application is in the background, you need to apply for permission:ohos.permission.START_ABILITIES_FROM_BACKGROUND. If the target ability is visible, you can start the target ability; If the target ability is invisible, you need to apply for permission:ohos.permission.START_INVISIBLE_ABILITY to start target invisible ability. If the target ability is in cross-device, you need to apply for permission:ohos.permission.DISTRIBUTED_DATASYNC. 2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.ABILITY_BACKGROUND_COMMUNICATION",
+        "@param { Want } want - Indicates the ability to start.",
+        "@returns { Promise<Caller> } Returns the Caller interface.",
+        "@throws { BusinessError } 201 - The application does not have permission to call the interface.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 16000001 - The specified ability does not exist.",
+        "@throws { BusinessError } 16000002 - Incorrect ability type.",
+        "@throws { BusinessError } 16000004 - Failed to start the invisible ability.",
+        "@throws { BusinessError } 16000006 - Cross-user operations are not allowed.",
+        "@throws { BusinessError } 16000008 - The crowdtesting application expires.",
+        "@throws { BusinessError } 16000011 - The context does not exist.",
+        "@throws { BusinessError } 16000050 - Internal error.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@systemapi",
+        "@stagemodelonly",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "ServiceExtensionContext",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "want",
+          "类型": "Want",
+          "必填": true,
+          "说明": "Indicates the ability to start."
+        }
+      ],
+      "return_description": "Returns the Caller interface.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "The application does not have permission to call the interface."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "16000001",
+          "description": "The specified ability does not exist."
+        },
+        {
+          "code": "16000002",
+          "description": "Incorrect ability type."
+        },
+        {
+          "code": "16000004",
+          "description": "Failed to start the invisible ability."
+        },
+        {
+          "code": "16000006",
+          "description": "Cross-user operations are not allowed."
+        },
+        {
+          "code": "16000008",
+          "description": "The crowdtesting application expires."
+        },
+        {
+          "code": "16000011",
+          "description": "The context does not exist."
+        },
+        {
+          "code": "16000050",
+          "description": "Internal error."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "startAbilityByCallWithAccount",
+      "返回值": "Promise<Caller>",
+      "所属模块": "未知模块",
+      "功能描述": "Get the caller object that specifies the accountId startup capability If the local device starts a new ability, you need to apply for permission:ohos.permission.ABILITY_BACKGROUND_COMMUNICATION and ohos.permission.INTERACT_ACROSS_LOCAL_ACCOUNTS to use this method. If the caller application is in foreground, you can use this method to start ability; If the caller application is in the background, you need to apply for permission:ohos.permission.START_ABILITIES_FROM_BACKGROUND. If the target ability is visible, you can start the target ability; If the target ability is invisible, you need to apply for permission:ohos.permission.START_INVISIBLE_ABILITY to start target invisible ability. 2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.ABILITY_BACKGROUND_COMMUNICATION and ohos.permission.INTERACT_ACROSS_LOCAL_ACCOUNTS",
+        "@param { Want } want - Indicates the ability to start.",
+        "@param { number } accountId - Indicates the account to start.",
+        "@returns { Promise<Caller> } Returns the Caller interface.",
+        "@throws { BusinessError } 201 - The application does not have permission to call the interface.",
+        "@throws { BusinessError } 202 - The application is not system-app, can not use system-api.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 16000001 - The specified ability does not exist.",
+        "@throws { BusinessError } 16000002 - Incorrect ability type.",
+        "@throws { BusinessError } 16000004 - Failed to start the invisible ability.",
+        "@throws { BusinessError } 16000005 - The specified process does not have the permission.",
+        "@throws { BusinessError } 16000006 - Cross-user operations are not allowed.",
+        "@throws { BusinessError } 16000008 - The crowdtesting application expires.",
+        "@throws { BusinessError } 16000011 - The context does not exist.",
+        "@throws { BusinessError } 16000012 - The application is controlled.",
+        "@throws { BusinessError } 16000013 - The application is controlled by EDM.",
+        "@throws { BusinessError } 16000050 - Internal error.",
+        "@throws { BusinessError } 16200001 - The caller has been released.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@systemapi",
+        "@stagemodelonly",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "ServiceExtensionContext",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "want",
+          "类型": "Want",
+          "必填": true,
+          "说明": "Indicates the ability to start."
+        },
+        {
+          "名称": "accountId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the account to start."
+        }
+      ],
+      "return_description": "Returns the Caller interface.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "The application does not have permission to call the interface."
+        },
+        {
+          "code": "202",
+          "description": "The application is not system-app, can not use system-api."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "16000001",
+          "description": "The specified ability does not exist."
+        },
+        {
+          "code": "16000002",
+          "description": "Incorrect ability type."
+        },
+        {
+          "code": "16000004",
+          "description": "Failed to start the invisible ability."
+        },
+        {
+          "code": "16000005",
+          "description": "The specified process does not have the permission."
+        },
+        {
+          "code": "16000006",
+          "description": "Cross-user operations are not allowed."
+        },
+        {
+          "code": "16000008",
+          "description": "The crowdtesting application expires."
+        },
+        {
+          "code": "16000011",
+          "description": "The context does not exist."
+        },
+        {
+          "code": "16000012",
+          "description": "The application is controlled."
+        },
+        {
+          "code": "16000013",
+          "description": "The application is controlled by EDM."
+        },
+        {
+          "code": "16000050",
+          "description": "Internal error."
+        },
+        {
+          "code": "16200001",
+          "description": "The caller has been released."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "startRecentAbility",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Service extension uses this method to start a specific ability, if ability is multi instance, will start a recent instance. If the caller application is in foreground, you can use this method to start ability; If the caller application is in the background, you need to apply for permission:ohos.permission.START_ABILITIES_FROM_BACKGROUND. If the target ability is visible, you can start the target ability; If the target ability is invisible, you need to apply for permission:ohos.permission.START_INVISIBLE_ABILITY to start target invisible ability. If the target ability is in cross-device, you need to apply for permission:ohos.permission.DISTRIBUTED_DATASYNC. 2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { Want } want - Indicates the ability to start.",
+        "@param { AsyncCallback<void> } callback - The callback of startAbility.",
+        "@throws { BusinessError } 201 - The application does not have permission to call the interface.",
+        "@throws { BusinessError } 202 - The application is not system-app, can not use system-api.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 16000001 - The specified ability does not exist.",
+        "@throws { BusinessError } 16000002 - Incorrect ability type.",
+        "@throws { BusinessError } 16000004 - Failed to start the invisible ability.",
+        "@throws { BusinessError } 16000005 - The specified process does not have the permission.",
+        "@throws { BusinessError } 16000006 - Cross-user operations are not allowed.",
+        "@throws { BusinessError } 16000008 - The crowdtesting application expires.",
+        "@throws { BusinessError } 16000009 - An ability cannot be started or stopped in Wukong mode.",
+        "@throws { BusinessError } 16000010 - The call with the continuation and prepare continuation flag is forbidden.",
+        "@throws { BusinessError } 16000011 - The context does not exist.",
+        "@throws { BusinessError } 16000050 - Internal error.",
+        "@throws { BusinessError } 16000053 - The ability is not on the top of the UI.",
+        "@throws { BusinessError } 16000055 - Installation-free timed out.",
+        "@throws { BusinessError } 16000071 - App clone is not supported.",
+        "@throws { BusinessError } 16000072 - App clone or multi-instance is not supported.",
+        "@throws { BusinessError } 16000073 - The app clone index is invalid.",
+        "@throws { BusinessError } 16000076 - The app instance key is invalid.",
+        "@throws { BusinessError } 16000077 - The number of app instances reaches the limit.",
+        "@throws { BusinessError } 16000078 - The multi-instance is not supported.",
+        "@throws { BusinessError } 16000079 - The APP_INSTANCE_KEY cannot be specified.",
+        "@throws { BusinessError } 16000080 - Creating a new instance is not supported.",
+        "@throws { BusinessError } 16200001 - The caller has been released.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@systemapi",
+        "@stagemodelonly",
+        "@since 14"
+      ],
+      "层级": 1,
+      "上级": "ServiceExtensionContext",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "want",
+          "类型": "Want",
+          "必填": true,
+          "说明": "Indicates the ability to start."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "The callback of startAbility."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "The application does not have permission to call the interface."
+        },
+        {
+          "code": "202",
+          "description": "The application is not system-app, can not use system-api."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "16000001",
+          "description": "The specified ability does not exist."
+        },
+        {
+          "code": "16000002",
+          "description": "Incorrect ability type."
+        },
+        {
+          "code": "16000004",
+          "description": "Failed to start the invisible ability."
+        },
+        {
+          "code": "16000005",
+          "description": "The specified process does not have the permission."
+        },
+        {
+          "code": "16000006",
+          "description": "Cross-user operations are not allowed."
+        },
+        {
+          "code": "16000008",
+          "description": "The crowdtesting application expires."
+        },
+        {
+          "code": "16000009",
+          "description": "An ability cannot be started or stopped in Wukong mode."
+        },
+        {
+          "code": "16000010",
+          "description": "The call with the continuation and prepare continuation flag is forbidden."
+        },
+        {
+          "code": "16000011",
+          "description": "The context does not exist."
+        },
+        {
+          "code": "16000050",
+          "description": "Internal error."
+        },
+        {
+          "code": "16000053",
+          "description": "The ability is not on the top of the UI."
+        },
+        {
+          "code": "16000055",
+          "description": "Installation-free timed out."
+        },
+        {
+          "code": "16000071",
+          "description": "App clone is not supported."
+        },
+        {
+          "code": "16000072",
+          "description": "App clone or multi-instance is not supported."
+        },
+        {
+          "code": "16000073",
+          "description": "The app clone index is invalid."
+        },
+        {
+          "code": "16000076",
+          "description": "The app instance key is invalid."
+        },
+        {
+          "code": "16000077",
+          "description": "The number of app instances reaches the limit."
+        },
+        {
+          "code": "16000078",
+          "description": "The multi-instance is not supported."
+        },
+        {
+          "code": "16000079",
+          "description": "The APP_INSTANCE_KEY cannot be specified."
+        },
+        {
+          "code": "16000080",
+          "description": "Creating a new instance is not supported."
+        },
+        {
+          "code": "16200001",
+          "description": "The caller has been released."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "startRecentAbility",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Service extension uses this method to start a specific ability, if ability is multi instance, will start a recent instance. If the caller application is in foreground, you can use this method to start ability; If the caller application is in the background, you need to apply for permission:ohos.permission.START_ABILITIES_FROM_BACKGROUND. If the target ability is visible, you can start the target ability; If the target ability is invisible, you need to apply for permission:ohos.permission.START_INVISIBLE_ABILITY to start target invisible ability. If the target ability is in cross-device, you need to apply for permission:ohos.permission.DISTRIBUTED_DATASYNC. 2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { Want } want - Indicates the ability to start.",
+        "@param { StartOptions } options - Indicates the start options.",
+        "@param { AsyncCallback<void> } callback - The callback of startAbility.",
+        "@throws { BusinessError } 201 - The application does not have permission to call the interface.",
+        "@throws { BusinessError } 202 - The application is not system-app, can not use system-api.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 16000001 - The specified ability does not exist.",
+        "@throws { BusinessError } 16000004 - Failed to start the invisible ability.",
+        "@throws { BusinessError } 16000005 - The specified process does not have the permission.",
+        "@throws { BusinessError } 16000006 - Cross-user operations are not allowed.",
+        "@throws { BusinessError } 16000008 - The crowdtesting application expires.",
+        "@throws { BusinessError } 16000009 - An ability cannot be started or stopped in Wukong mode.",
+        "@throws { BusinessError } 16000011 - The context does not exist.",
+        "@throws { BusinessError } 16000050 - Internal error.",
+        "@throws { BusinessError } 16000053 - The ability is not on the top of the UI.",
+        "@throws { BusinessError } 16000055 - Installation-free timed out.",
+        "@throws { BusinessError } 16000071 - App clone is not supported.",
+        "@throws { BusinessError } 16000072 - App clone or multi-instance is not supported.",
+        "@throws { BusinessError } 16000073 - The app clone index is invalid.",
+        "@throws { BusinessError } 16000076 - The app instance key is invalid.",
+        "@throws { BusinessError } 16000077 - The number of app instances reaches the limit.",
+        "@throws { BusinessError } 16000078 - The multi-instance is not supported.",
+        "@throws { BusinessError } 16000079 - The APP_INSTANCE_KEY cannot be specified.",
+        "@throws { BusinessError } 16000080 - Creating a new instance is not supported.",
+        "@throws { BusinessError } 16200001 - The caller has been released.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@systemapi",
+        "@stagemodelonly",
+        "@since 14"
+      ],
+      "层级": 1,
+      "上级": "ServiceExtensionContext",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "want",
+          "类型": "Want",
+          "必填": true,
+          "说明": "Indicates the ability to start."
+        },
+        {
+          "名称": "options",
+          "类型": "StartOptions",
+          "必填": true,
+          "说明": "Indicates the start options."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "The callback of startAbility."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "The application does not have permission to call the interface."
+        },
+        {
+          "code": "202",
+          "description": "The application is not system-app, can not use system-api."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "16000001",
+          "description": "The specified ability does not exist."
+        },
+        {
+          "code": "16000004",
+          "description": "Failed to start the invisible ability."
+        },
+        {
+          "code": "16000005",
+          "description": "The specified process does not have the permission."
+        },
+        {
+          "code": "16000006",
+          "description": "Cross-user operations are not allowed."
+        },
+        {
+          "code": "16000008",
+          "description": "The crowdtesting application expires."
+        },
+        {
+          "code": "16000009",
+          "description": "An ability cannot be started or stopped in Wukong mode."
+        },
+        {
+          "code": "16000011",
+          "description": "The context does not exist."
+        },
+        {
+          "code": "16000050",
+          "description": "Internal error."
+        },
+        {
+          "code": "16000053",
+          "description": "The ability is not on the top of the UI."
+        },
+        {
+          "code": "16000055",
+          "description": "Installation-free timed out."
+        },
+        {
+          "code": "16000071",
+          "description": "App clone is not supported."
+        },
+        {
+          "code": "16000072",
+          "description": "App clone or multi-instance is not supported."
+        },
+        {
+          "code": "16000073",
+          "description": "The app clone index is invalid."
+        },
+        {
+          "code": "16000076",
+          "description": "The app instance key is invalid."
+        },
+        {
+          "code": "16000077",
+          "description": "The number of app instances reaches the limit."
+        },
+        {
+          "code": "16000078",
+          "description": "The multi-instance is not supported."
+        },
+        {
+          "code": "16000079",
+          "description": "The APP_INSTANCE_KEY cannot be specified."
+        },
+        {
+          "code": "16000080",
+          "description": "Creating a new instance is not supported."
+        },
+        {
+          "code": "16200001",
+          "description": "The caller has been released."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "startRecentAbility",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Service extension uses this method to start a specific ability, if ability is multi instance, will start a recent instance. If the caller application is in foreground, you can use this method to start ability; If the caller application is in the background, you need to apply for permission:ohos.permission.START_ABILITIES_FROM_BACKGROUND. If the target ability is visible, you can start the target ability; If the target ability is invisible, you need to apply for permission:ohos.permission.START_INVISIBLE_ABILITY to start target invisible ability. If the target ability is in cross-device, you need to apply for permission:ohos.permission.DISTRIBUTED_DATASYNC. 2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { Want } want - Indicates the ability to start.",
+        "@param { StartOptions } [options] - Indicates the start options.",
+        "@returns { Promise<void> } The promise returned by the function.",
+        "@throws { BusinessError } 201 - The application does not have permission to call the interface.",
+        "@throws { BusinessError } 202 - The application is not system-app, can not use system-api.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 16000001 - The specified ability does not exist.",
+        "@throws { BusinessError } 16000002 - Incorrect ability type.",
+        "@throws { BusinessError } 16000004 - Failed to start the invisible ability.",
+        "@throws { BusinessError } 16000005 - The specified process does not have the permission.",
+        "@throws { BusinessError } 16000006 - Cross-user operations are not allowed.",
+        "@throws { BusinessError } 16000008 - The crowdtesting application expires.",
+        "@throws { BusinessError } 16000009 - An ability cannot be started or stopped in Wukong mode.",
+        "@throws { BusinessError } 16000010 - The call with the continuation and prepare continuation flag is forbidden.",
+        "@throws { BusinessError } 16000011 - The context does not exist.",
+        "@throws { BusinessError } 16000050 - Internal error.",
+        "@throws { BusinessError } 16000053 - The ability is not on the top of the UI.",
+        "@throws { BusinessError } 16000055 - Installation-free timed out.",
+        "@throws { BusinessError } 16000071 - App clone is not supported.",
+        "@throws { BusinessError } 16000072 - App clone or multi-instance is not supported.",
+        "@throws { BusinessError } 16000073 - The app clone index is invalid.",
+        "@throws { BusinessError } 16000076 - The app instance key is invalid.",
+        "@throws { BusinessError } 16000077 - The number of app instances reaches the limit.",
+        "@throws { BusinessError } 16000078 - The multi-instance is not supported.",
+        "@throws { BusinessError } 16000079 - The APP_INSTANCE_KEY cannot be specified.",
+        "@throws { BusinessError } 16000080 - Creating a new instance is not supported.",
+        "@throws { BusinessError } 16200001 - The caller has been released.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@systemapi",
+        "@stagemodelonly",
+        "@since 14"
+      ],
+      "层级": 1,
+      "上级": "ServiceExtensionContext",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "want",
+          "类型": "Want",
+          "必填": true,
+          "说明": "Indicates the ability to start."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "StartOptions } [options] - Indicates the start options."
+        }
+      ],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "The application does not have permission to call the interface."
+        },
+        {
+          "code": "202",
+          "description": "The application is not system-app, can not use system-api."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "16000001",
+          "description": "The specified ability does not exist."
+        },
+        {
+          "code": "16000002",
+          "description": "Incorrect ability type."
+        },
+        {
+          "code": "16000004",
+          "description": "Failed to start the invisible ability."
+        },
+        {
+          "code": "16000005",
+          "description": "The specified process does not have the permission."
+        },
+        {
+          "code": "16000006",
+          "description": "Cross-user operations are not allowed."
+        },
+        {
+          "code": "16000008",
+          "description": "The crowdtesting application expires."
+        },
+        {
+          "code": "16000009",
+          "description": "An ability cannot be started or stopped in Wukong mode."
+        },
+        {
+          "code": "16000010",
+          "description": "The call with the continuation and prepare continuation flag is forbidden."
+        },
+        {
+          "code": "16000011",
+          "description": "The context does not exist."
+        },
+        {
+          "code": "16000050",
+          "description": "Internal error."
+        },
+        {
+          "code": "16000053",
+          "description": "The ability is not on the top of the UI."
+        },
+        {
+          "code": "16000055",
+          "description": "Installation-free timed out."
+        },
+        {
+          "code": "16000071",
+          "description": "App clone is not supported."
+        },
+        {
+          "code": "16000072",
+          "description": "App clone or multi-instance is not supported."
+        },
+        {
+          "code": "16000073",
+          "description": "The app clone index is invalid."
+        },
+        {
+          "code": "16000076",
+          "description": "The app instance key is invalid."
+        },
+        {
+          "code": "16000077",
+          "description": "The number of app instances reaches the limit."
+        },
+        {
+          "code": "16000078",
+          "description": "The multi-instance is not supported."
+        },
+        {
+          "code": "16000079",
+          "description": "The APP_INSTANCE_KEY cannot be specified."
+        },
+        {
+          "code": "16000080",
+          "description": "Creating a new instance is not supported."
+        },
+        {
+          "code": "16200001",
+          "description": "The caller has been released."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "requestModalUIExtension",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Requests the specified foreground application to start the UIExtensionAbility of the corresponding type. The foreground application is specified by bundleName in want.parameters. If bundleName is left unspecified, or if the application specified by bundleName is not running in the foreground or does not exist, the UIExtensionAbility is directly started on the system interface. The UIExtensionAbility to start is determined by the combination of the bundleName, abilityName, and moduleName fields in want, and its type is determined by the ability.want.params.uiExtensionType field in want.parameters. If the target UIExtensionAbility is visible, you can start the target UIExtensionAbility; If the target UIExtensionAbility is invisible, you need to apply for permission:ohos.permission.START_INVISIBLE_ABILITY to start target invisible UIExtensionAbility. 2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { Want } pickerWant - Indicates the UIExtensionAbility to start.",
+        "@param { AsyncCallback<void> } callback - The callback of requestModalUIExtension.",
+        "@throws { BusinessError } 202 - The application is not system-app, can not use system-api.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 16000050 - Internal error.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@systemapi",
+        "@stagemodelonly",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "ServiceExtensionContext",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "pickerWant",
+          "类型": "Want",
+          "必填": true,
+          "说明": "Indicates the UIExtensionAbility to start."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "The callback of requestModalUIExtension."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "202",
+          "description": "The application is not system-app, can not use system-api."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "16000050",
+          "description": "Internal error."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "requestModalUIExtension",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Requests the specified foreground application to start the UIExtensionAbility of the corresponding type. The foreground application is specified by bundleName in want.parameters. If bundleName is left unspecified, or if the application specified by bundleName is not running in the foreground or does not exist, the UIExtensionAbility is directly started on the system interface. The UIExtensionAbility to start is determined by the combination of the bundleName, abilityName, and moduleName fields in want, and its type is determined by the ability.want.params.uiExtensionType field in want.parameters. If the target UIExtensionAbility is visible, you can start the target UIExtensionAbility; If the target UIExtensionAbility is invisible, you need to apply for permission:ohos.permission.START_INVISIBLE_ABILITY to start target invisible UIExtensionAbility. 2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { Want } pickerWant - Indicates the UIExtensionAbility to start.",
+        "@returns { Promise<void> } The promise returned by the requestModalUIExtension.",
+        "@throws { BusinessError } 202 - The application is not system-app, can not use system-api.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 16000050 - Internal error.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@systemapi",
+        "@stagemodelonly",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "ServiceExtensionContext",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "pickerWant",
+          "类型": "Want",
+          "必填": true,
+          "说明": "Indicates the UIExtensionAbility to start."
+        }
+      ],
+      "return_description": "The promise returned by the requestModalUIExtension.",
+      "error_codes": [
+        {
+          "code": "202",
+          "description": "The application is not system-app, can not use system-api."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "16000050",
+          "description": "Internal error."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "preStartMission",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "preStartMission opens an atomic service window without popping up a loading window 2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.PRE_START_ATOMIC_SERVICE",
+        "@param { string } bundleName - The bundle name of the atomic service.",
+        "@param { string } moduleName - The module name of the atomic service.",
+        "@param { string } abilityName - The ability name of the atomic service.",
+        "@param { string } startTime - The start time of the atomic service.",
+        "@returns { Promise<void> } The promise returned by the function.",
+        "@throws { BusinessError } 201 - The application does not have permission to call the interface.",
+        "@throws { BusinessError } 202 - The application is not system-app, can not use system-api.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 16300007 - The target free install task does not exist.",
+        "@throws { BusinessError } 16000011 - The context does not exist.",
+        "@throws { BusinessError } 16000050 - Internal error.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@systemapi",
+        "@stagemodelonly",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "ServiceExtensionContext",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "bundleName",
+          "类型": "string",
+          "必填": true,
+          "说明": "The bundle name of the atomic service."
+        },
+        {
+          "名称": "moduleName",
+          "类型": "string",
+          "必填": true,
+          "说明": "The module name of the atomic service."
+        },
+        {
+          "名称": "abilityName",
+          "类型": "string",
+          "必填": true,
+          "说明": "The ability name of the atomic service."
+        },
+        {
+          "名称": "startTime",
+          "类型": "string",
+          "必填": true,
+          "说明": "The start time of the atomic service."
+        }
+      ],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "The application does not have permission to call the interface."
+        },
+        {
+          "code": "202",
+          "description": "The application is not system-app, can not use system-api."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "16300007",
+          "description": "The target free install task does not exist."
+        },
+        {
+          "code": "16000011",
+          "description": "The context does not exist."
+        },
+        {
+          "code": "16000050",
+          "description": "Internal error."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "startUIServiceExtensionAbility",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Starts a UI service extension ability. If the target UI service extension ability is visible, you can start the target UI service extension ability; If the target UI service extension ability is invisible, you need to apply for permission:ohos.permission.START_INVISIBLE_ABILITY to start target invisible UI service extension ability. 2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { Want } want - Indicates the want info to start.",
+        "@returns { Promise<void> } The promise returned by the function.",
+        "@throws { BusinessError } 201 - The application does not have permission to call the interface.",
+        "@throws { BusinessError } 202 - The application is not system-app, can not use system-api.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 16000001 - The specified ability does not exist.",
+        "@throws { BusinessError } 16000002 - Incorrect ability type.",
+        "@throws { BusinessError } 16000004 - Failed to start the invisible ability.",
+        "@throws { BusinessError } 16000005 - The specified process does not have the permission.",
+        "@throws { BusinessError } 16000008 - The crowdtesting application expires.",
+        "@throws { BusinessError } 16000011 - The context does not exist.",
+        "@throws { BusinessError } 16000012 - The application is controlled.",
+        "@throws { BusinessError } 16000013 - The EDM prohibits the application from launching.",
+        "@throws { BusinessError } 16000019 - No matching ability is found.",
+        "@throws { BusinessError } 16000050 - Internal error.",
+        "@throws { BusinessError } 16200001 - The caller has been released.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@systemapi",
+        "@stagemodelonly",
+        "@since 14"
+      ],
+      "层级": 1,
+      "上级": "ServiceExtensionContext",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "want",
+          "类型": "Want",
+          "必填": true,
+          "说明": "Indicates the want info to start."
+        }
+      ],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "The application does not have permission to call the interface."
+        },
+        {
+          "code": "202",
+          "description": "The application is not system-app, can not use system-api."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "16000001",
+          "description": "The specified ability does not exist."
+        },
+        {
+          "code": "16000002",
+          "description": "Incorrect ability type."
+        },
+        {
+          "code": "16000004",
+          "description": "Failed to start the invisible ability."
+        },
+        {
+          "code": "16000005",
+          "description": "The specified process does not have the permission."
+        },
+        {
+          "code": "16000008",
+          "description": "The crowdtesting application expires."
+        },
+        {
+          "code": "16000011",
+          "description": "The context does not exist."
+        },
+        {
+          "code": "16000012",
+          "description": "The application is controlled."
+        },
+        {
+          "code": "16000013",
+          "description": "The EDM prohibits the application from launching."
+        },
+        {
+          "code": "16000019",
+          "description": "No matching ability is found."
+        },
+        {
+          "code": "16000050",
+          "description": "Internal error."
+        },
+        {
+          "code": "16200001",
+          "description": "The caller has been released."
+        }
+      ],
+      "版本": "API5.0"
+    }
+  ]
+}

@@ -1,0 +1,3906 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.UserAuthenticationKit",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "namespace",
+      "名称": "userAuth",
+      "所属模块": "@kit.UserAuthenticationKit",
+      "功能描述": "The userAuth module provides APIs for user authentication, which applies to scenarios such as device unlocking, payment, and application login.",
+      "注释信息": [
+        "@namespace userAuth",
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "@kit.UserAuthenticationKit",
+      "since_version": "12",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "所属模块": "未知模块",
+      "功能描述": "Maximum reuse duration of the authentication result, in milliseconds. The value is 300000.",
+      "注释信息": [
+        "@constant",
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "userAuth",
+      "since_version": "12",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "所属模块": "未知模块",
+      "功能描述": "Permanent lockout duration, in milliseconds. The value is 0x7fffffff.",
+      "注释信息": [
+        "@constant",
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 1,
+      "上级": "userAuth",
+      "since_version": "22",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "AuthenticationResult",
+      "所属模块": "未知模块",
+      "功能描述": "Enum for authentication result.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@since 6",
+        "@deprecated since 8",
+        "@useinstead ohos.userIAM.userAuth.ResultCode"
+      ],
+      "层级": 2,
+      "上级": "userAuth",
+      "since_version": "6",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "NO_SUPPORT",
+      "值": "-1",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the device does not support authentication.",
+      "注释信息": [
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@since 6",
+        "@deprecated since 8",
+        "@useinstead ohos.userIAM.userAuth.ResultCode.TYPE_NOT_SUPPORT"
+      ],
+      "层级": 2,
+      "上级": "AuthenticationResult",
+      "since_version": "6",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "SUCCESS",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that authentication is success.",
+      "注释信息": [
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@since 6",
+        "@deprecated since 8",
+        "@useinstead ohos.userIAM.userAuth.ResultCode.SUCCESS"
+      ],
+      "层级": 2,
+      "上级": "AuthenticationResult",
+      "since_version": "6",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMPARE_FAILURE",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the authenticator fails to identify user.",
+      "注释信息": [
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@since 6",
+        "@deprecated since 8",
+        "@useinstead ohos.userIAM.userAuth.ResultCode.FAIL"
+      ],
+      "层级": 2,
+      "上级": "AuthenticationResult",
+      "since_version": "6",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CANCELED",
+      "值": "2",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that authentication has been canceled.",
+      "注释信息": [
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@since 6",
+        "@deprecated since 8",
+        "@useinstead ohos.userIAM.userAuth.ResultCode.CANCELED"
+      ],
+      "层级": 2,
+      "上级": "AuthenticationResult",
+      "since_version": "6",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "TIMEOUT",
+      "值": "3",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that authentication has timed out.",
+      "注释信息": [
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@since 6",
+        "@deprecated since 8",
+        "@useinstead ohos.userIAM.userAuth.ResultCode.TIMEOUT"
+      ],
+      "层级": 2,
+      "上级": "AuthenticationResult",
+      "since_version": "6",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CAMERA_FAIL",
+      "值": "4",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates a failure to open the camera.",
+      "注释信息": [
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@since 6",
+        "@deprecated since 8"
+      ],
+      "层级": 2,
+      "上级": "AuthenticationResult",
+      "since_version": "6",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "BUSY",
+      "值": "5",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the authentication task is busy. Wait for a few seconds and try again.",
+      "注释信息": [
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@since 6",
+        "@deprecated since 8",
+        "@useinstead ohos.userIAM.userAuth.ResultCode.BUSY"
+      ],
+      "层级": 2,
+      "上级": "AuthenticationResult",
+      "since_version": "6",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "INVALID_PARAMETERS",
+      "值": "6",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates incorrect parameters.",
+      "注释信息": [
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@since 6",
+        "@deprecated since 8",
+        "@useinstead ohos.userIAM.userAuth.ResultCode.INVALID_PARAMETERS"
+      ],
+      "层级": 2,
+      "上级": "AuthenticationResult",
+      "since_version": "6",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "LOCKED",
+      "值": "7",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the authenticator is locked.",
+      "注释信息": [
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@since 6",
+        "@deprecated since 8",
+        "@useinstead ohos.userIAM.userAuth.ResultCode.LOCKED"
+      ],
+      "层级": 2,
+      "上级": "AuthenticationResult",
+      "since_version": "6",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "NOT_ENROLLED",
+      "值": "8",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the user has not enrolled the authenticator.",
+      "注释信息": [
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@since 6",
+        "@deprecated since 8",
+        "@useinstead ohos.userIAM.userAuth.ResultCode.NOT_ENROLLED"
+      ],
+      "层级": 2,
+      "上级": "AuthenticationResult",
+      "since_version": "6",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "GENERAL_ERROR",
+      "值": "100",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates other errors.",
+      "注释信息": [
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@since 6",
+        "@deprecated since 8",
+        "@useinstead ohos.userIAM.userAuth.ResultCode.GENERAL_ERROR"
+      ],
+      "层级": 2,
+      "上级": "AuthenticationResult",
+      "since_version": "6",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "type_alias",
+      "名称": "AuthType",
+      "所属模块": "未知模块",
+      "功能描述": "Auth types",
+      "注释信息": [
+        "@typedef { 'ALL' | 'FACE_ONLY' }",
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@since 6",
+        "@deprecated since 8",
+        "@useinstead ohos.userIAM.userAuth.UserAuthType"
+      ],
+      "层级": 1,
+      "上级": "userAuth",
+      "since_version": "6",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "type_alias",
+      "名称": "SecureLevel",
+      "所属模块": "未知模块",
+      "功能描述": "Secure levels",
+      "注释信息": [
+        "@typedef { 'S1' | 'S2' | 'S3' | 'S4' }",
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@since 6",
+        "@deprecated since 8",
+        "@useinstead ohos.userIAM.userAuth.AuthTrustLevel"
+      ],
+      "层级": 1,
+      "上级": "userAuth",
+      "since_version": "6",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "Authenticator",
+      "所属模块": "未知模块",
+      "功能描述": "Used to initiate authentication.",
+      "注释信息": [
+        "@interface Authenticator",
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@since 6",
+        "@deprecated since 8",
+        "@useinstead ohos.userIAM.userAuth.AuthInstance"
+      ],
+      "层级": 2,
+      "上级": "userAuth",
+      "since_version": "6",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "execute",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Execute authentication.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BIOMETRIC",
+        "@param { AuthType } type - Indicates the authentication type.",
+        "@param { SecureLevel } level - Indicates the security level.",
+        "@param { AsyncCallback<number> } callback - Async callback of execute.",
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@since 6",
+        "@deprecated since 8",
+        "@useinstead ohos.userIAM.userAuth.AuthInstance.start"
+      ],
+      "层级": 2,
+      "上级": "Authenticator",
+      "since_version": "6",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "AuthType",
+          "必填": true,
+          "说明": "Indicates the authentication type."
+        },
+        {
+          "名称": "level",
+          "类型": "SecureLevel",
+          "必填": true,
+          "说明": "Indicates the security level."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<number>",
+          "必填": true,
+          "说明": "Async callback of execute."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "execute",
+      "返回值": "Promise<number>",
+      "所属模块": "未知模块",
+      "功能描述": "Execute authentication.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BIOMETRIC",
+        "@param { AuthType } type - Indicates the authentication type.",
+        "@param { SecureLevel } level - Indicates the security level.",
+        "@returns { Promise<number> }",
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@since 6",
+        "@deprecated since 8",
+        "@useinstead ohos.userIAM.userAuth.AuthInstance.start"
+      ],
+      "层级": 2,
+      "上级": "Authenticator",
+      "since_version": "6",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "AuthType",
+          "必填": true,
+          "说明": "Indicates the authentication type."
+        },
+        {
+          "名称": "level",
+          "类型": "SecureLevel",
+          "必填": true,
+          "说明": "Indicates the security level."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getAuthenticator",
+      "返回值": "Authenticator",
+      "所属模块": "未知模块",
+      "功能描述": "Get Authenticator instance.",
+      "注释信息": [
+        "@returns { Authenticator } Returns an Authenticator.",
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@since 6",
+        "@deprecated since 8",
+        "@useinstead ohos.userIAM.userAuth.getAuthInstance"
+      ],
+      "层级": 1,
+      "上级": "userAuth",
+      "since_version": "6",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "Returns an Authenticator.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "class",
+      "名称": "UserAuth",
+      "所属模块": "未知模块",
+      "功能描述": "User authentication.",
+      "注释信息": [
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.userIAM.userAuth.AuthInstance"
+      ],
+      "层级": 2,
+      "上级": "userAuth",
+      "since_version": "8",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "constructor",
+      "返回值": "UserAuth",
+      "所属模块": "未知模块",
+      "功能描述": "Constructor to get the UserAuth class instance.",
+      "注释信息": [
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.userIAM.userAuth.getAuthInstance"
+      ],
+      "层级": 2,
+      "上级": "UserAuth",
+      "since_version": "8",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getVersion",
+      "返回值": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Get version information.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BIOMETRIC",
+        "@returns { number } Returns version information.",
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@since 8",
+        "@deprecated since 9"
+      ],
+      "层级": 2,
+      "上级": "UserAuth",
+      "since_version": "8",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "Returns version information.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getAvailableStatus",
+      "返回值": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Check whether the authentication capability is available. check permission failed.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BIOMETRIC",
+        "@param { UserAuthType } authType - Credential type for authentication.",
+        "@param { AuthTrustLevel } authTrustLevel - Trust level of authentication result.",
+        "@returns { number } Returns a check result, which is specified by getAvailableStatus, the value of number is related to the ResultCode enum, **201** is",
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.userIAM.userAuth.getAvailableStatus"
+      ],
+      "层级": 2,
+      "上级": "UserAuth",
+      "since_version": "8",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [
+        {
+          "名称": "authType",
+          "类型": "UserAuthType",
+          "必填": true,
+          "说明": "Credential type for authentication."
+        },
+        {
+          "名称": "authTrustLevel",
+          "类型": "AuthTrustLevel",
+          "必填": true,
+          "说明": "Trust level of authentication result."
+        }
+      ],
+      "return_description": "Returns a check result, which is specified by getAvailableStatus, the value of number is related to the ResultCode enum, **201** is",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "auth",
+      "返回值": "Uint8Array",
+      "所属模块": "未知模块",
+      "功能描述": "Executes authentication. *201** is check permission failed.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BIOMETRIC",
+        "@param { Uint8Array } challenge - Pass in challenge value.",
+        "@param { UserAuthType } authType - Type of authentication.",
+        "@param { AuthTrustLevel } authTrustLevel - Trust level of authentication result.",
+        "@param { IUserAuthCallback } callback - Return result and acquireInfo through callback, the value of result code is related to the ResultCode enum,",
+        "@returns { Uint8Array } Returns ContextId for cancel.",
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.userIAM.userAuth.AuthInstance.start"
+      ],
+      "层级": 2,
+      "上级": "UserAuth",
+      "since_version": "8",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [
+        {
+          "名称": "challenge",
+          "类型": "Uint8Array",
+          "必填": true,
+          "说明": "Pass in challenge value."
+        },
+        {
+          "名称": "authType",
+          "类型": "UserAuthType",
+          "必填": true,
+          "说明": "Type of authentication."
+        },
+        {
+          "名称": "authTrustLevel",
+          "类型": "AuthTrustLevel",
+          "必填": true,
+          "说明": "Trust level of authentication result."
+        },
+        {
+          "名称": "callback",
+          "类型": "IUserAuthCallback",
+          "必填": true,
+          "说明": "Return result and acquireInfo through callback, the value of result code is related to the ResultCode enum,"
+        }
+      ],
+      "return_description": "Returns ContextId for cancel.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "cancelAuth",
+      "返回值": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Cancel authentication with ContextID. enum, **201** is check permission failed.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BIOMETRIC",
+        "@param { Uint8Array } contextID - Cancel authentication and pass in ContextID.",
+        "@returns { number } Returns a number value indicating whether Cancel authentication was successful, the value of number is related to the ResultCode",
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.userIAM.userAuth.AuthInstance.cancel"
+      ],
+      "层级": 2,
+      "上级": "UserAuth",
+      "since_version": "8",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [
+        {
+          "名称": "contextID",
+          "类型": "Uint8Array",
+          "必填": true,
+          "说明": "Cancel authentication and pass in ContextID."
+        }
+      ],
+      "return_description": "Returns a number value indicating whether Cancel authentication was successful, the value of number is related to the ResultCode",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "IUserAuthCallback",
+      "所属模块": "未知模块",
+      "功能描述": "Asynchronous callback of authentication operation.",
+      "注释信息": [
+        "@interface IUserAuthCallback",
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.userIAM.userAuth.AuthEvent"
+      ],
+      "层级": 2,
+      "上级": "userAuth",
+      "since_version": "8",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "onResult:",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "The authentication result code is returned through the callback. If the authentication is passed, the authentication token is returned in extraInfo, If the authentication fails, the remaining authentication times are returned in extraInfo, If the authentication executor is locked, the freezing time is returned in extraInfo.",
+      "注释信息": [
+        "@type { function }",
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.userIAM.userAuth.AuthEvent.callback"
+      ],
+      "层级": 2,
+      "上级": "IUserAuthCallback",
+      "since_version": "8",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "onAcquireInfo",
+      "属性类型": "(module: number, acquire: number, extraInfo: any) => void",
+      "所属模块": "未知模块",
+      "功能描述": "During an authentication, the TipsCode is returned through the callback.",
+      "注释信息": [
+        "@type { ?function }",
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.userIAM.userAuth.AuthEvent.callback"
+      ],
+      "层级": 2,
+      "上级": "IUserAuthCallback",
+      "since_version": "8",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "AuthResult",
+      "所属模块": "未知模块",
+      "功能描述": "Authentication result: authentication token, remaining authentication times, freezing time.",
+      "注释信息": [
+        "@typedef AuthResult",
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.userIAM.userAuth.AuthResultInfo"
+      ],
+      "层级": 2,
+      "上级": "userAuth",
+      "since_version": "8",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "token",
+      "属性类型": "Uint8Array",
+      "所属模块": "未知模块",
+      "功能描述": "The authentication result if the authentication is passed.",
+      "注释信息": [
+        "@type { ?Uint8Array }",
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.userIAM.userAuth.AuthResultInfo.token"
+      ],
+      "层级": 2,
+      "上级": "AuthResult",
+      "since_version": "8",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "remainTimes",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "The remaining authentication times if the authentication fails.",
+      "注释信息": [
+        "@type { ?number }",
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.userIAM.userAuth.AuthResultInfo.remainAttempts"
+      ],
+      "层级": 2,
+      "上级": "AuthResult",
+      "since_version": "8",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "freezingTime",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "The freezing time if the authentication executor is locked.",
+      "注释信息": [
+        "@type { ?number }",
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.userIAM.userAuth.AuthResultInfo.lockoutDuration"
+      ],
+      "层级": 2,
+      "上级": "AuthResult",
+      "since_version": "8",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "ResultCode",
+      "所属模块": "未知模块",
+      "功能描述": "Enum for operation result.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.userIAM.userAuth.UserAuthResultCode"
+      ],
+      "层级": 2,
+      "上级": "userAuth",
+      "since_version": "8",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "SUCCESS",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the result is success or ability is supported.",
+      "注释信息": [
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.userIAM.userAuth.UserAuthResultCode.SUCCESS"
+      ],
+      "层级": 2,
+      "上级": "ResultCode",
+      "since_version": "8",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "FAIL",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that authentication failed.",
+      "注释信息": [
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.userIAM.userAuth.UserAuthResultCode.FAIL"
+      ],
+      "层级": 2,
+      "上级": "ResultCode",
+      "since_version": "8",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "GENERAL_ERROR",
+      "值": "2",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates other errors.",
+      "注释信息": [
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.userIAM.userAuth.UserAuthResultCode.GENERAL_ERROR"
+      ],
+      "层级": 2,
+      "上级": "ResultCode",
+      "since_version": "8",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CANCELED",
+      "值": "3",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that this operation has been canceled.",
+      "注释信息": [
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.userIAM.userAuth.UserAuthResultCode.CANCELED"
+      ],
+      "层级": 2,
+      "上级": "ResultCode",
+      "since_version": "8",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "TIMEOUT",
+      "值": "4",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that this operation has timed out.",
+      "注释信息": [
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.userIAM.userAuth.UserAuthResultCode.TIMEOUT"
+      ],
+      "层级": 2,
+      "上级": "ResultCode",
+      "since_version": "8",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "TYPE_NOT_SUPPORT",
+      "值": "5",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that this authentication type is not supported.",
+      "注释信息": [
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.userIAM.userAuth.UserAuthResultCode.TYPE_NOT_SUPPORT"
+      ],
+      "层级": 2,
+      "上级": "ResultCode",
+      "since_version": "8",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "TRUST_LEVEL_NOT_SUPPORT",
+      "值": "6",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the authentication trust level is not supported.",
+      "注释信息": [
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.userIAM.userAuth.UserAuthResultCode.TRUST_LEVEL_NOT_SUPPORT"
+      ],
+      "层级": 2,
+      "上级": "ResultCode",
+      "since_version": "8",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "BUSY",
+      "值": "7",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the authentication task is busy. Wait for a few seconds and try again.",
+      "注释信息": [
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.userIAM.userAuth.UserAuthResultCode.BUSY"
+      ],
+      "层级": 2,
+      "上级": "ResultCode",
+      "since_version": "8",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "INVALID_PARAMETERS",
+      "值": "8",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates incorrect parameters.",
+      "注释信息": [
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.userIAM.userAuth.UserAuthResultCode.INVALID_PARAMETERS"
+      ],
+      "层级": 2,
+      "上级": "ResultCode",
+      "since_version": "8",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "LOCKED",
+      "值": "9",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the authenticator is locked.",
+      "注释信息": [
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.userIAM.userAuth.UserAuthResultCode.LOCKED"
+      ],
+      "层级": 2,
+      "上级": "ResultCode",
+      "since_version": "8",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "NOT_ENROLLED",
+      "值": "10",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the user has not enrolled the authenticator.",
+      "注释信息": [
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.userIAM.userAuth.UserAuthResultCode.NOT_ENROLLED"
+      ],
+      "层级": 2,
+      "上级": "ResultCode",
+      "since_version": "8",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "FaceTips",
+      "所属模块": "未知模块",
+      "功能描述": "The enumeration of prompt codes in the process of face authentication.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@since 8",
+        "@deprecated since 11"
+      ],
+      "层级": 2,
+      "上级": "userAuth",
+      "since_version": "8",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "FACE_AUTH_TIP_TOO_BRIGHT",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the obtained facial image is too bright due to high illumination.",
+      "注释信息": [
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@since 8",
+        "@deprecated since 11"
+      ],
+      "层级": 2,
+      "上级": "FaceTips",
+      "since_version": "8",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "FACE_AUTH_TIP_TOO_DARK",
+      "值": "2",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the obtained facial image is too dark due to low illumination.",
+      "注释信息": [
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@since 8",
+        "@deprecated since 11"
+      ],
+      "层级": 2,
+      "上级": "FaceTips",
+      "since_version": "8",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "FACE_AUTH_TIP_TOO_CLOSE",
+      "值": "3",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the face is too close to the device.",
+      "注释信息": [
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@since 8",
+        "@deprecated since 11"
+      ],
+      "层级": 2,
+      "上级": "FaceTips",
+      "since_version": "8",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "FACE_AUTH_TIP_TOO_FAR",
+      "值": "4",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the face is too far away from the device.",
+      "注释信息": [
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@since 8",
+        "@deprecated since 11"
+      ],
+      "层级": 2,
+      "上级": "FaceTips",
+      "since_version": "8",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "FACE_AUTH_TIP_TOO_HIGH",
+      "值": "5",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the device is too high, and that only the upper part of the face is captured.",
+      "注释信息": [
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@since 8",
+        "@deprecated since 11"
+      ],
+      "层级": 2,
+      "上级": "FaceTips",
+      "since_version": "8",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "FACE_AUTH_TIP_TOO_LOW",
+      "值": "6",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the device is too low, and that only the lower part of the face is captured.",
+      "注释信息": [
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@since 8",
+        "@deprecated since 11"
+      ],
+      "层级": 2,
+      "上级": "FaceTips",
+      "since_version": "8",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "FACE_AUTH_TIP_TOO_RIGHT",
+      "值": "7",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the device is deviated to the right, and that only the right part of the face is captured.",
+      "注释信息": [
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@since 8",
+        "@deprecated since 11"
+      ],
+      "层级": 2,
+      "上级": "FaceTips",
+      "since_version": "8",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "FACE_AUTH_TIP_TOO_LEFT",
+      "值": "8",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the device is deviated to the left, and that only the left part of the face is captured.",
+      "注释信息": [
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@since 8",
+        "@deprecated since 11"
+      ],
+      "层级": 2,
+      "上级": "FaceTips",
+      "since_version": "8",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "FACE_AUTH_TIP_TOO_MUCH_MOTION",
+      "值": "9",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the face moves too fast during facial information collection.",
+      "注释信息": [
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@since 8",
+        "@deprecated since 11"
+      ],
+      "层级": 2,
+      "上级": "FaceTips",
+      "since_version": "8",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "FACE_AUTH_TIP_POOR_GAZE",
+      "值": "10",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the face is not facing the device.",
+      "注释信息": [
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@since 8",
+        "@deprecated since 11"
+      ],
+      "层级": 2,
+      "上级": "FaceTips",
+      "since_version": "8",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "FACE_AUTH_TIP_NOT_DETECTED",
+      "值": "11",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that no face is detected.",
+      "注释信息": [
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@since 8",
+        "@deprecated since 11"
+      ],
+      "层级": 2,
+      "上级": "FaceTips",
+      "since_version": "8",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "FingerprintTips",
+      "所属模块": "未知模块",
+      "功能描述": "The enumeration of prompt codes in the process of fingerprint authentication.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@since 8",
+        "@deprecated since 11"
+      ],
+      "层级": 2,
+      "上级": "userAuth",
+      "since_version": "8",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "FINGERPRINT_AUTH_TIP_GOOD",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the image acquired is good.",
+      "注释信息": [
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@since 8",
+        "@deprecated since 11"
+      ],
+      "层级": 2,
+      "上级": "FingerprintTips",
+      "since_version": "8",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "FINGERPRINT_AUTH_TIP_DIRTY",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the fingerprint image is too noisy due to suspected or detected dirt on sensor.",
+      "注释信息": [
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@since 8",
+        "@deprecated since 11"
+      ],
+      "层级": 2,
+      "上级": "FingerprintTips",
+      "since_version": "8",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "FINGERPRINT_AUTH_TIP_INSUFFICIENT",
+      "值": "2",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the fingerprint image is too noisy to process due to a detected condition.",
+      "注释信息": [
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@since 8",
+        "@deprecated since 11"
+      ],
+      "层级": 2,
+      "上级": "FingerprintTips",
+      "since_version": "8",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "FINGERPRINT_AUTH_TIP_PARTIAL",
+      "值": "3",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that only a partial fingerprint image is detected.",
+      "注释信息": [
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@since 8",
+        "@deprecated since 11"
+      ],
+      "层级": 2,
+      "上级": "FingerprintTips",
+      "since_version": "8",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "FINGERPRINT_AUTH_TIP_TOO_FAST",
+      "值": "4",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the fingerprint image is incomplete due to quick motion.",
+      "注释信息": [
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@since 8",
+        "@deprecated since 11"
+      ],
+      "层级": 2,
+      "上级": "FingerprintTips",
+      "since_version": "8",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "FINGERPRINT_AUTH_TIP_TOO_SLOW",
+      "值": "5",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the fingerprint image is unreadable due to lack of motion.",
+      "注释信息": [
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@since 8",
+        "@deprecated since 11"
+      ],
+      "层级": 2,
+      "上级": "FingerprintTips",
+      "since_version": "8",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "UserAuthType",
+      "所属模块": "未知模块",
+      "功能描述": "Enumerates the identity authentication types.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "userAuth",
+      "since_version": "12",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "PIN",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "PIN authentication.",
+      "注释信息": [
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "UserAuthType",
+      "since_version": "12",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "FACE",
+      "值": "2",
+      "所属模块": "未知模块",
+      "功能描述": "Facial authentication.",
+      "注释信息": [
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "UserAuthType",
+      "since_version": "12",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "FINGERPRINT",
+      "值": "4",
+      "所属模块": "未知模块",
+      "功能描述": "Fingerprint authentication.",
+      "注释信息": [
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "UserAuthType",
+      "since_version": "12",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "AuthTrustLevel",
+      "所属模块": "未知模块",
+      "功能描述": "Enumerates the trust levels of the authentication result. For details about typical scenarios and examples, see Principles for Classifying Biometric Authentication Trust Levels.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "userAuth",
+      "since_version": "12",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "ATL1",
+      "值": "10000",
+      "所属模块": "未知模块",
+      "功能描述": "Authentication trust level 1. The authentication of this level can identify individual users and provides limited liveness detection capabilities. It is applicable to scenarios such as service risk control and access to common personal data.",
+      "注释信息": [
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "AuthTrustLevel",
+      "since_version": "12",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "ATL2",
+      "值": "20000",
+      "所属模块": "未知模块",
+      "功能描述": "Authentication trust level 2. The authentication of this level can accurately identify individual users and provides regular liveness detection capabilities. It is applicable to scenarios such as device unlocking and application login.",
+      "注释信息": [
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "AuthTrustLevel",
+      "since_version": "12",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "ATL3",
+      "值": "30000",
+      "所属模块": "未知模块",
+      "功能描述": "Authentication trust level 3. The authentication of this level can accurately identify individual users and provides strong liveness detection capabilities. It is applicable to scenarios such as device unlocking.",
+      "注释信息": [
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "AuthTrustLevel",
+      "since_version": "12",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "ATL4",
+      "值": "40000",
+      "所属模块": "未知模块",
+      "功能描述": "Authentication trust level 4. The authentication of this level can accurately identify individual users and provides powerful liveness detection capabilities. It is applicable to scenarios such as small-amount payment.",
+      "注释信息": [
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "AuthTrustLevel",
+      "since_version": "12",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "type_alias",
+      "名称": "AuthEventKey",
+      "所属模块": "未知模块",
+      "功能描述": "Authentication events.",
+      "注释信息": [
+        "@typedef { 'result' | 'tip' }",
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@since 9",
+        "@deprecated since 11"
+      ],
+      "层级": 1,
+      "上级": "userAuth",
+      "since_version": "9",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "type_alias",
+      "名称": "EventInfo",
+      "所属模块": "未知模块",
+      "功能描述": "Return information of Authentication events.",
+      "注释信息": [
+        "@typedef { AuthResultInfo | TipInfo }",
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@since 9",
+        "@deprecated since 11",
+        "@useinstead ohos.userIAM.userAuth.UserAuthResult"
+      ],
+      "层级": 1,
+      "上级": "userAuth",
+      "since_version": "9",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "AuthEvent",
+      "所属模块": "未知模块",
+      "功能描述": "Asynchronous callback of authentication event.",
+      "注释信息": [
+        "@interface AuthEvent",
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@since 9",
+        "@deprecated since 11",
+        "@useinstead ohos.userIAM.userAuth.IAuthCallback"
+      ],
+      "层级": 2,
+      "上级": "userAuth",
+      "since_version": "9",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "callback",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "The authentication event callback.",
+      "注释信息": [
+        "@param { EventInfo } result - Event info.",
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@since 9",
+        "@deprecated since 11",
+        "@useinstead ohos.userIAM.userAuth.IAuthCallback.onResult"
+      ],
+      "层级": 2,
+      "上级": "AuthEvent",
+      "since_version": "9",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [
+        {
+          "名称": "result",
+          "类型": "EventInfo",
+          "必填": true,
+          "说明": "Event info."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "AuthResultInfo",
+      "所属模块": "未知模块",
+      "功能描述": "Authentication result information.",
+      "注释信息": [
+        "@typedef AuthResultInfo",
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@since 9",
+        "@deprecated since 11",
+        "@useinstead ohos.userIAM.userAuth.UserAuthResult"
+      ],
+      "层级": 2,
+      "上级": "userAuth",
+      "since_version": "9",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "result",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "The authentication result.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@since 9",
+        "@deprecated since 11",
+        "@useinstead ohos.userIAM.userAuth.UserAuthResult.result"
+      ],
+      "层级": 2,
+      "上级": "AuthResultInfo",
+      "since_version": "9",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "token",
+      "属性类型": "Uint8Array",
+      "所属模块": "未知模块",
+      "功能描述": "The authentication token if the authentication is passed.",
+      "注释信息": [
+        "@type { ?Uint8Array }",
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@since 9",
+        "@deprecated since 11",
+        "@useinstead ohos.userIAM.userAuth.UserAuthResult.token"
+      ],
+      "层级": 2,
+      "上级": "AuthResultInfo",
+      "since_version": "9",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "remainAttempts",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "The remaining authentication attempts if the authentication fails.",
+      "注释信息": [
+        "@type { ?number }",
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@since 9",
+        "@deprecated since 11",
+        "@useinstead ohos.userIAM.userAuth.AuthLockState.remainingAuthAttempts"
+      ],
+      "层级": 2,
+      "上级": "AuthResultInfo",
+      "since_version": "9",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "lockoutDuration",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "The lockout duration if the authentication executor is locked.",
+      "注释信息": [
+        "@type { ?number }",
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@since 9",
+        "@deprecated since 11",
+        "@useinstead ohos.userIAM.userAuth.AuthLockState.lockoutDuration"
+      ],
+      "层级": 2,
+      "上级": "AuthResultInfo",
+      "since_version": "9",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "TipInfo",
+      "所属模块": "未知模块",
+      "功能描述": "Authentication tip info.",
+      "注释信息": [
+        "@typedef TipInfo",
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@since 9",
+        "@deprecated since 11",
+        "@useinstead ohos.userIAM.userAuth.AuthTipInfo"
+      ],
+      "层级": 2,
+      "上级": "userAuth",
+      "since_version": "9",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "module",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "The authentication module of sending tip information.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@since 9",
+        "@deprecated since 11",
+        "@useinstead ohos.userIAM.userAuth.AuthTipInfo.tipType"
+      ],
+      "层级": 2,
+      "上级": "TipInfo",
+      "since_version": "9",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "tip",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Tip information, used to prompt the business to perform some operations.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@since 9",
+        "@deprecated since 11",
+        "@useinstead ohos.userIAM.userAuth.AuthTipInfo.tipCode"
+      ],
+      "层级": 2,
+      "上级": "TipInfo",
+      "since_version": "9",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "AuthInstance",
+      "所属模块": "未知模块",
+      "功能描述": "Authentication instance, used to initiate a complete authentication.",
+      "注释信息": [
+        "@interface AuthInstance",
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@since 9",
+        "@deprecated since 10",
+        "@useinstead ohos.userIAM.userAuth.UserAuthInstance"
+      ],
+      "层级": 2,
+      "上级": "userAuth",
+      "since_version": "9",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "on:",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Turn on authentication event listening.",
+      "注释信息": [
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 12500002 - General operation error.",
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@since 9",
+        "@deprecated since 10",
+        "@useinstead ohos.userIAM.userAuth.UserAuthInstance.on"
+      ],
+      "层级": 2,
+      "上级": "AuthInstance",
+      "since_version": "9",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "12500002",
+          "description": "General operation error."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "off:",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Turn off authentication event listening.",
+      "注释信息": [
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 12500002 - General operation error.",
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@since 9",
+        "@deprecated since 10",
+        "@useinstead ohos.userIAM.userAuth.UserAuthInstance.off"
+      ],
+      "层级": 2,
+      "上级": "AuthInstance",
+      "since_version": "9",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "12500002",
+          "description": "General operation error."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "start:",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Start this authentication, an instance can only perform authentication once.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BIOMETRIC",
+        "@type { function }",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 12500001 - Authentication failed.",
+        "@throws { BusinessError } 12500002 - General operation error.",
+        "@throws { BusinessError } 12500003 - The operation is canceled.",
+        "@throws { BusinessError } 12500004 - The operation is time-out.",
+        "@throws { BusinessError } 12500005 - The authentication type is not supported.",
+        "@throws { BusinessError } 12500006 - The authentication trust level is not supported.",
+        "@throws { BusinessError } 12500007 - The authentication task is busy.",
+        "@throws { BusinessError } 12500009 - The authenticator is locked.",
+        "@throws { BusinessError } 12500010 - The type of credential has not been enrolled.",
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@since 9",
+        "@deprecated since 10",
+        "@useinstead ohos.userIAM.userAuth.UserAuthInstance.start"
+      ],
+      "层级": 2,
+      "上级": "AuthInstance",
+      "since_version": "9",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "12500001",
+          "description": "Authentication failed."
+        },
+        {
+          "code": "12500002",
+          "description": "General operation error."
+        },
+        {
+          "code": "12500003",
+          "description": "The operation is canceled."
+        },
+        {
+          "code": "12500004",
+          "description": "The operation is time-out."
+        },
+        {
+          "code": "12500005",
+          "description": "The authentication type is not supported."
+        },
+        {
+          "code": "12500006",
+          "description": "The authentication trust level is not supported."
+        },
+        {
+          "code": "12500007",
+          "description": "The authentication task is busy."
+        },
+        {
+          "code": "12500009",
+          "description": "The authenticator is locked."
+        },
+        {
+          "code": "12500010",
+          "description": "The type of credential has not been enrolled."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "cancel:",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Cancel this authentication.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BIOMETRIC",
+        "@type { function }",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 12500002 - General operation error.",
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@since 9",
+        "@deprecated since 10",
+        "@useinstead ohos.userIAM.userAuth.UserAuthInstance.cancel"
+      ],
+      "层级": 2,
+      "上级": "AuthInstance",
+      "since_version": "9",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "12500002",
+          "description": "General operation error."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getAvailableStatus",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Checks whether the specified authentication capability is supported. <p><strong>NOTE</strong>: <br>Error code 12500005 is returned if the authentication executor is not registered and the specified authentication capability is not supported. <br>Error code 12500006 is returned if the authentication executor has been registered, the authentication functionality is not disabled, but the authentication trust level is lower than that specified by the service. <br>Error code 12500010 is returned if the authentication executor has been registered, the authentication functionality is not disabled, but the user has not enrolled credential. <br>Error code 12500013 is returned if the authentication executor has been registered, the authentication functionality is not disabled, but the password has expired. <br>If getAvailableStatus is called to check whether lock screen password authentication at ATL4 is supported for a user who has enrolled a 4-digit PIN as the lock screen password (the authentication trust level is ATL3), error code 12500010 will be returned. </p> <br>1. Mandatory parameters are left unspecified.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BIOMETRIC",
+        "@param { UserAuthType } authType - Authentication type. PIN is supported since API version 11.",
+        "@param { AuthTrustLevel } authTrustLevel - Authentication trust level.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 12500002 - General operation error.",
+        "@throws { BusinessError } 12500005 - The authentication type is not supported.",
+        "@throws { BusinessError } 12500006 - The authentication trust level is not supported.",
+        "@throws { BusinessError } 12500010 - The type of credential has not been enrolled.",
+        "@throws { BusinessError } 12500013 - Operation failed because of PIN expired.",
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "userAuth",
+      "since_version": "12",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [
+        {
+          "名称": "authType",
+          "类型": "UserAuthType",
+          "必填": true,
+          "说明": "Authentication type. PIN is supported since API version 11."
+        },
+        {
+          "名称": "authTrustLevel",
+          "类型": "AuthTrustLevel",
+          "必填": true,
+          "说明": "Authentication trust level."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "12500002",
+          "description": "General operation error."
+        },
+        {
+          "code": "12500005",
+          "description": "The authentication type is not supported."
+        },
+        {
+          "code": "12500006",
+          "description": "The authentication trust level is not supported."
+        },
+        {
+          "code": "12500010",
+          "description": "The type of credential has not been enrolled."
+        },
+        {
+          "code": "12500013",
+          "description": "Operation failed because of PIN expired."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "EnrolledState",
+      "所属模块": "未知模块",
+      "功能描述": "Represents the state of a credential enrolled.",
+      "注释信息": [
+        "@typedef EnrolledState",
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "userAuth",
+      "since_version": "12",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "credentialDigest",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Credential digest, which is randomly generated when a credential is added.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "EnrolledState",
+      "since_version": "12",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "credentialCount",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Number of enrolled credentials.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "EnrolledState",
+      "since_version": "12",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getEnrolledState",
+      "返回值": "EnrolledState",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains information about the credentials enrolled. With this API, you can obtain the change of the credentials. <br>1. Mandatory parameters are left unspecified.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BIOMETRIC",
+        "@param { UserAuthType } authType - Authentication type.",
+        "@returns { EnrolledState } Credential state obtained if the operation is successful.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 12500002 - General operation error.",
+        "@throws { BusinessError } 12500005 - The authentication type is not supported.",
+        "@throws { BusinessError } 12500010 - The type of credential has not been enrolled.",
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "userAuth",
+      "since_version": "12",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [
+        {
+          "名称": "authType",
+          "类型": "UserAuthType",
+          "必填": true,
+          "说明": "Authentication type."
+        }
+      ],
+      "return_description": "Credential state obtained if the operation is successful.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "12500002",
+          "description": "General operation error."
+        },
+        {
+          "code": "12500005",
+          "description": "The authentication type is not supported."
+        },
+        {
+          "code": "12500010",
+          "description": "The type of credential has not been enrolled."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "AuthLockState",
+      "所属模块": "未知模块",
+      "功能描述": "Authentication lock State.",
+      "注释信息": [
+        "@typedef AuthLockState",
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "userAuth",
+      "since_version": "22",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "isLocked",
+      "属性类型": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the authenticator has been locked or not, true if locked.",
+      "注释信息": [
+        "@type { boolean }",
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "AuthLockState",
+      "since_version": "22",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "remainingAuthAttempts",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "The remaining attempts if the authentication has not been locked.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "AuthLockState",
+      "since_version": "22",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "lockoutDuration",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "The remaining lockout duration if the authentication has been locked. It would be PERMANENT_LOCKOUT_DURATION if permanently locked and requires PIN authentication to unlock.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "AuthLockState",
+      "since_version": "22",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getAuthLockState",
+      "返回值": "Promise<AuthLockState>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the lock state of specified authentication type. which contains lock state, remaining attempts if the authentication has not been locked, or remaining lockout duration if the authentication has been locked.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BIOMETRIC",
+        "@param { UserAuthType } authType - Authentication type.",
+        "@returns { Promise<AuthLockState } AuthLockState - Returns the lock state of the specified authType,",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 12500002 - General operation error.",
+        "@throws { BusinessError } 12500005 - The authentication type is not supported.",
+        "@throws { BusinessError } 12500008 - The parameter is out of range.",
+        "@throws { BusinessError } 12500010 - The type of credential has not been enrolled.",
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 1,
+      "上级": "userAuth",
+      "since_version": "22",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [
+        {
+          "名称": "authType",
+          "类型": "UserAuthType",
+          "必填": true,
+          "说明": "Authentication type."
+        }
+      ],
+      "return_description": "AuthLockState - Returns the lock state of the specified authType,",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "12500002",
+          "description": "General operation error."
+        },
+        {
+          "code": "12500005",
+          "description": "The authentication type is not supported."
+        },
+        {
+          "code": "12500008",
+          "description": "The parameter is out of range."
+        },
+        {
+          "code": "12500010",
+          "description": "The type of credential has not been enrolled."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getAuthInstance",
+      "返回值": "AuthInstance",
+      "所属模块": "未知模块",
+      "功能描述": "Get Authentication instance.",
+      "注释信息": [
+        "@param { Uint8Array } challenge - Pass in challenge value.",
+        "@param { UserAuthType } authType - Credential type for authentication.",
+        "@param { AuthTrustLevel } authTrustLevel - Trust level of authentication result.",
+        "@returns { AuthInstance } Returns an authentication instance.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 12500002 - General operation error.",
+        "@throws { BusinessError } 12500005 - The authentication type is not supported.",
+        "@throws { BusinessError } 12500006 - The authentication trust level is not supported.",
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@since 9",
+        "@deprecated since 10",
+        "@useinstead ohos.userIAM.userAuth.getUserAuthInstance"
+      ],
+      "层级": 1,
+      "上级": "userAuth",
+      "since_version": "9",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [
+        {
+          "名称": "challenge",
+          "类型": "Uint8Array",
+          "必填": true,
+          "说明": "Pass in challenge value."
+        },
+        {
+          "名称": "authType",
+          "类型": "UserAuthType",
+          "必填": true,
+          "说明": "Credential type for authentication."
+        },
+        {
+          "名称": "authTrustLevel",
+          "类型": "AuthTrustLevel",
+          "必填": true,
+          "说明": "Trust level of authentication result."
+        }
+      ],
+      "return_description": "Returns an authentication instance.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "12500002",
+          "description": "General operation error."
+        },
+        {
+          "code": "12500005",
+          "description": "The authentication type is not supported."
+        },
+        {
+          "code": "12500006",
+          "description": "The authentication trust level is not supported."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "ReuseMode",
+      "所属模块": "未知模块",
+      "功能描述": "Enumerates the modes for reusing authentication results.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "userAuth",
+      "since_version": "12",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "AUTH_TYPE_RELEVANT",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "The device unlock authentication result can be reused within the validity period if the authentication type matches any of the authentication types specified for this authentication.",
+      "注释信息": [
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "ReuseMode",
+      "since_version": "12",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "AUTH_TYPE_IRRELEVANT",
+      "值": "2",
+      "所属模块": "未知模块",
+      "功能描述": "The device unlock authentication result can be reused within the validity period regardless of the authentication type.",
+      "注释信息": [
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "ReuseMode",
+      "since_version": "12",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CALLER_IRRELEVANT_AUTH_TYPE_RELEVANT",
+      "值": "3",
+      "所属模块": "未知模块",
+      "功能描述": "Any identity authentication result (including device unlock authentication result) can be reused within the validity period if the authentication type matches any of the authentication types specified for this authentication.",
+      "注释信息": [
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "ReuseMode",
+      "since_version": "14",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CALLER_IRRELEVANT_AUTH_TYPE_IRRELEVANT",
+      "值": "4",
+      "所属模块": "未知模块",
+      "功能描述": "Any identity authentication result (including device unlock authentication result) can be reused within the validity period regardless of the authentication type.",
+      "注释信息": [
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "ReuseMode",
+      "since_version": "14",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "ReuseUnlockResult",
+      "所属模块": "未知模块",
+      "功能描述": "Represents information about the authentication result reuse. <p><strong>NOTE</strong>: <br>If the credential changes within the reuse duration after a successful identity authentication (including device unlock authentication), the authentication result can still be reused and the actual EnrolledState is returned in the authentication result. <br>If the credential used for the previous authentication has been deleted when the authentication result is used: 1.If the deleted credential is face or fingerprint, the authentication result can still be reused, but credentialCount and credentialDigest in the EnrolledState returned are both 0. 2.If the deleted credential is a lock screen password, the reuse will fail. </p>",
+      "注释信息": [
+        "@typedef ReuseUnlockResult",
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "userAuth",
+      "since_version": "12",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "reuseMode",
+      "属性类型": "ReuseMode",
+      "所属模块": "未知模块",
+      "功能描述": "Authentication result reuse mode.",
+      "注释信息": [
+        "@type { ReuseMode }",
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "ReuseUnlockResult",
+      "since_version": "12",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "reuseDuration",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Period for which the authentication result can be reused. The value must be greater than 0 and less than MAX_ALLOWABLE_REUSE_DURATION.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "ReuseUnlockResult",
+      "since_version": "12",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "AuthParam",
+      "所属模块": "未知模块",
+      "功能描述": "Defines the user authentication parameters.",
+      "注释信息": [
+        "@typedef AuthParam",
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "userAuth",
+      "since_version": "12",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "challenge",
+      "属性类型": "Uint8Array",
+      "所属模块": "未知模块",
+      "功能描述": "Random challenge value, which can be used to prevent replay attacks. It cannot exceed 32 bytes and can be passed in Uint8Array([]) format.",
+      "注释信息": [
+        "@type { Uint8Array }",
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "AuthParam",
+      "since_version": "12",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "authType",
+      "属性类型": "UserAuthType[]",
+      "所属模块": "未知模块",
+      "功能描述": "Authentication type list, which specifies the types of authentication provided on the user authentication page.",
+      "注释信息": [
+        "@type { UserAuthType[] }",
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "AuthParam",
+      "since_version": "12",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "authTrustLevel",
+      "属性类型": "AuthTrustLevel",
+      "所属模块": "未知模块",
+      "功能描述": "Authentication trust level. For details, see Principles for Classifying Biometric Authentication Trust Levels.",
+      "注释信息": [
+        "@type { AuthTrustLevel }",
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "AuthParam",
+      "since_version": "12",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "reuseUnlockResult",
+      "属性类型": "ReuseUnlockResult",
+      "所属模块": "未知模块",
+      "功能描述": "Information about the authentication result reuse.",
+      "注释信息": [
+        "@type { ?ReuseUnlockResult }",
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "AuthParam",
+      "since_version": "12",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "skipLockedBiometricAuth",
+      "属性类型": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates whether to skip biometric authentication which has been locked by continuous failures.",
+      "注释信息": [
+        "@type { ?boolean }",
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "AuthParam",
+      "since_version": "20",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "WidgetParam",
+      "所属模块": "未知模块",
+      "功能描述": "Represents the information presented on the user authentication page.",
+      "注释信息": [
+        "@typedef WidgetParam",
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "userAuth",
+      "since_version": "12",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "title",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Title of the user authentication page. It cannot exceed 500 characters.",
+      "注释信息": [
+        "@type { string }",
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "WidgetParam",
+      "since_version": "12",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "navigationButtonText",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Text on the navigation button. It cannot exceed 60 characters. It is supported in single fingerprint or facial authentication before API version 18. Since API version 18, it is also supported in combined facial and fingerprint authentication.",
+      "注释信息": [
+        "@type { ?string }",
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "WidgetParam",
+      "since_version": "12",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "uiContext",
+      "属性类型": "Context",
+      "所属模块": "未知模块",
+      "功能描述": "Whether to display the authentication dialog box in modal application mode. This mode is applicable only to 2-in-1 devices. If this mode is not used or other types of devices are used, the authentication dialog box is displayed in modal system mode.",
+      "注释信息": [
+        "@type { ?Context }",
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@atomicservice",
+        "@since 18"
+      ],
+      "层级": 2,
+      "上级": "WidgetParam",
+      "since_version": "18",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "UserAuthResult",
+      "所属模块": "未知模块",
+      "功能描述": "Represents the user authentication result. If the authentication is successful, the authentication type and token information are returned.",
+      "注释信息": [
+        "@typedef UserAuthResult",
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "userAuth",
+      "since_version": "12",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "result",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "User authentication result. If the authentication is successful, SUCCESS is returned. Otherwise, an error code is returned. For details, see UserAuthResultCode.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "UserAuthResult",
+      "since_version": "12",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "token",
+      "属性类型": "Uint8Array",
+      "所属模块": "未知模块",
+      "功能描述": "The authentication result if the authentication is passed.",
+      "注释信息": [
+        "@type { ?Uint8Array }",
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "UserAuthResult",
+      "since_version": "12",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "authType",
+      "属性类型": "UserAuthType",
+      "所属模块": "未知模块",
+      "功能描述": "Credential type for authentication succeed.",
+      "注释信息": [
+        "@type { ?UserAuthType }",
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "UserAuthResult",
+      "since_version": "12",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "enrolledState",
+      "属性类型": "EnrolledState",
+      "所属模块": "未知模块",
+      "功能描述": "The enrolled state for authentication succeed. EnrolledState would be returned when the authentication has passed.",
+      "注释信息": [
+        "@type { ?EnrolledState }",
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "UserAuthResult",
+      "since_version": "12",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "IAuthCallback",
+      "所属模块": "未知模块",
+      "功能描述": "Provides callbacks to return the authentication result.",
+      "注释信息": [
+        "@interface IAuthCallback",
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "userAuth",
+      "since_version": "12",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "onResult",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Called to return the authentication result. If the authentication is successful, UserAuthResult contains the token information.",
+      "注释信息": [
+        "@param { UserAuthResult } result - Authentication result information.",
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "IAuthCallback",
+      "since_version": "12",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [
+        {
+          "名称": "result",
+          "类型": "UserAuthResult",
+          "必填": true,
+          "说明": "Authentication result information."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "UserAuthTipCode",
+      "所属模块": "未知模块",
+      "功能描述": "Authentication tip code.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "userAuth",
+      "since_version": "20",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMPARE_FAILURE",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Authentication tip for authentication failed.",
+      "注释信息": [
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "UserAuthTipCode",
+      "since_version": "20",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "TIMEOUT",
+      "值": "2",
+      "所属模块": "未知模块",
+      "功能描述": "Authentication tip for authentication timeout.",
+      "注释信息": [
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "UserAuthTipCode",
+      "since_version": "20",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "TEMPORARILY_LOCKED",
+      "值": "3",
+      "所属模块": "未知模块",
+      "功能描述": "Authentication tip for authentication temporarily frozen.",
+      "注释信息": [
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "UserAuthTipCode",
+      "since_version": "20",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "PERMANENTLY_LOCKED",
+      "值": "4",
+      "所属模块": "未知模块",
+      "功能描述": "Authentication tip for authentication permanent frozen.",
+      "注释信息": [
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "UserAuthTipCode",
+      "since_version": "20",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "WIDGET_LOADED",
+      "值": "5",
+      "所属模块": "未知模块",
+      "功能描述": "Authentication tip for widget load success.",
+      "注释信息": [
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "UserAuthTipCode",
+      "since_version": "20",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "WIDGET_RELEASED",
+      "值": "6",
+      "所属模块": "未知模块",
+      "功能描述": "Authentication tip for widget released.",
+      "注释信息": [
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "UserAuthTipCode",
+      "since_version": "20",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMPARE_FAILURE_WITH_FROZEN",
+      "值": "7",
+      "所属模块": "未知模块",
+      "功能描述": "Authentication tip for authentication failed which causes authentication frozen.",
+      "注释信息": [
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "UserAuthTipCode",
+      "since_version": "20",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "AuthTipInfo",
+      "所属模块": "未知模块",
+      "功能描述": "Authentication tip information.",
+      "注释信息": [
+        "@typedef AuthTipInfo",
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "userAuth",
+      "since_version": "20",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "tipType",
+      "属性类型": "UserAuthType",
+      "所属模块": "未知模块",
+      "功能描述": "Authentication tip type.",
+      "注释信息": [
+        "@type { UserAuthType }",
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "AuthTipInfo",
+      "since_version": "20",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "tipCode",
+      "属性类型": "UserAuthTipCode",
+      "所属模块": "未知模块",
+      "功能描述": "Authentication tip code.",
+      "注释信息": [
+        "@type { UserAuthTipCode }",
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "AuthTipInfo",
+      "since_version": "20",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "type_alias",
+      "名称": "AuthTipCallback",
+      "所属模块": "未知模块",
+      "功能描述": "The authentication tip information is returned through the callback.",
+      "注释信息": [
+        "@typedef { function } AuthTipCallback",
+        "@param { AuthTipInfo } authTipInfo - Tips returned during authentication process.",
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "userAuth",
+      "since_version": "20",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "UserAuthInstance",
+      "所属模块": "未知模块",
+      "功能描述": "Provides APIs for user authentication. The user authentication widget is supported. Before using the APIs of UserAuthInstance, you must obtain a UserAuthInstance instance by using getUserAuthInstance.",
+      "注释信息": [
+        "@interface UserAuthInstance",
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "userAuth",
+      "since_version": "12",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Subscribes to the user authentication result. <br>1. Mandatory parameters are left unspecified. <br>2. Incorrect parameter types. <br>3. Parameter verification failed.",
+      "注释信息": [
+        "@param { 'result' } type - Event type. The value is result, which indicates the authentication result.",
+        "@param { IAuthCallback } callback - Callback used to return the user authentication result.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 12500002 - General operation error.",
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "UserAuthInstance",
+      "since_version": "12",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'result'",
+          "必填": true,
+          "说明": "Event type. The value is result, which indicates the authentication result."
+        },
+        {
+          "名称": "callback",
+          "类型": "IAuthCallback",
+          "必填": true,
+          "说明": "Callback used to return the user authentication result."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "12500002",
+          "description": "General operation error."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unsubscribes from the user authentication result. <p><strong>NOTE</strong>: <br>The UserAuthInstance instance used to invoke this API must be the one used to subscribe to the event. </p> <br>1. Mandatory parameters are left unspecified. <br>2. Incorrect parameter types. <br>3. Parameter verification failed.",
+      "注释信息": [
+        "@param { 'result' } type - Event type. The value is result, which indicates the authentication result.",
+        "@param { IAuthCallback } callback - Callback to unregister.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 12500002 - General operation error.",
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "UserAuthInstance",
+      "since_version": "12",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'result'",
+          "必填": true,
+          "说明": "Event type. The value is result, which indicates the authentication result."
+        },
+        {
+          "名称": "callback",
+          "类型": "IAuthCallback",
+          "必填": true,
+          "说明": "Callback to unregister."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "12500002",
+          "description": "General operation error."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "start",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Starts authentication. <p><strong>NOTE</strong>: <br>Each UserAuthInstance can be used for authentication only once. <br>Starting from API version 20, only system applications can apply for the ohos.permission.USER_AUTH_FROM_BACKGROUND permission. </p> <br>1. No permission to access biometric. <br>2. No permission to start authentication from background. <br>1. Incorrect parameter types.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BIOMETRIC or ohos.permission.USER_AUTH_FROM_BACKGROUND",
+        "@throws { BusinessError } 201 - Permission denied. Possible causes:",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 12500002 - General operation error.",
+        "@throws { BusinessError } 12500003 - Authentication canceled.",
+        "@throws { BusinessError } 12500005 - The authentication type is not supported.",
+        "@throws { BusinessError } 12500006 - The authentication trust level is not supported.",
+        "@throws { BusinessError } 12500009 - Authentication is locked out.",
+        "@throws { BusinessError } 12500010 - The type of credential has not been enrolled.",
+        "@throws { BusinessError } 12500011 - Switched to the customized authentication process.",
+        "@throws { BusinessError } 12500013 - Operation failed because of PIN expired.",
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "UserAuthInstance",
+      "since_version": "20",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied. Possible causes:"
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "12500002",
+          "description": "General operation error."
+        },
+        {
+          "code": "12500003",
+          "description": "Authentication canceled."
+        },
+        {
+          "code": "12500005",
+          "description": "The authentication type is not supported."
+        },
+        {
+          "code": "12500006",
+          "description": "The authentication trust level is not supported."
+        },
+        {
+          "code": "12500009",
+          "description": "Authentication is locked out."
+        },
+        {
+          "code": "12500010",
+          "description": "The type of credential has not been enrolled."
+        },
+        {
+          "code": "12500011",
+          "description": "Switched to the customized authentication process."
+        },
+        {
+          "code": "12500013",
+          "description": "Operation failed because of PIN expired."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "cancel",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Cancels this authentication. <p><strong>NOTE</strong>: <br>UserAuthInstance must be the instance being authenticated. </p> <br>1. Incorrect parameter types.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BIOMETRIC",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 12500002 - General operation error.",
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "UserAuthInstance",
+      "since_version": "12",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "12500002",
+          "description": "General operation error."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Turn on authentication tip event listening.",
+      "注释信息": [
+        "@param { 'authTip' } type - Indicates the type of event.",
+        "@param { AuthTipCallback } callback - Indicates the listener.",
+        "@throws { BusinessError } 12500002 - General operation error.",
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "UserAuthInstance",
+      "since_version": "20",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'authTip'",
+          "必填": true,
+          "说明": "Indicates the type of event."
+        },
+        {
+          "名称": "callback",
+          "类型": "AuthTipCallback",
+          "必填": true,
+          "说明": "Indicates the listener."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "12500002",
+          "description": "General operation error."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Turn off authentication tip event listening.",
+      "注释信息": [
+        "@param { 'authTip' } type - Indicates the type of event.",
+        "@param { AuthTipCallback } [callback] - Indicates the listener.",
+        "@throws { BusinessError } 12500002 - General operation error.",
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "UserAuthInstance",
+      "since_version": "20",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'authTip'",
+          "必填": true,
+          "说明": "Indicates the type of event."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "AuthTipCallback } [callback] - Indicates the listener."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "12500002",
+          "description": "General operation error."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getUserAuthInstance",
+      "返回值": "UserAuthInstance",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains a UserAuthInstance instance for user authentication. The user authentication widget is also supported. <p><strong>NOTE</strong>: <br>Each UserAuthInstance can be used for authentication only once. </p> <br>1. Mandatory parameters are left unspecified. <br>2. Incorrect parameter types. <br>3. Parameter verification failed.",
+      "注释信息": [
+        "@param { AuthParam } authParam - Auth parameter.",
+        "@param { WidgetParam } widgetParam - Widget parameter.",
+        "@returns { UserAuthInstance } Returns an authentication instance with widget.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 12500002 - General operation error.",
+        "@throws { BusinessError } 12500005 - The authentication type is not supported.",
+        "@throws { BusinessError } 12500006 - The authentication trust level is not supported.",
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "userAuth",
+      "since_version": "12",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [
+        {
+          "名称": "authParam",
+          "类型": "AuthParam",
+          "必填": true,
+          "说明": "Auth parameter."
+        },
+        {
+          "名称": "widgetParam",
+          "类型": "WidgetParam",
+          "必填": true,
+          "说明": "Widget parameter."
+        }
+      ],
+      "return_description": "Returns an authentication instance with widget.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "12500002",
+          "description": "General operation error."
+        },
+        {
+          "code": "12500005",
+          "description": "The authentication type is not supported."
+        },
+        {
+          "code": "12500006",
+          "description": "The authentication trust level is not supported."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "UserAuthResultCode",
+      "所属模块": "未知模块",
+      "功能描述": "Enumerates the authentication result codes.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "userAuth",
+      "since_version": "12",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "SUCCESS",
+      "值": "12500000",
+      "所属模块": "未知模块",
+      "功能描述": "The authentication is successful.",
+      "注释信息": [
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "UserAuthResultCode",
+      "since_version": "12",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "FAIL",
+      "值": "12500001",
+      "所属模块": "未知模块",
+      "功能描述": "The authentication failed.",
+      "注释信息": [
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "UserAuthResultCode",
+      "since_version": "12",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "GENERAL_ERROR",
+      "值": "12500002",
+      "所属模块": "未知模块",
+      "功能描述": "A general operation error occurred.",
+      "注释信息": [
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "UserAuthResultCode",
+      "since_version": "12",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CANCELED",
+      "值": "12500003",
+      "所属模块": "未知模块",
+      "功能描述": "The authentication is canceled.",
+      "注释信息": [
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "UserAuthResultCode",
+      "since_version": "12",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "TIMEOUT",
+      "值": "12500004",
+      "所属模块": "未知模块",
+      "功能描述": "The authentication has timed out.",
+      "注释信息": [
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "UserAuthResultCode",
+      "since_version": "12",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "TYPE_NOT_SUPPORT",
+      "值": "12500005",
+      "所属模块": "未知模块",
+      "功能描述": "The authentication type is not supported.",
+      "注释信息": [
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "UserAuthResultCode",
+      "since_version": "12",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "TRUST_LEVEL_NOT_SUPPORT",
+      "值": "12500006",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the authentication trust level is not supported.",
+      "注释信息": [
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "UserAuthResultCode",
+      "since_version": "12",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "BUSY",
+      "值": "12500007",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the authentication task is busy. Wait for a few seconds and try again.",
+      "注释信息": [
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "UserAuthResultCode",
+      "since_version": "12",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "INVALID_PARAMETERS",
+      "值": "12500008",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the paramter is out of range.",
+      "注释信息": [
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "UserAuthResultCode",
+      "since_version": "20",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "LOCKED",
+      "值": "12500009",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the authenticator is locked.",
+      "注释信息": [
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "UserAuthResultCode",
+      "since_version": "12",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "NOT_ENROLLED",
+      "值": "12500010",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the user has not enrolled the specified system identity authentication credential.",
+      "注释信息": [
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "UserAuthResultCode",
+      "since_version": "12",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CANCELED_FROM_WIDGET",
+      "值": "12500011",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the user cancels the system authentication and selects a custom authentication of the application. The caller needs to launch the custom authentication page.",
+      "注释信息": [
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "UserAuthResultCode",
+      "since_version": "12",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "PIN_EXPIRED",
+      "值": "12500013",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the authentication failed because the lock screen password has expired.",
+      "注释信息": [
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "UserAuthResultCode",
+      "since_version": "12",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    }
+  ]
+}

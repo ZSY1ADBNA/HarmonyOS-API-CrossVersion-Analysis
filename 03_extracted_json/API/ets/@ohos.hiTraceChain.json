@@ -1,0 +1,808 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.PerformanceAnalysisKit",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "namespace",
+      "名称": "hiTraceChain",
+      "所属模块": "@kit.PerformanceAnalysisKit",
+      "功能描述": "Provides APIs to implement call chain tracing throughout a service process. With HiTrace, you can quickly obtain the run log for the call chain of a specified service process and locate faults in cross-device, cross-process, or cross-thread communications.",
+      "注释信息": [
+        "@namespace hiTraceChain",
+        "@syscap SystemCapability.HiviewDFX.HiTrace",
+        "@since 8"
+      ],
+      "层级": 1,
+      "上级": "@kit.PerformanceAnalysisKit",
+      "since_version": "8",
+      "system_capability": "SystemCapability.HiviewDFX.HiTrace",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "HiTraceFlag",
+      "所属模块": "未知模块",
+      "功能描述": "Enumerate trace flag",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.HiviewDFX.HiTrace",
+        "@since 8"
+      ],
+      "层级": 2,
+      "上级": "hiTraceChain",
+      "since_version": "8",
+      "system_capability": "SystemCapability.HiviewDFX.HiTrace",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "DEFAULT",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "Default value",
+      "注释信息": [
+        "@syscap SystemCapability.HiviewDFX.HiTrace",
+        "@since 8"
+      ],
+      "层级": 2,
+      "上级": "HiTraceFlag",
+      "since_version": "8",
+      "system_capability": "SystemCapability.HiviewDFX.HiTrace",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "INCLUDE_ASYNC",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Trace sync and async call. default: trace sync call only.",
+      "注释信息": [
+        "@syscap SystemCapability.HiviewDFX.HiTrace",
+        "@since 8"
+      ],
+      "层级": 2,
+      "上级": "HiTraceFlag",
+      "since_version": "8",
+      "system_capability": "SystemCapability.HiviewDFX.HiTrace",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "DONOT_CREATE_SPAN",
+      "值": "1 << 1",
+      "所属模块": "未知模块",
+      "功能描述": "Do not create child span. default: create child span.",
+      "注释信息": [
+        "@syscap SystemCapability.HiviewDFX.HiTrace",
+        "@since 8"
+      ],
+      "层级": 2,
+      "上级": "HiTraceFlag",
+      "since_version": "8",
+      "system_capability": "SystemCapability.HiviewDFX.HiTrace",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "TP_INFO",
+      "值": "1 << 2",
+      "所属模块": "未知模块",
+      "功能描述": "Output tracepoint info in span. default: do not output tracepoint info.",
+      "注释信息": [
+        "@syscap SystemCapability.HiviewDFX.HiTrace",
+        "@since 8"
+      ],
+      "层级": 2,
+      "上级": "HiTraceFlag",
+      "since_version": "8",
+      "system_capability": "SystemCapability.HiviewDFX.HiTrace",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "NO_BE_INFO",
+      "值": "1 << 3",
+      "所属模块": "未知模块",
+      "功能描述": "Do not output begin and end info. default: output begin and end info.",
+      "注释信息": [
+        "@syscap SystemCapability.HiviewDFX.HiTrace",
+        "@since 8"
+      ],
+      "层级": 2,
+      "上级": "HiTraceFlag",
+      "since_version": "8",
+      "system_capability": "SystemCapability.HiviewDFX.HiTrace",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "DISABLE_LOG",
+      "值": "1 << 4",
+      "所属模块": "未知模块",
+      "功能描述": "Do not add id to log. default: add id to log.",
+      "注释信息": [
+        "@syscap SystemCapability.HiviewDFX.HiTrace",
+        "@since 8"
+      ],
+      "层级": 2,
+      "上级": "HiTraceFlag",
+      "since_version": "8",
+      "system_capability": "SystemCapability.HiviewDFX.HiTrace",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "FAILURE_TRIGGER",
+      "值": "1 << 5",
+      "所属模块": "未知模块",
+      "功能描述": "The trace is triggered by fault.",
+      "注释信息": [
+        "@syscap SystemCapability.HiviewDFX.HiTrace",
+        "@since 8"
+      ],
+      "层级": 2,
+      "上级": "HiTraceFlag",
+      "since_version": "8",
+      "system_capability": "SystemCapability.HiviewDFX.HiTrace",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "D2D_TP_INFO",
+      "值": "1 << 6",
+      "所属模块": "未知模块",
+      "功能描述": "Output device-to-device tracepoint info in span only. default: do not output device-to-device tracepoint info.",
+      "注释信息": [
+        "@syscap SystemCapability.HiviewDFX.HiTrace",
+        "@since 8"
+      ],
+      "层级": 2,
+      "上级": "HiTraceFlag",
+      "since_version": "8",
+      "system_capability": "SystemCapability.HiviewDFX.HiTrace",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "HiTraceTracepointType",
+      "所属模块": "未知模块",
+      "功能描述": "Enumerate trace point type",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.HiviewDFX.HiTrace",
+        "@since 8"
+      ],
+      "层级": 2,
+      "上级": "hiTraceChain",
+      "since_version": "8",
+      "system_capability": "SystemCapability.HiviewDFX.HiTrace",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CS",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "Client send",
+      "注释信息": [
+        "@syscap SystemCapability.HiviewDFX.HiTrace",
+        "@since 8"
+      ],
+      "层级": 2,
+      "上级": "HiTraceTracepointType",
+      "since_version": "8",
+      "system_capability": "SystemCapability.HiviewDFX.HiTrace",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CR",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Client receive",
+      "注释信息": [
+        "@syscap SystemCapability.HiviewDFX.HiTrace",
+        "@since 8"
+      ],
+      "层级": 2,
+      "上级": "HiTraceTracepointType",
+      "since_version": "8",
+      "system_capability": "SystemCapability.HiviewDFX.HiTrace",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "SS",
+      "值": "2",
+      "所属模块": "未知模块",
+      "功能描述": "Server send",
+      "注释信息": [
+        "@syscap SystemCapability.HiviewDFX.HiTrace",
+        "@since 8"
+      ],
+      "层级": 2,
+      "上级": "HiTraceTracepointType",
+      "since_version": "8",
+      "system_capability": "SystemCapability.HiviewDFX.HiTrace",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "SR",
+      "值": "3",
+      "所属模块": "未知模块",
+      "功能描述": "Server receive",
+      "注释信息": [
+        "@syscap SystemCapability.HiviewDFX.HiTrace",
+        "@since 8"
+      ],
+      "层级": 2,
+      "上级": "HiTraceTracepointType",
+      "since_version": "8",
+      "system_capability": "SystemCapability.HiviewDFX.HiTrace",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "GENERAL",
+      "值": "4",
+      "所属模块": "未知模块",
+      "功能描述": "General info",
+      "注释信息": [
+        "@syscap SystemCapability.HiviewDFX.HiTrace",
+        "@since 8"
+      ],
+      "层级": 2,
+      "上级": "HiTraceTracepointType",
+      "since_version": "8",
+      "system_capability": "SystemCapability.HiviewDFX.HiTrace",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "HiTraceCommunicationMode",
+      "所属模块": "未知模块",
+      "功能描述": "Enumerate trace communication mode",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.HiviewDFX.HiTrace",
+        "@since 8"
+      ],
+      "层级": 2,
+      "上级": "hiTraceChain",
+      "since_version": "8",
+      "system_capability": "SystemCapability.HiviewDFX.HiTrace",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "DEFAULT",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "Unspecified",
+      "注释信息": [
+        "@syscap SystemCapability.HiviewDFX.HiTrace",
+        "@since 8"
+      ],
+      "层级": 2,
+      "上级": "HiTraceCommunicationMode",
+      "since_version": "8",
+      "system_capability": "SystemCapability.HiviewDFX.HiTrace",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "THREAD",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Thread-to-thread",
+      "注释信息": [
+        "@syscap SystemCapability.HiviewDFX.HiTrace",
+        "@since 8"
+      ],
+      "层级": 2,
+      "上级": "HiTraceCommunicationMode",
+      "since_version": "8",
+      "system_capability": "SystemCapability.HiviewDFX.HiTrace",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "PROCESS",
+      "值": "2",
+      "所属模块": "未知模块",
+      "功能描述": "Process-to-process",
+      "注释信息": [
+        "@syscap SystemCapability.HiviewDFX.HiTrace",
+        "@since 8"
+      ],
+      "层级": 2,
+      "上级": "HiTraceCommunicationMode",
+      "since_version": "8",
+      "system_capability": "SystemCapability.HiviewDFX.HiTrace",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "DEVICE",
+      "值": "3",
+      "所属模块": "未知模块",
+      "功能描述": "Device-to-device",
+      "注释信息": [
+        "@syscap SystemCapability.HiviewDFX.HiTrace",
+        "@since 8"
+      ],
+      "层级": 2,
+      "上级": "HiTraceCommunicationMode",
+      "since_version": "8",
+      "system_capability": "SystemCapability.HiviewDFX.HiTrace",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "HiTraceId",
+      "所属模块": "未知模块",
+      "功能描述": "Trace id, for tracing process.",
+      "注释信息": [
+        "@interface HiTraceId",
+        "@syscap SystemCapability.HiviewDFX.HiTrace",
+        "@since 8"
+      ],
+      "层级": 2,
+      "上级": "hiTraceChain",
+      "since_version": "8",
+      "system_capability": "SystemCapability.HiviewDFX.HiTrace",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "chainId",
+      "属性类型": "bigint",
+      "所属模块": "未知模块",
+      "功能描述": "Chain id. The lower 60 bits are valid.",
+      "注释信息": [
+        "@type { bigint }",
+        "@syscap SystemCapability.HiviewDFX.HiTrace",
+        "@since 8"
+      ],
+      "层级": 2,
+      "上级": "HiTraceId",
+      "since_version": "8",
+      "system_capability": "SystemCapability.HiviewDFX.HiTrace",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "spanId",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Span id. The lower 26 bits are valid.",
+      "注释信息": [
+        "@type { ?number }",
+        "@syscap SystemCapability.HiviewDFX.HiTrace",
+        "@since 8"
+      ],
+      "层级": 2,
+      "上级": "HiTraceId",
+      "since_version": "8",
+      "system_capability": "SystemCapability.HiviewDFX.HiTrace",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "parentSpanId",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Parent span id. The lower 26 bits are valid.",
+      "注释信息": [
+        "@type { ?number }",
+        "@syscap SystemCapability.HiviewDFX.HiTrace",
+        "@since 8"
+      ],
+      "层级": 2,
+      "上级": "HiTraceId",
+      "since_version": "8",
+      "system_capability": "SystemCapability.HiviewDFX.HiTrace",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "flags",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Trace flag. The lower 12 bits are valid.",
+      "注释信息": [
+        "@type { ?number }",
+        "@syscap SystemCapability.HiviewDFX.HiTrace",
+        "@since 8"
+      ],
+      "层级": 2,
+      "上级": "HiTraceId",
+      "since_version": "8",
+      "system_capability": "SystemCapability.HiviewDFX.HiTrace",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "begin",
+      "返回值": "HiTraceId",
+      "所属模块": "未知模块",
+      "功能描述": "Start tracing a process impl.",
+      "注释信息": [
+        "@param { string } name Process name.",
+        "@param { number } flags Trace function flag.",
+        "@returns { HiTraceId } Valid if first call, otherwise invalid.",
+        "@syscap SystemCapability.HiviewDFX.HiTrace",
+        "@since 8"
+      ],
+      "层级": 1,
+      "上级": "hiTraceChain",
+      "since_version": "8",
+      "system_capability": "SystemCapability.HiviewDFX.HiTrace",
+      "parameters": [
+        {
+          "名称": "name",
+          "类型": "string",
+          "必填": true,
+          "说明": "Process name."
+        },
+        {
+          "名称": "flags",
+          "类型": "number",
+          "必填": true,
+          "说明": "Trace function flag."
+        }
+      ],
+      "return_description": "Valid if first call, otherwise invalid.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "end",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Stop process tracing and clear trace id of current thread if the given trace id is valid, otherwise do nothing.",
+      "注释信息": [
+        "@param { HiTraceId } id The trace id that need to stop.",
+        "@syscap SystemCapability.HiviewDFX.HiTrace",
+        "@since 8"
+      ],
+      "层级": 1,
+      "上级": "hiTraceChain",
+      "since_version": "8",
+      "system_capability": "SystemCapability.HiviewDFX.HiTrace",
+      "parameters": [
+        {
+          "名称": "id",
+          "类型": "HiTraceId",
+          "必填": true,
+          "说明": "The trace id that need to stop."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getId",
+      "返回值": "HiTraceId",
+      "所属模块": "未知模块",
+      "功能描述": "Get trace id of current thread, and return a invalid trace id if no trace id belong to current thread",
+      "注释信息": [
+        "@returns { HiTraceId } Valid if current thread have a trace id, otherwise invalid.",
+        "@syscap SystemCapability.HiviewDFX.HiTrace",
+        "@since 8"
+      ],
+      "层级": 1,
+      "上级": "hiTraceChain",
+      "since_version": "8",
+      "system_capability": "SystemCapability.HiviewDFX.HiTrace",
+      "parameters": [],
+      "return_description": "Valid if current thread have a trace id, otherwise invalid.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "setId",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Set id as trace id of current thread. Do nothing if id is invalid.",
+      "注释信息": [
+        "@param { HiTraceId } id Set id as trace id of current thread.",
+        "@syscap SystemCapability.HiviewDFX.HiTrace",
+        "@since 8"
+      ],
+      "层级": 1,
+      "上级": "hiTraceChain",
+      "since_version": "8",
+      "system_capability": "SystemCapability.HiviewDFX.HiTrace",
+      "parameters": [
+        {
+          "名称": "id",
+          "类型": "HiTraceId",
+          "必填": true,
+          "说明": "Set id as trace id of current thread."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "clearId",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Clear trace id of current thread and set it invalid.",
+      "注释信息": [
+        "@syscap SystemCapability.HiviewDFX.HiTrace",
+        "@since 8"
+      ],
+      "层级": 1,
+      "上级": "hiTraceChain",
+      "since_version": "8",
+      "system_capability": "SystemCapability.HiviewDFX.HiTrace",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "createSpan",
+      "返回值": "HiTraceId",
+      "所属模块": "未知模块",
+      "功能描述": "Create a new span id according to the trace id of current thread.",
+      "注释信息": [
+        "@returns { HiTraceId } A valid span trace id. Otherwise trace id of current thread if do not allow create span.",
+        "@syscap SystemCapability.HiviewDFX.HiTrace",
+        "@since 8"
+      ],
+      "层级": 1,
+      "上级": "hiTraceChain",
+      "since_version": "8",
+      "system_capability": "SystemCapability.HiviewDFX.HiTrace",
+      "parameters": [],
+      "return_description": "A valid span trace id. Otherwise trace id of current thread if do not allow create span.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "tracepoint",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Print hitrace info, include trace id info.",
+      "注释信息": [
+        "@param { HiTraceCommunicationMode } mode Trace communication mode.",
+        "@param { HiTraceTracepointType } type Trace info type.",
+        "@param { HiTraceId } id Trace id that need to print.",
+        "@param { string } msg Customized info that need to print.",
+        "@syscap SystemCapability.HiviewDFX.HiTrace",
+        "@since 8"
+      ],
+      "层级": 1,
+      "上级": "hiTraceChain",
+      "since_version": "8",
+      "system_capability": "SystemCapability.HiviewDFX.HiTrace",
+      "parameters": [
+        {
+          "名称": "mode",
+          "类型": "HiTraceCommunicationMode",
+          "必填": true,
+          "说明": "Trace communication mode."
+        },
+        {
+          "名称": "type",
+          "类型": "HiTraceTracepointType",
+          "必填": true,
+          "说明": "Trace info type."
+        },
+        {
+          "名称": "id",
+          "类型": "HiTraceId",
+          "必填": true,
+          "说明": "Trace id that need to print."
+        },
+        {
+          "名称": "msg",
+          "类型": "string",
+          "必填": true,
+          "说明": "Customized info that need to print."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "isValid",
+      "返回值": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Judge whether the trace id is valid or not.",
+      "注释信息": [
+        "@param { HiTraceId } id Trace id that need to judge.",
+        "@returns { boolean } True for a valid trace id, otherwise false.",
+        "@syscap SystemCapability.HiviewDFX.HiTrace",
+        "@since 8"
+      ],
+      "层级": 1,
+      "上级": "hiTraceChain",
+      "since_version": "8",
+      "system_capability": "SystemCapability.HiviewDFX.HiTrace",
+      "parameters": [
+        {
+          "名称": "id",
+          "类型": "HiTraceId",
+          "必填": true,
+          "说明": "Trace id that need to judge."
+        }
+      ],
+      "return_description": "True for a valid trace id, otherwise false.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "isFlagEnabled",
+      "返回值": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Judge whether the trace id has enabled a trace flag or not.",
+      "注释信息": [
+        "@param { HiTraceId } id Trace id that need to judge.",
+        "@param { HiTraceFlag } flag Trace flag that need to judge.",
+        "@returns { boolean } true if the trace id has enabled the flag.",
+        "@syscap SystemCapability.HiviewDFX.HiTrace",
+        "@since 8"
+      ],
+      "层级": 1,
+      "上级": "hiTraceChain",
+      "since_version": "8",
+      "system_capability": "SystemCapability.HiviewDFX.HiTrace",
+      "parameters": [
+        {
+          "名称": "id",
+          "类型": "HiTraceId",
+          "必填": true,
+          "说明": "Trace id that need to judge."
+        },
+        {
+          "名称": "flag",
+          "类型": "HiTraceFlag",
+          "必填": true,
+          "说明": "Trace flag that need to judge."
+        }
+      ],
+      "return_description": "true if the trace id has enabled the flag.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "enableFlag",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Enable the designative trace flag for the trace id.",
+      "注释信息": [
+        "@param { HiTraceId } id Trace id that need to enable a flag.",
+        "@param { HiTraceFlag } flag the designative trace flag that need to be enabled in the trace id.",
+        "@syscap SystemCapability.HiviewDFX.HiTrace",
+        "@since 8"
+      ],
+      "层级": 1,
+      "上级": "hiTraceChain",
+      "since_version": "8",
+      "system_capability": "SystemCapability.HiviewDFX.HiTrace",
+      "parameters": [
+        {
+          "名称": "id",
+          "类型": "HiTraceId",
+          "必填": true,
+          "说明": "Trace id that need to enable a flag."
+        },
+        {
+          "名称": "flag",
+          "类型": "HiTraceFlag",
+          "必填": true,
+          "说明": "the designative trace flag that need to be enabled in the trace id."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    }
+  ]
+}

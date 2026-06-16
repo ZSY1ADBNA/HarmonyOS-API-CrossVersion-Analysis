@@ -1,0 +1,1790 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.NetworkKit",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "namespace",
+      "名称": "netFirewall",
+      "所属模块": "@kit.NetworkKit",
+      "功能描述": "Provides interfaces to manage net firewall.",
+      "注释信息": [
+        "@namespace netFirewall",
+        "@syscap SystemCapability.Communication.NetManager.NetFirewall",
+        "@since 14"
+      ],
+      "层级": 1,
+      "上级": "@kit.NetworkKit",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Communication.NetManager.NetFirewall",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "setNetFirewallPolicy",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Set firewall policy by userId. <p>Enables or disables the firewall function, and specifies the default actions for inbound connections and outbound connections.</p>",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_NET_FIREWALL",
+        "@param { number } userId - Indicates the user ID. It cannot be the ID of a user that does not exist.",
+        "@param { NetFirewallPolicy } policy - The firewall policy to be set.",
+        "@returns { Promise<void> } Returns void.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 2100001 - Invalid parameter value.",
+        "@throws { BusinessError } 2100002 - Operation failed. Cannot connect to service.",
+        "@throws { BusinessError } 2100003 - System internal error.",
+        "@throws { BusinessError } 29400000 - The specified user does not exist.",
+        "@syscap SystemCapability.Communication.NetManager.NetFirewall",
+        "@since 15"
+      ],
+      "层级": 1,
+      "上级": "netFirewall",
+      "since_version": "15",
+      "system_capability": "SystemCapability.Communication.NetManager.NetFirewall",
+      "parameters": [
+        {
+          "名称": "userId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the user ID. It cannot be the ID of a user that does not exist."
+        },
+        {
+          "名称": "policy",
+          "类型": "NetFirewallPolicy",
+          "必填": true,
+          "说明": "The firewall policy to be set."
+        }
+      ],
+      "return_description": "Returns void.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "2100001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "2100002",
+          "description": "Operation failed. Cannot connect to service."
+        },
+        {
+          "code": "2100003",
+          "description": "System internal error."
+        },
+        {
+          "code": "29400000",
+          "description": "The specified user does not exist."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getNetFirewallPolicy",
+      "返回值": "Promise<NetFirewallPolicy>",
+      "所属模块": "未知模块",
+      "功能描述": "Get firewall policy by userId.",
+      "注释信息": [
+        "@permission ohos.permission.GET_NET_FIREWALL",
+        "@param { number } userId - Indicates the user ID. It cannot be the ID of a user that does not exist.",
+        "@returns { Promise<NetFirewallPolicy> } Current user firewall policy.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 2100001 - Invalid parameter value.",
+        "@throws { BusinessError } 2100002 - Operation failed. Cannot connect to service.",
+        "@throws { BusinessError } 2100003 - System internal error.",
+        "@throws { BusinessError } 29400000 - The specified user does not exist.",
+        "@syscap SystemCapability.Communication.NetManager.NetFirewall",
+        "@since 15"
+      ],
+      "层级": 1,
+      "上级": "netFirewall",
+      "since_version": "15",
+      "system_capability": "SystemCapability.Communication.NetManager.NetFirewall",
+      "parameters": [
+        {
+          "名称": "userId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the user ID. It cannot be the ID of a user that does not exist."
+        }
+      ],
+      "return_description": "Current user firewall policy.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "2100001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "2100002",
+          "description": "Operation failed. Cannot connect to service."
+        },
+        {
+          "code": "2100003",
+          "description": "System internal error."
+        },
+        {
+          "code": "29400000",
+          "description": "The specified user does not exist."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "addNetFirewallRule",
+      "返回值": "Promise<number>",
+      "所属模块": "未知模块",
+      "功能描述": "Add a firewall rule.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_NET_FIREWALL",
+        "@param { NetFirewallRule } rule - Firewall rule.",
+        "@returns { Promise<number> } ruleId - Indicates the rule ID, generated by the system.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 2100001 - Invalid parameter value.",
+        "@throws { BusinessError } 2100002 - Operation failed. Cannot connect to service.",
+        "@throws { BusinessError } 2100003 - System internal error.",
+        "@throws { BusinessError } 29400000 - The specified user does not exist.",
+        "@throws { BusinessError } 29400001 - The number of firewall rules exceeds the maximum.",
+        "@throws { BusinessError } 29400002 - The number of IP address rules in the firewall rule exceeds the maximum.",
+        "@throws { BusinessError } 29400003 - The number of port rules in the firewall rule exceeds the maximum.",
+        "@throws { BusinessError } 29400004 - The number of domain rules in the firewall rule exceeds the maximum.",
+        "@throws { BusinessError } 29400005 - The number of domain rules exceeds the maximum.",
+        "@throws { BusinessError } 29400007 - The dns rule is duplication.",
+        "@syscap SystemCapability.Communication.NetManager.NetFirewall",
+        "@since 15"
+      ],
+      "层级": 1,
+      "上级": "netFirewall",
+      "since_version": "15",
+      "system_capability": "SystemCapability.Communication.NetManager.NetFirewall",
+      "parameters": [
+        {
+          "名称": "rule",
+          "类型": "NetFirewallRule",
+          "必填": true,
+          "说明": "Firewall rule."
+        }
+      ],
+      "return_description": "ruleId - Indicates the rule ID, generated by the system.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "2100001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "2100002",
+          "description": "Operation failed. Cannot connect to service."
+        },
+        {
+          "code": "2100003",
+          "description": "System internal error."
+        },
+        {
+          "code": "29400000",
+          "description": "The specified user does not exist."
+        },
+        {
+          "code": "29400001",
+          "description": "The number of firewall rules exceeds the maximum."
+        },
+        {
+          "code": "29400002",
+          "description": "The number of IP address rules in the firewall rule exceeds the maximum."
+        },
+        {
+          "code": "29400003",
+          "description": "The number of port rules in the firewall rule exceeds the maximum."
+        },
+        {
+          "code": "29400004",
+          "description": "The number of domain rules in the firewall rule exceeds the maximum."
+        },
+        {
+          "code": "29400005",
+          "description": "The number of domain rules exceeds the maximum."
+        },
+        {
+          "code": "29400007",
+          "description": "The dns rule is duplication."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "updateNetFirewallRule",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Update a firewall rule.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_NET_FIREWALL",
+        "@param { NetFirewallRule } rule - Firewall rule.",
+        "@returns { Promise<void> } Returns void.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 2100001 - Invalid parameter value.",
+        "@throws { BusinessError } 2100002 - Operation failed. Cannot connect to service.",
+        "@throws { BusinessError } 2100003 - System internal error.",
+        "@throws { BusinessError } 29400000 - The specified user does not exist.",
+        "@throws { BusinessError } 29400002 - The number of IP address rules in the firewall rule exceeds the maximum.",
+        "@throws { BusinessError } 29400003 - The number of port rules in the firewall rule exceeds the maximum.",
+        "@throws { BusinessError } 29400004 - The number of domain rules in the firewall rule exceeds the maximum.",
+        "@throws { BusinessError } 29400005 - The number of domain rules exceeds the maximum.",
+        "@throws { BusinessError } 29400006 - The specified rule does not exist.",
+        "@throws { BusinessError } 29400007 - The dns rule is duplication.",
+        "@syscap SystemCapability.Communication.NetManager.NetFirewall",
+        "@since 15"
+      ],
+      "层级": 1,
+      "上级": "netFirewall",
+      "since_version": "15",
+      "system_capability": "SystemCapability.Communication.NetManager.NetFirewall",
+      "parameters": [
+        {
+          "名称": "rule",
+          "类型": "NetFirewallRule",
+          "必填": true,
+          "说明": "Firewall rule."
+        }
+      ],
+      "return_description": "Returns void.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "2100001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "2100002",
+          "description": "Operation failed. Cannot connect to service."
+        },
+        {
+          "code": "2100003",
+          "description": "System internal error."
+        },
+        {
+          "code": "29400000",
+          "description": "The specified user does not exist."
+        },
+        {
+          "code": "29400002",
+          "description": "The number of IP address rules in the firewall rule exceeds the maximum."
+        },
+        {
+          "code": "29400003",
+          "description": "The number of port rules in the firewall rule exceeds the maximum."
+        },
+        {
+          "code": "29400004",
+          "description": "The number of domain rules in the firewall rule exceeds the maximum."
+        },
+        {
+          "code": "29400005",
+          "description": "The number of domain rules exceeds the maximum."
+        },
+        {
+          "code": "29400006",
+          "description": "The specified rule does not exist."
+        },
+        {
+          "code": "29400007",
+          "description": "The dns rule is duplication."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "removeNetFirewallRule",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Delete a firewall rule by userId and ruleId.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_NET_FIREWALL",
+        "@param { number } userId - Indicates the user ID. It cannot be the ID of a user that does not exist.",
+        "@param { number } ruleId - Rule ID.",
+        "@returns { Promise<void> } Returns void.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 2100001 - Invalid parameter value.",
+        "@throws { BusinessError } 2100002 - Operation failed. Cannot connect to service.",
+        "@throws { BusinessError } 2100003 - System internal error.",
+        "@throws { BusinessError } 29400000 - The specified user does not exist.",
+        "@throws { BusinessError } 29400006 - The specified rule does not exist.",
+        "@syscap SystemCapability.Communication.NetManager.NetFirewall",
+        "@since 15"
+      ],
+      "层级": 1,
+      "上级": "netFirewall",
+      "since_version": "15",
+      "system_capability": "SystemCapability.Communication.NetManager.NetFirewall",
+      "parameters": [
+        {
+          "名称": "userId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the user ID. It cannot be the ID of a user that does not exist."
+        },
+        {
+          "名称": "ruleId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Rule ID."
+        }
+      ],
+      "return_description": "Returns void.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "2100001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "2100002",
+          "description": "Operation failed. Cannot connect to service."
+        },
+        {
+          "code": "2100003",
+          "description": "System internal error."
+        },
+        {
+          "code": "29400000",
+          "description": "The specified user does not exist."
+        },
+        {
+          "code": "29400006",
+          "description": "The specified rule does not exist."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getNetFirewallRules",
+      "返回值": "Promise<FirewallRulePage>",
+      "所属模块": "未知模块",
+      "功能描述": "Get firewall rules by userId, and it is necessary to specify the pagination query parameters.",
+      "注释信息": [
+        "@permission ohos.permission.GET_NET_FIREWALL",
+        "@param { number } userId - Indicates the user ID. It cannot be the ID of a user that does not exist.",
+        "@param { RequestParam } requestParam - Paging query input parameters.",
+        "@returns { Promise<FirewallRulePage> } Paginated firewall rule list.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 2100001 - Invalid parameter value.",
+        "@throws { BusinessError } 2100002 - Operation failed. Cannot connect to service.",
+        "@throws { BusinessError } 2100003 - System internal error.",
+        "@throws { BusinessError } 29400000 - The specified user does not exist.",
+        "@syscap SystemCapability.Communication.NetManager.NetFirewall",
+        "@since 15"
+      ],
+      "层级": 1,
+      "上级": "netFirewall",
+      "since_version": "15",
+      "system_capability": "SystemCapability.Communication.NetManager.NetFirewall",
+      "parameters": [
+        {
+          "名称": "userId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the user ID. It cannot be the ID of a user that does not exist."
+        },
+        {
+          "名称": "requestParam",
+          "类型": "RequestParam",
+          "必填": true,
+          "说明": "Paging query input parameters."
+        }
+      ],
+      "return_description": "Paginated firewall rule list.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "2100001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "2100002",
+          "description": "Operation failed. Cannot connect to service."
+        },
+        {
+          "code": "2100003",
+          "description": "System internal error."
+        },
+        {
+          "code": "29400000",
+          "description": "The specified user does not exist."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getNetFirewallRule",
+      "返回值": "Promise<NetFirewallRule>",
+      "所属模块": "未知模块",
+      "功能描述": "Get a specified firewall rule by userId and ruleId.",
+      "注释信息": [
+        "@permission ohos.permission.GET_NET_FIREWALL",
+        "@param { number } userId - Indicates the user ID. It cannot be the ID of a user that does not exist.",
+        "@param { number } ruleId - Rule ID.",
+        "@returns { Promise<NetFirewallRule> } Firewall Rule.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 2100001 - Invalid parameter value.",
+        "@throws { BusinessError } 2100002 - Operation failed. Cannot connect to service.",
+        "@throws { BusinessError } 2100003 - System internal error.",
+        "@throws { BusinessError } 29400000 - The specified user does not exist.",
+        "@throws { BusinessError } 29400006 - The specified rule does not exist.",
+        "@syscap SystemCapability.Communication.NetManager.NetFirewall",
+        "@since 15"
+      ],
+      "层级": 1,
+      "上级": "netFirewall",
+      "since_version": "15",
+      "system_capability": "SystemCapability.Communication.NetManager.NetFirewall",
+      "parameters": [
+        {
+          "名称": "userId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the user ID. It cannot be the ID of a user that does not exist."
+        },
+        {
+          "名称": "ruleId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Rule ID."
+        }
+      ],
+      "return_description": "Firewall Rule.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "2100001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "2100002",
+          "description": "Operation failed. Cannot connect to service."
+        },
+        {
+          "code": "2100003",
+          "description": "System internal error."
+        },
+        {
+          "code": "29400000",
+          "description": "The specified user does not exist."
+        },
+        {
+          "code": "29400006",
+          "description": "The specified rule does not exist."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "NetFirewallRuleDirection",
+      "所属模块": "未知模块",
+      "功能描述": "Firewall rule direction enumeration.",
+      "注释信息": [
+        "@enum {number}",
+        "@syscap SystemCapability.Communication.NetManager.NetFirewall",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "netFirewall",
+      "since_version": "15",
+      "system_capability": "SystemCapability.Communication.NetManager.NetFirewall",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "RULE_IN",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Inbound.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.NetManager.NetFirewall",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "NetFirewallRuleDirection",
+      "since_version": "15",
+      "system_capability": "SystemCapability.Communication.NetManager.NetFirewall",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "RULE_OUT",
+      "值": "2",
+      "所属模块": "未知模块",
+      "功能描述": "Outbound.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.NetManager.NetFirewall",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "NetFirewallRuleDirection",
+      "since_version": "15",
+      "system_capability": "SystemCapability.Communication.NetManager.NetFirewall",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "FirewallRuleAction",
+      "所属模块": "未知模块",
+      "功能描述": "Firewall rule behavior enumeration.",
+      "注释信息": [
+        "@enum {number}",
+        "@syscap SystemCapability.Communication.NetManager.NetFirewall",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "netFirewall",
+      "since_version": "15",
+      "system_capability": "SystemCapability.Communication.NetManager.NetFirewall",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "RULE_ALLOW",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "Allow access.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.NetManager.NetFirewall",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "FirewallRuleAction",
+      "since_version": "15",
+      "system_capability": "SystemCapability.Communication.NetManager.NetFirewall",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "RULE_DENY",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Deny access.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.NetManager.NetFirewall",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "FirewallRuleAction",
+      "since_version": "15",
+      "system_capability": "SystemCapability.Communication.NetManager.NetFirewall",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "NetFirewallRuleType",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the firewall rule type.",
+      "注释信息": [
+        "@enum {number}",
+        "@syscap SystemCapability.Communication.NetManager.NetFirewall",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "netFirewall",
+      "since_version": "15",
+      "system_capability": "SystemCapability.Communication.NetManager.NetFirewall",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "RULE_IP",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "IP type rules.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.NetManager.NetFirewall",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "NetFirewallRuleType",
+      "since_version": "15",
+      "system_capability": "SystemCapability.Communication.NetManager.NetFirewall",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "RULE_DOMAIN",
+      "值": "2",
+      "所属模块": "未知模块",
+      "功能描述": "Domain type rules.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.NetManager.NetFirewall",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "NetFirewallRuleType",
+      "since_version": "15",
+      "system_capability": "SystemCapability.Communication.NetManager.NetFirewall",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "RULE_DNS",
+      "值": "3",
+      "所属模块": "未知模块",
+      "功能描述": "DNS type rules.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.NetManager.NetFirewall",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "NetFirewallRuleType",
+      "since_version": "15",
+      "system_capability": "SystemCapability.Communication.NetManager.NetFirewall",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "NetFirewallOrderField",
+      "所属模块": "未知模块",
+      "功能描述": "Pagination query sorting field.",
+      "注释信息": [
+        "@enum {number}",
+        "@syscap SystemCapability.Communication.NetManager.NetFirewall",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "netFirewall",
+      "since_version": "15",
+      "system_capability": "SystemCapability.Communication.NetManager.NetFirewall",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "ORDER_BY_RULE_NAME",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Sort rule names, it can be referenced only by the getNetFirewallRules interface.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.NetManager.NetFirewall",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "NetFirewallOrderField",
+      "since_version": "15",
+      "system_capability": "SystemCapability.Communication.NetManager.NetFirewall",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "ORDER_BY_RECORD_TIME",
+      "值": "100",
+      "所属模块": "未知模块",
+      "功能描述": "Sort the recorded time, it can be referenced only by the getNetFirewallRules interface.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.NetManager.NetFirewall",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "NetFirewallOrderField",
+      "since_version": "15",
+      "system_capability": "SystemCapability.Communication.NetManager.NetFirewall",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "NetFirewallOrderType",
+      "所属模块": "未知模块",
+      "功能描述": "Pagination query sorting type.",
+      "注释信息": [
+        "@enum {number}",
+        "@syscap SystemCapability.Communication.NetManager.NetFirewall",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "netFirewall",
+      "since_version": "15",
+      "system_capability": "SystemCapability.Communication.NetManager.NetFirewall",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "ORDER_ASC",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Ascending order.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.NetManager.NetFirewall",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "NetFirewallOrderType",
+      "since_version": "15",
+      "system_capability": "SystemCapability.Communication.NetManager.NetFirewall",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "ORDER_DESC",
+      "值": "100",
+      "所属模块": "未知模块",
+      "功能描述": "Descending order.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.NetManager.NetFirewall",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "NetFirewallOrderType",
+      "since_version": "15",
+      "system_capability": "SystemCapability.Communication.NetManager.NetFirewall",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "NetFirewallPolicy",
+      "所属模块": "未知模块",
+      "功能描述": "Firewall policy.",
+      "注释信息": [
+        "@interface NetFirewallPolicy",
+        "@syscap SystemCapability.Communication.NetManager.NetFirewall",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "netFirewall",
+      "since_version": "15",
+      "system_capability": "SystemCapability.Communication.NetManager.NetFirewall",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "isOpen",
+      "属性类型": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Whether the firewall is open.",
+      "注释信息": [
+        "@type {boolean}",
+        "@syscap SystemCapability.Communication.NetManager.NetFirewall",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "NetFirewallPolicy",
+      "since_version": "15",
+      "system_capability": "SystemCapability.Communication.NetManager.NetFirewall",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "inAction",
+      "属性类型": "FirewallRuleAction",
+      "所属模块": "未知模块",
+      "功能描述": "Inbound connections are allowed or denied by default.",
+      "注释信息": [
+        "@type {FirewallRuleAction}",
+        "@syscap SystemCapability.Communication.NetManager.NetFirewall",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "NetFirewallPolicy",
+      "since_version": "15",
+      "system_capability": "SystemCapability.Communication.NetManager.NetFirewall",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "outAction",
+      "属性类型": "FirewallRuleAction",
+      "所属模块": "未知模块",
+      "功能描述": "Outbound connections are allowed or denied by default.",
+      "注释信息": [
+        "@type {FirewallRuleAction}",
+        "@syscap SystemCapability.Communication.NetManager.NetFirewall",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "NetFirewallPolicy",
+      "since_version": "15",
+      "system_capability": "SystemCapability.Communication.NetManager.NetFirewall",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "NetFirewallIpParams",
+      "所属模块": "未知模块",
+      "功能描述": "Firewall IP parameters.",
+      "注释信息": [
+        "@interface NetFirewallIpParams",
+        "@syscap SystemCapability.Communication.NetManager.NetFirewall",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "netFirewall",
+      "since_version": "15",
+      "system_capability": "SystemCapability.Communication.NetManager.NetFirewall",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "type",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "1: IP address or subnet, when using a single IP, the mask is 32; 2: IP segment.",
+      "注释信息": [
+        "@type {number}",
+        "@syscap SystemCapability.Communication.NetManager.NetFirewall",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "NetFirewallIpParams",
+      "since_version": "15",
+      "system_capability": "SystemCapability.Communication.NetManager.NetFirewall",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "family",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "1: IPv4, 2: IPv6, default is IPv4.",
+      "注释信息": [
+        "@type {?number}",
+        "@syscap SystemCapability.Communication.NetManager.NetFirewall",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "NetFirewallIpParams",
+      "since_version": "15",
+      "system_capability": "SystemCapability.Communication.NetManager.NetFirewall",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "address",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "IP address: Valid when type equals 1, otherwise it will be ignored.",
+      "注释信息": [
+        "@type {?string}",
+        "@syscap SystemCapability.Communication.NetManager.NetFirewall",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "NetFirewallIpParams",
+      "since_version": "15",
+      "system_capability": "SystemCapability.Communication.NetManager.NetFirewall",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "mask",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "IPv4: subnet mask, IPv6: prefix, valid when type equals 1, otherwise it will be ignored.",
+      "注释信息": [
+        "@type {?number}",
+        "@syscap SystemCapability.Communication.NetManager.NetFirewall",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "NetFirewallIpParams",
+      "since_version": "15",
+      "system_capability": "SystemCapability.Communication.NetManager.NetFirewall",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "startIp",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Start IP: valid when type equals 2, otherwise it will be ignored.",
+      "注释信息": [
+        "@type {?string}",
+        "@syscap SystemCapability.Communication.NetManager.NetFirewall",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "NetFirewallIpParams",
+      "since_version": "15",
+      "system_capability": "SystemCapability.Communication.NetManager.NetFirewall",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "endIp",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "End IP: valid when type equals 2, otherwise it will be ignored.",
+      "注释信息": [
+        "@type {?string}",
+        "@syscap SystemCapability.Communication.NetManager.NetFirewall",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "NetFirewallIpParams",
+      "since_version": "15",
+      "system_capability": "SystemCapability.Communication.NetManager.NetFirewall",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "NetFirewallPortParams",
+      "所属模块": "未知模块",
+      "功能描述": "Firewall port parameters.",
+      "注释信息": [
+        "@interface NetFirewallPortParams",
+        "@syscap SystemCapability.Communication.NetManager.NetFirewall",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "netFirewall",
+      "since_version": "15",
+      "system_capability": "SystemCapability.Communication.NetManager.NetFirewall",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "startPort",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Start port, when there is only one port, the start port is the same as the end port.",
+      "注释信息": [
+        "@type {number}",
+        "@syscap SystemCapability.Communication.NetManager.NetFirewall",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "NetFirewallPortParams",
+      "since_version": "15",
+      "system_capability": "SystemCapability.Communication.NetManager.NetFirewall",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "endPort",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "End port, when there is only one port, the start port is the same as the end port.",
+      "注释信息": [
+        "@type {number}",
+        "@syscap SystemCapability.Communication.NetManager.NetFirewall",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "NetFirewallPortParams",
+      "since_version": "15",
+      "system_capability": "SystemCapability.Communication.NetManager.NetFirewall",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "NetFirewallDomainParams",
+      "所属模块": "未知模块",
+      "功能描述": "Firewall domain name parameters.",
+      "注释信息": [
+        "@interface NetFirewallDomainParams",
+        "@syscap SystemCapability.Communication.NetManager.NetFirewall",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "netFirewall",
+      "since_version": "15",
+      "system_capability": "SystemCapability.Communication.NetManager.NetFirewall",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "isWildcard",
+      "属性类型": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Is there a universal configuration rule.",
+      "注释信息": [
+        "@type {boolean}",
+        "@syscap SystemCapability.Communication.NetManager.NetFirewall",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "NetFirewallDomainParams",
+      "since_version": "15",
+      "system_capability": "SystemCapability.Communication.NetManager.NetFirewall",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "domain",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Domain: when isWildcard is false, the complete domain that needs to be determined; When isWildcard is true, fuzzy domain only support domains like *.openharmony.cn; *.com.",
+      "注释信息": [
+        "@type {string}",
+        "@syscap SystemCapability.Communication.NetManager.NetFirewall",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "NetFirewallDomainParams",
+      "since_version": "15",
+      "system_capability": "SystemCapability.Communication.NetManager.NetFirewall",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "NetFirewallDnsParams",
+      "所属模块": "未知模块",
+      "功能描述": "Firewall DNS parameters.",
+      "注释信息": [
+        "@interface NetFirewallDnsParams",
+        "@syscap SystemCapability.Communication.NetManager.NetFirewall",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "netFirewall",
+      "since_version": "15",
+      "system_capability": "SystemCapability.Communication.NetManager.NetFirewall",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "primaryDns",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Primary DNS.",
+      "注释信息": [
+        "@type {string}",
+        "@syscap SystemCapability.Communication.NetManager.NetFirewall",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "NetFirewallDnsParams",
+      "since_version": "15",
+      "system_capability": "SystemCapability.Communication.NetManager.NetFirewall",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "standbyDns",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Backup DNS.",
+      "注释信息": [
+        "@type {?string}",
+        "@syscap SystemCapability.Communication.NetManager.NetFirewall",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "NetFirewallDnsParams",
+      "since_version": "15",
+      "system_capability": "SystemCapability.Communication.NetManager.NetFirewall",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "NetFirewallRule",
+      "所属模块": "未知模块",
+      "功能描述": "Firewall rules.",
+      "注释信息": [
+        "@interface NetFirewallRule",
+        "@syscap SystemCapability.Communication.NetManager.NetFirewall",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "netFirewall",
+      "since_version": "15",
+      "system_capability": "SystemCapability.Communication.NetManager.NetFirewall",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "userId",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "User id.",
+      "注释信息": [
+        "@type {number}",
+        "@syscap SystemCapability.Communication.NetManager.NetFirewall",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "NetFirewallRule",
+      "since_version": "15",
+      "system_capability": "SystemCapability.Communication.NetManager.NetFirewall",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "name",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Rule name.",
+      "注释信息": [
+        "@type {string}",
+        "@syscap SystemCapability.Communication.NetManager.NetFirewall",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "NetFirewallRule",
+      "since_version": "15",
+      "system_capability": "SystemCapability.Communication.NetManager.NetFirewall",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "direction",
+      "属性类型": "NetFirewallRuleDirection",
+      "所属模块": "未知模块",
+      "功能描述": "Rule direction, inbound or outbound.",
+      "注释信息": [
+        "@type {NetFirewallRuleDirection}",
+        "@syscap SystemCapability.Communication.NetManager.NetFirewall",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "NetFirewallRule",
+      "since_version": "15",
+      "system_capability": "SystemCapability.Communication.NetManager.NetFirewall",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "action",
+      "属性类型": "FirewallRuleAction",
+      "所属模块": "未知模块",
+      "功能描述": "Rule action.",
+      "注释信息": [
+        "@type {FirewallRuleAction}",
+        "@syscap SystemCapability.Communication.NetManager.NetFirewall",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "NetFirewallRule",
+      "since_version": "15",
+      "system_capability": "SystemCapability.Communication.NetManager.NetFirewall",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "type",
+      "属性类型": "NetFirewallRuleType",
+      "所属模块": "未知模块",
+      "功能描述": "Rule type.",
+      "注释信息": [
+        "@type {NetFirewallRuleType}",
+        "@syscap SystemCapability.Communication.NetManager.NetFirewall",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "NetFirewallRule",
+      "since_version": "15",
+      "system_capability": "SystemCapability.Communication.NetManager.NetFirewall",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "isEnabled",
+      "属性类型": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Whether the rule is enabled.",
+      "注释信息": [
+        "@type {boolean}",
+        "@syscap SystemCapability.Communication.NetManager.NetFirewall",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "NetFirewallRule",
+      "since_version": "15",
+      "system_capability": "SystemCapability.Communication.NetManager.NetFirewall",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "id",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Rule id: When a rule is added to the system, the system generates a rule ID.",
+      "注释信息": [
+        "@type {?number}",
+        "@syscap SystemCapability.Communication.NetManager.NetFirewall",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "NetFirewallRule",
+      "since_version": "15",
+      "system_capability": "SystemCapability.Communication.NetManager.NetFirewall",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "description",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Rule description.",
+      "注释信息": [
+        "@type {?string}",
+        "@syscap SystemCapability.Communication.NetManager.NetFirewall",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "NetFirewallRule",
+      "since_version": "15",
+      "system_capability": "SystemCapability.Communication.NetManager.NetFirewall",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "appUid",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Application or service UID.",
+      "注释信息": [
+        "@type {?number}",
+        "@syscap SystemCapability.Communication.NetManager.NetFirewall",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "NetFirewallRule",
+      "since_version": "15",
+      "system_capability": "SystemCapability.Communication.NetManager.NetFirewall",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "localIps",
+      "属性类型": "Array<NetFirewallIpParams>",
+      "所属模块": "未知模块",
+      "功能描述": "Local IP address: valid when ruleType = RULE_IP, otherwise it will be ignored.",
+      "注释信息": [
+        "@type {?Array<NetFirewallIpParams>}",
+        "@syscap SystemCapability.Communication.NetManager.NetFirewall",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "NetFirewallRule",
+      "since_version": "15",
+      "system_capability": "SystemCapability.Communication.NetManager.NetFirewall",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "remoteIps",
+      "属性类型": "Array<NetFirewallIpParams>",
+      "所属模块": "未知模块",
+      "功能描述": "Remote IP address: valid when ruleType = RULE_IP, otherwise it will be ignored.",
+      "注释信息": [
+        "@type {?Array<NetFirewallIpParams>}",
+        "@syscap SystemCapability.Communication.NetManager.NetFirewall",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "NetFirewallRule",
+      "since_version": "15",
+      "system_capability": "SystemCapability.Communication.NetManager.NetFirewall",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "protocol",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Protocol, 1: ICMPv4, 6: TCP, 17: UDP, 58: ICMPv6. Valid when ruleType = RULE_IP, otherwise it will be ignored.",
+      "注释信息": [
+        "@type {?number}",
+        "@syscap SystemCapability.Communication.NetManager.NetFirewall",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "NetFirewallRule",
+      "since_version": "15",
+      "system_capability": "SystemCapability.Communication.NetManager.NetFirewall",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "localPorts",
+      "属性类型": "Array<NetFirewallPortParams>",
+      "所属模块": "未知模块",
+      "功能描述": "Local ports: valid when ruleType = RULE_IP, otherwise it will be ignored.",
+      "注释信息": [
+        "@type {?Array<NetFirewallPortParams>}",
+        "@syscap SystemCapability.Communication.NetManager.NetFirewall",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "NetFirewallRule",
+      "since_version": "15",
+      "system_capability": "SystemCapability.Communication.NetManager.NetFirewall",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "remotePorts",
+      "属性类型": "Array<NetFirewallPortParams>",
+      "所属模块": "未知模块",
+      "功能描述": "Remote ports: valid when ruleType = RULE_IP, otherwise it will be ignored.",
+      "注释信息": [
+        "@type {?Array<NetFirewallPortParams>}",
+        "@syscap SystemCapability.Communication.NetManager.NetFirewall",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "NetFirewallRule",
+      "since_version": "15",
+      "system_capability": "SystemCapability.Communication.NetManager.NetFirewall",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "domains",
+      "属性类型": "Array<NetFirewallDomainParams>",
+      "所属模块": "未知模块",
+      "功能描述": "Domain name list: valid when ruleType = RULE_DOMAIN, otherwise it will be ignored.",
+      "注释信息": [
+        "@type {?Array<NetFirewallDomainParams>}",
+        "@syscap SystemCapability.Communication.NetManager.NetFirewall",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "NetFirewallRule",
+      "since_version": "15",
+      "system_capability": "SystemCapability.Communication.NetManager.NetFirewall",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "dns",
+      "属性类型": "NetFirewallDnsParams",
+      "所属模块": "未知模块",
+      "功能描述": "DNS: valid when ruleType = RULE_DNS, otherwise it will be ignored.",
+      "注释信息": [
+        "@type {?NetFirewallDnsParams}",
+        "@syscap SystemCapability.Communication.NetManager.NetFirewall",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "NetFirewallRule",
+      "since_version": "15",
+      "system_capability": "SystemCapability.Communication.NetManager.NetFirewall",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "RequestParam",
+      "所属模块": "未知模块",
+      "功能描述": "Pagination query input parameters.",
+      "注释信息": [
+        "@interface RequestParam",
+        "@syscap SystemCapability.Communication.NetManager.NetFirewall",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "netFirewall",
+      "since_version": "15",
+      "system_capability": "SystemCapability.Communication.NetManager.NetFirewall",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "page",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Page number: indicates the page number to be queried. The start value is 1.",
+      "注释信息": [
+        "@type {number}",
+        "@syscap SystemCapability.Communication.NetManager.NetFirewall",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "RequestParam",
+      "since_version": "15",
+      "system_capability": "SystemCapability.Communication.NetManager.NetFirewall",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "pageSize",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Page size: indicates the number of data records to be queried at a time. The maximum value is 50.",
+      "注释信息": [
+        "@type {number}",
+        "@syscap SystemCapability.Communication.NetManager.NetFirewall",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "RequestParam",
+      "since_version": "15",
+      "system_capability": "SystemCapability.Communication.NetManager.NetFirewall",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "orderField",
+      "属性类型": "NetFirewallOrderField",
+      "所属模块": "未知模块",
+      "功能描述": "Sort field.",
+      "注释信息": [
+        "@type {NetFirewallOrderField}",
+        "@syscap SystemCapability.Communication.NetManager.NetFirewall",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "RequestParam",
+      "since_version": "15",
+      "system_capability": "SystemCapability.Communication.NetManager.NetFirewall",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "orderType",
+      "属性类型": "NetFirewallOrderType",
+      "所属模块": "未知模块",
+      "功能描述": "Sort Type: ascending or descending.",
+      "注释信息": [
+        "@type {NetFirewallOrderType}",
+        "@syscap SystemCapability.Communication.NetManager.NetFirewall",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "RequestParam",
+      "since_version": "15",
+      "system_capability": "SystemCapability.Communication.NetManager.NetFirewall",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "FirewallRulePage",
+      "所属模块": "未知模块",
+      "功能描述": "Rule page information.",
+      "注释信息": [
+        "@interface FirewallRulePage",
+        "@syscap SystemCapability.Communication.NetManager.NetFirewall",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "netFirewall",
+      "since_version": "15",
+      "system_capability": "SystemCapability.Communication.NetManager.NetFirewall",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "page",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Current page number: indicates the page number of this query.",
+      "注释信息": [
+        "@type {number}",
+        "@syscap SystemCapability.Communication.NetManager.NetFirewall",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "FirewallRulePage",
+      "since_version": "15",
+      "system_capability": "SystemCapability.Communication.NetManager.NetFirewall",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "pageSize",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Page size: maximum number of records on a page for this query.",
+      "注释信息": [
+        "@type {number}",
+        "@syscap SystemCapability.Communication.NetManager.NetFirewall",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "FirewallRulePage",
+      "since_version": "15",
+      "system_capability": "SystemCapability.Communication.NetManager.NetFirewall",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "totalPage",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Total pages: total number of pages.",
+      "注释信息": [
+        "@type {number}",
+        "@syscap SystemCapability.Communication.NetManager.NetFirewall",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "FirewallRulePage",
+      "since_version": "15",
+      "system_capability": "SystemCapability.Communication.NetManager.NetFirewall",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "data",
+      "属性类型": "Array<NetFirewallRule>",
+      "所属模块": "未知模块",
+      "功能描述": "Page data: all records displayed on this page.",
+      "注释信息": [
+        "@type {Array<NetFirewallRule> }",
+        "@syscap SystemCapability.Communication.NetManager.NetFirewall",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "FirewallRulePage",
+      "since_version": "15",
+      "system_capability": "SystemCapability.Communication.NetManager.NetFirewall",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    }
+  ]
+}

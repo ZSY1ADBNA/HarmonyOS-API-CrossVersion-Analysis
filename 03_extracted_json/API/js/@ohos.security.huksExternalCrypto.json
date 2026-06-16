@@ -1,0 +1,676 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.UniversalKeystoreKit",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "namespace",
+      "名称": "huksExternalCrypto",
+      "所属模块": "@kit.UniversalKeystoreKit",
+      "功能描述": "This module provides the interface of external crypto provider.",
+      "注释信息": [
+        "@namespace huksExternalCrypto",
+        "@syscap SystemCapability.Security.Huks.CryptoExtension",
+        "@since 22"
+      ],
+      "层级": 1,
+      "上级": "@kit.UniversalKeystoreKit",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Security.Huks.CryptoExtension",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "HuksExternalCryptoTagType",
+      "所属模块": "未知模块",
+      "功能描述": "Enumerates the huks external crypto tag data types.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.Security.Huks.CryptoExtension",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "huksExternalCrypto",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Security.Huks.CryptoExtension",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "HUKS_EXT_CRYPTO_TAG_TYPE_INT",
+      "值": "1 << 28",
+      "所属模块": "未知模块",
+      "功能描述": "Number of the int type.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.Huks.CryptoExtension",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "HuksExternalCryptoTagType",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Security.Huks.CryptoExtension",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "HUKS_EXT_CRYPTO_TAG_TYPE_BYTES",
+      "值": "5 << 28",
+      "所属模块": "未知模块",
+      "功能描述": "Uint8Array type.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.Huks.CryptoExtension",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "HuksExternalCryptoTagType",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Security.Huks.CryptoExtension",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "HuksExternalCryptoTag",
+      "所属模块": "未知模块",
+      "功能描述": "Enumerates the tags used to invoke parameters.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.Security.Huks.CryptoExtension",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "huksExternalCrypto",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Security.Huks.CryptoExtension",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "HUKS_EXT_CRYPTO_TAG_UKEY_PIN",
+      "值": "HuksExternalCryptoTagType.HUKS_EXT_CRYPTO_TAG_TYPE_BYTES | 200001",
+      "所属模块": "未知模块",
+      "功能描述": "PIN code",
+      "注释信息": [
+        "@syscap SystemCapability.Security.Huks.CryptoExtension",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "HuksExternalCryptoTag",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Security.Huks.CryptoExtension",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "HUKS_EXT_CRYPTO_TAG_ABILITY_NAME",
+      "值": "HuksExternalCryptoTagType.HUKS_EXT_CRYPTO_TAG_TYPE_BYTES | 200002",
+      "所属模块": "未知模块",
+      "功能描述": "Ability Name",
+      "注释信息": [
+        "@syscap SystemCapability.Security.Huks.CryptoExtension",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "HuksExternalCryptoTag",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Security.Huks.CryptoExtension",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "HUKS_EXT_CRYPTO_TAG_EXTRA_DATA",
+      "值": "HuksExternalCryptoTagType.HUKS_EXT_CRYPTO_TAG_TYPE_BYTES | 200003",
+      "所属模块": "未知模块",
+      "功能描述": "Extra data.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.Huks.CryptoExtension",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "HuksExternalCryptoTag",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Security.Huks.CryptoExtension",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "HUKS_EXT_CRYPTO_TAG_UID",
+      "值": "HuksExternalCryptoTagType.HUKS_EXT_CRYPTO_TAG_TYPE_INT | 200004",
+      "所属模块": "未知模块",
+      "功能描述": "Calling uid.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.Huks.CryptoExtension",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "HuksExternalCryptoTag",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Security.Huks.CryptoExtension",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "HUKS_EXT_CRYPTO_TAG_PURPOSE",
+      "值": "HuksExternalCryptoTagType.HUKS_EXT_CRYPTO_TAG_TYPE_INT | 200005",
+      "所属模块": "未知模块",
+      "功能描述": "Purpose of the certificate chain.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.Huks.CryptoExtension",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "HuksExternalCryptoTag",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Security.Huks.CryptoExtension",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "HuksExternalPinAuthState",
+      "所属模块": "未知模块",
+      "功能描述": "Enumerates the PIN auth states.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.Security.Huks.CryptoExtension",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "huksExternalCrypto",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Security.Huks.CryptoExtension",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "HUKS_EXT_CRYPTO_PIN_NO_AUTH",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "Ukey PIN is not authenticated.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.Huks.CryptoExtension",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "HuksExternalPinAuthState",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Security.Huks.CryptoExtension",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "HUKS_EXT_CRYPTO_PIN_AUTH_SUCCEEDED",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Ukey PIN is authenticated.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.Huks.CryptoExtension",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "HuksExternalPinAuthState",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Security.Huks.CryptoExtension",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "HUKS_EXT_CRYPTO_PIN_LOCKED",
+      "值": "2",
+      "所属模块": "未知模块",
+      "功能描述": "Ukey PIN is locked.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.Huks.CryptoExtension",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "HuksExternalPinAuthState",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Security.Huks.CryptoExtension",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "HuksExternalCryptoParam",
+      "所属模块": "未知模块",
+      "功能描述": "Defines the param field used in the APIs.",
+      "注释信息": [
+        "@typedef HuksExternalCryptoParam",
+        "@syscap SystemCapability.Security.Huks.CryptoExtension",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "huksExternalCrypto",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Security.Huks.CryptoExtension",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "tag",
+      "属性类型": "HuksExternalCryptoTag",
+      "所属模块": "未知模块",
+      "功能描述": "External crypto tag",
+      "注释信息": [
+        "@type { HuksExternalCryptoTag }",
+        "@syscap SystemCapability.Security.Huks.CryptoExtension",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "HuksExternalCryptoParam",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Security.Huks.CryptoExtension",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "value",
+      "属性类型": "boolean | number | bigint | Uint8Array",
+      "所属模块": "未知模块",
+      "功能描述": "Param value",
+      "注释信息": [
+        "@type { boolean | number | bigint | Uint8Array }",
+        "@syscap SystemCapability.Security.Huks.CryptoExtension",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "HuksExternalCryptoParam",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Security.Huks.CryptoExtension",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "registerProvider",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Register the specific external key provider by providerName. and must be globally unique. One effective way is to include manufacturer information.",
+      "注释信息": [
+        "@permission ohos.permission.CRYPTO_EXTENSION_REGISTER",
+        "@param { string } providerName - providerName indicates the name of the external crypto provider",
+        "@param { Array<HuksExternalCryptoParam> } params - params indicates the properties of the operation.",
+        "@returns { Promise<void> } the promise returned by the function.",
+        "@throws { BusinessError } 201 - check permission failed.",
+        "@throws { BusinessError } 801 - api is not supported.",
+        "@throws { BusinessError } 12000002 - the ability name param is missing.",
+        "@throws { BusinessError } 12000005 - IPC communication failed.",
+        "@throws { BusinessError } 12000014 - memory is insufficient.",
+        "@throws { BusinessError } 12000018 - the input parameter is invalid.",
+        "@throws { BusinessError } 12000019 - the provider is already registered.",
+        "@throws { BusinessError } 12000020 - an error occurred in the dependent module.",
+        "@throws { BusinessError } 12000025 - the number of providers exceeds the limit.",
+        "@syscap SystemCapability.Security.Huks.CryptoExtension",
+        "@since 22"
+      ],
+      "层级": 1,
+      "上级": "huksExternalCrypto",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Security.Huks.CryptoExtension",
+      "parameters": [
+        {
+          "名称": "providerName",
+          "类型": "string",
+          "必填": true,
+          "说明": "providerName indicates the name of the external crypto provider"
+        },
+        {
+          "名称": "params",
+          "类型": "Array<HuksExternalCryptoParam>",
+          "必填": true,
+          "说明": "params indicates the properties of the operation."
+        }
+      ],
+      "return_description": "the promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "check permission failed."
+        },
+        {
+          "code": "801",
+          "description": "api is not supported."
+        },
+        {
+          "code": "12000002",
+          "description": "the ability name param is missing."
+        },
+        {
+          "code": "12000005",
+          "description": "IPC communication failed."
+        },
+        {
+          "code": "12000014",
+          "description": "memory is insufficient."
+        },
+        {
+          "code": "12000018",
+          "description": "the input parameter is invalid."
+        },
+        {
+          "code": "12000019",
+          "description": "the provider is already registered."
+        },
+        {
+          "code": "12000020",
+          "description": "an error occurred in the dependent module."
+        },
+        {
+          "code": "12000025",
+          "description": "the number of providers exceeds the limit."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "unregisterProvider",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Unregister the external key provider named by providerName. and must be globally unique. One effective way is to include manufacturer information. This may happen for several reasons, such as the model already being unloaded.",
+      "注释信息": [
+        "@permission  ohos.permission.CRYPTO_EXTENSION_REGISTER",
+        "@param { string } providerName - providerName indicates the name of the external crypto provider",
+        "@param { Array<HuksExternalCryptoParam> } [params] - params indicates the properties of the operation.",
+        "@returns { Promise<void> } the promise returned by the function.",
+        "@throws { BusinessError } 201 - check permission failed.",
+        "@throws { BusinessError } 801 - api is not supported.",
+        "@throws { BusinessError } 12000005 - IPC communication failed.",
+        "@throws { BusinessError } 12000011 - the provider is not found.",
+        "@throws { BusinessError } 12000012 - Device environment or input parameter is abnormal.",
+        "@throws { BusinessError } 12000014 - memory is insufficient.",
+        "@throws { BusinessError } 12000018 - the input parameter is invalid.",
+        "@syscap SystemCapability.Security.Huks.CryptoExtension",
+        "@since 22"
+      ],
+      "层级": 1,
+      "上级": "huksExternalCrypto",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Security.Huks.CryptoExtension",
+      "parameters": [
+        {
+          "名称": "providerName",
+          "类型": "string",
+          "必填": true,
+          "说明": "providerName indicates the name of the external crypto provider"
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "Array<HuksExternalCryptoParam> } [params] - params indicates the properties of the operation."
+        }
+      ],
+      "return_description": "the promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "check permission failed."
+        },
+        {
+          "code": "801",
+          "description": "api is not supported."
+        },
+        {
+          "code": "12000005",
+          "description": "IPC communication failed."
+        },
+        {
+          "code": "12000011",
+          "description": "the provider is not found."
+        },
+        {
+          "code": "12000012",
+          "description": "Device environment or input parameter is abnormal."
+        },
+        {
+          "code": "12000014",
+          "description": "memory is insufficient."
+        },
+        {
+          "code": "12000018",
+          "description": "the input parameter is invalid."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getUkeyPinAuthState",
+      "返回值": "Promise<HuksExternalPinAuthState>",
+      "所属模块": "未知模块",
+      "功能描述": "Get the PIN auth state of the specified Ukey resource id. because the resource ID has not been opened. This error may occur if the process function is not found, or due to other issues.",
+      "注释信息": [
+        "@param { string } resourceId - resourceId indicates the resource id of the provider.",
+        "@param { Array<HuksExternalCryptoParam> } [params] - params indicates the properties of the operation.",
+        "@returns { Promise<HuksExternalPinAuthState> } the promise returned by the function.",
+        "@throws { BusinessError } 801 - api is not supported.",
+        "@throws { BusinessError } 12000005 - IPC communication failed.",
+        "@throws { BusinessError } 12000006 - the Ukey driver operation failed.",
+        "@throws { BusinessError } 12000011 - queried entity does not exist. This may happen",
+        "@throws { BusinessError } 12000012 - Device environment or input parameter is abnormal.",
+        "@throws { BusinessError } 12000014 - memory is insufficient.",
+        "@throws { BusinessError } 12000018 - the input parameter is invalid.",
+        "@throws { BusinessError } 12000020 - the provider operation failed.",
+        "@throws { BusinessError } 12000024 - the provider or Ukey is busy.",
+        "@syscap SystemCapability.Security.Huks.CryptoExtension",
+        "@since 22"
+      ],
+      "层级": 1,
+      "上级": "huksExternalCrypto",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Security.Huks.CryptoExtension",
+      "parameters": [
+        {
+          "名称": "resourceId",
+          "类型": "string",
+          "必填": true,
+          "说明": "resourceId indicates the resource id of the provider."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "Array<HuksExternalCryptoParam> } [params] - params indicates the properties of the operation."
+        }
+      ],
+      "return_description": "the promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "801",
+          "description": "api is not supported."
+        },
+        {
+          "code": "12000005",
+          "description": "IPC communication failed."
+        },
+        {
+          "code": "12000006",
+          "description": "the Ukey driver operation failed."
+        },
+        {
+          "code": "12000011",
+          "description": "queried entity does not exist. This may happen"
+        },
+        {
+          "code": "12000012",
+          "description": "Device environment or input parameter is abnormal."
+        },
+        {
+          "code": "12000014",
+          "description": "memory is insufficient."
+        },
+        {
+          "code": "12000018",
+          "description": "the input parameter is invalid."
+        },
+        {
+          "code": "12000020",
+          "description": "the provider operation failed."
+        },
+        {
+          "code": "12000024",
+          "description": "the provider or Ukey is busy."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getProperty",
+      "返回值": "Promise<Array<HuksExternalCryptoParam>>",
+      "所属模块": "未知模块",
+      "功能描述": "The general get operation of the external provider. Currently supports the property method names defined in GMT 0016-2023. 1. Error reported when the provider accesses the SKF interface of Ukey. This error may occur if the process function is not found, or due to other issues. 1. The resourceId or propertyId length is invalid. 2. The params contains invalid tags or invalid value types. 1. The provider experienced an internal processing error.",
+      "注释信息": [
+        "@param { string } resourceId - Indicates the resource id of the provider.",
+        "@param { string } propertyId - Indicates the id of the property needed to get.",
+        "@param { Array<HuksExternalCryptoParam> } [params] - Indicates the input operation parameters.",
+        "@returns { Promise<Array<HuksExternalCryptoParam>> } The promise returned by the function.",
+        "@throws { BusinessError } 801 - API is not supported.",
+        "@throws { BusinessError } 12000005 - IPC communication failed.",
+        "@throws { BusinessError } 12000006 - If the Ukey driver operation failed. Possible causes:",
+        "@throws { BusinessError } 12000011 - If the cached resource ID is not found.",
+        "@throws { BusinessError } 12000012 - Device environment or input parameter is abnormal.",
+        "@throws { BusinessError } 12000014 - If the memory is insufficient.",
+        "@throws { BusinessError } 12000018 - Input parameter is invalid. Possible causes:",
+        "@throws { BusinessError } 12000020 - If the provider operation failed. Possible causes:",
+        "@throws { BusinessError } 12000021 - The Ukey PIN is locked.",
+        "@throws { BusinessError } 12000023 - The Ukey PIN is not authenticated.",
+        "@throws { BusinessError } 12000024 - If the provider or Ukey is busy.",
+        "@syscap SystemCapability.Security.Huks.CryptoExtension",
+        "@stagemodelonly",
+        "@since 22"
+      ],
+      "层级": 1,
+      "上级": "huksExternalCrypto",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Security.Huks.CryptoExtension",
+      "parameters": [
+        {
+          "名称": "resourceId",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates the resource id of the provider."
+        },
+        {
+          "名称": "propertyId",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates the id of the property needed to get."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "Array<HuksExternalCryptoParam> } [params] - Indicates the input operation parameters."
+        }
+      ],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "801",
+          "description": "API is not supported."
+        },
+        {
+          "code": "12000005",
+          "description": "IPC communication failed."
+        },
+        {
+          "code": "12000006",
+          "description": "If the Ukey driver operation failed. Possible causes:"
+        },
+        {
+          "code": "12000011",
+          "description": "If the cached resource ID is not found."
+        },
+        {
+          "code": "12000012",
+          "description": "Device environment or input parameter is abnormal."
+        },
+        {
+          "code": "12000014",
+          "description": "If the memory is insufficient."
+        },
+        {
+          "code": "12000018",
+          "description": "Input parameter is invalid. Possible causes:"
+        },
+        {
+          "code": "12000020",
+          "description": "If the provider operation failed. Possible causes:"
+        },
+        {
+          "code": "12000021",
+          "description": "The Ukey PIN is locked."
+        },
+        {
+          "code": "12000023",
+          "description": "The Ukey PIN is not authenticated."
+        },
+        {
+          "code": "12000024",
+          "description": "If the provider or Ukey is busy."
+        }
+      ],
+      "版本": "API"
+    }
+  ]
+}

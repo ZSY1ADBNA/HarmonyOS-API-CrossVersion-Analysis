@@ -1,0 +1,129 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.DriverDevelopmentKit",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "namespace",
+      "名称": "deviceManager",
+      "所属模块": "@kit.DriverDevelopmentKit",
+      "功能描述": "This module provides the capability of manage external device.",
+      "注释信息": [
+        "@namespace deviceManager",
+        "@syscap SystemCapability.Driver.ExternalDevice",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "@kit.DriverDevelopmentKit",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Driver.ExternalDevice",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "queryDevices",
+      "返回值": "Array<Readonly<Device>>",
+      "所属模块": "未知模块",
+      "功能描述": "Query the external device list.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_EXTENSIONAL_DEVICE_DRIVER",
+        "@param { number } busType - The bus type of device to be queried.",
+        "@returns { Array<Readonly<Device>> } External device list.",
+        "@throws { BusinessError } 401 - The parameter check failed.",
+        "@throws { BusinessError } 22900001 - ExternalDeviceManager service exception.",
+        "@syscap SystemCapability.Driver.ExternalDevice",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "deviceManager",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Driver.ExternalDevice",
+      "parameters": [
+        {
+          "名称": "busType",
+          "类型": "number",
+          "必填": true,
+          "说明": "The bus type of device to be queried."
+        }
+      ],
+      "return_description": "External device list.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "The parameter check failed."
+        },
+        {
+          "code": "22900001",
+          "description": "ExternalDeviceManager service exception."
+        }
+      ],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "bindDevice",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Bind the device based on the device information returned by queryDevices(). success. including device ID and remote object.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_EXTENSIONAL_DEVICE_DRIVER",
+        "@param { number } deviceId - Device id on the device list returned by queryDevices().",
+        "@param { AsyncCallback<number> } onDisconnect - Callback is invoked when device is disconnected after bind",
+        "@param { AsyncCallback<{deviceId: number, remote: rpc.IRemoteObject}> } callback - Indicates the bind result",
+        "@throws { BusinessError } 401 - The parameter check failed.",
+        "@throws { BusinessError } 22900001 - ExternalDeviceManager service exception.",
+        "@syscap SystemCapability.Driver.ExternalDevice",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "deviceManager",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Driver.ExternalDevice",
+      "parameters": [
+        {
+          "名称": "deviceId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Device id on the device list returned by queryDevices()."
+        },
+        {
+          "名称": "onDisconnect",
+          "类型": "AsyncCallback<number>",
+          "必填": true,
+          "说明": "Callback is invoked when device is disconnected after bind"
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "AsyncCallback<{deviceId: number, remote: rpc.IRemoteObject}> } callback - Indicates the bind result"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "The parameter check failed."
+        },
+        {
+          "code": "22900001",
+          "description": "ExternalDeviceManager service exception."
+        }
+      ],
+      "版本": "API4.1"
+    }
+  ]
+}

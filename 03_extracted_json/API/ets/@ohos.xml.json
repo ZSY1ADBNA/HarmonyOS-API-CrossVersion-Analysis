@@ -1,0 +1,1685 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.ArkTS",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "namespace",
+      "名称": "xml",
+      "所属模块": "@kit.ArkTS",
+      "功能描述": "The xml module provides utilities for converting XML text to Javascript object, XML generation and parsing.",
+      "注释信息": [
+        "@namespace xml",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "@kit.ArkTS",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "class",
+      "名称": "XmlDynamicSerializer",
+      "所属模块": "未知模块",
+      "功能描述": "The XmlDynamicSerializer interface is used to dynamically generate an xml file.",
+      "注释信息": [
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20",
+        "@name XmlDynamicSerializer"
+      ],
+      "层级": 2,
+      "上级": "xml",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "constructor",
+      "返回值": "XmlDynamicSerializer",
+      "所属模块": "未知模块",
+      "功能描述": "A parameterized constructor used to create a new XmlDynamicSerializer instance. The input parameter is an encoding format of string type.",
+      "注释信息": [
+        "@param { string } [encoding] - [encoding='utf8']  this is its encoding, only support utf-8.",
+        "@throws { BusinessError } 10200066 - Incorrect encoding format, only support utf-8.",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "XmlDynamicSerializer",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "string } [encoding] - [encoding='utf8']  this is its encoding, only support utf-8."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "10200066",
+          "description": "Incorrect encoding format, only support utf-8."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "setAttributes",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Write an attribute to xml element.",
+      "注释信息": [
+        "@param { string } name - Key name of the attribute. Cannot be an empty string.",
+        "@param { string } value - Values of attribute.",
+        "@throws { BusinessError } 10200062 - The cumulative length of xml has exceeded the upper limit 100000.",
+        "@throws { BusinessError } 10200063 - Illegal position for xml.",
+        "@throws { BusinessError } 10200064 - Cannot be an empty string.",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "XmlDynamicSerializer",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "name",
+          "类型": "string",
+          "必填": true,
+          "说明": "Key name of the attribute. Cannot be an empty string."
+        },
+        {
+          "名称": "value",
+          "类型": "string",
+          "必填": true,
+          "说明": "Values of attribute."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "10200062",
+          "description": "The cumulative length of xml has exceeded the upper limit 100000."
+        },
+        {
+          "code": "10200063",
+          "description": "Illegal position for xml."
+        },
+        {
+          "code": "10200064",
+          "description": "Cannot be an empty string."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "addEmptyElement",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Add an empty element.",
+      "注释信息": [
+        "@param { string } name - Name of the element.",
+        "@throws { BusinessError } 10200062 - The cumulative length of xml has exceeded the upper limit 100000.",
+        "@throws { BusinessError } 10200064 - Cannot be an empty string.",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "XmlDynamicSerializer",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "name",
+          "类型": "string",
+          "必填": true,
+          "说明": "Name of the element."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "10200062",
+          "description": "The cumulative length of xml has exceeded the upper limit 100000."
+        },
+        {
+          "code": "10200064",
+          "description": "Cannot be an empty string."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "setDeclaration",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Writes xml declaration with encoding. For example: <?xml version=\"1.0\" encoding=\"utf-8\"?>.",
+      "注释信息": [
+        "@throws { BusinessError } 10200062 - The cumulative length of xml has exceeded the upper limit 100000.",
+        "@throws { BusinessError } 10200063 - Illegal position for xml.",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "XmlDynamicSerializer",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "10200062",
+          "description": "The cumulative length of xml has exceeded the upper limit 100000."
+        },
+        {
+          "code": "10200063",
+          "description": "Illegal position for xml."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "startElement",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Writes a element start tag with the given name.",
+      "注释信息": [
+        "@param { string } name - Name of the element.",
+        "@throws { BusinessError } 10200062 - The cumulative length of xml has exceeded the upper limit 100000.",
+        "@throws { BusinessError } 10200064 - Cannot be an empty string.",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "XmlDynamicSerializer",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "name",
+          "类型": "string",
+          "必填": true,
+          "说明": "Name of the element."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "10200062",
+          "description": "The cumulative length of xml has exceeded the upper limit 100000."
+        },
+        {
+          "code": "10200064",
+          "description": "Cannot be an empty string."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "endElement",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Writes end tag of the element.",
+      "注释信息": [
+        "@throws { BusinessError } 10200062 - The cumulative length of xml has exceeded the upper limit 100000.",
+        "@throws { BusinessError } 10200065 - There is no match between the startElement and the endElement.",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "XmlDynamicSerializer",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "10200062",
+          "description": "The cumulative length of xml has exceeded the upper limit 100000."
+        },
+        {
+          "code": "10200065",
+          "description": "There is no match between the startElement and the endElement."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "namespace",
+      "名称": null,
+      "所属模块": "未知模块",
+      "功能描述": "Writes the namespace of the current element tag.",
+      "注释信息": [
+        "@param { string } prefix - Values name of the prefix. Cannot be an empty string.",
+        "@param { string } namespace - Values of namespace. Cannot be an empty string.",
+        "@throws { BusinessError } 10200062 - The cumulative length of xml has exceeded the upper limit 100000.",
+        "@throws { BusinessError } 10200064 - Cannot be an empty string.",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "XmlDynamicSerializer",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "10200062",
+          "description": "The cumulative length of xml has exceeded the upper limit 100000."
+        },
+        {
+          "code": "10200064",
+          "description": "Cannot be an empty string."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "setComment",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Writes the comment to xml.",
+      "注释信息": [
+        "@param { string } text - Values of comment. Cannot be an empty string.",
+        "@throws { BusinessError } 10200062 - The cumulative length of xml has exceeded the upper limit 100000.",
+        "@throws { BusinessError } 10200064 - Cannot be an empty string.",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "XmlDynamicSerializer",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "text",
+          "类型": "string",
+          "必填": true,
+          "说明": "Values of comment. Cannot be an empty string."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "10200062",
+          "description": "The cumulative length of xml has exceeded the upper limit 100000."
+        },
+        {
+          "code": "10200064",
+          "description": "Cannot be an empty string."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "setCdata",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Writes the CDATA.",
+      "注释信息": [
+        "@param { string } text - Values of CDATA. Cannot be an empty string.",
+        "@throws { BusinessError } 10200062 - The cumulative length of xml has exceeded the upper limit 100000.",
+        "@throws { BusinessError } 10200064 - Cannot be an empty string.",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "XmlDynamicSerializer",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "text",
+          "类型": "string",
+          "必填": true,
+          "说明": "Values of CDATA. Cannot be an empty string."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "10200062",
+          "description": "The cumulative length of xml has exceeded the upper limit 100000."
+        },
+        {
+          "code": "10200064",
+          "description": "Cannot be an empty string."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "setText",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Writes the text to xml element.",
+      "注释信息": [
+        "@param { string } text - Values of text. Cannot be an empty string.",
+        "@throws { BusinessError } 10200062 - The cumulative length of xml has exceeded the upper limit 100000.",
+        "@throws { BusinessError } 10200064 - Cannot be an empty string.",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "XmlDynamicSerializer",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "text",
+          "类型": "string",
+          "必填": true,
+          "说明": "Values of text. Cannot be an empty string."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "10200062",
+          "description": "The cumulative length of xml has exceeded the upper limit 100000."
+        },
+        {
+          "code": "10200064",
+          "description": "Cannot be an empty string."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "setDocType",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Writes the DOCTYPE.",
+      "注释信息": [
+        "@param { string } text - Values of docType. Cannot be an empty string.",
+        "@throws { BusinessError } 10200062 - The cumulative length of xml has exceeded the upper limit 100000.",
+        "@throws { BusinessError } 10200064 - Cannot be an empty string.",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "XmlDynamicSerializer",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "text",
+          "类型": "string",
+          "必填": true,
+          "说明": "Values of docType. Cannot be an empty string."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "10200062",
+          "description": "The cumulative length of xml has exceeded the upper limit 100000."
+        },
+        {
+          "code": "10200064",
+          "description": "Cannot be an empty string."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getOutput",
+      "返回值": "ArrayBuffer",
+      "所属模块": "未知模块",
+      "功能描述": "Get an ArrayBuffer from a XmlDynamicSerializer instance.",
+      "注释信息": [
+        "@returns { ArrayBuffer } - Returns ArrayBuffer result from a XmlDynamicSerializer instance.",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "XmlDynamicSerializer",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "- Returns ArrayBuffer result from a XmlDynamicSerializer instance.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "class",
+      "名称": "XmlSerializer",
+      "所属模块": "未知模块",
+      "功能描述": "The XmlSerializer interface is used to generate an xml file.",
+      "注释信息": [
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11",
+        "@name XmlSerializer"
+      ],
+      "层级": 2,
+      "上级": "xml",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "constructor",
+      "返回值": "XmlSerializer",
+      "所属模块": "未知模块",
+      "功能描述": "A constructor used to create an XmlSerializer instance. 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types; 3.Parameter verification failed.",
+      "注释信息": [
+        "@param { ArrayBuffer | DataView } buffer - ArrayBuffer or DataView for storing the XML information to set.",
+        "@param { string } [encoding] - Encoding format. The default value is 'utf-8' (the only format currently supported).",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "XmlSerializer",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "buffer",
+          "类型": "ArrayBuffer | DataView",
+          "必填": true,
+          "说明": "ArrayBuffer or DataView for storing the XML information to set."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "string } [encoding] - Encoding format. The default value is 'utf-8' (the only format currently supported)."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "setAttributes",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Sets an attribute. 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types; 3.Parameter verification failed.",
+      "注释信息": [
+        "@param { string } name - Key of the attribute.",
+        "@param { string } value - Value of the attribute.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "XmlSerializer",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "name",
+          "类型": "string",
+          "必填": true,
+          "说明": "Key of the attribute."
+        },
+        {
+          "名称": "value",
+          "类型": "string",
+          "必填": true,
+          "说明": "Value of the attribute."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "addEmptyElement",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Adds an empty element. 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types; 3.Parameter verification failed.",
+      "注释信息": [
+        "@param { string } name - Name of the empty element to add.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "XmlSerializer",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "name",
+          "类型": "string",
+          "必填": true,
+          "说明": "Name of the empty element to add."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "setDeclaration",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Sets a file declaration with encoding.",
+      "注释信息": [
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "XmlSerializer",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "startElement",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Writes the start tag based on the given element name. 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types; 3.Parameter verification failed.",
+      "注释信息": [
+        "@param { string } name - Name of the element.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "XmlSerializer",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "name",
+          "类型": "string",
+          "必填": true,
+          "说明": "Name of the element."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "endElement",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Writes the end tag of the element.",
+      "注释信息": [
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "XmlSerializer",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "namespace",
+      "名称": null,
+      "所属模块": "未知模块",
+      "功能描述": "Sets the namespace for an element tag. 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types; 3.Parameter verification failed.",
+      "注释信息": [
+        "@param { string } prefix - Prefix of the element and its child elements.",
+        "@param { string } namespace - Namespace to set.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "XmlSerializer",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "setComment",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Sets a comment. 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types; 3.Parameter verification failed.",
+      "注释信息": [
+        "@param { string } text - Comment to set.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "XmlSerializer",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "text",
+          "类型": "string",
+          "必填": true,
+          "说明": "Comment to set."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "setCDATA",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Adds data to the CDATA tag. The structure of the generated CDATA tag is \"<! <![CDATA[\"+ Data added + \"]]>\". 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types; 3.Parameter verification failed.",
+      "注释信息": [
+        "@param { string } text - CDATA data to set.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "XmlSerializer",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "text",
+          "类型": "string",
+          "必填": true,
+          "说明": "CDATA data to set."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "setText",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Sets a tag value. 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types; 3.Parameter verification failed.",
+      "注释信息": [
+        "@param { string } text - Tag value to set, which is the content of the text attribute.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "XmlSerializer",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "text",
+          "类型": "string",
+          "必填": true,
+          "说明": "Tag value to set, which is the content of the text attribute."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "setDocType",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Sets a document type. 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types; 3.Parameter verification failed.",
+      "注释信息": [
+        "@param { string } text - Content of DocType to set.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "XmlSerializer",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "text",
+          "类型": "string",
+          "必填": true,
+          "说明": "Content of DocType to set."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "EventType",
+      "所属模块": "未知模块",
+      "功能描述": "The event types represented by XML elements.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "xml",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "START_DOCUMENT",
+      "所属模块": "未知模块",
+      "功能描述": "Start a document.",
+      "注释信息": [
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "EventType",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "END_DOCUMENT",
+      "所属模块": "未知模块",
+      "功能描述": "End a document.",
+      "注释信息": [
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "EventType",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "START_TAG",
+      "所属模块": "未知模块",
+      "功能描述": "Start a tag.",
+      "注释信息": [
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "EventType",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "END_TAG",
+      "所属模块": "未知模块",
+      "功能描述": "End a tag.",
+      "注释信息": [
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "EventType",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "TEXT",
+      "所属模块": "未知模块",
+      "功能描述": "Character data.",
+      "注释信息": [
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "EventType",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CDSECT",
+      "所属模块": "未知模块",
+      "功能描述": "A CDATA sections.",
+      "注释信息": [
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "EventType",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMENT",
+      "所属模块": "未知模块",
+      "功能描述": "An XML comment.",
+      "注释信息": [
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "EventType",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "DOCDECL",
+      "所属模块": "未知模块",
+      "功能描述": "An XML document type declaration.",
+      "注释信息": [
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "EventType",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "INSTRUCTION",
+      "所属模块": "未知模块",
+      "功能描述": "An XML processing instruction declaration.",
+      "注释信息": [
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "EventType",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "ENTITY_REFERENCE",
+      "所属模块": "未知模块",
+      "功能描述": "An entity reference.",
+      "注释信息": [
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "EventType",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "WHITESPACE",
+      "所属模块": "未知模块",
+      "功能描述": "A whitespace.",
+      "注释信息": [
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "EventType",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "ParseInfo",
+      "所属模块": "未知模块",
+      "功能描述": "The current parse info.",
+      "注释信息": [
+        "@typedef ParseInfo",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "xml",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getColumnNumber",
+      "返回值": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the current column number, starting from 1.",
+      "注释信息": [
+        "@returns { number }",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "ParseInfo",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getDepth",
+      "返回值": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the depth of this element.",
+      "注释信息": [
+        "@returns { number }",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "ParseInfo",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getLineNumber",
+      "返回值": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the current line number, starting from 1.",
+      "注释信息": [
+        "@returns { number }",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "ParseInfo",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getName",
+      "返回值": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the name of this element.",
+      "注释信息": [
+        "@returns { string }",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "ParseInfo",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getNamespace",
+      "返回值": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the namespace of this element.",
+      "注释信息": [
+        "@returns { string }",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "ParseInfo",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getPrefix",
+      "返回值": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the prefix of this element.",
+      "注释信息": [
+        "@returns { string }",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "ParseInfo",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getText",
+      "返回值": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the text of the current event.",
+      "注释信息": [
+        "@returns { string }",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "ParseInfo",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "isEmptyElementTag",
+      "返回值": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Checks whether the current element is empty.",
+      "注释信息": [
+        "@returns { boolean }",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "ParseInfo",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "isWhitespace",
+      "返回值": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Checks whether the current event contains only whitespace characters.",
+      "注释信息": [
+        "@returns { boolean }",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "ParseInfo",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getAttributeCount",
+      "返回值": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the number of attributes for the current start tag.",
+      "注释信息": [
+        "@returns { number }",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "ParseInfo",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "ParseOptions",
+      "所属模块": "未知模块",
+      "功能描述": "Parse options for XmlPullParser.",
+      "注释信息": [
+        "@typedef ParseOptions",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "xml",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "supportDoctype",
+      "属性类型": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Whether to parsing Doctype of the elements.",
+      "注释信息": [
+        "@type { ?boolean }",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "ParseOptions",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "ignoreNameSpace",
+      "属性类型": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Whether to ignore parsing texts of the elements.",
+      "注释信息": [
+        "@type { ?boolean }",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "ParseOptions",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "tagValueCallbackFunction",
+      "属性类型": "(name: string, value: string) => boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Tag value callback function.",
+      "注释信息": [
+        "@type { ?function }",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "ParseOptions",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "attributeValueCallbackFunction",
+      "属性类型": "(name: string, value: string) => boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Attribute value callback function.",
+      "注释信息": [
+        "@type { ?function }",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "ParseOptions",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "attributeWithTagCallbackFunction",
+      "属性类型": "AttributeWithTagCb",
+      "所属模块": "未知模块",
+      "功能描述": "Attribute value and tag callback function.",
+      "注释信息": [
+        "@type { ?AttributeWithTagCb }",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "ParseOptions",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "tokenValueCallbackFunction",
+      "属性类型": "(eventType: EventType, value: ParseInfo) => boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Token value callback function.",
+      "注释信息": [
+        "@type { ?function }",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "ParseOptions",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "type_alias",
+      "名称": "AttributeWithTagCb",
+      "所属模块": "未知模块",
+      "功能描述": "The type of ParseOptions attributeWithTagCallbackFunction.",
+      "注释信息": [
+        "@typedef { function } AttributeWithTagCb",
+        "@param { string } tagName - The tag in xml parse node",
+        "@param { string } key - The key in xml parse node",
+        "@param { string } value - The value in xml parse node",
+        "@returns { boolean } - whether continue to parse xml data",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 1,
+      "上级": "xml",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "- whether continue to parse xml data",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "class",
+      "名称": "XmlPullParser",
+      "所属模块": "未知模块",
+      "功能描述": "The XmlPullParser interface is used to parse the existing xml file.",
+      "注释信息": [
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11",
+        "@name XmlPullParser"
+      ],
+      "层级": 2,
+      "上级": "xml",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "constructor",
+      "返回值": "XmlPullParser",
+      "所属模块": "未知模块",
+      "功能描述": "Creates and returns an XmlPullParser object. 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types; 3.Parameter verification failed.",
+      "注释信息": [
+        "@param { ArrayBuffer | DataView } buffer - A instance, the new XmlPullParser with.",
+        "@param { string } [encoding] - [encoding='utf8']  this is its encoding.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "XmlPullParser",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "buffer",
+          "类型": "ArrayBuffer | DataView",
+          "必填": true,
+          "说明": "A instance, the new XmlPullParser with."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "string } [encoding] - [encoding='utf8']  this is its encoding."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "parse",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Starts parsing the XML file. two Boolean variables and three callback functions. 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types.",
+      "注释信息": [
+        "@param { ParseOptions } option - Parse options for XmlPullParser, the interface including",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11",
+        "@deprecated since 14",
+        "@useinstead ohos.xml.XmlPullParser.parseXml"
+      ],
+      "层级": 2,
+      "上级": "XmlPullParser",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "option",
+          "类型": "ParseOptions",
+          "必填": true,
+          "说明": "Parse options for XmlPullParser, the interface including"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "parseXml",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Parses XML information. 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types.",
+      "注释信息": [
+        "@param { ParseOptions } option - XML parsing options.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "XmlPullParser",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "option",
+          "类型": "ParseOptions",
+          "必填": true,
+          "说明": "XML parsing options."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        }
+      ],
+      "版本": "API"
+    }
+  ]
+}

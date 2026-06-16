@@ -1,0 +1,2760 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.ArkTS",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "namespace",
+      "名称": "taskpool",
+      "所属模块": "@kit.ArkTS",
+      "功能描述": "JS cross-thread task executor.",
+      "注释信息": [
+        "@namespace taskpool",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "@kit.ArkTS",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "Priority",
+      "所属模块": "未知模块",
+      "功能描述": "Enumerates the priorities available for created tasks.",
+      "注释信息": [
+        "@enum { number } Priority",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "taskpool",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "HIGH",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "The task has a high priority.",
+      "注释信息": [
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Priority",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "MEDIUM",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "The task has a medium priority.",
+      "注释信息": [
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Priority",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "LOW",
+      "值": "2",
+      "所属模块": "未知模块",
+      "功能描述": "The task has a low priority.",
+      "注释信息": [
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Priority",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "IDLE",
+      "值": "3",
+      "所属模块": "未知模块",
+      "功能描述": "The task is a background task.",
+      "注释信息": [
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "Priority",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "type_alias",
+      "名称": "CallbackFunction",
+      "所属模块": "未知模块",
+      "功能描述": "Describes a callback function.",
+      "注释信息": [
+        "@typedef { function } CallbackFunction",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "taskpool",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "type_alias",
+      "名称": "CallbackFunctionWithError",
+      "所属模块": "未知模块",
+      "功能描述": "Describes a callback function with an error message.",
+      "注释信息": [
+        "@typedef { function } CallbackFunctionWithError",
+        "@param { Error } e - Error message.",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "taskpool",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "class",
+      "名称": "Task",
+      "所属模块": "未知模块",
+      "功能描述": "Implements a task. Before calling any APIs in Task, you must use constructor to create a Task instance. A task can be executed for multiple times, placed in a task group, serial queue, or asynchronous queue for execution, or added with dependencies for execution.",
+      "注释信息": [
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "taskpool",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "constructor",
+      "返回值": "Task",
+      "所属模块": "未知模块",
+      "功能描述": "A constructor used to create a Task instance. For details about the supported return value types of the function, see Sequenceable Data Types. see Sequenceable Data Types. The default value is undefined.",
+      "注释信息": [
+        "@param { Function } func - Function to be executed. The function must be decorated using @Concurrent.",
+        "@param { Object[] } args - Arguments of the function. For details about the supported parameter types,",
+        "@throws { BusinessError } 401 - The input parameters are invalid.",
+        "@throws { BusinessError } 10200014 - The function is not marked as concurrent.",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Task",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "func",
+          "类型": "Function",
+          "必填": true,
+          "说明": "Function to be executed. The function must be decorated using @Concurrent."
+        },
+        {
+          "名称": "args",
+          "类型": "Object[]",
+          "必填": true,
+          "说明": "Arguments of the function. For details about the supported parameter types,"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "The input parameters are invalid."
+        },
+        {
+          "code": "10200014",
+          "description": "The function is not marked as concurrent."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "constructor",
+      "返回值": "Task",
+      "所属模块": "未知模块",
+      "功能描述": "A constructor used to create a Task instance, with the task name specified. For details about the supported return value types of the function, see Sequenceable Data Types. see Sequenceable Data Types. The default value is undefined.",
+      "注释信息": [
+        "@param { string } name - Task name.",
+        "@param { Function } func - Function to be executed. The function must be decorated using @Concurrent.",
+        "@param { Object[] } args - Arguments of the function. For details about the supported parameter types,",
+        "@throws { BusinessError } 401 - The input parameters are invalid.",
+        "@throws { BusinessError } 10200014 - The function is not marked as concurrent.",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Task",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "name",
+          "类型": "string",
+          "必填": true,
+          "说明": "Task name."
+        },
+        {
+          "名称": "func",
+          "类型": "Function",
+          "必填": true,
+          "说明": "Function to be executed. The function must be decorated using @Concurrent."
+        },
+        {
+          "名称": "args",
+          "类型": "Object[]",
+          "必填": true,
+          "说明": "Arguments of the function. For details about the supported parameter types,"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "The input parameters are invalid."
+        },
+        {
+          "code": "10200014",
+          "description": "The function is not marked as concurrent."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "isCanceled",
+      "返回值": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Checks whether the running task is canceled. Before using this API, you must create a Task instance. isCanceled must be used together with taskpool.cancel. If cancel is not called, isCanceled returns false by default.",
+      "注释信息": [
+        "@returns { boolean } Returns {@code true} if current running task is canceled; returns {@code false} otherwise.",
+        "@static",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Task",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "Returns {@code true} if current running task is canceled; returns {@code false} otherwise.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "sendData",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Sends data to the host thread and triggers the registered callback. Before using this API, you must create a Task instance. NOTE: 1.The API is called in the TaskPool thread. 2.Do not use this API in a callback function. 3.Before calling this API, ensure that the callback function for processing data has been registered in the host thread. the supported parameter types, see Sequenceable Data Types. The default value is undefined.",
+      "注释信息": [
+        "@param { Object[] } args - Data to be used as the input parameter of the registered callback. For details about",
+        "@throws { BusinessError } 401 - The input parameters are invalid.",
+        "@throws { BusinessError } 10200006 - An exception occurred during serialization.",
+        "@throws { BusinessError } 10200022 - The function is not called in the TaskPool thread.",
+        "@throws { BusinessError } 10200023 - The function is not called in the concurrent function.",
+        "@throws { BusinessError } 10200024 - The callback is not registered on the host side.",
+        "@static",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Task",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "args",
+          "类型": "Object[]",
+          "必填": true,
+          "说明": "Data to be used as the input parameter of the registered callback. For details about"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "The input parameters are invalid."
+        },
+        {
+          "code": "10200006",
+          "description": "An exception occurred during serialization."
+        },
+        {
+          "code": "10200022",
+          "description": "The function is not called in the TaskPool thread."
+        },
+        {
+          "code": "10200023",
+          "description": "The function is not called in the concurrent function."
+        },
+        {
+          "code": "10200024",
+          "description": "The callback is not registered on the host side."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "setTransferList",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Sets the task transfer list. Before using this API, you must create a Task instance. If this API is not called, the ArrayBuffer in the data is transferred by default. NOTE: This API is used to set the task transfer list in the form of ArrayBuffer in the task pool. The ArrayBuffer instance does not copy the content in the task to the worker thread during transfer. Instead, it transfers the buffer control right to the worker thread. After the transfer, the ArrayBuffer instance becomes invalid. An empty ArrayBuffer will not be transferred.",
+      "注释信息": [
+        "@param { ArrayBuffer[] } [transfer] - ArrayBuffer instance holding the objects to transfer. The default value is an empty array.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1.Incorrect parameter types; 2.Parameter verification failed.",
+        "@throws { BusinessError } 10200029 - An ArrayBuffer cannot be set as both a transfer list and a clone list.",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Task",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "ArrayBuffer[] } [transfer] - ArrayBuffer instance holding the objects to transfer. The default value is an empty array."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1.Incorrect parameter types; 2.Parameter verification failed."
+        },
+        {
+          "code": "10200029",
+          "description": "An ArrayBuffer cannot be set as both a transfer list and a clone list."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "setCloneList",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Sets the task clone list. Before using this API, you must create a Task instance. NOTE: This API must be used together with the @Sendable decorator. Otherwise, an exception is thrown. All Sendable class instances or ArrayBuffer objects passed in to cloneList are transferred in copy mode between threads. This means that any modification to the destination objects does not affect the original objects. 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types; 3.Parameter verification failed.",
+      "注释信息": [
+        "@param { Object[] | ArrayBuffer[] } cloneList - The type of the passed-in array must be sendable data types or ArrayBuffer.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 10200029 - An ArrayBuffer cannot be set as both a transfer list and a clone list.",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Task",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "cloneList",
+          "类型": "Object[] | ArrayBuffer[]",
+          "必填": true,
+          "说明": "The type of the passed-in array must be sendable data types or ArrayBuffer."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "10200029",
+          "description": "An ArrayBuffer cannot be set as both a transfer list and a clone list."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "onReceiveData",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Registers a callback for a task to receive and process data from the worker thread. Before using this API, you must create a Task instance. NOTE: If multiple callbacks are registered for the same task, only the last registration takes effect. thread is transferred to the callback as an input parameter. If no value is passed in, all the registered callbacks are canceled.",
+      "注释信息": [
+        "@param { Function } [callback] - Callback function for processing the data received. The data sent to the host",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1.Incorrect parameter types; 2.Parameter verification failed.",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Task",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "Function } [callback] - Callback function for processing the data received. The data sent to the host"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1.Incorrect parameter types; 2.Parameter verification failed."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "addDependency",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Adds dependent tasks for this task. Before using this API, you must create a Task instance. The task and its dependent tasks cannot be a task in a task group, serial queue, or asynchronous queue, a task that has been executed, or a periodic task. A task with a dependency relationship (a task that depends on another task or a task that is depended on) cannot be executed multiple times. <br>1. Mandatory parameters are left unspecified; <br>2. Incorrect parameter types; <br>3. Parameter verification failed.",
+      "注释信息": [
+        "@param { Task[] } tasks - Array of tasks on which the current task depends. The default value is undefined.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 10200026 - There is a circular dependency.",
+        "@throws { BusinessError } 10200052 - The periodic task cannot have a dependency.",
+        "@throws { BusinessError } 10200056 - The task has been executed by the AsyncRunner.",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 18"
+      ],
+      "层级": 2,
+      "上级": "Task",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "tasks",
+          "类型": "Task[]",
+          "必填": true,
+          "说明": "Array of tasks on which the current task depends. The default value is undefined."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "10200026",
+          "description": "There is a circular dependency."
+        },
+        {
+          "code": "10200052",
+          "description": "The periodic task cannot have a dependency."
+        },
+        {
+          "code": "10200056",
+          "description": "The task has been executed by the AsyncRunner."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "removeDependency",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Removes dependent tasks for this task. Before using this API, you must create a Task instance. <br>1. Mandatory parameters are left unspecified; <br>2. Incorrect parameter types; <br>3. Parameter verification failed.",
+      "注释信息": [
+        "@param { Task[] } tasks - Array of tasks on which the current task depends. The default value is undefined.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 10200027 - The dependency does not exist.",
+        "@throws { BusinessError } 10200052 - The periodic task cannot have a dependency.",
+        "@throws { BusinessError } 10200056 - The task has been executed by the AsyncRunner.",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 18"
+      ],
+      "层级": 2,
+      "上级": "Task",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "tasks",
+          "类型": "Task[]",
+          "必填": true,
+          "说明": "Array of tasks on which the current task depends. The default value is undefined."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "10200027",
+          "description": "The dependency does not exist."
+        },
+        {
+          "code": "10200052",
+          "description": "The periodic task cannot have a dependency."
+        },
+        {
+          "code": "10200056",
+          "description": "The task has been executed by the AsyncRunner."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "onEnqueued",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Register a callback function and call it when a task is enqueued. The registration must be carried out before the task is executed. Otherwise, an exception is thrown.",
+      "注释信息": [
+        "@param { CallbackFunction } [callback] - Callback function to register.",
+        "@throws { BusinessError } 401 - The input parameters are invalid.",
+        "@throws { BusinessError } 10200034 - The executed task does not support the registration of listeners.",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "Task",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "CallbackFunction } [callback] - Callback function to register."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "The input parameters are invalid."
+        },
+        {
+          "code": "10200034",
+          "description": "The executed task does not support the registration of listeners."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "onStartExecution",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Register a callback function and call it when the execution of a task starts. The registration must be carried out before the task is executed. Otherwise, an exception is thrown.",
+      "注释信息": [
+        "@param { CallbackFunction } [callback] - Callback function to register.",
+        "@throws { BusinessError } 401 - The input parameters are invalid.",
+        "@throws { BusinessError } 10200034 - The executed task does not support the registration of listeners.",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "Task",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "CallbackFunction } [callback] - Callback function to register."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "The input parameters are invalid."
+        },
+        {
+          "code": "10200034",
+          "description": "The executed task does not support the registration of listeners."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "onExecutionFailed",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Register a callback function and call it when a task fails to be executed. The registration must be carried out before the task is executed. Otherwise, an exception is thrown.",
+      "注释信息": [
+        "@param { CallbackFunctionWithError } [callback] - Callback function to register.",
+        "@throws { BusinessError } 401 - The input parameters are invalid.",
+        "@throws { BusinessError } 10200034 - The executed task does not support the registration of listeners.",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "Task",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "CallbackFunctionWithError } [callback] - Callback function to register."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "The input parameters are invalid."
+        },
+        {
+          "code": "10200034",
+          "description": "The executed task does not support the registration of listeners."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "onExecutionSucceeded",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Register a callback function and call it when a task is executed successfully. The registration must be carried out before the task is executed. Otherwise, an exception is thrown.",
+      "注释信息": [
+        "@param { CallbackFunction } [callback] - Callback function to register.",
+        "@throws { BusinessError } 401 - The input parameters are invalid.",
+        "@throws { BusinessError } 10200034 - The executed task does not support the registration of listeners.",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "Task",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "CallbackFunction } [callback] - Callback function to register."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "The input parameters are invalid."
+        },
+        {
+          "code": "10200034",
+          "description": "The executed task does not support the registration of listeners."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "isDone",
+      "返回值": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Checks whether the task is complete.",
+      "注释信息": [
+        "@returns { boolean } Returns {@code true} if the task has been completed; returns {@code false} otherwise.",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "Task",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "Returns {@code true} if the task has been completed; returns {@code false} otherwise.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "function",
+      "属性类型": "Function",
+      "所属模块": "未知模块",
+      "功能描述": "Function to be passed in during task creation. For details about the supported return value types of the function, see Sequenceable Data Types.",
+      "注释信息": [
+        "@type { Function }",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Task",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "arguments",
+      "属性类型": "Object[]",
+      "所属模块": "未知模块",
+      "功能描述": "Arguments of the function. For details about the supported parameter types, see Sequenceable Data Types.",
+      "注释信息": [
+        "@type { ?Object[] }",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Task",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "name",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Name of the task specified when the task is created.",
+      "注释信息": [
+        "@type { string }",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Task",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "taskId",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Task ID.",
+      "注释信息": [
+        "@type { number }",
+        "@default 0",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "Task",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "totalDuration",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Total execution time of the task. in ms.",
+      "注释信息": [
+        "@type { number }",
+        "@default 0",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Task",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "ioDuration",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Asynchronous I/O time of the task. in ms.",
+      "注释信息": [
+        "@type { number }",
+        "@default 0",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Task",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "cpuDuration",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "CPU time of the task. in ms.",
+      "注释信息": [
+        "@type { number }",
+        "@default 0",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Task",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "class",
+      "名称": "TaskGroup",
+      "所属模块": "未知模块",
+      "功能描述": "Implements a task group, in which tasks are associated with each other and all tasks are executed at a time. If all the tasks are executed normally, an array of task results is returned asynchronously, and the sequence of elements in the array is the same as the sequence of tasks added by calling addTask. If any task fails, the corresponding exception is thrown. If multiple tasks in the task group fail, the exception of the first failed task is thrown. A task group can be executed for multiple times, but no task can be added after the task group is executed. Before calling any APIs in TaskGroup, you must use constructor to create a TaskGroup instance.",
+      "注释信息": [
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "taskpool",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "constructor",
+      "返回值": "TaskGroup",
+      "所属模块": "未知模块",
+      "功能描述": "Constructor used to create a TaskGroup instance.",
+      "注释信息": [
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "TaskGroup",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "constructor",
+      "返回值": "TaskGroup",
+      "所属模块": "未知模块",
+      "功能描述": "A constructor used to create a TaskGroup instance, with the task group name specified. 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types; 3.Parameter verification failed.",
+      "注释信息": [
+        "@param { string } name - Task group name.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "TaskGroup",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "name",
+          "类型": "string",
+          "必填": true,
+          "说明": "Task group name."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "addTask",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Adds the function to be executed to this task group. Before using this API, you must create a TaskGroup instance. For details about the supported return value types of the function, see Sequenceable Data Types. see Sequenceable Data Types. The default value is undefined. 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types; 3.Parameter verification failed.",
+      "注释信息": [
+        "@param { Function } func - Function to be executed. The function must be decorated using @Concurrent.",
+        "@param { Object[] } args - Arguments of the function. For details about the supported parameter types,",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 10200014 - The function is not marked as concurrent.",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "TaskGroup",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "func",
+          "类型": "Function",
+          "必填": true,
+          "说明": "Function to be executed. The function must be decorated using @Concurrent."
+        },
+        {
+          "名称": "args",
+          "类型": "Object[]",
+          "必填": true,
+          "说明": "Arguments of the function. For details about the supported parameter types,"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "10200014",
+          "description": "The function is not marked as concurrent."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "addTask",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Adds a created task to this task group. Before using this API, you must create a TaskGroup instance. Tasks in another task group, serial queue, or asynchronous queue, dependent tasks, continuous tasks, tasks that have been executed, and periodic tasks cannot be added to the task group. <br>1. Mandatory parameters are left unspecified; <br>2. Incorrect parameter types; <br>3. Parameter verification failed.",
+      "注释信息": [
+        "@param { Task } task - Task to be added to the task group.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 10200014 - The function is not marked as concurrent.",
+        "@throws { BusinessError } 10200051 - The periodic task cannot be executed again.",
+        "@throws { BusinessError } 10200057 - The task cannot be executed by two APIs.",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 18"
+      ],
+      "层级": 2,
+      "上级": "TaskGroup",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "task",
+          "类型": "Task",
+          "必填": true,
+          "说明": "Task to be added to the task group."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "10200014",
+          "description": "The function is not marked as concurrent."
+        },
+        {
+          "code": "10200051",
+          "description": "The periodic task cannot be executed again."
+        },
+        {
+          "code": "10200057",
+          "description": "The task cannot be executed by two APIs."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "name",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Name of the task group specified when the task group is created.",
+      "注释信息": [
+        "@type { string }",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "TaskGroup",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "class",
+      "名称": "SequenceRunner",
+      "所属模块": "未知模块",
+      "功能描述": "Implements a serial queue, in which all tasks are executed in sequence. Before calling any APIs in SequenceRunner, you must use constructor to create a SequenceRunner instance.",
+      "注释信息": [
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "taskpool",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "constructor",
+      "返回值": "SequenceRunner",
+      "所属模块": "未知模块",
+      "功能描述": "A constructor used to create a SequenceRunner instance. 1.Incorrect parameter types; 2.Parameter verification failed.",
+      "注释信息": [
+        "@param { Priority } priority - Priority of the task. The default value is taskpool.Priority.MEDIUM.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "SequenceRunner",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "priority",
+          "类型": "Priority",
+          "必填": true,
+          "说明": "Priority of the task. The default value is taskpool.Priority.MEDIUM."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "constructor",
+      "返回值": "SequenceRunner",
+      "所属模块": "未知模块",
+      "功能描述": "A constructor used to create a SequenceRunner instance. This instance represents a global serial queue. If the passed-in name is the same as an existing name, the same serial queue is returned. NOTE: 1.The bottom layer uses the singleton mode to ensure that the same instance is obtained when a serial queue with the same name is created. 2.The priority of a serial queue cannot be modified. <br>2. Incorrect parameter types. 3.Parameter verification failed.",
+      "注释信息": [
+        "@param { string } name - Name of a serial queue.",
+        "@param { Priority } priority - Priority of the task. The default value is taskpool.Priority.MEDIUM.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "SequenceRunner",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "name",
+          "类型": "string",
+          "必填": true,
+          "说明": "Name of a serial queue."
+        },
+        {
+          "名称": "priority",
+          "类型": "Priority",
+          "必填": true,
+          "说明": "Priority of the task. The default value is taskpool.Priority.MEDIUM."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "execute",
+      "返回值": "Promise<Object>",
+      "所属模块": "未知模块",
+      "功能描述": "Adds a task to the serial queue for execution. Before using this API, you must create a SequenceRunner instance. Tasks in another task group, serial queue, or asynchronous queue, dependent tasks, and tasks that have been executed cannot be added to the serial queue. NOTE: 1.Tasks that depend others cannot be added to the serial queue. 2.The failure or cancellation of a task does not affect the execution of subsequent tasks in the serial queue. <br>1. Mandatory parameters are left unspecified; <br>2. Incorrect parameter types;",
+      "注释信息": [
+        "@param { Task } task - Task to be added to the serial queue.",
+        "@returns { Promise<Object> }",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 10200006 - An exception occurred during serialization.",
+        "@throws { BusinessError } 10200025 - dependent task not allowed.",
+        "@throws { BusinessError } 10200051 - The periodic task cannot be executed again.",
+        "@throws { BusinessError } 10200057 - The task cannot be executed by two APIs.",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 18"
+      ],
+      "层级": 2,
+      "上级": "SequenceRunner",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "task",
+          "类型": "Task",
+          "必填": true,
+          "说明": "Task to be added to the serial queue."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "10200006",
+          "description": "An exception occurred during serialization."
+        },
+        {
+          "code": "10200025",
+          "description": "dependent task not allowed."
+        },
+        {
+          "code": "10200051",
+          "description": "The periodic task cannot be executed again."
+        },
+        {
+          "code": "10200057",
+          "description": "The task cannot be executed by two APIs."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "class",
+      "名称": "LongTask",
+      "父类": "Task",
+      "所属模块": "未知模块",
+      "功能描述": "Describes a continuous task. LongTask inherits from Task. No upper limit is set for the execution time of a continuous task, and no timeout exception is thrown if a continuous task runs for a long period of time. However, a continuous task cannot be executed in a task group or executed for multiple times. The thread for executing a continuous task exists until terminateTask is called after the execution is complete. The thread is reclaimed when it is idle.",
+      "注释信息": [
+        "@extends Task",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "taskpool",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "class",
+      "名称": "GenericsTask",
+      "父类": "Array",
+      "所属模块": "未知模块",
+      "功能描述": "Implements a generic task. GenericsTask inherits from Task. During the creation of a generic task, the passed-in parameter types and return value types of concurrent functions are verified in the compilation phase. Other behaviors are the same as those during the creation of a task.",
+      "注释信息": [
+        "@extends Task",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 18"
+      ],
+      "层级": 2,
+      "上级": "taskpool",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "constructor",
+      "返回值": "GenericsTask",
+      "所属模块": "未知模块",
+      "功能描述": "A constructor used to create a GenericsTask object. For details about the supported return value types of the function, see Sequenceable Data Types. The default value is undefined.",
+      "注释信息": [
+        "@param { (...args: A) => R | Promise<R> } func - Function to be executed. The function must be decorated using @Concurrent.",
+        "@param { A } args - Arguments of the function. For details about the supported parameter types, see Sequenceable Data Types.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1.Incorrect parameter types; 2.Parameter verification failed.",
+        "@throws { BusinessError } 10200014 - The function is not marked as concurrent.",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 18"
+      ],
+      "层级": 2,
+      "上级": "GenericsTask",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "func",
+          "类型": "(...args: A) => R | Promise<R>",
+          "必填": true,
+          "说明": "Function to be executed. The function must be decorated using @Concurrent."
+        },
+        {
+          "名称": "args",
+          "类型": "A",
+          "必填": true,
+          "说明": "Arguments of the function. For details about the supported parameter types, see Sequenceable Data Types."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1.Incorrect parameter types; 2.Parameter verification failed."
+        },
+        {
+          "code": "10200014",
+          "description": "The function is not marked as concurrent."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "constructor",
+      "返回值": "GenericsTask",
+      "所属模块": "未知模块",
+      "功能描述": "A constructor used to create a GenericsTask instance, with the task name specified. For details about the supported return value types of the function, see Sequenceable Data Types. The default value is undefined.",
+      "注释信息": [
+        "@param { string } name - Name of the generic task.",
+        "@param { (...args: A) => R | Promise<R> } func - Function to be executed. The function must be decorated using @Concurrent.",
+        "@param { A } args - Arguments of the function. For details about the supported parameter types, see Sequenceable Data Types.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1.Incorrect parameter types; 2.Parameter verification failed.",
+        "@throws { BusinessError } 10200014 - The function is not marked as concurrent.",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 18"
+      ],
+      "层级": 2,
+      "上级": "GenericsTask",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "name",
+          "类型": "string",
+          "必填": true,
+          "说明": "Name of the generic task."
+        },
+        {
+          "名称": "func",
+          "类型": "(...args: A) => R | Promise<R>",
+          "必填": true,
+          "说明": "Function to be executed. The function must be decorated using @Concurrent."
+        },
+        {
+          "名称": "args",
+          "类型": "A",
+          "必填": true,
+          "说明": "Arguments of the function. For details about the supported parameter types, see Sequenceable Data Types."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1.Incorrect parameter types; 2.Parameter verification failed."
+        },
+        {
+          "code": "10200014",
+          "description": "The function is not marked as concurrent."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "State",
+      "所属模块": "未知模块",
+      "功能描述": "Enumerates the task states. After a task is created and execute() is called, the task is placed in the internal queue of the task pool and the state is WAITING. When the task is being executed by the worker thread of the task pool, the state changes to RUNNING. After the task is executed and the result is returned, the state is reset to WAITING. When the task is proactively canceled, the state changes to CANCELED.",
+      "注释信息": [
+        "@enum { number } State",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "taskpool",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "WAITING",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "The task is waiting.",
+      "注释信息": [
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "State",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "RUNNING",
+      "值": "2",
+      "所属模块": "未知模块",
+      "功能描述": "The task is running.",
+      "注释信息": [
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "State",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CANCELED",
+      "值": "3",
+      "所属模块": "未知模块",
+      "功能描述": "The task is canceled.",
+      "注释信息": [
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "State",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "class",
+      "名称": "TaskInfo",
+      "所属模块": "未知模块",
+      "功能描述": "Describes the internal information about a task.",
+      "注释信息": [
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "taskpool",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "taskId",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Task ID.",
+      "注释信息": [
+        "@type { number }",
+        "@default 0",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "TaskInfo",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "state",
+      "属性类型": "State",
+      "所属模块": "未知模块",
+      "功能描述": "Task state.",
+      "注释信息": [
+        "@type { State }",
+        "@default State::WAITING",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "TaskInfo",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "duration",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Duration that the task has been executed, in ms. If the return value is 0, the task is not running. If the return value is empty, no task is running.",
+      "注释信息": [
+        "@type { ?number }",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "TaskInfo",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "name",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Task name.",
+      "注释信息": [
+        "@type { string }",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "TaskInfo",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "class",
+      "名称": "ThreadInfo",
+      "所属模块": "未知模块",
+      "功能描述": "Describes the internal information about a worker thread.",
+      "注释信息": [
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "taskpool",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "tid",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "ID of the worker thread. If the return value is empty, no task is running.",
+      "注释信息": [
+        "@type { number }",
+        "@default 0",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "ThreadInfo",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "taskIds",
+      "属性类型": "number[]",
+      "所属模块": "未知模块",
+      "功能描述": "IDs of tasks running on the calling thread. If the return value is empty, no task is running.",
+      "注释信息": [
+        "@type { ?number[] }",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "ThreadInfo",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "priority",
+      "属性类型": "Priority",
+      "所属模块": "未知模块",
+      "功能描述": "Priority of the calling thread. If the return value is empty, no task is running.",
+      "注释信息": [
+        "@type { ?Priority }",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "ThreadInfo",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "class",
+      "名称": "TaskPoolInfo",
+      "所属模块": "未知模块",
+      "功能描述": "Describes the internal information about a task pool.",
+      "注释信息": [
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "taskpool",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "threadInfos",
+      "属性类型": "ThreadInfo[]",
+      "所属模块": "未知模块",
+      "功能描述": "Internal information about the worker threads.",
+      "注释信息": [
+        "@type { ThreadInfo[] }",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "TaskPoolInfo",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "taskInfos",
+      "属性类型": "TaskInfo[]",
+      "所属模块": "未知模块",
+      "功能描述": "Internal information about the tasks.",
+      "注释信息": [
+        "@type { TaskInfo[] }",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "TaskPoolInfo",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "execute",
+      "返回值": "Promise<Object>",
+      "所属模块": "未知模块",
+      "功能描述": "Places a function to be executed in the internal queue of the task pool. The function is not executed immediately. It waits to be distributed to the worker thread for execution. In this mode, the function cannot be canceled. For details about the supported return value types of the function, see Sequenceable Data Types. see Sequenceable Data Types. The default value is undefined. 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types; 3.Parameter verification failed.",
+      "注释信息": [
+        "@param { Function } func - Function to be executed. The function must be decorated using @Concurrent.",
+        "@param { Object[] } args - Arguments of the function. For details about the supported parameter types,",
+        "@returns { Promise<Object> }",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 10200006 - An exception occurred during serialization.",
+        "@throws { BusinessError } 10200014 - The function is not marked as concurrent.",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "taskpool",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "func",
+          "类型": "Function",
+          "必填": true,
+          "说明": "Function to be executed. The function must be decorated using @Concurrent."
+        },
+        {
+          "名称": "args",
+          "类型": "Object[]",
+          "必填": true,
+          "说明": "Arguments of the function. For details about the supported parameter types,"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "10200006",
+          "description": "An exception occurred during serialization."
+        },
+        {
+          "code": "10200014",
+          "description": "The function is not marked as concurrent."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "所属模块": "未知模块",
+      "功能描述": "Verifies the passed-in parameter types and return value type of a concurrent function, and places the function to execute in the internal queue of the task pool. For details about the supported return value types of the function, see Sequenceable Data Types. see Sequenceable Data Types. The default value is undefined.",
+      "注释信息": [
+        "@param { (...args: A) => R | Promise<R> } func - Function to be executed. The function must be decorated using @Concurrent.",
+        "@param { A } args - Arguments of the function. For details about the supported parameter types,",
+        "@returns { Promise<R> }",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1.Incorrect parameter types; 2.Parameter verification failed.",
+        "@throws { BusinessError } 10200006 - An exception occurred during serialization.",
+        "@throws { BusinessError } 10200014 - The function is not marked as concurrent.",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 18"
+      ],
+      "层级": 1,
+      "上级": "taskpool",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1.Incorrect parameter types; 2.Parameter verification failed."
+        },
+        {
+          "code": "10200006",
+          "description": "An exception occurred during serialization."
+        },
+        {
+          "code": "10200014",
+          "description": "The function is not marked as concurrent."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "execute",
+      "返回值": "Promise<Object>",
+      "所属模块": "未知模块",
+      "功能描述": "Places a task in the internal queue of the task pool. The task is not executed immediately. It waits to be distributed to the worker thread for execution. In this mode, you can set the task priority and call cancel() to cancel the task. The task cannot be a task in a task group, serial queue, or asynchronous queue. This API can be called only once for a continuous task, but multiple times for a non-continuous task. <br>1. Mandatory parameters are left unspecified; <br>2. Incorrect parameter types; <br>3. Parameter verification failed.",
+      "注释信息": [
+        "@param { Task } task - Task to be executed.",
+        "@param { Priority } [priority] - Priority of the task. The default value is taskpool.Priority.MEDIUM.",
+        "@returns { Promise<Object> }",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 10200006 - An exception occurred during serialization.",
+        "@throws { BusinessError } 10200014 - The function is not marked as concurrent.",
+        "@throws { BusinessError } 10200051 - The periodic task cannot be executed again.",
+        "@throws { BusinessError } 10200057 - The task cannot be executed by two APIs.",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 18"
+      ],
+      "层级": 1,
+      "上级": "taskpool",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "task",
+          "类型": "Task",
+          "必填": true,
+          "说明": "Task to be executed."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "Priority } [priority] - Priority of the task. The default value is taskpool.Priority.MEDIUM."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "10200006",
+          "description": "An exception occurred during serialization."
+        },
+        {
+          "code": "10200014",
+          "description": "The function is not marked as concurrent."
+        },
+        {
+          "code": "10200051",
+          "description": "The periodic task cannot be executed again."
+        },
+        {
+          "code": "10200057",
+          "description": "The task cannot be executed by two APIs."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "所属模块": "未知模块",
+      "功能描述": "Verifies the passed-in parameter types and return value type of a concurrent function, and places the generic task in the internal queue of the task pool.",
+      "注释信息": [
+        "@param { GenericsTask<A, R> } task - Generic task to be executed.",
+        "@param { Priority } [priority] - Priority of the task. The default value is taskpool.Priority.MEDIUM.",
+        "@returns { Promise<R> }",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1.Incorrect parameter types; 2.Parameter verification failed.",
+        "@throws { BusinessError } 10200006 - An exception occurred during serialization.",
+        "@throws { BusinessError } 10200014 - The function is not marked as concurrent.",
+        "@throws { BusinessError } 10200051 - The periodic task cannot be executed again.",
+        "@throws { BusinessError } 10200057 - The task cannot be executed by two APIs.",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 18"
+      ],
+      "层级": 1,
+      "上级": "taskpool",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1.Incorrect parameter types; 2.Parameter verification failed."
+        },
+        {
+          "code": "10200006",
+          "description": "An exception occurred during serialization."
+        },
+        {
+          "code": "10200014",
+          "description": "The function is not marked as concurrent."
+        },
+        {
+          "code": "10200051",
+          "description": "The periodic task cannot be executed again."
+        },
+        {
+          "code": "10200057",
+          "description": "The task cannot be executed by two APIs."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "execute",
+      "返回值": "Promise<Object[]>",
+      "所属模块": "未知模块",
+      "功能描述": "Places a task group in the internal queue of the task pool. The tasks in the task group are not executed immediately. They wait to be distributed to the worker thread for execution. After all tasks in the task group are executed, a result array is returned. This API applies when you want to execute a group of associated tasks. 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types; 3.Parameter verification failed.",
+      "注释信息": [
+        "@param { TaskGroup } group - Task group to be executed.",
+        "@param { Priority } [priority] - Priority of the task group. The default value is taskpool.Priority.MEDIUM.",
+        "@returns { Promise<Object[]> }",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 10200006 - An exception occurred during serialization.",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "taskpool",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "group",
+          "类型": "TaskGroup",
+          "必填": true,
+          "说明": "Task group to be executed."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "Priority } [priority] - Priority of the task group. The default value is taskpool.Priority.MEDIUM."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "10200006",
+          "description": "An exception occurred during serialization."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "executeDelayed",
+      "返回值": "Promise<Object>",
+      "所属模块": "未知模块",
+      "功能描述": "Executes a task after a given delay. In this mode, you can set the task priority and call cancel() to cancel the task. The task cannot be a task in a task group, serial queue, or asynchronous queue, or a periodic task. This API can be called only once for a continuous task, but multiple times for a non-continuous task. <br>1. Mandatory parameters are left unspecified; <br>2. Incorrect parameter types; <br>3. Parameter verification failed.",
+      "注释信息": [
+        "@param { number } delayTime - Delay, in ms.",
+        "@param { Task } task - Task to be executed with a delay.",
+        "@param { Priority } [priority] - Priority of the task. The default value is taskpool.Priority.MEDIUM.",
+        "@returns { Promise<Object> }",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 10200006 - An exception occurred during serialization.",
+        "@throws { BusinessError } 10200014 - The function is not marked as concurrent.",
+        "@throws { BusinessError } 10200028 - The delayTime is less than zero.",
+        "@throws { BusinessError } 10200051 - The periodic task cannot be executed again.",
+        "@throws { BusinessError } 10200057 - The task cannot be executed by two APIs.",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 18"
+      ],
+      "层级": 1,
+      "上级": "taskpool",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "delayTime",
+          "类型": "number",
+          "必填": true,
+          "说明": "Delay, in ms."
+        },
+        {
+          "名称": "task",
+          "类型": "Task",
+          "必填": true,
+          "说明": "Task to be executed with a delay."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "Priority } [priority] - Priority of the task. The default value is taskpool.Priority.MEDIUM."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "10200006",
+          "description": "An exception occurred during serialization."
+        },
+        {
+          "code": "10200014",
+          "description": "The function is not marked as concurrent."
+        },
+        {
+          "code": "10200028",
+          "description": "The delayTime is less than zero."
+        },
+        {
+          "code": "10200051",
+          "description": "The periodic task cannot be executed again."
+        },
+        {
+          "code": "10200057",
+          "description": "The task cannot be executed by two APIs."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "所属模块": "未知模块",
+      "功能描述": "Verifies the passed-in parameter types and return value type of a concurrent function, and executes the generic task with a delay.",
+      "注释信息": [
+        "@param { number } delayTime - Delay, in ms.",
+        "@param { GenericsTask<A, R> } task - Generic task to be executed with a delay.",
+        "@param { Priority } [priority] - Priority of the task. The default value is taskpool.Priority.MEDIUM.",
+        "@returns { Promise<R> }",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1.Incorrect parameter types; 2.Parameter verification failed.",
+        "@throws { BusinessError } 10200028 - The delayTime is less than zero.",
+        "@throws { BusinessError } 10200051 - The periodic task cannot be executed again.",
+        "@throws { BusinessError } 10200057 - The task cannot be executed by two APIs.",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 18"
+      ],
+      "层级": 1,
+      "上级": "taskpool",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1.Incorrect parameter types; 2.Parameter verification failed."
+        },
+        {
+          "code": "10200028",
+          "description": "The delayTime is less than zero."
+        },
+        {
+          "code": "10200051",
+          "description": "The periodic task cannot be executed again."
+        },
+        {
+          "code": "10200057",
+          "description": "The task cannot be executed by two APIs."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "executePeriodically",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Executes a task periodically. In this execution mode, you can set the task priority and call cancel() to cancel the execution. A periodic task cannot be a task in a task group, serial queue, or asynchronous queue. It cannot call execute() again or have a dependency relationship. <br>1. Mandatory parameters are left unspecified; <br>2. Incorrect parameter types; <br>3. Parameter verification failed.",
+      "注释信息": [
+        "@param { number } period - Execution period, in ms.",
+        "@param { Task } task - Task to be executed.",
+        "@param { Priority } [priority] - Priority of the task. The default value is taskpool.Priority.MEDIUM.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 10200006 - An exception occurred during serialization.",
+        "@throws { BusinessError } 10200014 - The function is not marked as concurrent.",
+        "@throws { BusinessError } 10200028 - The period is less than zero.",
+        "@throws { BusinessError } 10200050 - The concurrent task has been executed and cannot be executed periodically.",
+        "@throws { BusinessError } 10200057 - The task cannot be executed by two APIs.",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 18"
+      ],
+      "层级": 1,
+      "上级": "taskpool",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "period",
+          "类型": "number",
+          "必填": true,
+          "说明": "Execution period, in ms."
+        },
+        {
+          "名称": "task",
+          "类型": "Task",
+          "必填": true,
+          "说明": "Task to be executed."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "Priority } [priority] - Priority of the task. The default value is taskpool.Priority.MEDIUM."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "10200006",
+          "description": "An exception occurred during serialization."
+        },
+        {
+          "code": "10200014",
+          "description": "The function is not marked as concurrent."
+        },
+        {
+          "code": "10200028",
+          "description": "The period is less than zero."
+        },
+        {
+          "code": "10200050",
+          "description": "The concurrent task has been executed and cannot be executed periodically."
+        },
+        {
+          "code": "10200057",
+          "description": "The task cannot be executed by two APIs."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "所属模块": "未知模块",
+      "功能描述": "Verifies the passed-in parameter types and return value type of a concurrent function, and executes the generic task periodically at an interval specified by period.",
+      "注释信息": [
+        "@param { number } period - Execution period, in ms.",
+        "@param { GenericsTask<A, R> } task - Generic task to be executed periodically.",
+        "@param { Priority } [priority] - Priority of the task. The default value is taskpool.Priority.MEDIUM.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1.Incorrect parameter types; 2.Parameter verification failed.",
+        "@throws { BusinessError } 10200006 - An exception occurred during serialization.",
+        "@throws { BusinessError } 10200014 - The function is not marked as concurrent.",
+        "@throws { BusinessError } 10200028 - The period is less than zero.",
+        "@throws { BusinessError } 10200050 - The concurrent task has been executed and cannot be executed periodically.",
+        "@throws { BusinessError } 10200057 - The task cannot be executed by two APIs.",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 18"
+      ],
+      "层级": 1,
+      "上级": "taskpool",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1.Incorrect parameter types; 2.Parameter verification failed."
+        },
+        {
+          "code": "10200006",
+          "description": "An exception occurred during serialization."
+        },
+        {
+          "code": "10200014",
+          "description": "The function is not marked as concurrent."
+        },
+        {
+          "code": "10200028",
+          "description": "The period is less than zero."
+        },
+        {
+          "code": "10200050",
+          "description": "The concurrent task has been executed and cannot be executed periodically."
+        },
+        {
+          "code": "10200057",
+          "description": "The task cannot be executed by two APIs."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "cancel",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Cancels a task in the task pool. If the task is in the internal queue of the task pool, the task will not be executed after being canceled, and an exception indicating task cancellation is returned. If the task has been distributed to the worker thread of the task pool, canceling the task does not affect the task execution, and the execution result is returned in the catch branch. You can use isCanceled() to check the task cancellation status. In other words, taskpool.cancel takes effect before taskpool.execute or taskpool.executeDelayed is called.",
+      "注释信息": [
+        "@param { Task } task - Task to cancel.",
+        "@throws { BusinessError } 10200015 - The task to cancel does not exist.",
+        "@throws { BusinessError } 10200055 - The asyncRunner task has been canceled.",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 18"
+      ],
+      "层级": 1,
+      "上级": "taskpool",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "task",
+          "类型": "Task",
+          "必填": true,
+          "说明": "Task to cancel."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "10200015",
+          "description": "The task to cancel does not exist."
+        },
+        {
+          "code": "10200055",
+          "description": "The asyncRunner task has been canceled."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "cancel",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Cancels a task group in the task pool. If a task group is canceled before all the tasks in it are finished, undefined is returned. 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types; 3.Parameter verification failed.",
+      "注释信息": [
+        "@param { TaskGroup } group - Task group to cancel.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 10200018 - The task group to cancel does not exist.",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "taskpool",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "group",
+          "类型": "TaskGroup",
+          "必填": true,
+          "说明": "Task group to cancel."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "10200018",
+          "description": "The task group to cancel does not exist."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "cancel",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Cancels a task in the task pool by task ID. If the task is in the internal queue of the task pool, the task will not be executed after being canceled, and an exception indicating task cancellation is returned. If the task has been distributed to the worker thread of the task pool, canceling the task does not affect the task execution, and the execution result is returned in the catch branch. You can use isCanceled() to check the task cancellation status. In other words, taskpool.cancel takes effect before taskpool.execute or taskpool.executeDelayed is called. If taskpool.cancel is called by other threads, note that the cancel operation, which is asynchronous, may take effect for later calls of taskpool.execute or taskpool.executeDelayed.",
+      "注释信息": [
+        "@param { number } taskId - ID of the task to cancel.",
+        "@throws { BusinessError } 10200015 - The task to cancel does not exist.",
+        "@throws { BusinessError } 10200055 - The asyncRunner task has been canceled.",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 1,
+      "上级": "taskpool",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "taskId",
+          "类型": "number",
+          "必填": true,
+          "说明": "ID of the task to cancel."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "10200015",
+          "description": "The task to cancel does not exist."
+        },
+        {
+          "code": "10200055",
+          "description": "The asyncRunner task has been canceled."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getTaskPoolInfo",
+      "返回值": "TaskPoolInfo",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains internal information about this task pool, including thread information and task information.",
+      "注释信息": [
+        "@returns { TaskPoolInfo }",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "taskpool",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "terminateTask",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Terminates a continuous task in the task pool. It is called after the continuous task is complete. After the task is terminated, the thread that executes the task may be reclaimed. 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types; 3.Parameter verification failed.",
+      "注释信息": [
+        "@param { LongTask } longTask - Continuous task to terminate.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "taskpool",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "longTask",
+          "类型": "LongTask",
+          "必填": true,
+          "说明": "Continuous task to terminate."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "isConcurrent",
+      "返回值": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Checks whether a function is a concurrent function. 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types; 3.Parameter verification failed.",
+      "注释信息": [
+        "@param { Function } func - Function to check.",
+        "@returns { boolean } Returns {@code true} if it is a concurrent function; returns {@code false} otherwise.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "taskpool",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "func",
+          "类型": "Function",
+          "必填": true,
+          "说明": "Function to check."
+        }
+      ],
+      "return_description": "Returns {@code true} if it is a concurrent function; returns {@code false} otherwise.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "class",
+      "名称": "AsyncRunner",
+      "所属模块": "未知模块",
+      "功能描述": "Implements an asynchronous queue, for which you can specify the task execution concurrency and queuing policy. Before calling any APIs in AsyncRunner, you must use constructor to create an AsyncRunner instance.",
+      "注释信息": [
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "taskpool",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "constructor",
+      "返回值": "AsyncRunner",
+      "所属模块": "未知模块",
+      "功能描述": "Create a AsyncRunner instance. 0 is default, means no limit on waiting task capacity. <br>2. Incorrect parameter types. 3.Parameter verification failed.",
+      "注释信息": [
+        "@param { number } runningCapacity - The maximum task execution capacity.",
+        "@param { ?number } waitingCapacity - The waiting task capacity,",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "AsyncRunner",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "runningCapacity",
+          "类型": "number",
+          "必填": true,
+          "说明": "The maximum task execution capacity."
+        },
+        {
+          "名称": "waitingCapacity",
+          "类型": "?number",
+          "必填": true,
+          "说明": "The waiting task capacity,"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "constructor",
+      "返回值": "AsyncRunner",
+      "所属模块": "未知模块",
+      "功能描述": "A constructor used to create an AsyncRunner instance. It constructs a global asynchronous queue. If the passed-in name is the same as an existing name, the same asynchronous queue is returned. NOTE: 1.The bottom layer uses the singleton mode to ensure that the same instance is obtained when an asynchronous queue with the same name is created. 2.The task execution concurrency and waiting capacity cannot be modified. The value must be a positive integer. If a negative number is passed, an error is reported. If a non-integer is passed, the value is rounded down. The value must be greater than or equal to 0. If a negative number is passed, an error is reported. If a non-integer is passed, the value is rounded down. The default value is 0, indicating that there is no limit to the number of tasks that can wait. If a value greater than 0 is passed, tasks will be discarded from the front of the queue once the queue size exceeds this limit, implementing a discard policy. <br>2. Incorrect parameter types. 3.Parameter verification failed.",
+      "注释信息": [
+        "@param { string } name - Name of an asynchronous queue.",
+        "@param { number } runningCapacity - Maximum number of tasks that can run concurrently.",
+        "@param { ?number } waitingCapacity - Maximum number of tasks that can be queued.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "AsyncRunner",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "name",
+          "类型": "string",
+          "必填": true,
+          "说明": "Name of an asynchronous queue."
+        },
+        {
+          "名称": "runningCapacity",
+          "类型": "number",
+          "必填": true,
+          "说明": "Maximum number of tasks that can run concurrently."
+        },
+        {
+          "名称": "waitingCapacity",
+          "类型": "?number",
+          "必填": true,
+          "说明": "Maximum number of tasks that can be queued."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "execute",
+      "返回值": "Promise<Object>",
+      "所属模块": "未知模块",
+      "功能描述": "Adds a task to the asynchronous queue for execution. Before using this API, you must create an AsyncRunner instance. NOTE: Tasks in a task group cannot be added to the asynchronous queue. Tasks in a serial queue cannot be added to the asynchronous queue. Tasks in other asynchronous queues cannot be added to the asynchronous queue. Periodic tasks cannot be added to the asynchronous queue. Delayed tasks cannot be added to the asynchronous queue. Tasks that depend others cannot be added to the asynchronous queue. Tasks that have been executed cannot be added to the asynchronous queue.",
+      "注释信息": [
+        "@param { Task } task - Task to be added to the asynchronous queue.",
+        "@param { ?Priority } [priority] - Priority of the task. The default value is taskpool.Priority.MEDIUM.",
+        "@returns { Promise<Object> }",
+        "@throws { BusinessError } 10200006 - An exception occurred during serialization.",
+        "@throws { BusinessError } 10200025 - dependent task not allowed.",
+        "@throws { BusinessError } 10200051 - The periodic task cannot be executed again.",
+        "@throws { BusinessError } 10200054 - The asyncRunner task is discarded.",
+        "@throws { BusinessError } 10200057 - The task cannot be executed by two APIs.",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "AsyncRunner",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "task",
+          "类型": "Task",
+          "必填": true,
+          "说明": "Task to be added to the asynchronous queue."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "?Priority } [priority] - Priority of the task. The default value is taskpool.Priority.MEDIUM."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "10200006",
+          "description": "An exception occurred during serialization."
+        },
+        {
+          "code": "10200025",
+          "description": "dependent task not allowed."
+        },
+        {
+          "code": "10200051",
+          "description": "The periodic task cannot be executed again."
+        },
+        {
+          "code": "10200054",
+          "description": "The asyncRunner task is discarded."
+        },
+        {
+          "code": "10200057",
+          "description": "The task cannot be executed by two APIs."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "TaskResult",
+      "所属模块": "未知模块",
+      "功能描述": "Defines the task result interface",
+      "注释信息": [
+        "@interface TaskResult",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "taskpool",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "result",
+      "属性类型": "Object",
+      "所属模块": "未知模块",
+      "功能描述": "the result returned by the task",
+      "注释信息": [
+        "@type { ?Object }",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "TaskResult",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "error",
+      "属性类型": "Error | Object",
+      "所属模块": "未知模块",
+      "功能描述": "the error thrown by the task",
+      "注释信息": [
+        "@type { ?(Error | Object) }",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "TaskResult",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getTask",
+      "返回值": "Task | undefined",
+      "所属模块": "未知模块",
+      "功能描述": "Get task instance from the task pool.",
+      "注释信息": [
+        "@param { number } taskId - Task id.",
+        "@param { string } [taskName] - Task name.",
+        "@returns { Task | undefined }",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 1,
+      "上级": "taskpool",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "taskId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Task id."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "string } [taskName] - Task name."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    }
+  ]
+}

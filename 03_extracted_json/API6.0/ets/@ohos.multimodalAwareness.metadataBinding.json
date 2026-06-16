@@ -1,0 +1,314 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.MultimodalAwarenessKit",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "namespace",
+      "名称": "metadataBinding",
+      "所属模块": "@kit.MultimodalAwarenessKit",
+      "功能描述": "the moudle for metadataBinding",
+      "注释信息": [
+        "@namespace metadataBinding",
+        "@syscap SystemCapability.MultimodalAwareness.MetadataBinding",
+        "@atomicservice",
+        "@since 18"
+      ],
+      "层级": 1,
+      "上级": "@kit.MultimodalAwarenessKit",
+      "since_version": "18",
+      "system_capability": "SystemCapability.MultimodalAwareness.MetadataBinding",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "encodeImage",
+      "返回值": "Promise<image.PixelMap>",
+      "所属模块": "未知模块",
+      "功能描述": "MetadataBinding provides coding capabilities",
+      "注释信息": [
+        "@param { image.PixelMap } srcImage - Original image to be encoded",
+        "@param { string } metadata - Coded metadata",
+        "@returns { Promise<image.PixelMap> } encoded image",
+        "@throws { BusinessError } 202 - Permission check failed. A non-system application uses the system API.",
+        "@throws { BusinessError } 32100001 - Internal handling failed. File creation failed",
+        "@throws { BusinessError } 32100002 - Encode process fail. Possible causes: 1. Image processing error; 2. Channel coding error",
+        "@syscap SystemCapability.MultimodalAwareness.MetadataBinding",
+        "@systemapi",
+        "@since 18"
+      ],
+      "层级": 1,
+      "上级": "metadataBinding",
+      "since_version": "18",
+      "system_capability": "SystemCapability.MultimodalAwareness.MetadataBinding",
+      "parameters": [
+        {
+          "名称": "srcImage",
+          "类型": "image.PixelMap",
+          "必填": true,
+          "说明": "Original image to be encoded"
+        },
+        {
+          "名称": "metadata",
+          "类型": "string",
+          "必填": true,
+          "说明": "Coded metadata"
+        }
+      ],
+      "return_description": "encoded image",
+      "error_codes": [
+        {
+          "code": "202",
+          "description": "Permission check failed. A non-system application uses the system API."
+        },
+        {
+          "code": "32100001",
+          "description": "Internal handling failed. File creation failed"
+        },
+        {
+          "code": "32100002",
+          "description": "Encode process fail. Possible causes: 1. Image processing error; 2. Channel coding error"
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "decodeImage",
+      "返回值": "Promise<string>",
+      "所属模块": "未知模块",
+      "功能描述": "MetadataBinding provides decode capabilities",
+      "注释信息": [
+        "@param { image.PixelMap } encodedImage - Encoded image",
+        "@returns { Promise<string> } decode result",
+        "@throws { BusinessError } 202 - Permission check failed. A non-system application uses the system API.",
+        "@throws { BusinessError } 32100001 - Internal handling failed. File read failed.",
+        "@throws { BusinessError } 32100003 - Decode process fail. Possible causes: 1. Image is not an encoded Image; 2. Image destroyed, decoding failed",
+        "@syscap SystemCapability.MultimodalAwareness.MetadataBinding",
+        "@systemapi",
+        "@since 18"
+      ],
+      "层级": 1,
+      "上级": "metadataBinding",
+      "since_version": "18",
+      "system_capability": "SystemCapability.MultimodalAwareness.MetadataBinding",
+      "parameters": [
+        {
+          "名称": "encodedImage",
+          "类型": "image.PixelMap",
+          "必填": true,
+          "说明": "Encoded image"
+        }
+      ],
+      "return_description": "decode result",
+      "error_codes": [
+        {
+          "code": "202",
+          "description": "Permission check failed. A non-system application uses the system API."
+        },
+        {
+          "code": "32100001",
+          "description": "Internal handling failed. File read failed."
+        },
+        {
+          "code": "32100003",
+          "description": "Decode process fail. Possible causes: 1. Image is not an encoded Image; 2. Image destroyed, decoding failed"
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "notifyMetadataBindingEvent",
+      "返回值": "Promise<string>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtaining the metadata of a Third-Party App",
+      "注释信息": [
+        "@param { string } bundleName - Bundle name of a third-party application",
+        "@returns { Promise<string> } third-party app callback the meta data",
+        "@throws { BusinessError } 202 - Permission check failed. A non-system application uses the system API.",
+        "@throws { BusinessError } 32100001 - Internal handling failed. Obtain metadata failed.",
+        "@syscap SystemCapability.MultimodalAwareness.MetadataBinding",
+        "@systemapi",
+        "@since 18"
+      ],
+      "层级": 1,
+      "上级": "metadataBinding",
+      "since_version": "18",
+      "system_capability": "SystemCapability.MultimodalAwareness.MetadataBinding",
+      "parameters": [
+        {
+          "名称": "bundleName",
+          "类型": "string",
+          "必填": true,
+          "说明": "Bundle name of a third-party application"
+        }
+      ],
+      "return_description": "third-party app callback the meta data",
+      "error_codes": [
+        {
+          "code": "202",
+          "description": "Permission check failed. A non-system application uses the system API."
+        },
+        {
+          "code": "32100001",
+          "description": "Internal handling failed. Obtain metadata failed."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "submitMetadata",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "set the Metadata to the screenshot app",
+      "注释信息": [
+        "@param { string } metadata - the Metadata of a Third-Party App",
+        "@throws { BusinessError } 32100001 - Internal handling failed. Set Meta data to screenshot app fail.",
+        "@syscap SystemCapability.MultimodalAwareness.MetadataBinding",
+        "@atomicservice",
+        "@since 18"
+      ],
+      "层级": 1,
+      "上级": "metadataBinding",
+      "since_version": "18",
+      "system_capability": "SystemCapability.MultimodalAwareness.MetadataBinding",
+      "parameters": [
+        {
+          "名称": "metadata",
+          "类型": "string",
+          "必填": true,
+          "说明": "the Metadata of a Third-Party App"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "32100001",
+          "description": "Internal handling failed. Set Meta data to screenshot app fail."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Third-party app registration screenshot event <br>3. Algorithm loading exception.",
+      "注释信息": [
+        "@param { 'operationSubmitMetadata' } type - Event Type",
+        "@param { string } bundleName - Bundle name of a third-party application",
+        "@param { Callback<number> } callback - Call back the screenshot event",
+        "@throws { BusinessError } 32100001 - Internal handling failed. Service exception.",
+        "@throws { BusinessError } 32100004 - Subscribe Failed. Possible causes: 1. Abnormal system capability; 2. IPC communication abnormality;",
+        "@syscap SystemCapability.MultimodalAwareness.MetadataBinding",
+        "@atomicservice",
+        "@since 18"
+      ],
+      "层级": 1,
+      "上级": "metadataBinding",
+      "since_version": "18",
+      "system_capability": "SystemCapability.MultimodalAwareness.MetadataBinding",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'operationSubmitMetadata'",
+          "必填": true,
+          "说明": "Event Type"
+        },
+        {
+          "名称": "bundleName",
+          "类型": "string",
+          "必填": true,
+          "说明": "Bundle name of a third-party application"
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<number>",
+          "必填": true,
+          "说明": "Call back the screenshot event"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "32100001",
+          "description": "Internal handling failed. Service exception."
+        },
+        {
+          "code": "32100004",
+          "description": "Subscribe Failed. Possible causes: 1. Abnormal system capability; 2. IPC communication abnormality;"
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Third-party app unregistration screenshot event",
+      "注释信息": [
+        "@param { 'operationSubmitMetadata' } type - Event Type",
+        "@param { string } bundleName - Bundle name of a third-party application",
+        "@param { Callback<number> } callback - Call back the screenshot event",
+        "@throws { BusinessError } 32100001 - Internal handling failed. Service exception.",
+        "@throws { BusinessError } 32100005 - Unsubscribe Failed. Possible causes: 1. Abnormal system capability; 2. IPC communication abnormality",
+        "@syscap SystemCapability.MultimodalAwareness.MetadataBinding",
+        "@atomicservice",
+        "@since 18"
+      ],
+      "层级": 1,
+      "上级": "metadataBinding",
+      "since_version": "18",
+      "system_capability": "SystemCapability.MultimodalAwareness.MetadataBinding",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'operationSubmitMetadata'",
+          "必填": true,
+          "说明": "Event Type"
+        },
+        {
+          "名称": "bundleName",
+          "类型": "string",
+          "必填": true,
+          "说明": "Bundle name of a third-party application"
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<number>",
+          "必填": true,
+          "说明": "Call back the screenshot event"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "32100001",
+          "description": "Internal handling failed. Service exception."
+        },
+        {
+          "code": "32100005",
+          "description": "Unsubscribe Failed. Possible causes: 1. Abnormal system capability; 2. IPC communication abnormality"
+        }
+      ],
+      "版本": "API6.0"
+    }
+  ]
+}

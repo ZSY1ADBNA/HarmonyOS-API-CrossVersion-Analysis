@@ -1,0 +1,3205 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.CalendarKit",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "namespace",
+      "名称": "calendarManager",
+      "所属模块": "@kit.CalendarKit",
+      "功能描述": "This provides calendar data access abilities.",
+      "注释信息": [
+        "@namespace calendarManager",
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "@kit.CalendarKit",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getCalendarManager",
+      "返回值": "CalendarManager",
+      "所属模块": "未知模块",
+      "功能描述": "Returns an instance of CalendarManager",
+      "注释信息": [
+        "@param { Context } context - Hap context information",
+        "@returns { CalendarManager } Instance of CalendarManager",
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@StageModelOnly",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "calendarManager",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [
+        {
+          "名称": "context",
+          "类型": "Context",
+          "必填": true,
+          "说明": "Hap context information"
+        }
+      ],
+      "return_description": "Instance of CalendarManager",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "CalendarManager",
+      "所属模块": "未知模块",
+      "功能描述": "Defines the CalendarManager class and provides functions to access the calendar data.",
+      "注释信息": [
+        "@typedef CalendarManager",
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "calendarManager",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "createCalendar",
+      "返回值": "Promise<Calendar>",
+      "所属模块": "未知模块",
+      "功能描述": "Create calendar instance. 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. 1. dataShare database execution error; 2. null pointer error; 3. Data parsing error.",
+      "注释信息": [
+        "@permission ohos.permission.WRITE_CALENDAR or ohos.permission.WRITE_WHOLE_CALENDAR",
+        "@param { CalendarAccount } calendarAccount - calendar account to create calendar",
+        "@returns { Promise<Calendar> } the promise with calendar corresponding to account",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 23900004 - Internal program errors. Possible causes:",
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "CalendarManager",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [
+        {
+          "名称": "calendarAccount",
+          "类型": "CalendarAccount",
+          "必填": true,
+          "说明": "calendar account to create calendar"
+        }
+      ],
+      "return_description": "the promise with calendar corresponding to account",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "23900004",
+          "description": "Internal program errors. Possible causes:"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "createCalendar",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Create calendar instance. 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. 1. dataShare database execution error; 2. null pointer error; 3. Data parsing error.",
+      "注释信息": [
+        "@permission ohos.permission.WRITE_CALENDAR or ohos.permission.WRITE_WHOLE_CALENDAR",
+        "@param { CalendarAccount } calendarAccount - calendar account to create calendar",
+        "@param { AsyncCallback<Calendar> } callback - the callback of createCalendar",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 23900004 - Internal program errors. Possible causes:",
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "CalendarManager",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [
+        {
+          "名称": "calendarAccount",
+          "类型": "CalendarAccount",
+          "必填": true,
+          "说明": "calendar account to create calendar"
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<Calendar>",
+          "必填": true,
+          "说明": "the callback of createCalendar"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "23900004",
+          "description": "Internal program errors. Possible causes:"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "deleteCalendar",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Delete calendar instance. 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. 1. dataShare database execution error; 2. null pointer error; 3. Data parsing error.",
+      "注释信息": [
+        "@permission ohos.permission.WRITE_CALENDAR or ohos.permission.WRITE_WHOLE_CALENDAR",
+        "@param { Calendar } calendar - calendar to be deleted",
+        "@returns { Promise<void> } the promise returned by the function.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 23900004 - Internal program errors. Possible causes:",
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "CalendarManager",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [
+        {
+          "名称": "calendar",
+          "类型": "Calendar",
+          "必填": true,
+          "说明": "calendar to be deleted"
+        }
+      ],
+      "return_description": "the promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "23900004",
+          "description": "Internal program errors. Possible causes:"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "deleteCalendar",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Delete calendar instance. 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. 1. dataShare database execution error; 2. null pointer error; 3. Data parsing error.",
+      "注释信息": [
+        "@permission ohos.permission.WRITE_CALENDAR or ohos.permission.WRITE_WHOLE_CALENDAR",
+        "@param { Calendar } calendar - calendar to be deleted",
+        "@param { AsyncCallback<void> } callback - the callback of deleteCalendar",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 23900004 - Internal program errors. Possible causes:",
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "CalendarManager",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [
+        {
+          "名称": "calendar",
+          "类型": "Calendar",
+          "必填": true,
+          "说明": "calendar to be deleted"
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "the callback of deleteCalendar"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "23900004",
+          "description": "Internal program errors. Possible causes:"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getCalendar",
+      "返回值": "Promise<Calendar>",
+      "所属模块": "未知模块",
+      "功能描述": "Get calendar instance from database. 1. dataShare database execution error; 2. null pointer error; 3. Data parsing error.",
+      "注释信息": [
+        "@permission ohos.permission.READ_CALENDAR or ohos.permission.READ_WHOLE_CALENDAR",
+        "@param { CalendarAccount } [calendarAccount] - specify calendar account to retrieve",
+        "@returns { Promise<Calendar> } the promise returned by the function.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: Incorrect parameter types.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 23900003 - The specified account was not found.",
+        "@throws { BusinessError } 23900004 - Internal program errors. Possible causes:",
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@atomicservice",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "CalendarManager",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "CalendarAccount } [calendarAccount] - specify calendar account to retrieve"
+        }
+      ],
+      "return_description": "the promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: Incorrect parameter types."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "23900003",
+          "description": "The specified account was not found."
+        },
+        {
+          "code": "23900004",
+          "description": "Internal program errors. Possible causes:"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getCalendar",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Get calendar instance from database by specified account. 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. 1. dataShare database execution error; 2. null pointer error; 3. Data parsing error.",
+      "注释信息": [
+        "@permission ohos.permission.READ_CALENDAR or ohos.permission.READ_WHOLE_CALENDAR",
+        "@param { CalendarAccount } calendarAccount - specify calendar account to retrieve",
+        "@param { AsyncCallback<Calendar> } callback - the callback of getCalendar",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 23900003 - The specified account was not found.",
+        "@throws { BusinessError } 23900004 - Internal program errors. Possible causes:",
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@atomicservice",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "CalendarManager",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [
+        {
+          "名称": "calendarAccount",
+          "类型": "CalendarAccount",
+          "必填": true,
+          "说明": "specify calendar account to retrieve"
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<Calendar>",
+          "必填": true,
+          "说明": "the callback of getCalendar"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "23900003",
+          "description": "The specified account was not found."
+        },
+        {
+          "code": "23900004",
+          "description": "Internal program errors. Possible causes:"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getCalendar",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Get default calendar instance from database. 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. 1. dataShare database execution error; 2. null pointer error; 3. Data parsing error.",
+      "注释信息": [
+        "@permission ohos.permission.READ_CALENDAR or ohos.permission.READ_WHOLE_CALENDAR",
+        "@param { AsyncCallback<Calendar> } callback - the callback of getCalendar with default calendar instance",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 23900004 - Internal program errors. Possible causes:",
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@atomicservice",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "CalendarManager",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<Calendar>",
+          "必填": true,
+          "说明": "the callback of getCalendar with default calendar instance"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "23900004",
+          "description": "Internal program errors. Possible causes:"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getAllCalendars",
+      "返回值": "Promise<Calendar[]>",
+      "所属模块": "未知模块",
+      "功能描述": "Get all calendar instance. 1. dataShare database execution error; 2. null pointer error; 3. Data parsing error.",
+      "注释信息": [
+        "@permission ohos.permission.READ_CALENDAR or ohos.permission.READ_WHOLE_CALENDAR",
+        "@returns { Promise<Calendar[]> } the promise returned by the function.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: Incorrect parameter types.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 23900004 - Internal program errors. Possible causes:",
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "CalendarManager",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [],
+      "return_description": "the promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: Incorrect parameter types."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "23900004",
+          "description": "Internal program errors. Possible causes:"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getAllCalendars",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Get all calendar instance. 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. 1. dataShare database execution error; 2. null pointer error; 3. Data parsing error.",
+      "注释信息": [
+        "@permission ohos.permission.READ_CALENDAR or ohos.permission.READ_WHOLE_CALENDAR",
+        "@param {AsyncCallback<Calendar[]>} callback - the callback of getAllCalendars",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 23900004 - Internal program errors. Possible causes:",
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "CalendarManager",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<Calendar[]>",
+          "必填": true,
+          "说明": "the callback of getAllCalendars"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "23900004",
+          "description": "Internal program errors. Possible causes:"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "editEvent",
+      "返回值": "Promise<number>",
+      "所属模块": "未知模块",
+      "功能描述": "Create a single event,invoking this interface will open the event creation page.",
+      "注释信息": [
+        "@param { Event } event - Indicates the information about a single event.",
+        "@returns { Promise<number> } the promise with event id.",
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "CalendarManager",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [
+        {
+          "名称": "event",
+          "类型": "Event",
+          "必填": true,
+          "说明": "Indicates the information about a single event."
+        }
+      ],
+      "return_description": "the promise with event id.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "Calendar",
+      "所属模块": "未知模块",
+      "功能描述": "Describes a calendar instance.",
+      "注释信息": [
+        "@typedef Calendar",
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "calendarManager",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "id",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Id of the calendar",
+      "注释信息": [
+        "@type { number }",
+        "@readonly",
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Calendar",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "addEvent",
+      "返回值": "Promise<number>",
+      "所属模块": "未知模块",
+      "功能描述": "Add a single event. 1. dataShare database execution error; 2. null pointer error; 3. Data parsing error.",
+      "注释信息": [
+        "@permission ohos.permission.WRITE_CALENDAR or ohos.permission.WRITE_WHOLE_CALENDAR",
+        "@param { Event } event - Indicates the information about a single event.",
+        "@returns { Promise<number> } The event ID.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 23900004 - Internal program errors. Possible causes:",
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@atomicservice",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "Calendar",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [
+        {
+          "名称": "event",
+          "类型": "Event",
+          "必填": true,
+          "说明": "Indicates the information about a single event."
+        }
+      ],
+      "return_description": "The event ID.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "23900004",
+          "description": "Internal program errors. Possible causes:"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "addEvent",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Add a single event. 1. dataShare database execution error; 2. null pointer error; 3. Data parsing error.",
+      "注释信息": [
+        "@permission ohos.permission.WRITE_CALENDAR or ohos.permission.WRITE_WHOLE_CALENDAR",
+        "@param { Event } event - a single event to add.",
+        "@param { AsyncCallback<number> } callback - callback of addEvent.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 23900004 - Internal program errors. Possible causes:",
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@atomicservice",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "Calendar",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [
+        {
+          "名称": "event",
+          "类型": "Event",
+          "必填": true,
+          "说明": "a single event to add."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<number>",
+          "必填": true,
+          "说明": "callback of addEvent."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "23900004",
+          "description": "Internal program errors. Possible causes:"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "addEvents",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Add multiple events. 1. dataShare database execution error; 2. null pointer error; 3. Data parsing error.",
+      "注释信息": [
+        "@permission ohos.permission.WRITE_CALENDAR or ohos.permission.WRITE_WHOLE_CALENDAR",
+        "@param { Event[] } events - multiple events to add.",
+        "@returns { Promise<void> } The promise returned by function.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 23900004 - Internal program errors. Possible causes:",
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "Calendar",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [
+        {
+          "名称": "events",
+          "类型": "Event[]",
+          "必填": true,
+          "说明": "multiple events to add."
+        }
+      ],
+      "return_description": "The promise returned by function.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "23900004",
+          "description": "Internal program errors. Possible causes:"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "addEvents",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Add multiple events. 1. dataShare database execution error; 2. null pointer error; 3. Data parsing error.",
+      "注释信息": [
+        "@permission ohos.permission.WRITE_CALENDAR or ohos.permission.WRITE_WHOLE_CALENDAR",
+        "@param { Event[] } events - Indicates the information about multiple events.",
+        "@param { AsyncCallback<void> } callback - The callback of addEvents",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 23900004 - Internal program errors. Possible causes:",
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "Calendar",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [
+        {
+          "名称": "events",
+          "类型": "Event[]",
+          "必填": true,
+          "说明": "Indicates the information about multiple events."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "The callback of addEvents"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "23900004",
+          "description": "Internal program errors. Possible causes:"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "deleteEvent",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Delete a single event.",
+      "注释信息": [
+        "@param { number } id - Indicates the ID of an event.",
+        "@returns { Promise<void> } The promise returned by function.",
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "Calendar",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [
+        {
+          "名称": "id",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the ID of an event."
+        }
+      ],
+      "return_description": "The promise returned by function.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "deleteEvent",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Delete a single event.",
+      "注释信息": [
+        "@param { number } id - Indicates the ID of an event.",
+        "@param {AsyncCallback<void>} callback - The callback of deleteEvent.",
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@atomicservice",
+        "@since 21"
+      ],
+      "层级": 2,
+      "上级": "Calendar",
+      "since_version": "21",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [
+        {
+          "名称": "id",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the ID of an event."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "The callback of deleteEvent."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "deleteEvents",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Delete multiple events.",
+      "注释信息": [
+        "@param { number[] } ids - The id array of multiple events.",
+        "@returns { Promise<void> } The promise returned by function.",
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "Calendar",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [
+        {
+          "名称": "ids",
+          "类型": "number[]",
+          "必填": true,
+          "说明": "The id array of multiple events."
+        }
+      ],
+      "return_description": "The promise returned by function.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "deleteEvents",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Delete multiple events.",
+      "注释信息": [
+        "@param { number[] } ids - Indicates the IDs of multiple events.",
+        "@param {AsyncCallback<void>} callback - The callback of deleteEvents.",
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@atomicservice",
+        "@since 21"
+      ],
+      "层级": 2,
+      "上级": "Calendar",
+      "since_version": "21",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [
+        {
+          "名称": "ids",
+          "类型": "number[]",
+          "必填": true,
+          "说明": "Indicates the IDs of multiple events."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "The callback of deleteEvents."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "updateEvent",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Update a single event.",
+      "注释信息": [
+        "@param { Event } event - Indicates the information about a single event.",
+        "@returns { Promise<void> } The promise returned by function.",
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "Calendar",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [
+        {
+          "名称": "event",
+          "类型": "Event",
+          "必填": true,
+          "说明": "Indicates the information about a single event."
+        }
+      ],
+      "return_description": "The promise returned by function.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "updateEvent",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Update a single event.",
+      "注释信息": [
+        "@param { Event } event - Indicates the information about a single event.",
+        "@param { AsyncCallback<void> } callback - The callback of updateEvent.",
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "Calendar",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [
+        {
+          "名称": "event",
+          "类型": "Event",
+          "必填": true,
+          "说明": "Indicates the information about a single event."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "The callback of updateEvent."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getEvents",
+      "返回值": "Promise<Event[]>",
+      "所属模块": "未知模块",
+      "功能描述": "Query events based on filter conditions. type、title、startTime、endTime、isAllDay、description、timeZone、 location、service、attendee、reminderTime、identifier. 1. dataShare database execution error; 2. null pointer error; 3. Data parsing error.",
+      "注释信息": [
+        "@permission ohos.permission.READ_CALENDAR or ohos.permission.READ_WHOLE_CALENDAR",
+        "@param { EventFilter } [eventFilter] - Indicates the filtering conditions of events.",
+        "@param { (keyof Event)[] } [eventKey] - Expected column to be returned. Default columns are id、",
+        "@returns { Promise<Event[]> } Information about events that match the filter conditions.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 23900004 - Internal program errors. Possible causes:",
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "Calendar",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "(keyof Event)[] } [eventKey] - Expected column to be returned. Default columns are id、"
+        }
+      ],
+      "return_description": "Information about events that match the filter conditions.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "23900004",
+          "description": "Internal program errors. Possible causes:"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getEvents",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Query events based on filter conditions. 1. dataShare database execution error; 2. null pointer error; 3. Data parsing error.",
+      "注释信息": [
+        "@permission ohos.permission.READ_CALENDAR or ohos.permission.READ_WHOLE_CALENDAR",
+        "@param { EventFilter } eventFilter - Indicates the filtering conditions of events.",
+        "@param { (keyof Event)[] } eventKey - Expected column to be returned.",
+        "@param { AsyncCallback<Event[]> } callback - The callback of getEvents.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 23900004 - Internal program errors. Possible causes:",
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "Calendar",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [
+        {
+          "名称": "eventFilter",
+          "类型": "EventFilter",
+          "必填": true,
+          "说明": "Indicates the filtering conditions of events."
+        },
+        {
+          "名称": "eventKey",
+          "类型": "(keyof Event)[]",
+          "必填": true,
+          "说明": "Expected column to be returned."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<Event[]>",
+          "必填": true,
+          "说明": "The callback of getEvents."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "23900004",
+          "description": "Internal program errors. Possible causes:"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getEvents",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Query all events with id、type、title、startTime、endTime、isAllDay、description、 timeZone、location、service、attendee、reminderTime、identifier from current calendar instance. 1. dataShare database execution error; 2. null pointer error; 3. Data parsing error.",
+      "注释信息": [
+        "@permission ohos.permission.READ_CALENDAR or ohos.permission.READ_WHOLE_CALENDAR",
+        "@param { AsyncCallback<Event[]> } callback - The callback of getEvents with all events.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 23900004 - Internal program errors. Possible causes:",
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "Calendar",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<Event[]>",
+          "必填": true,
+          "说明": "The callback of getEvents with all events."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "23900004",
+          "description": "Internal program errors. Possible causes:"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getConfig",
+      "返回值": "CalendarConfig",
+      "所属模块": "未知模块",
+      "功能描述": "Get calendar configure.",
+      "注释信息": [
+        "@returns { CalendarConfig } configure of current calendar.",
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "Calendar",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [],
+      "return_description": "configure of current calendar.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "setConfig",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Set calendar configure.",
+      "注释信息": [
+        "@param { CalendarConfig } config - calendar config to set",
+        "@returns { Promise<void> } The promise returned by function.",
+        "@throws { BusinessError } 23900001 – Parameter value error.",
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "Calendar",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [
+        {
+          "名称": "config",
+          "类型": "CalendarConfig",
+          "必填": true,
+          "说明": "calendar config to set"
+        }
+      ],
+      "return_description": "The promise returned by function.",
+      "error_codes": [
+        {
+          "code": "23900001",
+          "description": ""
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "setConfig",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Set calendar configure.",
+      "注释信息": [
+        "@param { CalendarConfig } config - calendar config to set",
+        "@param { AsyncCallback<void> } callback - callback of setConfig",
+        "@throws { BusinessError } 23900001 – Parameter value error.",
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "Calendar",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [
+        {
+          "名称": "config",
+          "类型": "CalendarConfig",
+          "必填": true,
+          "说明": "calendar config to set"
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "callback of setConfig"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "23900001",
+          "description": ""
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getAccount",
+      "返回值": "CalendarAccount",
+      "所属模块": "未知模块",
+      "功能描述": "Get calendar account.",
+      "注释信息": [
+        "@returns { CalendarAccount } calendar account of current calendar.",
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "Calendar",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [],
+      "return_description": "calendar account of current calendar.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "queryEventInstances",
+      "返回值": "Promise<Event[]>",
+      "所属模块": "未知模块",
+      "功能描述": "Query event instances based on the conditions. 1. dataShare database execution error; 2. null pointer error; 3. Data parsing error.",
+      "注释信息": [
+        "@permission ohos.permission.READ_CALENDAR or ohos.permission.READ_WHOLE_CALENDAR",
+        "@param { number } start - start time of query range",
+        "@param { number } end - end time of query range",
+        "@param { number[] } [ids] - Indicates the IDs of multiple events",
+        "@param { (keyof Event)[] } [eventKey] - Expected column to be returned",
+        "@returns { Promise<Event[]> } Information about events that match the condition",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 23900004 - Internal program errors. Possible causes:",
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@atomicservice",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "Calendar",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [
+        {
+          "名称": "start",
+          "类型": "number",
+          "必填": true,
+          "说明": "start time of query range"
+        },
+        {
+          "名称": "end",
+          "类型": "number",
+          "必填": true,
+          "说明": "end time of query range"
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "(keyof Event)[] } [eventKey] - Expected column to be returned"
+        }
+      ],
+      "return_description": "Information about events that match the condition",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "23900004",
+          "description": "Internal program errors. Possible causes:"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "CalendarAccount",
+      "所属模块": "未知模块",
+      "功能描述": "Describes a calendar account.",
+      "注释信息": [
+        "@typedef CalendarAccount",
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "calendarManager",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "name",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Name of the calendar",
+      "注释信息": [
+        "@type { string }",
+        "@readonly",
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "CalendarAccount",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "type",
+      "属性类型": "CalendarType",
+      "所属模块": "未知模块",
+      "功能描述": "Type of the calendar",
+      "注释信息": [
+        "@type { CalendarType }",
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "CalendarAccount",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "displayName",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "DisplayName of the calendar",
+      "注释信息": [
+        "@type { ?string }",
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "CalendarAccount",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "CalendarConfig",
+      "所属模块": "未知模块",
+      "功能描述": "Describes a calendar configuration.",
+      "注释信息": [
+        "@typedef CalendarConfig",
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "calendarManager",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "enableReminder",
+      "属性类型": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Whether the calendar provides a reminder",
+      "注释信息": [
+        "@type { ?boolean }",
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "CalendarConfig",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "color",
+      "属性类型": "number | string",
+      "所属模块": "未知模块",
+      "功能描述": "Color of the calendar",
+      "注释信息": [
+        "@type { ?(number | string) }",
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "CalendarConfig",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "Event",
+      "所属模块": "未知模块",
+      "功能描述": "Describes an event information.",
+      "注释信息": [
+        "@typedef Event",
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "calendarManager",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "id",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Id of the event",
+      "注释信息": [
+        "@type { ?number }",
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Event",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "type",
+      "属性类型": "EventType",
+      "所属模块": "未知模块",
+      "功能描述": "Type of the event",
+      "注释信息": [
+        "@type { EventType }",
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Event",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "title",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Title of the event",
+      "注释信息": [
+        "@type { ?string }",
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Event",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "location",
+      "属性类型": "Location",
+      "所属模块": "未知模块",
+      "功能描述": "Location of the event",
+      "注释信息": [
+        "@type { ?Location }",
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Event",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "startTime",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "start time of the event",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Event",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "endTime",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "end time of the event",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Event",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "isAllDay",
+      "属性类型": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Whether the event is allDay",
+      "注释信息": [
+        "@type { ?boolean }",
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Event",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "attendee",
+      "属性类型": "Attendee[]",
+      "所属模块": "未知模块",
+      "功能描述": "Attendees of the event",
+      "注释信息": [
+        "@type { ?Attendee[] }",
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Event",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "timeZone",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "TimeZone of the event",
+      "注释信息": [
+        "@type { ?string }",
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Event",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "reminderTime",
+      "属性类型": "number[]",
+      "所属模块": "未知模块",
+      "功能描述": "Reminder time of the event",
+      "注释信息": [
+        "@type { ?number[] }",
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Event",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "recurrenceRule",
+      "属性类型": "RecurrenceRule",
+      "所属模块": "未知模块",
+      "功能描述": "RecurrenceRule of the event",
+      "注释信息": [
+        "@type { ?RecurrenceRule }",
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Event",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "description",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Description of the event",
+      "注释信息": [
+        "@type { ?string }",
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Event",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "service",
+      "属性类型": "EventService",
+      "所属模块": "未知模块",
+      "功能描述": "Service of the event",
+      "注释信息": [
+        "@type { ?EventService }",
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Event",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "identifier",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Unique identifier of the event",
+      "注释信息": [
+        "@type { ?string }",
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "Event",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "isLunar",
+      "属性类型": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Whether the event is lunar.",
+      "注释信息": [
+        "@type { ?boolean }",
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "Event",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "instanceStartTime",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Start time of the event instance.",
+      "注释信息": [
+        "@type { ?number }",
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@atomicservice",
+        "@since 18"
+      ],
+      "层级": 2,
+      "上级": "Event",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "instanceEndTime",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "End time of the event instance.",
+      "注释信息": [
+        "@type { ?number }",
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@atomicservice",
+        "@since 18"
+      ],
+      "层级": 2,
+      "上级": "Event",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "CalendarType",
+      "所属模块": "未知模块",
+      "功能描述": "Enum for all calendar type.",
+      "注释信息": [
+        "@enum { string }",
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "calendarManager",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "LOCAL",
+      "值": "'local'",
+      "所属模块": "未知模块",
+      "功能描述": "Local calendar",
+      "注释信息": [
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "CalendarType",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "EMAIL",
+      "值": "'email'",
+      "所属模块": "未知模块",
+      "功能描述": "Email calendar",
+      "注释信息": [
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "CalendarType",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "BIRTHDAY",
+      "值": "'birthday'",
+      "所属模块": "未知模块",
+      "功能描述": "Birthday calendar",
+      "注释信息": [
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "CalendarType",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CALDAV",
+      "值": "'caldav'",
+      "所属模块": "未知模块",
+      "功能描述": "CalDAV calendar",
+      "注释信息": [
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "CalendarType",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "SUBSCRIBED",
+      "值": "'subscribed'",
+      "所属模块": "未知模块",
+      "功能描述": "Subscribed calendar",
+      "注释信息": [
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "CalendarType",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "Location",
+      "所属模块": "未知模块",
+      "功能描述": "Location of an event.",
+      "注释信息": [
+        "@typedef Location",
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "calendarManager",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "location",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Location of the event",
+      "注释信息": [
+        "@type { ?string }",
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Location",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "longitude",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Longitude of the location",
+      "注释信息": [
+        "@type { ?number }",
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Location",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "latitude",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Latitude of the location",
+      "注释信息": [
+        "@type { ?number }",
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Location",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "class",
+      "名称": "EventFilter",
+      "所属模块": "未知模块",
+      "功能描述": "Provides the abilities to retrive event filter.",
+      "注释信息": [
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "calendarManager",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "filterById",
+      "返回值": "EventFilter",
+      "所属模块": "未知模块",
+      "功能描述": "Filter events by event id.",
+      "注释信息": [
+        "@param {number[]} ids id array to retrieve",
+        "@returns { EventFilter } Returns the EventFilter with ids.",
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "EventFilter",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [
+        {
+          "名称": "ids",
+          "类型": "number[]",
+          "必填": true,
+          "说明": "id array to retrieve"
+        }
+      ],
+      "return_description": "Returns the EventFilter with ids.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "filterByTime",
+      "返回值": "EventFilter",
+      "所属模块": "未知模块",
+      "功能描述": "Filter events by event start time and end time.",
+      "注释信息": [
+        "@param { number } start - start time of query range",
+        "@param { number } end - end time of query range",
+        "@returns { EventFilter } Returns the EventFilter with time range.",
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "EventFilter",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [
+        {
+          "名称": "start",
+          "类型": "number",
+          "必填": true,
+          "说明": "start time of query range"
+        },
+        {
+          "名称": "end",
+          "类型": "number",
+          "必填": true,
+          "说明": "end time of query range"
+        }
+      ],
+      "return_description": "Returns the EventFilter with time range.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "filterByTitle",
+      "返回值": "EventFilter",
+      "所属模块": "未知模块",
+      "功能描述": "Filter events by event title.",
+      "注释信息": [
+        "@param { string } title - event title to query",
+        "@returns {EventFilter } Returns the EventFilter with title.",
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "EventFilter",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [
+        {
+          "名称": "title",
+          "类型": "string",
+          "必填": true,
+          "说明": "event title to query"
+        }
+      ],
+      "return_description": "Returns the EventFilter with title.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "EventType",
+      "所属模块": "未知模块",
+      "功能描述": "Enum for supported events type.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "calendarManager",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "NORMAL",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "normal event.",
+      "注释信息": [
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "EventType",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "IMPORTANT",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "important event.",
+      "注释信息": [
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "EventType",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "RecurrenceRule",
+      "所属模块": "未知模块",
+      "功能描述": "Defines the recurrence rule of event",
+      "注释信息": [
+        "@typedef RecurrenceRule",
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "calendarManager",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "recurrenceFrequency",
+      "属性类型": "RecurrenceFrequency",
+      "所属模块": "未知模块",
+      "功能描述": "RecurrenceFrequency of recurrence event.",
+      "注释信息": [
+        "@type { RecurrenceFrequency }",
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "RecurrenceRule",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "expire",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Expiration time of recurrence event.",
+      "注释信息": [
+        "@type { ?number }",
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "RecurrenceRule",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "count",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Repetition count of recurrence event.",
+      "注释信息": [
+        "@type { ?number }",
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "RecurrenceRule",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "interval",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Repeat interval of recurrence event.",
+      "注释信息": [
+        "@type { ?number }",
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "RecurrenceRule",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "excludedDates",
+      "属性类型": "number[]",
+      "所属模块": "未知模块",
+      "功能描述": "Excluded dates of recurrence event.",
+      "注释信息": [
+        "@type { ?number[] }",
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "RecurrenceRule",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "daysOfWeek",
+      "属性类型": "number[]",
+      "所属模块": "未知模块",
+      "功能描述": "The days of the week associated with the recurrence event.",
+      "注释信息": [
+        "@type { ?number[] }",
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "RecurrenceRule",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "daysOfMonth",
+      "属性类型": "number[]",
+      "所属模块": "未知模块",
+      "功能描述": "The days of the month associated with the recurrence event.",
+      "注释信息": [
+        "@type { ?number[] }",
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "RecurrenceRule",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "daysOfYear",
+      "属性类型": "number[]",
+      "所属模块": "未知模块",
+      "功能描述": "The days of the year associated with the recurrence event.",
+      "注释信息": [
+        "@type { ?number[] }",
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "RecurrenceRule",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "weeksOfMonth",
+      "属性类型": "number[]",
+      "所属模块": "未知模块",
+      "功能描述": "The weeks of the month associated with the recurrence event.",
+      "注释信息": [
+        "@type { ?number[] }",
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "RecurrenceRule",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "weeksOfYear",
+      "属性类型": "number[]",
+      "所属模块": "未知模块",
+      "功能描述": "The weeks of the year associated with the recurrence event.",
+      "注释信息": [
+        "@type { ?number[] }",
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "RecurrenceRule",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "monthsOfYear",
+      "属性类型": "number[]",
+      "所属模块": "未知模块",
+      "功能描述": "The months of the year associated with the recurrence event.",
+      "注释信息": [
+        "@type { ?number[] }",
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "RecurrenceRule",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "RecurrenceFrequency",
+      "所属模块": "未知模块",
+      "功能描述": "Enum for the recurrence type by different period",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "calendarManager",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "YEARLY",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "The event repeats every year.",
+      "注释信息": [
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "RecurrenceFrequency",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "MONTHLY",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "The event repeats every month.",
+      "注释信息": [
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "RecurrenceFrequency",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "WEEKLY",
+      "值": "2",
+      "所属模块": "未知模块",
+      "功能描述": "The event repeats every week.",
+      "注释信息": [
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "RecurrenceFrequency",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "DAILY",
+      "值": "3",
+      "所属模块": "未知模块",
+      "功能描述": "The event repeats every day.",
+      "注释信息": [
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "RecurrenceFrequency",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "Attendee",
+      "所属模块": "未知模块",
+      "功能描述": "Defines the attendee information",
+      "注释信息": [
+        "@typedef Attendee",
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "calendarManager",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "name",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Name of the Attendee.",
+      "注释信息": [
+        "@type { string }",
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Attendee",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "email",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Email of the Attendee.",
+      "注释信息": [
+        "@type { string }",
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Attendee",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "role",
+      "属性类型": "AttendeeRole",
+      "所属模块": "未知模块",
+      "功能描述": "Role of the Attendee.",
+      "注释信息": [
+        "@type { ?AttendeeRole }",
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "Attendee",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "type",
+      "属性类型": "AttendeeType",
+      "所属模块": "未知模块",
+      "功能描述": "Type of the Attendee.",
+      "注释信息": [
+        "@type { ?AttendeeType }",
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@atomicservice",
+        "@since 18"
+      ],
+      "层级": 2,
+      "上级": "Attendee",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "status",
+      "属性类型": "AttendeeStatus",
+      "所属模块": "未知模块",
+      "功能描述": "Status of the Attendee.",
+      "注释信息": [
+        "@type { ?AttendeeStatus }",
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@atomicservice",
+        "@since 18"
+      ],
+      "层级": 2,
+      "上级": "Attendee",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "AttendeeRole",
+      "所属模块": "未知模块",
+      "功能描述": "Enum for the attendee role",
+      "注释信息": [
+        "@enum { string }",
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "calendarManager",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "ORGANIZER",
+      "值": "'organizer'",
+      "所属模块": "未知模块",
+      "功能描述": "The organizer of a meeting.",
+      "注释信息": [
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "AttendeeRole",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "PARTICIPANT",
+      "值": "'participant'",
+      "所属模块": "未知模块",
+      "功能描述": "The participant of a meeting.",
+      "注释信息": [
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "AttendeeRole",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "AttendeeType",
+      "所属模块": "未知模块",
+      "功能描述": "Enum for the attendee type",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@atomicservice",
+        "@since 18"
+      ],
+      "层级": 2,
+      "上级": "calendarManager",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "REQUIRED",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "A mailbox user who is a required attendee to the meeting.",
+      "注释信息": [
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@atomicservice",
+        "@since 18"
+      ],
+      "层级": 2,
+      "上级": "AttendeeType",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "OPTIONAL",
+      "值": "2",
+      "所属模块": "未知模块",
+      "功能描述": "A mailbox user who is an optional attendee to the meeting.",
+      "注释信息": [
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@atomicservice",
+        "@since 18"
+      ],
+      "层级": 2,
+      "上级": "AttendeeType",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "RESOURCE",
+      "值": "3",
+      "所属模块": "未知模块",
+      "功能描述": "A resource such as a TV or projector that is scheduled for use in the meeting.",
+      "注释信息": [
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@atomicservice",
+        "@since 18"
+      ],
+      "层级": 2,
+      "上级": "AttendeeType",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "AttendeeStatus",
+      "所属模块": "未知模块",
+      "功能描述": "Enum for the attendee states",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@atomicservice",
+        "@since 18"
+      ],
+      "层级": 2,
+      "上级": "calendarManager",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "UNKNOWN",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "The acceptance status of the participant is unknown.",
+      "注释信息": [
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@atomicservice",
+        "@since 18"
+      ],
+      "层级": 2,
+      "上级": "AttendeeStatus",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "TENTATIVE",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "The acceptance status of the participant is tentative.",
+      "注释信息": [
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@atomicservice",
+        "@since 18"
+      ],
+      "层级": 2,
+      "上级": "AttendeeStatus",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "ACCEPTED",
+      "值": "2",
+      "所属模块": "未知模块",
+      "功能描述": "The acceptance status of the participant is accepted.",
+      "注释信息": [
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@atomicservice",
+        "@since 18"
+      ],
+      "层级": 2,
+      "上级": "AttendeeStatus",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "DECLINED",
+      "值": "3",
+      "所属模块": "未知模块",
+      "功能描述": "The acceptance status of the participant is declined.",
+      "注释信息": [
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@atomicservice",
+        "@since 18"
+      ],
+      "层级": 2,
+      "上级": "AttendeeStatus",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "UNRESPONSIVE",
+      "值": "4",
+      "所属模块": "未知模块",
+      "功能描述": "The acceptance status of the participant is unresponsive.",
+      "注释信息": [
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@atomicservice",
+        "@since 18"
+      ],
+      "层级": 2,
+      "上级": "AttendeeStatus",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "EventService",
+      "所属模块": "未知模块",
+      "功能描述": "Defines event service information",
+      "注释信息": [
+        "@typedef EventService",
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "calendarManager",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "type",
+      "属性类型": "ServiceType",
+      "所属模块": "未知模块",
+      "功能描述": "Type of the EventService.",
+      "注释信息": [
+        "@type { ServiceType }",
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "EventService",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "uri",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Uri of the EventService.",
+      "注释信息": [
+        "@type { string }",
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "EventService",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "description",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Description of the EventService.",
+      "注释信息": [
+        "@type { ?string }",
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "EventService",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "ServiceType",
+      "所属模块": "未知模块",
+      "功能描述": "Defines event service type",
+      "注释信息": [
+        "@enum { string }",
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "calendarManager",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "MEETING",
+      "值": "'Meeting'",
+      "所属模块": "未知模块",
+      "功能描述": "Meeting event.",
+      "注释信息": [
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "ServiceType",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "WATCHING",
+      "值": "'Watching'",
+      "所属模块": "未知模块",
+      "功能描述": "Watch drama event.",
+      "注释信息": [
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "ServiceType",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "REPAYMENT",
+      "值": "'Repayment'",
+      "所属模块": "未知模块",
+      "功能描述": "Repayment event.",
+      "注释信息": [
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "ServiceType",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "LIVE",
+      "值": "'Live'",
+      "所属模块": "未知模块",
+      "功能描述": "Live event.",
+      "注释信息": [
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "ServiceType",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "SHOPPING",
+      "值": "'Shopping'",
+      "所属模块": "未知模块",
+      "功能描述": "Shopping event.",
+      "注释信息": [
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "ServiceType",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "TRIP",
+      "值": "'Trip'",
+      "所属模块": "未知模块",
+      "功能描述": "trip event.",
+      "注释信息": [
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "ServiceType",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CLASS",
+      "值": "'Class'",
+      "所属模块": "未知模块",
+      "功能描述": "Class event.",
+      "注释信息": [
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "ServiceType",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "SPORTS_EVENTS",
+      "值": "'SportsEvents'",
+      "所属模块": "未知模块",
+      "功能描述": "Sports game event.",
+      "注释信息": [
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "ServiceType",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "SPORTS_EXERCISE",
+      "值": "'SportsExercise'",
+      "所属模块": "未知模块",
+      "功能描述": "Sports exercise event.",
+      "注释信息": [
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "ServiceType",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    }
+  ]
+}

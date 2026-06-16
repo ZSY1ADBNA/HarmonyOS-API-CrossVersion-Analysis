@@ -1,0 +1,229 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.BasicServicesKit",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "namespace",
+      "名称": "runningLock",
+      "所属模块": "@kit.BasicServicesKit",
+      "功能描述": "Provides a mechanism to prevent the system from hibernating so that the applications can run in the background or when the screen is off. <p>{@link create} can be called to obtain a {@link RunningLock}. <p>{@link hold} can be called to set the lock duration, during which the system will not hibernate. After the lock duration times out, the lock is automatically released and the system hibernates if no other {@link RunningLock} is set.",
+      "注释信息": [
+        "@namespace runningLock",
+        "@syscap SystemCapability.PowerManager.PowerManager.Core",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "@kit.BasicServicesKit",
+      "since_version": "7",
+      "system_capability": "SystemCapability.PowerManager.PowerManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "class",
+      "名称": "RunningLock",
+      "所属模块": "未知模块",
+      "功能描述": "Provides a mechanism to prevent the system from hibernating so that the applications can run in the background or when the screen is off.",
+      "注释信息": [
+        "@syscap SystemCapability.PowerManager.PowerManager.Core",
+        "@since 7"
+      ],
+      "层级": 2,
+      "上级": "runningLock",
+      "since_version": "7",
+      "system_capability": "SystemCapability.PowerManager.PowerManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "lock",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Prevents the system from hibernating and sets the lock duration. This method requires the ohos.permission.RUNNING_LOCK permission. released and the system hibernates if no other {@link RunningLock} is set.",
+      "注释信息": [
+        "@permission ohos.permission.RUNNING_LOCK",
+        "@param { number } timeout Indicates the lock duration (ms). After the lock duration times out, the lock is automatically",
+        "@syscap SystemCapability.PowerManager.PowerManager.Core",
+        "@since 7",
+        "@deprecated since 9",
+        "@useinstead RunningLock#hold"
+      ],
+      "层级": 2,
+      "上级": "RunningLock",
+      "since_version": "7",
+      "system_capability": "SystemCapability.PowerManager.PowerManager.Core",
+      "parameters": [
+        {
+          "名称": "timeout",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the lock duration (ms). After the lock duration times out, the lock is automatically"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "hold",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Prevents the system from hibernating and sets the lock duration. This method requires the ohos.permission.RUNNING_LOCK permission. the lock is automatically released and the system hibernates if no other {@link RunningLock} is set. timeout parameter must be of type number.",
+      "注释信息": [
+        "@permission ohos.permission.RUNNING_LOCK",
+        "@param { number } timeout Indicates the lock duration (ms). After the lock duration times out,",
+        "@throws { BusinessError } 201 – If the permission is denied.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Incorrect parameter types;",
+        "@throws { BusinessError } 4900101 - Failed to connect to the service.",
+        "@syscap SystemCapability.PowerManager.PowerManager.Core",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "RunningLock",
+      "since_version": "9",
+      "system_capability": "SystemCapability.PowerManager.PowerManager.Core",
+      "parameters": [
+        {
+          "名称": "timeout",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the lock duration (ms). After the lock duration times out,"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": ""
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Incorrect parameter types;"
+        },
+        {
+          "code": "4900101",
+          "description": "Failed to connect to the service."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "isUsed",
+      "返回值": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Checks whether a lock is held or in use.",
+      "注释信息": [
+        "@returns { boolean } Returns true if the lock is held or in use; returns false if the lock has been released.",
+        "@syscap SystemCapability.PowerManager.PowerManager.Core",
+        "@since 7",
+        "@deprecated since 9",
+        "@useinstead RunningLock#isHolding"
+      ],
+      "层级": 2,
+      "上级": "RunningLock",
+      "since_version": "7",
+      "system_capability": "SystemCapability.PowerManager.PowerManager.Core",
+      "parameters": [],
+      "return_description": "Returns true if the lock is held or in use; returns false if the lock has been released.",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "isHolding",
+      "返回值": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Checks whether a lock is held or in use.",
+      "注释信息": [
+        "@returns { boolean } Returns true if the lock is held or in use; returns false if the lock has been released.",
+        "@throws { BusinessError } 4900101 - Failed to connect to the service.",
+        "@syscap SystemCapability.PowerManager.PowerManager.Core",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "RunningLock",
+      "since_version": "9",
+      "system_capability": "SystemCapability.PowerManager.PowerManager.Core",
+      "parameters": [],
+      "return_description": "Returns true if the lock is held or in use; returns false if the lock has been released.",
+      "error_codes": [
+        {
+          "code": "4900101",
+          "description": "Failed to connect to the service."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "unlock",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Release the {@link RunningLock} that prevents the system from hibernating. This method requires the ohos.permission.RUNNING_LOCK permission.",
+      "注释信息": [
+        "@permission ohos.permission.RUNNING_LOCK",
+        "@syscap SystemCapability.PowerManager.PowerManager.Core",
+        "@since 7",
+        "@deprecated since 9",
+        "@useinstead RunningLock#unhold"
+      ],
+      "层级": 2,
+      "上级": "RunningLock",
+      "since_version": "7",
+      "system_capability": "SystemCapability.PowerManager.PowerManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "unhold",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Release the {@link RunningLock} that prevents the system from hibernating. This method requires the ohos.permission.RUNNING_LOCK permission.",
+      "注释信息": [
+        "@permission ohos.permission.RUNNING_LOCK",
+        "@throws { BusinessError } 201 – If the permission is denied.",
+        "@throws { BusinessError } 4900101 - Failed to connect to the service.",
+        "@syscap SystemCapability.PowerManager.PowerManager.Core",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "RunningLock",
+      "since_version": "9",
+      "system_capability": "SystemCapability.PowerManager.PowerManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": ""
+        },
+        {
+          "code": "4900101",
+          "description": "Failed to connect to the service."
+        }
+      ],
+      "版本": "API5.0"
+    }
+  ]
+}

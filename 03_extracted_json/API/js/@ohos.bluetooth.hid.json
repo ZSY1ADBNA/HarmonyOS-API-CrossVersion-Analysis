@@ -1,0 +1,2126 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.ConnectivityKit",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "namespace",
+      "名称": "hid",
+      "所属模块": "@kit.ConnectivityKit",
+      "功能描述": "Provides methods to accessing bluetooth HID(Human Interface Device)-related capabilities.",
+      "注释信息": [
+        "@namespace hid",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "@kit.ConnectivityKit",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "type_alias",
+      "名称": "BaseProfile",
+      "所属模块": "未知模块",
+      "功能描述": "Base interface of profile.",
+      "注释信息": [
+        "@typedef { baseProfile.BaseProfile } BaseProfile",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "hid",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "type_alias",
+      "名称": "BluetoothAddress",
+      "所属模块": "未知模块",
+      "功能描述": "Bluetooth device address.",
+      "注释信息": [
+        "@typedef { common.BluetoothAddress } BluetoothAddress",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 1,
+      "上级": "hid",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "createHidHostProfile",
+      "返回值": "HidHostProfile",
+      "所属模块": "未知模块",
+      "功能描述": "create the instance of hid profile. <br>2. Incorrect parameter types. 3. Parameter verification failed.",
+      "注释信息": [
+        "@returns { HidHostProfile } Returns the instance of hid profile.",
+        "@throws { BusinessError } 401 - Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "hid",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "Returns the instance of hid profile.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "HidHostProfile",
+      "父类": "BaseProfile",
+      "所属模块": "未知模块",
+      "功能描述": "Manager hid host profile.",
+      "注释信息": [
+        "@extends BaseProfile",
+        "@typedef HidHostProfile",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "hid",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "createHidDeviceProfile",
+      "返回值": "HidDeviceProfile",
+      "所属模块": "未知模块",
+      "功能描述": "Creates the instance of HID device profile.",
+      "注释信息": [
+        "@returns { HidDeviceProfile } Returns the instance of HID device profile.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 1,
+      "上级": "hid",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "Returns the instance of HID device profile.",
+      "error_codes": [
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "HidDeviceProfile",
+      "父类": "BaseProfile",
+      "所属模块": "未知模块",
+      "功能描述": "Manager HID device profile.",
+      "注释信息": [
+        "@extends BaseProfile",
+        "@typedef HidDeviceProfile",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "hid",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "registerHidDevice",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Application registers the HID Device capability. The application will only successfully call this API when it's in the foreground. If the application that has registered the HID Device capability is switched to the background, the system automatically cancels the HID Device capability registration. The application can listen to the appStatusChange callback to detect the status change. for the Bluetooth HID device application. for the Bluetooth HID device application. {@code true} indicates register success or {@code false} otherwise.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BLUETOOTH",
+        "@param { HidDeviceSdp } sdp - Describe the hid device capability fields of this endpoint being queried.",
+        "@param { HidDeviceQos } inQos - Describe the In Quality of Service (QoS) settings",
+        "@param { HidDeviceQos } outQos - Describe the Out Quality of Service (QoS) settings",
+        "@param { Callback<boolean> } callback - Callback for HID device registration status changes,",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 2900003 - Bluetooth disabled.",
+        "@throws { BusinessError } 2900099 - Operation failed.",
+        "@throws { BusinessError } 2903050 - Application is not in the foreground.",
+        "@throws { BusinessError } 2903051 - Any app has been registered.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "HidDeviceProfile",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "sdp",
+          "类型": "HidDeviceSdp",
+          "必填": true,
+          "说明": "Describe the hid device capability fields of this endpoint being queried."
+        },
+        {
+          "名称": "inQos",
+          "类型": "HidDeviceQos",
+          "必填": true,
+          "说明": "Describe the In Quality of Service (QoS) settings"
+        },
+        {
+          "名称": "outQos",
+          "类型": "HidDeviceQos",
+          "必填": true,
+          "说明": "Describe the Out Quality of Service (QoS) settings"
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<boolean>",
+          "必填": true,
+          "说明": "Callback for HID device registration status changes,"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "2900003",
+          "description": "Bluetooth disabled."
+        },
+        {
+          "code": "2900099",
+          "description": "Operation failed."
+        },
+        {
+          "code": "2903050",
+          "description": "Application is not in the foreground."
+        },
+        {
+          "code": "2903051",
+          "description": "Any app has been registered."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "unregisterHidDevice",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Application unregisters the HID Device capability.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BLUETOOTH",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 2900003 - Bluetooth disabled.",
+        "@throws { BusinessError } 2900099 - Operation failed.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "HidDeviceProfile",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "2900003",
+          "description": "Bluetooth disabled."
+        },
+        {
+          "code": "2900099",
+          "description": "Operation failed."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "connect",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Initiate an HID connection to a remote HID host device.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BLUETOOTH",
+        "@param { BluetoothAddress } deviceId -  Indicates the address of the remote Bluetooth device.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 2900003 - Bluetooth disabled.",
+        "@throws { BusinessError } 2900004 - Remote Device profile not supported.",
+        "@throws { BusinessError } 2900099 - Operation failed.",
+        "@throws { BusinessError } 2903052 - App not register.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "HidDeviceProfile",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "deviceId",
+          "类型": "BluetoothAddress",
+          "必填": true,
+          "说明": "Indicates the address of the remote Bluetooth device."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "2900003",
+          "description": "Bluetooth disabled."
+        },
+        {
+          "code": "2900004",
+          "description": "Remote Device profile not supported."
+        },
+        {
+          "code": "2900099",
+          "description": "Operation failed."
+        },
+        {
+          "code": "2903052",
+          "description": "App not register."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "disconnect",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Disconnect the HID connection with the remote device.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BLUETOOTH",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 2900003 - Bluetooth disabled.",
+        "@throws { BusinessError } 2900099 - Operation failed.",
+        "@throws { BusinessError } 2903052 - App not register.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "HidDeviceProfile",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "2900003",
+          "description": "Bluetooth disabled."
+        },
+        {
+          "code": "2900099",
+          "description": "Operation failed."
+        },
+        {
+          "code": "2903052",
+          "description": "App not register."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "sendReport",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Send report to a remote HID host device.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BLUETOOTH",
+        "@param { number } id  - Report ID defined in the descriptor.",
+        "@param { Uint8Array } reportData  - Report data sent to the host device.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 2900003 - Bluetooth disabled.",
+        "@throws { BusinessError } 2900099 - Operation failed.",
+        "@throws { BusinessError } 2903052 - App not register.",
+        "@throws { BusinessError } 2903053 - Device not connected.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "HidDeviceProfile",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "id",
+          "类型": "number",
+          "必填": true,
+          "说明": "Report ID defined in the descriptor."
+        },
+        {
+          "名称": "reportData",
+          "类型": "Uint8Array",
+          "必填": true,
+          "说明": "Report data sent to the host device."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "2900003",
+          "description": "Bluetooth disabled."
+        },
+        {
+          "code": "2900099",
+          "description": "Operation failed."
+        },
+        {
+          "code": "2903052",
+          "description": "App not register."
+        },
+        {
+          "code": "2903053",
+          "description": "Device not connected."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "replyReport",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Reply report to a remote HID host device. It can be 0 in case Report Id are not defined in descriptor.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BLUETOOTH",
+        "@param { ReportType } type - Report type for reply",
+        "@param { number } id - Report Id, as defined in descriptor.",
+        "@param { Uint8Array } reportData - Report Data send to host.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 2900003 - Bluetooth disabled.",
+        "@throws { BusinessError } 2900099 - Operation failed.",
+        "@throws { BusinessError } 2903052 - App not register.",
+        "@throws { BusinessError } 2903053 - Device not connected.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "HidDeviceProfile",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "ReportType",
+          "必填": true,
+          "说明": "Report type for reply"
+        },
+        {
+          "名称": "id",
+          "类型": "number",
+          "必填": true,
+          "说明": "Report Id, as defined in descriptor."
+        },
+        {
+          "名称": "reportData",
+          "类型": "Uint8Array",
+          "必填": true,
+          "说明": "Report Data send to host."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "2900003",
+          "description": "Bluetooth disabled."
+        },
+        {
+          "code": "2900099",
+          "description": "Operation failed."
+        },
+        {
+          "code": "2903052",
+          "description": "App not register."
+        },
+        {
+          "code": "2903053",
+          "description": "Device not connected."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "reportError",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Report error to a remote HID host device.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BLUETOOTH",
+        "@param { ErrorReason } error - error reason to send.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 2900003 - Bluetooth disabled.",
+        "@throws { BusinessError } 2900099 - Operation failed.",
+        "@throws { BusinessError } 2903052 - App not register.",
+        "@throws { BusinessError } 2903053 - Device not connected.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "HidDeviceProfile",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "error",
+          "类型": "ErrorReason",
+          "必填": true,
+          "说明": "error reason to send."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "2900003",
+          "description": "Bluetooth disabled."
+        },
+        {
+          "code": "2900099",
+          "description": "Operation failed."
+        },
+        {
+          "code": "2903052",
+          "description": "App not register."
+        },
+        {
+          "code": "2903053",
+          "description": "Device not connected."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "onGetReport",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Subscribe to the event reported when GET_REMOTE message is received from the remote.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BLUETOOTH",
+        "@param { Callback<GetReportData> } callback - Callback used to listen for event.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "HidDeviceProfile",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "Callback<GetReportData>",
+          "必填": true,
+          "说明": "Callback used to listen for event."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "offGetReport",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unsubscribe from the event that a GET_REMOTE message is received from the peer device.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BLUETOOTH",
+        "@param { Callback<GetReportData> } [callback] - Callback used to listen for event.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "HidDeviceProfile",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "Callback<GetReportData> } [callback] - Callback used to listen for event."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "onSetReport",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Subscribe to the event reported when SET_REMOTE message is received from the remote.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BLUETOOTH",
+        "@param { Callback<SetReportData> } callback - Callback used to listen for event.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "HidDeviceProfile",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "Callback<SetReportData>",
+          "必填": true,
+          "说明": "Callback used to listen for event."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "offSetReport",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unsubscribe from the event that a SET_REMOTE message is received from the peer device.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BLUETOOTH",
+        "@param { Callback<SetReportData> } [callback] - Callback used to listen for event.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "HidDeviceProfile",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "Callback<SetReportData> } [callback] - Callback used to listen for event."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "onInterruptDataReceived",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Subscribe to the event reported when InterruptData is received from the remote.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BLUETOOTH",
+        "@param { Callback<InterruptData> } callback - Callback used to listen for event.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "HidDeviceProfile",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "Callback<InterruptData>",
+          "必填": true,
+          "说明": "Callback used to listen for event."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "offInterruptDataReceived",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unsubscribe from the event reported when InterruptData is received from the remote.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BLUETOOTH",
+        "@param { Callback<InterruptData> } [callback] - Callback used to listen for event.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "HidDeviceProfile",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "Callback<InterruptData> } [callback] - Callback used to listen for event."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "onSetProtocol",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Subscribe to the event reported when SET_PROTOCOL message is received from the remote.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BLUETOOTH",
+        "@param { Callback<ProtocolData> } callback - Callback used to listen for event.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "HidDeviceProfile",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "Callback<ProtocolData>",
+          "必填": true,
+          "说明": "Callback used to listen for event."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "offSetProtocol",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unsubscribe from the event that a SET_PROTOCOL message is received from the peer device.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BLUETOOTH",
+        "@param { Callback<ProtocolData> } [callback] - Callback used to listen for event.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "HidDeviceProfile",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "Callback<ProtocolData> } [callback] - Callback used to listen for event."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "onVirtualCableUnplug",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Subscribe to the event reported when virtual Cable is removed.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BLUETOOTH",
+        "@param { Callback<void> } callback - Callback used to listen for event.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "HidDeviceProfile",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "Callback<void>",
+          "必填": true,
+          "说明": "Callback used to listen for event."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "offVirtualCableUnplug",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unsubscribe from the event reported when virtual Cable is removed.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BLUETOOTH",
+        "@param { Callback<void> } [callback] - Callback used to listen for event.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "HidDeviceProfile",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "Callback<void> } [callback] - Callback used to listen for event."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "HidDeviceSdp",
+      "所属模块": "未知模块",
+      "功能描述": "Describe the HID device capability fields of this endpoint being queried.",
+      "注释信息": [
+        "@typedef HidDeviceSdp",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "hid",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "name",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "name of this Bluetooth hid device. Maximum length is 50 bytes.",
+      "注释信息": [
+        "@type { string }",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "HidDeviceSdp",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "description",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "description for this Bluetooth hid device. Maximum length is 50 bytes.",
+      "注释信息": [
+        "@type { string }",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "HidDeviceSdp",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "provider",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "provider of this Bluetooth hid device. Maximum length is 50 bytes.",
+      "注释信息": [
+        "@type { string }",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "HidDeviceSdp",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "class",
+      "名称": null,
+      "所属模块": "未知模块",
+      "功能描述": "Subclass of this Bluetooth HID device. Subclass represents the specific HID device type.",
+      "注释信息": [
+        "@type { Subclass }",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "HidDeviceSdp",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "descriptors",
+      "属性类型": "Uint8Array",
+      "所属模块": "未知模块",
+      "功能描述": "descriptors identifies the descriptors associated with the bluetooth hid device.",
+      "注释信息": [
+        "@type { Uint8Array }",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "HidDeviceSdp",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "HidDeviceQos",
+      "所属模块": "未知模块",
+      "功能描述": "Represents the Quality of Service (QoS) settings for a bluetooth hid device application.",
+      "注释信息": [
+        "@typedef HidDeviceQos",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "hid",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "serviceType",
+      "属性类型": "ServiceType",
+      "所属模块": "未知模块",
+      "功能描述": "L2CAP service type, default = SERVICE_BEST_EFFORT.",
+      "注释信息": [
+        "@type { ?ServiceType }",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "HidDeviceQos",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "tokenRate",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "L2CAP tokenRate, means transmission rate, default = 0.",
+      "注释信息": [
+        "@type { ?number }",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "HidDeviceQos",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "tokenBucketSize",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "L2CAP token bucket size, default = 0.",
+      "注释信息": [
+        "@type { ?number }",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "HidDeviceQos",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "peakBandwidth",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "L2CAP peak bandwidth, default = 0.",
+      "注释信息": [
+        "@type { ?number }",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "HidDeviceQos",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "latency",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "L2CAP latency, default = -1.",
+      "注释信息": [
+        "@type { ?number }",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "HidDeviceQos",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "delayVariation",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "L2CAP delay variation, default = -1.",
+      "注释信息": [
+        "@type { ?number }",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "HidDeviceQos",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "GetReportData",
+      "所属模块": "未知模块",
+      "功能描述": "Describe the GET_REPORT data is received from remote host.",
+      "注释信息": [
+        "@typedef GetReportData",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "hid",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "type",
+      "属性类型": "ReportType",
+      "所属模块": "未知模块",
+      "功能描述": "reportType of GET_REPORT data.",
+      "注释信息": [
+        "@type { ReportType }",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "GetReportData",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "id",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "id of GET_REPORT data.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "GetReportData",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "bufferSize",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "bufferSize of GET_REPORT data, maximum number of octets to transfer during data phase.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "GetReportData",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "SetReportData",
+      "所属模块": "未知模块",
+      "功能描述": "Describe the SET_REPORT data is received from remote host.",
+      "注释信息": [
+        "@typedef SetReportData",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "hid",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "type",
+      "属性类型": "ReportType",
+      "所属模块": "未知模块",
+      "功能描述": "reportType of SET_REPORT data.",
+      "注释信息": [
+        "@type { ReportType }",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "SetReportData",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "id",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "id of SET_REPORT data.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "SetReportData",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "data",
+      "属性类型": "Uint8Array",
+      "所属模块": "未知模块",
+      "功能描述": "data of SET_REPORT data.",
+      "注释信息": [
+        "@type { Uint8Array }",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "SetReportData",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "InterruptData",
+      "所属模块": "未知模块",
+      "功能描述": "Describe the interrupt data is received from remote host.",
+      "注释信息": [
+        "@typedef InterruptData",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "hid",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "id",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "id of interrupt data.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "InterruptData",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "data",
+      "属性类型": "Uint8Array",
+      "所属模块": "未知模块",
+      "功能描述": "data of interrupt data.",
+      "注释信息": [
+        "@type { Uint8Array }",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "InterruptData",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "ProtocolData",
+      "所属模块": "未知模块",
+      "功能描述": "Describe the protocol data is received from remote host.",
+      "注释信息": [
+        "@typedef ProtocolData",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "hid",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "protocol",
+      "属性类型": "ProtocolType",
+      "所属模块": "未知模块",
+      "功能描述": "protocol of protocol data.",
+      "注释信息": [
+        "@type { ProtocolType }",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "ProtocolData",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "class",
+      "名称": null,
+      "所属模块": "未知模块",
+      "功能描述": "Describe the subclass.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "hid",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "SUBCLASS_UNCATEGORIZED",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "Uncategorized subclass.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": null,
+      "since_version": "23",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "SUBCLASS_JOYSTICK",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Joystick subclass.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": null,
+      "since_version": "23",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "SUBCLASS_GAMEPAD",
+      "值": "2",
+      "所属模块": "未知模块",
+      "功能描述": "Gamepad subclass.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": null,
+      "since_version": "23",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "SUBCLASS_REMOTE_CONTROL",
+      "值": "3",
+      "所属模块": "未知模块",
+      "功能描述": "Remote control subclass.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": null,
+      "since_version": "23",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "SUBCLASS_SENSING_DEVICE",
+      "值": "4",
+      "所属模块": "未知模块",
+      "功能描述": "Sensing device subclass.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": null,
+      "since_version": "23",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "SUBCLASS_DIGITIZER_TABLET",
+      "值": "5",
+      "所属模块": "未知模块",
+      "功能描述": "digitizer tablet subclass.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": null,
+      "since_version": "23",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "SUBCLASS_CARD_READER",
+      "值": "6",
+      "所属模块": "未知模块",
+      "功能描述": "Card reader subclass.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": null,
+      "since_version": "23",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "SUBCLASS_KEYBOARD",
+      "值": "64",
+      "所属模块": "未知模块",
+      "功能描述": "Keyboard subclass.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": null,
+      "since_version": "23",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "SUBCLASS_MOUSE",
+      "值": "128",
+      "所属模块": "未知模块",
+      "功能描述": "Mouse subclass.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": null,
+      "since_version": "23",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "SUBCLASS_COMBO",
+      "值": "192",
+      "所属模块": "未知模块",
+      "功能描述": "Combo subclass.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": null,
+      "since_version": "23",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "ReportType",
+      "所属模块": "未知模块",
+      "功能描述": "Describe the report type.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "hid",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "REPORT_TYPE_INPUT",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Report type input.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "ReportType",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "REPORT_TYPE_OUTPUT",
+      "值": "2",
+      "所属模块": "未知模块",
+      "功能描述": "Report type output.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "ReportType",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "REPORT_TYPE_FEATURE",
+      "值": "3",
+      "所属模块": "未知模块",
+      "功能描述": "Report type feature.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "ReportType",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "ServiceType",
+      "所属模块": "未知模块",
+      "功能描述": "Describe the l2cap service type.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "hid",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "SERVICE_NO_TRAFFIC",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "Service type no traffic.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "ServiceType",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "SERVICE_BEST_EFFORT",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Service type best effort.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "ServiceType",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "SERVICE_GUARANTEED",
+      "值": "2",
+      "所属模块": "未知模块",
+      "功能描述": "Service type guaranteed.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "ServiceType",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "ErrorReason",
+      "所属模块": "未知模块",
+      "功能描述": "Describe the error reason.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "hid",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "RSP_SUCCESS",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "Constant representing success response for set report.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "ErrorReason",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "RSP_NOT_READY",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Constant representing error response for set report due to not ready.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "ErrorReason",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "RSP_INVALID_REPORT_ID",
+      "值": "2",
+      "所属模块": "未知模块",
+      "功能描述": "Constant representing error response for set report due to invalid report ID.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "ErrorReason",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "RSP_UNSUPPORTED_REQ",
+      "值": "3",
+      "所属模块": "未知模块",
+      "功能描述": "Constant representing error response for set report due to unsupported request.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "ErrorReason",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "RSP_INVALID_PARAM",
+      "值": "4",
+      "所属模块": "未知模块",
+      "功能描述": "Constant representing error response for set report due to invalid parameter.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "ErrorReason",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "RSP_UNKNOWN",
+      "值": "14",
+      "所属模块": "未知模块",
+      "功能描述": "Constant representing error response for Set Report with unknown reason.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "ErrorReason",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "ProtocolType",
+      "所属模块": "未知模块",
+      "功能描述": "Describe the protocol type.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "hid",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "PROTOCOL_BOOT_MODE",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "Protocol type boot mode.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "ProtocolType",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "PROTOCOL_REPORT_MODE",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Protocol type report mode.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "ProtocolType",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    }
+  ]
+}

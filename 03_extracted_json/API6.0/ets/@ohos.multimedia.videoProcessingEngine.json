@@ -1,0 +1,428 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.ImageKit",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "namespace",
+      "名称": "videoProcessingEngine",
+      "所属模块": "@kit.ImageKit",
+      "功能描述": "This module provides the capability of content processing for images, including image scaling.",
+      "注释信息": [
+        "@namespace videoProcessingEngine",
+        "@syscap SystemCapability.Multimedia.VideoProcessingEngine",
+        "@crossplatform",
+        "@form",
+        "@since 18"
+      ],
+      "层级": 1,
+      "上级": "@kit.ImageKit",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Multimedia.VideoProcessingEngine",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "enum",
+      "名称": "QualityLevel",
+      "所属模块": "未知模块",
+      "功能描述": "Levels of processing quality for detail enhancement.",
+      "注释信息": [
+        "@enum {number}",
+        "@syscap SystemCapability.Multimedia.VideoProcessingEngine",
+        "@crossplatform",
+        "@form",
+        "@since 18"
+      ],
+      "层级": 2,
+      "上级": "videoProcessingEngine",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Multimedia.VideoProcessingEngine",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "NONE",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "No detail enhancement.",
+      "注释信息": [
+        "@syscap SystemCapability.Multimedia.VideoProcessingEngine",
+        "@crossplatform",
+        "@form",
+        "@since 18"
+      ],
+      "层级": 2,
+      "上级": "QualityLevel",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Multimedia.VideoProcessingEngine",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "LOW",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "A low level of detail enhancement quality but with a fast speed. It's the default level.",
+      "注释信息": [
+        "@syscap SystemCapability.Multimedia.VideoProcessingEngine",
+        "@crossplatform",
+        "@form",
+        "@since 18"
+      ],
+      "层级": 2,
+      "上级": "QualityLevel",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Multimedia.VideoProcessingEngine",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "MEDIUM",
+      "值": "2",
+      "所属模块": "未知模块",
+      "功能描述": "A medium level of detail enhancement quality. Its speed is between the low setting and high setting.",
+      "注释信息": [
+        "@syscap SystemCapability.Multimedia.VideoProcessingEngine",
+        "@crossplatform",
+        "@form",
+        "@since 18"
+      ],
+      "层级": 2,
+      "上级": "QualityLevel",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Multimedia.VideoProcessingEngine",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "HIGH",
+      "值": "3",
+      "所属模块": "未知模块",
+      "功能描述": "A high level of detail enhancement quality but with a relatively slow speed.",
+      "注释信息": [
+        "@syscap SystemCapability.Multimedia.VideoProcessingEngine",
+        "@crossplatform",
+        "@form",
+        "@since 18"
+      ],
+      "层级": 2,
+      "上级": "QualityLevel",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Multimedia.VideoProcessingEngine",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "interface",
+      "名称": "ImageProcessor",
+      "所属模块": "未知模块",
+      "功能描述": "Provides the ImageProcessor type, including the processing function.",
+      "注释信息": [
+        "@typedef ImageProcessor",
+        "@syscap SystemCapability.Multimedia.VideoProcessingEngine",
+        "@crossplatform",
+        "@form",
+        "@since 18"
+      ],
+      "层级": 2,
+      "上级": "videoProcessingEngine",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Multimedia.VideoProcessingEngine",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "enhanceDetail",
+      "返回值": "Promise<image.PixelMap>",
+      "所属模块": "未知模块",
+      "功能描述": "The function generate the destinationImage from sourceImage with necessary scaling operation <br>according to width and height. Different levels of scaling methonds are provided to <br>balance performance and image quality. This method uses a promise to return the result. <br>limited device capabilities. <br>all of the following error conditions: <br>1 - Invalid input or output image buffer - The image buffer width(height) <br>is too large or colorspace is incorrect. <br>2 - Invalid parameter - The parameter does not contain valid information, <br>such as detail enhancer level is incorrect.",
+      "注释信息": [
+        "@param { image.PixelMap } sourceImage - The source pixelmap.",
+        "@param { number } width - The zoom value of width.",
+        "@param { number } height - The zoom value of height.",
+        "@param { QualityLevel } [level] - The quality level.",
+        "@returns { Promise<image.PixelMap> } A Promise instance used to return the PixelMap object.",
+        "@throws { BusinessError } 801 - Capability not supported. Function enhanceDetail can not work correctly due to",
+        "@throws { BusinessError } 29200007 - Out of memory.",
+        "@throws { BusinessError } 29200009 - Input value is invalid. This error is returned for",
+        "@syscap SystemCapability.Multimedia.VideoProcessingEngine",
+        "@crossplatform",
+        "@form",
+        "@since 18"
+      ],
+      "层级": 2,
+      "上级": "ImageProcessor",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Multimedia.VideoProcessingEngine",
+      "parameters": [
+        {
+          "名称": "sourceImage",
+          "类型": "image.PixelMap",
+          "必填": true,
+          "说明": "The source pixelmap."
+        },
+        {
+          "名称": "width",
+          "类型": "number",
+          "必填": true,
+          "说明": "The zoom value of width."
+        },
+        {
+          "名称": "height",
+          "类型": "number",
+          "必填": true,
+          "说明": "The zoom value of height."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "QualityLevel } [level] - The quality level."
+        }
+      ],
+      "return_description": "A Promise instance used to return the PixelMap object.",
+      "error_codes": [
+        {
+          "code": "801",
+          "description": "Capability not supported. Function enhanceDetail can not work correctly due to"
+        },
+        {
+          "code": "29200007",
+          "description": "Out of memory."
+        },
+        {
+          "code": "29200009",
+          "description": "Input value is invalid. This error is returned for"
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "enhanceDetailSync",
+      "返回值": "image.PixelMap",
+      "所属模块": "未知模块",
+      "功能描述": "The function generate the destinationImage from sourceImage with necessary scaling operation <br>according to width and height. Different levels of scaling methonds are provided to <br>balance performance and image quality. <br>if the operation is successful; Otherwise, return undefined. <br>to limited device capabilities. <br>all of the following error conditions: <br>1 - Invalid input or output image buffer - The image buffer width(height) <br>is too large or colorspace is incorrect. <br>2 - Invalid parameter - The parameter does not contain valid information, <br>such as detail enhancer level is incorrect.",
+      "注释信息": [
+        "@param { image.PixelMap } sourceImage - The source pixelmap.",
+        "@param { number } width - The zoom value of width.",
+        "@param { number } height - The zoom value of height.",
+        "@param { QualityLevel } [level] - The quality level.",
+        "@returns { image.PixelMap } Returns the destination pixelmap instance .",
+        "@throws { BusinessError } 801 - Capability not supported. Function enhanceDetailSync can not work correctly due",
+        "@throws { BusinessError } 29200004 - Failed to process image buffer. For example, the processing times out.",
+        "@throws { BusinessError } 29200007 - Out of memory.",
+        "@throws { BusinessError } 29200009 - Input value is invalid. This error is returned for",
+        "@syscap SystemCapability.Multimedia.VideoProcessingEngine",
+        "@crossplatform",
+        "@form",
+        "@since 18"
+      ],
+      "层级": 2,
+      "上级": "ImageProcessor",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Multimedia.VideoProcessingEngine",
+      "parameters": [
+        {
+          "名称": "sourceImage",
+          "类型": "image.PixelMap",
+          "必填": true,
+          "说明": "The source pixelmap."
+        },
+        {
+          "名称": "width",
+          "类型": "number",
+          "必填": true,
+          "说明": "The zoom value of width."
+        },
+        {
+          "名称": "height",
+          "类型": "number",
+          "必填": true,
+          "说明": "The zoom value of height."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "QualityLevel } [level] - The quality level."
+        }
+      ],
+      "return_description": "Returns the destination pixelmap instance .",
+      "error_codes": [
+        {
+          "code": "801",
+          "description": "Capability not supported. Function enhanceDetailSync can not work correctly due"
+        },
+        {
+          "code": "29200004",
+          "description": "Failed to process image buffer. For example, the processing times out."
+        },
+        {
+          "code": "29200007",
+          "description": "Out of memory."
+        },
+        {
+          "code": "29200009",
+          "description": "Input value is invalid. This error is returned for"
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "enhanceDetail",
+      "返回值": "Promise<image.PixelMap>",
+      "所属模块": "未知模块",
+      "功能描述": "The function generate the destinationImage from sourceImage with necessary scaling operation <br>according to the zoom ratio. Different levels of scaling methonds are provided to <br>balance performance and image quality. This method uses a promise to return the result. <br>limited device capabilities. <br>all of the following error conditions: <br>1 - Invalid input or output image buffer - The image buffer width(height) <br>is too large or colorspace is incorrect. <br>2 - Invalid parameter - The parameter does not contain valid information, <br>such as detail enhancer level is incorrect.",
+      "注释信息": [
+        "@param { image.PixelMap } sourceImage - The source pixelmap.",
+        "@param { number } scale - The zoom ratio.",
+        "@param { QualityLevel } [level] - The quality level.",
+        "@returns { Promise<image.PixelMap> } A Promise instance used to return the PixelMap object.",
+        "@throws { BusinessError } 801 - Capability not supported. Function enhanceDetail can not work correctly due to",
+        "@throws { BusinessError } 29200007 - Out of memory.",
+        "@throws { BusinessError } 29200009 - Input value is invalid. This error is returned for",
+        "@syscap SystemCapability.Multimedia.VideoProcessingEngine",
+        "@crossplatform",
+        "@form",
+        "@since 18"
+      ],
+      "层级": 2,
+      "上级": "ImageProcessor",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Multimedia.VideoProcessingEngine",
+      "parameters": [
+        {
+          "名称": "sourceImage",
+          "类型": "image.PixelMap",
+          "必填": true,
+          "说明": "The source pixelmap."
+        },
+        {
+          "名称": "scale",
+          "类型": "number",
+          "必填": true,
+          "说明": "The zoom ratio."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "QualityLevel } [level] - The quality level."
+        }
+      ],
+      "return_description": "A Promise instance used to return the PixelMap object.",
+      "error_codes": [
+        {
+          "code": "801",
+          "description": "Capability not supported. Function enhanceDetail can not work correctly due to"
+        },
+        {
+          "code": "29200007",
+          "description": "Out of memory."
+        },
+        {
+          "code": "29200009",
+          "description": "Input value is invalid. This error is returned for"
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "enhanceDetailSync",
+      "返回值": "image.PixelMap",
+      "所属模块": "未知模块",
+      "功能描述": "The function generate the destinationImage from sourceImage with necessary scaling operation <br>according to the zoom ratio. Different levels of scaling methonds are provided to <br>balance performance and image quality. <br>if the operation is successful; Otherwise, return undefined. <br>to limited device capabilities. <br>all of the following error conditions: <br>1 - Invalid input or output image buffer - The image buffer width(height) <br>is too large or colorspace is incorrect. <br>2 - Invalid parameter - The parameter does not contain valid information, <br>such as detail enhancer level is incorrect.",
+      "注释信息": [
+        "@param { image.PixelMap } sourceImage - The source pixelmap.",
+        "@param { number } scale - The zoom ratio.",
+        "@param { QualityLevel } [level] - The quality level.",
+        "@returns { image.PixelMap } Returns the destination pixelmap instance",
+        "@throws { BusinessError } 801 - Capability not supported. Function enhanceDetailSync can not work correctly due",
+        "@throws { BusinessError } 29200004 - Failed to process image buffer. For example, the processing times out.",
+        "@throws { BusinessError } 29200007 - Out of memory.",
+        "@throws { BusinessError } 29200009 - Input value is invalid. This error is returned for",
+        "@syscap SystemCapability.Multimedia.VideoProcessingEngine",
+        "@crossplatform",
+        "@form",
+        "@since 18"
+      ],
+      "层级": 2,
+      "上级": "ImageProcessor",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Multimedia.VideoProcessingEngine",
+      "parameters": [
+        {
+          "名称": "sourceImage",
+          "类型": "image.PixelMap",
+          "必填": true,
+          "说明": "The source pixelmap."
+        },
+        {
+          "名称": "scale",
+          "类型": "number",
+          "必填": true,
+          "说明": "The zoom ratio."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "QualityLevel } [level] - The quality level."
+        }
+      ],
+      "return_description": "Returns the destination pixelmap instance",
+      "error_codes": [
+        {
+          "code": "801",
+          "description": "Capability not supported. Function enhanceDetailSync can not work correctly due"
+        },
+        {
+          "code": "29200004",
+          "description": "Failed to process image buffer. For example, the processing times out."
+        },
+        {
+          "code": "29200007",
+          "description": "Out of memory."
+        },
+        {
+          "code": "29200009",
+          "description": "Input value is invalid. This error is returned for"
+        }
+      ],
+      "版本": "API6.0"
+    }
+  ]
+}

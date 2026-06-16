@@ -1,0 +1,386 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.ArkUI",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "namespace",
+      "名称": "screenshot",
+      "所属模块": "@kit.ArkUI",
+      "功能描述": "Declares the screenshot APIs.",
+      "注释信息": [
+        "@namespace screenshot",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "@kit.ArkUI",
+      "since_version": "12",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "save",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Takes a screenshot and saves it as a PixelMap object. <br>2.Incorrect parameter types.",
+      "注释信息": [
+        "@permission ohos.permission.CAPTURE_SCREEN",
+        "@param { ScreenshotOptions } options - Screenshot options, which consist of screenRect, imageSize, and rotation. You need to set these parameters",
+        "@param { AsyncCallback<image.PixelMap> } callback - Callback used to return a PixelMap object.",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission required to call the API.",
+        "@throws { BusinessError } 202 - Permission verification failed. A non-system application calls a system API.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1.Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 1400001 - Invalid display or screen.",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@systemapi Hide this for inner system use.",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "screenshot",
+      "since_version": "11",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [
+        {
+          "名称": "options",
+          "类型": "ScreenshotOptions",
+          "必填": true,
+          "说明": "Screenshot options, which consist of screenRect, imageSize, and rotation. You need to set these parameters"
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<image.PixelMap>",
+          "必填": true,
+          "说明": "Callback used to return a PixelMap object."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission required to call the API."
+        },
+        {
+          "code": "202",
+          "description": "Permission verification failed. A non-system application calls a system API."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1.Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "1400001",
+          "description": "Invalid display or screen."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "saveHdrPicture",
+      "返回值": "Promise<Array<image.PixelMap>>",
+      "所属模块": "未知模块",
+      "功能描述": "Screen capture, supporting HDR screenshots when there is HDR content. return two PixelMap objects: the first one as SDR and the second one as HDR. When no HDR content is available, only return one SDR PixelMap object.",
+      "注释信息": [
+        "@permission ohos.permission.CAPTURE_SCREEN",
+        "@param { HdrScreenshotOptions } [options] - Screenshot parameters.",
+        "@returns { Promise<Array<image.PixelMap>> } Promise used to return a PixelMap array. When HDR content is available,",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission required to call the API.",
+        "@throws { BusinessError } 202 - Permission verification failed. A non-system application calls a system API.",
+        "@throws { BusinessError } 801 - Capability not supported. Failed to call the API due to limited device capabilities.",
+        "@throws { BusinessError } 1400001 - Invalid display or screen.",
+        "@throws { BusinessError } 1400003 - This display manager service works abnormally.",
+        "@throws { BusinessError } 1400004 - Parameter error. Possible cause: 1.Invalid parameter range.",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@systemapi Hide this for inner system use.",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "screenshot",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "HdrScreenshotOptions } [options] - Screenshot parameters."
+        }
+      ],
+      "return_description": "Promise used to return a PixelMap array. When HDR content is available,",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission required to call the API."
+        },
+        {
+          "code": "202",
+          "description": "Permission verification failed. A non-system application calls a system API."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported. Failed to call the API due to limited device capabilities."
+        },
+        {
+          "code": "1400001",
+          "description": "Invalid display or screen."
+        },
+        {
+          "code": "1400003",
+          "description": "This display manager service works abnormally."
+        },
+        {
+          "code": "1400004",
+          "description": "Parameter error. Possible cause: 1.Invalid parameter range."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "save",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Takes a screenshot and saves it as a PixelMap object.",
+      "注释信息": [
+        "@permission ohos.permission.CAPTURE_SCREEN",
+        "@param { AsyncCallback<image.PixelMap> } callback Callback used to return a PixelMap object.",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission required to call the API.",
+        "@throws { BusinessError } 202 - Permission verification failed. A non-system application calls a system API.",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@systemapi Hide this for inner system use.",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "screenshot",
+      "since_version": "7",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<image.PixelMap>",
+          "必填": true,
+          "说明": "Callback used to return a PixelMap object."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission required to call the API."
+        },
+        {
+          "code": "202",
+          "description": "Permission verification failed. A non-system application calls a system API."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "save",
+      "返回值": "Promise<image.PixelMap>",
+      "所属模块": "未知模块",
+      "功能描述": "Takes a screenshot and saves it as a PixelMap object. <br>2.Incorrect parameter types.",
+      "注释信息": [
+        "@permission ohos.permission.CAPTURE_SCREEN",
+        "@param { ScreenshotOptions } options Screenshot options, which consist of screenRect, imageSize, and rotation. You need to set these parameters",
+        "@returns { Promise<image.PixelMap> } Promise used to return a PixelMap object.",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission required to call the API.",
+        "@throws { BusinessError } 202 - Permission verification failed. A non-system application calls a system API.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1.Mandatory parameters are left unspecified.",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@systemapi Hide this for inner system use.",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "screenshot",
+      "since_version": "7",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [
+        {
+          "名称": "options",
+          "类型": "ScreenshotOptions",
+          "必填": true,
+          "说明": "Screenshot options, which consist of screenRect, imageSize, and rotation. You need to set these parameters"
+        }
+      ],
+      "return_description": "Promise used to return a PixelMap object.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission required to call the API."
+        },
+        {
+          "code": "202",
+          "description": "Permission verification failed. A non-system application calls a system API."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1.Mandatory parameters are left unspecified."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "capture",
+      "返回值": "Promise<image.PixelMap>",
+      "所属模块": "未知模块",
+      "功能描述": "Takes a capture and return as a PixelMap object. 2.Incorrect parameter types.",
+      "注释信息": [
+        "@permission ohos.permission.CUSTOM_SCREEN_CAPTURE",
+        "@param { CaptureOption } options which consist of CaptureOption.",
+        "@returns { Promise<image.PixelMap> } Promise used to return a PixelMap object.",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission required to call the API.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1.Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 801 - Capability not supported on this device.",
+        "@throws { BusinessError } 1400003 - This display manager service works abnormally.",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 1,
+      "上级": "screenshot",
+      "since_version": "14",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [
+        {
+          "名称": "options",
+          "类型": "CaptureOption",
+          "必填": true,
+          "说明": "which consist of CaptureOption."
+        }
+      ],
+      "return_description": "Promise used to return a PixelMap object.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission required to call the API."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1.Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported on this device."
+        },
+        {
+          "code": "1400003",
+          "description": "This display manager service works abnormally."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "pick",
+      "返回值": "Promise<PickInfo>",
+      "所属模块": "未知模块",
+      "功能描述": "Takes a screenshot and picks it as a PickInfo object.",
+      "注释信息": [
+        "@returns { Promise<PickInfo> } Promise used to return a PickInfo object.",
+        "@throws { BusinessError } 801 - Capability not supported on this device.",
+        "@throws { BusinessError } 1400003 - This display manager service works abnormally.",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "screenshot",
+      "since_version": "12",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [],
+      "return_description": "Promise used to return a PickInfo object.",
+      "error_codes": [
+        {
+          "code": "801",
+          "description": "Capability not supported on this device."
+        },
+        {
+          "code": "1400003",
+          "description": "This display manager service works abnormally."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "interface",
+      "名称": "PickInfo",
+      "所属模块": "未知模块",
+      "功能描述": "Describes the region of the screen to pick info.",
+      "注释信息": [
+        "@interface PickInfo",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "screenshot",
+      "since_version": "12",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "property",
+      "名称": "pickRect",
+      "属性类型": "Rect",
+      "所属模块": "未知模块",
+      "功能描述": "the region of the screen to capture.",
+      "注释信息": [
+        "@type { Rect }",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "PickInfo",
+      "since_version": "12",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "property",
+      "名称": "pixelMap",
+      "属性类型": "image.PixelMap",
+      "所属模块": "未知模块",
+      "功能描述": "the region of the screen to capture pixelMap.",
+      "注释信息": [
+        "@type { image.PixelMap }",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "PickInfo",
+      "since_version": "12",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    }
+  ]
+}

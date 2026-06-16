@@ -1,0 +1,926 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.ArkGraphics2D",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "namespace",
+      "名称": "effectKit",
+      "所属模块": "@kit.ArkGraphics2D",
+      "功能描述": "",
+      "注释信息": [
+        "@namespace effectKit",
+        "@syscap SystemCapability.Multimedia.Image.Core",
+        "@crossplatform",
+        "@form",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 1,
+      "上级": "@kit.ArkGraphics2D",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Multimedia.Image.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "Filter",
+      "所属模块": "未知模块",
+      "功能描述": "A class used to add a specified effect to an image. Before calling any method of Filter, use createEffect to create a Filter instance.",
+      "注释信息": [
+        "@typedef Filter",
+        "@syscap SystemCapability.Multimedia.Image.Core",
+        "@crossplatform",
+        "@form",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "effectKit",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Multimedia.Image.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "blur",
+      "返回值": "Filter",
+      "所属模块": "未知模块",
+      "功能描述": "Adds the blur effect to the filter linked list, and returns the head node of the linked list. A larger value indicates a more obvious effect.",
+      "注释信息": [
+        "@param { number } radius - Blur radius, in pixels. The blur effect is proportional to the configured value.",
+        "@returns { Filter } Final image effect.",
+        "@syscap SystemCapability.Multimedia.Image.Core",
+        "@crossplatform",
+        "@form",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "Filter",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Multimedia.Image.Core",
+      "parameters": [
+        {
+          "名称": "radius",
+          "类型": "number",
+          "必填": true,
+          "说明": "Blur radius, in pixels. The blur effect is proportional to the configured value."
+        }
+      ],
+      "return_description": "Final image effect.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "blur",
+      "返回值": "Filter",
+      "所属模块": "未知模块",
+      "功能描述": "Adds the blur effect to the filter linked list, and returns the head node of the linked list. A larger value indicates a more obvious effect. only CPU rendering is supported. Therefore, the tile mode supports only DECAL.",
+      "注释信息": [
+        "@param { number } radius - Blur radius, in pixels. The blur effect is proportional to the configured value.",
+        "@param { TileMode } tileMode - Tile mode of the shader effect. The blur effect of image edges is affected. Currently,",
+        "@returns { Filter } Final image effect.",
+        "@syscap SystemCapability.Multimedia.Image.Core",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "Filter",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Multimedia.Image.Core",
+      "parameters": [
+        {
+          "名称": "radius",
+          "类型": "number",
+          "必填": true,
+          "说明": "Blur radius, in pixels. The blur effect is proportional to the configured value."
+        },
+        {
+          "名称": "tileMode",
+          "类型": "TileMode",
+          "必填": true,
+          "说明": "Tile mode of the shader effect. The blur effect of image edges is affected. Currently,"
+        }
+      ],
+      "return_description": "Final image effect.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "brightness",
+      "返回值": "Filter",
+      "所属模块": "未知模块",
+      "功能描述": "Adds the brightness effect to the filter linked list, and returns the head node of the linked list.",
+      "注释信息": [
+        "@param { number } bright - Brightness value, ranging from 0 to 1. When the value is 0, the image brightness remains unchanged.",
+        "@returns { Filter } Final image effect.",
+        "@syscap SystemCapability.Multimedia.Image.Core",
+        "@crossplatform",
+        "@form",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "Filter",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Multimedia.Image.Core",
+      "parameters": [
+        {
+          "名称": "bright",
+          "类型": "number",
+          "必填": true,
+          "说明": "Brightness value, ranging from 0 to 1. When the value is 0, the image brightness remains unchanged."
+        }
+      ],
+      "return_description": "Final image effect.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "grayscale",
+      "返回值": "Filter",
+      "所属模块": "未知模块",
+      "功能描述": "Adds the grayscale effect to the filter linked list, and returns the head node of the linked list.",
+      "注释信息": [
+        "@returns { Filter } Final image effect.",
+        "@syscap SystemCapability.Multimedia.Image.Core",
+        "@crossplatform",
+        "@form",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "Filter",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Multimedia.Image.Core",
+      "parameters": [],
+      "return_description": "Final image effect.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "invert",
+      "返回值": "Filter",
+      "所属模块": "未知模块",
+      "功能描述": "Adds the inversion effect to the filter linked list, and returns the head node of the linked list.",
+      "注释信息": [
+        "@returns { Filter } Final image effect.",
+        "@syscap SystemCapability.Multimedia.Image.Core",
+        "@crossplatform",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "Filter",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Multimedia.Image.Core",
+      "parameters": [],
+      "return_description": "Final image effect.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "setColorMatrix",
+      "返回值": "Filter",
+      "所属模块": "未知模块",
+      "功能描述": "Adds a custom effect to the filter linked list, and returns the head node of the linked list. A 5 x 4 matrix can be created. The value range of the matrix element is [0, 1], where 0 indicates that the color channel is not involved in the calculation, and 1 indicates that the color channel is involved in the calculation and retains the original weight.",
+      "注释信息": [
+        "@param { Array<number> } colorMatrix - Custom color matrix.",
+        "@returns { Filter } Final image effect.",
+        "@throws { BusinessError } 401 - Input parameter error.",
+        "@syscap SystemCapability.Multimedia.Image.Core",
+        "@crossplatform",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "Filter",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Multimedia.Image.Core",
+      "parameters": [
+        {
+          "名称": "colorMatrix",
+          "类型": "Array<number>",
+          "必填": true,
+          "说明": "Custom color matrix."
+        }
+      ],
+      "return_description": "Final image effect.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Input parameter error."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getPixelMap",
+      "返回值": "image.PixelMap",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains image.PixelMap of the source image to which the filter linked list is added.",
+      "注释信息": [
+        "@returns { image.PixelMap } image.PixelMap.",
+        "@syscap SystemCapability.Multimedia.Image.Core",
+        "@since 9",
+        "@deprecated since 11",
+        "@useinstead effectKit.Filter#getEffectPixelMap"
+      ],
+      "层级": 2,
+      "上级": "Filter",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Multimedia.Image.Core",
+      "parameters": [],
+      "return_description": "image.PixelMap.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getEffectPixelMap",
+      "返回值": "Promise<image.PixelMap>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains image.PixelMap of the source image to which the filter linked list is added. This API uses a promise to return the result.",
+      "注释信息": [
+        "@returns { Promise<image.PixelMap> } - Promise used to return image.PixelMap of the source image.",
+        "@syscap SystemCapability.Multimedia.Image.Core",
+        "@crossplatform",
+        "@form",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "Filter",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Multimedia.Image.Core",
+      "parameters": [],
+      "return_description": "- Promise used to return image.PixelMap of the source image.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getEffectPixelMap",
+      "返回值": "Promise<image.PixelMap>",
+      "所属模块": "未知模块",
+      "功能描述": "Gets the PixelMap where all filter effects have been added to the image.",
+      "注释信息": [
+        "@param { boolean } useCpuRender -  Whether to use cpu render.",
+        "@returns { Promise<image.PixelMap> } - returns the PixelMap generated.",
+        "@syscap SystemCapability.Multimedia.Image.Core",
+        "@crossplatform",
+        "@form",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "Filter",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Multimedia.Image.Core",
+      "parameters": [
+        {
+          "名称": "useCpuRender",
+          "类型": "boolean",
+          "必填": true,
+          "说明": "Whether to use cpu render."
+        }
+      ],
+      "return_description": "- returns the PixelMap generated.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "ColorPicker",
+      "所属模块": "未知模块",
+      "功能描述": "A class used to obtain the color from an image. Before calling any method of ColorPicker, use createColorPicker to create a ColorPicker instance.",
+      "注释信息": [
+        "@typedef ColorPicker",
+        "@syscap SystemCapability.Multimedia.Image.Core",
+        "@crossplatform",
+        "@form",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "effectKit",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Multimedia.Image.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getMainColor",
+      "返回值": "Promise<Color>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the main color from the image and writes the result to a Color instance. This API uses a promise to return the result.",
+      "注释信息": [
+        "@returns { Promise<Color> } Promise used to return the color value of the main color. If the operation fails, an error message is returned.",
+        "@syscap SystemCapability.Multimedia.Image.Core",
+        "@crossplatform",
+        "@form",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "ColorPicker",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Multimedia.Image.Core",
+      "parameters": [],
+      "return_description": "Promise used to return the color value of the main color. If the operation fails, an error message is returned.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getMainColorSync",
+      "返回值": "Color",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the main color from the image and writes the result to a Color instance. This API returns the result synchronously.",
+      "注释信息": [
+        "@returns { Color } Color value of the main color. If the operation fails, null is returned.",
+        "@syscap SystemCapability.Multimedia.Image.Core",
+        "@crossplatform",
+        "@form",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "ColorPicker",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Multimedia.Image.Core",
+      "parameters": [],
+      "return_description": "Color value of the main color. If the operation fails, null is returned.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getLargestProportionColor",
+      "返回值": "Color",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the color with the largest proportion from the image and writes the result to a Color instance. This API returns the result synchronously.",
+      "注释信息": [
+        "@returns { Color } Color value of the color with the largest proportion. If the operation fails, null is returned.",
+        "@syscap SystemCapability.Multimedia.Image.Core",
+        "@crossplatform",
+        "@form",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "ColorPicker",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Multimedia.Image.Core",
+      "parameters": [],
+      "return_description": "Color value of the color with the largest proportion. If the operation fails, null is returned.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getTopProportionColors",
+      "返回值": "Array<Color | null>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains a given number of colors with the top proportions in the image. This API returns the result synchronously. - If the number of colors obtained is less than the value of colorCount, the array size is the actual number obtained. - If the colors fail to be obtained or the number of colors obtained is less than 1, [null] is returned. - If the value of colorCount is greater than 10, an array holding the first 10 colors with the top proportions is returned.",
+      "注释信息": [
+        "@param { number } colorCount - Number of colors to obtain. The value range is [1, 10]. If a non-integer is passed in, the value will be rounded down.",
+        "@returns { Array<Color | null> } Array of colors, sorted by proportion.",
+        "@syscap SystemCapability.Multimedia.Image.Core",
+        "@crossplatform",
+        "@form",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "ColorPicker",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Multimedia.Image.Core",
+      "parameters": [
+        {
+          "名称": "colorCount",
+          "类型": "number",
+          "必填": true,
+          "说明": "Number of colors to obtain. The value range is [1, 10]. If a non-integer is passed in, the value will be rounded down."
+        }
+      ],
+      "return_description": "Array of colors, sorted by proportion.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getHighestSaturationColor",
+      "返回值": "Color",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the color with the highest saturation from the image and writes the result to a Color instance. This API returns the result synchronously.",
+      "注释信息": [
+        "@returns { Color } Color value of the color with the highest saturation. If the operation fails, null is returned.",
+        "@syscap SystemCapability.Multimedia.Image.Core",
+        "@crossplatform",
+        "@form",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "ColorPicker",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Multimedia.Image.Core",
+      "parameters": [],
+      "return_description": "Color value of the color with the highest saturation. If the operation fails, null is returned.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getAverageColor",
+      "返回值": "Color",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the average color from the image and writes the result to a Color instance. This API returns the result synchronously.",
+      "注释信息": [
+        "@returns { Color } Average color value. If the operation fails, null is returned.",
+        "@syscap SystemCapability.Multimedia.Image.Core",
+        "@crossplatform",
+        "@form",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "ColorPicker",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Multimedia.Image.Core",
+      "parameters": [],
+      "return_description": "Average color value. If the operation fails, null is returned.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "isBlackOrWhiteOrGrayColor",
+      "返回值": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Determine whether the color is black or white or gray",
+      "注释信息": [
+        "@param { number } color - The 32 bit ARGB color to discriminate.",
+        "@returns { boolean } Result of judging black, white and gray.",
+        "@syscap SystemCapability.Multimedia.Image.Core",
+        "@crossplatform",
+        "@form",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "ColorPicker",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Multimedia.Image.Core",
+      "parameters": [
+        {
+          "名称": "color",
+          "类型": "number",
+          "必填": true,
+          "说明": "The 32 bit ARGB color to discriminate."
+        }
+      ],
+      "return_description": "Result of judging black, white and gray.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "Color",
+      "所属模块": "未知模块",
+      "功能描述": "A class that stores the color picked.",
+      "注释信息": [
+        "@typedef Color",
+        "@syscap SystemCapability.Multimedia.Image.Core",
+        "@crossplatform",
+        "@form",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "effectKit",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Multimedia.Image.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "red",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Value of the red component. The value range is [0x0, 0xFF].",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.Multimedia.Image.Core",
+        "@crossplatform",
+        "@form",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "Color",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Multimedia.Image.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "green",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Value of the green component. The value range is [0x0, 0xFF].",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.Multimedia.Image.Core",
+        "@crossplatform",
+        "@form",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "Color",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Multimedia.Image.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "blue",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Value of the blue component. The value range is [0x0, 0xFF].",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.Multimedia.Image.Core",
+        "@crossplatform",
+        "@form",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "Color",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Multimedia.Image.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "alpha",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Value of the alpha component. The value range is [0x0, 0xFF].",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.Multimedia.Image.Core",
+        "@crossplatform",
+        "@form",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "Color",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Multimedia.Image.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "createEffect",
+      "返回值": "Filter",
+      "所属模块": "未知模块",
+      "功能描述": "Creates a Filter instance based on a pixel map. by decoding an image or directly created. For details, see Image Overview.",
+      "注释信息": [
+        "@param { image.PixelMap } source - PixelMap instance created by the image module. An instance can be obtained",
+        "@returns { Filter } Head node of the filter linked list without any effect. If the operation fails, null is returned.",
+        "@syscap SystemCapability.Multimedia.Image.Core",
+        "@crossplatform",
+        "@form",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 1,
+      "上级": "effectKit",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Multimedia.Image.Core",
+      "parameters": [
+        {
+          "名称": "source",
+          "类型": "image.PixelMap",
+          "必填": true,
+          "说明": "PixelMap instance created by the image module. An instance can be obtained"
+        }
+      ],
+      "return_description": "Head node of the filter linked list without any effect. If the operation fails, null is returned.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "createColorPicker",
+      "返回值": "Promise<ColorPicker>",
+      "所属模块": "未知模块",
+      "功能描述": "Creates a ColorPicker instance based on a pixel map. This API uses a promise to return the result. obtained by decoding an image or directly created. For details, see Image Overview.",
+      "注释信息": [
+        "@param { image.PixelMap } source - PixelMap instance created by the image module. An instance can be",
+        "@returns { Promise<ColorPicker> } - Promise used to return the ColorPicker instance created.",
+        "@throws { BusinessError } 401 - Input parameter error.",
+        "@syscap SystemCapability.Multimedia.Image.Core",
+        "@crossplatform",
+        "@form",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 1,
+      "上级": "effectKit",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Multimedia.Image.Core",
+      "parameters": [
+        {
+          "名称": "source",
+          "类型": "image.PixelMap",
+          "必填": true,
+          "说明": "PixelMap instance created by the image module. An instance can be"
+        }
+      ],
+      "return_description": "- Promise used to return the ColorPicker instance created.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Input parameter error."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "createColorPicker",
+      "返回值": "Promise<ColorPicker>",
+      "所属模块": "未知模块",
+      "功能描述": "Creates a ColorPicker instance for the selected region based on a pixel map. This API uses a promise to return the result. an image or directly created. For details, see Image Overview. The array consists of four elements, representing the left, top, right, and bottom positions of the image, respectively. The value of each element must be in the range [0, 1]. The leftmost and topmost positions of the image correspond to 0, and the rightmost and bottom positions correspond to 1. In the array, the third element must be greater than the first element, and the fourth element must be greater than the second element.",
+      "注释信息": [
+        "@param { image.PixelMap } source - PixelMap instance created by the image module. An instance can be obtained by decoding",
+        "@param { Array<number> } region - Region of the image from which the color is picked.",
+        "@returns { Promise<ColorPicker> } - Promise used to return the ColorPicker instance created.",
+        "@throws { BusinessError } 401 - Input parameter error.",
+        "@syscap SystemCapability.Multimedia.Image.Core",
+        "@crossplatform",
+        "@form",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 1,
+      "上级": "effectKit",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Multimedia.Image.Core",
+      "parameters": [
+        {
+          "名称": "source",
+          "类型": "image.PixelMap",
+          "必填": true,
+          "说明": "PixelMap instance created by the image module. An instance can be obtained by decoding"
+        },
+        {
+          "名称": "region",
+          "类型": "Array<number>",
+          "必填": true,
+          "说明": "Region of the image from which the color is picked."
+        }
+      ],
+      "return_description": "- Promise used to return the ColorPicker instance created.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Input parameter error."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "createColorPicker",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Creates a ColorPicker instance based on a pixel map. This API uses an asynchronous callback to return the result. decoding an image or directly created. For details, see Image Overview.",
+      "注释信息": [
+        "@param { image.PixelMap } source - PixelMap instance created by the image module. An instance can be obtained by",
+        "@param { AsyncCallback<ColorPicker> } callback - the callback of createColorPicker.",
+        "@throws { BusinessError } 401 - Input parameter error.",
+        "@syscap SystemCapability.Multimedia.Image.Core",
+        "@crossplatform",
+        "@form",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 1,
+      "上级": "effectKit",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Multimedia.Image.Core",
+      "parameters": [
+        {
+          "名称": "source",
+          "类型": "image.PixelMap",
+          "必填": true,
+          "说明": "PixelMap instance created by the image module. An instance can be obtained by"
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<ColorPicker>",
+          "必填": true,
+          "说明": "the callback of createColorPicker."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Input parameter error."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "createColorPicker",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Creates a ColorPicker instance for the selected region based on a pixel map. This API uses an asynchronous callback to return the result. image or directly created. For details, see Image Overview.PixelMap instance created by the image module. An instance can be obtained by decoding an image or directly created. For details, see Image Overview. The array consists of four elements, representing the left, top, right, and bottom positions of the image, respectively. The value of each element must be in the range [0, 1]. The leftmost and topmost positions of the image correspond to 0, and the rightmost and bottom positions correspond to 1. In the array, the third element must be greater than the first element, and the fourth element must be greater than the second element.",
+      "注释信息": [
+        "@param { image.PixelMap } source - PixelMap instance created by the image module. An instance can be obtained by decoding an",
+        "@param { Array<number> } region - Region of the image from which the color is picked.",
+        "@param { AsyncCallback<ColorPicker> } callback - Callback used to return the ColorPicker instance created.",
+        "@throws { BusinessError } 401 - Input parameter error.",
+        "@syscap SystemCapability.Multimedia.Image.Core",
+        "@crossplatform",
+        "@form",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 1,
+      "上级": "effectKit",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Multimedia.Image.Core",
+      "parameters": [
+        {
+          "名称": "source",
+          "类型": "image.PixelMap",
+          "必填": true,
+          "说明": "PixelMap instance created by the image module. An instance can be obtained by decoding an"
+        },
+        {
+          "名称": "region",
+          "类型": "Array<number>",
+          "必填": true,
+          "说明": "Region of the image from which the color is picked."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<ColorPicker>",
+          "必填": true,
+          "说明": "Callback used to return the ColorPicker instance created."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Input parameter error."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "TileMode",
+      "所属模块": "未知模块",
+      "功能描述": "Enumerates the tile modes of the shader effect.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.Multimedia.Image.Core",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "effectKit",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Multimedia.Image.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CLAMP",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "Replicates the edge color if the shader effect draws outside of its original boundary.",
+      "注释信息": [
+        "@syscap SystemCapability.Multimedia.Image.Core",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "TileMode",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Multimedia.Image.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "REPEAT",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Repeats the shader effect in both horizontal and vertical directions.",
+      "注释信息": [
+        "@syscap SystemCapability.Multimedia.Image.Core",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "TileMode",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Multimedia.Image.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "MIRROR",
+      "值": "2",
+      "所属模块": "未知模块",
+      "功能描述": "Repeats the shader effect in both horizontal and vertical directions, alternating mirror images.",
+      "注释信息": [
+        "@syscap SystemCapability.Multimedia.Image.Core",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "TileMode",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Multimedia.Image.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "DECAL",
+      "值": "3",
+      "所属模块": "未知模块",
+      "功能描述": "Renders the shader effect only within the original boundary.",
+      "注释信息": [
+        "@syscap SystemCapability.Multimedia.Image.Core",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "TileMode",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Multimedia.Image.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    }
+  ]
+}

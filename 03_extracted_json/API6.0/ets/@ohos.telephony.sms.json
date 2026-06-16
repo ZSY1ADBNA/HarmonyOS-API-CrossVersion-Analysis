@@ -1,0 +1,2530 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.TelephonyKit",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "namespace",
+      "名称": "sms",
+      "所属模块": "@kit.TelephonyKit",
+      "功能描述": "Provides the capabilities and methods for obtaining Short Message Service (SMS) management objects.",
+      "注释信息": [
+        "@namespace sms",
+        "@syscap SystemCapability.Telephony.SmsMms",
+        "@since arkts {'1.1':'6','1.2':'20'}",
+        "@arkts 1.1&1.2"
+      ],
+      "层级": 1,
+      "上级": "@kit.TelephonyKit",
+      "since_version": "arkts {'1.1':'6','1.2':'20'}",
+      "system_capability": "SystemCapability.Telephony.SmsMms",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "splitMessage",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Splits a long SMS message into multiple fragments. <p>If the length of an SMS message exceeds the maximum length allowed (140 bytes), the SMS message is split into multiple segments for processing. which can be combined into a complete SMS message; Returns an empty string if no permission is granted or the short message content is {@code null}. Incorrect parameter types.",
+      "注释信息": [
+        "@permission ohos.permission.SEND_MESSAGES",
+        "@param { string } content - Indicates the short message content, which cannot be {@code null}.",
+        "@param { AsyncCallback<Array<string>> } callback - Indicates the callback for getting a list of split segments,",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Operation failed. Cannot connect to service.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error code.",
+        "@syscap SystemCapability.Telephony.SmsMms",
+        "@systemapi Hide this for inner system use.",
+        "@since 8"
+      ],
+      "层级": 1,
+      "上级": "sms",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Telephony.SmsMms",
+      "parameters": [
+        {
+          "名称": "content",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates the short message content, which cannot be {@code null}."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<Array<string>>",
+          "必填": true,
+          "说明": "Indicates the callback for getting a list of split segments,"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Operation failed. Cannot connect to service."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error code."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "splitMessage",
+      "返回值": "Promise<Array<string>>",
+      "所属模块": "未知模块",
+      "功能描述": "Splits a long SMS message into multiple fragments. <p>If the length of an SMS message exceeds the maximum length allowed (140 bytes), the SMS message is split into multiple segments for processing. message; Returns an empty string if no permission is granted or the short message content is {@code null}. Incorrect parameter types.",
+      "注释信息": [
+        "@permission ohos.permission.SEND_MESSAGES",
+        "@param { string } content - Indicates the short message content, which cannot be {@code null}.",
+        "@returns { Promise<Array<string>> } Returns a list of split segments, which can be combined into a complete SMS",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Operation failed. Cannot connect to service.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error code.",
+        "@syscap SystemCapability.Telephony.SmsMms",
+        "@systemapi Hide this for inner system use.",
+        "@since 8"
+      ],
+      "层级": 1,
+      "上级": "sms",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Telephony.SmsMms",
+      "parameters": [
+        {
+          "名称": "content",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates the short message content, which cannot be {@code null}."
+        }
+      ],
+      "return_description": "Returns a list of split segments, which can be combined into a complete SMS",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Operation failed. Cannot connect to service."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error code."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "createMessage",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Creates an SMS message instance based on the protocol data unit (PDU) and the specified SMS protocol. <p>After receiving the original PDU data, the system creates an SMS message instance according to the specified SMS protocol. SMS, and the value {@code 3gpp2} indicates CDMA/LTE SMS. returns {@code null} if {@code pdu} is empty or {@code specification} is not supported. Incorrect parameter types.",
+      "注释信息": [
+        "@param { Array<number> } pdu - Indicates the original data, which is obtained from the received SMS.",
+        "@param { string } specification - Indicates the SMS protocol type. The value {@code 3gpp} indicates GSM/UMTS/LTE",
+        "@param { AsyncCallback<ShortMessage> } callback - Indicates the callback for getting an SMS message instance;",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Operation failed. Cannot connect to service.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error code.",
+        "@syscap SystemCapability.Telephony.SmsMms",
+        "@since 6"
+      ],
+      "层级": 1,
+      "上级": "sms",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Telephony.SmsMms",
+      "parameters": [
+        {
+          "名称": "pdu",
+          "类型": "Array<number>",
+          "必填": true,
+          "说明": "Indicates the original data, which is obtained from the received SMS."
+        },
+        {
+          "名称": "specification",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates the SMS protocol type. The value {@code 3gpp} indicates GSM/UMTS/LTE"
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<ShortMessage>",
+          "必填": true,
+          "说明": "Indicates the callback for getting an SMS message instance;"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Operation failed. Cannot connect to service."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error code."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "createMessage",
+      "返回值": "Promise<ShortMessage>",
+      "所属模块": "未知模块",
+      "功能描述": "Creates an SMS message instance based on the protocol data unit (PDU) and the specified SMS protocol. <p>After receiving the original PDU data, the system creates an SMS message instance according to the specified SMS protocol. SMS, and the value {@code 3gpp2} indicates CDMA/LTE SMS. returns {@code null} if {@code pdu} is empty or {@code specification} is not supported. Incorrect parameter types.",
+      "注释信息": [
+        "@param { Array<number> } pdu - Indicates the original data, which is obtained from the received SMS.",
+        "@param { string } specification - Indicates the SMS protocol type. The value {@code 3gpp} indicates GSM/UMTS/LTE",
+        "@returns { Promise<ShortMessage> } Returns an SMS message instance;",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Operation failed. Cannot connect to service.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error code.",
+        "@syscap SystemCapability.Telephony.SmsMms",
+        "@since 6"
+      ],
+      "层级": 1,
+      "上级": "sms",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Telephony.SmsMms",
+      "parameters": [
+        {
+          "名称": "pdu",
+          "类型": "Array<number>",
+          "必填": true,
+          "说明": "Indicates the original data, which is obtained from the received SMS."
+        },
+        {
+          "名称": "specification",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates the SMS protocol type. The value {@code 3gpp} indicates GSM/UMTS/LTE"
+        }
+      ],
+      "return_description": "Returns an SMS message instance;",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Operation failed. Cannot connect to service."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error code."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "sendMessage",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Sends a text or data SMS message. <p>This method checks whether the length of an SMS message exceeds the maximum length. If the maximum length is exceeded, the SMS message is split into multiple parts and sent separately. Incorrect parameter types.",
+      "注释信息": [
+        "@permission ohos.permission.SEND_MESSAGES",
+        "@param { SendMessageOptions } options - Indicates the parameters and callback for sending the SMS message.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Operation failed. Cannot connect to service.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error code.",
+        "@syscap SystemCapability.Telephony.SmsMms",
+        "@since 6",
+        "@deprecated since 10",
+        "@useinstead telephony.sms#sendShortMessage"
+      ],
+      "层级": 1,
+      "上级": "sms",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Telephony.SmsMms",
+      "parameters": [
+        {
+          "名称": "options",
+          "类型": "SendMessageOptions",
+          "必填": true,
+          "说明": "Indicates the parameters and callback for sending the SMS message."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Operation failed. Cannot connect to service."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error code."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "sendShortMessage",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Sends a text or data SMS message. <p>This method checks whether the length of an SMS message exceeds the maximum length. If the maximum length is exceeded, the SMS message is split into multiple parts and sent separately. Incorrect parameter types.",
+      "注释信息": [
+        "@permission ohos.permission.SEND_MESSAGES",
+        "@param { SendMessageOptions } options - Indicates the parameters and callback for sending the SMS message.",
+        "@param { AsyncCallback<void> } callback - The callback of sendShortMessage.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Operation failed. Cannot connect to service.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error code.",
+        "@syscap SystemCapability.Telephony.SmsMms",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "sms",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Telephony.SmsMms",
+      "parameters": [
+        {
+          "名称": "options",
+          "类型": "SendMessageOptions",
+          "必填": true,
+          "说明": "Indicates the parameters and callback for sending the SMS message."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "The callback of sendShortMessage."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Operation failed. Cannot connect to service."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error code."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "sendShortMessage",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Sends a text or data SMS message. <p>This method checks whether the length of an SMS message exceeds the maximum length. If the maximum length is exceeded, the SMS message is split into multiple parts and sent separately. Incorrect parameter types.",
+      "注释信息": [
+        "@permission ohos.permission.SEND_MESSAGES",
+        "@param { SendMessageOptions } options - Indicates the parameters and callback for sending the SMS message.",
+        "@returns { Promise<void> } The promise returned by the sendShortMessage.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Operation failed. Cannot connect to service.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error code.",
+        "@syscap SystemCapability.Telephony.SmsMms",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "sms",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Telephony.SmsMms",
+      "parameters": [
+        {
+          "名称": "options",
+          "类型": "SendMessageOptions",
+          "必填": true,
+          "说明": "Indicates the parameters and callback for sending the SMS message."
+        }
+      ],
+      "return_description": "The promise returned by the sendShortMessage.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Operation failed. Cannot connect to service."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error code."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "setDefaultSmsSlotId",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Sets the default SIM card for sending SMS messages. You can obtain the default SIM card by using {@code getDefaultSmsSlotId}. card slot 1, and the value {@code 1} indicates card slot 2. Incorrect parameter types.",
+      "注释信息": [
+        "@permission ohos.permission.SET_TELEPHONY_STATE",
+        "@param { number } slotId - Indicates the default SIM card for sending SMS messages. The value {@code 0} indicates",
+        "@param { AsyncCallback<void> } callback - The callback of setDefaultSmsSlotId.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Operation failed. Cannot connect to service.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300004 - Do not have sim card.",
+        "@throws { BusinessError } 8300999 - Unknown error code.",
+        "@syscap SystemCapability.Telephony.SmsMms",
+        "@systemapi Hide this for inner system use.",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "sms",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Telephony.SmsMms",
+      "parameters": [
+        {
+          "名称": "slotId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the default SIM card for sending SMS messages. The value {@code 0} indicates"
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "The callback of setDefaultSmsSlotId."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Operation failed. Cannot connect to service."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300004",
+          "description": "Do not have sim card."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error code."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "setDefaultSmsSlotId",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Sets the default SIM card for sending SMS messages. You can obtain the default SIM card by using {@code getDefaultSmsSlotId}. card slot 1, and the value {@code 1} indicates card slot 2. Incorrect parameter types.",
+      "注释信息": [
+        "@permission ohos.permission.SET_TELEPHONY_STATE",
+        "@param { number } slotId - Indicates the default SIM card for sending SMS messages. The value {@code 0} indicates",
+        "@returns { Promise<void> } The promise returned by the setDefaultSmsSlotId.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Operation failed. Cannot connect to service.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300004 - Do not have sim card.",
+        "@throws { BusinessError } 8300999 - Unknown error code.",
+        "@syscap SystemCapability.Telephony.SmsMms",
+        "@systemapi Hide this for inner system use.",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "sms",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Telephony.SmsMms",
+      "parameters": [
+        {
+          "名称": "slotId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the default SIM card for sending SMS messages. The value {@code 0} indicates"
+        }
+      ],
+      "return_description": "The promise returned by the setDefaultSmsSlotId.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Operation failed. Cannot connect to service."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300004",
+          "description": "Do not have sim card."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error code."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getDefaultSmsSlotId",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the default SIM card for sending SMS messages. messages. Returns {@code 0} if the default SIM card for sending SMS messages is in card slot 1; Returns {@code 1} if the default SIM card for sending SMS messages is in card slot 2.",
+      "注释信息": [
+        "@param { AsyncCallback<number> } callback - Indicates the callback for getting the default SIM card for sending SMS",
+        "@syscap SystemCapability.Telephony.SmsMms",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "sms",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Telephony.SmsMms",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<number>",
+          "必填": true,
+          "说明": "Indicates the callback for getting the default SIM card for sending SMS"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getDefaultSmsSlotId",
+      "返回值": "Promise<number>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the default SIM card for sending SMS messages. Returns {@code 1} if the default SIM card for sending SMS messages is in card slot 2.",
+      "注释信息": [
+        "@returns { Promise<number> } Returns {@code 0} if the default SIM card for sending SMS messages is in card slot 1;",
+        "@syscap SystemCapability.Telephony.SmsMms",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "sms",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Telephony.SmsMms",
+      "parameters": [],
+      "return_description": "Returns {@code 0} if the default SIM card for sending SMS messages is in card slot 1;",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "setSmscAddr",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Sets the address for the Short Message Service Center (SMSC) based on a specified slot ID. Incorrect parameter types.",
+      "注释信息": [
+        "@permission ohos.permission.SET_TELEPHONY_STATE",
+        "@param { number } slotId - Indicates the ID of the slot holding the SIM card for sending SMS messages.",
+        "@param { string } smscAddr - Indicates the SMSC address.",
+        "@param { AsyncCallback<void> } callback - The callback of setSmscAddr.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Operation failed. Cannot connect to service.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error code.",
+        "@syscap SystemCapability.Telephony.SmsMms",
+        "@systemapi Hide this for inner system use.",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "sms",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Telephony.SmsMms",
+      "parameters": [
+        {
+          "名称": "slotId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the ID of the slot holding the SIM card for sending SMS messages."
+        },
+        {
+          "名称": "smscAddr",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates the SMSC address."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "The callback of setSmscAddr."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Operation failed. Cannot connect to service."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error code."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "setSmscAddr",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Sets the address for the Short Message Service Center (SMSC) based on a specified slot ID. Incorrect parameter types.",
+      "注释信息": [
+        "@permission ohos.permission.SET_TELEPHONY_STATE",
+        "@param { number } slotId - Indicates the ID of the slot holding the SIM card for sending SMS messages.",
+        "@param { string } smscAddr - Indicates the SMSC address.",
+        "@returns { Promise<void> } The promise returned by the setSmscAddr.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Operation failed. Cannot connect to service.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error code.",
+        "@syscap SystemCapability.Telephony.SmsMms",
+        "@systemapi Hide this for inner system use.",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "sms",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Telephony.SmsMms",
+      "parameters": [
+        {
+          "名称": "slotId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the ID of the slot holding the SIM card for sending SMS messages."
+        },
+        {
+          "名称": "smscAddr",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates the SMSC address."
+        }
+      ],
+      "return_description": "The promise returned by the setSmscAddr.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Operation failed. Cannot connect to service."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error code."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getSmscAddr",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the SMSC address based on a specified slot ID. Incorrect parameter types.",
+      "注释信息": [
+        "@permission ohos.permission.GET_TELEPHONY_STATE",
+        "@param { number } slotId - Indicates the ID of the slot holding the SIM card for sending SMS messages.",
+        "@param { AsyncCallback<string> } callback - Indicates the callback for getting the SMSC address.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Operation failed. Cannot connect to service.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error code.",
+        "@syscap SystemCapability.Telephony.SmsMms",
+        "@systemapi Hide this for inner system use.",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "sms",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Telephony.SmsMms",
+      "parameters": [
+        {
+          "名称": "slotId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the ID of the slot holding the SIM card for sending SMS messages."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<string>",
+          "必填": true,
+          "说明": "Indicates the callback for getting the SMSC address."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Operation failed. Cannot connect to service."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error code."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getSmscAddr",
+      "返回值": "Promise<string>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the SMSC address based on a specified slot ID. Incorrect parameter types.",
+      "注释信息": [
+        "@permission ohos.permission.GET_TELEPHONY_STATE",
+        "@param { number } slotId - Indicates the ID of the slot holding the SIM card for sending SMS messages.",
+        "@returns { Promise<string> } Returns the SMSC address.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Operation failed. Cannot connect to service.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error code.",
+        "@syscap SystemCapability.Telephony.SmsMms",
+        "@systemapi Hide this for inner system use.",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "sms",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Telephony.SmsMms",
+      "parameters": [
+        {
+          "名称": "slotId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the ID of the slot holding the SIM card for sending SMS messages."
+        }
+      ],
+      "return_description": "Returns the SMSC address.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Operation failed. Cannot connect to service."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error code."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "hasSmsCapability",
+      "返回值": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Returns whether a device is capable of sending and receiving SMS messages. Returns {@code false} otherwise.",
+      "注释信息": [
+        "@returns { boolean } Returns {@code true} if the device is capable of sending and receiving SMS messages;",
+        "@syscap SystemCapability.Telephony.SmsMms",
+        "@since arkts {'1.1':'7','1.2':'20'}",
+        "@arkts 1.1&1.2"
+      ],
+      "层级": 1,
+      "上级": "sms",
+      "since_version": "arkts {'1.1':'7','1.2':'20'}",
+      "system_capability": "SystemCapability.Telephony.SmsMms",
+      "parameters": [],
+      "return_description": "Returns {@code true} if the device is capable of sending and receiving SMS messages;",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "addSimMessage",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Add an SMS Message to SIM card. Incorrect parameter types. 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.RECEIVE_SMS and ohos.permission.SEND_MESSAGES",
+        "@param { SimMessageOptions } options - Indicates SIM message options.",
+        "@param { AsyncCallback<void> } callback - The callback of addSimMessage.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Operation failed. Cannot connect to service.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error code.",
+        "@syscap SystemCapability.Telephony.SmsMms",
+        "@systemapi Hide this for inner system use.",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "sms",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Telephony.SmsMms",
+      "parameters": [
+        {
+          "名称": "options",
+          "类型": "SimMessageOptions",
+          "必填": true,
+          "说明": "Indicates SIM message options."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "The callback of addSimMessage."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Operation failed. Cannot connect to service."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error code."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "addSimMessage",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Add an SMS Message to SIM card. Incorrect parameter types. 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.RECEIVE_SMS and ohos.permission.SEND_MESSAGES",
+        "@param { SimMessageOptions } options - Indicates SIM message options.",
+        "@returns { Promise<void> } The promise returned by the addSimMessage.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Operation failed. Cannot connect to service.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error code.",
+        "@syscap SystemCapability.Telephony.SmsMms",
+        "@systemapi Hide this for inner system use.",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "sms",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Telephony.SmsMms",
+      "parameters": [
+        {
+          "名称": "options",
+          "类型": "SimMessageOptions",
+          "必填": true,
+          "说明": "Indicates SIM message options."
+        }
+      ],
+      "return_description": "The promise returned by the addSimMessage.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Operation failed. Cannot connect to service."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error code."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "delSimMessage",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Delete an SMS Message from the SIM card. number supported by the device. Incorrect parameter types.",
+      "注释信息": [
+        "@permission ohos.permission.RECEIVE_SMS and ohos.permission.SEND_MESSAGES",
+        "@param { number } slotId - Indicates the card slot index number, ranging from 0 to the maximum card slot index",
+        "@param { number } msgIndex - Indicates the message index.",
+        "@param { AsyncCallback<void> } callback - The callback of delSimMessage.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Operation failed. Cannot connect to service.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error code.",
+        "@syscap SystemCapability.Telephony.SmsMms",
+        "@systemapi Hide this for inner system use.",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "sms",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Telephony.SmsMms",
+      "parameters": [
+        {
+          "名称": "slotId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the card slot index number, ranging from 0 to the maximum card slot index"
+        },
+        {
+          "名称": "msgIndex",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the message index."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "The callback of delSimMessage."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Operation failed. Cannot connect to service."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error code."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "delSimMessage",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Delete an SMS Message from the SIM card. number supported by the device. Incorrect parameter types.",
+      "注释信息": [
+        "@permission ohos.permission.RECEIVE_SMS and ohos.permission.SEND_MESSAGES",
+        "@param { number } slotId - Indicates the card slot index number, ranging from 0 to the maximum card slot index",
+        "@param { number } msgIndex - Indicates the message index.",
+        "@returns { Promise<void> } The promise returned by the delSimMessage.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Operation failed. Cannot connect to service.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error code.",
+        "@syscap SystemCapability.Telephony.SmsMms",
+        "@systemapi Hide this for inner system use.",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "sms",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Telephony.SmsMms",
+      "parameters": [
+        {
+          "名称": "slotId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the card slot index number, ranging from 0 to the maximum card slot index"
+        },
+        {
+          "名称": "msgIndex",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the message index."
+        }
+      ],
+      "return_description": "The promise returned by the delSimMessage.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Operation failed. Cannot connect to service."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error code."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "updateSimMessage",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Update a SIM SMS of SIM card. Incorrect parameter types. 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.RECEIVE_SMS and ohos.permission.SEND_MESSAGES",
+        "@param { UpdateSimMessageOptions } options - Indicates update SIM message options.",
+        "@param { AsyncCallback<void> } callback - The callback of updateSimMessage.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Operation failed. Cannot connect to service.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error code.",
+        "@syscap SystemCapability.Telephony.SmsMms",
+        "@systemapi Hide this for inner system use.",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "sms",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Telephony.SmsMms",
+      "parameters": [
+        {
+          "名称": "options",
+          "类型": "UpdateSimMessageOptions",
+          "必填": true,
+          "说明": "Indicates update SIM message options."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "The callback of updateSimMessage."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Operation failed. Cannot connect to service."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error code."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "updateSimMessage",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Update a SIM SMS of SIM card. Incorrect parameter types. 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.RECEIVE_SMS and ohos.permission.SEND_MESSAGES",
+        "@param { UpdateSimMessageOptions } options - Indicates update SIM message options.",
+        "@returns { Promise<void> } The promise returned by the updateSimMessage.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Operation failed. Cannot connect to service.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error code.",
+        "@syscap SystemCapability.Telephony.SmsMms",
+        "@systemapi Hide this for inner system use.",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "sms",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Telephony.SmsMms",
+      "parameters": [
+        {
+          "名称": "options",
+          "类型": "UpdateSimMessageOptions",
+          "必填": true,
+          "说明": "Indicates update SIM message options."
+        }
+      ],
+      "return_description": "The promise returned by the updateSimMessage.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Operation failed. Cannot connect to service."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error code."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getAllSimMessages",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Get all SMS records in SIM. number supported by the device. {@code SimShortMessage} object. Incorrect parameter types.",
+      "注释信息": [
+        "@permission ohos.permission.RECEIVE_SMS",
+        "@param { number } slotId - Indicates the card slot index number, ranging from 0 to the maximum card slot index",
+        "@param { AsyncCallback<Array<SimShortMessage>> } callback - Indicates the callback for getting a",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Operation failed. Cannot connect to service.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error code.",
+        "@syscap SystemCapability.Telephony.SmsMms",
+        "@systemapi Hide this for inner system use.",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "sms",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Telephony.SmsMms",
+      "parameters": [
+        {
+          "名称": "slotId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the card slot index number, ranging from 0 to the maximum card slot index"
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<Array<SimShortMessage>>",
+          "必填": true,
+          "说明": "Indicates the callback for getting a"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Operation failed. Cannot connect to service."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error code."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getAllSimMessages",
+      "返回值": "Promise<Array<SimShortMessage>>",
+      "所属模块": "未知模块",
+      "功能描述": "Get all SMS records in SIM. number supported by the device. Incorrect parameter types.",
+      "注释信息": [
+        "@permission ohos.permission.RECEIVE_SMS",
+        "@param { number } slotId - Indicates the card slot index number, ranging from 0 to the maximum card slot index",
+        "@returns { Promise<Array<SimShortMessage>> } Returns a {@code SimShortMessage} object.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Operation failed. Cannot connect to service.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error code.",
+        "@syscap SystemCapability.Telephony.SmsMms",
+        "@systemapi Hide this for inner system use.",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "sms",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Telephony.SmsMms",
+      "parameters": [
+        {
+          "名称": "slotId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the card slot index number, ranging from 0 to the maximum card slot index"
+        }
+      ],
+      "return_description": "Returns a {@code SimShortMessage} object.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Operation failed. Cannot connect to service."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error code."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "setCBConfig",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Turn on or off Cell BroadCast. Incorrect parameter types.",
+      "注释信息": [
+        "@permission ohos.permission.RECEIVE_SMS",
+        "@param { CBConfigOptions } options - Indicates cell broadcast configuration options.",
+        "@param { AsyncCallback<void> } callback - The callback of setCBConfig.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Operation failed. Cannot connect to service.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error code.",
+        "@syscap SystemCapability.Telephony.SmsMms",
+        "@systemapi Hide this for inner system use.",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "sms",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Telephony.SmsMms",
+      "parameters": [
+        {
+          "名称": "options",
+          "类型": "CBConfigOptions",
+          "必填": true,
+          "说明": "Indicates cell broadcast configuration options."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "The callback of setCBConfig."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Operation failed. Cannot connect to service."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error code."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "setCBConfig",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Turn on or off Cell BroadCast. Incorrect parameter types.",
+      "注释信息": [
+        "@permission ohos.permission.RECEIVE_SMS",
+        "@param { CBConfigOptions } options - Indicates cell broadcast configuration options.",
+        "@returns { Promise<void> } The promise returned by the setCBConfig.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Operation failed. Cannot connect to service.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error code.",
+        "@syscap SystemCapability.Telephony.SmsMms",
+        "@systemapi Hide this for inner system use.",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "sms",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Telephony.SmsMms",
+      "parameters": [
+        {
+          "名称": "options",
+          "类型": "CBConfigOptions",
+          "必填": true,
+          "说明": "Indicates cell broadcast configuration options."
+        }
+      ],
+      "return_description": "The promise returned by the setCBConfig.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Operation failed. Cannot connect to service."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error code."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getSmsSegmentsInfo",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Get an SMS segment encode relation information. number supported by the device. object. Incorrect parameter types. 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { number } slotId - Indicates the card slot index number, ranging from 0 to the maximum card slot index",
+        "@param { string } message - Indicates short message.",
+        "@param { boolean } force7bit - Indicates whether to use 7 bit encoding.",
+        "@param { AsyncCallback<SmsSegmentsInfo> } callback - Indicates the callback for getting a {@code SmsSegmentsInfo}",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Operation failed. Cannot connect to service.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error code.",
+        "@syscap SystemCapability.Telephony.SmsMms",
+        "@systemapi Hide this for inner system use.",
+        "@since 8"
+      ],
+      "层级": 1,
+      "上级": "sms",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Telephony.SmsMms",
+      "parameters": [
+        {
+          "名称": "slotId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the card slot index number, ranging from 0 to the maximum card slot index"
+        },
+        {
+          "名称": "message",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates short message."
+        },
+        {
+          "名称": "force7bit",
+          "类型": "boolean",
+          "必填": true,
+          "说明": "Indicates whether to use 7 bit encoding."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<SmsSegmentsInfo>",
+          "必填": true,
+          "说明": "Indicates the callback for getting a {@code SmsSegmentsInfo}"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Operation failed. Cannot connect to service."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error code."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getSmsSegmentsInfo",
+      "返回值": "Promise<SmsSegmentsInfo>",
+      "所属模块": "未知模块",
+      "功能描述": "Get an SMS segment encode relation information. number supported by the device. Incorrect parameter types. 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { number } slotId - Indicates the card slot index number, ranging from 0 to the maximum card slot index",
+        "@param { string } message - Indicates short message.",
+        "@param { boolean } force7bit - Indicates whether to use 7 bit encoding.",
+        "@returns { Promise<SmsSegmentsInfo> } Returns a {@code SmsSegmentsInfo} object.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Operation failed. Cannot connect to service.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error code.",
+        "@syscap SystemCapability.Telephony.SmsMms",
+        "@systemapi Hide this for inner system use.",
+        "@since 8"
+      ],
+      "层级": 1,
+      "上级": "sms",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Telephony.SmsMms",
+      "parameters": [
+        {
+          "名称": "slotId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the card slot index number, ranging from 0 to the maximum card slot index"
+        },
+        {
+          "名称": "message",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates short message."
+        },
+        {
+          "名称": "force7bit",
+          "类型": "boolean",
+          "必填": true,
+          "说明": "Indicates whether to use 7 bit encoding."
+        }
+      ],
+      "return_description": "Returns a {@code SmsSegmentsInfo} object.",
+      "error_codes": [
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Operation failed. Cannot connect to service."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error code."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "isImsSmsSupported",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "SMS over IMS is supported if IMS is registered and SMS is supported on IMS. and the value {@code 1} indicates card slot 2. Returns {@code true} if SMS over IMS is supported, {@code false} otherwise. Incorrect parameter types.",
+      "注释信息": [
+        "@param { number } slotId - Indicates the default SIM card for Ims Sms. The value {@code 0} indicates card slot 1,",
+        "@param { AsyncCallback<boolean> } callback - Indicates the callback of isImsSmsSupported.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Operation failed. Cannot connect to service.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error code.",
+        "@syscap SystemCapability.Telephony.SmsMms",
+        "@systemapi Hide this for inner system use.",
+        "@since 8"
+      ],
+      "层级": 1,
+      "上级": "sms",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Telephony.SmsMms",
+      "parameters": [
+        {
+          "名称": "slotId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the default SIM card for Ims Sms. The value {@code 0} indicates card slot 1,"
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<boolean>",
+          "必填": true,
+          "说明": "Indicates the callback of isImsSmsSupported."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Operation failed. Cannot connect to service."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error code."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "isImsSmsSupported",
+      "返回值": "Promise<boolean>",
+      "所属模块": "未知模块",
+      "功能描述": "SMS over IMS is supported if IMS is registered and SMS is supported on IMS. and the value {@code 1} indicates card slot 2. Incorrect parameter types.",
+      "注释信息": [
+        "@param { number } slotId - Indicates the default SIM card for Ims Sms. The value {@code 0} indicates card slot 1,",
+        "@returns { Promise<boolean> } Returns {@code true} if SMS over IMS is supported, {@code false} otherwise.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Operation failed. Cannot connect to service.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error code.",
+        "@syscap SystemCapability.Telephony.SmsMms",
+        "@systemapi Hide this for inner system use.",
+        "@since 8"
+      ],
+      "层级": 1,
+      "上级": "sms",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Telephony.SmsMms",
+      "parameters": [
+        {
+          "名称": "slotId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the default SIM card for Ims Sms. The value {@code 0} indicates card slot 1,"
+        }
+      ],
+      "return_description": "Returns {@code true} if SMS over IMS is supported, {@code false} otherwise.",
+      "error_codes": [
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Operation failed. Cannot connect to service."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error code."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getImsShortMessageFormat",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Gets SMS format supported on IMS. SMS over IMS format is either 3GPP or 3GPP2. Incorrect parameter types.",
+      "注释信息": [
+        "@param { AsyncCallback<string> } callback - Indicates the callback for getting format, 3gpp, 3gpp2 or unknown.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Operation failed. Cannot connect to service.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error code.",
+        "@syscap SystemCapability.Telephony.SmsMms",
+        "@systemapi Hide this for inner system use.",
+        "@since 8"
+      ],
+      "层级": 1,
+      "上级": "sms",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Telephony.SmsMms",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<string>",
+          "必填": true,
+          "说明": "Indicates the callback for getting format, 3gpp, 3gpp2 or unknown."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Operation failed. Cannot connect to service."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error code."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getImsShortMessageFormat",
+      "返回值": "Promise<string>",
+      "所属模块": "未知模块",
+      "功能描述": "Gets SMS format supported on IMS. SMS over IMS format is either 3GPP or 3GPP2.",
+      "注释信息": [
+        "@returns { Promise<string> } Returns format, 3gpp, 3gpp2 or unknown.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 8300002 - Operation failed. Cannot connect to service.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error code.",
+        "@syscap SystemCapability.Telephony.SmsMms",
+        "@systemapi Hide this for inner system use.",
+        "@since 8"
+      ],
+      "层级": 1,
+      "上级": "sms",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Telephony.SmsMms",
+      "parameters": [],
+      "return_description": "Returns format, 3gpp, 3gpp2 or unknown.",
+      "error_codes": [
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "8300002",
+          "description": "Operation failed. Cannot connect to service."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error code."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "decodeMms",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Decode the message content. object. Incorrect parameter types. 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { string | Array<number> } mmsFilePathName - Indicates the path name of the multimedia message file.",
+        "@param { AsyncCallback<MmsInformation> } callback - Indicates the callback for getting a {@code MmsInformation}",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Operation failed. Cannot connect to service.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error code.",
+        "@syscap SystemCapability.Telephony.SmsMms",
+        "@systemapi Hide this for inner system use.",
+        "@since 8"
+      ],
+      "层级": 1,
+      "上级": "sms",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Telephony.SmsMms",
+      "parameters": [
+        {
+          "名称": "mmsFilePathName",
+          "类型": "string | Array<number>",
+          "必填": true,
+          "说明": "Indicates the path name of the multimedia message file."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<MmsInformation>",
+          "必填": true,
+          "说明": "Indicates the callback for getting a {@code MmsInformation}"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Operation failed. Cannot connect to service."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error code."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "decodeMms",
+      "返回值": "Promise<MmsInformation>",
+      "所属模块": "未知模块",
+      "功能描述": "Decode the message content. Incorrect parameter types. 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { string | Array<number> } mmsFilePathName - Indicates the path name of the multimedia message file.",
+        "@returns { Promise<MmsInformation> } Returns a {@code MmsInformation} object.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Operation failed. Cannot connect to service.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error code.",
+        "@syscap SystemCapability.Telephony.SmsMms",
+        "@systemapi Hide this for inner system use.",
+        "@since 8"
+      ],
+      "层级": 1,
+      "上级": "sms",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Telephony.SmsMms",
+      "parameters": [
+        {
+          "名称": "mmsFilePathName",
+          "类型": "string | Array<number>",
+          "必填": true,
+          "说明": "Indicates the path name of the multimedia message file."
+        }
+      ],
+      "return_description": "Returns a {@code MmsInformation} object.",
+      "error_codes": [
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Operation failed. Cannot connect to service."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error code."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "encodeMms",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Encode the message content. Incorrect parameter types. 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { MmsInformation } mms - Indicates MMS messages.",
+        "@param { AsyncCallback<Array<number>> } callback - Indicates the callback for getting the result of MMS encoding.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Operation failed. Cannot connect to service.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error code.",
+        "@syscap SystemCapability.Telephony.SmsMms",
+        "@systemapi Hide this for inner system use.",
+        "@since 8"
+      ],
+      "层级": 1,
+      "上级": "sms",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Telephony.SmsMms",
+      "parameters": [
+        {
+          "名称": "mms",
+          "类型": "MmsInformation",
+          "必填": true,
+          "说明": "Indicates MMS messages."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<Array<number>>",
+          "必填": true,
+          "说明": "Indicates the callback for getting the result of MMS encoding."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Operation failed. Cannot connect to service."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error code."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "encodeMms",
+      "返回值": "Promise<Array<number>>",
+      "所属模块": "未知模块",
+      "功能描述": "Encode the message content. Incorrect parameter types. 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { MmsInformation } mms - Indicates MMS messages.",
+        "@returns { Promise<Array<number>> } Returns the result of MMS encoding.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Operation failed. Cannot connect to service.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error code.",
+        "@syscap SystemCapability.Telephony.SmsMms",
+        "@systemapi Hide this for inner system use.",
+        "@since 8"
+      ],
+      "层级": 1,
+      "上级": "sms",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Telephony.SmsMms",
+      "parameters": [
+        {
+          "名称": "mms",
+          "类型": "MmsInformation",
+          "必填": true,
+          "说明": "Indicates MMS messages."
+        }
+      ],
+      "return_description": "Returns the result of MMS encoding.",
+      "error_codes": [
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Operation failed. Cannot connect to service."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error code."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getDefaultSmsSimId",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the default SIM ID for sending SMS messages. SIM ID will increase from 1. Incorrect parameter types.",
+      "注释信息": [
+        "@param { AsyncCallback<number> } callback - Returns the SIM ID of the default sms sim and",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Operation failed. Cannot connect to service.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300004 - Do not have sim card.",
+        "@throws { BusinessError } 8300999 - Unknown error code.",
+        "@throws { BusinessError } 8301001 - SIM card is not activated.",
+        "@syscap SystemCapability.Telephony.SmsMms",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "sms",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Telephony.SmsMms",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<number>",
+          "必填": true,
+          "说明": "Returns the SIM ID of the default sms sim and"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Operation failed. Cannot connect to service."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300004",
+          "description": "Do not have sim card."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error code."
+        },
+        {
+          "code": "8301001",
+          "description": "SIM card is not activated."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getDefaultSmsSimId",
+      "返回值": "Promise<number>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the default SIM ID for sending SMS messages. SIM ID will increase from 1.",
+      "注释信息": [
+        "@returns { Promise<number> } Returns the SIM ID of the default sms sim and",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Operation failed. Cannot connect to service.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300004 - Do not have sim card.",
+        "@throws { BusinessError } 8300999 - Unknown error code.",
+        "@throws { BusinessError } 8301001 - SIM card is not activated.",
+        "@syscap SystemCapability.Telephony.SmsMms",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "sms",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Telephony.SmsMms",
+      "parameters": [],
+      "return_description": "Returns the SIM ID of the default sms sim and",
+      "error_codes": [
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Operation failed. Cannot connect to service."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300004",
+          "description": "Do not have sim card."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error code."
+        },
+        {
+          "code": "8301001",
+          "description": "SIM card is not activated."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "interface",
+      "名称": "MmsInformation",
+      "所属模块": "未知模块",
+      "功能描述": "Defines the MMS message information.",
+      "注释信息": [
+        "@interface MmsInformation",
+        "@syscap SystemCapability.Telephony.SmsMms",
+        "@systemapi Hide this for inner system use.",
+        "@since 8"
+      ],
+      "层级": 2,
+      "上级": "sms",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Telephony.SmsMms",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "property",
+      "名称": "messageType",
+      "属性类型": "MessageType",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the message type for the MMS message.",
+      "注释信息": [
+        "@type { MessageType }",
+        "@syscap SystemCapability.Telephony.SmsMms",
+        "@systemapi Hide this for inner system use.",
+        "@since 8"
+      ],
+      "层级": 2,
+      "上级": "MmsInformation",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Telephony.SmsMms",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "property",
+      "名称": "mmsType",
+      "属性类型": "MmsSendReq | MmsSendConf | MmsNotificationInd | MmsRespInd | MmsRetrieveConf | MmsAcknowledgeInd | MmsDeliveryInd | MmsReadOrigInd | MmsReadRecInd",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the PDU header type for the MMS message. MmsDeliveryInd | MmsReadOrigInd | MmsReadRecInd }",
+      "注释信息": [
+        "@type { MmsSendReq | MmsSendConf | MmsNotificationInd | MmsRespInd | MmsRetrieveConf | MmsAcknowledgeInd |",
+        "@syscap SystemCapability.Telephony.SmsMms",
+        "@systemapi Hide this for inner system use.",
+        "@since 8"
+      ],
+      "层级": 2,
+      "上级": "MmsInformation",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Telephony.SmsMms",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "property",
+      "名称": "attachment",
+      "属性类型": "Array<MmsAttachment>",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the attachment for the MMS message.",
+      "注释信息": [
+        "@type { ?Array<MmsAttachment> }",
+        "@syscap SystemCapability.Telephony.SmsMms",
+        "@systemapi Hide this for inner system use.",
+        "@since 8"
+      ],
+      "层级": 2,
+      "上级": "MmsInformation",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Telephony.SmsMms",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    }
+  ]
+}

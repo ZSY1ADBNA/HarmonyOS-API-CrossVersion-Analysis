@@ -1,0 +1,532 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.CalendarKit",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "namespace",
+      "名称": "calendarManager",
+      "所属模块": "@kit.CalendarKit",
+      "功能描述": "This provides calendar data access abilities.",
+      "注释信息": [
+        "@namespace calendarManager",
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "@kit.CalendarKit",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "method",
+      "名称": "getCalendarManager",
+      "返回值": "CalendarManager",
+      "所属模块": "未知模块",
+      "功能描述": "Returns an instance of CalendarManager",
+      "注释信息": [
+        "@param { Context } context - Hap context information",
+        "@returns { CalendarManager } Instance of CalendarManager",
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@StageModelOnly",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "calendarManager",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [
+        {
+          "名称": "context",
+          "类型": "Context",
+          "必填": true,
+          "说明": "Hap context information"
+        }
+      ],
+      "return_description": "Instance of CalendarManager",
+      "error_codes": [],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "interface",
+      "名称": "CalendarManager",
+      "所属模块": "未知模块",
+      "功能描述": "Defines the CalendarManager class and provides functions to access the calendar data.",
+      "注释信息": [
+        "@typedef CalendarManager",
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "calendarManager",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "method",
+      "名称": "createCalendar",
+      "返回值": "Promise<Calendar>",
+      "所属模块": "未知模块",
+      "功能描述": "Create calendar instance.",
+      "注释信息": [
+        "@permission ohos.permission.WRITE_CALENDAR",
+        "@param { CalendarAccount } calendarAccount - calendar account to create calendar",
+        "@returns { Promise<Calendar> } the promise with calendar corresponding to account",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "CalendarManager",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [
+        {
+          "名称": "calendarAccount",
+          "类型": "CalendarAccount",
+          "必填": true,
+          "说明": "calendar account to create calendar"
+        }
+      ],
+      "return_description": "the promise with calendar corresponding to account",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        }
+      ],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "method",
+      "名称": "createCalendar",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Create calendar instance.",
+      "注释信息": [
+        "@permission ohos.permission.WRITE_CALENDAR",
+        "@param { CalendarAccount } calendarAccount - calendar account to create calendar",
+        "@param { AsyncCallback<Calendar> } callback - the callback of createCalendar",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "CalendarManager",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [
+        {
+          "名称": "calendarAccount",
+          "类型": "CalendarAccount",
+          "必填": true,
+          "说明": "calendar account to create calendar"
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<Calendar>",
+          "必填": true,
+          "说明": "the callback of createCalendar"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        }
+      ],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "method",
+      "名称": "deleteCalendar",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Delete calendar instance.",
+      "注释信息": [
+        "@permission ohos.permission.WRITE_CALENDAR",
+        "@param { Calendar } calendar - calendar to be deleted",
+        "@returns { Promise<void> } the promise returned by the function.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "CalendarManager",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [
+        {
+          "名称": "calendar",
+          "类型": "Calendar",
+          "必填": true,
+          "说明": "calendar to be deleted"
+        }
+      ],
+      "return_description": "the promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        }
+      ],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "method",
+      "名称": "deleteCalendar",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Delete calendar instance.",
+      "注释信息": [
+        "@permission ohos.permission.WRITE_CALENDAR",
+        "@param { Calendar } calendar - calendar to be deleted",
+        "@param { AsyncCallback<void> } callback - the callback of deleteCalendar",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "CalendarManager",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [
+        {
+          "名称": "calendar",
+          "类型": "Calendar",
+          "必填": true,
+          "说明": "calendar to be deleted"
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "the callback of deleteCalendar"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        }
+      ],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "method",
+      "名称": "getCalendar",
+      "返回值": "Promise<Calendar>",
+      "所属模块": "未知模块",
+      "功能描述": "Get calendar instance from database.",
+      "注释信息": [
+        "@permission ohos.permission.READ_CALENDAR",
+        "@param { CalendarAccount } calendarAccount - specify calendar account to retrieve",
+        "@returns { Promise<Calendar> } the promise returned by the function.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: Incorrect parameter types.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "CalendarManager",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [
+        {
+          "名称": "calendarAccount",
+          "类型": "CalendarAccount",
+          "必填": true,
+          "说明": "specify calendar account to retrieve"
+        }
+      ],
+      "return_description": "the promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: Incorrect parameter types."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        }
+      ],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "method",
+      "名称": "getCalendar",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Get calendar instance from database by specified account.",
+      "注释信息": [
+        "@permission ohos.permission.READ_CALENDAR",
+        "@param { CalendarAccount } calendarAccount - specify calendar account to retrieve",
+        "@param { AsyncCallback<Calendar> } callback - the callback of getCalendar",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "CalendarManager",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [
+        {
+          "名称": "calendarAccount",
+          "类型": "CalendarAccount",
+          "必填": true,
+          "说明": "specify calendar account to retrieve"
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<Calendar>",
+          "必填": true,
+          "说明": "the callback of getCalendar"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        }
+      ],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "method",
+      "名称": "getCalendar",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Get default calendar instance from database.",
+      "注释信息": [
+        "@permission ohos.permission.READ_CALENDAR",
+        "@param { AsyncCallback<Calendar> } callback - the callback of getCalendar with default calendar instance",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "CalendarManager",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<Calendar>",
+          "必填": true,
+          "说明": "the callback of getCalendar with default calendar instance"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        }
+      ],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "method",
+      "名称": "getAllCalendars",
+      "返回值": "Promise<Calendar[]>",
+      "所属模块": "未知模块",
+      "功能描述": "Get all calendar instance.",
+      "注释信息": [
+        "@permission ohos.permission.READ_CALENDAR",
+        "@returns { Promise<Calendar[]> } the promise returned by the function.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: Incorrect parameter types.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "CalendarManager",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [],
+      "return_description": "the promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: Incorrect parameter types."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        }
+      ],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "method",
+      "名称": "getAllCalendars",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Get all calendar instance.",
+      "注释信息": [
+        "@permission ohos.permission.READ_CALENDAR",
+        "@param {AsyncCallback<Calendar[]>} callback - the callback of getAllCalendars",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "CalendarManager",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<Calendar[]>",
+          "必填": true,
+          "说明": "the callback of getAllCalendars"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        }
+      ],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "method",
+      "名称": "editEvent",
+      "返回值": "Promise<number>",
+      "所属模块": "未知模块",
+      "功能描述": "Create a single event,invoking this interface will open the event creation page.",
+      "注释信息": [
+        "@param { Event } event - Indicates the information about a single event.",
+        "@returns { Promise<number> } the promise with event id.",
+        "@syscap SystemCapability.Applications.CalendarData",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "CalendarManager",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Applications.CalendarData",
+      "parameters": [
+        {
+          "名称": "event",
+          "类型": "Event",
+          "必填": true,
+          "说明": "Indicates the information about a single event."
+        }
+      ],
+      "return_description": "the promise with event id.",
+      "error_codes": [],
+      "版本": "API5.1"
+    }
+  ]
+}

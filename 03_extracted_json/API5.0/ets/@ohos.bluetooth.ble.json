@@ -1,0 +1,1440 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.ConnectivityKit",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "namespace",
+      "名称": "ble",
+      "所属模块": "@kit.ConnectivityKit",
+      "功能描述": "Provides methods to operate or manage Bluetooth.",
+      "注释信息": [
+        "@namespace ble",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 13"
+      ],
+      "层级": 1,
+      "上级": "@kit.ConnectivityKit",
+      "since_version": "13",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "type_alias",
+      "名称": "ProfileConnectionState",
+      "所属模块": "未知模块",
+      "功能描述": "Indicate the profile connection state.",
+      "注释信息": [
+        "@typedef { constant.ProfileConnectionState } ProfileConnectionState",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 13"
+      ],
+      "层级": 1,
+      "上级": "ble",
+      "since_version": "13",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "createGattServer",
+      "返回值": "GattServer",
+      "所属模块": "未知模块",
+      "功能描述": "create a Gatt server instance.",
+      "注释信息": [
+        "@returns { GattServer } Returns a Gatt server instance {@code GattServer}.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 13"
+      ],
+      "层级": 1,
+      "上级": "ble",
+      "since_version": "13",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "Returns a Gatt server instance {@code GattServer}.",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "createGattClientDevice",
+      "返回值": "GattClientDevice",
+      "所属模块": "未知模块",
+      "功能描述": "create a Gatt client device instance. <br>2. Incorrect parameter types. 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { string } deviceId - Indicates device ID. For example, \"11:22:33:AA:BB:FF\".",
+        "@returns { GattClientDevice } Returns a Gatt client device instance {@code GattClientDevice}.",
+        "@throws { BusinessError } 401 - Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 13"
+      ],
+      "层级": 1,
+      "上级": "ble",
+      "since_version": "13",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "deviceId",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates device ID. For example, \"11:22:33:AA:BB:FF\"."
+        }
+      ],
+      "return_description": "Returns a Gatt client device instance {@code GattClientDevice}.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "createBleScanner",
+      "返回值": "BleScanner",
+      "所属模块": "未知模块",
+      "功能描述": "Create a ble scanner instance. Each ble scanner instance can be independently started or stopped.",
+      "注释信息": [
+        "@returns { BleScanner } Returns the promise object.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 15"
+      ],
+      "层级": 1,
+      "上级": "ble",
+      "since_version": "15",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "Returns the promise object.",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getConnectedBLEDevices",
+      "返回值": "Array<string>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the list of devices in the connected status.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BLUETOOTH",
+        "@returns { Array<string> } Returns the list of device address.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 2900001 - Service stopped.",
+        "@throws { BusinessError } 2900003 - Bluetooth disabled.",
+        "@throws { BusinessError } 2900099 - Operation failed.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@crossplatform",
+        "@since 13"
+      ],
+      "层级": 1,
+      "上级": "ble",
+      "since_version": "13",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "Returns the list of device address.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "2900001",
+          "description": "Service stopped."
+        },
+        {
+          "code": "2900003",
+          "description": "Bluetooth disabled."
+        },
+        {
+          "code": "2900099",
+          "description": "Operation failed."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "startBLEScan",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Starts scanning for specified BLE devices with filters. If you do not want to use filter, set this parameter to {@code null}. {@link ScanOptions#interval} set to 0, {@link ScanOptions#dutyMode} set to {@link SCAN_MODE_LOW_POWER} and {@link ScanOptions#matchMode} set to {@link MATCH_MODE_AGGRESSIVE}. and {@link ScanOptions#phyType} set to {@link PHY_LE_ALL_SUPPORTED}. <br>2. Incorrect parameter types. 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BLUETOOTH",
+        "@param { Array<ScanFilter> } filters - Indicates the list of filters used to filter out specified devices.",
+        "@param { ScanOptions } options - Indicates the parameters for scanning and if the user does not assign a value, the default value will be used.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 2900001 - Service stopped.",
+        "@throws { BusinessError } 2900003 - Bluetooth disabled.",
+        "@throws { BusinessError } 2900099 - Operation failed.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 13"
+      ],
+      "层级": 1,
+      "上级": "ble",
+      "since_version": "13",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "filters",
+          "类型": "Array<ScanFilter>",
+          "必填": true,
+          "说明": "Indicates the list of filters used to filter out specified devices."
+        },
+        {
+          "名称": "options",
+          "类型": "ScanOptions",
+          "必填": true,
+          "说明": "Indicates the parameters for scanning and if the user does not assign a value, the default value will be used."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "2900001",
+          "description": "Service stopped."
+        },
+        {
+          "code": "2900003",
+          "description": "Bluetooth disabled."
+        },
+        {
+          "code": "2900099",
+          "description": "Operation failed."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "stopBLEScan",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Stops BLE scanning.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BLUETOOTH",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 2900001 - Service stopped.",
+        "@throws { BusinessError } 2900003 - Bluetooth disabled.",
+        "@throws { BusinessError } 2900099 - Operation failed.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 13"
+      ],
+      "层级": 1,
+      "上级": "ble",
+      "since_version": "13",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "2900001",
+          "description": "Service stopped."
+        },
+        {
+          "code": "2900003",
+          "description": "Bluetooth disabled."
+        },
+        {
+          "code": "2900099",
+          "description": "Operation failed."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "startAdvertising",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Starts BLE advertising. <br>2. Incorrect parameter types. 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BLUETOOTH",
+        "@param { AdvertiseSetting } setting - Indicates the settings for BLE advertising.",
+        "@param { AdvertiseData } advData - Indicates the advertising data.",
+        "@param { AdvertiseData } advResponse - Indicates the scan response associated with the advertising data.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 2900001 - Service stopped.",
+        "@throws { BusinessError } 2900003 - Bluetooth disabled.",
+        "@throws { BusinessError } 2900099 - Operation failed.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 13"
+      ],
+      "层级": 1,
+      "上级": "ble",
+      "since_version": "13",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "setting",
+          "类型": "AdvertiseSetting",
+          "必填": true,
+          "说明": "Indicates the settings for BLE advertising."
+        },
+        {
+          "名称": "advData",
+          "类型": "AdvertiseData",
+          "必填": true,
+          "说明": "Indicates the advertising data."
+        },
+        {
+          "名称": "advResponse",
+          "类型": "AdvertiseData",
+          "必填": true,
+          "说明": "Indicates the scan response associated with the advertising data."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "2900001",
+          "description": "Service stopped."
+        },
+        {
+          "code": "2900003",
+          "description": "Bluetooth disabled."
+        },
+        {
+          "code": "2900099",
+          "description": "Operation failed."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "stopAdvertising",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Stops BLE advertising.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BLUETOOTH",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 2900001 - Service stopped.",
+        "@throws { BusinessError } 2900003 - Bluetooth disabled.",
+        "@throws { BusinessError } 2900099 - Operation failed.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 13"
+      ],
+      "层级": 1,
+      "上级": "ble",
+      "since_version": "13",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "2900001",
+          "description": "Service stopped."
+        },
+        {
+          "code": "2900003",
+          "description": "Bluetooth disabled."
+        },
+        {
+          "code": "2900099",
+          "description": "Operation failed."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "startAdvertising",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Starts BLE advertising. The API returns a advertising ID. The ID can be used to temporarily enable or disable this advertising using the API {@link enableAdvertising} or {@link disableAdvertising}. To completely stop the advertising corresponding to the ID, invoke the API {@link stopAdvertising} with ID. <br>2. Incorrect parameter types. 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BLUETOOTH",
+        "@param { AdvertisingParams } advertisingParams - Indicates the params for BLE advertising.",
+        "@param { AsyncCallback<number> } callback - the callback of advertise ID.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 2900001 - Service stopped.",
+        "@throws { BusinessError } 2900003 - Bluetooth disabled.",
+        "@throws { BusinessError } 2900099 - Operation failed.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@crossplatform",
+        "@since 13"
+      ],
+      "层级": 1,
+      "上级": "ble",
+      "since_version": "13",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "advertisingParams",
+          "类型": "AdvertisingParams",
+          "必填": true,
+          "说明": "Indicates the params for BLE advertising."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<number>",
+          "必填": true,
+          "说明": "the callback of advertise ID."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "2900001",
+          "description": "Service stopped."
+        },
+        {
+          "code": "2900003",
+          "description": "Bluetooth disabled."
+        },
+        {
+          "code": "2900099",
+          "description": "Operation failed."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "startAdvertising",
+      "返回值": "Promise<number>",
+      "所属模块": "未知模块",
+      "功能描述": "Starts BLE advertising. The API returns a advertising ID. The ID can be used to temporarily enable or disable this advertising using the API {@link enableAdvertising} or {@link disableAdvertising}. To completely stop the advertising corresponding to the ID, invoke the API {@link stopAdvertising} with ID. <br>2. Incorrect parameter types. 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BLUETOOTH",
+        "@param { AdvertisingParams } advertisingParams - Indicates the param for BLE advertising.",
+        "@returns { Promise<number> } Returns the promise object.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 2900001 - Service stopped.",
+        "@throws { BusinessError } 2900003 - Bluetooth disabled.",
+        "@throws { BusinessError } 2900099 - Operation failed.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@crossplatform",
+        "@since 13"
+      ],
+      "层级": 1,
+      "上级": "ble",
+      "since_version": "13",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "advertisingParams",
+          "类型": "AdvertisingParams",
+          "必填": true,
+          "说明": "Indicates the param for BLE advertising."
+        }
+      ],
+      "return_description": "Returns the promise object.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "2900001",
+          "description": "Service stopped."
+        },
+        {
+          "code": "2900003",
+          "description": "Bluetooth disabled."
+        },
+        {
+          "code": "2900099",
+          "description": "Operation failed."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "enableAdvertising",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Enable the advertising with a specific ID temporarily. <br>2. Incorrect parameter types.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BLUETOOTH",
+        "@param { AdvertisingEnableParams } advertisingEnableParams - Indicates the params for enable advertising.",
+        "@param { AsyncCallback<void> } callback - the callback result.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 2900001 - Service stopped.",
+        "@throws { BusinessError } 2900003 - Bluetooth disabled.",
+        "@throws { BusinessError } 2900099 - Operation failed.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "ble",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "advertisingEnableParams",
+          "类型": "AdvertisingEnableParams",
+          "必填": true,
+          "说明": "Indicates the params for enable advertising."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "the callback result."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "2900001",
+          "description": "Service stopped."
+        },
+        {
+          "code": "2900003",
+          "description": "Bluetooth disabled."
+        },
+        {
+          "code": "2900099",
+          "description": "Operation failed."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "enableAdvertising",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Enable the advertising with a specific ID temporarily. <br>2. Incorrect parameter types.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BLUETOOTH",
+        "@param { AdvertisingEnableParams } advertisingEnableParams - Indicates the params for enable advertising.",
+        "@returns { Promise<void> } Returns the promise object.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 2900001 - Service stopped.",
+        "@throws { BusinessError } 2900003 - Bluetooth disabled.",
+        "@throws { BusinessError } 2900099 - Operation failed.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "ble",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "advertisingEnableParams",
+          "类型": "AdvertisingEnableParams",
+          "必填": true,
+          "说明": "Indicates the params for enable advertising."
+        }
+      ],
+      "return_description": "Returns the promise object.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "2900001",
+          "description": "Service stopped."
+        },
+        {
+          "code": "2900003",
+          "description": "Bluetooth disabled."
+        },
+        {
+          "code": "2900099",
+          "description": "Operation failed."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "disableAdvertising",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Disable the advertising with a specific ID temporarily. <br>2. Incorrect parameter types.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BLUETOOTH",
+        "@param { AdvertisingDisableParams } advertisingDisableParams - Indicates the params for disable advertising.",
+        "@param { AsyncCallback<void> } callback - the callback result.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 2900001 - Service stopped.",
+        "@throws { BusinessError } 2900003 - Bluetooth disabled.",
+        "@throws { BusinessError } 2900099 - Operation failed.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "ble",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "advertisingDisableParams",
+          "类型": "AdvertisingDisableParams",
+          "必填": true,
+          "说明": "Indicates the params for disable advertising."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "the callback result."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "2900001",
+          "description": "Service stopped."
+        },
+        {
+          "code": "2900003",
+          "description": "Bluetooth disabled."
+        },
+        {
+          "code": "2900099",
+          "description": "Operation failed."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "disableAdvertising",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Disable the advertising with a specific ID temporarily. <br>2. Incorrect parameter types.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BLUETOOTH",
+        "@param { AdvertisingDisableParams } advertisingDisableParams - Indicates the params for disable advertising.",
+        "@returns { Promise<void> } Returns the promise object.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 2900001 - Service stopped.",
+        "@throws { BusinessError } 2900003 - Bluetooth disabled.",
+        "@throws { BusinessError } 2900099 - Operation failed.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "ble",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "advertisingDisableParams",
+          "类型": "AdvertisingDisableParams",
+          "必填": true,
+          "说明": "Indicates the params for disable advertising."
+        }
+      ],
+      "return_description": "Returns the promise object.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "2900001",
+          "description": "Service stopped."
+        },
+        {
+          "code": "2900003",
+          "description": "Bluetooth disabled."
+        },
+        {
+          "code": "2900099",
+          "description": "Operation failed."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "stopAdvertising",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Stops BLE advertising. Completely stop the advertising corresponding to the ID. <br>2. Incorrect parameter types.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BLUETOOTH",
+        "@param { number } advertisingId - Indicates the ID for this BLE advertising.",
+        "@param { AsyncCallback<void> } callback - the callback result.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 2900001 - Service stopped.",
+        "@throws { BusinessError } 2900003 - Bluetooth disabled.",
+        "@throws { BusinessError } 2900099 - Operation failed.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@crossplatform",
+        "@since 13"
+      ],
+      "层级": 1,
+      "上级": "ble",
+      "since_version": "13",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "advertisingId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the ID for this BLE advertising."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "the callback result."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "2900001",
+          "description": "Service stopped."
+        },
+        {
+          "code": "2900003",
+          "description": "Bluetooth disabled."
+        },
+        {
+          "code": "2900099",
+          "description": "Operation failed."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "stopAdvertising",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Stops BLE advertising. Completely stop the advertising corresponding to the ID. <br>2. Incorrect parameter types.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BLUETOOTH",
+        "@param { number } advertisingId - Indicates the ID for this BLE advertising.",
+        "@returns { Promise<void> } Returns the promise object.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 2900001 - Service stopped.",
+        "@throws { BusinessError } 2900003 - Bluetooth disabled.",
+        "@throws { BusinessError } 2900099 - Operation failed.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@crossplatform",
+        "@since 13"
+      ],
+      "层级": 1,
+      "上级": "ble",
+      "since_version": "13",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "advertisingId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the ID for this BLE advertising."
+        }
+      ],
+      "return_description": "Returns the promise object.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "2900001",
+          "description": "Service stopped."
+        },
+        {
+          "code": "2900003",
+          "description": "Bluetooth disabled."
+        },
+        {
+          "code": "2900099",
+          "description": "Operation failed."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Subscribing to advertising state change event. <br>2. Incorrect parameter types. 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BLUETOOTH",
+        "@param { 'advertisingStateChange' } type - Type of the advertising state to listen for.",
+        "@param { Callback<AdvertisingStateChangeInfo> } callback - Callback used to listen for the advertising state.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 2900099 - Operation failed.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@crossplatform",
+        "@since 13"
+      ],
+      "层级": 1,
+      "上级": "ble",
+      "since_version": "13",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'advertisingStateChange'",
+          "必填": true,
+          "说明": "Type of the advertising state to listen for."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<AdvertisingStateChangeInfo>",
+          "必填": true,
+          "说明": "Callback used to listen for the advertising state."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "2900099",
+          "description": "Operation failed."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unsubscribe from advertising state change event. <br>2. Incorrect parameter types. 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BLUETOOTH",
+        "@param { 'advertisingStateChange' } type - Type of the advertising state to listen for.",
+        "@param { Callback<AdvertisingStateChangeInfo> } callback - Callback used to listen for the advertising state.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 2900099 - Operation failed.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@crossplatform",
+        "@since 13"
+      ],
+      "层级": 1,
+      "上级": "ble",
+      "since_version": "13",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'advertisingStateChange'",
+          "必填": true,
+          "说明": "Type of the advertising state to listen for."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<AdvertisingStateChangeInfo>",
+          "必填": true,
+          "说明": "Callback used to listen for the advertising state."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "2900099",
+          "description": "Operation failed."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Subscribe BLE scan result. <br>2. Incorrect parameter types. 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BLUETOOTH",
+        "@param { 'BLEDeviceFind' } type - Type of the scan result event to listen for.",
+        "@param { Callback<Array<ScanResult>> } callback - Callback used to listen for the scan result event.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 2900099 - Operation failed.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 13"
+      ],
+      "层级": 1,
+      "上级": "ble",
+      "since_version": "13",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'BLEDeviceFind'",
+          "必填": true,
+          "说明": "Type of the scan result event to listen for."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<Array<ScanResult>>",
+          "必填": true,
+          "说明": "Callback used to listen for the scan result event."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "2900099",
+          "description": "Operation failed."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unsubscribe BLE scan result. <br>2. Incorrect parameter types. 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BLUETOOTH",
+        "@param { 'BLEDeviceFind' } type - Type of the scan result event to listen for.",
+        "@param { Callback<Array<ScanResult>> } callback - Callback used to listen for the scan result event.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 2900099 - Operation failed.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 13"
+      ],
+      "层级": 1,
+      "上级": "ble",
+      "since_version": "13",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'BLEDeviceFind'",
+          "必填": true,
+          "说明": "Type of the scan result event to listen for."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<Array<ScanResult>>",
+          "必填": true,
+          "说明": "Callback used to listen for the scan result event."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "2900099",
+          "description": "Operation failed."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "interface",
+      "名称": "GattServer",
+      "所属模块": "未知模块",
+      "功能描述": "Manages GATT server. Before calling an Gatt server method, you must use {@link createGattServer} to create an GattServer instance.",
+      "注释信息": [
+        "@typedef GattServer",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 13"
+      ],
+      "层级": 2,
+      "上级": "ble",
+      "since_version": "13",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "addService",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Adds a specified service to be hosted. <p>The added service and its characteristics are provided by the local device. <br>2. Incorrect parameter types. 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BLUETOOTH",
+        "@param { GattService } service - Indicates the service to add.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 2900001 - Service stopped.",
+        "@throws { BusinessError } 2900003 - Bluetooth disabled.",
+        "@throws { BusinessError } 2900099 - Operation failed.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 13"
+      ],
+      "层级": 2,
+      "上级": "GattServer",
+      "since_version": "13",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "service",
+          "类型": "GattService",
+          "必填": true,
+          "说明": "Indicates the service to add."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "2900001",
+          "description": "Service stopped."
+        },
+        {
+          "code": "2900003",
+          "description": "Bluetooth disabled."
+        },
+        {
+          "code": "2900099",
+          "description": "Operation failed."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "removeService",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Removes a specified service from the list of GATT services provided by this device. <br>2. Incorrect parameter types. 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BLUETOOTH",
+        "@param { string } serviceUuid - Indicates the UUID of the service to remove.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 2900001 - Service stopped.",
+        "@throws { BusinessError } 2900003 - Bluetooth disabled.",
+        "@throws { BusinessError } 2900004 - Profile not supported.",
+        "@throws { BusinessError } 2900099 - Operation failed.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 13"
+      ],
+      "层级": 2,
+      "上级": "GattServer",
+      "since_version": "13",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "serviceUuid",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates the UUID of the service to remove."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "2900001",
+          "description": "Service stopped."
+        },
+        {
+          "code": "2900003",
+          "description": "Bluetooth disabled."
+        },
+        {
+          "code": "2900004",
+          "description": "Profile not supported."
+        },
+        {
+          "code": "2900099",
+          "description": "Operation failed."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "close",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Closes this {@code GattServer} object and unregisters its callbacks.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BLUETOOTH",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 2900001 - Service stopped.",
+        "@throws { BusinessError } 2900003 - Bluetooth disabled.",
+        "@throws { BusinessError } 2900099 - Operation failed.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 13"
+      ],
+      "层级": 2,
+      "上级": "GattServer",
+      "since_version": "13",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "2900001",
+          "description": "Service stopped."
+        },
+        {
+          "code": "2900003",
+          "description": "Bluetooth disabled."
+        },
+        {
+          "code": "2900099",
+          "description": "Operation failed."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "notifyCharacteristicChanged",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Sends a notification of a change in a specified local characteristic with a asynchronous callback. <p>This method should be called for every BLE peripheral device that has requested notifications. <br>2. Incorrect parameter types. 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BLUETOOTH",
+        "@param { string } deviceId - Indicates device ID. For example, \"11:22:33:AA:BB:FF\".",
+        "@param { NotifyCharacteristic } notifyCharacteristic - Indicates the local characteristic that has changed.",
+        "@param { AsyncCallback<void> } callback - Callback used to return the result.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 2900001 - Service stopped.",
+        "@throws { BusinessError } 2900003 - Bluetooth disabled.",
+        "@throws { BusinessError } 2900099 - Operation failed.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 13"
+      ],
+      "层级": 2,
+      "上级": "GattServer",
+      "since_version": "13",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "deviceId",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates device ID. For example, \"11:22:33:AA:BB:FF\"."
+        },
+        {
+          "名称": "notifyCharacteristic",
+          "类型": "NotifyCharacteristic",
+          "必填": true,
+          "说明": "Indicates the local characteristic that has changed."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "Callback used to return the result."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "2900001",
+          "description": "Service stopped."
+        },
+        {
+          "code": "2900003",
+          "description": "Bluetooth disabled."
+        },
+        {
+          "code": "2900099",
+          "description": "Operation failed."
+        }
+      ],
+      "版本": "API5.0"
+    }
+  ]
+}

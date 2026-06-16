@@ -1,0 +1,106 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.LocationKit",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "namespace",
+      "名称": "geoLocationManager",
+      "所属模块": "@kit.LocationKit",
+      "功能描述": "Provides interfaces for acquiring location information, managing location switches, geocoding, reverse geocoding, country code, fencing and other functions.",
+      "注释信息": [
+        "@namespace geoLocationManager",
+        "@syscap SystemCapability.Location.Location.Core",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "@kit.LocationKit",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Location.Location.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Subscribe location changed.",
+      "注释信息": [
+        "@permission ohos.permission.APPROXIMATELY_LOCATION",
+        "@param { 'locationChange' } type - Indicates the location service event to be subscribed to.",
+        "@param { LocationRequest | ContinuousLocationRequest } request - Indicates the location request parameters.",
+        "@param { Callback<Location> } callback - Indicates the callback for reporting the location result.",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission required to call the API.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.",
+        "@throws { BusinessError } 801 - Capability not supported. Failed to call ${geoLocationManager.on('locationChange')} due to limited device capabilities.",
+        "@throws { BusinessError } 3301000 - The location service is unavailable.",
+        "@throws { BusinessError } 3301100 - The location switch is off.",
+        "@syscap SystemCapability.Location.Location.Core",
+        "@atomicservice",
+        "@since 18"
+      ],
+      "层级": 1,
+      "上级": "geoLocationManager",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Location.Location.Core",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'locationChange'",
+          "必填": true,
+          "说明": "Indicates the location service event to be subscribed to."
+        },
+        {
+          "名称": "request",
+          "类型": "LocationRequest | ContinuousLocationRequest",
+          "必填": true,
+          "说明": "Indicates the location request parameters."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<Location>",
+          "必填": true,
+          "说明": "Indicates the callback for reporting the location result."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission required to call the API."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported. Failed to call ${geoLocationManager.on('locationChange')} due to limited device capabilities."
+        },
+        {
+          "code": "3301000",
+          "description": "The location service is unavailable."
+        },
+        {
+          "code": "3301100",
+          "description": "The location switch is off."
+        }
+      ],
+      "版本": "API5.1"
+    }
+  ]
+}

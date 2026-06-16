@@ -1,0 +1,388 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.MDMKit",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "namespace",
+      "名称": "deviceControl",
+      "所属模块": "@kit.MDMKit",
+      "功能描述": "This module provides the capability to control the enterprise devices.",
+      "注释信息": [
+        "@namespace deviceControl",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "@kit.MDMKit",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "resetFactory",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Allow the administrator to reset the enterprise devices. This function can be called by a super administrator. The admin must have the corresponding permission. 2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.ENTERPRISE_RESET_DEVICE",
+        "@param { Want } admin - admin indicates the enterprise admin extension ability information.",
+        "@param { AsyncCallback<void> } callback - the callback of resetFactory.",
+        "@throws { BusinessError } 9200001 - The application is not an administrator application of the device.",
+        "@throws { BusinessError } 9200002 - The administrator application does not have permission to manage the device.",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission required to call the API.",
+        "@throws { BusinessError } 202 - Permission verification failed. A non-system application calls a system API.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@systemapi",
+        "@StageModelOnly",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "deviceControl",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [
+        {
+          "名称": "admin",
+          "类型": "Want",
+          "必填": true,
+          "说明": "admin indicates the enterprise admin extension ability information."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "the callback of resetFactory."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "9200001",
+          "description": "The application is not an administrator application of the device."
+        },
+        {
+          "code": "9200002",
+          "description": "The administrator application does not have permission to manage the device."
+        },
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission required to call the API."
+        },
+        {
+          "code": "202",
+          "description": "Permission verification failed. A non-system application calls a system API."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "resetFactory",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Allow the administrator to reset the enterprise devices. This function can be called by a super administrator. The admin must have the corresponding permission. 2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.ENTERPRISE_RESET_DEVICE",
+        "@param { Want } admin - admin indicates the enterprise admin extension ability information.",
+        "@returns { Promise<void> } the promise returned by the resetFactory.",
+        "@throws { BusinessError } 9200001 - The application is not an administrator application of the device.",
+        "@throws { BusinessError } 9200002 - The administrator application does not have permission to manage the device.",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission required to call the API.",
+        "@throws { BusinessError } 202 - Permission verification failed. A non-system application calls a system API.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@systemapi",
+        "@StageModelOnly",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "deviceControl",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [
+        {
+          "名称": "admin",
+          "类型": "Want",
+          "必填": true,
+          "说明": "admin indicates the enterprise admin extension ability information."
+        }
+      ],
+      "return_description": "the promise returned by the resetFactory.",
+      "error_codes": [
+        {
+          "code": "9200001",
+          "description": "The application is not an administrator application of the device."
+        },
+        {
+          "code": "9200002",
+          "description": "The administrator application does not have permission to manage the device."
+        },
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission required to call the API."
+        },
+        {
+          "code": "202",
+          "description": "Permission verification failed. A non-system application calls a system API."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "shutdown",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Allows the administrator to shutdown the devices. This function can be called by a super administrator. The admin must have the corresponding permission. 2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.ENTERPRISE_REBOOT",
+        "@param { Want } admin - admin indicates the enterprise admin extension ability information.",
+        "@throws { BusinessError } 9200001 - The application is not an administrator application of the device.",
+        "@throws { BusinessError } 9200002 - The administrator application does not have permission to manage the device.",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission required to call the API.",
+        "@throws { BusinessError } 202 - Permission verification failed. A non-system application calls a system API.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@systemapi",
+        "@stagemodelonly",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "deviceControl",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [
+        {
+          "名称": "admin",
+          "类型": "Want",
+          "必填": true,
+          "说明": "admin indicates the enterprise admin extension ability information."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "9200001",
+          "description": "The application is not an administrator application of the device."
+        },
+        {
+          "code": "9200002",
+          "description": "The administrator application does not have permission to manage the device."
+        },
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission required to call the API."
+        },
+        {
+          "code": "202",
+          "description": "Permission verification failed. A non-system application calls a system API."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "reboot",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Allows the administrator to reboot the devices. This function can be called by a super administrator. The admin must have the corresponding permission. 2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.ENTERPRISE_REBOOT",
+        "@param { Want } admin - admin indicates the enterprise admin extension ability information.",
+        "@throws { BusinessError } 9200001 - The application is not an administrator application of the device.",
+        "@throws { BusinessError } 9200002 - The administrator application does not have permission to manage the device.",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission required to call the API.",
+        "@throws { BusinessError } 202 - Permission verification failed. A non-system application calls a system API.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@systemapi",
+        "@stagemodelonly",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "deviceControl",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [
+        {
+          "名称": "admin",
+          "类型": "Want",
+          "必填": true,
+          "说明": "admin indicates the enterprise admin extension ability information."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "9200001",
+          "description": "The application is not an administrator application of the device."
+        },
+        {
+          "code": "9200002",
+          "description": "The administrator application does not have permission to manage the device."
+        },
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission required to call the API."
+        },
+        {
+          "code": "202",
+          "description": "Permission verification failed. A non-system application calls a system API."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "lockScreen",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Allows the administrator to lock screen. This function can be called by a super administrator. The admin must have the corresponding permission. 2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.ENTERPRISE_LOCK_DEVICE",
+        "@param { Want } admin - admin indicates the enterprise admin extension ability information.",
+        "@throws { BusinessError } 9200001 - The application is not an administrator application of the device.",
+        "@throws { BusinessError } 9200002 - The administrator application does not have permission to manage the device.",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission required to call the API.",
+        "@throws { BusinessError } 202 - Permission verification failed. A non-system application calls a system API.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@systemapi",
+        "@stagemodelonly",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "deviceControl",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [
+        {
+          "名称": "admin",
+          "类型": "Want",
+          "必填": true,
+          "说明": "admin indicates the enterprise admin extension ability information."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "9200001",
+          "description": "The application is not an administrator application of the device."
+        },
+        {
+          "code": "9200002",
+          "description": "The administrator application does not have permission to manage the device."
+        },
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission required to call the API."
+        },
+        {
+          "code": "202",
+          "description": "Permission verification failed. A non-system application calls a system API."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "operateDevice",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Allows the administrator to operate device. This function can be called by a super administrator. The admin must have the corresponding permission. the supported device operations include lockScreen, resetFactory, reboot and shutDown. 2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.ENTERPRISE_OPERATE_DEVICE",
+        "@param { Want } admin - admin indicates the enterprise admin extension ability information.",
+        "@param { string } operate - operate indicates the operation to be performed,",
+        "@param { string } [addition] - addition indicates the specify additional parameters when performing the operation.",
+        "@throws { BusinessError } 9200001 - The application is not an administrator application of the device.",
+        "@throws { BusinessError } 9200002 - The administrator application does not have permission to manage the device.",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission required to call the API.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "deviceControl",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [
+        {
+          "名称": "admin",
+          "类型": "Want",
+          "必填": true,
+          "说明": "admin indicates the enterprise admin extension ability information."
+        },
+        {
+          "名称": "operate",
+          "类型": "string",
+          "必填": true,
+          "说明": "operate indicates the operation to be performed,"
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "string } [addition] - addition indicates the specify additional parameters when performing the operation."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "9200001",
+          "description": "The application is not an administrator application of the device."
+        },
+        {
+          "code": "9200002",
+          "description": "The administrator application does not have permission to manage the device."
+        },
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission required to call the API."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        }
+      ],
+      "版本": "API5.0"
+    }
+  ]
+}

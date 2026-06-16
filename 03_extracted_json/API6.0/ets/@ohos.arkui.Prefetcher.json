@@ -1,0 +1,291 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.ArkUI",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "interface",
+      "名称": "IDataSourcePrefetching",
+      "父类": "IDataSource",
+      "所属模块": "@kit.ArkUI",
+      "功能描述": "Implement this interface to provide data prefetching for the LazyForEach component.",
+      "注释信息": [
+        "@interface IDataSourcePrefetching",
+        "@extends IDataSource",
+        "@syscap SystemCapability.ArkUI.ArkUI.Full",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "@kit.ArkUI",
+      "since_version": "12",
+      "system_capability": "SystemCapability.ArkUI.ArkUI.Full",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "prefetch",
+      "返回值": "Promise<void> | void",
+      "所属模块": "未知模块",
+      "功能描述": "Prefetches data for the specified element in the data collection. This method can be either synchronous or asynchronous.",
+      "注释信息": [
+        "@param { number } index - Index of the item in the collection.",
+        "@returns { Promise<void> | void }",
+        "@syscap SystemCapability.ArkUI.ArkUI.Full",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "IDataSourcePrefetching",
+      "since_version": "12",
+      "system_capability": "SystemCapability.ArkUI.ArkUI.Full",
+      "parameters": [
+        {
+          "名称": "index",
+          "类型": "number",
+          "必填": true,
+          "说明": "Index of the item in the collection."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "所属模块": "未知模块",
+      "功能描述": "Cancels prefetching data for the specified element in the data collection. This method can be either synchronous or asynchronous.",
+      "注释信息": [
+        "@param { number } index - Index of the item in the collection.",
+        "@returns { Promise<void> | void }",
+        "@syscap SystemCapability.ArkUI.ArkUI.Full",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "IDataSourcePrefetching",
+      "since_version": "12",
+      "system_capability": "SystemCapability.ArkUI.ArkUI.Full",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "interface",
+      "名称": "IPrefetcher",
+      "所属模块": "@kit.ArkUI",
+      "功能描述": "Implement this interface to provide prefetcher logic.",
+      "注释信息": [
+        "@interface IPrefetcher",
+        "@syscap SystemCapability.ArkUI.ArkUI.Full",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "@kit.ArkUI",
+      "since_version": "12",
+      "system_capability": "SystemCapability.ArkUI.ArkUI.Full",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "setDataSource",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Sets the data source to bind to this prefetcher.",
+      "注释信息": [
+        "@param { IDataSourcePrefetching } dataSource - Data source that supports prefetching.",
+        "@syscap SystemCapability.ArkUI.ArkUI.Full",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "IPrefetcher",
+      "since_version": "12",
+      "system_capability": "SystemCapability.ArkUI.ArkUI.Full",
+      "parameters": [
+        {
+          "名称": "dataSource",
+          "类型": "IDataSourcePrefetching",
+          "必填": true,
+          "说明": "Data source that supports prefetching."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "visibleAreaChanged",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Call this method when the visible area boundaries were changed.",
+      "注释信息": [
+        "@param { number } minVisible - Index of the first visible data item.",
+        "@param { number } maxVisible - Index of the last visible data item.",
+        "@syscap SystemCapability.ArkUI.ArkUI.Full",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "IPrefetcher",
+      "since_version": "12",
+      "system_capability": "SystemCapability.ArkUI.ArkUI.Full",
+      "parameters": [
+        {
+          "名称": "minVisible",
+          "类型": "number",
+          "必填": true,
+          "说明": "Index of the first visible data item."
+        },
+        {
+          "名称": "maxVisible",
+          "类型": "number",
+          "必填": true,
+          "说明": "Index of the last visible data item."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "class",
+      "名称": "BasicPrefetcher",
+      "所属模块": "@kit.ArkUI",
+      "功能描述": "Basic implementation of {@link IPrefetcher}. It provides an intelligent data prefetching algorithm to make decisions about which data items should be prefetched in response to the real-time changes of visible on-screen area and changes in the duration of the prefetching. It also determines which prefetch requests should be canceled based on user scrolling actions.",
+      "注释信息": [
+        "@implements IPrefetcher",
+        "@syscap SystemCapability.ArkUI.ArkUI.Full",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "@kit.ArkUI",
+      "since_version": "12",
+      "system_capability": "SystemCapability.ArkUI.ArkUI.Full",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "constructor",
+      "返回值": "BasicPrefetcher",
+      "所属模块": "未知模块",
+      "功能描述": "Constructs a basic prefetcher instance and optionally sets the data source.",
+      "注释信息": [
+        "@param { IDataSourcePrefetching } dataSource - Data source that supports prefetching.",
+        "@syscap SystemCapability.ArkUI.ArkUI.Full",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "BasicPrefetcher",
+      "since_version": "12",
+      "system_capability": "SystemCapability.ArkUI.ArkUI.Full",
+      "parameters": [
+        {
+          "名称": "dataSource",
+          "类型": "IDataSourcePrefetching",
+          "必填": true,
+          "说明": "Data source that supports prefetching."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "setDataSource",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Sets the data source to bind to this prefetcher.",
+      "注释信息": [
+        "@param { IDataSourcePrefetching } dataSource - Data source that supports prefetching.",
+        "@syscap SystemCapability.ArkUI.ArkUI.Full",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "BasicPrefetcher",
+      "since_version": "12",
+      "system_capability": "SystemCapability.ArkUI.ArkUI.Full",
+      "parameters": [
+        {
+          "名称": "dataSource",
+          "类型": "IDataSourcePrefetching",
+          "必填": true,
+          "说明": "Data source that supports prefetching."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "visibleAreaChanged",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Call this method when the visible area changed.",
+      "注释信息": [
+        "@param { number } minVisible - Index of the first visible data item.",
+        "@param { number } maxVisible - Index of the last visible data item.",
+        "@syscap SystemCapability.ArkUI.ArkUI.Full",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "BasicPrefetcher",
+      "since_version": "12",
+      "system_capability": "SystemCapability.ArkUI.ArkUI.Full",
+      "parameters": [
+        {
+          "名称": "minVisible",
+          "类型": "number",
+          "必填": true,
+          "说明": "Index of the first visible data item."
+        },
+        {
+          "名称": "maxVisible",
+          "类型": "number",
+          "必填": true,
+          "说明": "Index of the last visible data item."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    }
+  ]
+}

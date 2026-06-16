@@ -1,0 +1,781 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.AbilityKit",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "namespace",
+      "名称": "missionManager",
+      "所属模块": "@kit.AbilityKit",
+      "功能描述": "This module provides the capability to manage abilities and obtaining system task information.",
+      "注释信息": [
+        "@namespace missionManager",
+        "@permission ohos.permission.MANAGE_MISSIONS",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Mission",
+        "@systemapi",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.app.ability.missionManager/missionManager"
+      ],
+      "层级": 1,
+      "上级": "@kit.AbilityKit",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Mission",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "registerMissionListener",
+      "返回值": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Register the missionListener to ams.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_MISSIONS",
+        "@param { MissionListener } listener - Indicates the MissionListener to be registered.",
+        "@returns { number } The index number of the MissionListener.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Mission",
+        "@systemapi",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.app.ability.missionManager/missionManager#on"
+      ],
+      "层级": 1,
+      "上级": "missionManager",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Mission",
+      "parameters": [
+        {
+          "名称": "listener",
+          "类型": "MissionListener",
+          "必填": true,
+          "说明": "Indicates the MissionListener to be registered."
+        }
+      ],
+      "return_description": "The index number of the MissionListener.",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "unregisterMissionListener",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unregister the missionListener to ams.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_MISSIONS",
+        "@param { number } listenerId - Indicates the listener id to be unregistered.",
+        "@param { AsyncCallback<void> } callback - Execution result callback function.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Mission",
+        "@systemapi",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.app.ability.missionManager/missionManager#off"
+      ],
+      "层级": 1,
+      "上级": "missionManager",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Mission",
+      "parameters": [
+        {
+          "名称": "listenerId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the listener id to be unregistered."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "Execution result callback function."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "unregisterMissionListener",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Unregister the missionListener to ams.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_MISSIONS",
+        "@param { number } listenerId - Indicates the listener id to be unregistered.",
+        "@returns { Promise<void> } The promise returned by the function.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Mission",
+        "@systemapi",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.app.ability.missionManager/missionManager#off"
+      ],
+      "层级": 1,
+      "上级": "missionManager",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Mission",
+      "parameters": [
+        {
+          "名称": "listenerId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the listener id to be unregistered."
+        }
+      ],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "getMissionInfo",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Get the missionInfo with the given missionId.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_MISSIONS",
+        "@param { string } deviceId - Indicates the device to be queried.",
+        "@param { number } missionId - Indicates mission id to be queried.",
+        "@param { AsyncCallback<MissionInfo> } callback - Execute the result callback function to return task information.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Mission",
+        "@systemapi",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.app.ability.missionManager/missionManager#getMissionInfo"
+      ],
+      "层级": 1,
+      "上级": "missionManager",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Mission",
+      "parameters": [
+        {
+          "名称": "deviceId",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates the device to be queried."
+        },
+        {
+          "名称": "missionId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates mission id to be queried."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<MissionInfo>",
+          "必填": true,
+          "说明": "Execute the result callback function to return task information."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "getMissionInfo",
+      "返回值": "Promise<MissionInfo>",
+      "所属模块": "未知模块",
+      "功能描述": "Get the missionInfo with the given missionId.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_MISSIONS",
+        "@param { string } deviceId - Indicates the device to be queried.",
+        "@param { number } missionId - Indicates mission id to be queried.",
+        "@returns { Promise<MissionInfo> } the {@link MissionInfo} of the given id.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Mission",
+        "@systemapi",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.app.ability.missionManager/missionManager#getMissionInfo"
+      ],
+      "层级": 1,
+      "上级": "missionManager",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Mission",
+      "parameters": [
+        {
+          "名称": "deviceId",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates the device to be queried."
+        },
+        {
+          "名称": "missionId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates mission id to be queried."
+        }
+      ],
+      "return_description": "the {@link MissionInfo} of the given id.",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "getMissionInfos",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Get the missionInfo with the given missionId. task information.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_MISSIONS",
+        "@param { string } deviceId - Indicates the device to be queried.",
+        "@param { number } numMax - Indicates the maximum number of returned missions.",
+        "@param { AsyncCallback<Array<MissionInfo>> } callback - Execute the result callback function to return an array of",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Mission",
+        "@systemapi",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.app.ability.missionManager/missionManager#getMissionInfos"
+      ],
+      "层级": 1,
+      "上级": "missionManager",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Mission",
+      "parameters": [
+        {
+          "名称": "deviceId",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates the device to be queried."
+        },
+        {
+          "名称": "numMax",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the maximum number of returned missions."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<Array<MissionInfo>>",
+          "必填": true,
+          "说明": "Execute the result callback function to return an array of"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "getMissionInfos",
+      "返回值": "Promise<Array<MissionInfo>>",
+      "所属模块": "未知模块",
+      "功能描述": "Get the missionInfo with the given missionId.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_MISSIONS",
+        "@param { string } deviceId - Indicates the device to be queried.",
+        "@param { number } numMax - Indicates the maximum number of returned missions.",
+        "@returns { Promise<Array<MissionInfo>> } The array of the {@link MissionInfo}.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Mission",
+        "@systemapi",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.app.ability.missionManager/missionManager#getMissionInfos"
+      ],
+      "层级": 1,
+      "上级": "missionManager",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Mission",
+      "parameters": [
+        {
+          "名称": "deviceId",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates the device to be queried."
+        },
+        {
+          "名称": "numMax",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the maximum number of returned missions."
+        }
+      ],
+      "return_description": "The array of the {@link MissionInfo}.",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "getMissionSnapShot",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Get the mission snapshot with the given missionId. information.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_MISSIONS",
+        "@param { string } deviceId - Indicates the device to be queried.",
+        "@param { number } missionId - Indicates mission id to be queried.",
+        "@param { AsyncCallback<MissionSnapshot> } callback - Execute the result callback function to return task snapshot",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Mission",
+        "@systemapi",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.app.ability.missionManager/missionManager#getMissionSnapShot"
+      ],
+      "层级": 1,
+      "上级": "missionManager",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Mission",
+      "parameters": [
+        {
+          "名称": "deviceId",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates the device to be queried."
+        },
+        {
+          "名称": "missionId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates mission id to be queried."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<MissionSnapshot>",
+          "必填": true,
+          "说明": "Execute the result callback function to return task snapshot"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "getMissionSnapShot",
+      "返回值": "Promise<MissionSnapshot>",
+      "所属模块": "未知模块",
+      "功能描述": "Get the mission snapshot with the given missionId.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_MISSIONS",
+        "@param { string } deviceId - Indicates the device to be queried.",
+        "@param { number } missionId - Indicates mission id to be queried.",
+        "@returns { Promise<MissionSnapshot> } The {@link MissionSnapshot} of the given id.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Mission",
+        "@systemapi",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.app.ability.missionManager/missionManager#getMissionSnapShot"
+      ],
+      "层级": 1,
+      "上级": "missionManager",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Mission",
+      "parameters": [
+        {
+          "名称": "deviceId",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates the device to be queried."
+        },
+        {
+          "名称": "missionId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates mission id to be queried."
+        }
+      ],
+      "return_description": "The {@link MissionSnapshot} of the given id.",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "lockMission",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Lock the mission.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_MISSIONS",
+        "@param { number } missionId - Indicates mission id to be locked.",
+        "@param { AsyncCallback<void> } callback - Execution result callback function.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Mission",
+        "@systemapi",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.app.ability.missionManager/missionManager#lockMission"
+      ],
+      "层级": 1,
+      "上级": "missionManager",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Mission",
+      "parameters": [
+        {
+          "名称": "missionId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates mission id to be locked."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "Execution result callback function."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "lockMission",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Lock the mission.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_MISSIONS",
+        "@param { number } missionId - Indicates mission id to be locked.",
+        "@returns { Promise<void> } The promise returned by the function.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Mission",
+        "@systemapi",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.app.ability.missionManager/missionManager#lockMission"
+      ],
+      "层级": 1,
+      "上级": "missionManager",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Mission",
+      "parameters": [
+        {
+          "名称": "missionId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates mission id to be locked."
+        }
+      ],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "unlockMission",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unlock the mission.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_MISSIONS",
+        "@param { number } missionId - Indicates mission id to be unlocked.",
+        "@param { AsyncCallback<void> } callback - Execution result callback function.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Mission",
+        "@systemapi",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.app.ability.missionManager/missionManager#unlockMission"
+      ],
+      "层级": 1,
+      "上级": "missionManager",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Mission",
+      "parameters": [
+        {
+          "名称": "missionId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates mission id to be unlocked."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "Execution result callback function."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "unlockMission",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Unlock the mission.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_MISSIONS",
+        "@param { number } missionId - Indicates mission id to be unlocked.",
+        "@returns { Promise<void> } The promise returned by the function.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Mission",
+        "@systemapi",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.app.ability.missionManager/missionManager#unlockMission"
+      ],
+      "层级": 1,
+      "上级": "missionManager",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Mission",
+      "parameters": [
+        {
+          "名称": "missionId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates mission id to be unlocked."
+        }
+      ],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "clearMission",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Clear the given mission in the ability manager service.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_MISSIONS",
+        "@param { number } missionId - Indicates mission id to be cleared.",
+        "@param { AsyncCallback<void> } callback - Execution result callback function.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Mission",
+        "@systemapi",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.app.ability.missionManager/missionManager#clearMission"
+      ],
+      "层级": 1,
+      "上级": "missionManager",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Mission",
+      "parameters": [
+        {
+          "名称": "missionId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates mission id to be cleared."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "Execution result callback function."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "clearMission",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Clear the given mission in the ability manager service.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_MISSIONS",
+        "@param { number } missionId - Indicates mission id to be cleared.",
+        "@returns { Promise<void> } The promise returned by the function.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Mission",
+        "@systemapi",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.app.ability.missionManager/missionManager#clearMission"
+      ],
+      "层级": 1,
+      "上级": "missionManager",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Mission",
+      "parameters": [
+        {
+          "名称": "missionId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates mission id to be cleared."
+        }
+      ],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "clearAllMissions",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Clear all missions in the ability manager service.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_MISSIONS",
+        "@param { AsyncCallback<void> } callback - Returns the callback result in the form of a callback.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Mission",
+        "@systemapi",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.app.ability.missionManager/missionManager#clearAllMissions"
+      ],
+      "层级": 1,
+      "上级": "missionManager",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Mission",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "Returns the callback result in the form of a callback."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "clearAllMissions",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Clear all missions in the ability manager service.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_MISSIONS",
+        "@returns { Promise<void> } The promise returned by the function.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Mission",
+        "@systemapi",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.app.ability.missionManager/missionManager#clearAllMissions"
+      ],
+      "层级": 1,
+      "上级": "missionManager",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Mission",
+      "parameters": [],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "moveMissionToFront",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Schedule the given mission to foreground.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_MISSIONS",
+        "@param { number } missionId - Indicates mission id to be moved to foreground.",
+        "@param { AsyncCallback<void> } callback - Execution result callback function.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Mission",
+        "@systemapi",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.app.ability.missionManager/missionManager#moveMissionToFront"
+      ],
+      "层级": 1,
+      "上级": "missionManager",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Mission",
+      "parameters": [
+        {
+          "名称": "missionId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates mission id to be moved to foreground."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "Execution result callback function."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "moveMissionToFront",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Schedule the given mission to foreground.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_MISSIONS",
+        "@param { number } missionId - Indicates mission id to be moved to foreground.",
+        "@param { StartOptions } options - Indicates the start options.",
+        "@param { AsyncCallback<void> } callback - Execution result callback function.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Mission",
+        "@systemapi",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.app.ability.missionManager/missionManager#moveMissionToFront"
+      ],
+      "层级": 1,
+      "上级": "missionManager",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Mission",
+      "parameters": [
+        {
+          "名称": "missionId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates mission id to be moved to foreground."
+        },
+        {
+          "名称": "options",
+          "类型": "StartOptions",
+          "必填": true,
+          "说明": "Indicates the start options."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "Execution result callback function."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "moveMissionToFront",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Schedule the given mission to foreground.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_MISSIONS",
+        "@param { number } missionId - Indicates mission id to be moved to foreground.",
+        "@param { StartOptions } [options] - Indicates the start options.",
+        "@returns { Promise<void> } The promise returned by the function.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Mission",
+        "@systemapi",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.app.ability.missionManager/missionManager#moveMissionToFront"
+      ],
+      "层级": 1,
+      "上级": "missionManager",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Mission",
+      "parameters": [
+        {
+          "名称": "missionId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates mission id to be moved to foreground."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "StartOptions } [options] - Indicates the start options."
+        }
+      ],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [],
+      "版本": "API4.1"
+    }
+  ]
+}

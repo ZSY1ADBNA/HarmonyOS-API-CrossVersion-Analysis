@@ -1,0 +1,2455 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.MDMKit",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "namespace",
+      "名称": "bundleManager",
+      "所属模块": "@kit.MDMKit",
+      "功能描述": "This module provides the capability to manage the bundles of the enterprise devices.",
+      "注释信息": [
+        "@namespace bundleManager",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "@kit.MDMKit",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "InstallParam",
+      "所属模块": "未知模块",
+      "功能描述": "Provides parameters required for installing an application.",
+      "注释信息": [
+        "@typedef InstallParam",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@StageModelOnly",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "bundleManager",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "userId",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the user id",
+      "注释信息": [
+        "@type { ?number }",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@StageModelOnly",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "InstallParam",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "installFlag",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the install flag, which 0 for first install, 1 for cover install",
+      "注释信息": [
+        "@type { ?number }",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@StageModelOnly",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "InstallParam",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "parameters",
+      "属性类型": "Record<string, string>",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates parameters",
+      "注释信息": [
+        "@type { ?Record<string, string> }",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 19"
+      ],
+      "层级": 2,
+      "上级": "InstallParam",
+      "since_version": "19",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "BundleInfoGetFlag",
+      "所属模块": "未知模块",
+      "功能描述": "Used to query the enumeration value of bundleInfo. Multiple values can be passed in the form. Multiple value input, such as DEFAULT | WITH_APPLICATION_INFO.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "bundleManager",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "DEFAULT",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "Used to obtain the default info",
+      "注释信息": [
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "BundleInfoGetFlag",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "WITH_APPLICATION_INFO",
+      "值": "1 << 0",
+      "所属模块": "未知模块",
+      "功能描述": "Used to obtain application info",
+      "注释信息": [
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "BundleInfoGetFlag",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "WITH_SIGNATURE_INFO",
+      "值": "1 << 1",
+      "所属模块": "未知模块",
+      "功能描述": "Used to obtain the signature info",
+      "注释信息": [
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "BundleInfoGetFlag",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "WITH_APPLICATION_ICON_INFO",
+      "值": "1 << 2",
+      "所属模块": "未知模块",
+      "功能描述": "Used to obtained the application icon info",
+      "注释信息": [
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "BundleInfoGetFlag",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "Resource",
+      "所属模块": "未知模块",
+      "功能描述": "Contains resource descriptor information.",
+      "注释信息": [
+        "@typedef Resource",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "bundleManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "bundleName",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Bundle name in hap",
+      "注释信息": [
+        "@type { string }",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "Resource",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "moduleName",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Module name in hap",
+      "注释信息": [
+        "@type { string }",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "Resource",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "id",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Resource id in hap",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "Resource",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "BundleInfo",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains configuration information about a bundle",
+      "注释信息": [
+        "@typedef BundleInfo",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "bundleManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "name",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the name of this bundle",
+      "注释信息": [
+        "@type { string }",
+        "@readonly",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "BundleInfo",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "vendor",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the bundle vendor",
+      "注释信息": [
+        "@type { string }",
+        "@readonly",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "BundleInfo",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "versionCode",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the version code of the bundle",
+      "注释信息": [
+        "@type { number }",
+        "@readonly",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "BundleInfo",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "versionName",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the version name of the bundle",
+      "注释信息": [
+        "@type { string }",
+        "@readonly",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "BundleInfo",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "minCompatibleVersionCode",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the minimum version compatible with the bundle",
+      "注释信息": [
+        "@type { number }",
+        "@readonly",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "BundleInfo",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "targetVersion",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the target version number of the bundle",
+      "注释信息": [
+        "@type { number }",
+        "@readonly",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "BundleInfo",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "appInfo",
+      "属性类型": "ApplicationInfo",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains configuration information about an application",
+      "注释信息": [
+        "@type { ApplicationInfo }",
+        "@readonly",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "BundleInfo",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "signatureInfo",
+      "属性类型": "SignatureInfo",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the SignatureInfo of the bundle",
+      "注释信息": [
+        "@type { SignatureInfo }",
+        "@readonly",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "BundleInfo",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "installTime",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the hap install time",
+      "注释信息": [
+        "@type { number }",
+        "@readonly",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "BundleInfo",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "updateTime",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the hap update time",
+      "注释信息": [
+        "@type { number }",
+        "@readonly",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "BundleInfo",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "appIndex",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the appIndex of application, only work in appClone mode",
+      "注释信息": [
+        "@type { number }",
+        "@readonly",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "BundleInfo",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "firstInstallTime",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the hap first install time",
+      "注释信息": [
+        "@type { ?number }",
+        "@readonly",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "BundleInfo",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "SignatureInfo",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates SignatureInfo",
+      "注释信息": [
+        "@typedef SignatureInfo",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "bundleManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "appId",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the ID of the application to which this bundle belongs The application ID uniquely identifies an application. It is determined by the bundle name and signature",
+      "注释信息": [
+        "@type { string }",
+        "@readonly",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "SignatureInfo",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "fingerprint",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the fingerprint of the certificate",
+      "注释信息": [
+        "@type { string }",
+        "@readonly",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "SignatureInfo",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "appIdentifier",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Globally unique identifier of an application, which is allocated by the cloud. AppIdentifier does not change along the application lifecycle, including version updates, certificate changes, public and private key changes, and application transfer.",
+      "注释信息": [
+        "@type { string }",
+        "@readonly",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "SignatureInfo",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "certificate",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the certificate",
+      "注释信息": [
+        "@type { ?string }",
+        "@readonly",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "SignatureInfo",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "ApplicationInfo",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains configuration information about an application",
+      "注释信息": [
+        "@typedef ApplicationInfo",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "bundleManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "name",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the application name, which is the same as {@code bundleName}",
+      "注释信息": [
+        "@type { string }",
+        "@readonly",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "ApplicationInfo",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "description",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Description of application",
+      "注释信息": [
+        "@type { string }",
+        "@readonly",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "ApplicationInfo",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "descriptionId",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the description id of the application",
+      "注释信息": [
+        "@type { number }",
+        "@readonly",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "ApplicationInfo",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "enabled",
+      "属性类型": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates whether or not this application may be instantiated",
+      "注释信息": [
+        "@type { boolean }",
+        "@readonly",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "ApplicationInfo",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "label",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the label of the application",
+      "注释信息": [
+        "@type { string }",
+        "@readonly",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "ApplicationInfo",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "labelId",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the label id of the application",
+      "注释信息": [
+        "@type { number }",
+        "@readonly",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "ApplicationInfo",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "icon",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the icon of the application",
+      "注释信息": [
+        "@type { string }",
+        "@readonly",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "ApplicationInfo",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "iconId",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the icon id of the application",
+      "注释信息": [
+        "@type { number }",
+        "@readonly",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "ApplicationInfo",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "iconData",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the iconData of the application",
+      "注释信息": [
+        "@type { string }",
+        "@readonly",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "ApplicationInfo",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "process",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Process of application, if user do not set it ,the value equal bundleName",
+      "注释信息": [
+        "@type { string }",
+        "@readonly",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "ApplicationInfo",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "codePath",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the application source code path",
+      "注释信息": [
+        "@type { string }",
+        "@readonly",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "ApplicationInfo",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "removable",
+      "属性类型": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates whether or not this application may be removable",
+      "注释信息": [
+        "@type { boolean }",
+        "@readonly",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "ApplicationInfo",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "accessTokenId",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the access token of the application",
+      "注释信息": [
+        "@type { number }",
+        "@readonly",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "ApplicationInfo",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "uid",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the uid of the application",
+      "注释信息": [
+        "@type { number }",
+        "@readonly",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "ApplicationInfo",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "iconResource",
+      "属性类型": "Resource",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates icon resource of the application",
+      "注释信息": [
+        "@type { Resource }",
+        "@readonly",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "ApplicationInfo",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "labelResource",
+      "属性类型": "Resource",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates label resource of the application",
+      "注释信息": [
+        "@type { Resource }",
+        "@readonly",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "ApplicationInfo",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "descriptionResource",
+      "属性类型": "Resource",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates description resource of the application",
+      "注释信息": [
+        "@type { Resource }",
+        "@readonly",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "ApplicationInfo",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "appDistributionType",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the appDistributionType of the application",
+      "注释信息": [
+        "@type { string }",
+        "@readonly",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "ApplicationInfo",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "appProvisionType",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the appProvisionType of the application",
+      "注释信息": [
+        "@type { string }",
+        "@readonly",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "ApplicationInfo",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "systemApp",
+      "属性类型": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates whether the application is a system application",
+      "注释信息": [
+        "@type { boolean }",
+        "@readonly",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "ApplicationInfo",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "debug",
+      "属性类型": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates whether the application is in debug mode.",
+      "注释信息": [
+        "@type { boolean }",
+        "@readonly",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "ApplicationInfo",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "dataUnclearable",
+      "属性类型": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates whether the application data is unclearable, that is, whether the application data cannot be cleared.",
+      "注释信息": [
+        "@type { boolean }",
+        "@readonly",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "ApplicationInfo",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "nativeLibraryPath",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates native library path.",
+      "注释信息": [
+        "@type { string }",
+        "@readonly",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "ApplicationInfo",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "appIndex",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the index of the bundle",
+      "注释信息": [
+        "@type { number }",
+        "@readonly",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "ApplicationInfo",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "installSource",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates sources to install the app",
+      "注释信息": [
+        "@type { string }",
+        "@readonly",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "ApplicationInfo",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "releaseType",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the release type of the app",
+      "注释信息": [
+        "@type { string }",
+        "@readonly",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "ApplicationInfo",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "addAllowedInstallBundlesSync",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Add appid list of bundles that can be installed in the device. Only apps with the ohos.permission.ENTERPRISE_SET_BUNDLE_INSTALL_POLICY permission can call this method. The admin must have the corresponding permission. The size of the array after setting cannot be greater than 200. 2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.ENTERPRISE_SET_BUNDLE_INSTALL_POLICY",
+        "@param { Want } admin - admin indicates the enterprise admin extension ability information.",
+        "@param { Array<string> } appIds - appIds or appIdentifiers of the bundle that can be installed.",
+        "@param { number } [accountId] - accountId indicates the account ID or do not pass account ID.",
+        "@throws { BusinessError } 9200001 - The application is not an administrator application of the device.",
+        "@throws { BusinessError } 9200002 - The administrator application does not have permission to manage the device.",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission required to call the API.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 21"
+      ],
+      "层级": 1,
+      "上级": "bundleManager",
+      "since_version": "21",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [
+        {
+          "名称": "admin",
+          "类型": "Want",
+          "必填": true,
+          "说明": "admin indicates the enterprise admin extension ability information."
+        },
+        {
+          "名称": "appIds",
+          "类型": "Array<string>",
+          "必填": true,
+          "说明": "appIds or appIdentifiers of the bundle that can be installed."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "number } [accountId] - accountId indicates the account ID or do not pass account ID."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "9200001",
+          "description": "The application is not an administrator application of the device."
+        },
+        {
+          "code": "9200002",
+          "description": "The administrator application does not have permission to manage the device."
+        },
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission required to call the API."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "removeAllowedInstallBundlesSync",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Remove appid list of bundles that can be installed in the device. Only apps with the ohos.permission.ENTERPRISE_SET_BUNDLE_INSTALL_POLICY permission can call this method. The admin must have the corresponding permission. The size of the array after setting cannot be greater than 200. 2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.ENTERPRISE_SET_BUNDLE_INSTALL_POLICY",
+        "@param { Want } admin - admin indicates the enterprise admin extension ability information.",
+        "@param { Array<string> } appIds - appIds or appIdentifiers of the bundle that can be installed.",
+        "@param { number } [accountId] - accountId indicates the account ID or do not pass account ID.",
+        "@throws { BusinessError } 9200001 - The application is not an administrator application of the device.",
+        "@throws { BusinessError } 9200002 - The administrator application does not have permission to manage the device.",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission required to call the API.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 21"
+      ],
+      "层级": 1,
+      "上级": "bundleManager",
+      "since_version": "21",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [
+        {
+          "名称": "admin",
+          "类型": "Want",
+          "必填": true,
+          "说明": "admin indicates the enterprise admin extension ability information."
+        },
+        {
+          "名称": "appIds",
+          "类型": "Array<string>",
+          "必填": true,
+          "说明": "appIds or appIdentifiers of the bundle that can be installed."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "number } [accountId] - accountId indicates the account ID or do not pass account ID."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "9200001",
+          "description": "The application is not an administrator application of the device."
+        },
+        {
+          "code": "9200002",
+          "description": "The administrator application does not have permission to manage the device."
+        },
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission required to call the API."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getAllowedInstallBundlesSync",
+      "返回值": "Array<string>",
+      "所属模块": "未知模块",
+      "功能描述": "Get appid list of bundles that can be installed in the device. Only apps with the ohos.permission.ENTERPRISE_SET_BUNDLE_INSTALL_POLICY permission can call this method. The admin must have the corresponding permission. 2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.ENTERPRISE_SET_BUNDLE_INSTALL_POLICY",
+        "@param { Want } admin - admin indicates the enterprise admin extension ability information.",
+        "@param { number } [accountId] - accountId indicates the account ID or do not pass account ID.",
+        "@returns { Array<string> } appIds or appIdentifiers of the bundle that can be installed.",
+        "@throws { BusinessError } 9200001 - The application is not an administrator application of the device.",
+        "@throws { BusinessError } 9200002 - The administrator application does not have permission to manage the device.",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission required to call the API.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 21"
+      ],
+      "层级": 1,
+      "上级": "bundleManager",
+      "since_version": "21",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [
+        {
+          "名称": "admin",
+          "类型": "Want",
+          "必填": true,
+          "说明": "admin indicates the enterprise admin extension ability information."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "number } [accountId] - accountId indicates the account ID or do not pass account ID."
+        }
+      ],
+      "return_description": "appIds or appIdentifiers of the bundle that can be installed.",
+      "error_codes": [
+        {
+          "code": "9200001",
+          "description": "The application is not an administrator application of the device."
+        },
+        {
+          "code": "9200002",
+          "description": "The administrator application does not have permission to manage the device."
+        },
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission required to call the API."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "addDisallowedInstallBundlesSync",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Add appid list of bundles that can not be installed in the device. Only apps with the ohos.permission.ENTERPRISE_SET_BUNDLE_INSTALL_POLICY permission can call this method. The admin must have the corresponding permission. The size of the array after setting cannot be greater than 200. 2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.ENTERPRISE_SET_BUNDLE_INSTALL_POLICY",
+        "@param { Want } admin - admin indicates the enterprise admin extension ability information.",
+        "@param { Array<string> } appIds - appIds or appIdentifiers of the bundle that can not be installed.",
+        "@param { number } [accountId] - accountId indicates the account ID or do not pass account ID.",
+        "@throws { BusinessError } 9200001 - The application is not an administrator application of the device.",
+        "@throws { BusinessError } 9200002 - The administrator application does not have permission to manage the device.",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission required to call the API.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 21"
+      ],
+      "层级": 1,
+      "上级": "bundleManager",
+      "since_version": "21",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [
+        {
+          "名称": "admin",
+          "类型": "Want",
+          "必填": true,
+          "说明": "admin indicates the enterprise admin extension ability information."
+        },
+        {
+          "名称": "appIds",
+          "类型": "Array<string>",
+          "必填": true,
+          "说明": "appIds or appIdentifiers of the bundle that can not be installed."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "number } [accountId] - accountId indicates the account ID or do not pass account ID."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "9200001",
+          "description": "The application is not an administrator application of the device."
+        },
+        {
+          "code": "9200002",
+          "description": "The administrator application does not have permission to manage the device."
+        },
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission required to call the API."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "removeDisallowedInstallBundlesSync",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Remove appid list of bundles that can not be installed in the device. Only apps with the ohos.permission.ENTERPRISE_SET_BUNDLE_INSTALL_POLICY permission can call this method. The admin must have the corresponding permission. The size of the array after setting cannot be greater than 200. 2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.ENTERPRISE_SET_BUNDLE_INSTALL_POLICY",
+        "@param { Want } admin - admin indicates the enterprise admin extension ability information.",
+        "@param { Array<string> } appIds - appIds or appIdentifiers of the bundle that can not be installed.",
+        "@param { number } [accountId] - accountId indicates the account ID or do not pass account ID.",
+        "@throws { BusinessError } 9200001 - The application is not an administrator application of the device.",
+        "@throws { BusinessError } 9200002 - The administrator application does not have permission to manage the device.",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission required to call the API.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 21"
+      ],
+      "层级": 1,
+      "上级": "bundleManager",
+      "since_version": "21",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [
+        {
+          "名称": "admin",
+          "类型": "Want",
+          "必填": true,
+          "说明": "admin indicates the enterprise admin extension ability information."
+        },
+        {
+          "名称": "appIds",
+          "类型": "Array<string>",
+          "必填": true,
+          "说明": "appIds or appIdentifiers of the bundle that can not be installed."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "number } [accountId] - accountId indicates the account ID or do not pass account ID."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "9200001",
+          "description": "The application is not an administrator application of the device."
+        },
+        {
+          "code": "9200002",
+          "description": "The administrator application does not have permission to manage the device."
+        },
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission required to call the API."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getDisallowedInstallBundlesSync",
+      "返回值": "Array<string>",
+      "所属模块": "未知模块",
+      "功能描述": "Get appid list of bundles that can not be installed in the device. Only apps with the ohos.permission.ENTERPRISE_SET_BUNDLE_INSTALL_POLICY permission can call this method. The admin must have the corresponding permission. 2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.ENTERPRISE_SET_BUNDLE_INSTALL_POLICY",
+        "@param { Want } admin - admin indicates the enterprise admin extension ability information.",
+        "@param { number } [accountId] - accountId indicates the account ID or do not pass account ID.",
+        "@returns { Array<string> } appIds or appIdentifiers of the bundle that can not be installed.",
+        "@throws { BusinessError } 9200001 - The application is not an administrator application of the device.",
+        "@throws { BusinessError } 9200002 - The administrator application does not have permission to manage the device.",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission required to call the API.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 21"
+      ],
+      "层级": 1,
+      "上级": "bundleManager",
+      "since_version": "21",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [
+        {
+          "名称": "admin",
+          "类型": "Want",
+          "必填": true,
+          "说明": "admin indicates the enterprise admin extension ability information."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "number } [accountId] - accountId indicates the account ID or do not pass account ID."
+        }
+      ],
+      "return_description": "appIds or appIdentifiers of the bundle that can not be installed.",
+      "error_codes": [
+        {
+          "code": "9200001",
+          "description": "The application is not an administrator application of the device."
+        },
+        {
+          "code": "9200002",
+          "description": "The administrator application does not have permission to manage the device."
+        },
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission required to call the API."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "addDisallowedUninstallBundlesSync",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Add appid list of bundles that can not be uninstalled in the device. Only apps with the ohos.permission.ENTERPRISE_SET_BUNDLE_INSTALL_POLICY permission can call this method. The admin must have the corresponding permission. The size of the array after setting cannot be greater than 200. 2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.ENTERPRISE_SET_BUNDLE_INSTALL_POLICY",
+        "@param { Want } admin - admin indicates the enterprise admin extension ability information.",
+        "@param { Array<string> } appIds - appIds or appIdentifiers of the bundle that can not be uninstalled.",
+        "@param { number } [accountId] - accountId indicates the account ID or do not pass account ID.",
+        "@throws { BusinessError } 9200001 - The application is not an administrator application of the device.",
+        "@throws { BusinessError } 9200002 - The administrator application does not have permission to manage the device.",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission required to call the API.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 21"
+      ],
+      "层级": 1,
+      "上级": "bundleManager",
+      "since_version": "21",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [
+        {
+          "名称": "admin",
+          "类型": "Want",
+          "必填": true,
+          "说明": "admin indicates the enterprise admin extension ability information."
+        },
+        {
+          "名称": "appIds",
+          "类型": "Array<string>",
+          "必填": true,
+          "说明": "appIds or appIdentifiers of the bundle that can not be uninstalled."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "number } [accountId] - accountId indicates the account ID or do not pass account ID."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "9200001",
+          "description": "The application is not an administrator application of the device."
+        },
+        {
+          "code": "9200002",
+          "description": "The administrator application does not have permission to manage the device."
+        },
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission required to call the API."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "removeDisallowedUninstallBundlesSync",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Remove appid list of bundles that can not be uninstalled in the device. Only apps with the ohos.permission.ENTERPRISE_SET_BUNDLE_INSTALL_POLICY permission can call this method. The admin must have the corresponding permission. The size of the array after setting cannot be greater than 200. 2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.ENTERPRISE_SET_BUNDLE_INSTALL_POLICY",
+        "@param { Want } admin - admin indicates the enterprise admin extension ability information.",
+        "@param { Array<string> } appIds - appIds or appIdentifiers of the bundle that can not be uninstalled.",
+        "@param { number } [accountId] - accountId indicates the account ID or do not pass account ID.",
+        "@throws { BusinessError } 9200001 - The application is not an administrator application of the device.",
+        "@throws { BusinessError } 9200002 - The administrator application does not have permission to manage the device.",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission required to call the API.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 21"
+      ],
+      "层级": 1,
+      "上级": "bundleManager",
+      "since_version": "21",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [
+        {
+          "名称": "admin",
+          "类型": "Want",
+          "必填": true,
+          "说明": "admin indicates the enterprise admin extension ability information."
+        },
+        {
+          "名称": "appIds",
+          "类型": "Array<string>",
+          "必填": true,
+          "说明": "appIds or appIdentifiers of the bundle that can not be uninstalled."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "number } [accountId] - accountId indicates the account ID or do not pass account ID."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "9200001",
+          "description": "The application is not an administrator application of the device."
+        },
+        {
+          "code": "9200002",
+          "description": "The administrator application does not have permission to manage the device."
+        },
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission required to call the API."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getDisallowedUninstallBundlesSync",
+      "返回值": "Array<string>",
+      "所属模块": "未知模块",
+      "功能描述": "Get appid list of bundles that can not be uninstalled in the device. Only apps with the ohos.permission.ENTERPRISE_SET_BUNDLE_INSTALL_POLICY permission can call this method. The admin must have the corresponding permission. 2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.ENTERPRISE_SET_BUNDLE_INSTALL_POLICY",
+        "@param { Want } admin - admin indicates the enterprise admin extension ability information.",
+        "@param { number } [accountId] - accountId indicates the account ID or do not pass account ID.",
+        "@returns { Array<string> } appIds or appIdentifiers of the bundle that can not be uninstalled.",
+        "@throws { BusinessError } 9200001 - The application is not an administrator application of the device.",
+        "@throws { BusinessError } 9200002 - The administrator application does not have permission to manage the device.",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission required to call the API.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 21"
+      ],
+      "层级": 1,
+      "上级": "bundleManager",
+      "since_version": "21",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [
+        {
+          "名称": "admin",
+          "类型": "Want",
+          "必填": true,
+          "说明": "admin indicates the enterprise admin extension ability information."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "number } [accountId] - accountId indicates the account ID or do not pass account ID."
+        }
+      ],
+      "return_description": "appIds or appIdentifiers of the bundle that can not be uninstalled.",
+      "error_codes": [
+        {
+          "code": "9200001",
+          "description": "The application is not an administrator application of the device."
+        },
+        {
+          "code": "9200002",
+          "description": "The administrator application does not have permission to manage the device."
+        },
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission required to call the API."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "uninstall",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Uninstall an application. The admin must have the corresponding permission. 2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.ENTERPRISE_INSTALL_BUNDLE",
+        "@param { Want } admin - admin indicates the enterprise admin extension ability information.",
+        "@param { string } bundleName - indicates the bundle name of the application to be uninstalled.",
+        "@param { number } [userId] - userId indicates the user ID or do not pass user ID.",
+        "@param { boolean } [isKeepData] - isKeepData indicates whether keep the data.",
+        "@returns { Promise<void> } the promise of uninstalling application result.",
+        "@throws { BusinessError } 9200001 - The application is not an administrator application of the device.",
+        "@throws { BusinessError } 9200002 - The administrator application does not have permission to manage the device.",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission required to call the API.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@StageModelOnly",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "bundleManager",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [
+        {
+          "名称": "admin",
+          "类型": "Want",
+          "必填": true,
+          "说明": "admin indicates the enterprise admin extension ability information."
+        },
+        {
+          "名称": "bundleName",
+          "类型": "string",
+          "必填": true,
+          "说明": "indicates the bundle name of the application to be uninstalled."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "boolean } [isKeepData] - isKeepData indicates whether keep the data."
+        }
+      ],
+      "return_description": "the promise of uninstalling application result.",
+      "error_codes": [
+        {
+          "code": "9200001",
+          "description": "The application is not an administrator application of the device."
+        },
+        {
+          "code": "9200002",
+          "description": "The administrator application does not have permission to manage the device."
+        },
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission required to call the API."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "install",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Install an application. The admin must have the corresponding permission. It may contain two fields: userId and installFlag. The flag can only be one of correct flags. 2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.ENTERPRISE_INSTALL_BUNDLE",
+        "@param { Want } admin - admin indicates the enterprise admin extension ability information.",
+        "@param { Array<string> } hapFilePaths - indicates the path of the application to be installed.",
+        "@param { InstallParam } [installParam] - installParam indicates the installation parameters.",
+        "@returns { Promise<void> } the promise of installing application result.",
+        "@throws { BusinessError } 9200001 - The application is not an administrator application of the device.",
+        "@throws { BusinessError } 9200002 - The administrator application does not have permission to manage the device.",
+        "@throws { BusinessError } 9201002 - Failed to install the application.",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission required to call the API.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@StageModelOnly",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "bundleManager",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [
+        {
+          "名称": "admin",
+          "类型": "Want",
+          "必填": true,
+          "说明": "admin indicates the enterprise admin extension ability information."
+        },
+        {
+          "名称": "hapFilePaths",
+          "类型": "Array<string>",
+          "必填": true,
+          "说明": "indicates the path of the application to be installed."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "InstallParam } [installParam] - installParam indicates the installation parameters."
+        }
+      ],
+      "return_description": "the promise of installing application result.",
+      "error_codes": [
+        {
+          "code": "9200001",
+          "description": "The application is not an administrator application of the device."
+        },
+        {
+          "code": "9200002",
+          "description": "The administrator application does not have permission to manage the device."
+        },
+        {
+          "code": "9201002",
+          "description": "Failed to install the application."
+        },
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission required to call the API."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getInstalledBundleList",
+      "返回值": "Promise<Array<BundleInfo>>",
+      "所属模块": "未知模块",
+      "功能描述": "Get the list of install bundles in the device. The admin must have the corresponding permission.",
+      "注释信息": [
+        "@permission ohos.permission.ENTERPRISE_GET_ALL_BUNDLE_INFO",
+        "@param { Want } admin - admin indicates the enterprise admin extension ability information.",
+        "@param { number } accountId - accountId indicates the local ID of the OS account.",
+        "@returns { Promise<Array<BundleInfo>> } The result of getting the bundle info.",
+        "@throws { BusinessError } 9200001 - The application is not an administrator application of the device.",
+        "@throws { BusinessError } 9200002 - The administrator application does not have permission to manage the device.",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission required to call the API.",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "bundleManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [
+        {
+          "名称": "admin",
+          "类型": "Want",
+          "必填": true,
+          "说明": "admin indicates the enterprise admin extension ability information."
+        },
+        {
+          "名称": "accountId",
+          "类型": "number",
+          "必填": true,
+          "说明": "accountId indicates the local ID of the OS account."
+        }
+      ],
+      "return_description": "The result of getting the bundle info.",
+      "error_codes": [
+        {
+          "code": "9200001",
+          "description": "The application is not an administrator application of the device."
+        },
+        {
+          "code": "9200002",
+          "description": "The administrator application does not have permission to manage the device."
+        },
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission required to call the API."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getInstalledBundleList",
+      "返回值": "Promise<Array<BundleInfo>>",
+      "所属模块": "未知模块",
+      "功能描述": "Get the list of install bundles in the device. The admin must have the corresponding permission.",
+      "注释信息": [
+        "@permission ohos.permission.ENTERPRISE_GET_ALL_BUNDLE_INFO",
+        "@param { Want } admin - admin indicates the enterprise admin extension ability information.",
+        "@param { number } accountId - accountId indicates the local ID of the OS account.",
+        "@param { number } bundleInfoGetFlag - {@link BundleInfoGetFlag} - Indicates the flag used to specify information contained in the BundleInfo object that will be returned.",
+        "@returns { Promise<Array<BundleInfo>> } The result of getting the bundle info.",
+        "@throws { BusinessError } 9200001 - The application is not an administrator application of the device.",
+        "@throws { BusinessError } 9200002 - The administrator application does not have permission to manage the device.",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission required to call the API.",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 1,
+      "上级": "bundleManager",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [
+        {
+          "名称": "admin",
+          "类型": "Want",
+          "必填": true,
+          "说明": "admin indicates the enterprise admin extension ability information."
+        },
+        {
+          "名称": "accountId",
+          "类型": "number",
+          "必填": true,
+          "说明": "accountId indicates the local ID of the OS account."
+        },
+        {
+          "名称": "bundleInfoGetFlag",
+          "类型": "number",
+          "必填": true,
+          "说明": "{@link BundleInfoGetFlag} - Indicates the flag used to specify information contained in the BundleInfo object that will be returned."
+        }
+      ],
+      "return_description": "The result of getting the bundle info.",
+      "error_codes": [
+        {
+          "code": "9200001",
+          "description": "The application is not an administrator application of the device."
+        },
+        {
+          "code": "9200002",
+          "description": "The administrator application does not have permission to manage the device."
+        },
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission required to call the API."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "addInstallationAllowedAppDistributionTypes",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Add the list of app distribution types can be installed in the device. The admin must have the corresponding permission.",
+      "注释信息": [
+        "@permission ohos.permission.ENTERPRISE_SET_BUNDLE_INSTALL_POLICY",
+        "@param { Want } admin - admin indicates the enterprise admin extension ability information.",
+        "@param { Array<AppDistributionType> } appDistributionTypes - appdistribution types id.",
+        "@throws { BusinessError } 9200001 - The application is not an administrator application of the device.",
+        "@throws { BusinessError } 9200002 - The administrator application does not have permission to manage the device.",
+        "@throws { BusinessError } 9200012 - Parameter verification failed.",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission required to call the API.",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "bundleManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [
+        {
+          "名称": "admin",
+          "类型": "Want",
+          "必填": true,
+          "说明": "admin indicates the enterprise admin extension ability information."
+        },
+        {
+          "名称": "appDistributionTypes",
+          "类型": "Array<AppDistributionType>",
+          "必填": true,
+          "说明": "appdistribution types id."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "9200001",
+          "description": "The application is not an administrator application of the device."
+        },
+        {
+          "code": "9200002",
+          "description": "The administrator application does not have permission to manage the device."
+        },
+        {
+          "code": "9200012",
+          "description": "Parameter verification failed."
+        },
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission required to call the API."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "removeInstallationAllowedAppDistributionTypes",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Remove the list of app distribution types can be installed in the device. The admin must have the corresponding permission.",
+      "注释信息": [
+        "@permission ohos.permission.ENTERPRISE_SET_BUNDLE_INSTALL_POLICY",
+        "@param { Want } admin - admin indicates the enterprise admin extension ability information.",
+        "@param { Array<AppDistributionType> } appDistributionTypes - appdistribution types id.",
+        "@throws { BusinessError } 9200001 - The application is not an administrator application of the device.",
+        "@throws { BusinessError } 9200002 - The administrator application does not have permission to manage the device.",
+        "@throws { BusinessError } 9200012 - Parameter verification failed.",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission required to call the API.",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "bundleManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [
+        {
+          "名称": "admin",
+          "类型": "Want",
+          "必填": true,
+          "说明": "admin indicates the enterprise admin extension ability information."
+        },
+        {
+          "名称": "appDistributionTypes",
+          "类型": "Array<AppDistributionType>",
+          "必填": true,
+          "说明": "appdistribution types id."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "9200001",
+          "description": "The application is not an administrator application of the device."
+        },
+        {
+          "code": "9200002",
+          "description": "The administrator application does not have permission to manage the device."
+        },
+        {
+          "code": "9200012",
+          "description": "Parameter verification failed."
+        },
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission required to call the API."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getInstallationAllowedAppDistributionTypes",
+      "返回值": "Array<AppDistributionType>",
+      "所属模块": "未知模块",
+      "功能描述": "Get the list of app distribution types can be installed in the device. The admin must have the corresponding permission.",
+      "注释信息": [
+        "@permission ohos.permission.ENTERPRISE_SET_BUNDLE_INSTALL_POLICY",
+        "@param { Want } admin - admin indicates the enterprise admin extension ability information.",
+        "@returns { Array<AppDistributionType> } the result of app distribution types can be installed in the device.",
+        "@throws { BusinessError } 9200001 - The application is not an administrator application of the device.",
+        "@throws { BusinessError } 9200002 - The administrator application does not have permission to manage the device.",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission required to call the API.",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "bundleManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [
+        {
+          "名称": "admin",
+          "类型": "Want",
+          "必填": true,
+          "说明": "admin indicates the enterprise admin extension ability information."
+        }
+      ],
+      "return_description": "the result of app distribution types can be installed in the device.",
+      "error_codes": [
+        {
+          "code": "9200001",
+          "description": "The application is not an administrator application of the device."
+        },
+        {
+          "code": "9200002",
+          "description": "The administrator application does not have permission to manage the device."
+        },
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission required to call the API."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "installMarketApps",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Install the application in the market. The admin must have the corresponding permission.",
+      "注释信息": [
+        "@permission ohos.permission.ENTERPRISE_INSTALL_BUNDLE",
+        "@param { Want } admin - admin indicates the enterprise admin extension ability information.",
+        "@param { Array<string> } bundleNames - bundleNames indicates the bundleName list of applications that need to install.",
+        "@throws { BusinessError } 9200001 - The application is not an administrator application of the device.",
+        "@throws { BusinessError } 9200002 - The administrator application does not have permission to manage the device.",
+        "@throws { BusinessError } 9200012 - Parameter verification failed.",
+        "@throws { BusinessError } 9201002 - Failed to install the application.",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission required to call the API.",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 22"
+      ],
+      "层级": 1,
+      "上级": "bundleManager",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [
+        {
+          "名称": "admin",
+          "类型": "Want",
+          "必填": true,
+          "说明": "admin indicates the enterprise admin extension ability information."
+        },
+        {
+          "名称": "bundleNames",
+          "类型": "Array<string>",
+          "必填": true,
+          "说明": "bundleNames indicates the bundleName list of applications that need to install."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "9200001",
+          "description": "The application is not an administrator application of the device."
+        },
+        {
+          "code": "9200002",
+          "description": "The administrator application does not have permission to manage the device."
+        },
+        {
+          "code": "9200012",
+          "description": "Parameter verification failed."
+        },
+        {
+          "code": "9201002",
+          "description": "Failed to install the application."
+        },
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission required to call the API."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "AppDistributionType",
+      "所属模块": "未知模块",
+      "功能描述": "App distribution type.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "bundleManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "APP_GALLERY",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "App distribution type of app gallery",
+      "注释信息": [
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "AppDistributionType",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "ENTERPRISE",
+      "值": "2",
+      "所属模块": "未知模块",
+      "功能描述": "App distribution type of enterprise",
+      "注释信息": [
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "AppDistributionType",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "ENTERPRISE_NORMAL",
+      "值": "3",
+      "所属模块": "未知模块",
+      "功能描述": "App distribution type of enterprise normal",
+      "注释信息": [
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "AppDistributionType",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "ENTERPRISE_MDM",
+      "值": "4",
+      "所属模块": "未知模块",
+      "功能描述": "App distribution type of enterprise MDM",
+      "注释信息": [
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "AppDistributionType",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "INTERNALTESTING",
+      "值": "5",
+      "所属模块": "未知模块",
+      "功能描述": "App distribution type of enterprise internal testing",
+      "注释信息": [
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "AppDistributionType",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CROWDTESTING",
+      "值": "6",
+      "所属模块": "未知模块",
+      "功能描述": "App distribution type of enterprise crowd testing",
+      "注释信息": [
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "AppDistributionType",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    }
+  ]
+}

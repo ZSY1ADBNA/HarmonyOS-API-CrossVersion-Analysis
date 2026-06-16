@@ -1,0 +1,1154 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.BasicServicesKit",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "namespace",
+      "名称": "cacheDownload",
+      "所属模块": "@kit.BasicServicesKit",
+      "功能描述": "Cache download capability provider.",
+      "注释信息": [
+        "@namespace cacheDownload",
+        "@syscap SystemCapability.Request.FileTransferAgent",
+        "@since 18"
+      ],
+      "层级": 1,
+      "上级": "@kit.BasicServicesKit",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Request.FileTransferAgent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "SslType",
+      "所属模块": "未知模块",
+      "功能描述": "The secure communication protocol.",
+      "注释信息": [
+        "@enum { string }",
+        "@syscap SystemCapability.Request.FileTransferAgent",
+        "@since 21"
+      ],
+      "层级": 2,
+      "上级": "cacheDownload",
+      "since_version": "21",
+      "system_capability": "SystemCapability.Request.FileTransferAgent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "TLS",
+      "值": "'TLS'",
+      "所属模块": "未知模块",
+      "功能描述": "Transport Layer Security.",
+      "注释信息": [
+        "@syscap SystemCapability.Request.FileTransferAgent",
+        "@since 21"
+      ],
+      "层级": 2,
+      "上级": "SslType",
+      "since_version": "21",
+      "system_capability": "SystemCapability.Request.FileTransferAgent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "TLCP",
+      "值": "'TLCP'",
+      "所属模块": "未知模块",
+      "功能描述": "Transport layer cryptography protocol.",
+      "注释信息": [
+        "@syscap SystemCapability.Request.FileTransferAgent",
+        "@since 21"
+      ],
+      "层级": 2,
+      "上级": "SslType",
+      "since_version": "21",
+      "system_capability": "SystemCapability.Request.FileTransferAgent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "CacheStrategy",
+      "所属模块": "未知模块",
+      "功能描述": "Cache strategy for resources.",
+      "注释信息": [
+        "@enum { number } CacheStrategy",
+        "@syscap SystemCapability.Request.FileTransferAgent",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "cacheDownload",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Request.FileTransferAgent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "FORCE",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "Force update of cache regardless of whether it already exists.",
+      "注释信息": [
+        "@syscap SystemCapability.Request.FileTransferAgent",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "CacheStrategy",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Request.FileTransferAgent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "LAZY",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Updates the cache only if the cached resource does not exist.",
+      "注释信息": [
+        "@syscap SystemCapability.Request.FileTransferAgent",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "CacheStrategy",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Request.FileTransferAgent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "ErrorCode",
+      "所属模块": "未知模块",
+      "功能描述": "Error codes categorizing different types of cache download failures.",
+      "注释信息": [
+        "@enum { number } ErrorCode",
+        "@syscap SystemCapability.Request.FileTransferAgent",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "cacheDownload",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Request.FileTransferAgent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "OTHERS",
+      "值": "0xFF",
+      "所属模块": "未知模块",
+      "功能描述": "Other unspecified errors.",
+      "注释信息": [
+        "@syscap SystemCapability.Request.FileTransferAgent",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "ErrorCode",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Request.FileTransferAgent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "DNS",
+      "值": "0x00",
+      "所属模块": "未知模块",
+      "功能描述": "DNS-related errors.",
+      "注释信息": [
+        "@syscap SystemCapability.Request.FileTransferAgent",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "ErrorCode",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Request.FileTransferAgent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "TCP",
+      "值": "0x10",
+      "所属模块": "未知模块",
+      "功能描述": "TCP connection errors.",
+      "注释信息": [
+        "@syscap SystemCapability.Request.FileTransferAgent",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "ErrorCode",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Request.FileTransferAgent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "SSL",
+      "值": "0x20",
+      "所属模块": "未知模块",
+      "功能描述": "SSL security errors.",
+      "注释信息": [
+        "@syscap SystemCapability.Request.FileTransferAgent",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "ErrorCode",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Request.FileTransferAgent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "HTTP",
+      "值": "0x30",
+      "所属模块": "未知模块",
+      "功能描述": "HTTP protocol errors.",
+      "注释信息": [
+        "@syscap SystemCapability.Request.FileTransferAgent",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "ErrorCode",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Request.FileTransferAgent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "CacheDownloadOptions",
+      "所属模块": "未知模块",
+      "功能描述": "Options of the cache download task.",
+      "注释信息": [
+        "@typedef CacheDownloadOptions",
+        "@syscap SystemCapability.Request.FileTransferAgent",
+        "@since 18"
+      ],
+      "层级": 2,
+      "上级": "cacheDownload",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Request.FileTransferAgent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "headers",
+      "属性类型": "Record<string, string>",
+      "所属模块": "未知模块",
+      "功能描述": "HTTP headers added to the cache download request.",
+      "注释信息": [
+        "@type { ?Record<string, string> }",
+        "@syscap SystemCapability.Request.FileTransferAgent",
+        "@since 18"
+      ],
+      "层级": 2,
+      "上级": "CacheDownloadOptions",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Request.FileTransferAgent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "sslType",
+      "属性类型": "SslType",
+      "所属模块": "未知模块",
+      "功能描述": "Which secure communication protocol is used. If this value is not specified, use { @link SslType#TLS } by default.",
+      "注释信息": [
+        "@type { ?SslType }",
+        "@syscap SystemCapability.Request.FileTransferAgent",
+        "@since 21"
+      ],
+      "层级": 2,
+      "上级": "CacheDownloadOptions",
+      "since_version": "21",
+      "system_capability": "SystemCapability.Request.FileTransferAgent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "caPath",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "The path to the CA certificate within the application. The default value is an empty string.",
+      "注释信息": [
+        "@type { ?string }",
+        "@syscap SystemCapability.Request.FileTransferAgent",
+        "@since 21"
+      ],
+      "层级": 2,
+      "上级": "CacheDownloadOptions",
+      "since_version": "21",
+      "system_capability": "SystemCapability.Request.FileTransferAgent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "cacheStrategy",
+      "属性类型": "CacheStrategy",
+      "所属模块": "未知模块",
+      "功能描述": "Cache update strategy for resources. The default value is `CacheStrategy.FORCE`.",
+      "注释信息": [
+        "@type { ?CacheStrategy }",
+        "@syscap SystemCapability.Request.FileTransferAgent",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "CacheDownloadOptions",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Request.FileTransferAgent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "ResourceInfo",
+      "所属模块": "未知模块",
+      "功能描述": "Resource information of historical cache downloads.",
+      "注释信息": [
+        "@typedef ResourceInfo",
+        "@syscap SystemCapability.Request.FileTransferAgent",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "cacheDownload",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Request.FileTransferAgent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "size",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "The decompressed size of the downloaded resource. If the value is -1, it means the resource is not downloaded successfully.",
+      "注释信息": [
+        "@type { number }",
+        "@readonly",
+        "@syscap SystemCapability.Request.FileTransferAgent",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "ResourceInfo",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Request.FileTransferAgent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "NetworkInfo",
+      "所属模块": "未知模块",
+      "功能描述": "Network information of historical cache downloads.",
+      "注释信息": [
+        "@typedef NetworkInfo",
+        "@syscap SystemCapability.Request.FileTransferAgent",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "cacheDownload",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Request.FileTransferAgent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "dnsServers",
+      "属性类型": "string[]",
+      "所属模块": "未知模块",
+      "功能描述": "The DNS server list is used when downloading resources.",
+      "注释信息": [
+        "@type { string[] }",
+        "@readonly",
+        "@syscap SystemCapability.Request.FileTransferAgent",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "NetworkInfo",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Request.FileTransferAgent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "ip",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "The IP address of a specific URL is used when downloading resources. If the value is undefined, it means that the DNS resolution fails and the IP address cannot be obtained.",
+      "注释信息": [
+        "@type { ?string }",
+        "@readonly",
+        "@syscap SystemCapability.Request.FileTransferAgent",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "NetworkInfo",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Request.FileTransferAgent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "PerformanceInfo",
+      "所属模块": "未知模块",
+      "功能描述": "Performance information of historical cache downloads.",
+      "注释信息": [
+        "@typedef PerformanceInfo",
+        "@syscap SystemCapability.Request.FileTransferAgent",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "cacheDownload",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Request.FileTransferAgent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "dnsTime",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Time taken from startup to DNS resolution completion, in milliseconds.",
+      "注释信息": [
+        "@type { number }",
+        "@readonly",
+        "@syscap SystemCapability.Request.FileTransferAgent",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "PerformanceInfo",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Request.FileTransferAgent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "connectTime",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Time taken from startup to TCP connection completion, in milliseconds.",
+      "注释信息": [
+        "@type { number }",
+        "@readonly",
+        "@syscap SystemCapability.Request.FileTransferAgent",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "PerformanceInfo",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Request.FileTransferAgent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "tlsTime",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Time taken from startup to TLS connection completion, in milliseconds.",
+      "注释信息": [
+        "@type { number }",
+        "@readonly",
+        "@syscap SystemCapability.Request.FileTransferAgent",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "PerformanceInfo",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Request.FileTransferAgent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "firstSendTime",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Time taken from startup to start sending the first byte, in milliseconds.",
+      "注释信息": [
+        "@type { number }",
+        "@readonly",
+        "@syscap SystemCapability.Request.FileTransferAgent",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "PerformanceInfo",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Request.FileTransferAgent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "firstReceiveTime",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Time taken from startup to receiving the first byte, in milliseconds.",
+      "注释信息": [
+        "@type { number }",
+        "@readonly",
+        "@syscap SystemCapability.Request.FileTransferAgent",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "PerformanceInfo",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Request.FileTransferAgent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "totalTime",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Time taken from startup to the completion of the request, in milliseconds.",
+      "注释信息": [
+        "@type { number }",
+        "@readonly",
+        "@syscap SystemCapability.Request.FileTransferAgent",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "PerformanceInfo",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Request.FileTransferAgent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "redirectTime",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Time taken from startup to completion of all redirection steps, in milliseconds.",
+      "注释信息": [
+        "@type { number }",
+        "@readonly",
+        "@syscap SystemCapability.Request.FileTransferAgent",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "PerformanceInfo",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Request.FileTransferAgent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "DownloadInfo",
+      "所属模块": "未知模块",
+      "功能描述": "Download information of historical cache downloads.",
+      "注释信息": [
+        "@typedef DownloadInfo",
+        "@syscap SystemCapability.Request.FileTransferAgent",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "cacheDownload",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Request.FileTransferAgent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "resource",
+      "属性类型": "ResourceInfo",
+      "所属模块": "未知模块",
+      "功能描述": "Resource information of historical cache downloads.",
+      "注释信息": [
+        "@type { ResourceInfo }",
+        "@readonly",
+        "@syscap SystemCapability.Request.FileTransferAgent",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "DownloadInfo",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Request.FileTransferAgent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "network",
+      "属性类型": "NetworkInfo",
+      "所属模块": "未知模块",
+      "功能描述": "Network information of historical cache downloads.",
+      "注释信息": [
+        "@type { NetworkInfo }",
+        "@readonly",
+        "@syscap SystemCapability.Request.FileTransferAgent",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "DownloadInfo",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Request.FileTransferAgent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "performance",
+      "属性类型": "PerformanceInfo",
+      "所属模块": "未知模块",
+      "功能描述": "Performance information of historical cache downloads.",
+      "注释信息": [
+        "@type { PerformanceInfo }",
+        "@readonly",
+        "@syscap SystemCapability.Request.FileTransferAgent",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "DownloadInfo",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Request.FileTransferAgent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "DownloadError",
+      "所属模块": "未知模块",
+      "功能描述": "Interface for download error information.",
+      "注释信息": [
+        "@typedef DownloadError",
+        "@syscap SystemCapability.Request.FileTransferAgent",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "cacheDownload",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Request.FileTransferAgent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "errorCode",
+      "属性类型": "ErrorCode",
+      "所属模块": "未知模块",
+      "功能描述": "Unique error code identifying the specific type of cache download failure.",
+      "注释信息": [
+        "@type { ErrorCode }",
+        "@readonly",
+        "@syscap SystemCapability.Request.FileTransferAgent",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "DownloadError",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Request.FileTransferAgent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "message",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Descriptive error message explaining the failure reason.",
+      "注释信息": [
+        "@type { string }",
+        "@readonly",
+        "@syscap SystemCapability.Request.FileTransferAgent",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "DownloadError",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Request.FileTransferAgent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "download",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Downloads resources at the specified URL. Resources will be stored in memory cache or files cache. The maximum size of the specified URL is 8192 bytes. The maximum size of a single resource after decompression is 20,971,520 bytes(20 MB). If the decompressed size of the downloaded resource exceeds the limit, it will not be recorded in the cache. <br>2. Incorrect parameter type. 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.INTERNET",
+        "@param { string } url - URL of the cache download target.",
+        "@param { CacheDownloadOptions } options - Options of the cache download task.",
+        "@throws { BusinessError } 201 - permission denied.",
+        "@throws { BusinessError } 401 - parameter error. Possible causes: 1. Missing mandatory parameters.",
+        "@syscap SystemCapability.Request.FileTransferAgent",
+        "@since 18"
+      ],
+      "层级": 1,
+      "上级": "cacheDownload",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Request.FileTransferAgent",
+      "parameters": [
+        {
+          "名称": "url",
+          "类型": "string",
+          "必填": true,
+          "说明": "URL of the cache download target."
+        },
+        {
+          "名称": "options",
+          "类型": "CacheDownloadOptions",
+          "必填": true,
+          "说明": "Options of the cache download task."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "permission denied."
+        },
+        {
+          "code": "401",
+          "description": "parameter error. Possible causes: 1. Missing mandatory parameters."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "cancel",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Cancels an ongoing cache download task based on the target URL. The maximum size of the specified URL is 8192 bytes. <br>2. Incorrect parameter type. 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { string } url - URL of the cache download target.",
+        "@throws { BusinessError } 401 - parameter error. Possible causes: 1. Missing mandatory parameters.",
+        "@syscap SystemCapability.Request.FileTransferAgent",
+        "@since 18"
+      ],
+      "层级": 1,
+      "上级": "cacheDownload",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Request.FileTransferAgent",
+      "parameters": [
+        {
+          "名称": "url",
+          "类型": "string",
+          "必填": true,
+          "说明": "URL of the cache download target."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "parameter error. Possible causes: 1. Missing mandatory parameters."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "setMemoryCacheSize",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Sets the size of the memory cache used to store downloaded content. The default size is 0 bytes. The maximum size is 1,073,741,824 bytes(1 GB). 2. Incorrect parameter type. 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { number } bytes - The maximum amount of data cached in memory, in bytes.",
+        "@throws { BusinessError } 401 - parameter error. Possible causes: 1. Missing mandatory parameters.",
+        "@syscap SystemCapability.Request.FileTransferAgent",
+        "@since 18"
+      ],
+      "层级": 1,
+      "上级": "cacheDownload",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Request.FileTransferAgent",
+      "parameters": [
+        {
+          "名称": "bytes",
+          "类型": "number",
+          "必填": true,
+          "说明": "The maximum amount of data cached in memory, in bytes."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "parameter error. Possible causes: 1. Missing mandatory parameters."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "setFileCacheSize",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Sets the size of the file cache used to store downloaded content. The default size is 104,857,600 bytes(100 MB). The maximum size is 4,294,967,296 bytes(4 GB). 2. Incorrect parameter type. 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { number } bytes - The maximum amount of data cached in files, in bytes.",
+        "@throws { BusinessError } 401 - parameter error. Possible causes: 1. Missing mandatory parameters.",
+        "@syscap SystemCapability.Request.FileTransferAgent",
+        "@since 18"
+      ],
+      "层级": 1,
+      "上级": "cacheDownload",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Request.FileTransferAgent",
+      "parameters": [
+        {
+          "名称": "bytes",
+          "类型": "number",
+          "必填": true,
+          "说明": "The maximum amount of data cached in files, in bytes."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "parameter error. Possible causes: 1. Missing mandatory parameters."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getDownloadInfo",
+      "返回值": "DownloadInfo | undefined",
+      "所属模块": "未知模块",
+      "功能描述": "Gets download information of cache downloads based on URL. These information are stored in memory and cleared when the application exits. The maximum size of the specified URL is 8192 bytes. If the specified URL can be found in the download information list, return { @link DownloadInfo } of the most recent download. If the specified URL can not be found in the download information list, return `undefined`.",
+      "注释信息": [
+        "@permission ohos.permission.GET_NETWORK_INFO",
+        "@param { string } url - URL to be queried.",
+        "@returns { DownloadInfo | undefined } the information of the specified cache download or none.",
+        "@throws { BusinessError } 201 - permission denied.",
+        "@syscap SystemCapability.Request.FileTransferAgent",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "cacheDownload",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Request.FileTransferAgent",
+      "parameters": [
+        {
+          "名称": "url",
+          "类型": "string",
+          "必填": true,
+          "说明": "URL to be queried."
+        }
+      ],
+      "return_description": "the information of the specified cache download or none.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "permission denied."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "setDownloadInfoListSize",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Sets the maximum size of the download information list. The download information list is used to store download information  . URLs and download information correspond one to one. Each download will generate a download information. Under the same URL, only the latest download information will be saved. The default value of the specified size is 0. It means no download information can be stored. The maximum value of the specified size is 8192.",
+      "注释信息": [
+        "@param { number } size - the size of the download information list.",
+        "@syscap SystemCapability.Request.FileTransferAgent",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "cacheDownload",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Request.FileTransferAgent",
+      "parameters": [
+        {
+          "名称": "size",
+          "类型": "number",
+          "必填": true,
+          "说明": "the size of the download information list."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "clearMemoryCache",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Clears the memory cache used to store downloaded content.",
+      "注释信息": [
+        "@syscap SystemCapability.Request.FileTransferAgent",
+        "@since 23"
+      ],
+      "层级": 1,
+      "上级": "cacheDownload",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Request.FileTransferAgent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "clearFileCache",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Clears the file cache used to store downloaded content.",
+      "注释信息": [
+        "@syscap SystemCapability.Request.FileTransferAgent",
+        "@since 23"
+      ],
+      "层级": 1,
+      "上级": "cacheDownload",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Request.FileTransferAgent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "onDownloadSuccess",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Registers a callback function for successful download events. The maximum size of the specified URL is 8192 bytes.",
+      "注释信息": [
+        "@param { string } url - URL of the cache download target.",
+        "@param { Callback<void> } callback - Callback function to be executed when download succeeds.",
+        "@syscap SystemCapability.Request.FileTransferAgent",
+        "@since 23"
+      ],
+      "层级": 1,
+      "上级": "cacheDownload",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Request.FileTransferAgent",
+      "parameters": [
+        {
+          "名称": "url",
+          "类型": "string",
+          "必填": true,
+          "说明": "URL of the cache download target."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<void>",
+          "必填": true,
+          "说明": "Callback function to be executed when download succeeds."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "onDownloadError",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Registers a callback function for download error events. The maximum size of the specified URL is 8192 bytes.",
+      "注释信息": [
+        "@param { string } url - URL of the cache download target.",
+        "@param { Callback<DownloadError> } callback - Callback function to be executed when download fails.",
+        "@syscap SystemCapability.Request.FileTransferAgent",
+        "@since 23"
+      ],
+      "层级": 1,
+      "上级": "cacheDownload",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Request.FileTransferAgent",
+      "parameters": [
+        {
+          "名称": "url",
+          "类型": "string",
+          "必填": true,
+          "说明": "URL of the cache download target."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<DownloadError>",
+          "必填": true,
+          "说明": "Callback function to be executed when download fails."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "offDownloadSuccess",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unregisters callback function for successful download events. The maximum size of the specified URL is 8192 bytes.",
+      "注释信息": [
+        "@param { string } url - URL of the cache download target.",
+        "@param { Callback<void> } [callback] - Callback function to be executed when download succeeds.",
+        "@syscap SystemCapability.Request.FileTransferAgent",
+        "@since 23"
+      ],
+      "层级": 1,
+      "上级": "cacheDownload",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Request.FileTransferAgent",
+      "parameters": [
+        {
+          "名称": "url",
+          "类型": "string",
+          "必填": true,
+          "说明": "URL of the cache download target."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "Callback<void> } [callback] - Callback function to be executed when download succeeds."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "offDownloadError",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unregisters callback function for download error events. The maximum size of the specified URL is 8192 bytes.",
+      "注释信息": [
+        "@param { string } url - URL of the cache download target.",
+        "@param { Callback<DownloadError> } [callback] - Callback function to be executed when download fails.",
+        "@syscap SystemCapability.Request.FileTransferAgent",
+        "@since 23"
+      ],
+      "层级": 1,
+      "上级": "cacheDownload",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Request.FileTransferAgent",
+      "parameters": [
+        {
+          "名称": "url",
+          "类型": "string",
+          "必填": true,
+          "说明": "URL of the cache download target."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "Callback<DownloadError> } [callback] - Callback function to be executed when download fails."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    }
+  ]
+}

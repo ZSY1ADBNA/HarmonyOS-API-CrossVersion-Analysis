@@ -1,0 +1,5277 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.ArkGraphics2D",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "namespace",
+      "名称": "text",
+      "所属模块": "@kit.ArkGraphics2D",
+      "功能描述": "The Text module provides a set of APIs for text layout and font management. It aims to deliver high-quality typesetting through features like character-to-glyph conversion, kerning, line breaking, alignment, and text measurement. Additionally, it provides font management capabilities, including font registration, font descriptors, and font collection management. This module provides the following classes for creating complex text paragraphs: TextStyle: defines the font type, size, spacing, and other text properties. FontCollection: manages a collection of different fonts. FontDescriptor: provides information about font descriptors. ParagraphStyle: controls line break and word break strategies for the entire paragraph. ParagraphBuilder: used to create different paragraph objects. Paragraph: created by calling build() of the ParagraphBuilder class. LineTypeset: created by calling buildLineTypeset() of the ParagraphBuilder class. TextLine: paragraph text on a line-by-line basis, obtained by calling getTextLines() of the Paragraph class. Run: text typesetting unit, obtained by calling getGlyphRuns() of the TextLine class.",
+      "注释信息": [
+        "@namespace text",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@form",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 1,
+      "上级": "@kit.ArkGraphics2D",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "TextAlign",
+      "所属模块": "未知模块",
+      "功能描述": "Refers to how to align the horizontal position of text when displaying text.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "text",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "LEFT",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "Use the left side of the text as a reference line for alignment.",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "TextAlign",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "RIGHT",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Use the right side of the text as a reference line for alignment.",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "TextAlign",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CENTER",
+      "值": "2",
+      "所属模块": "未知模块",
+      "功能描述": "Use the midpoint line the text as a reference line for alignment.",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "TextAlign",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "JUSTIFY",
+      "值": "3",
+      "所属模块": "未知模块",
+      "功能描述": "Justified, which means that each line (except the last line) is stretched so that every line has equal width, and the left and right margins are straight.",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "TextAlign",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "START",
+      "值": "4",
+      "所属模块": "未知模块",
+      "功能描述": "Align text from start, based on the TextDirection, such as left-to-right or right-to-left.",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "TextAlign",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "END",
+      "值": "5",
+      "所属模块": "未知模块",
+      "功能描述": "Align text from end, based on the TextDirection, such as left-to-right or right-to-left, opposite to START.",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "TextAlign",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "TextVerticalAlign",
+      "所属模块": "未知模块",
+      "功能描述": "Enumerates the vertical alignment modes.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "text",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "BASELINE",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "Baseline alignment in the vertical direction.",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "TextVerticalAlign",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "BOTTOM",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Bottom alignment in the vertical direction.",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "TextVerticalAlign",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CENTER",
+      "值": "2",
+      "所属模块": "未知模块",
+      "功能描述": "Center alignment in the vertical direction.",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "TextVerticalAlign",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "TOP",
+      "值": "3",
+      "所属模块": "未知模块",
+      "功能描述": "Top alignment in the vertical direction.",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "TextVerticalAlign",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "TextDirection",
+      "所属模块": "未知模块",
+      "功能描述": "Enumerate text runs direction.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "text",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "RTL",
+      "所属模块": "未知模块",
+      "功能描述": "The text is oriented from right to left.",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "TextDirection",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "LTR",
+      "所属模块": "未知模块",
+      "功能描述": "The text is oriented from left to right.",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "TextDirection",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "BreakStrategy",
+      "所属模块": "未知模块",
+      "功能描述": "Enumerate text segmentation strategy.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "text",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "GREEDY",
+      "所属模块": "未知模块",
+      "功能描述": "Fills the current line as much as possible without adding hyphens.",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "BreakStrategy",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "HIGH_QUALITY",
+      "所属模块": "未知模块",
+      "功能描述": "Optimizes layout and may add hyphens when necessary.",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "BreakStrategy",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "BALANCED",
+      "所属模块": "未知模块",
+      "功能描述": "Ensures consistent line width in a paragraph, adding hyphens if needed.",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "BreakStrategy",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "WordBreak",
+      "所属模块": "未知模块",
+      "功能描述": "Enumerate word break strategy.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "text",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "NORMAL",
+      "所属模块": "未知模块",
+      "功能描述": "Default mode that break words based on language-specific conventions.",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "WordBreak",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "BREAK_ALL",
+      "所属模块": "未知模块",
+      "功能描述": "Allows breaks within any character in non-CJK text. (CJK means Chinese, Japanese, and Korean.) This value is suitable for Asian text that contains some non-Asian text. For example, it can be used to break consecutive English characters.",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "WordBreak",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "BREAK_WORD",
+      "所属模块": "未知模块",
+      "功能描述": "Allows breaks between any two characters in non-CJK text. It prioritizes breaking at whitespace or other natural breakpoints to keep words intact. If no breakpoints are found, it breaks between any two characters. For CJK text, this behaves like NORMAL.",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "WordBreak",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "BREAK_HYPHEN",
+      "所属模块": "未知模块",
+      "功能描述": "Attempts to break words at the end of a line using a hyphen. If a hyphen cannot be added, it behaves like BREAK_WORD.",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "WordBreak",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "Decoration",
+      "所属模块": "未知模块",
+      "功能描述": "Describes a text decoration.",
+      "注释信息": [
+        "@typedef Decoration",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "text",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "textDecoration",
+      "属性类型": "TextDecorationType",
+      "所属模块": "未知模块",
+      "功能描述": "Type of the decoration. The default value is NONE.",
+      "注释信息": [
+        "@type { ?TextDecorationType }",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "Decoration",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "color",
+      "属性类型": "common2D.Color",
+      "所属模块": "未知模块",
+      "功能描述": "Color of the decoration. The default value is transparent.",
+      "注释信息": [
+        "@type { ?common2D.Color }",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "Decoration",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "decorationStyle",
+      "属性类型": "TextDecorationStyle",
+      "所属模块": "未知模块",
+      "功能描述": "Style of the decoration. The default value is SOLID.",
+      "注释信息": [
+        "@type { ?TextDecorationStyle }",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "Decoration",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "decorationThicknessScale",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Scale factor for the thickness of the decoration line. The value is a floating point number. The default value is 1.0.",
+      "注释信息": [
+        "@type { ?number }",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "Decoration",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "TextDecorationType",
+      "所属模块": "未知模块",
+      "功能描述": "Enumerates the text decoration types.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "text",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "NONE",
+      "所属模块": "未知模块",
+      "功能描述": "There are no text decoration.",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "TextDecorationType",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "UNDERLINE",
+      "所属模块": "未知模块",
+      "功能描述": "There is a decoration line below the text.",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "TextDecorationType",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "OVERLINE",
+      "所属模块": "未知模块",
+      "功能描述": "There is a decoration line above the text.",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "TextDecorationType",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "LINE_THROUGH",
+      "所属模块": "未知模块",
+      "功能描述": "There is a decoration line through the middle of the text.",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "TextDecorationType",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "TextDecorationStyle",
+      "所属模块": "未知模块",
+      "功能描述": "Enumerates the text decoration styles.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "text",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "SOLID",
+      "所属模块": "未知模块",
+      "功能描述": "Decoration line is solid line.",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "TextDecorationStyle",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "DOUBLE",
+      "所属模块": "未知模块",
+      "功能描述": "Decoration line is double line.",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "TextDecorationStyle",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "DOTTED",
+      "所属模块": "未知模块",
+      "功能描述": "Decoration line is dotted line.",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "TextDecorationStyle",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "DASHED",
+      "所属模块": "未知模块",
+      "功能描述": "Decoration line is dashed line.",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "TextDecorationStyle",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "WAVY",
+      "所属模块": "未知模块",
+      "功能描述": "Decoration line is wavy line.",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "TextDecorationStyle",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "FontWeight",
+      "所属模块": "未知模块",
+      "功能描述": "Enumeration of font weight of text.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "text",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "W100",
+      "所属模块": "未知模块",
+      "功能描述": "Thin",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "FontWeight",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "W200",
+      "所属模块": "未知模块",
+      "功能描述": "Extra-light",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "FontWeight",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "W300",
+      "所属模块": "未知模块",
+      "功能描述": "Light",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "FontWeight",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "W400",
+      "所属模块": "未知模块",
+      "功能描述": "Normal/Regular",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "FontWeight",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "W500",
+      "所属模块": "未知模块",
+      "功能描述": "Medium",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "FontWeight",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "W600",
+      "所属模块": "未知模块",
+      "功能描述": "Semi-bold",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "FontWeight",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "W700",
+      "所属模块": "未知模块",
+      "功能描述": "Bold",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "FontWeight",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "W800",
+      "所属模块": "未知模块",
+      "功能描述": "Extra-bold",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "FontWeight",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "W900",
+      "所属模块": "未知模块",
+      "功能描述": "Black",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "FontWeight",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "FontStyle",
+      "所属模块": "未知模块",
+      "功能描述": "Enumeration of font style of text.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "text",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "NORMAL",
+      "所属模块": "未知模块",
+      "功能描述": "Upright font type.",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "FontStyle",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "ITALIC",
+      "所属模块": "未知模块",
+      "功能描述": "Slant font. If no italic version is available for the current font, the oblique version will be used instead.",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "FontStyle",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "OBLIQUE",
+      "所属模块": "未知模块",
+      "功能描述": "Oblique font. If no oblique version is available for the current font, the italic version will be used instead.",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "FontStyle",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "FontWidth",
+      "所属模块": "未知模块",
+      "功能描述": "Enumeration of font width of text.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "text",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "ULTRA_CONDENSED",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Ultra condensed font width.",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "FontWidth",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "EXTRA_CONDENSED",
+      "值": "2",
+      "所属模块": "未知模块",
+      "功能描述": "Extra condensed font width.",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "FontWidth",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CONDENSED",
+      "值": "3",
+      "所属模块": "未知模块",
+      "功能描述": "Condensed font width.",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "FontWidth",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "SEMI_CONDENSED",
+      "值": "4",
+      "所属模块": "未知模块",
+      "功能描述": "Semi condensed font width.",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "FontWidth",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "NORMAL",
+      "值": "5",
+      "所属模块": "未知模块",
+      "功能描述": "Normal font width.",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "FontWidth",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "SEMI_EXPANDED",
+      "值": "6",
+      "所属模块": "未知模块",
+      "功能描述": "Semi expanded font width.",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "FontWidth",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "EXPANDED",
+      "值": "7",
+      "所属模块": "未知模块",
+      "功能描述": "Expanded font width.",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "FontWidth",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "EXTRA_EXPANDED",
+      "值": "8",
+      "所属模块": "未知模块",
+      "功能描述": "Extra expanded font width.",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "FontWidth",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "ULTRA_EXPANDED",
+      "值": "9",
+      "所属模块": "未知模块",
+      "功能描述": "Ultra expanded font width.",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "FontWidth",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "TextHeightBehavior",
+      "所属模块": "未知模块",
+      "功能描述": "Enumerates the text height modifier patterns.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "text",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "ALL",
+      "值": "0x0",
+      "所属模块": "未知模块",
+      "功能描述": "Allows the first line of the paragraph to rise and the last line to drop.",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "TextHeightBehavior",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "DISABLE_FIRST_ASCENT",
+      "值": "0x1",
+      "所属模块": "未知模块",
+      "功能描述": "Prevents the first line of a paragraph from rising.",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "TextHeightBehavior",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "DISABLE_LAST_ASCENT",
+      "值": "0x2",
+      "所属模块": "未知模块",
+      "功能描述": "Prevents the last line of a paragraph from dropping.",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "TextHeightBehavior",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "DISABLE_ALL",
+      "值": "0x1 | 0x2",
+      "所属模块": "未知模块",
+      "功能描述": "Combines the effects of disabling the first line from rising and the last line from dropping.",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "TextHeightBehavior",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "TextBaseline",
+      "所属模块": "未知模块",
+      "功能描述": "Enumeration the type of text baseline.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "text",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "ALPHABETIC",
+      "所属模块": "未知模块",
+      "功能描述": "The alphabetic baseline, typically used for Latin-based scripts where the baseline aligns with the base of lowercase letters.",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "TextBaseline",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "IDEOGRAPHIC",
+      "所属模块": "未知模块",
+      "功能描述": "The ideographic baseline, commonly used for ideographic scripts such as Chinese, Japanese, and Korean, where the baseline aligns with the center of characters.",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "TextBaseline",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "EllipsisMode",
+      "所属模块": "未知模块",
+      "功能描述": "Enumerates of ellipsis mode. EllipsisMode.START and EllipsisMode.MIDDLE take effect only when text overflows in a single line.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "text",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "START",
+      "所属模块": "未知模块",
+      "功能描述": "Places the ellipsis in the text header. It is valid only when maxLines is set to 1 in ParagraphStyle.",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "EllipsisMode",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "MIDDLE",
+      "所属模块": "未知模块",
+      "功能描述": "Places the ellipsis in the middle of the text. It is valid only when maxLines is set to 1 in ParagraphStyle.",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "EllipsisMode",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "END",
+      "所属模块": "未知模块",
+      "功能描述": "Places the ellipsis at the end of the text.",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "EllipsisMode",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "TextShadow",
+      "所属模块": "未知模块",
+      "功能描述": "Describes shadow of text.",
+      "注释信息": [
+        "@typedef TextShadow",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "text",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "color",
+      "属性类型": "common2D.Color",
+      "所属模块": "未知模块",
+      "功能描述": "Color of the text shadow. The default value is black (255, 0, 0, 0).",
+      "注释信息": [
+        "@type { ?common2D.Color } The color of text shadow",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "TextShadow",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "point",
+      "属性类型": "common2D.Point",
+      "所属模块": "未知模块",
+      "功能描述": "Position of the text shadow relative to the text. The horizontal and vertical coordinates must be greater than or equal to 0.",
+      "注释信息": [
+        "@type { ?common2D.Point } The point of shadow",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "TextShadow",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "blurRadius",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "The value sets special effect radius of blurring text. The value is a floating point number. The default value is 0.0px.",
+      "注释信息": [
+        "@type { ?number } The value about radius of blur, it type is \"double\"",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "TextShadow",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "RectStyle",
+      "所属模块": "未知模块",
+      "功能描述": "Describes the style of a rectangle.",
+      "注释信息": [
+        "@typedef RectStyle",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "text",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "color",
+      "属性类型": "common2D.Color",
+      "所属模块": "未知模块",
+      "功能描述": "Color of the rectangle.",
+      "注释信息": [
+        "@type { common2D.Color } The color of rect style",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "RectStyle",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "leftTopRadius",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Left top radius of the rectangle.",
+      "注释信息": [
+        "@type { number } it is double type data",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "RectStyle",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "rightTopRadius",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Right top radius of the rectangle.",
+      "注释信息": [
+        "@type { number } it is double type data",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "RectStyle",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "rightBottomRadius",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Right bottom radius of the rectangle.",
+      "注释信息": [
+        "@type { number } it is double type data",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "RectStyle",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "leftBottomRadius",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Left bottom radius of the rectangle.",
+      "注释信息": [
+        "@type { number } it is double type data",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "RectStyle",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "LineHeightStyle",
+      "所属模块": "未知模块",
+      "功能描述": "Enumerates line height scaling type.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "text",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "FONT_SIZE",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "Use the font size as the scale factor for line height scaling.",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "LineHeightStyle",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "FONT_HEIGHT",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Use the text height after shaping as the scale factor for line height scaling.",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "LineHeightStyle",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "FontFeature",
+      "所属模块": "未知模块",
+      "功能描述": "Describes font feature of text.",
+      "注释信息": [
+        "@typedef FontFeature",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "text",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "name",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "String identified by the keyword in the font feature key-value pair.",
+      "注释信息": [
+        "@type { string } feature name",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "FontFeature",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "value",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Value in the font feature key-value pair.",
+      "注释信息": [
+        "@type { number } feature value",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "FontFeature",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "FontVariation",
+      "所属模块": "未知模块",
+      "功能描述": "Describes font variation of text.",
+      "注释信息": [
+        "@typedef FontVariation",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "text",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "axis",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "String identified by the keyword in the font variation key-value pair.",
+      "注释信息": [
+        "@type { string } variation axis",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "FontVariation",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "value",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Value in the font variation key-value pair.",
+      "注释信息": [
+        "@type { number } variation value",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "FontVariation",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "TextBadgeType",
+      "所属模块": "未知模块",
+      "功能描述": "Describes badge type of text.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "text",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "TEXT_BADGE_NONE",
+      "所属模块": "未知模块",
+      "功能描述": "No badge.",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "TextBadgeType",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "TEXT_SUPERSCRIPT",
+      "所属模块": "未知模块",
+      "功能描述": "Superscript.",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "TextBadgeType",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "TEXT_SUBSCRIPT",
+      "所属模块": "未知模块",
+      "功能描述": "Subscript.",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "TextBadgeType",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "TextStyle",
+      "所属模块": "未知模块",
+      "功能描述": "Describes text style.",
+      "注释信息": [
+        "@typedef TextStyle",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "text",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "decoration",
+      "属性类型": "Decoration",
+      "所属模块": "未知模块",
+      "功能描述": "Text decoration. By default, no decoration is used.",
+      "注释信息": [
+        "@type { ?Decoration } decoration for text",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "TextStyle",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "color",
+      "属性类型": "common2D.Color",
+      "所属模块": "未知模块",
+      "功能描述": "Text color. The default color is white.",
+      "注释信息": [
+        "@type { ?common2D.Color } it is uint32_t type data",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "TextStyle",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "fontWeight",
+      "属性类型": "FontWeight",
+      "所属模块": "未知模块",
+      "功能描述": "Font weight. The default value is W400. Currently, only the default system font supports font weight adjustment. For other fonts, if the weight is less than semi-bold (W600), there is no variation in stroke thickness. If the weight is greater than or equal to semi-bold, it might result in a fake bold effect.",
+      "注释信息": [
+        "@type { ?FontWeight } it is uint32_t type data",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "TextStyle",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "fontStyle",
+      "属性类型": "FontStyle",
+      "所属模块": "未知模块",
+      "功能描述": "Font style. The default value is NORMAL.",
+      "注释信息": [
+        "@type { ?FontStyle } it is uint32_t type data",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "TextStyle",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "baseline",
+      "属性类型": "TextBaseline",
+      "所属模块": "未知模块",
+      "功能描述": "Text baseline type. The default value is ALPHABETIC.",
+      "注释信息": [
+        "@type { ?TextBaseline } it is uint32_t type data",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "TextStyle",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "fontFamilies",
+      "属性类型": "Array<string>",
+      "所属模块": "未知模块",
+      "功能描述": "Array of font families. By default, the array is empty, indicating that all system fonts are matched.",
+      "注释信息": [
+        "@type { ?Array<string> } fontfamily gather",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "TextStyle",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "fontSize",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Font size, in units of px. The value is a floating point number. The default value is 14.0.",
+      "注释信息": [
+        "@type { ?number } it is double type data",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "TextStyle",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "letterSpacing",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Letter spacing, in units of px. The value is a floating point number. The default value is 0.0. A positive value causes characters to spread farther apart, and a negative value bring characters closer together.",
+      "注释信息": [
+        "@type { ?number } it is double type data",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "TextStyle",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "wordSpacing",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Word spacing, in units of px. The value is a floating point number. The default value is 0.0.",
+      "注释信息": [
+        "@type { ?number } it is double type data",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "TextStyle",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "lineHeightMaximum",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Maximum line height. The value is a double number.",
+      "注释信息": [
+        "@type { ?number } it is double type data",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "TextStyle",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "lineHeightMinimum",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Minimum line height. The value is a double number.",
+      "注释信息": [
+        "@type { ?number } it is double type data",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "TextStyle",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "lineHeightStyle",
+      "属性类型": "LineHeightStyle",
+      "所属模块": "未知模块",
+      "功能描述": "Line height scaling base style. The default value is FONT_SIZE.",
+      "注释信息": [
+        "@type { ?LineHeightStyle } Line height scaling style.",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "TextStyle",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "heightScale",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Scale factor of the line height. The value is a floating point number. The default value is 1.0. This parameter is valid only when heightOnly is set to true.",
+      "注释信息": [
+        "@type { ?number } it is double type data",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "TextStyle",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "halfLeading",
+      "属性类型": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Whether half leading is enabled. Half leading is the leading split in half and applied equally to the top and bottom edges. The value true means that half leading is enabled, and false means the opposite. The default value is false.",
+      "注释信息": [
+        "@type { ?boolean } it is boolean type data",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "TextStyle",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "heightOnly",
+      "属性类型": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "How the height of the text box is set. The value true means that the height of the text box is set based on the font size and the value of heightScale, and false means that the height is set based on the line height and line spacing. The default value is false.",
+      "注释信息": [
+        "@type { ?boolean } it is boolean type data",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "TextStyle",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "ellipsis",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Ellipsis content, which will be used to replace the extra content.",
+      "注释信息": [
+        "@type { ?string } it is u16string type data.",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "TextStyle",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "ellipsisMode",
+      "属性类型": "EllipsisMode",
+      "所属模块": "未知模块",
+      "功能描述": "Ellipsis type. The default value is END, indicating that the ellipsis is at the end of a line.",
+      "注释信息": [
+        "@type { ?EllipsisMode } Ellipsis mode.",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "TextStyle",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "locale",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Locale. For example, 'en' indicates English, 'zh-Hans' indicates Simplified Chinese, and 'zh-Hant' indicates Traditional Chinese. For details, see ISO 639-1. The default value is an empty string.",
+      "注释信息": [
+        "@type { ?string } it is string type data.",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "TextStyle",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "baselineShift",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Shift of the baseline. The value is a floating point number. The default value is 0.0px.",
+      "注释信息": [
+        "@type { ?number } it is double type data.",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "TextStyle",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "fontFeatures",
+      "属性类型": "Array<FontFeature>",
+      "所属模块": "未知模块",
+      "功能描述": "Text Style available font features.",
+      "注释信息": [
+        "@type { ?Array<FontFeature> } A collection of font features.",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "TextStyle",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "textShadows",
+      "属性类型": "Array<TextShadow>",
+      "所属模块": "未知模块",
+      "功能描述": "Text shadows of text.",
+      "注释信息": [
+        "@type { ?Array<TextShadow> } textShadow gather.",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "TextStyle",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "backgroundRect",
+      "属性类型": "RectStyle",
+      "所属模块": "未知模块",
+      "功能描述": "Rectangle style of text.",
+      "注释信息": [
+        "@type { ?RectStyle } rect style for text.",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "TextStyle",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "fontVariations",
+      "属性类型": "Array<FontVariation>",
+      "所属模块": "未知模块",
+      "功能描述": "Text Style available font variations.",
+      "注释信息": [
+        "@type { ?Array<FontVariation> } A collection of font variations.",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "TextStyle",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "badgeType",
+      "属性类型": "TextBadgeType",
+      "所属模块": "未知模块",
+      "功能描述": "Text style available badge type.",
+      "注释信息": [
+        "@type { ?TextBadgeType } The type of text badge type.",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "TextStyle",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "fontWidth",
+      "属性类型": "FontWidth",
+      "所属模块": "未知模块",
+      "功能描述": "Font width. The default value is NORMAL.",
+      "注释信息": [
+        "@type {  ?FontWidth  } it is uint32_t type data",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "TextStyle",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "class",
+      "名称": "FontCollection",
+      "所属模块": "未知模块",
+      "功能描述": "Implements a collection of fonts.",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@form",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "text",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getGlobalInstance",
+      "返回值": "FontCollection",
+      "所属模块": "未知模块",
+      "功能描述": "Get global FontCollection instance of the application.",
+      "注释信息": [
+        "@returns { FontCollection } The FontCollection object.",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "FontCollection",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "The FontCollection object.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getLocalInstance",
+      "返回值": "FontCollection",
+      "所属模块": "未知模块",
+      "功能描述": "Get local FontCollection instance of the application.",
+      "注释信息": [
+        "@returns { FontCollection } The FontCollection object.",
+        "@static",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@form",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "FontCollection",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "The FontCollection object.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "loadFontSync",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Loads a custom font. This API returns the result synchronously. In this API, name specifies the alias of the font, and the custom font effect can be displayed only when the value of name is set in fontFamilies in TextStyle. The supported font file formats are .ttf and .otf.",
+      "注释信息": [
+        "@param { string } name - the font name.",
+        "@param { string | Resource } path - Path of the font file to import. The value must be",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@form",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "FontCollection",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [
+        {
+          "名称": "name",
+          "类型": "string",
+          "必填": true,
+          "说明": "the font name."
+        },
+        {
+          "名称": "path",
+          "类型": "string | Resource",
+          "必填": true,
+          "说明": "Path of the font file to import. The value must be"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "loadFont",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Loads a custom font. This API uses a promise to return the result. In this API, name specifies the alias of the font, and the custom font effect can be displayed only when the value of name is set in fontFamilies in TextStyle. The supported font file formats are ttf and otf. 2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { string } name - Name of the font. Any string is acceptable.",
+        "@param { string | Resource } path - Path of the font file to load.",
+        "@returns { Promise<void> } Promise that returns no value.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@form",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "FontCollection",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [
+        {
+          "名称": "name",
+          "类型": "string",
+          "必填": true,
+          "说明": "Name of the font. Any string is acceptable."
+        },
+        {
+          "名称": "path",
+          "类型": "string | Resource",
+          "必填": true,
+          "说明": "Path of the font file to load."
+        }
+      ],
+      "return_description": "Promise that returns no value.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "loadFontSyncWithCheck",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Loads a custom font with enhanced error checking. This API returns the result synchronously. In this API, name specifies the alias of the font, and the custom font effect can be displayed only when the value of name is set in fontFamilies in TextStyle. The supported font file formats are .ttf, .otf and .ttc. The value must be **\"file:// + absolute path of the font file\"** or **$rawfile(\"path of the font file\")**.",
+      "注释信息": [
+        "@param { string } name - the font name.",
+        "@param { string | Resource } path - Path of the font file to load.",
+        "@param { number } [index] - The index of the font file.",
+        "@throws { BusinessError } 25900001 - Parameter error.",
+        "@throws { BusinessError } 25900002 - File not found.",
+        "@throws { BusinessError } 25900003 - Failed to open the file.",
+        "@throws { BusinessError } 25900004 - File seek failed.",
+        "@throws { BusinessError } 25900005 - Failed to get the file size.",
+        "@throws { BusinessError } 25900006 - Failed to read the file.",
+        "@throws { BusinessError } 25900007 - Empty file.",
+        "@throws { BusinessError } 25900008 - Corrupt file.",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@form",
+        "@atomicservice",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "FontCollection",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [
+        {
+          "名称": "name",
+          "类型": "string",
+          "必填": true,
+          "说明": "the font name."
+        },
+        {
+          "名称": "path",
+          "类型": "string | Resource",
+          "必填": true,
+          "说明": "Path of the font file to load."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "number } [index] - The index of the font file."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "25900001",
+          "description": "Parameter error."
+        },
+        {
+          "code": "25900002",
+          "description": "File not found."
+        },
+        {
+          "code": "25900003",
+          "description": "Failed to open the file."
+        },
+        {
+          "code": "25900004",
+          "description": "File seek failed."
+        },
+        {
+          "code": "25900005",
+          "description": "Failed to get the file size."
+        },
+        {
+          "code": "25900006",
+          "description": "Failed to read the file."
+        },
+        {
+          "code": "25900007",
+          "description": "Empty file."
+        },
+        {
+          "code": "25900008",
+          "description": "Corrupt file."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "loadFontWithCheck",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Loads a custom font with enhanced error checking. This API uses a promise to return the result. In this API, name specifies the alias of the font, and the custom font effect can be displayed only when the value of name is set in fontFamilies in TextStyle. The supported font file formats are .ttf, .otf and .ttc. The value must be **\"file:// + absolute path of the font file\"** or **$rawfile(\"path of the font file\")**.",
+      "注释信息": [
+        "@param { string } name - Name of the font. Any string is acceptable.",
+        "@param { string | Resource } path - Path of the font file to load.",
+        "@param { number } [index] - The index of the font file.",
+        "@returns { Promise<void> } Promise that returns no value.",
+        "@throws { BusinessError } 25900001 - Parameter error.",
+        "@throws { BusinessError } 25900002 - File not found.",
+        "@throws { BusinessError } 25900003 - Failed to open the file.",
+        "@throws { BusinessError } 25900004 - File seek failed.",
+        "@throws { BusinessError } 25900005 - Failed to get the file size.",
+        "@throws { BusinessError } 25900006 - Failed to read the file.",
+        "@throws { BusinessError } 25900007 - Empty file.",
+        "@throws { BusinessError } 25900008 - Corrupt file.",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@form",
+        "@atomicservice",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "FontCollection",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [
+        {
+          "名称": "name",
+          "类型": "string",
+          "必填": true,
+          "说明": "Name of the font. Any string is acceptable."
+        },
+        {
+          "名称": "path",
+          "类型": "string | Resource",
+          "必填": true,
+          "说明": "Path of the font file to load."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "number } [index] - The index of the font file."
+        }
+      ],
+      "return_description": "Promise that returns no value.",
+      "error_codes": [
+        {
+          "code": "25900001",
+          "description": "Parameter error."
+        },
+        {
+          "code": "25900002",
+          "description": "File not found."
+        },
+        {
+          "code": "25900003",
+          "description": "Failed to open the file."
+        },
+        {
+          "code": "25900004",
+          "description": "File seek failed."
+        },
+        {
+          "code": "25900005",
+          "description": "Failed to get the file size."
+        },
+        {
+          "code": "25900006",
+          "description": "Failed to read the file."
+        },
+        {
+          "code": "25900007",
+          "description": "Empty file."
+        },
+        {
+          "code": "25900008",
+          "description": "Corrupt file."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "unloadFontSync",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unloads a custom font synchronously. This API returns the result synchronously. After unloading a font alias through this API, the corresponding custom font will no longer be available. All typography using the font alias should be destroyed and re-created. - Unloading a non-existent font alias has no effect and will **not** throw an error. - This operation only affects subsequent font usages. unload a font that is currently in used may lead to text rendering anomalies, including garbled characters or missing glyphs. This must exactly match the name used when loading the font through.",
+      "注释信息": [
+        "@param { string } name - The alias of the font to unload.",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@form",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "FontCollection",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [
+        {
+          "名称": "name",
+          "类型": "string",
+          "必填": true,
+          "说明": "The alias of the font to unload."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "unloadFont",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Unloads a custom font. This API uses a promise to return the result. After unloading a font alias through this API, the corresponding custom font will no longer be available. All typography using the font alias should be destroyed and re-created. - Unloading a non-existent font alias has no effect and will **not** throw an error. - This operation only affects subsequent font usages. unload a font that is currently in used may lead to text rendering anomalies, including garbled characters or missing glyphs. This must exactly match the name used when loading the font through.",
+      "注释信息": [
+        "@param { string } name - The alias of the font to unload.",
+        "@returns { Promise<void> } Promise that returns no value.",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@form",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "FontCollection",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [
+        {
+          "名称": "name",
+          "类型": "string",
+          "必填": true,
+          "说明": "The alias of the font to unload."
+        }
+      ],
+      "return_description": "Promise that returns no value.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "clearCaches",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Clear font caches. The font cache has a memory limit and a clearing mechanism. It occupies limited memory. You are not advised to clear it unless otherwise required.",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@form",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "FontCollection",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "StrutStyle",
+      "所属模块": "未知模块",
+      "功能描述": "Describes the strut style, which determines the line spacing, baseline alignment mode, and other properties related to the line height when drawing texts. The strut style is disabled by default.",
+      "注释信息": [
+        "@typedef StrutStyle",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "text",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "fontFamilies",
+      "属性类型": "Array<string>",
+      "所属模块": "未知模块",
+      "功能描述": "List of font families. By default, the list corresponds to the system's default fonts.",
+      "注释信息": [
+        "@type { ?Array<string> } fontfamily gather",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "StrutStyle",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "fontStyle",
+      "属性类型": "FontStyle",
+      "所属模块": "未知模块",
+      "功能描述": "Font style. The default value is NORMAL.",
+      "注释信息": [
+        "@type { ?FontStyle } it is uint32_t type data",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "StrutStyle",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "fontWidth",
+      "属性类型": "FontWidth",
+      "所属模块": "未知模块",
+      "功能描述": "Font width. The default value is NORMAL.",
+      "注释信息": [
+        "@type { ?FontWidth } it is uint32_t type data",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "StrutStyle",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "fontWeight",
+      "属性类型": "FontWeight",
+      "所属模块": "未知模块",
+      "功能描述": "Font weight. The default value is W400. The default system font supports font weight adjustment. For other fonts, if the weight is less than W600, there is no variation in stroke thickness. If the weight is greater than or equal to W600, it might result in a fake bold effect.",
+      "注释信息": [
+        "@type { ?FontWeight } it is uint32_t type data",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "StrutStyle",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "fontSize",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Font size, in units of px. The value is a floating point number. The default value is 14.0.",
+      "注释信息": [
+        "@type { ?number } it is double type data",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "StrutStyle",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "height",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Scale factor of the line height. The value is a floating point number. The default value is 1.0.",
+      "注释信息": [
+        "@type { ?number } it is double type data",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "StrutStyle",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "leading",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Custom leading to be applied to the strut. The value is a floating point number. The default value is -1.0.",
+      "注释信息": [
+        "@type { ?number } it is double type data",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "StrutStyle",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "forceHeight",
+      "属性类型": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Whether to forcibly use the strut height for all lines. The value true means to forcibly use the strut height for all lines, and false means the opposite. The default value is false.",
+      "注释信息": [
+        "@type { ?boolean } it is boolean type data",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "StrutStyle",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "enabled",
+      "属性类型": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Whether to enable the strut style. The value true means to enable the strut style, and false means the opposite. The default value is false.",
+      "注释信息": [
+        "@type { ?boolean } it is boolean type data",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "StrutStyle",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "heightOverride",
+      "属性类型": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Whether to override the height. The value true means to override the height, and false means the opposite. The default value is false.",
+      "注释信息": [
+        "@type { ?boolean } it is boolean type data",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "StrutStyle",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "halfLeading",
+      "属性类型": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Whether half leading is enabled. Half leading is the leading split in half and applied equally to the top and bottom edges. The value true means that half leading is enabled, and false means the opposite. The default value is false.",
+      "注释信息": [
+        "@type { ?boolean } it is boolean type data",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "StrutStyle",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "ParagraphStyle",
+      "所属模块": "未知模块",
+      "功能描述": "Determines the configuration used by ParagraphBuilder to position lines within a Paragraph of text.",
+      "注释信息": [
+        "@typedef ParagraphStyle",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "text",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "textStyle",
+      "属性类型": "TextStyle",
+      "所属模块": "未知模块",
+      "功能描述": "Text style applied to the paragraph. The default value is the initial text style.",
+      "注释信息": [
+        "@type { ?TextStyle }",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "ParagraphStyle",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "textDirection",
+      "属性类型": "TextDirection",
+      "所属模块": "未知模块",
+      "功能描述": "Text direction. The default value is LTR.",
+      "注释信息": [
+        "@type { ?TextDirection }",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "ParagraphStyle",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "align",
+      "属性类型": "TextAlign",
+      "所属模块": "未知模块",
+      "功能描述": "Text alignment mode. The default value is START. This parameter is invalid when the tab parameter is configured.",
+      "注释信息": [
+        "@type { ?TextAlign }",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "ParagraphStyle",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "wordBreak",
+      "属性类型": "WordBreak",
+      "所属模块": "未知模块",
+      "功能描述": "Word break type. The default value is BREAK_WORD.",
+      "注释信息": [
+        "@type { ?WordBreak }",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "ParagraphStyle",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "maxLines",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Maximum number of lines. The value is an integer. The default value is 1e9.",
+      "注释信息": [
+        "@type { ?number }",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "ParagraphStyle",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "breakStrategy",
+      "属性类型": "BreakStrategy",
+      "所属模块": "未知模块",
+      "功能描述": "Text break strategy. The default value is GREEDY.",
+      "注释信息": [
+        "@type { ?BreakStrategy }",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "ParagraphStyle",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "strutStyle",
+      "属性类型": "StrutStyle",
+      "所属模块": "未知模块",
+      "功能描述": "Strut style. The default value is the initial StrutStyle object.",
+      "注释信息": [
+        "@type { ?StrutStyle }",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "ParagraphStyle",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "textHeightBehavior",
+      "属性类型": "TextHeightBehavior",
+      "所属模块": "未知模块",
+      "功能描述": "Text height modifier pattern. The default value is ALL.",
+      "注释信息": [
+        "@type { ?TextHeightBehavior }",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "ParagraphStyle",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "tab",
+      "属性类型": "TextTab",
+      "所属模块": "未知模块",
+      "功能描述": "Alignment mode and position of the text after the tab character in a paragraph. By default, the tab character is replaced with a space. This parameter is invalid when it is used together with the align parameter or the ellipsis parameter in TextStyle.",
+      "注释信息": [
+        "@type { ?TextTab }",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "ParagraphStyle",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "trailingSpaceOptimized",
+      "属性类型": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Whether to optimize white spaces at the end of each line.",
+      "注释信息": [
+        "@type { ?boolean } Boolean type data.",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "ParagraphStyle",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "autoSpace",
+      "属性类型": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Whether to enable automatic spacing between Chinese and English for paragraph.",
+      "注释信息": [
+        "@type { ?boolean }",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "ParagraphStyle",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "verticalAlign",
+      "属性类型": "TextVerticalAlign",
+      "所属模块": "未知模块",
+      "功能描述": "Vertical alignment mode of the paragraph.",
+      "注释信息": [
+        "@type { ?TextVerticalAlign }",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "ParagraphStyle",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "lineSpacing",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Line spacing. The value is a double number.",
+      "注释信息": [
+        "@type { ?number } It is double type data",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "ParagraphStyle",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "compressHeadPunctuation",
+      "属性类型": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Whether to enable compression of leading punctuation.",
+      "注释信息": [
+        "@type { ?boolean }",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "ParagraphStyle",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "includeFontPadding",
+      "属性类型": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Whether to Add padding to the font.",
+      "注释信息": [
+        "@type { ?boolean }",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "ParagraphStyle",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "fallbackLineSpacing",
+      "属性类型": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Whether to enable line spacing fallback.",
+      "注释信息": [
+        "@type { ?boolean }",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "ParagraphStyle",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "PlaceholderAlignment",
+      "所属模块": "未知模块",
+      "功能描述": "Enumerates the vertical alignment modes of a placeholder relative to the surrounding text.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "text",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "OFFSET_AT_BASELINE",
+      "所属模块": "未知模块",
+      "功能描述": "Aligns the baseline of the placeholder to the baseline of the text.",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "PlaceholderAlignment",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "ABOVE_BASELINE",
+      "所属模块": "未知模块",
+      "功能描述": "Aligns the bottom edge of the placeholder to the baseline of the text. sits on top of the baseline.",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "PlaceholderAlignment",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "BELOW_BASELINE",
+      "所属模块": "未知模块",
+      "功能描述": "Aligns the top edge of the placeholder to the baseline of the text. hangs below the baseline.",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "PlaceholderAlignment",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "TOP_OF_ROW_BOX",
+      "所属模块": "未知模块",
+      "功能描述": "Align the top edge of the placeholder with the top edge of the font. When the placeholder is very tall, the extra space will hang from the top and extend through the bottom of the line.",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "PlaceholderAlignment",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "BOTTOM_OF_ROW_BOX",
+      "所属模块": "未知模块",
+      "功能描述": "Align the bottom edge of the placeholder with the bottom edge of the text. When the placeholder is very tall, the extra space will rise from the bottom and extend through the top of the line.",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "PlaceholderAlignment",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CENTER_OF_ROW_BOX",
+      "所属模块": "未知模块",
+      "功能描述": "Align the middle of the placeholder with the middle of the text. When the placeholder is very tall, the extra space will grow equally from the top and bottom of the line.",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "PlaceholderAlignment",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "FOLLOW_PARAGRAPH",
+      "所属模块": "未知模块",
+      "功能描述": "Follow Paragraph setting,",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "PlaceholderAlignment",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "PlaceholderSpan",
+      "所属模块": "未知模块",
+      "功能描述": "Describes the placeholder style.",
+      "注释信息": [
+        "@typedef PlaceholderSpan",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "text",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "width",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Width of the placeholder, in units of px. The value is a floating point number.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "PlaceholderSpan",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "height",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Height of the placeholder, in units of px. The value is a floating point number.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "PlaceholderSpan",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "align",
+      "属性类型": "PlaceholderAlignment",
+      "所属模块": "未知模块",
+      "功能描述": "Vertical alignment of the placeholder relative to the surrounding text.",
+      "注释信息": [
+        "@type { PlaceholderAlignment }",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "PlaceholderSpan",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "baseline",
+      "属性类型": "TextBaseline",
+      "所属模块": "未知模块",
+      "功能描述": "Type of the text baseline.",
+      "注释信息": [
+        "@type { TextBaseline }",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "PlaceholderSpan",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "baselineOffset",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Offset to the text baseline, in units of px. The value is a floating point number.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "PlaceholderSpan",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "Range",
+      "所属模块": "未知模块",
+      "功能描述": "Describes a left-closed and right-open interval.",
+      "注释信息": [
+        "@typedef Range",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "text",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "start",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Index of the leftmost point of the interval. The value is an integer.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "Range",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "end",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Index of the rightmost point of the interval. The value is an integer.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "Range",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "SystemFontType",
+      "所属模块": "未知模块",
+      "功能描述": "Enumerates the font types, which can be combined through bitwise OR operations.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "text",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "ALL",
+      "值": "1 << 0",
+      "所属模块": "未知模块",
+      "功能描述": "All font types, including the system font type, style font type, and user-installed font type.",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "SystemFontType",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "GENERIC",
+      "值": "1 << 1",
+      "所属模块": "未知模块",
+      "功能描述": "System generic font type.",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "SystemFontType",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "STYLISH",
+      "值": "1 << 2",
+      "所属模块": "未知模块",
+      "功能描述": "Style font type. The style font type is designed for 2-in-1 devices.",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "SystemFontType",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "INSTALLED",
+      "值": "1 << 3",
+      "所属模块": "未知模块",
+      "功能描述": "Font type that has been installed.",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "SystemFontType",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CUSTOMIZED",
+      "值": "1 << 4",
+      "所属模块": "未知模块",
+      "功能描述": "Customized font types.",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "SystemFontType",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "FontDescriptor",
+      "所属模块": "未知模块",
+      "功能描述": "Describes the font descriptor information.",
+      "注释信息": [
+        "@typedef FontDescriptor",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "text",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "path",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Absolute path of the font. Any string is acceptable, but the value must adhere to the system's path constraints. The default value is an empty string.",
+      "注释信息": [
+        "@type { ?string }",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "FontDescriptor",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "postScriptName",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Unique name of the font. Any string is acceptable. The default value is an empty string.",
+      "注释信息": [
+        "@type { ?string }",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "FontDescriptor",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "fullName",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Font name. Any string is acceptable. The default value is an empty string.",
+      "注释信息": [
+        "@type { ?string }",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "FontDescriptor",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "fontFamily",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Family name of the font. Any string is acceptable. The default value is an empty string.",
+      "注释信息": [
+        "@type { ?string }",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "FontDescriptor",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "fontSubfamily",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Subfamily name of the font. Any string is acceptable. The default value is an empty string.",
+      "注释信息": [
+        "@type { ?string }",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "FontDescriptor",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "weight",
+      "属性类型": "FontWeight",
+      "所属模块": "未知模块",
+      "功能描述": "Font weight. The default value is 0.",
+      "注释信息": [
+        "@type { ?FontWeight }",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "FontDescriptor",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "width",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Font width. The value is an integer ranging from 1 to 9. The default value is 0.",
+      "注释信息": [
+        "@type { ?number }",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "FontDescriptor",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "italic",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Whether the font is italic. The value 0 means that the font is not italic, and 1 means the opposite. The default value is 0.",
+      "注释信息": [
+        "@type { ?number }",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "FontDescriptor",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "monoSpace",
+      "属性类型": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Whether the font is monospaced. The value true means that the font is monospaced, and false means the opposite. The default value is false.",
+      "注释信息": [
+        "@type { ?boolean }",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "FontDescriptor",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "symbolic",
+      "属性类型": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Whether the font is symbolic. The value true means that the font is symbolic, and false means the opposite.",
+      "注释信息": [
+        "@type { ?boolean }",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "FontDescriptor",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "localPostscriptName",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Font local post script name",
+      "注释信息": [
+        "@type { ?string }",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "FontDescriptor",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "localFullName",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Font local full name",
+      "注释信息": [
+        "@type { ?string }",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "FontDescriptor",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "localFamilyName",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Font local family name",
+      "注释信息": [
+        "@type { ?string }",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "FontDescriptor",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "localSubFamilyName",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Font local subfamily name",
+      "注释信息": [
+        "@type { ?string }",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "FontDescriptor",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "version",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Font version",
+      "注释信息": [
+        "@type { ?string }",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "FontDescriptor",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "manufacture",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Font manufacture",
+      "注释信息": [
+        "@type { ?string }",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "FontDescriptor",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "copyright",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Font copyright",
+      "注释信息": [
+        "@type { ?string }",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "FontDescriptor",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "trademark",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Font trademark",
+      "注释信息": [
+        "@type { ?string }",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "FontDescriptor",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "license",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Font license",
+      "注释信息": [
+        "@type { ?string }",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "FontDescriptor",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "index",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "The font index in ttc file",
+      "注释信息": [
+        "@type { ?number }",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@stagemodelonly",
+        "@atomicservice",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "FontDescriptor",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "class",
+      "名称": "Paragraph",
+      "所属模块": "未知模块",
+      "功能描述": "Implements a carrier that stores the text content and style. You can perform operations such as layout and drawing. Before calling any of the following APIs, you must use build() of the ParagraphBuilder class to create a Paragraph object.",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "text",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "layoutSync",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Performs layout and calculates the positions of all glyphs.",
+      "注释信息": [
+        "@param { number } width - Maximum width of a single line, in units of px. The value is a floating point number.",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "Paragraph",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [
+        {
+          "名称": "width",
+          "类型": "number",
+          "必填": true,
+          "说明": "Maximum width of a single line, in units of px. The value is a floating point number."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "layout",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Performs layout and calculates the positions of all glyphs. This API uses a promise to return the result. 2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { number } width - Maximum width of a single line, in units of px. The value is a floating point number.",
+        "@returns { Promise<void> } Promise that returns no value.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "Paragraph",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [
+        {
+          "名称": "width",
+          "类型": "number",
+          "必填": true,
+          "说明": "Maximum width of a single line, in units of px. The value is a floating point number."
+        }
+      ],
+      "return_description": "Promise that returns no value.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "paint",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Paints the text on the canvas with the coordinate point (x, y) as the upper left corner.",
+      "注释信息": [
+        "@param { drawing.Canvas } canvas - Target canvas.",
+        "@param { number } x - X coordinate of the upper left corner. The value is a floating point number.",
+        "@param { number } y - Y coordinate of the upper left corner. The value is a floating point number.",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "Paragraph",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [
+        {
+          "名称": "canvas",
+          "类型": "drawing.Canvas",
+          "必填": true,
+          "说明": "Target canvas."
+        },
+        {
+          "名称": "x",
+          "类型": "number",
+          "必填": true,
+          "说明": "X coordinate of the upper left corner. The value is a floating point number."
+        },
+        {
+          "名称": "y",
+          "类型": "number",
+          "必填": true,
+          "说明": "Y coordinate of the upper left corner. The value is a floating point number."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "paintOnPath",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Draw the laid out text onto the supplied canvas along the path and offset. that is ahead along the path from its start point, and a negative number indicates a position that is behind from the start point. on the left side of the path, and a negative number indicates a position on the right side of the path.",
+      "注释信息": [
+        "@param { drawing.Canvas } canvas - Canvas used to carry the drawn content and drawing status.",
+        "@param { drawing.Path } path - Path used to determine the position of the text.",
+        "@param { number } hOffset - Horizontal offset along the path direction. A positive number indicates a position",
+        "@param { number } vOffset - Vertical offset along the path direction. A positive number indicates a position",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "Paragraph",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [
+        {
+          "名称": "canvas",
+          "类型": "drawing.Canvas",
+          "必填": true,
+          "说明": "Canvas used to carry the drawn content and drawing status."
+        },
+        {
+          "名称": "path",
+          "类型": "drawing.Path",
+          "必填": true,
+          "说明": "Path used to determine the position of the text."
+        },
+        {
+          "名称": "hOffset",
+          "类型": "number",
+          "必填": true,
+          "说明": "Horizontal offset along the path direction. A positive number indicates a position"
+        },
+        {
+          "名称": "vOffset",
+          "类型": "number",
+          "必填": true,
+          "说明": "Vertical offset along the path direction. A positive number indicates a position"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getMaxWidth",
+      "返回值": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the maximum width of the line in the text.",
+      "注释信息": [
+        "@returns { number } Maximum line width, in units of px. The value is a floating point number.",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "Paragraph",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "Maximum line width, in units of px. The value is a floating point number.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getHeight",
+      "返回值": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the total height of the text.",
+      "注释信息": [
+        "@returns { number } Total height, in units of px. The value is a floating point number.",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "Paragraph",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "Total height, in units of px. The value is a floating point number.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getLongestLine",
+      "返回值": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the longest line in the text.",
+      "注释信息": [
+        "@returns { number } Longest line, in units of px. The value is a floating point number.",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "Paragraph",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "Longest line, in units of px. The value is a floating point number.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getLongestLineWithIndent",
+      "返回值": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the width of the longest line, including its indentation, in the text. You are advised to round up the return value. If the text content is empty, 0 is returned. The value is a floating point number, in px.",
+      "注释信息": [
+        "@returns { number } Width of the longest line, including its indentation.",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "Paragraph",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "Width of the longest line, including its indentation.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getMinIntrinsicWidth",
+      "返回值": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the minimum intrinsic width of the paragraph.",
+      "注释信息": [
+        "@returns { number } Minimum intrinsic width, in units of px. The value is a floating point number.",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "Paragraph",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "Minimum intrinsic width, in units of px. The value is a floating point number.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getMaxIntrinsicWidth",
+      "返回值": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the maximum intrinsic width of the paragraph.",
+      "注释信息": [
+        "@returns { number } Maximum intrinsic width, in units of px. The value is a floating point number.",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "Paragraph",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "Maximum intrinsic width, in units of px. The value is a floating point number.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getAlphabeticBaseline",
+      "返回值": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the alphabetic baseline.",
+      "注释信息": [
+        "@returns { number } Alphabetic baseline, in units of px. The value is a floating point number.",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "Paragraph",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "Alphabetic baseline, in units of px. The value is a floating point number.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getIdeographicBaseline",
+      "返回值": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the ideographic baseline.",
+      "注释信息": [
+        "@returns { number } Ideographic baseline, in units of px. The value is a floating point number.",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "Paragraph",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "Ideographic baseline, in units of px. The value is a floating point number.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getRectsForRange",
+      "返回值": "Array<TextBox>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the rectangles occupied by the characters in the range of the text under the given rectangle width and height.",
+      "注释信息": [
+        "@param { Range } range - Range of the text.",
+        "@param { RectWidthStyle } widthStyle - Width of the rectangle.",
+        "@param { RectHeightStyle } heightStyle - Height of the rectangle.",
+        "@returns { Array<TextBox> } Array holding the rectangles obtained.",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "Paragraph",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [
+        {
+          "名称": "range",
+          "类型": "Range",
+          "必填": true,
+          "说明": "Range of the text."
+        },
+        {
+          "名称": "widthStyle",
+          "类型": "RectWidthStyle",
+          "必填": true,
+          "说明": "Width of the rectangle."
+        },
+        {
+          "名称": "heightStyle",
+          "类型": "RectHeightStyle",
+          "必填": true,
+          "说明": "Height of the rectangle."
+        }
+      ],
+      "return_description": "Array holding the rectangles obtained.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getRectsForPlaceholders",
+      "返回值": "Array<TextBox>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the rectangles occupied by all placeholders in the text.",
+      "注释信息": [
+        "@returns { Array<TextBox> } Array holding the rectangles obtained.",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "Paragraph",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "Array holding the rectangles obtained.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getGlyphPositionAtCoordinate",
+      "返回值": "PositionWithAffinity",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the position of a glyph closest to the given coordinates.",
+      "注释信息": [
+        "@param { number } x - X coordinate. The value is a floating point number.",
+        "@param { number } y - Y coordinate. The value is a floating point number.",
+        "@returns { PositionWithAffinity } Position of the glyph.",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "Paragraph",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [
+        {
+          "名称": "x",
+          "类型": "number",
+          "必填": true,
+          "说明": "X coordinate. The value is a floating point number."
+        },
+        {
+          "名称": "y",
+          "类型": "number",
+          "必填": true,
+          "说明": "Y coordinate. The value is a floating point number."
+        }
+      ],
+      "return_description": "Position of the glyph.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getWordBoundary",
+      "返回值": "Range",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the range of the word where the glyph with a given offset is located.",
+      "注释信息": [
+        "@param { number } offset - Offset of the glyph. The value is an integer.",
+        "@returns { Range } Range of the word.",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "Paragraph",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [
+        {
+          "名称": "offset",
+          "类型": "number",
+          "必填": true,
+          "说明": "Offset of the glyph. The value is an integer."
+        }
+      ],
+      "return_description": "Range of the word.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getLineCount",
+      "返回值": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the number of text lines.",
+      "注释信息": [
+        "@returns { number } Number of text lines. The value is an integer.",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "Paragraph",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "Number of text lines. The value is an integer.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getLineHeight",
+      "返回值": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the height of a given line.",
+      "注释信息": [
+        "@param { number } line - Index of the line. The value is an integer ranging from 0 to getLineCount() – 1.",
+        "@returns { number } The line height value returned to the caller.",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "Paragraph",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [
+        {
+          "名称": "line",
+          "类型": "number",
+          "必填": true,
+          "说明": "Index of the line. The value is an integer ranging from 0 to getLineCount() – 1."
+        }
+      ],
+      "return_description": "The line height value returned to the caller.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getLineWidth",
+      "返回值": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the width of a given line.",
+      "注释信息": [
+        "@param { number } line - Index of the line. The value is an integer ranging from 0 to getLineCount() – 1.",
+        "@returns { number } The line width value returned to the caller.",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "Paragraph",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [
+        {
+          "名称": "line",
+          "类型": "number",
+          "必填": true,
+          "说明": "Index of the line. The value is an integer ranging from 0 to getLineCount() – 1."
+        }
+      ],
+      "return_description": "The line width value returned to the caller.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "didExceedMaxLines",
+      "返回值": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Checks whether the number of lines in the paragraph exceeds the maximum. and false means the opposite.",
+      "注释信息": [
+        "@returns { boolean } Check result. The value true means that the number of lines exceeds the maximum,",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "Paragraph",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "Check result. The value true means that the number of lines exceeds the maximum,",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getTextLines",
+      "返回值": "Array<TextLine>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains all the text lines.",
+      "注释信息": [
+        "@returns { Array<TextLine> } Array of text lines.",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "Paragraph",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "Array of text lines.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getActualTextRange",
+      "返回值": "Range",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the actually visible text range in the specified line, excluding any overflow ellipsis. obtain the bounds of existing lines. That is, the line number must start from 0, and the maximum line number is getLineCount - 1. and false means the opposite.",
+      "注释信息": [
+        "@param { number } lineNumber - Line number of the text range, starting from 0. This API can only be used to",
+        "@param { boolean } includeSpaces - Whether spaces are included. The value true means that spaces are contained,",
+        "@returns { Range } Text range obtained. If the line index is invalid, start and end are both 0.",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "Paragraph",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [
+        {
+          "名称": "lineNumber",
+          "类型": "number",
+          "必填": true,
+          "说明": "Line number of the text range, starting from 0. This API can only be used to"
+        },
+        {
+          "名称": "includeSpaces",
+          "类型": "boolean",
+          "必填": true,
+          "说明": "Whether spaces are included. The value true means that spaces are contained,"
+        }
+      ],
+      "return_description": "Text range obtained. If the line index is invalid, start and end are both 0.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getLineMetrics",
+      "返回值": "Array<LineMetrics>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains an array of line measurement information.",
+      "注释信息": [
+        "@returns { Array<LineMetrics> } Array of line measurement information.",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "Paragraph",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "Array of line measurement information.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getLineMetrics",
+      "返回值": "LineMetrics | undefined",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the line measurement information of a line. line number is valid and the measurement information exists. If the line number is invalid or the measurement information cannot be obtained, undefined is returned.",
+      "注释信息": [
+        "@param { number } lineNumber - Line number, starting from 0.",
+        "@returns { LineMetrics | undefined } LineMetrics object containing the measurement information if the specified",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "Paragraph",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [
+        {
+          "名称": "lineNumber",
+          "类型": "number",
+          "必填": true,
+          "说明": "Line number, starting from 0."
+        }
+      ],
+      "return_description": "LineMetrics object containing the measurement information if the specified",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "updateColor",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Synchronously updates the text color of the typography.",
+      "注释信息": [
+        "@param { common2D.Color } color - Color of text.",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "Paragraph",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [
+        {
+          "名称": "color",
+          "类型": "common2D.Color",
+          "必填": true,
+          "说明": "Color of text."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "updateDecoration",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Synchronously updates text decoration.",
+      "注释信息": [
+        "@param { Decoration } decoration - Decoration of text.",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "Paragraph",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [
+        {
+          "名称": "decoration",
+          "类型": "Decoration",
+          "必填": true,
+          "说明": "Decoration of text."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "class",
+      "名称": "LineTypeset",
+      "所属模块": "未知模块",
+      "功能描述": "Implements a carrier that stores the text content and style. It can be used to compute layout details for individual lines of text. Before calling any of the following APIs, you must use buildLineTypeset() in the ParagraphBuilder class to create a LineTypeset object.",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "text",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getLineBreak",
+      "返回值": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the number of characters that can fit in the layout from the specified position within a limited width. [0, total number of text characters). If the parameter is invalid, an exception is thrown. <br>2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { number } startIndex - Start position (inclusive) for calculation. The value is an integer in the range",
+        "@param { number } width - Layout width. The value is a floating point number greater than 0, in px.",
+        "@returns { number } Number of characters.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "LineTypeset",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [
+        {
+          "名称": "startIndex",
+          "类型": "number",
+          "必填": true,
+          "说明": "Start position (inclusive) for calculation. The value is an integer in the range"
+        },
+        {
+          "名称": "width",
+          "类型": "number",
+          "必填": true,
+          "说明": "Layout width. The value is a floating point number greater than 0, in px."
+        }
+      ],
+      "return_description": "Number of characters.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "createLine",
+      "返回值": "TextLine",
+      "所属模块": "未知模块",
+      "功能描述": "Generates a text line object based on the specified layout range. range [0, total number of text characters). the range [0, total number of text characters). The sum of startIndex and count cannot be greater than the total number of text characters. When count is 0, the range is [startIndex, end of the text]. You can use getLineBreak to obtain the number of characters that can fit in the layout. <br>2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { number } startIndex - Start position for layout calculation. The value is an integer in the",
+        "@param { number } count - \tNumber of characters from the specified start position. The value is an integer in",
+        "@returns { TextLine } TextLine object generated based on the characters in the text range.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "LineTypeset",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [
+        {
+          "名称": "startIndex",
+          "类型": "number",
+          "必填": true,
+          "说明": "Start position for layout calculation. The value is an integer in the"
+        },
+        {
+          "名称": "count",
+          "类型": "number",
+          "必填": true,
+          "说明": "Number of characters from the specified start position. The value is an integer in"
+        }
+      ],
+      "return_description": "TextLine object generated based on the characters in the text range.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        }
+      ],
+      "版本": "API"
+    }
+  ]
+}

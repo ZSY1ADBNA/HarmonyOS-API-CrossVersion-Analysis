@@ -1,0 +1,1598 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.InputKit",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "namespace",
+      "名称": "inputMonitor",
+      "所属模块": "@kit.InputKit",
+      "功能描述": "The inputMonitor module implements listening for events of input devices, including the touchscreen, mouse, touchpad, etc. System API, available only to system processes",
+      "注释信息": [
+        "@namespace inputMonitor",
+        "@syscap SystemCapability.MultimodalInput.Input.InputMonitor",
+        "@systemapi hide for inner use",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "@kit.InputKit",
+      "since_version": "7",
+      "system_capability": "SystemCapability.MultimodalInput.Input.InputMonitor",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "interface",
+      "名称": "TouchEventReceiver",
+      "所属模块": "未知模块",
+      "功能描述": "Defines the callback for touch (touchscreen) events.",
+      "注释信息": [
+        "@interface TouchEventReceiver",
+        "@syscap SystemCapability.MultimodalInput.Input.InputMonitor",
+        "@systemapi hide for inner use",
+        "@since 7"
+      ],
+      "层级": 2,
+      "上级": "inputMonitor",
+      "since_version": "7",
+      "system_capability": "SystemCapability.MultimodalInput.Input.InputMonitor",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "call_signature",
+      "签名": "(touchEvent: TouchEvent): Boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Callback used to receive touch input events. The value true indicates that the touch event will be dispatched to the window, and the value false indicates the opposite.",
+      "注释信息": [
+        "@param { TouchEvent } touchEvent - the reported touch event.",
+        "@returns { Boolean } Result indicating whether the touch event will be dispatched to the window.",
+        "@syscap SystemCapability.MultimodalInput.Input.InputMonitor",
+        "@systemapi hide for inner use",
+        "@since 7"
+      ],
+      "层级": 2,
+      "上级": "TouchEventReceiver",
+      "since_version": "7",
+      "system_capability": "SystemCapability.MultimodalInput.Input.InputMonitor",
+      "parameters": [],
+      "return_description": "Result indicating whether the touch event will be dispatched to the window.",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Enables listening for global touch (touchscreen) events. <br>2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.INPUT_MONITORING",
+        "@param { 'touch' } type - Event type. This field has a fixed value of touch.",
+        "@param { TouchEventReceiver } receiver - Callback used to return touch events asynchronously.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Permission denied, non-system app called system api.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@syscap SystemCapability.MultimodalInput.Input.InputMonitor",
+        "@systemapi hide for inner use",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "inputMonitor",
+      "since_version": "12",
+      "system_capability": "SystemCapability.MultimodalInput.Input.InputMonitor",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'touch'",
+          "必填": true,
+          "说明": "Event type. This field has a fixed value of touch."
+        },
+        {
+          "名称": "receiver",
+          "类型": "TouchEventReceiver",
+          "必填": true,
+          "说明": "Callback used to return touch events asynchronously."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Permission denied, non-system app called system api."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Enables listening for global mouse events. <br>2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.INPUT_MONITORING",
+        "@param { 'mouse' } type - Event type. This field has a fixed value of mouse.",
+        "@param { Callback<MouseEvent> } receiver - Callback used to return mouse events asynchronously.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Permission denied, non-system app called system api.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@syscap SystemCapability.MultimodalInput.Input.InputMonitor",
+        "@systemapi hide for inner use",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "inputMonitor",
+      "since_version": "12",
+      "system_capability": "SystemCapability.MultimodalInput.Input.InputMonitor",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'mouse'",
+          "必填": true,
+          "说明": "Event type. This field has a fixed value of mouse."
+        },
+        {
+          "名称": "receiver",
+          "类型": "Callback<MouseEvent>",
+          "必填": true,
+          "说明": "Callback used to return mouse events asynchronously."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Permission denied, non-system app called system api."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Enables listening for mouse events. When the mouse pointer moves to the specified rectangular area, a callback is triggered. <br>2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.INPUT_MONITORING",
+        "@param { 'mouse' } type - Event type. This field has a fixed value of mouse.",
+        "@param { display.Rect[] } rect - Rectangular area where a callback is triggered. One or two rectangular areas can be specified.",
+        "@param { Callback<MouseEvent> } receiver - Callback used to return mouse events asynchronously.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - SystemAPI permit error.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@syscap SystemCapability.MultimodalInput.Input.InputMonitor",
+        "@systemapi hide for inner use",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "inputMonitor",
+      "since_version": "12",
+      "system_capability": "SystemCapability.MultimodalInput.Input.InputMonitor",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'mouse'",
+          "必填": true,
+          "说明": "Event type. This field has a fixed value of mouse."
+        },
+        {
+          "名称": "rect",
+          "类型": "display.Rect[]",
+          "必填": true,
+          "说明": "Rectangular area where a callback is triggered. One or two rectangular areas can be specified."
+        },
+        {
+          "名称": "receiver",
+          "类型": "Callback<MouseEvent>",
+          "必填": true,
+          "说明": "Callback used to return mouse events asynchronously."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "SystemAPI permit error."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Disables listening for global touch (touchscreen) events. If this parameter is not specified, listening will be disabled for all callbacks registered by the current application. <br>2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.INPUT_MONITORING",
+        "@param { 'touch' } type - Event type. This field has a fixed value of touch.",
+        "@param { TouchEventReceiver } receiver - Callback for which listening is disabled.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Permission denied, non-system app called system api.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@syscap SystemCapability.MultimodalInput.Input.InputMonitor",
+        "@systemapi hide for inner use",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "inputMonitor",
+      "since_version": "12",
+      "system_capability": "SystemCapability.MultimodalInput.Input.InputMonitor",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'touch'",
+          "必填": true,
+          "说明": "Event type. This field has a fixed value of touch."
+        },
+        {
+          "名称": "receiver",
+          "类型": "TouchEventReceiver",
+          "必填": true,
+          "说明": "Callback for which listening is disabled."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Permission denied, non-system app called system api."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Disables listening for global mouse events. If this parameter is not specified, listening will be disabled for all callbacks registered by the current application. <br>2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.INPUT_MONITORING",
+        "@param { 'mouse' } type - Event type. This field has a fixed value of mouse.",
+        "@param { Callback<MouseEvent> } receiver - Callback for which listening is disabled.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Permission denied, non-system app called system api.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@syscap SystemCapability.MultimodalInput.Input.InputMonitor",
+        "@systemapi hide for inner use",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "inputMonitor",
+      "since_version": "12",
+      "system_capability": "SystemCapability.MultimodalInput.Input.InputMonitor",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'mouse'",
+          "必填": true,
+          "说明": "Event type. This field has a fixed value of mouse."
+        },
+        {
+          "名称": "receiver",
+          "类型": "Callback<MouseEvent>",
+          "必填": true,
+          "说明": "Callback for which listening is disabled."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Permission denied, non-system app called system api."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Enables listening for global touchpad pinch events. <br>2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.INPUT_MONITORING",
+        "@param { 'pinch' } type - Event type. This field has a fixed value of pinch.",
+        "@param { Callback<Pinch> } receiver - Callback used to return pinch events asynchronously.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - SystemAPI permit error.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@syscap SystemCapability.MultimodalInput.Input.InputMonitor",
+        "@systemapi hide for inner use",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "inputMonitor",
+      "since_version": "10",
+      "system_capability": "SystemCapability.MultimodalInput.Input.InputMonitor",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'pinch'",
+          "必填": true,
+          "说明": "Event type. This field has a fixed value of pinch."
+        },
+        {
+          "名称": "receiver",
+          "类型": "Callback<Pinch>",
+          "必填": true,
+          "说明": "Callback used to return pinch events asynchronously."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "SystemAPI permit error."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Disables listening for global touchpad pinch events. If this parameter is not specified, listening will be disabled for all callbacks registered by the current application. <br>2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.INPUT_MONITORING",
+        "@param { 'pinch' } type - Event type. This field has a fixed value of pinch.",
+        "@param { Callback<Pinch> } receiver - Callback for which listening is disabled.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - SystemAPI permit error.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@syscap SystemCapability.MultimodalInput.Input.InputMonitor",
+        "@systemapi hide for inner use",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "inputMonitor",
+      "since_version": "10",
+      "system_capability": "SystemCapability.MultimodalInput.Input.InputMonitor",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'pinch'",
+          "必填": true,
+          "说明": "Event type. This field has a fixed value of pinch."
+        },
+        {
+          "名称": "receiver",
+          "类型": "Callback<Pinch>",
+          "必填": true,
+          "说明": "Callback for which listening is disabled."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "SystemAPI permit error."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Enables listening for global touchpad pinch events. <br>2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.INPUT_MONITORING",
+        "@param { 'pinch' } type - Event type, which is **pinch**.",
+        "@param { number } fingers - Number of fingers that trigger the pinch. The value must be greater than or equal to 2.",
+        "@param { Callback<Pinch> } receiver - Callback used to return pinch events asynchronously.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - SystemAPI permit error.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@syscap SystemCapability.MultimodalInput.Input.InputMonitor",
+        "@systemapi hide for inner use",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "inputMonitor",
+      "since_version": "11",
+      "system_capability": "SystemCapability.MultimodalInput.Input.InputMonitor",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'pinch'",
+          "必填": true,
+          "说明": "Event type, which is **pinch**."
+        },
+        {
+          "名称": "fingers",
+          "类型": "number",
+          "必填": true,
+          "说明": "Number of fingers that trigger the pinch. The value must be greater than or equal to 2."
+        },
+        {
+          "名称": "receiver",
+          "类型": "Callback<Pinch>",
+          "必填": true,
+          "说明": "Callback used to return pinch events asynchronously."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "SystemAPI permit error."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Disables listening for global touchpad pinch events. If this parameter is not specified, listening will be disabled for all callbacks registered by the current application. <br>2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.INPUT_MONITORING",
+        "@param { 'pinch' } type - Event type. This field has a fixed value of pinch.",
+        "@param { number } fingers - Number of fingers that trigger the pinch. The value must be greater than or equal to 2.",
+        "@param { Callback<Pinch> } receiver - Callback for which listening is disabled.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - SystemAPI permit error.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@syscap SystemCapability.MultimodalInput.Input.InputMonitor",
+        "@systemapi hide for inner use",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "inputMonitor",
+      "since_version": "11",
+      "system_capability": "SystemCapability.MultimodalInput.Input.InputMonitor",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'pinch'",
+          "必填": true,
+          "说明": "Event type. This field has a fixed value of pinch."
+        },
+        {
+          "名称": "fingers",
+          "类型": "number",
+          "必填": true,
+          "说明": "Number of fingers that trigger the pinch. The value must be greater than or equal to 2."
+        },
+        {
+          "名称": "receiver",
+          "类型": "Callback<Pinch>",
+          "必填": true,
+          "说明": "Callback for which listening is disabled."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "SystemAPI permit error."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Enables listening for rotation events of the touchpad. <br>2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.INPUT_MONITORING",
+        "@param { 'rotate' } type - Event type. This field has a fixed value of rotate.",
+        "@param { number } fingers - Number of fingers that trigger a rotation. The value must not be greater than 2.",
+        "@param { Callback<Rotate> } receiver - Callback used to return rotation events asynchronously.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - SystemAPI permit error.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@syscap SystemCapability.MultimodalInput.Input.InputMonitor",
+        "@systemapi hide for inner use",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "inputMonitor",
+      "since_version": "11",
+      "system_capability": "SystemCapability.MultimodalInput.Input.InputMonitor",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'rotate'",
+          "必填": true,
+          "说明": "Event type. This field has a fixed value of rotate."
+        },
+        {
+          "名称": "fingers",
+          "类型": "number",
+          "必填": true,
+          "说明": "Number of fingers that trigger a rotation. The value must not be greater than 2."
+        },
+        {
+          "名称": "receiver",
+          "类型": "Callback<Rotate>",
+          "必填": true,
+          "说明": "Callback used to return rotation events asynchronously."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "SystemAPI permit error."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Disables listening for rotation events of the touchpad. If this parameter is not specified, listening will be disabled for all callbacks registered by the current application. <br>2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.INPUT_MONITORING",
+        "@param { 'rotate' } type - Event type. This field has a fixed value of rotate.",
+        "@param { number } fingers - Number of fingers that trigger a rotation. The value must not be greater than 2.",
+        "@param { Callback<Rotate> } receiver - Callback for which listening is disabled.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - SystemAPI permit error.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@syscap SystemCapability.MultimodalInput.Input.InputMonitor",
+        "@systemapi hide for inner use",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "inputMonitor",
+      "since_version": "11",
+      "system_capability": "SystemCapability.MultimodalInput.Input.InputMonitor",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'rotate'",
+          "必填": true,
+          "说明": "Event type. This field has a fixed value of rotate."
+        },
+        {
+          "名称": "fingers",
+          "类型": "number",
+          "必填": true,
+          "说明": "Number of fingers that trigger a rotation. The value must not be greater than 2."
+        },
+        {
+          "名称": "receiver",
+          "类型": "Callback<Rotate>",
+          "必填": true,
+          "说明": "Callback for which listening is disabled."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "SystemAPI permit error."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Enables listening for three-finger swipe events. <br>2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.INPUT_MONITORING",
+        "@param { 'threeFingersSwipe' } type - Event type. This field has a fixed value of threeFingersSwipe.",
+        "@param { Callback<ThreeFingersSwipe> } receiver - Callback used to return three-finger swipe events asynchronously.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - SystemAPI permit error.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@syscap SystemCapability.MultimodalInput.Input.InputMonitor",
+        "@systemapi hide for inner use",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "inputMonitor",
+      "since_version": "10",
+      "system_capability": "SystemCapability.MultimodalInput.Input.InputMonitor",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'threeFingersSwipe'",
+          "必填": true,
+          "说明": "Event type. This field has a fixed value of threeFingersSwipe."
+        },
+        {
+          "名称": "receiver",
+          "类型": "Callback<ThreeFingersSwipe>",
+          "必填": true,
+          "说明": "Callback used to return three-finger swipe events asynchronously."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "SystemAPI permit error."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Disables listening for three-finger swipe events. If this parameter is not specified, listening will be disabled for all callbacks registered by the current application. <br>2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.INPUT_MONITORING",
+        "@param { 'threeFingersSwipe' } type - Event type. This field has a fixed value of threeFingersSwipe.",
+        "@param { Callback<ThreeFingersSwipe> } receiver - Callback for which listening is disabled.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - SystemAPI permit error.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@syscap SystemCapability.MultimodalInput.Input.InputMonitor",
+        "@systemapi hide for inner use",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "inputMonitor",
+      "since_version": "10",
+      "system_capability": "SystemCapability.MultimodalInput.Input.InputMonitor",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'threeFingersSwipe'",
+          "必填": true,
+          "说明": "Event type. This field has a fixed value of threeFingersSwipe."
+        },
+        {
+          "名称": "receiver",
+          "类型": "Callback<ThreeFingersSwipe>",
+          "必填": true,
+          "说明": "Callback for which listening is disabled."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "SystemAPI permit error."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Enables listening for four-finger swipe events. <br>2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.INPUT_MONITORING",
+        "@param { 'fourFingersSwipe' } type - Event type. This field has a fixed value of fourFingersSwipe.",
+        "@param { Callback<FourFingersSwipe> } receiver - Callback used to return four-finger swipe events asynchronously.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - SystemAPI permit error.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@syscap SystemCapability.MultimodalInput.Input.InputMonitor",
+        "@systemapi hide for inner use",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "inputMonitor",
+      "since_version": "10",
+      "system_capability": "SystemCapability.MultimodalInput.Input.InputMonitor",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'fourFingersSwipe'",
+          "必填": true,
+          "说明": "Event type. This field has a fixed value of fourFingersSwipe."
+        },
+        {
+          "名称": "receiver",
+          "类型": "Callback<FourFingersSwipe>",
+          "必填": true,
+          "说明": "Callback used to return four-finger swipe events asynchronously."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "SystemAPI permit error."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Disables listening for four-finger swipe events. If this parameter is not specified, listening will be disabled for all callbacks registered by the current application. <br>2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.INPUT_MONITORING",
+        "@param { 'fourFingersSwipe' } type - Event type. This field has a fixed value of fourFingersSwipe.",
+        "@param { Callback<FourFingersSwipe> } receiver - Callback for which listening is disabled.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - SystemAPI permit error.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@syscap SystemCapability.MultimodalInput.Input.InputMonitor",
+        "@systemapi hide for inner use",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "inputMonitor",
+      "since_version": "10",
+      "system_capability": "SystemCapability.MultimodalInput.Input.InputMonitor",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'fourFingersSwipe'",
+          "必填": true,
+          "说明": "Event type. This field has a fixed value of fourFingersSwipe."
+        },
+        {
+          "名称": "receiver",
+          "类型": "Callback<FourFingersSwipe>",
+          "必填": true,
+          "说明": "Callback for which listening is disabled."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "SystemAPI permit error."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Enables listening for three-finger tap events. <br>2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.INPUT_MONITORING",
+        "@param { 'threeFingersTap' } type - Event type. This field has a fixed value of threeFingersTap.",
+        "@param { Callback<ThreeFingersTap> } receiver - Callback used to return three-finger tap events asynchronously.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - SystemAPI permit error.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@syscap SystemCapability.MultimodalInput.Input.InputMonitor",
+        "@systemapi hide for inner use",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "inputMonitor",
+      "since_version": "11",
+      "system_capability": "SystemCapability.MultimodalInput.Input.InputMonitor",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'threeFingersTap'",
+          "必填": true,
+          "说明": "Event type. This field has a fixed value of threeFingersTap."
+        },
+        {
+          "名称": "receiver",
+          "类型": "Callback<ThreeFingersTap>",
+          "必填": true,
+          "说明": "Callback used to return three-finger tap events asynchronously."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "SystemAPI permit error."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Disables listening for three-finger tap events. If this parameter is not specified, listening will be disabled for all callbacks registered by the current application. <br>2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.INPUT_MONITORING",
+        "@param { 'threeFingersTap' } type - Event type. This field has a fixed value of threeFingersTap.",
+        "@param { Callback<ThreeFingersTap> } receiver - Callback for which listening is disabled.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - SystemAPI permit error.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@syscap SystemCapability.MultimodalInput.Input.InputMonitor",
+        "@systemapi hide for inner use",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "inputMonitor",
+      "since_version": "11",
+      "system_capability": "SystemCapability.MultimodalInput.Input.InputMonitor",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'threeFingersTap'",
+          "必填": true,
+          "说明": "Event type. This field has a fixed value of threeFingersTap."
+        },
+        {
+          "名称": "receiver",
+          "类型": "Callback<ThreeFingersTap>",
+          "必填": true,
+          "说明": "Callback for which listening is disabled."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "SystemAPI permit error."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Enables listening for fingerprint key events. <br>2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.INPUT_MONITORING",
+        "@param { 'fingerprint' } type - Event type, which is **fingerprint**.",
+        "@param { Callback<FingerprintEvent> } receiver - Callback used to receive the reported data.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - SystemAPI permit error.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@syscap SystemCapability.MultimodalInput.Input.InputMonitor",
+        "@systemapi hide for inner use",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "inputMonitor",
+      "since_version": "12",
+      "system_capability": "SystemCapability.MultimodalInput.Input.InputMonitor",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'fingerprint'",
+          "必填": true,
+          "说明": "Event type, which is **fingerprint**."
+        },
+        {
+          "名称": "receiver",
+          "类型": "Callback<FingerprintEvent>",
+          "必填": true,
+          "说明": "Callback used to receive the reported data."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "SystemAPI permit error."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Cancels listening for fingerprint key events. <br>2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.INPUT_MONITORING",
+        "@param { 'fingerprint' } type - Event type, which is **fingerprint**.",
+        "@param { Callback<FingerprintEvent> } receiver - Callback used to receive the reported data.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - SystemAPI permit error.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@syscap SystemCapability.MultimodalInput.Input.InputMonitor",
+        "@systemapi hide for inner use",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "inputMonitor",
+      "since_version": "12",
+      "system_capability": "SystemCapability.MultimodalInput.Input.InputMonitor",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'fingerprint'",
+          "必填": true,
+          "说明": "Event type, which is **fingerprint**."
+        },
+        {
+          "名称": "receiver",
+          "类型": "Callback<FingerprintEvent>",
+          "必填": true,
+          "说明": "Callback used to receive the reported data."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "SystemAPI permit error."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Enables listening touchPad swipe inward events.",
+      "注释信息": [
+        "@permission ohos.permission.INPUT_MONITORING",
+        "@param { 'swipeInward' } type - Event type, which is **swipeInward**.",
+        "@param { Callback<SwipeInward> } receiver - Callback used to receive the reported data.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - SystemAPI permit error.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@syscap SystemCapability.MultimodalInput.Input.InputMonitor",
+        "@systemapi hide for inner use",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "inputMonitor",
+      "since_version": "12",
+      "system_capability": "SystemCapability.MultimodalInput.Input.InputMonitor",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'swipeInward'",
+          "必填": true,
+          "说明": "Event type, which is **swipeInward**."
+        },
+        {
+          "名称": "receiver",
+          "类型": "Callback<SwipeInward>",
+          "必填": true,
+          "说明": "Callback used to receive the reported data."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "SystemAPI permit error."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Cancel listening touchPad swipe inward events.",
+      "注释信息": [
+        "@permission ohos.permission.INPUT_MONITORING",
+        "@param { 'swipeInward' } type - Event type, which is **swipeInward**.",
+        "@param { Callback<SwipeInward> } receiver - Callback used to receive the reported data.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - SystemAPI permit error.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@syscap SystemCapability.MultimodalInput.Input.InputMonitor",
+        "@systemapi hide for inner use",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "inputMonitor",
+      "since_version": "12",
+      "system_capability": "SystemCapability.MultimodalInput.Input.InputMonitor",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'swipeInward'",
+          "必填": true,
+          "说明": "Event type, which is **swipeInward**."
+        },
+        {
+          "名称": "receiver",
+          "类型": "Callback<SwipeInward>",
+          "必填": true,
+          "说明": "Callback used to receive the reported data."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "SystemAPI permit error."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Enables listening for touchscreen swipe events. 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. 3.Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.INPUT_MONITORING",
+        "@param { 'touchscreenSwipe' } type - Event type. This field has a fixed value of touchscreenSwipe.",
+        "@param { number } fingers - Number of fingers that trigger the swipe. The value range is [3, 5].",
+        "@param { Callback<TouchGestureEvent> } receiver - Callback used to return touchscreen swipe events asynchronously.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Caller is not a system application.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@syscap SystemCapability.MultimodalInput.Input.InputMonitor",
+        "@systemapi hide for inner use",
+        "@since 18"
+      ],
+      "层级": 1,
+      "上级": "inputMonitor",
+      "since_version": "18",
+      "system_capability": "SystemCapability.MultimodalInput.Input.InputMonitor",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'touchscreenSwipe'",
+          "必填": true,
+          "说明": "Event type. This field has a fixed value of touchscreenSwipe."
+        },
+        {
+          "名称": "fingers",
+          "类型": "number",
+          "必填": true,
+          "说明": "Number of fingers that trigger the swipe. The value range is [3, 5]."
+        },
+        {
+          "名称": "receiver",
+          "类型": "Callback<TouchGestureEvent>",
+          "必填": true,
+          "说明": "Callback used to return touchscreen swipe events asynchronously."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Caller is not a system application."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Disables listening for touchscreen swipe events. If this parameter is not specified, listening will be disabled for all callbacks registered by the current application. 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. 3.Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.INPUT_MONITORING",
+        "@param { 'touchscreenSwipe' } type - Event type. This field has a fixed value of touchscreenSwipe.",
+        "@param { number } fingers - Number of fingers that trigger the swipe. The value range is [3, 5].",
+        "@param { Callback<TouchGestureEvent> } receiver - Callback for which listening is disabled.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Caller is not a system application.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@syscap SystemCapability.MultimodalInput.Input.InputMonitor",
+        "@systemapi hide for inner use",
+        "@since 18"
+      ],
+      "层级": 1,
+      "上级": "inputMonitor",
+      "since_version": "18",
+      "system_capability": "SystemCapability.MultimodalInput.Input.InputMonitor",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'touchscreenSwipe'",
+          "必填": true,
+          "说明": "Event type. This field has a fixed value of touchscreenSwipe."
+        },
+        {
+          "名称": "fingers",
+          "类型": "number",
+          "必填": true,
+          "说明": "Number of fingers that trigger the swipe. The value range is [3, 5]."
+        },
+        {
+          "名称": "receiver",
+          "类型": "Callback<TouchGestureEvent>",
+          "必填": true,
+          "说明": "Callback for which listening is disabled."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Caller is not a system application."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Enables listening for touchscreen pinch events. 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. 3.Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.INPUT_MONITORING",
+        "@param { 'touchscreenPinch' } type - Event type. This field has a fixed value of touchscreenPinch.",
+        "@param { number } fingers - Number of fingers that trigger the pinch. The value range is [4, 5].",
+        "@param { Callback<TouchGestureEvent> } receiver - Callback used to return touchscreen pinch events asynchronously.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Caller is not a system application.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@syscap SystemCapability.MultimodalInput.Input.InputMonitor",
+        "@systemapi hide for inner use",
+        "@since 18"
+      ],
+      "层级": 1,
+      "上级": "inputMonitor",
+      "since_version": "18",
+      "system_capability": "SystemCapability.MultimodalInput.Input.InputMonitor",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'touchscreenPinch'",
+          "必填": true,
+          "说明": "Event type. This field has a fixed value of touchscreenPinch."
+        },
+        {
+          "名称": "fingers",
+          "类型": "number",
+          "必填": true,
+          "说明": "Number of fingers that trigger the pinch. The value range is [4, 5]."
+        },
+        {
+          "名称": "receiver",
+          "类型": "Callback<TouchGestureEvent>",
+          "必填": true,
+          "说明": "Callback used to return touchscreen pinch events asynchronously."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Caller is not a system application."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Disables listening for touchscreen pinch events. If this parameter is not specified, listening will be disabled for all callbacks registered by the current application. 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. 3.Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.INPUT_MONITORING",
+        "@param { 'touchscreenPinch' } type - Event type. This field has a fixed value of touchscreenPinch.",
+        "@param { number } fingers - Number of fingers that trigger the pinch. The value range is [4, 5].",
+        "@param { Callback<TouchGestureEvent> } receiver - Callback for which listening is disabled.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Caller is not a system application.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@syscap SystemCapability.MultimodalInput.Input.InputMonitor",
+        "@systemapi hide for inner use",
+        "@since 18"
+      ],
+      "层级": 1,
+      "上级": "inputMonitor",
+      "since_version": "18",
+      "system_capability": "SystemCapability.MultimodalInput.Input.InputMonitor",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'touchscreenPinch'",
+          "必填": true,
+          "说明": "Event type. This field has a fixed value of touchscreenPinch."
+        },
+        {
+          "名称": "fingers",
+          "类型": "number",
+          "必填": true,
+          "说明": "Number of fingers that trigger the pinch. The value range is [4, 5]."
+        },
+        {
+          "名称": "receiver",
+          "类型": "Callback<TouchGestureEvent>",
+          "必填": true,
+          "说明": "Callback for which listening is disabled."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Caller is not a system application."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Listens for the press and release events of the specified key, which can be the META_LEFT, META_RIGHT, power, or volume key. The options are KEYCODE_META_LEFT, KEYCODE_META_RIGHT, KEYCODE_POWER, KEYCODE_VOLUME_DOWN, and KEYCODE_VOLUME_UP. <br>2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.INPUT_MONITORING",
+        "@param { 'keyPressed' } type - Event type. This parameter has a fixed value of keyPressed.",
+        "@param { Array<KeyCode> }  keys - Key code list.",
+        "@param { Callback<KeyEvent> } receiver - Callback used to receive reported data.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Permission denied, non-system app called system api.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 4100001 - Event listening not supported for the key.",
+        "@syscap SystemCapability.MultimodalInput.Input.InputMonitor",
+        "@systemapi hide for inner use",
+        "@since 15"
+      ],
+      "层级": 1,
+      "上级": "inputMonitor",
+      "since_version": "15",
+      "system_capability": "SystemCapability.MultimodalInput.Input.InputMonitor",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'keyPressed'",
+          "必填": true,
+          "说明": "Event type. This parameter has a fixed value of keyPressed."
+        },
+        {
+          "名称": "keys",
+          "类型": "Array<KeyCode>",
+          "必填": true,
+          "说明": "Key code list."
+        },
+        {
+          "名称": "receiver",
+          "类型": "Callback<KeyEvent>",
+          "必填": true,
+          "说明": "Callback used to receive reported data."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Permission denied, non-system app called system api."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "4100001",
+          "description": "Event listening not supported for the key."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Cancels listening for the press and release events of the specified key, which can be the META_LEFT, META_RIGHT, power, or volume key. This API must be used together with inputMonitor.on ('keyPressed'). If this parameter is not specified, listening will be disabled for all callbacks registered by the current application. <br>2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.INPUT_MONITORING",
+        "@param { 'keyPressed' } type - Event type. This parameter has a fixed value of keyPressed.",
+        "@param { Callback<KeyEvent> } receiver - Callback for which listening is disabled.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Permission denied, non-system app called system api.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@syscap SystemCapability.MultimodalInput.Input.InputMonitor",
+        "@systemapi hide for inner use",
+        "@since 15"
+      ],
+      "层级": 1,
+      "上级": "inputMonitor",
+      "since_version": "15",
+      "system_capability": "SystemCapability.MultimodalInput.Input.InputMonitor",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'keyPressed'",
+          "必填": true,
+          "说明": "Event type. This parameter has a fixed value of keyPressed."
+        },
+        {
+          "名称": "receiver",
+          "类型": "Callback<KeyEvent>",
+          "必填": true,
+          "说明": "Callback for which listening is disabled."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Permission denied, non-system app called system api."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "queryTouchEvents",
+      "返回值": "Promise<Array<TouchEvent>>",
+      "所属模块": "未知模块",
+      "功能描述": "Queries the most recent touch events, with a maximum of 100 events supported. The returned touch event contains only the following valid information: actionTime, sourceType, isInject, pressure, tiltX, tiltY.",
+      "注释信息": [
+        "@permission ohos.permission.INPUT_MONITORING",
+        "@param { number } count - Number of touch events to query.",
+        "@returns { Promise<Array<TouchEvent>> } Returns the result through a promise.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Permission denied, non-system app called system api.",
+        "@syscap SystemCapability.MultimodalInput.Input.InputMonitor",
+        "@systemapi hide for inner use",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "inputMonitor",
+      "since_version": "20",
+      "system_capability": "SystemCapability.MultimodalInput.Input.InputMonitor",
+      "parameters": [
+        {
+          "名称": "count",
+          "类型": "number",
+          "必填": true,
+          "说明": "Number of touch events to query."
+        }
+      ],
+      "return_description": "Returns the result through a promise.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Permission denied, non-system app called system api."
+        }
+      ],
+      "版本": "API6.0"
+    }
+  ]
+}

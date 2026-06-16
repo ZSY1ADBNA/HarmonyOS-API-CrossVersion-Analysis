@@ -1,0 +1,480 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.AudioKit",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "interface",
+      "名称": "SystemTonePlayer",
+      "所属模块": "@kit.AudioKit",
+      "功能描述": "System tone player object.",
+      "注释信息": [
+        "@typedef SystemTonePlayer",
+        "@syscap SystemCapability.Multimedia.SystemSound.Core",
+        "@systemapi",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "@kit.AudioKit",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Multimedia.SystemSound.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getTitle",
+      "返回值": "Promise<string>",
+      "所属模块": "未知模块",
+      "功能描述": "Gets the title of system tone.",
+      "注释信息": [
+        "@returns { Promise<string> } Promise used to return the title.",
+        "@throws { BusinessError } 202 - Caller is not a system application.",
+        "@throws { BusinessError } 5400103 - I/O error.",
+        "@syscap SystemCapability.Multimedia.SystemSound.Core",
+        "@systemapi",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "SystemTonePlayer",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Multimedia.SystemSound.Core",
+      "parameters": [],
+      "return_description": "Promise used to return the title.",
+      "error_codes": [
+        {
+          "code": "202",
+          "description": "Caller is not a system application."
+        },
+        {
+          "code": "5400103",
+          "description": "I/O error."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "setAudioVolumeScale",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Sets the volume scale of audio. 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types.",
+      "注释信息": [
+        "@param { number } scale - Audio volume scale, should be float in [0,1]",
+        "@throws { BusinessError } 202 - Caller is not a system application.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 5400102 - Operation not allowed.",
+        "@throws { BusinessError } 20700002 - Parameter check error. For example, value is outside [0,1].",
+        "@syscap SystemCapability.Multimedia.SystemSound.Core",
+        "@systemapi",
+        "@since 13"
+      ],
+      "层级": 1,
+      "上级": "SystemTonePlayer",
+      "since_version": "13",
+      "system_capability": "SystemCapability.Multimedia.SystemSound.Core",
+      "parameters": [
+        {
+          "名称": "scale",
+          "类型": "number",
+          "必填": true,
+          "说明": "Audio volume scale, should be float in [0,1]"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "202",
+          "description": "Caller is not a system application."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "5400102",
+          "description": "Operation not allowed."
+        },
+        {
+          "code": "20700002",
+          "description": "Parameter check error. For example, value is outside [0,1]."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getAudioVolumeScale",
+      "返回值": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Gets the volume scale of audio.",
+      "注释信息": [
+        "@returns { number } Audio volume scale.",
+        "@throws { BusinessError } 202 - Caller is not a system application.",
+        "@syscap SystemCapability.Multimedia.SystemSound.Core",
+        "@systemapi",
+        "@since 13"
+      ],
+      "层级": 1,
+      "上级": "SystemTonePlayer",
+      "since_version": "13",
+      "system_capability": "SystemCapability.Multimedia.SystemSound.Core",
+      "parameters": [],
+      "return_description": "Audio volume scale.",
+      "error_codes": [
+        {
+          "code": "202",
+          "description": "Caller is not a system application."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getSupportedHapticsFeatures",
+      "返回值": "Promise<Array<systemSoundManager.ToneHapticsFeature>>",
+      "所属模块": "未知模块",
+      "功能描述": "Get supported haptics features currently.",
+      "注释信息": [
+        "@returns { Promise<Array<systemSoundManager.ToneHapticsFeature>> } Promise used to return result of this call.",
+        "@throws { BusinessError } 202 - Caller is not a system application.",
+        "@throws { BusinessError } 20700003 - Unsupported operation.",
+        "@syscap SystemCapability.Multimedia.SystemSound.Core",
+        "@systemapi",
+        "@since 13"
+      ],
+      "层级": 1,
+      "上级": "SystemTonePlayer",
+      "since_version": "13",
+      "system_capability": "SystemCapability.Multimedia.SystemSound.Core",
+      "parameters": [],
+      "return_description": "Promise used to return result of this call.",
+      "error_codes": [
+        {
+          "code": "202",
+          "description": "Caller is not a system application."
+        },
+        {
+          "code": "20700003",
+          "description": "Unsupported operation."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "setHapticsFeature",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Set haptic feature that is used when playing. 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types.",
+      "注释信息": [
+        "@param { systemSoundManager.ToneHapticsFeature } hapticsFeature - haptics Feature.",
+        "@throws { BusinessError } 202 - Caller is not a system application.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 5400102 - Operation not allowed.",
+        "@throws { BusinessError } 20700003 - Unsupported operation.",
+        "@syscap SystemCapability.Multimedia.SystemSound.Core",
+        "@systemapi",
+        "@since 13"
+      ],
+      "层级": 1,
+      "上级": "SystemTonePlayer",
+      "since_version": "13",
+      "system_capability": "SystemCapability.Multimedia.SystemSound.Core",
+      "parameters": [
+        {
+          "名称": "hapticsFeature",
+          "类型": "systemSoundManager.ToneHapticsFeature",
+          "必填": true,
+          "说明": "haptics Feature."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "202",
+          "description": "Caller is not a system application."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "5400102",
+          "description": "Operation not allowed."
+        },
+        {
+          "code": "20700003",
+          "description": "Unsupported operation."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getHapticsFeature",
+      "返回值": "systemSoundManager.ToneHapticsFeature",
+      "所属模块": "未知模块",
+      "功能描述": "Get haptic feature that is used when playing.",
+      "注释信息": [
+        "@returns { systemSoundManager.ToneHapticsFeature } haptics feature that is used when playing.",
+        "@throws { BusinessError } 202 - Caller is not a system application.",
+        "@throws { BusinessError } 20700003 - Unsupported operation.",
+        "@syscap SystemCapability.Multimedia.SystemSound.Core",
+        "@systemapi",
+        "@since 13"
+      ],
+      "层级": 1,
+      "上级": "SystemTonePlayer",
+      "since_version": "13",
+      "system_capability": "SystemCapability.Multimedia.SystemSound.Core",
+      "parameters": [],
+      "return_description": "haptics feature that is used when playing.",
+      "error_codes": [
+        {
+          "code": "202",
+          "description": "Caller is not a system application."
+        },
+        {
+          "code": "20700003",
+          "description": "Unsupported operation."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "prepare",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Prepare to play.",
+      "注释信息": [
+        "@returns { Promise<void> } Promise used to return result of prepare.",
+        "@throws { BusinessError } 202 - Caller is not a system application.",
+        "@throws { BusinessError } 5400102 - Operation not allowed.",
+        "@throws { BusinessError } 5400103 - I/O error.",
+        "@syscap SystemCapability.Multimedia.SystemSound.Core",
+        "@systemapi",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "SystemTonePlayer",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Multimedia.SystemSound.Core",
+      "parameters": [],
+      "return_description": "Promise used to return result of prepare.",
+      "error_codes": [
+        {
+          "code": "202",
+          "description": "Caller is not a system application."
+        },
+        {
+          "code": "5400102",
+          "description": "Operation not allowed."
+        },
+        {
+          "code": "5400103",
+          "description": "I/O error."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "start",
+      "返回值": "Promise<number>",
+      "所属模块": "未知模块",
+      "功能描述": "Start playing the system tone. By default, the audio and haptic will not be muted. Using tone options to mute audio or haptics. If haptics is needed, caller should have the permission of ohos.permission.VIBRATE. 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types.",
+      "注释信息": [
+        "@permission ohos.permission.VIBRATE",
+        "@param { SystemToneOptions } toneOptions - Tone options used for this play.",
+        "@returns { Promise<number> } Promise used to return the id of this playback.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Caller is not a system application.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 5400102 - Operation not allowed.",
+        "@syscap SystemCapability.Multimedia.SystemSound.Core",
+        "@systemapi",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "SystemTonePlayer",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Multimedia.SystemSound.Core",
+      "parameters": [
+        {
+          "名称": "toneOptions",
+          "类型": "SystemToneOptions",
+          "必填": true,
+          "说明": "Tone options used for this play."
+        }
+      ],
+      "return_description": "Promise used to return the id of this playback.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Caller is not a system application."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "5400102",
+          "description": "Operation not allowed."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "stop",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Stop with playback id. 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types.",
+      "注释信息": [
+        "@param { number } id - The Playback id to stop.",
+        "@returns { Promise<void> } Promise used to return result of this stop.",
+        "@throws { BusinessError } 202 - Caller is not a system application.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 5400102 - Operation not allowed.",
+        "@syscap SystemCapability.Multimedia.SystemSound.Core",
+        "@systemapi",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "SystemTonePlayer",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Multimedia.SystemSound.Core",
+      "parameters": [
+        {
+          "名称": "id",
+          "类型": "number",
+          "必填": true,
+          "说明": "The Playback id to stop."
+        }
+      ],
+      "return_description": "Promise used to return result of this stop.",
+      "error_codes": [
+        {
+          "code": "202",
+          "description": "Caller is not a system application."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "5400102",
+          "description": "Operation not allowed."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "release",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Release this system tone player.",
+      "注释信息": [
+        "@returns { Promise<void> } Promise used to return result of release.",
+        "@throws { BusinessError } 202 - Caller is not a system application.",
+        "@syscap SystemCapability.Multimedia.SystemSound.Core",
+        "@systemapi",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "SystemTonePlayer",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Multimedia.SystemSound.Core",
+      "parameters": [],
+      "return_description": "Promise used to return result of release.",
+      "error_codes": [
+        {
+          "code": "202",
+          "description": "Caller is not a system application."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "interface",
+      "名称": "SystemToneOptions",
+      "所属模块": "@kit.AudioKit",
+      "功能描述": "System tone options used when SystemTonePlayer start playing.",
+      "注释信息": [
+        "@typedef SystemToneOptions",
+        "@syscap SystemCapability.Multimedia.SystemSound.Core",
+        "@systemapi",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "@kit.AudioKit",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Multimedia.SystemSound.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "property",
+      "名称": "muteAudio",
+      "属性类型": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Mute audio.",
+      "注释信息": [
+        "@type {?boolean}",
+        "@syscap SystemCapability.Multimedia.SystemSound.Core",
+        "@systemapi",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "SystemToneOptions",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Multimedia.SystemSound.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "property",
+      "名称": "muteHaptics",
+      "属性类型": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Mute haptics.",
+      "注释信息": [
+        "@type {?boolean}",
+        "@syscap SystemCapability.Multimedia.SystemSound.Core",
+        "@systemapi",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "SystemToneOptions",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Multimedia.SystemSound.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    }
+  ]
+}

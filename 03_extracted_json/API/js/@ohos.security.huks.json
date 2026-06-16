@@ -1,0 +1,3667 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.UniversalKeystoreKit",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "namespace",
+      "名称": "huks",
+      "所属模块": "@kit.UniversalKeystoreKit",
+      "功能描述": "OpenHarmony Universal KeyStore",
+      "注释信息": [
+        "@namespace huks",
+        "@syscap SystemCapability.Security.Huks.Core",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "@kit.UniversalKeystoreKit",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Security.Huks.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "generateKey",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Generate Key.",
+      "注释信息": [
+        "@param { string } keyAlias - keyAlias indicates the key's name.",
+        "@param { HuksOptions } options - options indicates the properties of the key.",
+        "@param { AsyncCallback<HuksResult> } callback - the callback of generateKey.",
+        "@syscap SystemCapability.Security.Huks.Extension",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.security.huks.generateKeyItem"
+      ],
+      "层级": 1,
+      "上级": "huks",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Security.Huks.Extension",
+      "parameters": [
+        {
+          "名称": "keyAlias",
+          "类型": "string",
+          "必填": true,
+          "说明": "keyAlias indicates the key's name."
+        },
+        {
+          "名称": "options",
+          "类型": "HuksOptions",
+          "必填": true,
+          "说明": "options indicates the properties of the key."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<HuksResult>",
+          "必填": true,
+          "说明": "the callback of generateKey."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "generateKey",
+      "返回值": "Promise<HuksResult>",
+      "所属模块": "未知模块",
+      "功能描述": "Generate Key.",
+      "注释信息": [
+        "@param { string } keyAlias - keyAlias indicates the key's name.",
+        "@param { HuksOptions } options - options indicates the properties of the key.",
+        "@returns { Promise<HuksResult> } the promise returned by the function.",
+        "@syscap SystemCapability.Security.Huks.Extension",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.security.huks.generateKeyItem"
+      ],
+      "层级": 1,
+      "上级": "huks",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Security.Huks.Extension",
+      "parameters": [
+        {
+          "名称": "keyAlias",
+          "类型": "string",
+          "必填": true,
+          "说明": "keyAlias indicates the key's name."
+        },
+        {
+          "名称": "options",
+          "类型": "HuksOptions",
+          "必填": true,
+          "说明": "options indicates the properties of the key."
+        }
+      ],
+      "return_description": "the promise returned by the function.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "generateKeyItem",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Generates a key. This API uses an asynchronous callback to return the result. and key length are mandatory. this API does not return the key content because the key is always protected in a TEE. If an exception occurs in the generation process, an error is captured. 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { string } keyAlias - keyAlias indicates the key's name.",
+        "@param { HuksOptions } options - Tags required for generating the key. The algorithm, key purpose,",
+        "@param { AsyncCallback<void> } callback - Callback used to return the result. If the operation is successful,",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 801 - api is not supported",
+        "@throws { BusinessError } 12000001 - algorithm mode is not supported",
+        "@throws { BusinessError } 12000002 - algorithm param is missing",
+        "@throws { BusinessError } 12000003 - algorithm param is invalid",
+        "@throws { BusinessError } 12000004 - operating file failed",
+        "@throws { BusinessError } 12000005 - IPC communication failed",
+        "@throws { BusinessError } 12000006 - error occurred in crypto engine",
+        "@throws { BusinessError } 12000012 - Device environment or input parameter abnormal",
+        "@throws { BusinessError } 12000013 - queried credential does not exist",
+        "@throws { BusinessError } 12000014 - memory is insufficient",
+        "@throws { BusinessError } 12000015 - Failed to obtain the security information via UserIAM",
+        "@throws { BusinessError } 12000017 - The key with same alias is already exist",
+        "@throws { BusinessError } 12000018 - the group id specified by the access group tag is invalid",
+        "@syscap SystemCapability.Security.Huks.Core",
+        "@atomicservice",
+        "@since 23"
+      ],
+      "层级": 1,
+      "上级": "huks",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Security.Huks.Core",
+      "parameters": [
+        {
+          "名称": "keyAlias",
+          "类型": "string",
+          "必填": true,
+          "说明": "keyAlias indicates the key's name."
+        },
+        {
+          "名称": "options",
+          "类型": "HuksOptions",
+          "必填": true,
+          "说明": "Tags required for generating the key. The algorithm, key purpose,"
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "Callback used to return the result. If the operation is successful,"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "801",
+          "description": "api is not supported"
+        },
+        {
+          "code": "12000001",
+          "description": "algorithm mode is not supported"
+        },
+        {
+          "code": "12000002",
+          "description": "algorithm param is missing"
+        },
+        {
+          "code": "12000003",
+          "description": "algorithm param is invalid"
+        },
+        {
+          "code": "12000004",
+          "description": "operating file failed"
+        },
+        {
+          "code": "12000005",
+          "description": "IPC communication failed"
+        },
+        {
+          "code": "12000006",
+          "description": "error occurred in crypto engine"
+        },
+        {
+          "code": "12000012",
+          "description": "Device environment or input parameter abnormal"
+        },
+        {
+          "code": "12000013",
+          "description": "queried credential does not exist"
+        },
+        {
+          "code": "12000014",
+          "description": "memory is insufficient"
+        },
+        {
+          "code": "12000015",
+          "description": "Failed to obtain the security information via UserIAM"
+        },
+        {
+          "code": "12000017",
+          "description": "The key with same alias is already exist"
+        },
+        {
+          "code": "12000018",
+          "description": "the group id specified by the access group tag is invalid"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "generateKeyItem",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Generates a key. This API uses a promise to return the result. Because the key is always protected in a trusted environment (such as a TEE), the promise does not return the key content. It returns only the information indicating whether the API is successfully called. and key length are mandatory. 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { string } keyAlias - keyAlias indicates the key's name.",
+        "@param { HuksOptions } options - Tags required for generating the key. The algorithm, key purpose,",
+        "@returns { Promise<void> } the promise returned by the function.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 801 - api is not supported",
+        "@throws { BusinessError } 12000001 - algorithm mode is not supported",
+        "@throws { BusinessError } 12000002 - algorithm param is missing",
+        "@throws { BusinessError } 12000003 - algorithm param is invalid",
+        "@throws { BusinessError } 12000004 - operating file failed",
+        "@throws { BusinessError } 12000005 - IPC communication failed",
+        "@throws { BusinessError } 12000006 - error occurred in crypto engine",
+        "@throws { BusinessError } 12000012 - Device environment or input parameter abnormal",
+        "@throws { BusinessError } 12000013 - queried credential does not exist",
+        "@throws { BusinessError } 12000014 - memory is insufficient",
+        "@throws { BusinessError } 12000015 - Failed to obtain the security information via UserIAM",
+        "@throws { BusinessError } 12000017 - The key with same alias is already exist",
+        "@throws { BusinessError } 12000018 - the group id specified by the access group tag is invalid",
+        "@syscap SystemCapability.Security.Huks.Extension",
+        "@atomicservice",
+        "@since 23"
+      ],
+      "层级": 1,
+      "上级": "huks",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Security.Huks.Extension",
+      "parameters": [
+        {
+          "名称": "keyAlias",
+          "类型": "string",
+          "必填": true,
+          "说明": "keyAlias indicates the key's name."
+        },
+        {
+          "名称": "options",
+          "类型": "HuksOptions",
+          "必填": true,
+          "说明": "Tags required for generating the key. The algorithm, key purpose,"
+        }
+      ],
+      "return_description": "the promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "801",
+          "description": "api is not supported"
+        },
+        {
+          "code": "12000001",
+          "description": "algorithm mode is not supported"
+        },
+        {
+          "code": "12000002",
+          "description": "algorithm param is missing"
+        },
+        {
+          "code": "12000003",
+          "description": "algorithm param is invalid"
+        },
+        {
+          "code": "12000004",
+          "description": "operating file failed"
+        },
+        {
+          "code": "12000005",
+          "description": "IPC communication failed"
+        },
+        {
+          "code": "12000006",
+          "description": "error occurred in crypto engine"
+        },
+        {
+          "code": "12000012",
+          "description": "Device environment or input parameter abnormal"
+        },
+        {
+          "code": "12000013",
+          "description": "queried credential does not exist"
+        },
+        {
+          "code": "12000014",
+          "description": "memory is insufficient"
+        },
+        {
+          "code": "12000015",
+          "description": "Failed to obtain the security information via UserIAM"
+        },
+        {
+          "code": "12000017",
+          "description": "The key with same alias is already exist"
+        },
+        {
+          "code": "12000018",
+          "description": "the group id specified by the access group tag is invalid"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "deleteKey",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Delete Key.",
+      "注释信息": [
+        "@param { string } keyAlias - keyAlias indicates the key's name.",
+        "@param { HuksOptions } options - options indicates the properties of the key.",
+        "@param { AsyncCallback<HuksResult> } callback - the callback of deleteKey.",
+        "@syscap SystemCapability.Security.Huks.Extension",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.security.huks.deleteKeyItem"
+      ],
+      "层级": 1,
+      "上级": "huks",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Security.Huks.Extension",
+      "parameters": [
+        {
+          "名称": "keyAlias",
+          "类型": "string",
+          "必填": true,
+          "说明": "keyAlias indicates the key's name."
+        },
+        {
+          "名称": "options",
+          "类型": "HuksOptions",
+          "必填": true,
+          "说明": "options indicates the properties of the key."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<HuksResult>",
+          "必填": true,
+          "说明": "the callback of deleteKey."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "deleteKey",
+      "返回值": "Promise<HuksResult>",
+      "所属模块": "未知模块",
+      "功能描述": "Delete Key.",
+      "注释信息": [
+        "@param { string } keyAlias - keyAlias indicates the key's name.",
+        "@param { HuksOptions } options - options indicates the properties of the key.",
+        "@returns { Promise<HuksResult> } the promise returned by the function.",
+        "@syscap SystemCapability.Security.Huks.Extension",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.security.huks.deleteKeyItem"
+      ],
+      "层级": 1,
+      "上级": "huks",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Security.Huks.Extension",
+      "parameters": [
+        {
+          "名称": "keyAlias",
+          "类型": "string",
+          "必填": true,
+          "说明": "keyAlias indicates the key's name."
+        },
+        {
+          "名称": "options",
+          "类型": "HuksOptions",
+          "必填": true,
+          "说明": "options indicates the properties of the key."
+        }
+      ],
+      "return_description": "the promise returned by the function.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "deleteKeyItem",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Deletes a key. This API uses an asynchronous callback to return the result. was generated. to specify the security level of the key to delete. HuksAuthStorageLevel can be left empty, which means the default value HUKS_AUTH_STORAGE_LEVEL_CE is used. no err value is returned; otherwise, an error code is returned. 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { string } keyAlias - Alias of the key to delete. It must be the key alias passed in when the key",
+        "@param { HuksOptions } options - Properties of the key to delete. For example, you can pass in HuksAuthStorageLevel",
+        "@param { AsyncCallback<void> } callback - Callback used to return the result. If the operation is successful,",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 801 - api is not supported",
+        "@throws { BusinessError } 12000004 - operating file failed",
+        "@throws { BusinessError } 12000005 - IPC communication failed",
+        "@throws { BusinessError } 12000011 - queried entity does not exist",
+        "@throws { BusinessError } 12000012 - Device environment or input parameter abnormal",
+        "@throws { BusinessError } 12000014 - memory is insufficient",
+        "@throws { BusinessError } 12000018 - the group id specified by the access group tag is invalid",
+        "@syscap SystemCapability.Security.Huks.Core",
+        "@atomicservice",
+        "@since 23"
+      ],
+      "层级": 1,
+      "上级": "huks",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Security.Huks.Core",
+      "parameters": [
+        {
+          "名称": "keyAlias",
+          "类型": "string",
+          "必填": true,
+          "说明": "Alias of the key to delete. It must be the key alias passed in when the key"
+        },
+        {
+          "名称": "options",
+          "类型": "HuksOptions",
+          "必填": true,
+          "说明": "Properties of the key to delete. For example, you can pass in HuksAuthStorageLevel"
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "Callback used to return the result. If the operation is successful,"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "801",
+          "description": "api is not supported"
+        },
+        {
+          "code": "12000004",
+          "description": "operating file failed"
+        },
+        {
+          "code": "12000005",
+          "description": "IPC communication failed"
+        },
+        {
+          "code": "12000011",
+          "description": "queried entity does not exist"
+        },
+        {
+          "code": "12000012",
+          "description": "Device environment or input parameter abnormal"
+        },
+        {
+          "code": "12000014",
+          "description": "memory is insufficient"
+        },
+        {
+          "code": "12000018",
+          "description": "the group id specified by the access group tag is invalid"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "deleteKeyItem",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Deletes a key. This API uses a promise to return the result. was generated. specify the security level of the key to delete. HuksAuthStorageLevel can be left empty, which means the default value HUKS_AUTH_STORAGE_LEVEL_CE is used. 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { string } keyAlias - Alias of the key to delete. It must be the key alias passed in when the key",
+        "@param { HuksOptions } options - Options for deleting the key. For example, you can pass in HuksAuthStorageLevel to",
+        "@returns { Promise<void> } the promise returned by the function.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 801 - api is not supported",
+        "@throws { BusinessError } 12000004 - operating file failed",
+        "@throws { BusinessError } 12000005 - IPC communication failed",
+        "@throws { BusinessError } 12000011 - queried entity does not exist",
+        "@throws { BusinessError } 12000012 - Device environment or input parameter abnormal",
+        "@throws { BusinessError } 12000014 - memory is insufficient",
+        "@throws { BusinessError } 12000018 - the group id specified by the access group tag is invalid",
+        "@syscap SystemCapability.Security.Huks.Extension",
+        "@atomicservice",
+        "@since 23"
+      ],
+      "层级": 1,
+      "上级": "huks",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Security.Huks.Extension",
+      "parameters": [
+        {
+          "名称": "keyAlias",
+          "类型": "string",
+          "必填": true,
+          "说明": "Alias of the key to delete. It must be the key alias passed in when the key"
+        },
+        {
+          "名称": "options",
+          "类型": "HuksOptions",
+          "必填": true,
+          "说明": "Options for deleting the key. For example, you can pass in HuksAuthStorageLevel to"
+        }
+      ],
+      "return_description": "the promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "801",
+          "description": "api is not supported"
+        },
+        {
+          "code": "12000004",
+          "description": "operating file failed"
+        },
+        {
+          "code": "12000005",
+          "description": "IPC communication failed"
+        },
+        {
+          "code": "12000011",
+          "description": "queried entity does not exist"
+        },
+        {
+          "code": "12000012",
+          "description": "Device environment or input parameter abnormal"
+        },
+        {
+          "code": "12000014",
+          "description": "memory is insufficient"
+        },
+        {
+          "code": "12000018",
+          "description": "the group id specified by the access group tag is invalid"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "importKey",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Import Key.",
+      "注释信息": [
+        "@param { string } keyAlias - keyAlias indicates the key's name.",
+        "@param { HuksOptions } options - options indicates the properties of the key.",
+        "@param { AsyncCallback<HuksResult> } callback - the callback of importKey.",
+        "@syscap SystemCapability.Security.Huks.Extension",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.security.huks.importKeyItem"
+      ],
+      "层级": 1,
+      "上级": "huks",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Security.Huks.Extension",
+      "parameters": [
+        {
+          "名称": "keyAlias",
+          "类型": "string",
+          "必填": true,
+          "说明": "keyAlias indicates the key's name."
+        },
+        {
+          "名称": "options",
+          "类型": "HuksOptions",
+          "必填": true,
+          "说明": "options indicates the properties of the key."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<HuksResult>",
+          "必填": true,
+          "说明": "the callback of importKey."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "importKey",
+      "返回值": "Promise<HuksResult>",
+      "所属模块": "未知模块",
+      "功能描述": "Import Key.",
+      "注释信息": [
+        "@param { string } keyAlias - keyAlias indicates the key's name.",
+        "@param { HuksOptions } options - options indicates the properties of the key.",
+        "@returns { Promise<HuksResult> } the promise returned by the function.",
+        "@syscap SystemCapability.Security.Huks.Extension",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.security.huks.importKeyItem"
+      ],
+      "层级": 1,
+      "上级": "huks",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Security.Huks.Extension",
+      "parameters": [
+        {
+          "名称": "keyAlias",
+          "类型": "string",
+          "必填": true,
+          "说明": "keyAlias indicates the key's name."
+        },
+        {
+          "名称": "options",
+          "类型": "HuksOptions",
+          "必填": true,
+          "说明": "options indicates the properties of the key."
+        }
+      ],
+      "return_description": "the promise returned by the function.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "importKeyItem",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Imports a key in plaintext. This API uses an asynchronous callback to return the result. key length are mandatory. error value is returned; otherwise, an error code is returned. 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { string } keyAlias - keyAlias indicates the key's name.",
+        "@param { HuksOptions } options - Tags required for the import and key to import. The algorithm, key purpose, and",
+        "@param { AsyncCallback<void> } callback - Callback used to return the result. If the operation is successful, no",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 801 - api is not supported",
+        "@throws { BusinessError } 12000001 - algorithm mode is not supported",
+        "@throws { BusinessError } 12000002 - algorithm param is missing",
+        "@throws { BusinessError } 12000003 - algorithm param is invalid",
+        "@throws { BusinessError } 12000004 - operating file failed",
+        "@throws { BusinessError } 12000005 - IPC communication failed",
+        "@throws { BusinessError } 12000006 - error occurred in crypto engine",
+        "@throws { BusinessError } 12000012 - Device environment or input parameter abnormal",
+        "@throws { BusinessError } 12000013 - queried credential does not exist",
+        "@throws { BusinessError } 12000014 - memory is insufficient",
+        "@throws { BusinessError } 12000015 - Failed to obtain the security information via UserIAM",
+        "@throws { BusinessError } 12000017 - The key with same alias is already exist",
+        "@throws { BusinessError } 12000018 - the group id specified by the access group tag is invalid",
+        "@syscap SystemCapability.Security.Huks.Core",
+        "@atomicservice",
+        "@since 23"
+      ],
+      "层级": 1,
+      "上级": "huks",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Security.Huks.Core",
+      "parameters": [
+        {
+          "名称": "keyAlias",
+          "类型": "string",
+          "必填": true,
+          "说明": "keyAlias indicates the key's name."
+        },
+        {
+          "名称": "options",
+          "类型": "HuksOptions",
+          "必填": true,
+          "说明": "Tags required for the import and key to import. The algorithm, key purpose, and"
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "Callback used to return the result. If the operation is successful, no"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "801",
+          "description": "api is not supported"
+        },
+        {
+          "code": "12000001",
+          "description": "algorithm mode is not supported"
+        },
+        {
+          "code": "12000002",
+          "description": "algorithm param is missing"
+        },
+        {
+          "code": "12000003",
+          "description": "algorithm param is invalid"
+        },
+        {
+          "code": "12000004",
+          "description": "operating file failed"
+        },
+        {
+          "code": "12000005",
+          "description": "IPC communication failed"
+        },
+        {
+          "code": "12000006",
+          "description": "error occurred in crypto engine"
+        },
+        {
+          "code": "12000012",
+          "description": "Device environment or input parameter abnormal"
+        },
+        {
+          "code": "12000013",
+          "description": "queried credential does not exist"
+        },
+        {
+          "code": "12000014",
+          "description": "memory is insufficient"
+        },
+        {
+          "code": "12000015",
+          "description": "Failed to obtain the security information via UserIAM"
+        },
+        {
+          "code": "12000017",
+          "description": "The key with same alias is already exist"
+        },
+        {
+          "code": "12000018",
+          "description": "the group id specified by the access group tag is invalid"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "importKeyItem",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Imports a key in plaintext. This API uses a promise to return the result. key length are mandatory. 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { string } keyAlias - keyAlias indicates the key's name.",
+        "@param { HuksOptions } options - Tags required for the import and key to import. The algorithm, key purpose, and",
+        "@returns { Promise<void> } the promise returned by the function.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 801 - api is not supported",
+        "@throws { BusinessError } 12000001 - algorithm mode is not supported",
+        "@throws { BusinessError } 12000002 - algorithm param is missing",
+        "@throws { BusinessError } 12000003 - algorithm param is invalid",
+        "@throws { BusinessError } 12000004 - operating file failed",
+        "@throws { BusinessError } 12000005 - IPC communication failed",
+        "@throws { BusinessError } 12000006 - error occurred in crypto engine",
+        "@throws { BusinessError } 12000012 - Device environment or input parameter abnormal",
+        "@throws { BusinessError } 12000013 - queried credential does not exist",
+        "@throws { BusinessError } 12000014 - memory is insufficient",
+        "@throws { BusinessError } 12000015 - Failed to obtain the security information via UserIAM",
+        "@throws { BusinessError } 12000017 - The key with same alias is already exist",
+        "@throws { BusinessError } 12000018 - the group id specified by the access group tag is invalid",
+        "@syscap SystemCapability.Security.Huks.Extension",
+        "@atomicservice",
+        "@since 23"
+      ],
+      "层级": 1,
+      "上级": "huks",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Security.Huks.Extension",
+      "parameters": [
+        {
+          "名称": "keyAlias",
+          "类型": "string",
+          "必填": true,
+          "说明": "keyAlias indicates the key's name."
+        },
+        {
+          "名称": "options",
+          "类型": "HuksOptions",
+          "必填": true,
+          "说明": "Tags required for the import and key to import. The algorithm, key purpose, and"
+        }
+      ],
+      "return_description": "the promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "801",
+          "description": "api is not supported"
+        },
+        {
+          "code": "12000001",
+          "description": "algorithm mode is not supported"
+        },
+        {
+          "code": "12000002",
+          "description": "algorithm param is missing"
+        },
+        {
+          "code": "12000003",
+          "description": "algorithm param is invalid"
+        },
+        {
+          "code": "12000004",
+          "description": "operating file failed"
+        },
+        {
+          "code": "12000005",
+          "description": "IPC communication failed"
+        },
+        {
+          "code": "12000006",
+          "description": "error occurred in crypto engine"
+        },
+        {
+          "code": "12000012",
+          "description": "Device environment or input parameter abnormal"
+        },
+        {
+          "code": "12000013",
+          "description": "queried credential does not exist"
+        },
+        {
+          "code": "12000014",
+          "description": "memory is insufficient"
+        },
+        {
+          "code": "12000015",
+          "description": "Failed to obtain the security information via UserIAM"
+        },
+        {
+          "code": "12000017",
+          "description": "The key with same alias is already exist"
+        },
+        {
+          "code": "12000018",
+          "description": "the group id specified by the access group tag is invalid"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "importWrappedKeyItem",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Imports a wrapped key. This API uses an asynchronous callback to return the result. The algorithm, key purpose, and key length are mandatory. no err value is returned; otherwise, an error code is returned. 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { string } keyAlias - Alias of the wrapped key to import.",
+        "@param { string } wrappingKeyAlias - Alias of the data used to unwrap the key imported.",
+        "@param { HuksOptions } options - Tags required for the import and the wrapped key to import.",
+        "@param { AsyncCallback<void> } callback - Callback used to return the result. If the operation is successful,",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 801 - api is not supported",
+        "@throws { BusinessError } 12000001 - algorithm mode is not supported",
+        "@throws { BusinessError } 12000002 - algorithm param is missing",
+        "@throws { BusinessError } 12000003 - algorithm param is invalid",
+        "@throws { BusinessError } 12000004 - operating file failed",
+        "@throws { BusinessError } 12000005 - IPC communication failed",
+        "@throws { BusinessError } 12000006 - error occurred in crypto engine",
+        "@throws { BusinessError } 12000011 - queried entity does not exist",
+        "@throws { BusinessError } 12000012 - Device environment or input parameter abnormal",
+        "@throws { BusinessError } 12000013 - queried credential does not exist",
+        "@throws { BusinessError } 12000014 - memory is insufficient",
+        "@throws { BusinessError } 12000015 - Failed to obtain the security information via UserIAM",
+        "@throws { BusinessError } 12000017 - The key with same alias is already exist",
+        "@throws { BusinessError } 12000018 - the group id specified by the access group tag is invalid",
+        "@syscap SystemCapability.Security.Huks.Core",
+        "@atomicservice",
+        "@since 23"
+      ],
+      "层级": 1,
+      "上级": "huks",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Security.Huks.Core",
+      "parameters": [
+        {
+          "名称": "keyAlias",
+          "类型": "string",
+          "必填": true,
+          "说明": "Alias of the wrapped key to import."
+        },
+        {
+          "名称": "wrappingKeyAlias",
+          "类型": "string",
+          "必填": true,
+          "说明": "Alias of the data used to unwrap the key imported."
+        },
+        {
+          "名称": "options",
+          "类型": "HuksOptions",
+          "必填": true,
+          "说明": "Tags required for the import and the wrapped key to import."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "Callback used to return the result. If the operation is successful,"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "801",
+          "description": "api is not supported"
+        },
+        {
+          "code": "12000001",
+          "description": "algorithm mode is not supported"
+        },
+        {
+          "code": "12000002",
+          "description": "algorithm param is missing"
+        },
+        {
+          "code": "12000003",
+          "description": "algorithm param is invalid"
+        },
+        {
+          "code": "12000004",
+          "description": "operating file failed"
+        },
+        {
+          "code": "12000005",
+          "description": "IPC communication failed"
+        },
+        {
+          "code": "12000006",
+          "description": "error occurred in crypto engine"
+        },
+        {
+          "code": "12000011",
+          "description": "queried entity does not exist"
+        },
+        {
+          "code": "12000012",
+          "description": "Device environment or input parameter abnormal"
+        },
+        {
+          "code": "12000013",
+          "description": "queried credential does not exist"
+        },
+        {
+          "code": "12000014",
+          "description": "memory is insufficient"
+        },
+        {
+          "code": "12000015",
+          "description": "Failed to obtain the security information via UserIAM"
+        },
+        {
+          "code": "12000017",
+          "description": "The key with same alias is already exist"
+        },
+        {
+          "code": "12000018",
+          "description": "the group id specified by the access group tag is invalid"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "importWrappedKeyItem",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Imports a wrapped key. This API uses a promise to return the result. purpose, and key length are mandatory. 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { string } keyAlias - Alias of the wrapped key to import.",
+        "@param { string } wrappingKeyAlias - Alias of the data used to unwrap the key imported.",
+        "@param { HuksOptions } options - Tags required for the import and the wrapped key to import. The algorithm, key",
+        "@returns { Promise<void> } Promise that returns no value.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 801 - api is not supported",
+        "@throws { BusinessError } 12000001 - algorithm mode is not supported",
+        "@throws { BusinessError } 12000002 - algorithm param is missing",
+        "@throws { BusinessError } 12000003 - algorithm param is invalid",
+        "@throws { BusinessError } 12000004 - operating file failed",
+        "@throws { BusinessError } 12000005 - IPC communication failed",
+        "@throws { BusinessError } 12000006 - error occurred in crypto engine",
+        "@throws { BusinessError } 12000011 - queried entity does not exist",
+        "@throws { BusinessError } 12000012 - Device environment or input parameter abnormal",
+        "@throws { BusinessError } 12000013 - queried credential does not exist",
+        "@throws { BusinessError } 12000014 - memory is insufficient",
+        "@throws { BusinessError } 12000015 - Failed to obtain the security information via UserIAM",
+        "@throws { BusinessError } 12000017 - The key with same alias is already exist",
+        "@throws { BusinessError } 12000018 - the group id specified by the access group tag is invalid",
+        "@syscap SystemCapability.Security.Huks.Extension",
+        "@atomicservice",
+        "@since 23"
+      ],
+      "层级": 1,
+      "上级": "huks",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Security.Huks.Extension",
+      "parameters": [
+        {
+          "名称": "keyAlias",
+          "类型": "string",
+          "必填": true,
+          "说明": "Alias of the wrapped key to import."
+        },
+        {
+          "名称": "wrappingKeyAlias",
+          "类型": "string",
+          "必填": true,
+          "说明": "Alias of the data used to unwrap the key imported."
+        },
+        {
+          "名称": "options",
+          "类型": "HuksOptions",
+          "必填": true,
+          "说明": "Tags required for the import and the wrapped key to import. The algorithm, key"
+        }
+      ],
+      "return_description": "Promise that returns no value.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "801",
+          "description": "api is not supported"
+        },
+        {
+          "code": "12000001",
+          "description": "algorithm mode is not supported"
+        },
+        {
+          "code": "12000002",
+          "description": "algorithm param is missing"
+        },
+        {
+          "code": "12000003",
+          "description": "algorithm param is invalid"
+        },
+        {
+          "code": "12000004",
+          "description": "operating file failed"
+        },
+        {
+          "code": "12000005",
+          "description": "IPC communication failed"
+        },
+        {
+          "code": "12000006",
+          "description": "error occurred in crypto engine"
+        },
+        {
+          "code": "12000011",
+          "description": "queried entity does not exist"
+        },
+        {
+          "code": "12000012",
+          "description": "Device environment or input parameter abnormal"
+        },
+        {
+          "code": "12000013",
+          "description": "queried credential does not exist"
+        },
+        {
+          "code": "12000014",
+          "description": "memory is insufficient"
+        },
+        {
+          "code": "12000015",
+          "description": "Failed to obtain the security information via UserIAM"
+        },
+        {
+          "code": "12000017",
+          "description": "The key with same alias is already exist"
+        },
+        {
+          "code": "12000018",
+          "description": "the group id specified by the access group tag is invalid"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "exportKey",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Export Key.",
+      "注释信息": [
+        "@param { string } keyAlias - keyAlias indicates the key's name.",
+        "@param { HuksOptions } options - options indicates the properties of the key.",
+        "@param { AsyncCallback<HuksResult> } callback - the callback of exportKey.",
+        "@syscap SystemCapability.Security.Huks.Extension",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.security.huks.exportKeyItem"
+      ],
+      "层级": 1,
+      "上级": "huks",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Security.Huks.Extension",
+      "parameters": [
+        {
+          "名称": "keyAlias",
+          "类型": "string",
+          "必填": true,
+          "说明": "keyAlias indicates the key's name."
+        },
+        {
+          "名称": "options",
+          "类型": "HuksOptions",
+          "必填": true,
+          "说明": "options indicates the properties of the key."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<HuksResult>",
+          "必填": true,
+          "说明": "the callback of exportKey."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "exportKey",
+      "返回值": "Promise<HuksResult>",
+      "所属模块": "未知模块",
+      "功能描述": "Export Key.",
+      "注释信息": [
+        "@param { string } keyAlias - keyAlias indicates the key's name.",
+        "@param { HuksOptions } options - options indicates the properties of the key.",
+        "@returns { Promise<HuksResult> } the promise returned by the function.",
+        "@syscap SystemCapability.Security.Huks.Extension",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.security.huks.exportKeyItem"
+      ],
+      "层级": 1,
+      "上级": "huks",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Security.Huks.Extension",
+      "parameters": [
+        {
+          "名称": "keyAlias",
+          "类型": "string",
+          "必填": true,
+          "说明": "keyAlias indicates the key's name."
+        },
+        {
+          "名称": "options",
+          "类型": "HuksOptions",
+          "必填": true,
+          "说明": "options indicates the properties of the key."
+        }
+      ],
+      "return_description": "the promise returned by the function.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "exportKeyItem",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Exports a key. This API uses an asynchronous callback to return the result. successful, no err value is returned and outData contains the public key exported. Otherwise, an error code is returned. 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { string } keyAlias - Key alias, which must be the same as the alias used when the key was generated.",
+        "@param { HuksOptions } options - Empty object (leave this parameter empty).",
+        "@param { AsyncCallback<HuksReturnResult> } callback - Callback used to return the result. If the operation is",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 801 - api is not supported",
+        "@throws { BusinessError } 12000001 - algorithm mode is not supported",
+        "@throws { BusinessError } 12000004 - operating file failed",
+        "@throws { BusinessError } 12000005 - IPC communication failed",
+        "@throws { BusinessError } 12000006 - error occurred in crypto engine",
+        "@throws { BusinessError } 12000011 - queried entity does not exist",
+        "@throws { BusinessError } 12000012 - Device environment or input parameter abnormal",
+        "@throws { BusinessError } 12000014 - memory is insufficient",
+        "@throws { BusinessError } 12000018 - the group id specified by the access group tag is invalid",
+        "@syscap SystemCapability.Security.Huks.Core",
+        "@atomicservice",
+        "@since 23"
+      ],
+      "层级": 1,
+      "上级": "huks",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Security.Huks.Core",
+      "parameters": [
+        {
+          "名称": "keyAlias",
+          "类型": "string",
+          "必填": true,
+          "说明": "Key alias, which must be the same as the alias used when the key was generated."
+        },
+        {
+          "名称": "options",
+          "类型": "HuksOptions",
+          "必填": true,
+          "说明": "Empty object (leave this parameter empty)."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<HuksReturnResult>",
+          "必填": true,
+          "说明": "Callback used to return the result. If the operation is"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "801",
+          "description": "api is not supported"
+        },
+        {
+          "code": "12000001",
+          "description": "algorithm mode is not supported"
+        },
+        {
+          "code": "12000004",
+          "description": "operating file failed"
+        },
+        {
+          "code": "12000005",
+          "description": "IPC communication failed"
+        },
+        {
+          "code": "12000006",
+          "description": "error occurred in crypto engine"
+        },
+        {
+          "code": "12000011",
+          "description": "queried entity does not exist"
+        },
+        {
+          "code": "12000012",
+          "description": "Device environment or input parameter abnormal"
+        },
+        {
+          "code": "12000014",
+          "description": "memory is insufficient"
+        },
+        {
+          "code": "12000018",
+          "description": "the group id specified by the access group tag is invalid"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "exportKeyItem",
+      "返回值": "Promise<HuksReturnResult>",
+      "所属模块": "未知模块",
+      "功能描述": "Exports a key. This API uses a promise to return the result. in HuksReturnResult is the public key exported. 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { string } keyAlias - Key alias, which must be the same as the alias used when the key was generated.",
+        "@param { HuksOptions } options - Empty object (leave this parameter empty).",
+        "@returns { Promise<HuksReturnResult> } Promise used to return the result. If the operation is successful, outData",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 801 - api is not supported",
+        "@throws { BusinessError } 12000001 - algorithm mode is not supported",
+        "@throws { BusinessError } 12000004 - operating file failed",
+        "@throws { BusinessError } 12000005 - IPC communication failed",
+        "@throws { BusinessError } 12000006 - error occurred in crypto engine",
+        "@throws { BusinessError } 12000011 - queried entity does not exist",
+        "@throws { BusinessError } 12000012 - Device environment or input parameter abnormal",
+        "@throws { BusinessError } 12000014 - memory is insufficient",
+        "@throws { BusinessError } 12000018 - the group id specified by the access group tag is invalid",
+        "@syscap SystemCapability.Security.Huks.Extension",
+        "@atomicservice",
+        "@since 23"
+      ],
+      "层级": 1,
+      "上级": "huks",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Security.Huks.Extension",
+      "parameters": [
+        {
+          "名称": "keyAlias",
+          "类型": "string",
+          "必填": true,
+          "说明": "Key alias, which must be the same as the alias used when the key was generated."
+        },
+        {
+          "名称": "options",
+          "类型": "HuksOptions",
+          "必填": true,
+          "说明": "Empty object (leave this parameter empty)."
+        }
+      ],
+      "return_description": "Promise used to return the result. If the operation is successful, outData",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "801",
+          "description": "api is not supported"
+        },
+        {
+          "code": "12000001",
+          "description": "algorithm mode is not supported"
+        },
+        {
+          "code": "12000004",
+          "description": "operating file failed"
+        },
+        {
+          "code": "12000005",
+          "description": "IPC communication failed"
+        },
+        {
+          "code": "12000006",
+          "description": "error occurred in crypto engine"
+        },
+        {
+          "code": "12000011",
+          "description": "queried entity does not exist"
+        },
+        {
+          "code": "12000012",
+          "description": "Device environment or input parameter abnormal"
+        },
+        {
+          "code": "12000014",
+          "description": "memory is insufficient"
+        },
+        {
+          "code": "12000018",
+          "description": "the group id specified by the access group tag is invalid"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getKeyProperties",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Get properties of the key.",
+      "注释信息": [
+        "@param { string } keyAlias - keyAlias indicates the key's name.",
+        "@param { HuksOptions } options - options indicates the properties of the key.",
+        "@param { AsyncCallback<HuksResult> } callback - the callback of getKeyProperties.",
+        "@syscap SystemCapability.Security.Huks.Extension",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.security.huks.getKeyItemProperties"
+      ],
+      "层级": 1,
+      "上级": "huks",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Security.Huks.Extension",
+      "parameters": [
+        {
+          "名称": "keyAlias",
+          "类型": "string",
+          "必填": true,
+          "说明": "keyAlias indicates the key's name."
+        },
+        {
+          "名称": "options",
+          "类型": "HuksOptions",
+          "必填": true,
+          "说明": "options indicates the properties of the key."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<HuksResult>",
+          "必填": true,
+          "说明": "the callback of getKeyProperties."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getKeyProperties",
+      "返回值": "Promise<HuksResult>",
+      "所属模块": "未知模块",
+      "功能描述": "Get properties of the key.",
+      "注释信息": [
+        "@param { string } keyAlias - keyAlias indicates the key's name.",
+        "@param { HuksOptions } options - options indicates the properties of the key.",
+        "@returns { Promise<HuksResult> } the promise returned by the function.",
+        "@syscap SystemCapability.Security.Huks.Extension",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.security.huks.getKeyItemProperties"
+      ],
+      "层级": 1,
+      "上级": "huks",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Security.Huks.Extension",
+      "parameters": [
+        {
+          "名称": "keyAlias",
+          "类型": "string",
+          "必填": true,
+          "说明": "keyAlias indicates the key's name."
+        },
+        {
+          "名称": "options",
+          "类型": "HuksOptions",
+          "必填": true,
+          "说明": "options indicates the properties of the key."
+        }
+      ],
+      "return_description": "the promise returned by the function.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getKeyItemProperties",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains key properties. This API uses an asynchronous callback to return the result. successful, no err value is returned and properties contains the parameters required for generating the key. If the operation fails, an error code is returned. 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { string } keyAlias - Key alias, which must be the same as the alias used when the key was generated.",
+        "@param { HuksOptions } options - Empty object (leave this parameter empty).",
+        "@param { AsyncCallback<HuksReturnResult> } callback - Callback used to return the result. If the operation is",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 801 - api is not supported",
+        "@throws { BusinessError } 12000001 - algorithm mode is not supported",
+        "@throws { BusinessError } 12000004 - operating file failed",
+        "@throws { BusinessError } 12000005 - IPC communication failed",
+        "@throws { BusinessError } 12000006 - error occurred in crypto engine",
+        "@throws { BusinessError } 12000011 - queried entity does not exist",
+        "@throws { BusinessError } 12000012 - Device environment or input parameter abnormal",
+        "@throws { BusinessError } 12000014 - memory is insufficient",
+        "@throws { BusinessError } 12000018 - the group id specified by the access group tag is invalid",
+        "@syscap SystemCapability.Security.Huks.Core",
+        "@atomicservice",
+        "@since 23"
+      ],
+      "层级": 1,
+      "上级": "huks",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Security.Huks.Core",
+      "parameters": [
+        {
+          "名称": "keyAlias",
+          "类型": "string",
+          "必填": true,
+          "说明": "Key alias, which must be the same as the alias used when the key was generated."
+        },
+        {
+          "名称": "options",
+          "类型": "HuksOptions",
+          "必填": true,
+          "说明": "Empty object (leave this parameter empty)."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<HuksReturnResult>",
+          "必填": true,
+          "说明": "Callback used to return the result. If the operation is"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "801",
+          "description": "api is not supported"
+        },
+        {
+          "code": "12000001",
+          "description": "algorithm mode is not supported"
+        },
+        {
+          "code": "12000004",
+          "description": "operating file failed"
+        },
+        {
+          "code": "12000005",
+          "description": "IPC communication failed"
+        },
+        {
+          "code": "12000006",
+          "description": "error occurred in crypto engine"
+        },
+        {
+          "code": "12000011",
+          "description": "queried entity does not exist"
+        },
+        {
+          "code": "12000012",
+          "description": "Device environment or input parameter abnormal"
+        },
+        {
+          "code": "12000014",
+          "description": "memory is insufficient"
+        },
+        {
+          "code": "12000018",
+          "description": "the group id specified by the access group tag is invalid"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getKeyItemProperties",
+      "返回值": "Promise<HuksReturnResult>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains key properties. This API uses a promise to return the result. properties in HuksReturnResult holds the parameters required for generating the key. 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { string } keyAlias - Key alias, which must be the same as the alias used when the key was generated.",
+        "@param { HuksOptions } options - Empty object (leave this parameter empty).",
+        "@returns { Promise<HuksReturnResult> } Promise used to return the result. If the operation is successful,",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 801 - api is not supported",
+        "@throws { BusinessError } 12000001 - algorithm mode is not supported",
+        "@throws { BusinessError } 12000004 - operating file failed",
+        "@throws { BusinessError } 12000005 - IPC communication failed",
+        "@throws { BusinessError } 12000006 - error occurred in crypto engine",
+        "@throws { BusinessError } 12000011 - queried entity does not exist",
+        "@throws { BusinessError } 12000012 - Device environment or input parameter abnormal",
+        "@throws { BusinessError } 12000014 - memory is insufficient",
+        "@throws { BusinessError } 12000018 - the group id specified by the access group tag is invalid",
+        "@syscap SystemCapability.Security.Huks.Extension",
+        "@atomicservice",
+        "@since 23"
+      ],
+      "层级": 1,
+      "上级": "huks",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Security.Huks.Extension",
+      "parameters": [
+        {
+          "名称": "keyAlias",
+          "类型": "string",
+          "必填": true,
+          "说明": "Key alias, which must be the same as the alias used when the key was generated."
+        },
+        {
+          "名称": "options",
+          "类型": "HuksOptions",
+          "必填": true,
+          "说明": "Empty object (leave this parameter empty)."
+        }
+      ],
+      "return_description": "Promise used to return the result. If the operation is successful,",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "801",
+          "description": "api is not supported"
+        },
+        {
+          "code": "12000001",
+          "description": "algorithm mode is not supported"
+        },
+        {
+          "code": "12000004",
+          "description": "operating file failed"
+        },
+        {
+          "code": "12000005",
+          "description": "IPC communication failed"
+        },
+        {
+          "code": "12000006",
+          "description": "error occurred in crypto engine"
+        },
+        {
+          "code": "12000011",
+          "description": "queried entity does not exist"
+        },
+        {
+          "code": "12000012",
+          "description": "Device environment or input parameter abnormal"
+        },
+        {
+          "code": "12000014",
+          "description": "memory is insufficient"
+        },
+        {
+          "code": "12000018",
+          "description": "the group id specified by the access group tag is invalid"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "isKeyExist",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Check whether the key exists.",
+      "注释信息": [
+        "@param { string } keyAlias - keyAlias indicates the key's name.",
+        "@param { HuksOptions } options - options indicates the properties of the key.",
+        "@param { AsyncCallback<boolean> } callback - the callback of isKeyExist.",
+        "@syscap SystemCapability.Security.Huks.Extension",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.security.huks.isKeyItemExist"
+      ],
+      "层级": 1,
+      "上级": "huks",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Security.Huks.Extension",
+      "parameters": [
+        {
+          "名称": "keyAlias",
+          "类型": "string",
+          "必填": true,
+          "说明": "keyAlias indicates the key's name."
+        },
+        {
+          "名称": "options",
+          "类型": "HuksOptions",
+          "必填": true,
+          "说明": "options indicates the properties of the key."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<boolean>",
+          "必填": true,
+          "说明": "the callback of isKeyExist."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "isKeyExist",
+      "返回值": "Promise<boolean>",
+      "所属模块": "未知模块",
+      "功能描述": "Check whether the key exists.",
+      "注释信息": [
+        "@param { string } keyAlias - keyAlias indicates the key's name.",
+        "@param { HuksOptions } options - options indicates the properties of the key.",
+        "@returns { Promise<boolean> } the promise returned by the function.",
+        "@syscap SystemCapability.Security.Huks.Extension",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.security.huks.isKeyItemExist"
+      ],
+      "层级": 1,
+      "上级": "huks",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Security.Huks.Extension",
+      "parameters": [
+        {
+          "名称": "keyAlias",
+          "类型": "string",
+          "必填": true,
+          "说明": "keyAlias indicates the key's name."
+        },
+        {
+          "名称": "options",
+          "类型": "HuksOptions",
+          "必填": true,
+          "说明": "options indicates the properties of the key."
+        }
+      ],
+      "return_description": "the promise returned by the function.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "isKeyItemExist",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Checks whether a key exists. This API uses an asynchronous callback to return the result. specify the security level of the key to check. HuksAuthStorageLevel can be left empty, which means the default value HUKS_AUTH_STORAGE_LEVEL_CE is used. If the key does not exist, error is the error code. 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { string } keyAlias - Alias of the key to check.",
+        "@param { HuksOptions } options - Options for checking the key. For example, you can pass in HuksAuthStorageLevel to",
+        "@param { AsyncCallback<boolean> } callback - Callback used to return the result. If the key exists, data is true.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 801 - api is not supported",
+        "@throws { BusinessError } 12000004 - operating file failed",
+        "@throws { BusinessError } 12000005 - IPC communication failed",
+        "@throws { BusinessError } 12000006 - error occurred in crypto engine",
+        "@throws { BusinessError } 12000011 - queried entity does not exist",
+        "@throws { BusinessError } 12000012 - Device environment or input parameter abnormal",
+        "@throws { BusinessError } 12000014 - memory is insufficient",
+        "@throws { BusinessError } 12000018 - the group id specified by the access group tag is invalid",
+        "@syscap SystemCapability.Security.Huks.Core",
+        "@since 23"
+      ],
+      "层级": 1,
+      "上级": "huks",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Security.Huks.Core",
+      "parameters": [
+        {
+          "名称": "keyAlias",
+          "类型": "string",
+          "必填": true,
+          "说明": "Alias of the key to check."
+        },
+        {
+          "名称": "options",
+          "类型": "HuksOptions",
+          "必填": true,
+          "说明": "Options for checking the key. For example, you can pass in HuksAuthStorageLevel to"
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<boolean>",
+          "必填": true,
+          "说明": "Callback used to return the result. If the key exists, data is true."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "801",
+          "description": "api is not supported"
+        },
+        {
+          "code": "12000004",
+          "description": "operating file failed"
+        },
+        {
+          "code": "12000005",
+          "description": "IPC communication failed"
+        },
+        {
+          "code": "12000006",
+          "description": "error occurred in crypto engine"
+        },
+        {
+          "code": "12000011",
+          "description": "queried entity does not exist"
+        },
+        {
+          "code": "12000012",
+          "description": "Device environment or input parameter abnormal"
+        },
+        {
+          "code": "12000014",
+          "description": "memory is insufficient"
+        },
+        {
+          "code": "12000018",
+          "description": "the group id specified by the access group tag is invalid"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "isKeyItemExist",
+      "返回值": "Promise<boolean>",
+      "所属模块": "未知模块",
+      "功能描述": "Checks whether a key exists. This API uses a promise to return the result. specify the security level of the key to check. HuksAuthStorageLevel can be left empty, which means the default value HUKS_AUTH_STORAGE_LEVEL_CE is used. 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { string } keyAlias - Alias of the key to check.",
+        "@param { HuksOptions } options - Options for checking the key. For example, you can pass in HuksAuthStorageLevel to",
+        "@returns { Promise<boolean> } Promise used to return the result. If the key exists, then() performs subsequent",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 801 - api is not supported",
+        "@throws { BusinessError } 12000004 - operating file failed",
+        "@throws { BusinessError } 12000005 - IPC communication failed",
+        "@throws { BusinessError } 12000006 - error occurred in crypto engine",
+        "@throws { BusinessError } 12000011 - queried entity does not exist",
+        "@throws { BusinessError } 12000012 - Device environment or input parameter abnormal",
+        "@throws { BusinessError } 12000014 - memory is insufficient",
+        "@throws { BusinessError } 12000018 - the group id specified by the access group tag is invalid",
+        "@syscap SystemCapability.Security.Huks.Extension",
+        "@since 23"
+      ],
+      "层级": 1,
+      "上级": "huks",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Security.Huks.Extension",
+      "parameters": [
+        {
+          "名称": "keyAlias",
+          "类型": "string",
+          "必填": true,
+          "说明": "Alias of the key to check."
+        },
+        {
+          "名称": "options",
+          "类型": "HuksOptions",
+          "必填": true,
+          "说明": "Options for checking the key. For example, you can pass in HuksAuthStorageLevel to"
+        }
+      ],
+      "return_description": "Promise used to return the result. If the key exists, then() performs subsequent",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "801",
+          "description": "api is not supported"
+        },
+        {
+          "code": "12000004",
+          "description": "operating file failed"
+        },
+        {
+          "code": "12000005",
+          "description": "IPC communication failed"
+        },
+        {
+          "code": "12000006",
+          "description": "error occurred in crypto engine"
+        },
+        {
+          "code": "12000011",
+          "description": "queried entity does not exist"
+        },
+        {
+          "code": "12000012",
+          "description": "Device environment or input parameter abnormal"
+        },
+        {
+          "code": "12000014",
+          "description": "memory is insufficient"
+        },
+        {
+          "code": "12000018",
+          "description": "the group id specified by the access group tag is invalid"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "hasKeyItem",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Checks whether a key exists. This API uses an asynchronous callback to return the result. specify the security level of the key to check. HuksAuthStorageLevel can be left empty, which means the default value HUKS_AUTH_STORAGE_LEVEL_CE is used. Otherwise, data is false. 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { string } keyAlias - Alias of the key to check.",
+        "@param { HuksOptions } options - Options for checking the key. For example, you can pass in HuksAuthStorageLevel to",
+        "@param { AsyncCallback<boolean> } callback - Callback used to return the result. If the key exists, data is true.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 801 - api is not supported",
+        "@throws { BusinessError } 12000004 - operating file failed",
+        "@throws { BusinessError } 12000005 - IPC communication failed",
+        "@throws { BusinessError } 12000006 - error occurred in crypto engine",
+        "@throws { BusinessError } 12000012 - Device environment or input parameter abnormal",
+        "@throws { BusinessError } 12000014 - memory is insufficient",
+        "@throws { BusinessError } 12000018 - the group id specified by the access group tag is invalid",
+        "@syscap SystemCapability.Security.Huks.Core",
+        "@atomicservice",
+        "@since 23"
+      ],
+      "层级": 1,
+      "上级": "huks",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Security.Huks.Core",
+      "parameters": [
+        {
+          "名称": "keyAlias",
+          "类型": "string",
+          "必填": true,
+          "说明": "Alias of the key to check."
+        },
+        {
+          "名称": "options",
+          "类型": "HuksOptions",
+          "必填": true,
+          "说明": "Options for checking the key. For example, you can pass in HuksAuthStorageLevel to"
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<boolean>",
+          "必填": true,
+          "说明": "Callback used to return the result. If the key exists, data is true."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "801",
+          "description": "api is not supported"
+        },
+        {
+          "code": "12000004",
+          "description": "operating file failed"
+        },
+        {
+          "code": "12000005",
+          "description": "IPC communication failed"
+        },
+        {
+          "code": "12000006",
+          "description": "error occurred in crypto engine"
+        },
+        {
+          "code": "12000012",
+          "description": "Device environment or input parameter abnormal"
+        },
+        {
+          "code": "12000014",
+          "description": "memory is insufficient"
+        },
+        {
+          "code": "12000018",
+          "description": "the group id specified by the access group tag is invalid"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "hasKeyItem",
+      "返回值": "Promise<boolean>",
+      "所属模块": "未知模块",
+      "功能描述": "Checks whether a key exists. This API uses a promise to return the result. specify the security level of the key to check. HuksAuthStorageLevel can be left empty, which means the default value HUKS_AUTH_STORAGE_LEVEL_CE is used. does not exist, false is returned. 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { string } keyAlias - Alias of the key to check.",
+        "@param { HuksOptions } options - Options for checking the key. For example, you can pass in HuksAuthStorageLevel to",
+        "@returns { Promise<boolean> } Promise used to return the result. If the key exists, true is returned. If the key",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 801 - api is not supported",
+        "@throws { BusinessError } 12000004 - operating file failed",
+        "@throws { BusinessError } 12000005 - IPC communication failed",
+        "@throws { BusinessError } 12000006 - error occurred in crypto engine",
+        "@throws { BusinessError } 12000012 - Device environment or input parameter abnormal",
+        "@throws { BusinessError } 12000014 - memory is insufficient",
+        "@throws { BusinessError } 12000018 - the group id specified by the access group tag is invalid",
+        "@syscap SystemCapability.Security.Huks.Extension",
+        "@atomicservice",
+        "@since 23"
+      ],
+      "层级": 1,
+      "上级": "huks",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Security.Huks.Extension",
+      "parameters": [
+        {
+          "名称": "keyAlias",
+          "类型": "string",
+          "必填": true,
+          "说明": "Alias of the key to check."
+        },
+        {
+          "名称": "options",
+          "类型": "HuksOptions",
+          "必填": true,
+          "说明": "Options for checking the key. For example, you can pass in HuksAuthStorageLevel to"
+        }
+      ],
+      "return_description": "Promise used to return the result. If the key exists, true is returned. If the key",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "801",
+          "description": "api is not supported"
+        },
+        {
+          "code": "12000004",
+          "description": "operating file failed"
+        },
+        {
+          "code": "12000005",
+          "description": "IPC communication failed"
+        },
+        {
+          "code": "12000006",
+          "description": "error occurred in crypto engine"
+        },
+        {
+          "code": "12000012",
+          "description": "Device environment or input parameter abnormal"
+        },
+        {
+          "code": "12000014",
+          "description": "memory is insufficient"
+        },
+        {
+          "code": "12000018",
+          "description": "the group id specified by the access group tag is invalid"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "init",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Init Operation.",
+      "注释信息": [
+        "@param { string } keyAlias - keyAlias indicates the key's name.",
+        "@param { HuksOptions } options - options indicates the properties of the key.",
+        "@param { AsyncCallback<HuksHandle> } callback - the callback of init, include the handle.",
+        "@syscap SystemCapability.Security.Huks.Extension",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.security.huks.initSession"
+      ],
+      "层级": 1,
+      "上级": "huks",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Security.Huks.Extension",
+      "parameters": [
+        {
+          "名称": "keyAlias",
+          "类型": "string",
+          "必填": true,
+          "说明": "keyAlias indicates the key's name."
+        },
+        {
+          "名称": "options",
+          "类型": "HuksOptions",
+          "必填": true,
+          "说明": "options indicates the properties of the key."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<HuksHandle>",
+          "必填": true,
+          "说明": "the callback of init, include the handle."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "init",
+      "返回值": "Promise<HuksHandle>",
+      "所属模块": "未知模块",
+      "功能描述": "Init Operation.",
+      "注释信息": [
+        "@param { string } keyAlias - keyAlias indicates the key's name.",
+        "@param { HuksOptions } options - options indicates the properties of the key.",
+        "@returns { Promise<HuksHandle> } the promise returned by the function, include the handle.",
+        "@syscap SystemCapability.Security.Huks.Extension",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.security.huks.initSession"
+      ],
+      "层级": 1,
+      "上级": "huks",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Security.Huks.Extension",
+      "parameters": [
+        {
+          "名称": "keyAlias",
+          "类型": "string",
+          "必填": true,
+          "说明": "keyAlias indicates the key's name."
+        },
+        {
+          "名称": "options",
+          "类型": "HuksOptions",
+          "必填": true,
+          "说明": "options indicates the properties of the key."
+        }
+      ],
+      "return_description": "the promise returned by the function, include the handle.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "initSession",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Initializes a session for a key operation. This API uses an asynchronous callback to return the result. huks.initSession, huks.updateSession, and huks.finishSession must be used together. operations. 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. 1. the aead length is invalid. 2. the group id specified by the access group tag is invalid.",
+      "注释信息": [
+        "@param { string } keyAlias - Alias of the key involved in the initSession operation.",
+        "@param { HuksOptions } options - Parameter set used for the initSession operation.",
+        "@param { AsyncCallback<HuksSessionHandle> } callback - Callback used to return a session handle for subsequent",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 801 - api is not supported",
+        "@throws { BusinessError } 12000001 - algorithm mode is not supported",
+        "@throws { BusinessError } 12000002 - algorithm param is missing",
+        "@throws { BusinessError } 12000003 - algorithm param is invalid",
+        "@throws { BusinessError } 12000004 - operating file failed",
+        "@throws { BusinessError } 12000005 - IPC communication failed",
+        "@throws { BusinessError } 12000006 - error occurred in crypto engine or Ukey driver",
+        "@throws { BusinessError } 12000010 - the number of sessions has reached limit",
+        "@throws { BusinessError } 12000011 - queried entity does not exist",
+        "@throws { BusinessError } 12000012 - Device environment or input parameter abnormal",
+        "@throws { BusinessError } 12000014 - memory is insufficient",
+        "@throws { BusinessError } 12000018 - the input parameter is invalid. Possible causes:",
+        "@throws { BusinessError } 12000020 - the provider operation failed",
+        "@throws { BusinessError } 12000021 - the Ukey PIN is locked",
+        "@throws { BusinessError } 12000023 - the Ukey PIN not authenticated",
+        "@throws { BusinessError } 12000024 - the provider or Ukey is busy",
+        "@syscap SystemCapability.Security.Huks.Core",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 1,
+      "上级": "huks",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Security.Huks.Core",
+      "parameters": [
+        {
+          "名称": "keyAlias",
+          "类型": "string",
+          "必填": true,
+          "说明": "Alias of the key involved in the initSession operation."
+        },
+        {
+          "名称": "options",
+          "类型": "HuksOptions",
+          "必填": true,
+          "说明": "Parameter set used for the initSession operation."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<HuksSessionHandle>",
+          "必填": true,
+          "说明": "Callback used to return a session handle for subsequent"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "801",
+          "description": "api is not supported"
+        },
+        {
+          "code": "12000001",
+          "description": "algorithm mode is not supported"
+        },
+        {
+          "code": "12000002",
+          "description": "algorithm param is missing"
+        },
+        {
+          "code": "12000003",
+          "description": "algorithm param is invalid"
+        },
+        {
+          "code": "12000004",
+          "description": "operating file failed"
+        },
+        {
+          "code": "12000005",
+          "description": "IPC communication failed"
+        },
+        {
+          "code": "12000006",
+          "description": "error occurred in crypto engine or Ukey driver"
+        },
+        {
+          "code": "12000010",
+          "description": "the number of sessions has reached limit"
+        },
+        {
+          "code": "12000011",
+          "description": "queried entity does not exist"
+        },
+        {
+          "code": "12000012",
+          "description": "Device environment or input parameter abnormal"
+        },
+        {
+          "code": "12000014",
+          "description": "memory is insufficient"
+        },
+        {
+          "code": "12000018",
+          "description": "the input parameter is invalid. Possible causes:"
+        },
+        {
+          "code": "12000020",
+          "description": "the provider operation failed"
+        },
+        {
+          "code": "12000021",
+          "description": "the Ukey PIN is locked"
+        },
+        {
+          "code": "12000023",
+          "description": "the Ukey PIN not authenticated"
+        },
+        {
+          "code": "12000024",
+          "description": "the provider or Ukey is busy"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "initSession",
+      "返回值": "Promise<HuksSessionHandle>",
+      "所属模块": "未知模块",
+      "功能描述": "Initializes a session for a key operation. This API uses a promise to return the result. huks.initSession, huks.updateSession, and huks.finishSession must be used together. 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. 1. the aead length is invalid. 2. the group id specified by the access group tag is invalid.",
+      "注释信息": [
+        "@param { string } keyAlias - Alias of the key involved in the initSession operation.",
+        "@param { HuksOptions } options - Parameter set used for the initSession operation.",
+        "@returns { Promise<HuksSessionHandle> } Promise used to return a session handle for subsequent operations.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 801 - api is not supported",
+        "@throws { BusinessError } 12000001 - algorithm mode is not supported",
+        "@throws { BusinessError } 12000002 - algorithm param is missing",
+        "@throws { BusinessError } 12000003 - algorithm param is invalid",
+        "@throws { BusinessError } 12000004 - operating file failed",
+        "@throws { BusinessError } 12000005 - IPC communication failed",
+        "@throws { BusinessError } 12000006 - error occurred in crypto engine or Ukey driver",
+        "@throws { BusinessError } 12000010 - the number of sessions has reached limit",
+        "@throws { BusinessError } 12000011 - queried entity does not exist",
+        "@throws { BusinessError } 12000012 - Device environment or input parameter abnormal",
+        "@throws { BusinessError } 12000014 - memory is insufficient",
+        "@throws { BusinessError } 12000018 - the input parameter is invalid. Possible causes:",
+        "@throws { BusinessError } 12000020 - the provider operation failed",
+        "@throws { BusinessError } 12000021 - the Ukey PIN is locked",
+        "@throws { BusinessError } 12000023 - the Ukey PIN not authenticated",
+        "@throws { BusinessError } 12000024 - the provider or Ukey is busy",
+        "@syscap SystemCapability.Security.Huks.Extension",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 1,
+      "上级": "huks",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Security.Huks.Extension",
+      "parameters": [
+        {
+          "名称": "keyAlias",
+          "类型": "string",
+          "必填": true,
+          "说明": "Alias of the key involved in the initSession operation."
+        },
+        {
+          "名称": "options",
+          "类型": "HuksOptions",
+          "必填": true,
+          "说明": "Parameter set used for the initSession operation."
+        }
+      ],
+      "return_description": "Promise used to return a session handle for subsequent operations.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "801",
+          "description": "api is not supported"
+        },
+        {
+          "code": "12000001",
+          "description": "algorithm mode is not supported"
+        },
+        {
+          "code": "12000002",
+          "description": "algorithm param is missing"
+        },
+        {
+          "code": "12000003",
+          "description": "algorithm param is invalid"
+        },
+        {
+          "code": "12000004",
+          "description": "operating file failed"
+        },
+        {
+          "code": "12000005",
+          "description": "IPC communication failed"
+        },
+        {
+          "code": "12000006",
+          "description": "error occurred in crypto engine or Ukey driver"
+        },
+        {
+          "code": "12000010",
+          "description": "the number of sessions has reached limit"
+        },
+        {
+          "code": "12000011",
+          "description": "queried entity does not exist"
+        },
+        {
+          "code": "12000012",
+          "description": "Device environment or input parameter abnormal"
+        },
+        {
+          "code": "12000014",
+          "description": "memory is insufficient"
+        },
+        {
+          "code": "12000018",
+          "description": "the input parameter is invalid. Possible causes:"
+        },
+        {
+          "code": "12000020",
+          "description": "the provider operation failed"
+        },
+        {
+          "code": "12000021",
+          "description": "the Ukey PIN is locked"
+        },
+        {
+          "code": "12000023",
+          "description": "the Ukey PIN not authenticated"
+        },
+        {
+          "code": "12000024",
+          "description": "the provider or Ukey is busy"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "update",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Update Operation.",
+      "注释信息": [
+        "@param { number } handle - indicates the handle of the init operation.",
+        "@param { Uint8Array } token - token indicates the value of token.",
+        "@param { HuksOptions } options - options indicates the properties of the update operation.",
+        "@param { AsyncCallback<HuksResult> } callback - the callback of update.",
+        "@syscap SystemCapability.Security.Huks.Extension",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.security.huks.updateSession"
+      ],
+      "层级": 1,
+      "上级": "huks",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Security.Huks.Extension",
+      "parameters": [
+        {
+          "名称": "handle",
+          "类型": "number",
+          "必填": true,
+          "说明": "indicates the handle of the init operation."
+        },
+        {
+          "名称": "token",
+          "类型": "Uint8Array",
+          "必填": true,
+          "说明": "token indicates the value of token."
+        },
+        {
+          "名称": "options",
+          "类型": "HuksOptions",
+          "必填": true,
+          "说明": "options indicates the properties of the update operation."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<HuksResult>",
+          "必填": true,
+          "说明": "the callback of update."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "update",
+      "返回值": "Promise<HuksResult>",
+      "所属模块": "未知模块",
+      "功能描述": "Update Operation.",
+      "注释信息": [
+        "@param { number } handle - indicates the handle of the init operation.",
+        "@param { Uint8Array } token - indicates the value of token.",
+        "@param { HuksOptions } options - options indicates the properties of the update operation.",
+        "@returns { Promise<HuksResult> } the promise returned by the function.",
+        "@syscap SystemCapability.Security.Huks.Extension",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.security.huks.updateSession"
+      ],
+      "层级": 1,
+      "上级": "huks",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Security.Huks.Extension",
+      "parameters": [
+        {
+          "名称": "handle",
+          "类型": "number",
+          "必填": true,
+          "说明": "indicates the handle of the init operation."
+        },
+        {
+          "名称": "token",
+          "类型": "Uint8Array",
+          "必填": true,
+          "说明": "indicates the value of token."
+        },
+        {
+          "名称": "options",
+          "类型": "HuksOptions",
+          "必填": true,
+          "说明": "options indicates the properties of the update operation."
+        }
+      ],
+      "return_description": "the promise returned by the function.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "updateSession",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Updates the key operation by segment. This API uses an asynchronous callback to return the result. huks.initSession, huks.updateSession, and huks.finishSession must be used together. 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { number } handle - Handle for the updateSession operation.",
+        "@param { HuksOptions } options - Parameter set used for the updateSession operation.",
+        "@param { AsyncCallback<HuksReturnResult> } callback - Callback used to return the updateSession operation result.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 801 - api is not supported",
+        "@throws { BusinessError } 12000001 - algorithm mode is not supported",
+        "@throws { BusinessError } 12000002 - algorithm param is missing",
+        "@throws { BusinessError } 12000003 - algorithm param is invalid",
+        "@throws { BusinessError } 12000004 - operating file failed",
+        "@throws { BusinessError } 12000005 - IPC communication failed",
+        "@throws { BusinessError } 12000006 - error occurred in crypto engine or Ukey driver",
+        "@throws { BusinessError } 12000007 - this credential is already invalidated permanently",
+        "@throws { BusinessError } 12000008 - verify auth token failed",
+        "@throws { BusinessError } 12000009 - auth token is already timeout",
+        "@throws { BusinessError } 12000011 - queried entity does not exist",
+        "@throws { BusinessError } 12000012 - Device environment or input parameter abnormal",
+        "@throws { BusinessError } 12000014 - memory is insufficient",
+        "@throws { BusinessError } 12000018 - the group id specified by the access group tag is invalid",
+        "@throws { BusinessError } 12000020 - the provider operation failed",
+        "@throws { BusinessError } 12000021 - the Ukey PIN is locked",
+        "@throws { BusinessError } 12000023 - the Ukey PIN not authenticated",
+        "@throws { BusinessError } 12000024 - the provider or Ukey is busy",
+        "@syscap SystemCapability.Security.Huks.Core",
+        "@atomicservice",
+        "@since 23"
+      ],
+      "层级": 1,
+      "上级": "huks",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Security.Huks.Core",
+      "parameters": [
+        {
+          "名称": "handle",
+          "类型": "number",
+          "必填": true,
+          "说明": "Handle for the updateSession operation."
+        },
+        {
+          "名称": "options",
+          "类型": "HuksOptions",
+          "必填": true,
+          "说明": "Parameter set used for the updateSession operation."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<HuksReturnResult>",
+          "必填": true,
+          "说明": "Callback used to return the updateSession operation result."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "801",
+          "description": "api is not supported"
+        },
+        {
+          "code": "12000001",
+          "description": "algorithm mode is not supported"
+        },
+        {
+          "code": "12000002",
+          "description": "algorithm param is missing"
+        },
+        {
+          "code": "12000003",
+          "description": "algorithm param is invalid"
+        },
+        {
+          "code": "12000004",
+          "description": "operating file failed"
+        },
+        {
+          "code": "12000005",
+          "description": "IPC communication failed"
+        },
+        {
+          "code": "12000006",
+          "description": "error occurred in crypto engine or Ukey driver"
+        },
+        {
+          "code": "12000007",
+          "description": "this credential is already invalidated permanently"
+        },
+        {
+          "code": "12000008",
+          "description": "verify auth token failed"
+        },
+        {
+          "code": "12000009",
+          "description": "auth token is already timeout"
+        },
+        {
+          "code": "12000011",
+          "description": "queried entity does not exist"
+        },
+        {
+          "code": "12000012",
+          "description": "Device environment or input parameter abnormal"
+        },
+        {
+          "code": "12000014",
+          "description": "memory is insufficient"
+        },
+        {
+          "code": "12000018",
+          "description": "the group id specified by the access group tag is invalid"
+        },
+        {
+          "code": "12000020",
+          "description": "the provider operation failed"
+        },
+        {
+          "code": "12000021",
+          "description": "the Ukey PIN is locked"
+        },
+        {
+          "code": "12000023",
+          "description": "the Ukey PIN not authenticated"
+        },
+        {
+          "code": "12000024",
+          "description": "the provider or Ukey is busy"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "updateSession",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Updates the key operation by segment. This API uses an asynchronous callback to return the result. huks.initSession, huks.updateSession, and huks.finishSession must be used together. 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { number } handle - Handle for the updateSession operation.",
+        "@param { HuksOptions } options - Parameter set used for the updateSession operation.",
+        "@param { Uint8Array } token - Authentication token for refined key access control.",
+        "@param { AsyncCallback<HuksReturnResult> } callback - Callback used to return the updateSession operation result.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 801 - api is not supported",
+        "@throws { BusinessError } 12000001 - algorithm mode is not supported",
+        "@throws { BusinessError } 12000002 - algorithm param is missing",
+        "@throws { BusinessError } 12000003 - algorithm param is invalid",
+        "@throws { BusinessError } 12000004 - operating file failed",
+        "@throws { BusinessError } 12000005 - IPC communication failed",
+        "@throws { BusinessError } 12000006 - error occurred in crypto engine",
+        "@throws { BusinessError } 12000007 - this credential is already invalidated permanently",
+        "@throws { BusinessError } 12000008 - verify auth token failed",
+        "@throws { BusinessError } 12000009 - auth token is already timeout",
+        "@throws { BusinessError } 12000011 - queried entity does not exist",
+        "@throws { BusinessError } 12000012 - Device environment or input parameter abnormal",
+        "@throws { BusinessError } 12000014 - memory is insufficient",
+        "@throws { BusinessError } 12000018 - the group id specified by the access group tag is invalid",
+        "@syscap SystemCapability.Security.Huks.Extension",
+        "@atomicservice",
+        "@since 23"
+      ],
+      "层级": 1,
+      "上级": "huks",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Security.Huks.Extension",
+      "parameters": [
+        {
+          "名称": "handle",
+          "类型": "number",
+          "必填": true,
+          "说明": "Handle for the updateSession operation."
+        },
+        {
+          "名称": "options",
+          "类型": "HuksOptions",
+          "必填": true,
+          "说明": "Parameter set used for the updateSession operation."
+        },
+        {
+          "名称": "token",
+          "类型": "Uint8Array",
+          "必填": true,
+          "说明": "Authentication token for refined key access control."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<HuksReturnResult>",
+          "必填": true,
+          "说明": "Callback used to return the updateSession operation result."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "801",
+          "description": "api is not supported"
+        },
+        {
+          "code": "12000001",
+          "description": "algorithm mode is not supported"
+        },
+        {
+          "code": "12000002",
+          "description": "algorithm param is missing"
+        },
+        {
+          "code": "12000003",
+          "description": "algorithm param is invalid"
+        },
+        {
+          "code": "12000004",
+          "description": "operating file failed"
+        },
+        {
+          "code": "12000005",
+          "description": "IPC communication failed"
+        },
+        {
+          "code": "12000006",
+          "description": "error occurred in crypto engine"
+        },
+        {
+          "code": "12000007",
+          "description": "this credential is already invalidated permanently"
+        },
+        {
+          "code": "12000008",
+          "description": "verify auth token failed"
+        },
+        {
+          "code": "12000009",
+          "description": "auth token is already timeout"
+        },
+        {
+          "code": "12000011",
+          "description": "queried entity does not exist"
+        },
+        {
+          "code": "12000012",
+          "description": "Device environment or input parameter abnormal"
+        },
+        {
+          "code": "12000014",
+          "description": "memory is insufficient"
+        },
+        {
+          "code": "12000018",
+          "description": "the group id specified by the access group tag is invalid"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "updateSession",
+      "返回值": "Promise<HuksReturnResult>",
+      "所属模块": "未知模块",
+      "功能描述": "Updates the key operation by segment. This API uses a promise to return the result. huks.initSession, huks.updateSession, and huks.finishSession must be used together. refined key access control is not performed. 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { number } handle - Handle for the updateSession operation.",
+        "@param { HuksOptions } options - Parameter set used for the updateSession operation.",
+        "@param { Uint8Array } token - Authentication token for refined key access control. If this parameter is left blank,",
+        "@returns { Promise<HuksReturnResult> } Promise used to return the updateSession operation result.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 801 - api is not supported",
+        "@throws { BusinessError } 12000001 - algorithm mode is not supported",
+        "@throws { BusinessError } 12000002 - algorithm param is missing",
+        "@throws { BusinessError } 12000003 - algorithm param is invalid",
+        "@throws { BusinessError } 12000004 - operating file failed",
+        "@throws { BusinessError } 12000005 - IPC communication failed",
+        "@throws { BusinessError } 12000006 - error occurred in crypto engine or Ukey driver",
+        "@throws { BusinessError } 12000007 - this credential is already invalidated permanently",
+        "@throws { BusinessError } 12000008 - verify auth token failed",
+        "@throws { BusinessError } 12000009 - auth token is already timeout",
+        "@throws { BusinessError } 12000011 - queried entity does not exist",
+        "@throws { BusinessError } 12000012 - Device environment or input parameter abnormal",
+        "@throws { BusinessError } 12000014 - memory is insufficient",
+        "@throws { BusinessError } 12000018 - the group id specified by the access group tag is invalid",
+        "@throws { BusinessError } 12000020 - the provider operation failed",
+        "@throws { BusinessError } 12000021 - the Ukey PIN is locked",
+        "@throws { BusinessError } 12000023 - the Ukey PIN not authenticated",
+        "@throws { BusinessError } 12000024 - the provider or Ukey is busy",
+        "@syscap SystemCapability.Security.Huks.Extension",
+        "@atomicservice",
+        "@since 23"
+      ],
+      "层级": 1,
+      "上级": "huks",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Security.Huks.Extension",
+      "parameters": [
+        {
+          "名称": "handle",
+          "类型": "number",
+          "必填": true,
+          "说明": "Handle for the updateSession operation."
+        },
+        {
+          "名称": "options",
+          "类型": "HuksOptions",
+          "必填": true,
+          "说明": "Parameter set used for the updateSession operation."
+        },
+        {
+          "名称": "token",
+          "类型": "Uint8Array",
+          "必填": true,
+          "说明": "Authentication token for refined key access control. If this parameter is left blank,"
+        }
+      ],
+      "return_description": "Promise used to return the updateSession operation result.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "801",
+          "description": "api is not supported"
+        },
+        {
+          "code": "12000001",
+          "description": "algorithm mode is not supported"
+        },
+        {
+          "code": "12000002",
+          "description": "algorithm param is missing"
+        },
+        {
+          "code": "12000003",
+          "description": "algorithm param is invalid"
+        },
+        {
+          "code": "12000004",
+          "description": "operating file failed"
+        },
+        {
+          "code": "12000005",
+          "description": "IPC communication failed"
+        },
+        {
+          "code": "12000006",
+          "description": "error occurred in crypto engine or Ukey driver"
+        },
+        {
+          "code": "12000007",
+          "description": "this credential is already invalidated permanently"
+        },
+        {
+          "code": "12000008",
+          "description": "verify auth token failed"
+        },
+        {
+          "code": "12000009",
+          "description": "auth token is already timeout"
+        },
+        {
+          "code": "12000011",
+          "description": "queried entity does not exist"
+        },
+        {
+          "code": "12000012",
+          "description": "Device environment or input parameter abnormal"
+        },
+        {
+          "code": "12000014",
+          "description": "memory is insufficient"
+        },
+        {
+          "code": "12000018",
+          "description": "the group id specified by the access group tag is invalid"
+        },
+        {
+          "code": "12000020",
+          "description": "the provider operation failed"
+        },
+        {
+          "code": "12000021",
+          "description": "the Ukey PIN is locked"
+        },
+        {
+          "code": "12000023",
+          "description": "the Ukey PIN not authenticated"
+        },
+        {
+          "code": "12000024",
+          "description": "the provider or Ukey is busy"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "finish",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Finish Operation.",
+      "注释信息": [
+        "@param { number } handle - indicates the handle of the init operation.",
+        "@param { HuksOptions } options - options indicates the properties of the finish operation.",
+        "@param { AsyncCallback<HuksResult> } callback - the callback of finish.",
+        "@syscap SystemCapability.Security.Huks.Extension",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.security.huks.finishSession"
+      ],
+      "层级": 1,
+      "上级": "huks",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Security.Huks.Extension",
+      "parameters": [
+        {
+          "名称": "handle",
+          "类型": "number",
+          "必填": true,
+          "说明": "indicates the handle of the init operation."
+        },
+        {
+          "名称": "options",
+          "类型": "HuksOptions",
+          "必填": true,
+          "说明": "options indicates the properties of the finish operation."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<HuksResult>",
+          "必填": true,
+          "说明": "the callback of finish."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "finish",
+      "返回值": "Promise<HuksResult>",
+      "所属模块": "未知模块",
+      "功能描述": "Finish Operation.",
+      "注释信息": [
+        "@param { number } handle - indicates the handle of the init operation.",
+        "@param { HuksOptions } options - options indicates the properties of the finish operation.",
+        "@returns { Promise<HuksResult> } the promise returned by the function.",
+        "@syscap SystemCapability.Security.Huks.Extension",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.security.huks.finishSession"
+      ],
+      "层级": 1,
+      "上级": "huks",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Security.Huks.Extension",
+      "parameters": [
+        {
+          "名称": "handle",
+          "类型": "number",
+          "必填": true,
+          "说明": "indicates the handle of the init operation."
+        },
+        {
+          "名称": "options",
+          "类型": "HuksOptions",
+          "必填": true,
+          "说明": "options indicates the properties of the finish operation."
+        }
+      ],
+      "return_description": "the promise returned by the function.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "finishSession",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Finishes the key operation. This API uses an asynchronous callback to return the result. huks.initSession, huks.updateSession, and huks.finishSession must be used together. 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { number } handle - Handle for the finishSession operation.",
+        "@param { HuksOptions } options - Parameter set used for the finishSession operation.",
+        "@param { AsyncCallback<HuksReturnResult> } callback - Callback used to return the finishSession operation result.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 801 - api is not supported",
+        "@throws { BusinessError } 12000001 - algorithm mode is not supported",
+        "@throws { BusinessError } 12000002 - algorithm param is missing",
+        "@throws { BusinessError } 12000003 - algorithm param is invalid",
+        "@throws { BusinessError } 12000004 - operating file failed",
+        "@throws { BusinessError } 12000005 - IPC communication failed",
+        "@throws { BusinessError } 12000006 - error occurred in crypto engine",
+        "@throws { BusinessError } 12000007 - this credential is already invalidated permanently",
+        "@throws { BusinessError } 12000008 - verify auth token failed",
+        "@throws { BusinessError } 12000009 - auth token is already timeout",
+        "@throws { BusinessError } 12000011 - queried entity does not exist",
+        "@throws { BusinessError } 12000012 - Device environment or input parameter abnormal",
+        "@throws { BusinessError } 12000014 - memory is insufficient",
+        "@throws { BusinessError } 12000017 - The key with same alias is already exist",
+        "@throws { BusinessError } 12000018 - the group id specified by the access group tag is invalid",
+        "@throws { BusinessError } 12000020 - the provider operation failed",
+        "@throws { BusinessError } 12000021 - the Ukey PIN is locked",
+        "@throws { BusinessError } 12000023 - the Ukey PIN not authenticated",
+        "@throws { BusinessError } 12000024 - the provider or Ukey is busy",
+        "@syscap SystemCapability.Security.Huks.Core",
+        "@atomicservice",
+        "@since 23"
+      ],
+      "层级": 1,
+      "上级": "huks",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Security.Huks.Core",
+      "parameters": [
+        {
+          "名称": "handle",
+          "类型": "number",
+          "必填": true,
+          "说明": "Handle for the finishSession operation."
+        },
+        {
+          "名称": "options",
+          "类型": "HuksOptions",
+          "必填": true,
+          "说明": "Parameter set used for the finishSession operation."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<HuksReturnResult>",
+          "必填": true,
+          "说明": "Callback used to return the finishSession operation result."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "801",
+          "description": "api is not supported"
+        },
+        {
+          "code": "12000001",
+          "description": "algorithm mode is not supported"
+        },
+        {
+          "code": "12000002",
+          "description": "algorithm param is missing"
+        },
+        {
+          "code": "12000003",
+          "description": "algorithm param is invalid"
+        },
+        {
+          "code": "12000004",
+          "description": "operating file failed"
+        },
+        {
+          "code": "12000005",
+          "description": "IPC communication failed"
+        },
+        {
+          "code": "12000006",
+          "description": "error occurred in crypto engine"
+        },
+        {
+          "code": "12000007",
+          "description": "this credential is already invalidated permanently"
+        },
+        {
+          "code": "12000008",
+          "description": "verify auth token failed"
+        },
+        {
+          "code": "12000009",
+          "description": "auth token is already timeout"
+        },
+        {
+          "code": "12000011",
+          "description": "queried entity does not exist"
+        },
+        {
+          "code": "12000012",
+          "description": "Device environment or input parameter abnormal"
+        },
+        {
+          "code": "12000014",
+          "description": "memory is insufficient"
+        },
+        {
+          "code": "12000017",
+          "description": "The key with same alias is already exist"
+        },
+        {
+          "code": "12000018",
+          "description": "the group id specified by the access group tag is invalid"
+        },
+        {
+          "code": "12000020",
+          "description": "the provider operation failed"
+        },
+        {
+          "code": "12000021",
+          "description": "the Ukey PIN is locked"
+        },
+        {
+          "code": "12000023",
+          "description": "the Ukey PIN not authenticated"
+        },
+        {
+          "code": "12000024",
+          "description": "the provider or Ukey is busy"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "finishSession",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Finishes the key operation. This API uses an asynchronous callback to return the result. huks.initSession, huks.updateSession, and huks.finishSession must be used together. 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { number } handle - Handle for the finishSession operation.",
+        "@param { HuksOptions } options - Parameter set used for the finishSession operation.",
+        "@param { Uint8Array } token - Authentication token for refined key access control.",
+        "@param { AsyncCallback<HuksReturnResult> } callback - Callback used to return the finishSession operation result.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 801 - api is not supported",
+        "@throws { BusinessError } 12000001 - algorithm mode is not supported",
+        "@throws { BusinessError } 12000002 - algorithm param is missing",
+        "@throws { BusinessError } 12000003 - algorithm param is invalid",
+        "@throws { BusinessError } 12000004 - operating file failed",
+        "@throws { BusinessError } 12000005 - IPC communication failed",
+        "@throws { BusinessError } 12000006 - error occurred in crypto engine",
+        "@throws { BusinessError } 12000007 - this credential is already invalidated permanently",
+        "@throws { BusinessError } 12000008 - verify auth token failed",
+        "@throws { BusinessError } 12000009 - auth token is already timeout",
+        "@throws { BusinessError } 12000011 - queried entity does not exist",
+        "@throws { BusinessError } 12000012 - Device environment or input parameter abnormal",
+        "@throws { BusinessError } 12000014 - memory is insufficient",
+        "@throws { BusinessError } 12000017 - The key with same alias is already exist",
+        "@throws { BusinessError } 12000018 - the group id specified by the access group tag is invalid",
+        "@syscap SystemCapability.Security.Huks.Extension",
+        "@atomicservice",
+        "@since 23"
+      ],
+      "层级": 1,
+      "上级": "huks",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Security.Huks.Extension",
+      "parameters": [
+        {
+          "名称": "handle",
+          "类型": "number",
+          "必填": true,
+          "说明": "Handle for the finishSession operation."
+        },
+        {
+          "名称": "options",
+          "类型": "HuksOptions",
+          "必填": true,
+          "说明": "Parameter set used for the finishSession operation."
+        },
+        {
+          "名称": "token",
+          "类型": "Uint8Array",
+          "必填": true,
+          "说明": "Authentication token for refined key access control."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<HuksReturnResult>",
+          "必填": true,
+          "说明": "Callback used to return the finishSession operation result."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "801",
+          "description": "api is not supported"
+        },
+        {
+          "code": "12000001",
+          "description": "algorithm mode is not supported"
+        },
+        {
+          "code": "12000002",
+          "description": "algorithm param is missing"
+        },
+        {
+          "code": "12000003",
+          "description": "algorithm param is invalid"
+        },
+        {
+          "code": "12000004",
+          "description": "operating file failed"
+        },
+        {
+          "code": "12000005",
+          "description": "IPC communication failed"
+        },
+        {
+          "code": "12000006",
+          "description": "error occurred in crypto engine"
+        },
+        {
+          "code": "12000007",
+          "description": "this credential is already invalidated permanently"
+        },
+        {
+          "code": "12000008",
+          "description": "verify auth token failed"
+        },
+        {
+          "code": "12000009",
+          "description": "auth token is already timeout"
+        },
+        {
+          "code": "12000011",
+          "description": "queried entity does not exist"
+        },
+        {
+          "code": "12000012",
+          "description": "Device environment or input parameter abnormal"
+        },
+        {
+          "code": "12000014",
+          "description": "memory is insufficient"
+        },
+        {
+          "code": "12000017",
+          "description": "The key with same alias is already exist"
+        },
+        {
+          "code": "12000018",
+          "description": "the group id specified by the access group tag is invalid"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "finishSession",
+      "返回值": "Promise<HuksReturnResult>",
+      "所属模块": "未知模块",
+      "功能描述": "Finishes the key operation. This API uses a promise to return the result. huks.initSession, huks.updateSession, and huks.finishSession must be used together. refined key access control is not performed. 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { number } handle - Handle for the finishSession operation.",
+        "@param { HuksOptions } options - Parameter set used for the finishSession operation.",
+        "@param { Uint8Array } token - Authentication token for refined key access control. If this parameter is left blank,",
+        "@returns { Promise<HuksReturnResult> } Promise used to return the result.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 801 - api is not supported",
+        "@throws { BusinessError } 12000001 - algorithm mode is not supported",
+        "@throws { BusinessError } 12000002 - algorithm param is missing",
+        "@throws { BusinessError } 12000003 - algorithm param is invalid",
+        "@throws { BusinessError } 12000004 - operating file failed",
+        "@throws { BusinessError } 12000005 - IPC communication failed",
+        "@throws { BusinessError } 12000006 - error occurred in crypto engine",
+        "@throws { BusinessError } 12000007 - this credential is already invalidated permanently",
+        "@throws { BusinessError } 12000008 - verify auth token failed",
+        "@throws { BusinessError } 12000009 - auth token is already timeout",
+        "@throws { BusinessError } 12000011 - queried entity does not exist",
+        "@throws { BusinessError } 12000012 - Device environment or input parameter abnormal",
+        "@throws { BusinessError } 12000014 - memory is insufficient",
+        "@throws { BusinessError } 12000017 - The key with same alias is already exist",
+        "@throws { BusinessError } 12000018 - the group id specified by the access group tag is invalid",
+        "@throws { BusinessError } 12000020 - the provider operation failed",
+        "@throws { BusinessError } 12000021 - the Ukey PIN is locked",
+        "@throws { BusinessError } 12000023 - the Ukey PIN not authenticated",
+        "@throws { BusinessError } 12000024 - the provider or Ukey is busy",
+        "@syscap SystemCapability.Security.Huks.Extension",
+        "@atomicservice",
+        "@since 23"
+      ],
+      "层级": 1,
+      "上级": "huks",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Security.Huks.Extension",
+      "parameters": [
+        {
+          "名称": "handle",
+          "类型": "number",
+          "必填": true,
+          "说明": "Handle for the finishSession operation."
+        },
+        {
+          "名称": "options",
+          "类型": "HuksOptions",
+          "必填": true,
+          "说明": "Parameter set used for the finishSession operation."
+        },
+        {
+          "名称": "token",
+          "类型": "Uint8Array",
+          "必填": true,
+          "说明": "Authentication token for refined key access control. If this parameter is left blank,"
+        }
+      ],
+      "return_description": "Promise used to return the result.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "801",
+          "description": "api is not supported"
+        },
+        {
+          "code": "12000001",
+          "description": "algorithm mode is not supported"
+        },
+        {
+          "code": "12000002",
+          "description": "algorithm param is missing"
+        },
+        {
+          "code": "12000003",
+          "description": "algorithm param is invalid"
+        },
+        {
+          "code": "12000004",
+          "description": "operating file failed"
+        },
+        {
+          "code": "12000005",
+          "description": "IPC communication failed"
+        },
+        {
+          "code": "12000006",
+          "description": "error occurred in crypto engine"
+        },
+        {
+          "code": "12000007",
+          "description": "this credential is already invalidated permanently"
+        },
+        {
+          "code": "12000008",
+          "description": "verify auth token failed"
+        },
+        {
+          "code": "12000009",
+          "description": "auth token is already timeout"
+        },
+        {
+          "code": "12000011",
+          "description": "queried entity does not exist"
+        },
+        {
+          "code": "12000012",
+          "description": "Device environment or input parameter abnormal"
+        },
+        {
+          "code": "12000014",
+          "description": "memory is insufficient"
+        },
+        {
+          "code": "12000017",
+          "description": "The key with same alias is already exist"
+        },
+        {
+          "code": "12000018",
+          "description": "the group id specified by the access group tag is invalid"
+        },
+        {
+          "code": "12000020",
+          "description": "the provider operation failed"
+        },
+        {
+          "code": "12000021",
+          "description": "the Ukey PIN is locked"
+        },
+        {
+          "code": "12000023",
+          "description": "the Ukey PIN not authenticated"
+        },
+        {
+          "code": "12000024",
+          "description": "the provider or Ukey is busy"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "abort",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Abort Operation.",
+      "注释信息": [
+        "@param { number } handle - indicates the handle of the init operation.",
+        "@param { HuksOptions } options - options indicates the properties of the abort operation.",
+        "@param { AsyncCallback<HuksResult> } callback - the callback of finishSession.",
+        "@syscap SystemCapability.Security.Huks.Extension",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.security.huks.abortSession"
+      ],
+      "层级": 1,
+      "上级": "huks",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Security.Huks.Extension",
+      "parameters": [
+        {
+          "名称": "handle",
+          "类型": "number",
+          "必填": true,
+          "说明": "indicates the handle of the init operation."
+        },
+        {
+          "名称": "options",
+          "类型": "HuksOptions",
+          "必填": true,
+          "说明": "options indicates the properties of the abort operation."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<HuksResult>",
+          "必填": true,
+          "说明": "the callback of finishSession."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "abort",
+      "返回值": "Promise<HuksResult>",
+      "所属模块": "未知模块",
+      "功能描述": "Abort Operation.",
+      "注释信息": [
+        "@param { number } handle - indicates the handle of the init operation.",
+        "@param { HuksOptions } options - options indicates the properties of the abort operation.",
+        "@returns { Promise<HuksResult> } the promise returned by the function.",
+        "@syscap SystemCapability.Security.Huks.Extension",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.security.huks.abortSession"
+      ],
+      "层级": 1,
+      "上级": "huks",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Security.Huks.Extension",
+      "parameters": [
+        {
+          "名称": "handle",
+          "类型": "number",
+          "必填": true,
+          "说明": "indicates the handle of the init operation."
+        },
+        {
+          "名称": "options",
+          "类型": "HuksOptions",
+          "必填": true,
+          "说明": "options indicates the properties of the abort operation."
+        }
+      ],
+      "return_description": "the promise returned by the function.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "abortSession",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Aborts a key operation. This API uses an asynchronous callback to return the result. 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { number } handle - Handle for the abortSession operation.",
+        "@param { HuksOptions } options - Parameter set used for the abortSession operation.",
+        "@param { AsyncCallback<void> } callback - Callback used to return the abortSession operation result.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 801 - api is not supported",
+        "@throws { BusinessError } 12000004 - operating file failed",
+        "@throws { BusinessError } 12000005 - IPC communication failed",
+        "@throws { BusinessError } 12000006 - error occurred in crypto engine or Ukey driver",
+        "@throws { BusinessError } 12000012 - Device environment or input parameter abnormal",
+        "@throws { BusinessError } 12000014 - memory is insufficient",
+        "@throws { BusinessError } 12000018 - the group id specified by the access group tag is invalid",
+        "@throws { BusinessError } 12000020 - the provider operation failed",
+        "@throws { BusinessError } 12000024 - the provider or Ukey is busy",
+        "@syscap SystemCapability.Security.Huks.Core",
+        "@atomicservice",
+        "@since 23"
+      ],
+      "层级": 1,
+      "上级": "huks",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Security.Huks.Core",
+      "parameters": [
+        {
+          "名称": "handle",
+          "类型": "number",
+          "必填": true,
+          "说明": "Handle for the abortSession operation."
+        },
+        {
+          "名称": "options",
+          "类型": "HuksOptions",
+          "必填": true,
+          "说明": "Parameter set used for the abortSession operation."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "Callback used to return the abortSession operation result."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "801",
+          "description": "api is not supported"
+        },
+        {
+          "code": "12000004",
+          "description": "operating file failed"
+        },
+        {
+          "code": "12000005",
+          "description": "IPC communication failed"
+        },
+        {
+          "code": "12000006",
+          "description": "error occurred in crypto engine or Ukey driver"
+        },
+        {
+          "code": "12000012",
+          "description": "Device environment or input parameter abnormal"
+        },
+        {
+          "code": "12000014",
+          "description": "memory is insufficient"
+        },
+        {
+          "code": "12000018",
+          "description": "the group id specified by the access group tag is invalid"
+        },
+        {
+          "code": "12000020",
+          "description": "the provider operation failed"
+        },
+        {
+          "code": "12000024",
+          "description": "the provider or Ukey is busy"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "所属模块": "未知模块",
+      "功能描述": "Aborts a key operation. This API uses a promise to return the result. 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed. Aborts a key operation. This API uses a promise to return the result. 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { number } handle - Handle for the abortSession operation.",
+        "@param { HuksOptions } options - Parameter set used for the abortSession operation.",
+        "@returns { Promise<void> } Promise used to return the abortSession operation result.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 801 - api is not supported",
+        "@throws { BusinessError } 12000004 - operating file failed",
+        "@throws { BusinessError } 12000005 - IPC communication failed",
+        "@throws { BusinessError } 12000006 - error occurred in crypto engine or Ukey driver",
+        "@throws { BusinessError } 12000012 - Device environment or input parameter abnormal",
+        "@throws { BusinessError } 12000014 - memory is insufficient",
+        "@throws { BusinessError } 12000020 - the provider operation failed",
+        "@throws { BusinessError } 12000024 - the provider or Ukey is busy",
+        "@syscap SystemCapability.Security.Huks.Extension",
+        "@atomicservice",
+        "@since 22",
+        "@param { number } handle - Handle for the abortSession operation.",
+        "@param { HuksOptions } options - Parameter set used for the abortSession operation.",
+        "@returns { Promise<void> } Promise used to return the abortSession operation result.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 801 - api is not supported",
+        "@throws { BusinessError } 12000004 - operating file failed",
+        "@throws { BusinessError } 12000005 - IPC communication failed",
+        "@throws { BusinessError } 12000006 - error occurred in crypto engine or Ukey driver",
+        "@throws { BusinessError } 12000012 - Device environment or input parameter abnormal",
+        "@throws { BusinessError } 12000014 - memory is insufficient",
+        "@throws { BusinessError } 12000018 - the group id specified by the access group tag is invalid",
+        "@throws { BusinessError } 12000020 - the provider operation failed",
+        "@throws { BusinessError } 12000024 - the provider or Ukey is busy",
+        "@syscap SystemCapability.Security.Huks.Extension",
+        "@atomicservice",
+        "@since 23"
+      ],
+      "层级": 1,
+      "上级": "huks",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Security.Huks.Extension",
+      "parameters": [],
+      "return_description": "Promise used to return the abortSession operation result.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "801",
+          "description": "api is not supported"
+        },
+        {
+          "code": "12000004",
+          "description": "operating file failed"
+        },
+        {
+          "code": "12000005",
+          "description": "IPC communication failed"
+        },
+        {
+          "code": "12000006",
+          "description": "error occurred in crypto engine or Ukey driver"
+        },
+        {
+          "code": "12000012",
+          "description": "Device environment or input parameter abnormal"
+        },
+        {
+          "code": "12000014",
+          "description": "memory is insufficient"
+        },
+        {
+          "code": "12000020",
+          "description": "the provider operation failed"
+        },
+        {
+          "code": "12000024",
+          "description": "the provider or Ukey is busy"
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "801",
+          "description": "api is not supported"
+        },
+        {
+          "code": "12000004",
+          "description": "operating file failed"
+        },
+        {
+          "code": "12000005",
+          "description": "IPC communication failed"
+        },
+        {
+          "code": "12000006",
+          "description": "error occurred in crypto engine or Ukey driver"
+        },
+        {
+          "code": "12000012",
+          "description": "Device environment or input parameter abnormal"
+        },
+        {
+          "code": "12000014",
+          "description": "memory is insufficient"
+        },
+        {
+          "code": "12000018",
+          "description": "the group id specified by the access group tag is invalid"
+        },
+        {
+          "code": "12000020",
+          "description": "the provider operation failed"
+        },
+        {
+          "code": "12000024",
+          "description": "the provider or Ukey is busy"
+        }
+      ],
+      "版本": "API"
+    }
+  ]
+}

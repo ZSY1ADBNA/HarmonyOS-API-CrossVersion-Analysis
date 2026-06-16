@@ -1,0 +1,854 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.DistributedServiceKit",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "namespace",
+      "名称": "proxyChannelManager",
+      "所属模块": "@kit.DistributedServiceKit",
+      "功能描述": "The proxy channel management module provides functions for opening and closing proxy channels, sending data, as well as functions for registering and unregistering, receiving data, and receiving channel status callback functions.",
+      "注释信息": [
+        "@namespace proxyChannelManager",
+        "@syscap SystemCapability.DistributedSched.AppCollaboration",
+        "@stagemodelonly",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "@kit.DistributedServiceKit",
+      "since_version": "20",
+      "system_capability": "SystemCapability.DistributedSched.AppCollaboration",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "openProxyChannel",
+      "返回值": "Promise<number>",
+      "所属模块": "未知模块",
+      "功能描述": "According to the parameters passed by the business, open the proxy channel and return the channel identifier.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BLUETOOTH",
+        "@param { ChannelInfo } channelInfo -  Parameters for creating proxy channel",
+        "@returns { Promise<number> } The Promise returned by this function.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 32390001 - BR is disabled.",
+        "@throws { BusinessError } 32390002 - Device not paired.",
+        "@throws { BusinessError } 32390006 - Parameter error.",
+        "@throws { BusinessError } 32390100 - Internal error.",
+        "@throws { BusinessError } 32390101 - Call is restricted.",
+        "@throws { BusinessError } 32390102 - Operation failed or Connection timed out.",
+        "@syscap SystemCapability.DistributedSched.AppCollaboration",
+        "@stagemodelonly",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "proxyChannelManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.DistributedSched.AppCollaboration",
+      "parameters": [
+        {
+          "名称": "channelInfo",
+          "类型": "ChannelInfo",
+          "必填": true,
+          "说明": "Parameters for creating proxy channel"
+        }
+      ],
+      "return_description": "The Promise returned by this function.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "32390001",
+          "description": "BR is disabled."
+        },
+        {
+          "code": "32390002",
+          "description": "Device not paired."
+        },
+        {
+          "code": "32390006",
+          "description": "Parameter error."
+        },
+        {
+          "code": "32390100",
+          "description": "Internal error."
+        },
+        {
+          "code": "32390101",
+          "description": "Call is restricted."
+        },
+        {
+          "code": "32390102",
+          "description": "Operation failed or Connection timed out."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "closeProxyChannel",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Close the proxy channel.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BLUETOOTH",
+        "@param { number } channelId - Indicates the unique channelId.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 32390004 - ChannelId is invalid or unavailable.",
+        "@throws { BusinessError } 32390006 - Parameter error.",
+        "@throws { BusinessError } 32390100 - Internal error.",
+        "@throws { BusinessError } 32390101 - Call is restricted.",
+        "@syscap SystemCapability.DistributedSched.AppCollaboration",
+        "@stagemodelonly",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "proxyChannelManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.DistributedSched.AppCollaboration",
+      "parameters": [
+        {
+          "名称": "channelId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the unique channelId."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "32390004",
+          "description": "ChannelId is invalid or unavailable."
+        },
+        {
+          "code": "32390006",
+          "description": "Parameter error."
+        },
+        {
+          "code": "32390100",
+          "description": "Internal error."
+        },
+        {
+          "code": "32390101",
+          "description": "Call is restricted."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "sendData",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Send data to the peer device through proxy channel identification.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BLUETOOTH",
+        "@param { number } channelId - Indicates the the unique channelId.",
+        "@param { ArrayBuffer } data - Indicatesthe message data to send.",
+        "@returns { Promise<void> } The promise returned by the function.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 32390004 - ChannelId is invalid or unavailable.",
+        "@throws { BusinessError } 32390006 - Parameter error.",
+        "@throws { BusinessError } 32390100 - Internal error.",
+        "@throws { BusinessError } 32390101 - Call is restricted.",
+        "@throws { BusinessError } 32390103 - Data too long.",
+        "@throws { BusinessError } 32390104 - Send failed.",
+        "@syscap SystemCapability.DistributedSched.AppCollaboration",
+        "@stagemodelonly",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "proxyChannelManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.DistributedSched.AppCollaboration",
+      "parameters": [
+        {
+          "名称": "channelId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the the unique channelId."
+        },
+        {
+          "名称": "data",
+          "类型": "ArrayBuffer",
+          "必填": true,
+          "说明": "Indicatesthe message data to send."
+        }
+      ],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "32390004",
+          "description": "ChannelId is invalid or unavailable."
+        },
+        {
+          "code": "32390006",
+          "description": "Parameter error."
+        },
+        {
+          "code": "32390100",
+          "description": "Internal error."
+        },
+        {
+          "code": "32390101",
+          "description": "Call is restricted."
+        },
+        {
+          "code": "32390103",
+          "description": "Data too long."
+        },
+        {
+          "code": "32390104",
+          "description": "Send failed."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Register to receive data events.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BLUETOOTH",
+        "@param { 'receiveData' } type - Registration Type, 'receiveData'.",
+        "@param { number } channelId - Indicates the unique channelId.",
+        "@param { Callback<DataInfo> } callback - Used to handle ('receiveData') command.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 32390004 - ChannelId is invalid or unavailable.",
+        "@throws { BusinessError } 32390006 - Parameter error.",
+        "@throws { BusinessError } 32390100 - Internal error.",
+        "@throws { BusinessError } 32390101 - Call is restricted.",
+        "@syscap SystemCapability.DistributedSched.AppCollaboration",
+        "@stagemodelonly",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "proxyChannelManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.DistributedSched.AppCollaboration",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'receiveData'",
+          "必填": true,
+          "说明": "Registration Type, 'receiveData'."
+        },
+        {
+          "名称": "channelId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the unique channelId."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<DataInfo>",
+          "必填": true,
+          "说明": "Used to handle ('receiveData') command."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "32390004",
+          "description": "ChannelId is invalid or unavailable."
+        },
+        {
+          "code": "32390006",
+          "description": "Parameter error."
+        },
+        {
+          "code": "32390100",
+          "description": "Internal error."
+        },
+        {
+          "code": "32390101",
+          "description": "Call is restricted."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unregister and receive data events.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BLUETOOTH",
+        "@param { 'receiveData' } type - Registration Type, 'receiveData'.",
+        "@param { number } channelId - Indicates the unique channelId.",
+        "@param { Callback<DataInfo> } [callback] - Used to handle ('receiveData') command.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 32390004 - ChannelId is invalid or unavailable.",
+        "@throws { BusinessError } 32390006 - Parameter error.",
+        "@throws { BusinessError } 32390100 - Internal error.",
+        "@throws { BusinessError } 32390101 - Call is restricted.",
+        "@syscap SystemCapability.DistributedSched.AppCollaboration",
+        "@stagemodelonly",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "proxyChannelManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.DistributedSched.AppCollaboration",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'receiveData'",
+          "必填": true,
+          "说明": "Registration Type, 'receiveData'."
+        },
+        {
+          "名称": "channelId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the unique channelId."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "Callback<DataInfo> } [callback] - Used to handle ('receiveData') command."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "32390004",
+          "description": "ChannelId is invalid or unavailable."
+        },
+        {
+          "code": "32390006",
+          "description": "Parameter error."
+        },
+        {
+          "code": "32390100",
+          "description": "Internal error."
+        },
+        {
+          "code": "32390101",
+          "description": "Call is restricted."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Register to receive channel status events.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BLUETOOTH",
+        "@param { 'channelStateChange' } type - Registration Type, 'channelStateChange'.",
+        "@param { number } channelId - Indicates the unique channelId.",
+        "@param { Callback<ChannelStateInfo> } callback - Used to handle ('channelStateChange') command.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 32390004 - ChannelId is invalid or unavailable.",
+        "@throws { BusinessError } 32390006 - Parameter error.",
+        "@throws { BusinessError } 32390100 - Internal error.",
+        "@throws { BusinessError } 32390101 - Call is restricted.",
+        "@syscap SystemCapability.DistributedSched.AppCollaboration",
+        "@stagemodelonly",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "proxyChannelManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.DistributedSched.AppCollaboration",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'channelStateChange'",
+          "必填": true,
+          "说明": "Registration Type, 'channelStateChange'."
+        },
+        {
+          "名称": "channelId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the unique channelId."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<ChannelStateInfo>",
+          "必填": true,
+          "说明": "Used to handle ('channelStateChange') command."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "32390004",
+          "description": "ChannelId is invalid or unavailable."
+        },
+        {
+          "code": "32390006",
+          "description": "Parameter error."
+        },
+        {
+          "code": "32390100",
+          "description": "Internal error."
+        },
+        {
+          "code": "32390101",
+          "description": "Call is restricted."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unregister the receiving channel status event.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BLUETOOTH",
+        "@param { 'channelStateChange' } type - Registration Type, 'channelStateChange'.",
+        "@param { number } channelId - Indicates the unique channelId.",
+        "@param { Callback<ChannelStateInfo> } [callback] - Used to handle ('channelStateChange') command.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 32390004 - ChannelId is invalid or unavailable.",
+        "@throws { BusinessError } 32390006 - Parameter error.",
+        "@throws { BusinessError } 32390100 - Internal error.",
+        "@throws { BusinessError } 32390101 - Call is restricted.",
+        "@syscap SystemCapability.DistributedSched.AppCollaboration",
+        "@stagemodelonly",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "proxyChannelManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.DistributedSched.AppCollaboration",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'channelStateChange'",
+          "必填": true,
+          "说明": "Registration Type, 'channelStateChange'."
+        },
+        {
+          "名称": "channelId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the unique channelId."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "Callback<ChannelStateInfo> } [callback] - Used to handle ('channelStateChange') command."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "32390004",
+          "description": "ChannelId is invalid or unavailable."
+        },
+        {
+          "code": "32390006",
+          "description": "Parameter error."
+        },
+        {
+          "code": "32390100",
+          "description": "Internal error."
+        },
+        {
+          "code": "32390101",
+          "description": "Call is restricted."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "DataInfo",
+      "所属模块": "未知模块",
+      "功能描述": "Parameters for DataInfo.",
+      "注释信息": [
+        "@interface DataInfo",
+        "@syscap SystemCapability.DistributedSched.AppCollaboration",
+        "@stagemodelonly",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "proxyChannelManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.DistributedSched.AppCollaboration",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "channelId",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Data channel ID.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.DistributedSched.AppCollaboration",
+        "@stagemodelonly",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "DataInfo",
+      "since_version": "20",
+      "system_capability": "SystemCapability.DistributedSched.AppCollaboration",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "data",
+      "属性类型": "ArrayBuffer",
+      "所属模块": "未知模块",
+      "功能描述": "Received Data.",
+      "注释信息": [
+        "@type { ArrayBuffer }",
+        "@syscap SystemCapability.DistributedSched.AppCollaboration",
+        "@stagemodelonly",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "DataInfo",
+      "since_version": "20",
+      "system_capability": "SystemCapability.DistributedSched.AppCollaboration",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "LinkType",
+      "所属模块": "未知模块",
+      "功能描述": "Link type of proxy channel.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.DistributedSched.AppCollaboration",
+        "@stagemodelonly",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "proxyChannelManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.DistributedSched.AppCollaboration",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "LINK_BR",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "Link type is BR.",
+      "注释信息": [
+        "@syscap SystemCapability.DistributedSched.AppCollaboration",
+        "@stagemodelonly",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "LinkType",
+      "since_version": "20",
+      "system_capability": "SystemCapability.DistributedSched.AppCollaboration",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "ChannelInfo",
+      "所属模块": "未知模块",
+      "功能描述": "Parameters for creating proxy channel.",
+      "注释信息": [
+        "@interface ChannelInfo",
+        "@syscap SystemCapability.DistributedSched.AppCollaboration",
+        "@stagemodelonly",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "proxyChannelManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.DistributedSched.AppCollaboration",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "linkType",
+      "属性类型": "LinkType",
+      "所属模块": "未知模块",
+      "功能描述": "Link type of proxy channel.",
+      "注释信息": [
+        "@type { LinkType }",
+        "@syscap SystemCapability.DistributedSched.AppCollaboration",
+        "@stagemodelonly",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "ChannelInfo",
+      "since_version": "20",
+      "system_capability": "SystemCapability.DistributedSched.AppCollaboration",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "peerDevAddr",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "The address of the peer device that needs to be connected.",
+      "注释信息": [
+        "@type { string }",
+        "@syscap SystemCapability.DistributedSched.AppCollaboration",
+        "@stagemodelonly",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "ChannelInfo",
+      "since_version": "20",
+      "system_capability": "SystemCapability.DistributedSched.AppCollaboration",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "peerUuid",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "The profile UUID of the peer device that needs to be connected.",
+      "注释信息": [
+        "@type { string }",
+        "@syscap SystemCapability.DistributedSched.AppCollaboration",
+        "@stagemodelonly",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "ChannelInfo",
+      "since_version": "20",
+      "system_capability": "SystemCapability.DistributedSched.AppCollaboration",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "ChannelState",
+      "所属模块": "未知模块",
+      "功能描述": "Channel status of proxy channel.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.DistributedSched.AppCollaboration",
+        "@stagemodelonly",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "proxyChannelManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.DistributedSched.AppCollaboration",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CHANNEL_WAIT_RESUME",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "Proxy channel disconnected, if the channel is not closed by business, it can recovery.",
+      "注释信息": [
+        "@syscap SystemCapability.DistributedSched.AppCollaboration",
+        "@stagemodelonly",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "ChannelState",
+      "since_version": "20",
+      "system_capability": "SystemCapability.DistributedSched.AppCollaboration",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CHANNEL_RESUME",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Proxy channel recovery.",
+      "注释信息": [
+        "@syscap SystemCapability.DistributedSched.AppCollaboration",
+        "@stagemodelonly",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "ChannelState",
+      "since_version": "20",
+      "system_capability": "SystemCapability.DistributedSched.AppCollaboration",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CHANNEL_EXCEPTION_SOFTWARE_FAILED",
+      "值": "2",
+      "所属模块": "未知模块",
+      "功能描述": "Software failure causes channel exception.",
+      "注释信息": [
+        "@syscap SystemCapability.DistributedSched.AppCollaboration",
+        "@stagemodelonly",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "ChannelState",
+      "since_version": "20",
+      "system_capability": "SystemCapability.DistributedSched.AppCollaboration",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CHANNEL_BR_NO_PAIRED",
+      "值": "3",
+      "所属模块": "未知模块",
+      "功能描述": "BR unpairing causes proxy channel abnormal.",
+      "注释信息": [
+        "@syscap SystemCapability.DistributedSched.AppCollaboration",
+        "@stagemodelonly",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "ChannelState",
+      "since_version": "20",
+      "system_capability": "SystemCapability.DistributedSched.AppCollaboration",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "ChannelStateInfo",
+      "所属模块": "未知模块",
+      "功能描述": "Channel status information of proxy channel.",
+      "注释信息": [
+        "@interface ChannelStateInfo",
+        "@syscap SystemCapability.DistributedSched.AppCollaboration",
+        "@stagemodelonly",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "proxyChannelManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.DistributedSched.AppCollaboration",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "channelId",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "channel ID.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.DistributedSched.AppCollaboration",
+        "@stagemodelonly",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "ChannelStateInfo",
+      "since_version": "20",
+      "system_capability": "SystemCapability.DistributedSched.AppCollaboration",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "state",
+      "属性类型": "ChannelState",
+      "所属模块": "未知模块",
+      "功能描述": "channel status.",
+      "注释信息": [
+        "@type { ChannelState }",
+        "@syscap SystemCapability.DistributedSched.AppCollaboration",
+        "@stagemodelonly",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "ChannelStateInfo",
+      "since_version": "20",
+      "system_capability": "SystemCapability.DistributedSched.AppCollaboration",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    }
+  ]
+}

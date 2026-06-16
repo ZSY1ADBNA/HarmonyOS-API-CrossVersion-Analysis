@@ -1,0 +1,273 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.ArkGraphics2D",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "namespace",
+      "名称": "displaySync",
+      "所属模块": "@kit.ArkGraphics2D",
+      "功能描述": "Provides functions of applying an independent draw frame rate used for drawing the UI.",
+      "注释信息": [
+        "@namespace displaySync",
+        "@syscap SystemCapability.ArkUI.ArkUI.Full",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "@kit.ArkGraphics2D",
+      "since_version": "11",
+      "system_capability": "SystemCapability.ArkUI.ArkUI.Full",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "IntervalInfo",
+      "所属模块": "未知模块",
+      "功能描述": "Provides the IntervalInfo interface, which includes timestamp and targetTimestamp.",
+      "注释信息": [
+        "@interface IntervalInfo",
+        "@syscap SystemCapability.ArkUI.ArkUI.Full",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "displaySync",
+      "since_version": "11",
+      "system_capability": "SystemCapability.ArkUI.ArkUI.Full",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "timestamp",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "The timestamp means the current drawing frame time.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.ArkUI.ArkUI.Full",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "IntervalInfo",
+      "since_version": "11",
+      "system_capability": "SystemCapability.ArkUI.ArkUI.Full",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "targetTimestamp",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "The timestamp means the next drawing frame time.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.ArkUI.ArkUI.Full",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "IntervalInfo",
+      "since_version": "11",
+      "system_capability": "SystemCapability.ArkUI.ArkUI.Full",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "DisplaySync",
+      "所属模块": "未知模块",
+      "功能描述": "Provides the DisplaySync interface, which can be used to control the frequency of triggering callback function.",
+      "注释信息": [
+        "@interface DisplaySync",
+        "@syscap SystemCapability.ArkUI.ArkUI.Full",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "displaySync",
+      "since_version": "11",
+      "system_capability": "SystemCapability.ArkUI.ArkUI.Full",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "setExpectedFrameRateRange",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "The expected frame rate of dynamical rate range. If the function isn't be called. The DisplaySync's minimum/maximum/expected rate default value is 60. <br> 1. Mandatory parameters are left unspecified. <br> 2. Incorrect parameters types. <br> 3. Parameter verification failed. or check ExpectedFrameRateRange if valid.",
+      "注释信息": [
+        "@param { ExpectedFrameRateRange } rateRange - Indicates ExpectedFrameRateRange.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@syscap SystemCapability.ArkUI.ArkUI.Full",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "DisplaySync",
+      "since_version": "11",
+      "system_capability": "SystemCapability.ArkUI.ArkUI.Full",
+      "parameters": [
+        {
+          "名称": "rateRange",
+          "类型": "ExpectedFrameRateRange",
+          "必填": true,
+          "说明": "Indicates ExpectedFrameRateRange."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Registers a callback with the corresponding query condition by using the handle. This callback is triggered when DisplaySync dispatching.",
+      "注释信息": [
+        "@param { 'frame' } type - The type of event to remove the listener for. Must be 'frame'.",
+        "@param { Callback<IntervalInfo> } callback - The callback function to be called when DisplaySync dispatching.",
+        "@syscap SystemCapability.ArkUI.ArkUI.Full",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "DisplaySync",
+      "since_version": "11",
+      "system_capability": "SystemCapability.ArkUI.ArkUI.Full",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'frame'",
+          "必填": true,
+          "说明": "The type of event to remove the listener for. Must be 'frame'."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<IntervalInfo>",
+          "必填": true,
+          "说明": "The callback function to be called when DisplaySync dispatching."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Deregisters a callback with the corresponding query condition by using the handle. This callback is triggered when DisplaySync dispatching. If not provided, all callbacks for the given event type will be removed.",
+      "注释信息": [
+        "@param { 'frame' } type - The type of event to remove the listener for. Must be 'frame'.",
+        "@param { Callback<IntervalInfo> } [callback] - The callback function to remove.",
+        "@syscap SystemCapability.ArkUI.ArkUI.Full",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "DisplaySync",
+      "since_version": "11",
+      "system_capability": "SystemCapability.ArkUI.ArkUI.Full",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'frame'",
+          "必填": true,
+          "说明": "The type of event to remove the listener for. Must be 'frame'."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "Callback<IntervalInfo> } [callback] - The callback function to remove."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "start",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Add DisplaySync to Pipeline. It means that the callback function be enabled.",
+      "注释信息": [
+        "@syscap SystemCapability.ArkUI.ArkUI.Full",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "DisplaySync",
+      "since_version": "11",
+      "system_capability": "SystemCapability.ArkUI.ArkUI.Full",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "stop",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Delete DisplaySync from Pipeline. It means that the callback function be disabled.",
+      "注释信息": [
+        "@syscap SystemCapability.ArkUI.ArkUI.Full",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "DisplaySync",
+      "since_version": "11",
+      "system_capability": "SystemCapability.ArkUI.ArkUI.Full",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "create",
+      "返回值": "DisplaySync",
+      "所属模块": "未知模块",
+      "功能描述": "Create a new DisplaySync object.",
+      "注释信息": [
+        "@returns { DisplaySync } DisplaySync",
+        "@syscap SystemCapability.ArkUI.ArkUI.Full",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "displaySync",
+      "since_version": "11",
+      "system_capability": "SystemCapability.ArkUI.ArkUI.Full",
+      "parameters": [],
+      "return_description": "DisplaySync",
+      "error_codes": [],
+      "版本": "API"
+    }
+  ]
+}

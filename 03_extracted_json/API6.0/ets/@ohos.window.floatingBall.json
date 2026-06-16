@@ -1,0 +1,674 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.ArkUI",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "namespace",
+      "名称": "floatingBall",
+      "所属模块": "@kit.ArkUI",
+      "功能描述": "Floating ball",
+      "注释信息": [
+        "@namespace floatingBall",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "@kit.ArkUI",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "isFloatingBallEnabled",
+      "返回值": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "If floating ball enabled in current device.",
+      "注释信息": [
+        "@returns { boolean } true if floating ball enabled, otherwise false.",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "floatingBall",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "true if floating ball enabled, otherwise false.",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "create",
+      "返回值": "Promise<FloatingBallController>",
+      "所属模块": "未知模块",
+      "功能描述": "Create floating ball controller The config must be valid, the context in config should not be null. Failed to call the API due to limited device capabilities.",
+      "注释信息": [
+        "@param { FloatingBallConfiguration } config - Params for floating ball controller creation.",
+        "@returns { Promise<FloatingBallController> } - The promise returned by the function.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 1300019 - Wrong parameters for operating the floating ball.",
+        "@throws { BusinessError } 1300023 - Floating ball internal error.",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "floatingBall",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [
+        {
+          "名称": "config",
+          "类型": "FloatingBallConfiguration",
+          "必填": true,
+          "说明": "Params for floating ball controller creation."
+        }
+      ],
+      "return_description": "- The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "1300019",
+          "description": "Wrong parameters for operating the floating ball."
+        },
+        {
+          "code": "1300023",
+          "description": "Floating ball internal error."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "interface",
+      "名称": "FloatingBallConfiguration",
+      "所属模块": "未知模块",
+      "功能描述": "FloatingBallConfiguration",
+      "注释信息": [
+        "@interface FloatingBallConfiguration",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "floatingBall",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "property",
+      "名称": "context",
+      "属性类型": "BaseContext",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates window context.",
+      "注释信息": [
+        "@type { BaseContext }",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "FloatingBallConfiguration",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "interface",
+      "名称": "FloatingBallController",
+      "所属模块": "未知模块",
+      "功能描述": "FloatingBallController",
+      "注释信息": [
+        "@interface FloatingBallController",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "floatingBall",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "startFloatingBall",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Start floating ball",
+      "注释信息": [
+        "@permission ohos.permission.USE_FLOAT_BALL",
+        "@param { FloatingBallParams } params - Params for floating ball start.",
+        "@returns { Promise<void> } - The promise returned by the function.",
+        "@throws { BusinessError } 201 - Permission verification failed, usually returned by VerifyAccessToken.",
+        "@throws { BusinessError } 1300019 - Wrong parameters for operating the floating ball.",
+        "@throws { BusinessError } 1300020 - Failed to create the floating ball window.",
+        "@throws { BusinessError } 1300021 - Failed to start multiple floating ball windows.",
+        "@throws { BusinessError } 1300022 - Repeated floating ball operation.",
+        "@throws { BusinessError } 1300023 - Floating ball internal error.",
+        "@throws { BusinessError } 1300024 - The floating ball window state is abnormal.",
+        "@throws { BusinessError } 1300025 - The floating ball state does not support this operation.",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "FloatingBallController",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [
+        {
+          "名称": "params",
+          "类型": "FloatingBallParams",
+          "必填": true,
+          "说明": "Params for floating ball start."
+        }
+      ],
+      "return_description": "- The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission verification failed, usually returned by VerifyAccessToken."
+        },
+        {
+          "code": "1300019",
+          "description": "Wrong parameters for operating the floating ball."
+        },
+        {
+          "code": "1300020",
+          "description": "Failed to create the floating ball window."
+        },
+        {
+          "code": "1300021",
+          "description": "Failed to start multiple floating ball windows."
+        },
+        {
+          "code": "1300022",
+          "description": "Repeated floating ball operation."
+        },
+        {
+          "code": "1300023",
+          "description": "Floating ball internal error."
+        },
+        {
+          "code": "1300024",
+          "description": "The floating ball window state is abnormal."
+        },
+        {
+          "code": "1300025",
+          "description": "The floating ball state does not support this operation."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "updateFloatingBall",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Update floating ball",
+      "注释信息": [
+        "@param { FloatingBallParams } params - Params for floating ball update.",
+        "@returns { Promise<void> } - The promise returned by the function.",
+        "@throws { BusinessError } 1300002 - This window state is abnormal.",
+        "@throws { BusinessError } 1300003 - This window manager service works abnormally.",
+        "@throws { BusinessError } 1300004 - Unauthorized operation.",
+        "@throws { BusinessError } 1300019 - Wrong parameters for operating the floating ball.",
+        "@throws { BusinessError } 1300023 - Floating ball internal error.",
+        "@throws { BusinessError } 1300024 - The floating ball window state is abnormal.",
+        "@throws { BusinessError } 1300025 - The floating ball state does not support this operation.",
+        "@throws { BusinessError } 1300027 - When updating the floating ball, the template type cannot be changed.",
+        "@throws { BusinessError } 1300028 - Updating static template-based floating balls is not supported.",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "FloatingBallController",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [
+        {
+          "名称": "params",
+          "类型": "FloatingBallParams",
+          "必填": true,
+          "说明": "Params for floating ball update."
+        }
+      ],
+      "return_description": "- The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "1300002",
+          "description": "This window state is abnormal."
+        },
+        {
+          "code": "1300003",
+          "description": "This window manager service works abnormally."
+        },
+        {
+          "code": "1300004",
+          "description": "Unauthorized operation."
+        },
+        {
+          "code": "1300019",
+          "description": "Wrong parameters for operating the floating ball."
+        },
+        {
+          "code": "1300023",
+          "description": "Floating ball internal error."
+        },
+        {
+          "code": "1300024",
+          "description": "The floating ball window state is abnormal."
+        },
+        {
+          "code": "1300025",
+          "description": "The floating ball state does not support this operation."
+        },
+        {
+          "code": "1300027",
+          "description": "When updating the floating ball, the template type cannot be changed."
+        },
+        {
+          "code": "1300028",
+          "description": "Updating static template-based floating balls is not supported."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "stopFloatingBall",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Stop floating ball.",
+      "注释信息": [
+        "@returns { Promise<void> } - The promise returned by the function.",
+        "@throws { BusinessError } 1300022 - Repeated floating ball operation.",
+        "@throws { BusinessError } 1300023 - Floating ball internal error.",
+        "@throws { BusinessError } 1300024 - The floating ball window state is abnormal.",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "FloatingBallController",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "- The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "1300022",
+          "description": "Repeated floating ball operation."
+        },
+        {
+          "code": "1300023",
+          "description": "Floating ball internal error."
+        },
+        {
+          "code": "1300024",
+          "description": "The floating ball window state is abnormal."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Register floating ball lifecycle event listener.",
+      "注释信息": [
+        "@param { 'stateChange' } type - Registration type, floating ball lifecycle state change, 'stateChange'.",
+        "@param { Callback<FloatingBallState> } callback - Used to handle {'stateChange'} command.",
+        "@throws { BusinessError } 1300019 - Wrong parameters for operating the floating ball.",
+        "@throws { BusinessError } 1300022 - Repeated floating ball operation.",
+        "@throws { BusinessError } 1300023 - Floating ball internal error.",
+        "@throws { BusinessError } 1300024 - The floating ball window state is abnormal.",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "FloatingBallController",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'stateChange'",
+          "必填": true,
+          "说明": "Registration type, floating ball lifecycle state change, 'stateChange'."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<FloatingBallState>",
+          "必填": true,
+          "说明": "Used to handle {'stateChange'} command."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "1300019",
+          "description": "Wrong parameters for operating the floating ball."
+        },
+        {
+          "code": "1300022",
+          "description": "Repeated floating ball operation."
+        },
+        {
+          "code": "1300023",
+          "description": "Floating ball internal error."
+        },
+        {
+          "code": "1300024",
+          "description": "The floating ball window state is abnormal."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unregister floating ball lifecycle event listener.",
+      "注释信息": [
+        "@param { 'stateChange' } type - Used to unregister listener for {'stateChange'} command.",
+        "@param { Callback<FloatingBallState> } [callback] - Indicates the callback function.",
+        "@throws { BusinessError } 1300019 - Wrong parameters for operating the floating ball.",
+        "@throws { BusinessError } 1300023 - Floating ball internal error.",
+        "@throws { BusinessError } 1300024 - The floating ball window state is abnormal.",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "FloatingBallController",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'stateChange'",
+          "必填": true,
+          "说明": "Used to unregister listener for {'stateChange'} command."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "Callback<FloatingBallState> } [callback] - Indicates the callback function."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "1300019",
+          "description": "Wrong parameters for operating the floating ball."
+        },
+        {
+          "code": "1300023",
+          "description": "Floating ball internal error."
+        },
+        {
+          "code": "1300024",
+          "description": "The floating ball window state is abnormal."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Register floating ball click event listener.",
+      "注释信息": [
+        "@param { 'click' } type - Registration type, user click event, 'click'.",
+        "@param { Callback<void> } callback - Used to handle {'click'} command.",
+        "@throws { BusinessError } 1300019 - Wrong parameters for operating the floating ball.",
+        "@throws { BusinessError } 1300022 - Repeated floating ball operation.",
+        "@throws { BusinessError } 1300023 - Floating ball internal error.",
+        "@throws { BusinessError } 1300024 - The floating ball window state is abnormal.",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "FloatingBallController",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'click'",
+          "必填": true,
+          "说明": "Registration type, user click event, 'click'."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<void>",
+          "必填": true,
+          "说明": "Used to handle {'click'} command."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "1300019",
+          "description": "Wrong parameters for operating the floating ball."
+        },
+        {
+          "code": "1300022",
+          "description": "Repeated floating ball operation."
+        },
+        {
+          "code": "1300023",
+          "description": "Floating ball internal error."
+        },
+        {
+          "code": "1300024",
+          "description": "The floating ball window state is abnormal."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unregister floating ball click event listener.",
+      "注释信息": [
+        "@param { 'click' } type - Used to unregister listener for {'click'} command.",
+        "@param { Callback<void> } [callback] - Indicates the callback function.",
+        "@throws { BusinessError } 1300019 - Wrong parameters for operating the floating ball.",
+        "@throws { BusinessError } 1300023 - Floating ball internal error.",
+        "@throws { BusinessError } 1300024 - The floating ball window state is abnormal.",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "FloatingBallController",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'click'",
+          "必填": true,
+          "说明": "Used to unregister listener for {'click'} command."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "Callback<void> } [callback] - Indicates the callback function."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "1300019",
+          "description": "Wrong parameters for operating the floating ball."
+        },
+        {
+          "code": "1300023",
+          "description": "Floating ball internal error."
+        },
+        {
+          "code": "1300024",
+          "description": "The floating ball window state is abnormal."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getFloatingBallWindowInfo",
+      "返回值": "Promise<FloatingBallWindowInfo>",
+      "所属模块": "未知模块",
+      "功能描述": "Get the info of floating ball window.",
+      "注释信息": [
+        "@returns { Promise<FloatingBallWindowInfo> } - The promise used to return the floating ball window info.",
+        "@throws { BusinessError } 1300002 - This window state is abnormal.",
+        "@throws { BusinessError } 1300003 - This window manager service works abnormally.",
+        "@throws { BusinessError } 1300004 - Unauthorized operation.",
+        "@throws { BusinessError } 1300023 - Floating ball internal error.",
+        "@throws { BusinessError } 1300024 - The floating ball window state is abnormal.",
+        "@throws { BusinessError } 1300025 - The floating ball state does not support this operation.",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "FloatingBallController",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "- The promise used to return the floating ball window info.",
+      "error_codes": [
+        {
+          "code": "1300002",
+          "description": "This window state is abnormal."
+        },
+        {
+          "code": "1300003",
+          "description": "This window manager service works abnormally."
+        },
+        {
+          "code": "1300004",
+          "description": "Unauthorized operation."
+        },
+        {
+          "code": "1300023",
+          "description": "Floating ball internal error."
+        },
+        {
+          "code": "1300024",
+          "description": "The floating ball window state is abnormal."
+        },
+        {
+          "code": "1300025",
+          "description": "The floating ball state does not support this operation."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "restoreMainWindow",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Restore main window for floating ball creatorBundle.",
+      "注释信息": [
+        "@permission ohos.permission.USE_FLOAT_BALL",
+        "@param { Want } want - Params for floating ball restoration.",
+        "@returns { Promise<void> } - The promise returned by the function.",
+        "@throws { BusinessError } 201 - Permission verification failed, usually returned by VerifyAccessToken.",
+        "@throws { BusinessError } 1300002 - This window state is abnormal.",
+        "@throws { BusinessError } 1300003 - This window manager service works abnormally.",
+        "@throws { BusinessError } 1300004 - Unauthorized operation.",
+        "@throws { BusinessError } 1300019 - Wrong parameters for operating the floating ball.",
+        "@throws { BusinessError } 1300023 - Floating ball internal error.",
+        "@throws { BusinessError } 1300024 - The floating ball window state is abnormal.",
+        "@throws { BusinessError } 1300025 - The floating ball state does not support this operation.",
+        "@throws { BusinessError } 1300026 - Failed to restore the main window.",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "FloatingBallController",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [
+        {
+          "名称": "want",
+          "类型": "Want",
+          "必填": true,
+          "说明": "Params for floating ball restoration."
+        }
+      ],
+      "return_description": "- The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission verification failed, usually returned by VerifyAccessToken."
+        },
+        {
+          "code": "1300002",
+          "description": "This window state is abnormal."
+        },
+        {
+          "code": "1300003",
+          "description": "This window manager service works abnormally."
+        },
+        {
+          "code": "1300004",
+          "description": "Unauthorized operation."
+        },
+        {
+          "code": "1300019",
+          "description": "Wrong parameters for operating the floating ball."
+        },
+        {
+          "code": "1300023",
+          "description": "Floating ball internal error."
+        },
+        {
+          "code": "1300024",
+          "description": "The floating ball window state is abnormal."
+        },
+        {
+          "code": "1300025",
+          "description": "The floating ball state does not support this operation."
+        },
+        {
+          "code": "1300026",
+          "description": "Failed to restore the main window."
+        }
+      ],
+      "版本": "API6.0"
+    }
+  ]
+}

@@ -1,0 +1,3075 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.NetworkKit",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "namespace",
+      "名称": "policy",
+      "所属模块": "@kit.NetworkKit",
+      "功能描述": "Provides interfaces to manage network policy rules.",
+      "注释信息": [
+        "@namespace policy",
+        "@syscap SystemCapability.Communication.NetManager.Core",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "@kit.NetworkKit",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.NetManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "type_alias",
+      "名称": "NetBearType",
+      "所属模块": "未知模块",
+      "功能描述": "Get network bear type.",
+      "注释信息": [
+        "@typedef { connection.NetBearType }",
+        "@syscap SystemCapability.Communication.NetManager.Core",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "policy",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.NetManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "setBackgroundAllowed",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Control if applications can use data on background.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_NET_STRATEGY",
+        "@param { boolean } isAllowed - Allow applications to use data on background.",
+        "@param { AsyncCallback<void> } callback - the callback of setBackgroundAllowed.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 2100001 - Invalid parameter value.",
+        "@throws { BusinessError } 2100002 - Failed to connect to the service.",
+        "@throws { BusinessError } 2100003 - System internal error.",
+        "@syscap SystemCapability.Communication.NetManager.Core",
+        "@systemapi Hide this for inner system use.",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "policy",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.NetManager.Core",
+      "parameters": [
+        {
+          "名称": "isAllowed",
+          "类型": "boolean",
+          "必填": true,
+          "说明": "Allow applications to use data on background."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "the callback of setBackgroundAllowed."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "2100001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "2100002",
+          "description": "Failed to connect to the service."
+        },
+        {
+          "code": "2100003",
+          "description": "System internal error."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "setBackgroundAllowed",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Control if applications can use data on background.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_NET_STRATEGY",
+        "@param { boolean } isAllowed - Allow applications to use data on background.",
+        "@returns { Promise<void> } The promise returned by the function.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 2100001 - Invalid parameter value.",
+        "@throws { BusinessError } 2100002 - Failed to connect to the service.",
+        "@throws { BusinessError } 2100003 - System internal error.",
+        "@syscap SystemCapability.Communication.NetManager.Core",
+        "@systemapi Hide this for inner system use.",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "policy",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.NetManager.Core",
+      "parameters": [
+        {
+          "名称": "isAllowed",
+          "类型": "boolean",
+          "必填": true,
+          "说明": "Allow applications to use data on background."
+        }
+      ],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "2100001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "2100002",
+          "description": "Failed to connect to the service."
+        },
+        {
+          "code": "2100003",
+          "description": "System internal error."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "isBackgroundAllowed",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Get the status if applications can use data on background.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_NET_STRATEGY",
+        "@param { AsyncCallback<boolean> } callback - the callback of allowed or not to use data on background.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 2100001 - Invalid parameter value.",
+        "@throws { BusinessError } 2100002 - Failed to connect to the service.",
+        "@throws { BusinessError } 2100003 - System internal error.",
+        "@syscap SystemCapability.Communication.NetManager.Core",
+        "@systemapi Hide this for inner system use.",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "policy",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.NetManager.Core",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<boolean>",
+          "必填": true,
+          "说明": "the callback of allowed or not to use data on background."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "2100001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "2100002",
+          "description": "Failed to connect to the service."
+        },
+        {
+          "code": "2100003",
+          "description": "System internal error."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "isBackgroundAllowed",
+      "返回值": "Promise<boolean>",
+      "所属模块": "未知模块",
+      "功能描述": "Get the status if applications can use data on background.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_NET_STRATEGY",
+        "@returns { Promise<boolean> } The promise returned by the function.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 2100001 - Invalid parameter value.",
+        "@throws { BusinessError } 2100002 - Failed to connect to the service.",
+        "@throws { BusinessError } 2100003 - System internal error.",
+        "@syscap SystemCapability.Communication.NetManager.Core",
+        "@systemapi Hide this for inner system use.",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "policy",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.NetManager.Core",
+      "parameters": [],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "2100001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "2100002",
+          "description": "Failed to connect to the service."
+        },
+        {
+          "code": "2100003",
+          "description": "System internal error."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getBackgroundPolicyByUid",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Get the background network policy for the specified uid.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_NET_STRATEGY",
+        "@param { number } uid - The specified UID of application.",
+        "@param { AsyncCallback<NetBackgroundPolicy> } callback - the callback of getBackgroundPolicyByUid.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 2100001 - Invalid parameter value.",
+        "@throws { BusinessError } 2100002 - Failed to connect to the service.",
+        "@throws { BusinessError } 2100003 - System internal error.",
+        "@syscap SystemCapability.Communication.NetManager.Core",
+        "@systemapi Hide this for inner system use.",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "policy",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.NetManager.Core",
+      "parameters": [
+        {
+          "名称": "uid",
+          "类型": "number",
+          "必填": true,
+          "说明": "The specified UID of application."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<NetBackgroundPolicy>",
+          "必填": true,
+          "说明": "the callback of getBackgroundPolicyByUid."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "2100001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "2100002",
+          "description": "Failed to connect to the service."
+        },
+        {
+          "code": "2100003",
+          "description": "System internal error."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getBackgroundPolicyByUid",
+      "返回值": "Promise<NetBackgroundPolicy>",
+      "所属模块": "未知模块",
+      "功能描述": "Get the background network policy for the specified uid.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_NET_STRATEGY",
+        "@param { number } uid - The specified UID of application.",
+        "@returns { Promise<NetBackgroundPolicy> } The promise returned by the function.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 2100001 - Invalid parameter value.",
+        "@throws { BusinessError } 2100002 - Failed to connect to the service.",
+        "@throws { BusinessError } 2100003 - System internal error.",
+        "@syscap SystemCapability.Communication.NetManager.Core",
+        "@systemapi Hide this for inner system use.",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "policy",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.NetManager.Core",
+      "parameters": [
+        {
+          "名称": "uid",
+          "类型": "number",
+          "必填": true,
+          "说明": "The specified UID of application."
+        }
+      ],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "2100001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "2100002",
+          "description": "Failed to connect to the service."
+        },
+        {
+          "code": "2100003",
+          "description": "System internal error."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "setPolicyByUid",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Set the policy for the specified UID.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_NET_STRATEGY",
+        "@param { number } uid - the specified UID of application.",
+        "@param { NetUidPolicy } policy - the policy of the current UID of application.For details, see {@link NetUidPolicy}.",
+        "@param { AsyncCallback<void> } callback - the callback of setPolicyByUid.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 2100001 - Invalid parameter value.",
+        "@throws { BusinessError } 2100002 - Failed to connect to the service.",
+        "@throws { BusinessError } 2100003 - System internal error.",
+        "@syscap SystemCapability.Communication.NetManager.Core",
+        "@systemapi Hide this for inner system use.",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "policy",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.NetManager.Core",
+      "parameters": [
+        {
+          "名称": "uid",
+          "类型": "number",
+          "必填": true,
+          "说明": "the specified UID of application."
+        },
+        {
+          "名称": "policy",
+          "类型": "NetUidPolicy",
+          "必填": true,
+          "说明": "the policy of the current UID of application.For details, see {@link NetUidPolicy}."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "the callback of setPolicyByUid."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "2100001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "2100002",
+          "description": "Failed to connect to the service."
+        },
+        {
+          "code": "2100003",
+          "description": "System internal error."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "setPolicyByUid",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Set the policy for the specified UID.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_NET_STRATEGY",
+        "@param { number } uid - the specified UID of application.",
+        "@param { NetUidPolicy } policy - the policy of the current UID of application.For details, see {@link NetUidPolicy}.",
+        "@returns { Promise<void> } The promise returned by the function.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 2100001 - Invalid parameter value.",
+        "@throws { BusinessError } 2100002 - Failed to connect to the service.",
+        "@throws { BusinessError } 2100003 - System internal error.",
+        "@syscap SystemCapability.Communication.NetManager.Core",
+        "@systemapi Hide this for inner system use.",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "policy",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.NetManager.Core",
+      "parameters": [
+        {
+          "名称": "uid",
+          "类型": "number",
+          "必填": true,
+          "说明": "the specified UID of application."
+        },
+        {
+          "名称": "policy",
+          "类型": "NetUidPolicy",
+          "必填": true,
+          "说明": "the policy of the current UID of application.For details, see {@link NetUidPolicy}."
+        }
+      ],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "2100001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "2100002",
+          "description": "Failed to connect to the service."
+        },
+        {
+          "code": "2100003",
+          "description": "System internal error."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getPolicyByUid",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Query the policy of the specified UID.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_NET_STRATEGY",
+        "@param { number } uid - the specified UID of application.",
+        "@param { AsyncCallback<NetUidPolicy> } callback - the callback of getPolicyByUid.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 2100001 - Invalid parameter value.",
+        "@throws { BusinessError } 2100002 - Failed to connect to the service.",
+        "@throws { BusinessError } 2100003 - System internal error.",
+        "@syscap SystemCapability.Communication.NetManager.Core",
+        "@systemapi Hide this for inner system use.",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "policy",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.NetManager.Core",
+      "parameters": [
+        {
+          "名称": "uid",
+          "类型": "number",
+          "必填": true,
+          "说明": "the specified UID of application."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<NetUidPolicy>",
+          "必填": true,
+          "说明": "the callback of getPolicyByUid."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "2100001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "2100002",
+          "description": "Failed to connect to the service."
+        },
+        {
+          "code": "2100003",
+          "description": "System internal error."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getPolicyByUid",
+      "返回值": "Promise<NetUidPolicy>",
+      "所属模块": "未知模块",
+      "功能描述": "Query the policy of the specified UID.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_NET_STRATEGY",
+        "@param { number } uid - the specified UID of application.",
+        "@returns { Promise<NetUidPolicy> } The promise returned by the function.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 2100001 - Invalid parameter value.",
+        "@throws { BusinessError } 2100002 - Failed to connect to the service.",
+        "@throws { BusinessError } 2100003 - System internal error.",
+        "@syscap SystemCapability.Communication.NetManager.Core",
+        "@systemapi Hide this for inner system use.",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "policy",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.NetManager.Core",
+      "parameters": [
+        {
+          "名称": "uid",
+          "类型": "number",
+          "必填": true,
+          "说明": "the specified UID of application."
+        }
+      ],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "2100001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "2100002",
+          "description": "Failed to connect to the service."
+        },
+        {
+          "code": "2100003",
+          "description": "System internal error."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getUidsByPolicy",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Query the application UIDs of the specified policy.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_NET_STRATEGY",
+        "@param { NetUidPolicy } policy - the policy of the current UID of application.For details, see {@link NetUidPolicy}.",
+        "@param { AsyncCallback<Array<number>> } callback - the callback of getUidsByPolicy.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 2100001 - Invalid parameter value.",
+        "@throws { BusinessError } 2100002 - Failed to connect to the service.",
+        "@throws { BusinessError } 2100003 - System internal error.",
+        "@syscap SystemCapability.Communication.NetManager.Core",
+        "@systemapi Hide this for inner system use.",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "policy",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.NetManager.Core",
+      "parameters": [
+        {
+          "名称": "policy",
+          "类型": "NetUidPolicy",
+          "必填": true,
+          "说明": "the policy of the current UID of application.For details, see {@link NetUidPolicy}."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<Array<number>>",
+          "必填": true,
+          "说明": "the callback of getUidsByPolicy."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "2100001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "2100002",
+          "description": "Failed to connect to the service."
+        },
+        {
+          "code": "2100003",
+          "description": "System internal error."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getUidsByPolicy",
+      "返回值": "Promise<Array<number>>",
+      "所属模块": "未知模块",
+      "功能描述": "Query the application UIDs of the specified policy.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_NET_STRATEGY",
+        "@param { NetUidPolicy } policy - the policy of the current UID of application.For details, see {@link NetUidPolicy}.",
+        "@returns { Promise<Array<number>> } The promise returned by the function.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 2100001 - Invalid parameter value.",
+        "@throws { BusinessError } 2100002 - Failed to connect to the service.",
+        "@throws { BusinessError } 2100003 - System internal error.",
+        "@syscap SystemCapability.Communication.NetManager.Core",
+        "@systemapi Hide this for inner system use.",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "policy",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.NetManager.Core",
+      "parameters": [
+        {
+          "名称": "policy",
+          "类型": "NetUidPolicy",
+          "必填": true,
+          "说明": "the policy of the current UID of application.For details, see {@link NetUidPolicy}."
+        }
+      ],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "2100001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "2100002",
+          "description": "Failed to connect to the service."
+        },
+        {
+          "code": "2100003",
+          "description": "System internal error."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "isUidNetAllowed",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Get the status whether the uid app can access the metered network or non-metered network.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_NET_STRATEGY",
+        "@param { number } uid - The specified UID of application.",
+        "@param { boolean } isMetered - Indicates metered network or non-metered network.",
+        "@param { AsyncCallback<boolean> } callback - the callback of isUidNetAllowed.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 2100001 - Invalid parameter value.",
+        "@throws { BusinessError } 2100002 - Failed to connect to the service.",
+        "@throws { BusinessError } 2100003 - System internal error.",
+        "@syscap SystemCapability.Communication.NetManager.Core",
+        "@systemapi Hide this for inner system use.",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "policy",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.NetManager.Core",
+      "parameters": [
+        {
+          "名称": "uid",
+          "类型": "number",
+          "必填": true,
+          "说明": "The specified UID of application."
+        },
+        {
+          "名称": "isMetered",
+          "类型": "boolean",
+          "必填": true,
+          "说明": "Indicates metered network or non-metered network."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<boolean>",
+          "必填": true,
+          "说明": "the callback of isUidNetAllowed."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "2100001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "2100002",
+          "description": "Failed to connect to the service."
+        },
+        {
+          "code": "2100003",
+          "description": "System internal error."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "isUidNetAllowed",
+      "返回值": "Promise<boolean>",
+      "所属模块": "未知模块",
+      "功能描述": "Get the status whether the uid app can access the metered network or non-metered network.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_NET_STRATEGY",
+        "@param { number } uid - The specified UID of application.",
+        "@param { boolean } isMetered - Indicates metered network or non-metered network.",
+        "@returns { Promise<boolean> } The promise returned by the function.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 2100001 - Invalid parameter value.",
+        "@throws { BusinessError } 2100002 - Failed to connect to the service.",
+        "@throws { BusinessError } 2100003 - System internal error.",
+        "@syscap SystemCapability.Communication.NetManager.Core",
+        "@systemapi Hide this for inner system use.",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "policy",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.NetManager.Core",
+      "parameters": [
+        {
+          "名称": "uid",
+          "类型": "number",
+          "必填": true,
+          "说明": "The specified UID of application."
+        },
+        {
+          "名称": "isMetered",
+          "类型": "boolean",
+          "必填": true,
+          "说明": "Indicates metered network or non-metered network."
+        }
+      ],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "2100001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "2100002",
+          "description": "Failed to connect to the service."
+        },
+        {
+          "code": "2100003",
+          "description": "System internal error."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "isUidNetAllowed",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Get the status of whether the specified uid can access the specified network.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_NET_STRATEGY",
+        "@param { number } uid - The specified UID of application.",
+        "@param { string } iface - The specified network interface name.",
+        "@param { AsyncCallback<boolean> } callback - the callback of isUidNetAllowed.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 2100001 - Invalid parameter value.",
+        "@throws { BusinessError } 2100002 - Failed to connect to the service.",
+        "@throws { BusinessError } 2100003 - System internal error.",
+        "@syscap SystemCapability.Communication.NetManager.Core",
+        "@systemapi Hide this for inner system use.",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "policy",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.NetManager.Core",
+      "parameters": [
+        {
+          "名称": "uid",
+          "类型": "number",
+          "必填": true,
+          "说明": "The specified UID of application."
+        },
+        {
+          "名称": "iface",
+          "类型": "string",
+          "必填": true,
+          "说明": "The specified network interface name."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<boolean>",
+          "必填": true,
+          "说明": "the callback of isUidNetAllowed."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "2100001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "2100002",
+          "description": "Failed to connect to the service."
+        },
+        {
+          "code": "2100003",
+          "description": "System internal error."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "isUidNetAllowed",
+      "返回值": "Promise<boolean>",
+      "所属模块": "未知模块",
+      "功能描述": "Get the status of whether the specified uid can access the specified network.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_NET_STRATEGY",
+        "@param { number } uid - The specified UID of application.",
+        "@param { string } iface - The specified network interface name.",
+        "@returns { Promise<boolean> } The promise returned by the function.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 2100001 - Invalid parameter value.",
+        "@throws { BusinessError } 2100002 - Failed to connect to the service.",
+        "@throws { BusinessError } 2100003 - System internal error.",
+        "@syscap SystemCapability.Communication.NetManager.Core",
+        "@systemapi Hide this for inner system use.",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "policy",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.NetManager.Core",
+      "parameters": [
+        {
+          "名称": "uid",
+          "类型": "number",
+          "必填": true,
+          "说明": "The specified UID of application."
+        },
+        {
+          "名称": "iface",
+          "类型": "string",
+          "必填": true,
+          "说明": "The specified network interface name."
+        }
+      ],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "2100001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "2100002",
+          "description": "Failed to connect to the service."
+        },
+        {
+          "code": "2100003",
+          "description": "System internal error."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "setNetQuotaPolicies",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Set metered network quota policies.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_NET_STRATEGY",
+        "@param { Array<NetQuotaPolicy> } quotaPolicies - Indicates {@link NetQuotaPolicy}.",
+        "@param { AsyncCallback<void> } callback - the callback of setNetQuotaPolicies.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 2100001 - Invalid parameter value.",
+        "@throws { BusinessError } 2100002 - Failed to connect to the service.",
+        "@throws { BusinessError } 2100003 - System internal error.",
+        "@syscap SystemCapability.Communication.NetManager.Core",
+        "@systemapi Hide this for inner system use.",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "policy",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.NetManager.Core",
+      "parameters": [
+        {
+          "名称": "quotaPolicies",
+          "类型": "Array<NetQuotaPolicy>",
+          "必填": true,
+          "说明": "Indicates {@link NetQuotaPolicy}."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "the callback of setNetQuotaPolicies."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "2100001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "2100002",
+          "description": "Failed to connect to the service."
+        },
+        {
+          "code": "2100003",
+          "description": "System internal error."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "setNetQuotaPolicies",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Set metered network quota policies.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_NET_STRATEGY",
+        "@param { Array<NetQuotaPolicy> } quotaPolicies - Indicates {@link NetQuotaPolicy}.",
+        "@returns { Promise<void> } The promise returned by the function.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 2100001 - Invalid parameter value.",
+        "@throws { BusinessError } 2100002 - Failed to connect to the service.",
+        "@throws { BusinessError } 2100003 - System internal error.",
+        "@syscap SystemCapability.Communication.NetManager.Core",
+        "@systemapi Hide this for inner system use.",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "policy",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.NetManager.Core",
+      "parameters": [
+        {
+          "名称": "quotaPolicies",
+          "类型": "Array<NetQuotaPolicy>",
+          "必填": true,
+          "说明": "Indicates {@link NetQuotaPolicy}."
+        }
+      ],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "2100001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "2100002",
+          "description": "Failed to connect to the service."
+        },
+        {
+          "code": "2100003",
+          "description": "System internal error."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getNetQuotaPolicies",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Get metered network quota policies.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_NET_STRATEGY",
+        "@param { AsyncCallback<Array<NetQuotaPolicy>> } callback - the callback of getNetQuotaPolicies.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 2100001 - Invalid parameter value.",
+        "@throws { BusinessError } 2100002 - Failed to connect to the service.",
+        "@throws { BusinessError } 2100003 - System internal error.",
+        "@syscap SystemCapability.Communication.NetManager.Core",
+        "@systemapi Hide this for inner system use.",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "policy",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.NetManager.Core",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<Array<NetQuotaPolicy>>",
+          "必填": true,
+          "说明": "the callback of getNetQuotaPolicies."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "2100001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "2100002",
+          "description": "Failed to connect to the service."
+        },
+        {
+          "code": "2100003",
+          "description": "System internal error."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getNetQuotaPolicies",
+      "返回值": "Promise<Array<NetQuotaPolicy>>",
+      "所属模块": "未知模块",
+      "功能描述": "Get metered network quota policies.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_NET_STRATEGY",
+        "@returns { Promise<Array<NetQuotaPolicy>> } The promise returned by the function.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 2100002 - Failed to connect to the service.",
+        "@throws { BusinessError } 2100003 - System internal error.",
+        "@syscap SystemCapability.Communication.NetManager.Core",
+        "@systemapi Hide this for inner system use.",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "policy",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.NetManager.Core",
+      "parameters": [],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "2100002",
+          "description": "Failed to connect to the service."
+        },
+        {
+          "code": "2100003",
+          "description": "System internal error."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "updateRemindPolicy",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Update the policy when the quota reaches the upper limit.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_NET_STRATEGY",
+        "@param { NetBearType } netType - {@link NetBearType}.",
+        "@param { string } simId - Specify the matched simId of quota policy when netType is cellular.",
+        "@param { RemindType } remindType - {@link RemindType}.",
+        "@param { AsyncCallback<void> } callback - the callback of updateRemindPolicy.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 2100001 - Invalid parameter value.",
+        "@throws { BusinessError } 2100002 - Failed to connect to the service.",
+        "@throws { BusinessError } 2100003 - System internal error.",
+        "@syscap SystemCapability.Communication.NetManager.Core",
+        "@systemapi Hide this for inner system use.",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "policy",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.NetManager.Core",
+      "parameters": [
+        {
+          "名称": "netType",
+          "类型": "NetBearType",
+          "必填": true,
+          "说明": "{@link NetBearType}."
+        },
+        {
+          "名称": "simId",
+          "类型": "string",
+          "必填": true,
+          "说明": "Specify the matched simId of quota policy when netType is cellular."
+        },
+        {
+          "名称": "remindType",
+          "类型": "RemindType",
+          "必填": true,
+          "说明": "{@link RemindType}."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "the callback of updateRemindPolicy."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "2100001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "2100002",
+          "description": "Failed to connect to the service."
+        },
+        {
+          "code": "2100003",
+          "description": "System internal error."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "updateRemindPolicy",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Update the policy when the quota reaches the upper limit.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_NET_STRATEGY",
+        "@param { NetBearType } netType - {@link NetBearType}.",
+        "@param { string } simId - Specify the matched simId of quota policy when netType is cellular.",
+        "@param { RemindType } remindType - {@link RemindType}.",
+        "@returns { Promise<void> } The promise returned by the function.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 2100001 - Invalid parameter value.",
+        "@throws { BusinessError } 2100002 - Failed to connect to the service.",
+        "@throws { BusinessError } 2100003 - System internal error.",
+        "@syscap SystemCapability.Communication.NetManager.Core",
+        "@systemapi Hide this for inner system use.",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "policy",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.NetManager.Core",
+      "parameters": [
+        {
+          "名称": "netType",
+          "类型": "NetBearType",
+          "必填": true,
+          "说明": "{@link NetBearType}."
+        },
+        {
+          "名称": "simId",
+          "类型": "string",
+          "必填": true,
+          "说明": "Specify the matched simId of quota policy when netType is cellular."
+        },
+        {
+          "名称": "remindType",
+          "类型": "RemindType",
+          "必填": true,
+          "说明": "{@link RemindType}."
+        }
+      ],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "2100001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "2100002",
+          "description": "Failed to connect to the service."
+        },
+        {
+          "code": "2100003",
+          "description": "System internal error."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "setDeviceIdleTrustlist",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Set the list of uids that are allowed to access the Internet in hibernation mode.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_NET_STRATEGY",
+        "@param { Array<number> } uids - The specified uids of application.",
+        "@param { boolean } isAllowed - Whether to allow Uids in the list to access the Internet.",
+        "@param { AsyncCallback<void> } callback - the callback of setDeviceIdleTrustlist.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 2100001 - Invalid parameter value.",
+        "@throws { BusinessError } 2100002 - Failed to connect to the service.",
+        "@throws { BusinessError } 2100003 - System internal error.",
+        "@syscap SystemCapability.Communication.NetManager.Core",
+        "@systemapi Hide this for inner system use.",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "policy",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.NetManager.Core",
+      "parameters": [
+        {
+          "名称": "uids",
+          "类型": "Array<number>",
+          "必填": true,
+          "说明": "The specified uids of application."
+        },
+        {
+          "名称": "isAllowed",
+          "类型": "boolean",
+          "必填": true,
+          "说明": "Whether to allow Uids in the list to access the Internet."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "the callback of setDeviceIdleTrustlist."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "2100001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "2100002",
+          "description": "Failed to connect to the service."
+        },
+        {
+          "code": "2100003",
+          "description": "System internal error."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "setDeviceIdleTrustlist",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Set the list of uids that are allowed to access the Internet in hibernation mode.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_NET_STRATEGY",
+        "@param { Array<number> } uids - The specified uids of application.",
+        "@param { boolean } isAllowed - Whether to allow Uids in the list to access the Internet.",
+        "@returns { Promise<void> } The promise returned by the function.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 2100001 - Invalid parameter value.",
+        "@throws { BusinessError } 2100002 - Failed to connect to the service.",
+        "@throws { BusinessError } 2100003 - System internal error.",
+        "@syscap SystemCapability.Communication.NetManager.Core",
+        "@systemapi Hide this for inner system use.",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "policy",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.NetManager.Core",
+      "parameters": [
+        {
+          "名称": "uids",
+          "类型": "Array<number>",
+          "必填": true,
+          "说明": "The specified uids of application."
+        },
+        {
+          "名称": "isAllowed",
+          "类型": "boolean",
+          "必填": true,
+          "说明": "Whether to allow Uids in the list to access the Internet."
+        }
+      ],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "2100001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "2100002",
+          "description": "Failed to connect to the service."
+        },
+        {
+          "code": "2100003",
+          "description": "System internal error."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getDeviceIdleTrustlist",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Obtain the list of uids that are allowed to access the Internet in hibernation mode.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_NET_STRATEGY",
+        "@param { AsyncCallback<Array<number>> } callback - the callback of getDeviceIdleTrustlist.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 2100001 - Invalid parameter value.",
+        "@throws { BusinessError } 2100002 - Failed to connect to the service.",
+        "@throws { BusinessError } 2100003 - System internal error.",
+        "@syscap SystemCapability.Communication.NetManager.Core",
+        "@systemapi Hide this for inner system use.",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "policy",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.NetManager.Core",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<Array<number>>",
+          "必填": true,
+          "说明": "the callback of getDeviceIdleTrustlist."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "2100001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "2100002",
+          "description": "Failed to connect to the service."
+        },
+        {
+          "code": "2100003",
+          "description": "System internal error."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getDeviceIdleTrustlist",
+      "返回值": "Promise<Array<number>>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtain the list of uids that are allowed to access the Internet in hibernation mode.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_NET_STRATEGY",
+        "@returns { Promise<Array<number>> } The promise returned by the function.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 2100002 - Failed to connect to the service.",
+        "@throws { BusinessError } 2100003 - System internal error.",
+        "@syscap SystemCapability.Communication.NetManager.Core",
+        "@systemapi Hide this for inner system use.",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "policy",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.NetManager.Core",
+      "parameters": [],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "2100002",
+          "description": "Failed to connect to the service."
+        },
+        {
+          "code": "2100003",
+          "description": "System internal error."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "setPowerSaveTrustlist",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Set the list of uids that are allowed to access the Internet in power saving mode.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_NET_STRATEGY",
+        "@param { Array<number> } uids - The specified uids of application.",
+        "@param { boolean } isAllowed - Whether to allow Uids in the list to access the Internet.",
+        "@param { AsyncCallback<void> } callback - the callback of setPowerSaveTrustlist.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 2100001 - Invalid parameter value.",
+        "@throws { BusinessError } 2100002 - Failed to connect to the service.",
+        "@throws { BusinessError } 2100003 - System internal error.",
+        "@syscap SystemCapability.Communication.NetManager.Core",
+        "@systemapi Hide this for inner system use.",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "policy",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.NetManager.Core",
+      "parameters": [
+        {
+          "名称": "uids",
+          "类型": "Array<number>",
+          "必填": true,
+          "说明": "The specified uids of application."
+        },
+        {
+          "名称": "isAllowed",
+          "类型": "boolean",
+          "必填": true,
+          "说明": "Whether to allow Uids in the list to access the Internet."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "the callback of setPowerSaveTrustlist."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "2100001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "2100002",
+          "description": "Failed to connect to the service."
+        },
+        {
+          "code": "2100003",
+          "description": "System internal error."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "setPowerSaveTrustlist",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Set the list of uids that are allowed to access the Internet in power saving mode.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_NET_STRATEGY",
+        "@param { Array<number> } uids - The specified uids of application.",
+        "@param { boolean } isAllowed - Whether to allow Uids in the list to access the Internet.",
+        "@returns { Promise<void> } The promise returned by the function.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 2100001 - Invalid parameter value.",
+        "@throws { BusinessError } 2100002 - Failed to connect to the service.",
+        "@throws { BusinessError } 2100003 - System internal error.",
+        "@syscap SystemCapability.Communication.NetManager.Core",
+        "@systemapi Hide this for inner system use.",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "policy",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.NetManager.Core",
+      "parameters": [
+        {
+          "名称": "uids",
+          "类型": "Array<number>",
+          "必填": true,
+          "说明": "The specified uids of application."
+        },
+        {
+          "名称": "isAllowed",
+          "类型": "boolean",
+          "必填": true,
+          "说明": "Whether to allow Uids in the list to access the Internet."
+        }
+      ],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "2100001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "2100002",
+          "description": "Failed to connect to the service."
+        },
+        {
+          "code": "2100003",
+          "description": "System internal error."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getPowerSaveTrustlist",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Obtain the list of uids that are allowed to access the Internet in power saving mode.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_NET_STRATEGY",
+        "@param { AsyncCallback<Array<number>> } callback - the callback of UIDs list.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 2100001 - Invalid parameter value.",
+        "@throws { BusinessError } 2100002 - Failed to connect to the service.",
+        "@throws { BusinessError } 2100003 - System internal error.",
+        "@syscap SystemCapability.Communication.NetManager.Core",
+        "@systemapi Hide this for inner system use.",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "policy",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.NetManager.Core",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<Array<number>>",
+          "必填": true,
+          "说明": "the callback of UIDs list."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "2100001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "2100002",
+          "description": "Failed to connect to the service."
+        },
+        {
+          "code": "2100003",
+          "description": "System internal error."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getPowerSaveTrustlist",
+      "返回值": "Promise<Array<number>>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtain the list of uids that are allowed to access the Internet in power saving mode.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_NET_STRATEGY",
+        "@returns { Promise<Array<number>> } The promise returned by the function.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 2100002 - Failed to connect to the service.",
+        "@throws { BusinessError } 2100003 - System internal error.",
+        "@syscap SystemCapability.Communication.NetManager.Core",
+        "@systemapi Hide this for inner system use.",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "policy",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.NetManager.Core",
+      "parameters": [],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "2100002",
+          "description": "Failed to connect to the service."
+        },
+        {
+          "code": "2100003",
+          "description": "System internal error."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "resetPolicies",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Reset network policies\\rules\\quota policies\\firewall rules.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_NET_STRATEGY",
+        "@param { string } simId - Specify the matched simId of quota policy.",
+        "@param { AsyncCallback<void> } callback - the callback of resetPolicies.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 2100001 - Invalid parameter value.",
+        "@throws { BusinessError } 2100002 - Failed to connect to the service.",
+        "@throws { BusinessError } 2100003 - System internal error.",
+        "@syscap SystemCapability.Communication.NetManager.Core",
+        "@systemapi Hide this for inner system use.",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "policy",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.NetManager.Core",
+      "parameters": [
+        {
+          "名称": "simId",
+          "类型": "string",
+          "必填": true,
+          "说明": "Specify the matched simId of quota policy."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "the callback of resetPolicies."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "2100001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "2100002",
+          "description": "Failed to connect to the service."
+        },
+        {
+          "code": "2100003",
+          "description": "System internal error."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "resetPolicies",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Reset network policies\\rules\\quota policies\\firewall rules.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_NET_STRATEGY",
+        "@param { string } simId - Specify the matched simId of quota policy.",
+        "@returns { Promise<void> } The promise returned by the function.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 2100001 - Invalid parameter value.",
+        "@throws { BusinessError } 2100002 - Failed to connect to the service.",
+        "@throws { BusinessError } 2100003 - System internal error.",
+        "@syscap SystemCapability.Communication.NetManager.Core",
+        "@systemapi Hide this for inner system use.",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "policy",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.NetManager.Core",
+      "parameters": [
+        {
+          "名称": "simId",
+          "类型": "string",
+          "必填": true,
+          "说明": "Specify the matched simId of quota policy."
+        }
+      ],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "2100001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "2100002",
+          "description": "Failed to connect to the service."
+        },
+        {
+          "code": "2100003",
+          "description": "System internal error."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "setNetworkAccessPolicy",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Set the policy to access the network of the specified application.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_NET_STRATEGY",
+        "@param { number } uid - The specified UID of application.",
+        "@param { NetworkAccessPolicy } policy - The network access policy of application. For details, see {@link NetworkAccessPolicy}.",
+        "@param { boolean } [isReconfirmed] - Whether this operation is reconfirmed by user or not. Default false.",
+        "@returns { Promise<void> } The promise returned by the function.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 2100001 - Invalid parameter value.",
+        "@throws { BusinessError } 2100002 - Failed to connect to the service.",
+        "@throws { BusinessError } 2100003 - System internal error.",
+        "@syscap SystemCapability.Communication.NetManager.Core",
+        "@systemapi Hide this for inner system use.",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "policy",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Communication.NetManager.Core",
+      "parameters": [
+        {
+          "名称": "uid",
+          "类型": "number",
+          "必填": true,
+          "说明": "The specified UID of application."
+        },
+        {
+          "名称": "policy",
+          "类型": "NetworkAccessPolicy",
+          "必填": true,
+          "说明": "The network access policy of application. For details, see {@link NetworkAccessPolicy}."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "boolean } [isReconfirmed] - Whether this operation is reconfirmed by user or not. Default false."
+        }
+      ],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "2100001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "2100002",
+          "description": "Failed to connect to the service."
+        },
+        {
+          "code": "2100003",
+          "description": "System internal error."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getNetworkAccessPolicy",
+      "返回值": "Promise<NetworkAccessPolicy>",
+      "所属模块": "未知模块",
+      "功能描述": "Query the network access policy of the specified application.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_NET_STRATEGY",
+        "@param { number } uid - The specified UID of application.",
+        "@returns { Promise<NetworkAccessPolicy> } Returns the network access policy of the application. For details, see {@link NetworkAccessPolicy}.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 2100001 - Invalid parameter value.",
+        "@throws { BusinessError } 2100002 - Failed to connect to the service.",
+        "@throws { BusinessError } 2100003 - System internal error.",
+        "@syscap SystemCapability.Communication.NetManager.Core",
+        "@systemapi Hide this for inner system use.",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "policy",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Communication.NetManager.Core",
+      "parameters": [
+        {
+          "名称": "uid",
+          "类型": "number",
+          "必填": true,
+          "说明": "The specified UID of application."
+        }
+      ],
+      "return_description": "Returns the network access policy of the application. For details, see {@link NetworkAccessPolicy}.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "2100001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "2100002",
+          "description": "Failed to connect to the service."
+        },
+        {
+          "code": "2100003",
+          "description": "System internal error."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getNetworkAccessPolicy",
+      "返回值": "Promise<UidNetworkAccessPolicy>",
+      "所属模块": "未知模块",
+      "功能描述": "Query the network access policy of all applications.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_NET_STRATEGY",
+        "@returns { Promise<UidNetworkAccessPolicy> } the network access policy of all applications.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 2100002 - Failed to connect to the service.",
+        "@throws { BusinessError } 2100003 - System internal error.",
+        "@syscap SystemCapability.Communication.NetManager.Core",
+        "@systemapi Hide this for inner system use.",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "policy",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Communication.NetManager.Core",
+      "parameters": [],
+      "return_description": "the network access policy of all applications.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "2100002",
+          "description": "Failed to connect to the service."
+        },
+        {
+          "code": "2100003",
+          "description": "System internal error."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Register uid policy change listener.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_NET_STRATEGY",
+        "@param { 'netUidPolicyChange' } type - Indicates Event name.",
+        "@param { Callback<NetUidPolicyInfo> } callback - the callback of on.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 2100001 - Invalid parameter value.",
+        "@throws { BusinessError } 2100002 - Failed to connect to the service.",
+        "@throws { BusinessError } 2100003 - System internal error.",
+        "@syscap SystemCapability.Communication.NetManager.Core",
+        "@systemapi Hide this for inner system use.",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "policy",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Communication.NetManager.Core",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'netUidPolicyChange'",
+          "必填": true,
+          "说明": "Indicates Event name."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<NetUidPolicyInfo>",
+          "必填": true,
+          "说明": "the callback of on."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "2100001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "2100002",
+          "description": "Failed to connect to the service."
+        },
+        {
+          "code": "2100003",
+          "description": "System internal error."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unregister uid policy change listener.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_NET_STRATEGY",
+        "@param { 'netUidPolicyChange' } type - Indicates Event name.",
+        "@param { Callback<NetUidPolicyInfo> } callback - the callback of off.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 2100001 - Invalid parameter value.",
+        "@throws { BusinessError } 2100002 - Failed to connect to the service.",
+        "@throws { BusinessError } 2100003 - System internal error.",
+        "@syscap SystemCapability.Communication.NetManager.Core",
+        "@systemapi Hide this for inner system use.",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "policy",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Communication.NetManager.Core",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'netUidPolicyChange'",
+          "必填": true,
+          "说明": "Indicates Event name."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<NetUidPolicyInfo>",
+          "必填": true,
+          "说明": "the callback of off."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "2100001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "2100002",
+          "description": "Failed to connect to the service."
+        },
+        {
+          "code": "2100003",
+          "description": "System internal error."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Register uid rule change listener.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_NET_STRATEGY",
+        "@param { 'netUidRuleChange' } type - Indicates Event name.",
+        "@param { Callback<NetUidRuleInfo> } callback - the callback of on.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 2100001 - Invalid parameter value.",
+        "@throws { BusinessError } 2100002 - Failed to connect to the service.",
+        "@throws { BusinessError } 2100003 - System internal error.",
+        "@syscap SystemCapability.Communication.NetManager.Core",
+        "@systemapi Hide this for inner system use.",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "policy",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Communication.NetManager.Core",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'netUidRuleChange'",
+          "必填": true,
+          "说明": "Indicates Event name."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<NetUidRuleInfo>",
+          "必填": true,
+          "说明": "the callback of on."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "2100001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "2100002",
+          "description": "Failed to connect to the service."
+        },
+        {
+          "code": "2100003",
+          "description": "System internal error."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unregister uid rule change listener.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_NET_STRATEGY",
+        "@param { 'netUidRuleChange' } type - Indicates Event name.",
+        "@param { Callback<NetUidRuleInfo> } callback - the callback of off.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 2100001 - Invalid parameter value.",
+        "@throws { BusinessError } 2100002 - Failed to connect to the service.",
+        "@throws { BusinessError } 2100003 - System internal error.",
+        "@syscap SystemCapability.Communication.NetManager.Core",
+        "@systemapi Hide this for inner system use.",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "policy",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Communication.NetManager.Core",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'netUidRuleChange'",
+          "必填": true,
+          "说明": "Indicates Event name."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<NetUidRuleInfo>",
+          "必填": true,
+          "说明": "the callback of off."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "2100001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "2100002",
+          "description": "Failed to connect to the service."
+        },
+        {
+          "code": "2100003",
+          "description": "System internal error."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Register metered ifaces change listener.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_NET_STRATEGY",
+        "@param { 'netMeteredIfacesChange' } type - Indicates Event name.",
+        "@param { Callback<Array<string>> } callback - the callback of on.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 2100001 - Invalid parameter value.",
+        "@throws { BusinessError } 2100002 - Failed to connect to the service.",
+        "@throws { BusinessError } 2100003 - System internal error.",
+        "@syscap SystemCapability.Communication.NetManager.Core",
+        "@systemapi Hide this for inner system use.",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "policy",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.NetManager.Core",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'netMeteredIfacesChange'",
+          "必填": true,
+          "说明": "Indicates Event name."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<Array<string>>",
+          "必填": true,
+          "说明": "the callback of on."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "2100001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "2100002",
+          "description": "Failed to connect to the service."
+        },
+        {
+          "code": "2100003",
+          "description": "System internal error."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unregister metered ifaces change listener.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_NET_STRATEGY",
+        "@param { 'netMeteredIfacesChange' } type - Indicates Event name.",
+        "@param { Callback<Array<string>> } callback - the callback of off.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 2100001 - Invalid parameter value.",
+        "@throws { BusinessError } 2100002 - Failed to connect to the service.",
+        "@throws { BusinessError } 2100003 - System internal error.",
+        "@syscap SystemCapability.Communication.NetManager.Core",
+        "@systemapi Hide this for inner system use.",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "policy",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.NetManager.Core",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'netMeteredIfacesChange'",
+          "必填": true,
+          "说明": "Indicates Event name."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<Array<string>>",
+          "必填": true,
+          "说明": "the callback of off."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "2100001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "2100002",
+          "description": "Failed to connect to the service."
+        },
+        {
+          "code": "2100003",
+          "description": "System internal error."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Register quota policies change listener.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_NET_STRATEGY",
+        "@param { 'netQuotaPolicyChange' } type - Indicates Event name.",
+        "@param { Callback<Array<NetQuotaPolicy>> } callback the callback of on.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 2100001 - Invalid parameter value.",
+        "@throws { BusinessError } 2100002 - Failed to connect to the service.",
+        "@throws { BusinessError } 2100003 - System internal error.",
+        "@syscap SystemCapability.Communication.NetManager.Core",
+        "@systemapi Hide this for inner system use.",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "policy",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.NetManager.Core",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'netQuotaPolicyChange'",
+          "必填": true,
+          "说明": "Indicates Event name."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<Array<NetQuotaPolicy>>",
+          "必填": true,
+          "说明": "the callback of on."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "2100001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "2100002",
+          "description": "Failed to connect to the service."
+        },
+        {
+          "code": "2100003",
+          "description": "System internal error."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unregister quota policies change listener.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_NET_STRATEGY",
+        "@param { 'netQuotaPolicyChange' } type - Indicates Event name.",
+        "@param { Callback<Array<NetQuotaPolicy>> } callback - the callback of off.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 2100001 - Invalid parameter value.",
+        "@throws { BusinessError } 2100002 - Failed to connect to the service.",
+        "@throws { BusinessError } 2100003 - System internal error.",
+        "@syscap SystemCapability.Communication.NetManager.Core",
+        "@systemapi Hide this for inner system use.",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "policy",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.NetManager.Core",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'netQuotaPolicyChange'",
+          "必填": true,
+          "说明": "Indicates Event name."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<Array<NetQuotaPolicy>>",
+          "必填": true,
+          "说明": "the callback of off."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "2100001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "2100002",
+          "description": "Failed to connect to the service."
+        },
+        {
+          "code": "2100003",
+          "description": "System internal error."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Register network background policy change listener.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_NET_STRATEGY",
+        "@param { 'netBackgroundPolicyChange' } type - Indicates Event name.",
+        "@param { Callback<boolean> } callback - the callback of on.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 2100001 - Invalid parameter value.",
+        "@throws { BusinessError } 2100002 - Failed to connect to the service.",
+        "@throws { BusinessError } 2100003 - System internal error.",
+        "@syscap SystemCapability.Communication.NetManager.Core",
+        "@systemapi Hide this for inner system use.",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "policy",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.NetManager.Core",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'netBackgroundPolicyChange'",
+          "必填": true,
+          "说明": "Indicates Event name."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<boolean>",
+          "必填": true,
+          "说明": "the callback of on."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "2100001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "2100002",
+          "description": "Failed to connect to the service."
+        },
+        {
+          "code": "2100003",
+          "description": "System internal error."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unregister network background policy change listener.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_NET_STRATEGY",
+        "@param { 'netBackgroundPolicyChange' } type - Indicates Event name.",
+        "@param { Callback<boolean> } callback - the callback of off.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 2100001 - Invalid parameter value.",
+        "@throws { BusinessError } 2100002 - Failed to connect to the service.",
+        "@throws { BusinessError } 2100003 - System internal error.",
+        "@syscap SystemCapability.Communication.NetManager.Core",
+        "@systemapi Hide this for inner system use.",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "policy",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.NetManager.Core",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'netBackgroundPolicyChange'",
+          "必填": true,
+          "说明": "Indicates Event name."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<boolean>",
+          "必填": true,
+          "说明": "the callback of off."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "2100001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "2100002",
+          "description": "Failed to connect to the service."
+        },
+        {
+          "code": "2100003",
+          "description": "System internal error."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "enum",
+      "名称": "NetBackgroundPolicy",
+      "所属模块": "未知模块",
+      "功能描述": "Indicate whether the application can use metered networks in background.",
+      "注释信息": [
+        "@enum {number}",
+        "@syscap SystemCapability.Communication.NetManager.Core",
+        "@systemapi Hide this for inner system use.",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "policy",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.NetManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "NET_BACKGROUND_POLICY_NONE",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "Default value.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.NetManager.Core",
+        "@systemapi Hide this for inner system use.",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "NetBackgroundPolicy",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.NetManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "NET_BACKGROUND_POLICY_ENABLE",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Apps can use metered networks on background.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.NetManager.Core",
+        "@systemapi Hide this for inner system use.",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "NetBackgroundPolicy",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.NetManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "NET_BACKGROUND_POLICY_DISABLE",
+      "值": "2",
+      "所属模块": "未知模块",
+      "功能描述": "Apps can't use metered networks on background.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.NetManager.Core",
+        "@systemapi Hide this for inner system use.",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "NetBackgroundPolicy",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.NetManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "NET_BACKGROUND_POLICY_TRUSTLIST",
+      "值": "3",
+      "所属模块": "未知模块",
+      "功能描述": "Only apps in trustlist can use metered networks on background.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.NetManager.Core",
+        "@systemapi Hide this for inner system use.",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "NetBackgroundPolicy",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.NetManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    }
+  ]
+}

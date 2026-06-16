@@ -1,0 +1,745 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.ArkTS",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "namespace",
+      "名称": "util",
+      "所属模块": "@kit.ArkTS",
+      "功能描述": "TextDecoder support full encoding in ICU data utf-8 utf-16 iso8859 must support in all device, TextEncoder takes a stream of code points as input and emits a stream of UTF-8 bytes, and system help function.",
+      "注释信息": [
+        "@namespace util",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "@kit.ArkTS",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "printf",
+      "返回值": "string",
+      "所属模块": "未知模块",
+      "功能描述": "%s: String will be used to convert all values except BigInt, Object and -0. BigInt values will be represented with an n and Objects that have no user defined toString function are inspected using util.inspect() with options { depth: 0, colors: false, compact: 3 }. %d: Number will be used to convert all values except BigInt and Symbol. %i: parseInt(value, 10) is used for all values except BigInt and Symbol. %f: parseFloat(value) is used for all values except Bigint and Symbol. %j: JSON. Replaced with the string '[Circular]' if the argument contains circular references. %o: Object. A string representation of an object with generic JavaScript object formatting.Similar to util.inspect() with options { showHidden: true, showProxy: true}. This will show the full object including non-enumerable properties and proxies. %O: Object. A string representation of an object with generic JavaScript object formatting. %O: Object. A string representation of an object with generic JavaScript object formatting.Similar to util.inspect() without options. This will show the full object not including non-enumerable properties and proxies. %c: CSS. This specifier is ignored and will skip any CSS passed in. %%: single percent sign ('%'). This does not consume an argument.Returns: <string> The formatted string.",
+      "注释信息": [
+        "@param { string } format - Styled string",
+        "@param { Object[] } args - Data to be formatted",
+        "@returns { string } Return the character string formatted in a specific format",
+        "@syscap SystemCapability.Utils.Lang",
+        "@since 7",
+        "@deprecated since 9",
+        "@useinstead ohos.util.format"
+      ],
+      "层级": 1,
+      "上级": "util",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "format",
+          "类型": "string",
+          "必填": true,
+          "说明": "Styled string"
+        },
+        {
+          "名称": "args",
+          "类型": "Object[]",
+          "必填": true,
+          "说明": "Data to be formatted"
+        }
+      ],
+      "return_description": "Return the character string formatted in a specific format",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "format",
+      "返回值": "string",
+      "所属模块": "未知模块",
+      "功能描述": "%s: String will be used to convert all values except BigInt, Object and -0. BigInt values will be represented with an n and Objects that have no user defined toString function are inspected using util.inspect() with options { depth: 0, colors: false, compact: 3 }. %d: Number will be used to convert all values except BigInt and Symbol. %i: parseInt(value, 10) is used for all values except BigInt and Symbol. %f: parseFloat(value) is used for all values except Bigint and Symbol. %j: JSON. Replaced with the string '[Circular]' if the argument contains circular references. %o: Object. A string representation of an object with generic JavaScript object formatting.Similar to util.inspect() with options { showHidden: true, showProxy: true}. This will show the full object including non-enumerable properties and proxies. %O: Object. A string representation of an object with generic JavaScript object formatting. %O: Object. A string representation of an object with generic JavaScript object formatting.Similar to util.inspect() without options. This will show the full object not including non-enumerable properties and proxies. %c: CSS. This specifier is ignored and will skip any CSS passed in. %%: single percent sign ('%'). This does not consume an argument.Returns: <string> The formatted string.",
+      "注释信息": [
+        "@param { string } format - Styled string",
+        "@param { Object[] } args - Data to be formatted",
+        "@returns { string } a string formatted in a specific format.",
+        "@throws { BusinessError } 401 - if the input parameters are invalid.",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "util",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "format",
+          "类型": "string",
+          "必填": true,
+          "说明": "Styled string"
+        },
+        {
+          "名称": "args",
+          "类型": "Object[]",
+          "必填": true,
+          "说明": "Data to be formatted"
+        }
+      ],
+      "return_description": "a string formatted in a specific format.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "if the input parameters are invalid."
+        }
+      ],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "getErrorString",
+      "返回值": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Get the string name of the system errno.",
+      "注释信息": [
+        "@param { number } errno - The error code generated by an error in the system",
+        "@returns { string } Return the string name of a system errno",
+        "@syscap SystemCapability.Utils.Lang",
+        "@since 7",
+        "@deprecated since 9",
+        "@useinstead ohos.util.errnoToString"
+      ],
+      "层级": 1,
+      "上级": "util",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "errno",
+          "类型": "number",
+          "必填": true,
+          "说明": "The error code generated by an error in the system"
+        }
+      ],
+      "return_description": "Return the string name of a system errno",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "errnoToString",
+      "返回值": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Get the string name of the system errno.",
+      "注释信息": [
+        "@param { number } errno - The error code generated by an error in the system",
+        "@returns { string } Return the string name of a system errno",
+        "@throws { BusinessError } 401 - The type of errno must be number.",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "util",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "errno",
+          "类型": "number",
+          "必填": true,
+          "说明": "The error code generated by an error in the system"
+        }
+      ],
+      "return_description": "Return the string name of a system errno",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "The type of errno must be number."
+        }
+      ],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "callbackWrapper",
+      "返回值": "(err: Object, value: Object) => void",
+      "所属模块": "未知模块",
+      "功能描述": "Takes an async function (or a function that returns a Promise) and returns a function following the error-first callback style.",
+      "注释信息": [
+        "@param { Function } original - Asynchronous function",
+        "@returns { function } Return a Asynchronous function",
+        "@throws { BusinessError } 401 - The type of original must be Function.",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "util",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "original",
+          "类型": "Function",
+          "必填": true,
+          "说明": "Asynchronous function"
+        }
+      ],
+      "return_description": "Return a Asynchronous function",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "The type of original must be Function."
+        }
+      ],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "promisify",
+      "返回值": "Function",
+      "所属模块": "未知模块",
+      "功能描述": "Takes a function following the common error-first callback style, i.e taking an (err, value) => callback as the last argument, and return a function that returns promises.",
+      "注释信息": [
+        "@param { function } original - Asynchronous function",
+        "@returns { Function } Return a function that returns promises",
+        "@throws { BusinessError } 401 - The type of original must be Function.",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "util",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "original",
+          "类型": "function",
+          "必填": true,
+          "说明": "Asynchronous function"
+        }
+      ],
+      "return_description": "Return a function that returns promises",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "The type of original must be Function."
+        }
+      ],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "promiseWrapper",
+      "返回值": "Object",
+      "所属模块": "未知模块",
+      "功能描述": "Takes a function following the common error-first callback style, i.e taking an (err, value) => callback as the last argument, and return a version that returns promises.",
+      "注释信息": [
+        "@param { function } original - Asynchronous function",
+        "@returns { Object } Return a version that returns promises",
+        "@syscap SystemCapability.Utils.Lang",
+        "@since 7",
+        "@deprecated since 9",
+        "@useinstead ohos.util.promisify"
+      ],
+      "层级": 1,
+      "上级": "util",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "original",
+          "类型": "function",
+          "必填": true,
+          "说明": "Asynchronous function"
+        }
+      ],
+      "return_description": "Return a version that returns promises",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "generateRandomUUID",
+      "返回值": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Generate a random RFC 4122 version 4 UUID using a cryptographically secure random number generator.",
+      "注释信息": [
+        "@param { boolean } [entropyCache] - Whether to generate the UUID with using the cache. Default: true.",
+        "@returns { string } Return a string representing this UUID.",
+        "@throws { BusinessError } 401 - The type of entropyCache must be boolean.",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "util",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "boolean } [entropyCache] - Whether to generate the UUID with using the cache. Default: true."
+        }
+      ],
+      "return_description": "Return a string representing this UUID.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "The type of entropyCache must be boolean."
+        }
+      ],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "generateRandomBinaryUUID",
+      "返回值": "Uint8Array",
+      "所属模块": "未知模块",
+      "功能描述": "Generate a random RFC 4122 version 4 binary UUID using a cryptographically secure random number generator.",
+      "注释信息": [
+        "@param { boolean } [entropyCache] - Whether to generate the UUID with using the cache. Default: true.",
+        "@returns { Uint8Array } Return a Uint8Array representing this UUID.",
+        "@throws { BusinessError } 401 - The type of entropyCache must be boolean.",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "util",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "boolean } [entropyCache] - Whether to generate the UUID with using the cache. Default: true."
+        }
+      ],
+      "return_description": "Return a Uint8Array representing this UUID.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "The type of entropyCache must be boolean."
+        }
+      ],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "parseUUID",
+      "返回值": "Uint8Array",
+      "所属模块": "未知模块",
+      "功能描述": "Parse a UUID from the string standard representation as described in the RFC 4122 version 4.",
+      "注释信息": [
+        "@param { string } uuid - String that specifies a UUID",
+        "@returns { Uint8Array } Return a Uint8Array representing this UUID. Throw SyntaxError if parsing fails.",
+        "@throws { BusinessError } 401 - The type of uuid must be string.",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "util",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "uuid",
+          "类型": "string",
+          "必填": true,
+          "说明": "String that specifies a UUID"
+        }
+      ],
+      "return_description": "Return a Uint8Array representing this UUID. Throw SyntaxError if parsing fails.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "The type of uuid must be string."
+        }
+      ],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "interface",
+      "名称": "TextDecoderOptions",
+      "所属模块": "未知模块",
+      "功能描述": "Defines the TextDecoder related options parameters.",
+      "注释信息": [
+        "@interface TextDecoderOptions",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "util",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "property",
+      "名称": "fatal",
+      "属性类型": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Is a fatal error displayed? The default value is false.",
+      "注释信息": [
+        "@type { ?boolean }",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "TextDecoderOptions",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "property",
+      "名称": "ignoreBOM",
+      "属性类型": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Do you want to ignore BOM tags? The default value is false.",
+      "注释信息": [
+        "@type { ?boolean }",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "TextDecoderOptions",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "interface",
+      "名称": "DecodeWithStreamOptions",
+      "所属模块": "未知模块",
+      "功能描述": "Defines the decode with stream related options parameters.",
+      "注释信息": [
+        "@interface DecodeWithStreamOptions",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "util",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "property",
+      "名称": "stream",
+      "属性类型": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Does the call follow additional data blocks. The default value is false.",
+      "注释信息": [
+        "@type { ?boolean }",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "DecodeWithStreamOptions",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "class",
+      "名称": "TextDecoder",
+      "所属模块": "未知模块",
+      "功能描述": "The TextDecoder represents a text decoder that accepts a string as input, decodes it in UTF-8 format, and outputs UTF-8 byte stream.",
+      "注释信息": [
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "util",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "property",
+      "名称": "encoding",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "The source encoding's name, lowercased.",
+      "注释信息": [
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "TextDecoder",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "property",
+      "名称": "fatal",
+      "属性类型": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Returns `true` if error mode is \"fatal\", and `false` otherwise.",
+      "注释信息": [
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "TextDecoder",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "所属模块": "未知模块",
+      "功能描述": "Returns `true` if ignore BOM flag is set, and `false` otherwise.",
+      "注释信息": [
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "TextDecoder",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "constructor",
+      "返回值": "TextDecoder",
+      "所属模块": "未知模块",
+      "功能描述": "The textDecoder constructor.",
+      "注释信息": [
+        "@param { string } encoding - Decoding format",
+        "@param { object } options - Options",
+        "@syscap SystemCapability.Utils.Lang",
+        "@since 7",
+        "@deprecated since 9",
+        "@useinstead ohos.util.TextDecoder.create"
+      ],
+      "层级": 2,
+      "上级": "TextDecoder",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "encoding",
+          "类型": "string",
+          "必填": true,
+          "说明": "Decoding format"
+        },
+        {
+          "名称": "options",
+          "类型": "object",
+          "必填": true,
+          "说明": "Options"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "constructor",
+      "返回值": "TextDecoder",
+      "所属模块": "未知模块",
+      "功能描述": "The textDecoder constructor.",
+      "注释信息": [
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "TextDecoder",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "create",
+      "返回值": "TextDecoder",
+      "所属模块": "未知模块",
+      "功能描述": "Replaces the original constructor to process arguments and return a textDecoder object.",
+      "注释信息": [
+        "@param { string } [encoding] - Decoding format",
+        "@param { TextDecoderOptions } [options] - Options",
+        "@returns { TextDecoder }",
+        "@throws { BusinessError } 401 - if the input parameters are invalid.",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "TextDecoder",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "TextDecoderOptions } [options] - Options"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "if the input parameters are invalid."
+        }
+      ],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "decode",
+      "返回值": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Returns the result of running encoding's decoder.",
+      "注释信息": [
+        "@param { Uint8Array } input - Decoded numbers in accordance with the format",
+        "@param { object } options - Options",
+        "@returns { string } Return decoded text",
+        "@syscap SystemCapability.Utils.Lang",
+        "@since 7",
+        "@deprecated since 9",
+        "@useinstead ohos.util.decodeWithStream"
+      ],
+      "层级": 2,
+      "上级": "TextDecoder",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "input",
+          "类型": "Uint8Array",
+          "必填": true,
+          "说明": "Decoded numbers in accordance with the format"
+        },
+        {
+          "名称": "options",
+          "类型": "object",
+          "必填": true,
+          "说明": "Options"
+        }
+      ],
+      "return_description": "Return decoded text",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "decodeWithStream",
+      "返回值": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Decodes the input and returns a string. If options.stream is true, any incomplete byte sequences occurring at the end of the input are buffered internally and emitted after the next call to textDecoder.decode(). If textDecoder.fatal is true, decoding errors that occur will result in a TypeError being thrown.",
+      "注释信息": [
+        "@param { Uint8Array } input - Decoded numbers in accordance with the format",
+        "@param { DecodeWithStreamOptions } [options] - Options",
+        "@returns { string } Return decoded text",
+        "@throws { BusinessError } 401 - if the input parameters are invalid.",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "TextDecoder",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "input",
+          "类型": "Uint8Array",
+          "必填": true,
+          "说明": "Decoded numbers in accordance with the format"
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "DecodeWithStreamOptions } [options] - Options"
+        }
+      ],
+      "return_description": "Return decoded text",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "if the input parameters are invalid."
+        }
+      ],
+      "版本": "API4.1"
+    }
+  ]
+}

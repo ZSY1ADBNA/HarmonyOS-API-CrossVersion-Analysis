@@ -1,0 +1,307 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.BasicServicesKit",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "namespace",
+      "名称": "commonEventManager",
+      "所属模块": "@kit.BasicServicesKit",
+      "功能描述": "The CommonEventManager module provides common event capabilities, including the capabilities to publish, subscribe to, and unsubscribe from common events.",
+      "注释信息": [
+        "@namespace commonEventManager",
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@crossplatform",
+        "@atomicservice",
+        "@since arkts {'1.1':'11', '1.2':'20'}",
+        "@arkts 1.1&1.2"
+      ],
+      "层级": 1,
+      "上级": "@kit.BasicServicesKit",
+      "since_version": "arkts {'1.1':'11', '1.2':'20'}",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "publish",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Publishes a common event. This API uses an asynchronous callback to return the result.",
+      "注释信息": [
+        "@param { string } event - Name of the common event to publish. For details, see System Common Events.",
+        "@param { AsyncCallback<void> } callback - Callback to execute after the event is published.",
+        "@throws { BusinessError } 1500003 - The common event sending frequency too high.",
+        "@throws { BusinessError } 1500007 - Failed to send the message to the common event service.",
+        "@throws { BusinessError } 1500008 - Failed to initialize the common event service.",
+        "@throws { BusinessError } 1500009 - Failed to obtain system parameters.",
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@crossplatform",
+        "@atomicservice",
+        "@since arkts {'1.1':'20', '1.2':'20'}",
+        "@arkts 1.1&1.2"
+      ],
+      "层级": 1,
+      "上级": "commonEventManager",
+      "since_version": "arkts {'1.1':'20', '1.2':'20'}",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [
+        {
+          "名称": "event",
+          "类型": "string",
+          "必填": true,
+          "说明": "Name of the common event to publish. For details, see System Common Events."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "Callback to execute after the event is published."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "1500003",
+          "description": "The common event sending frequency too high."
+        },
+        {
+          "code": "1500007",
+          "description": "Failed to send the message to the common event service."
+        },
+        {
+          "code": "1500008",
+          "description": "Failed to initialize the common event service."
+        },
+        {
+          "code": "1500009",
+          "description": "Failed to obtain system parameters."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "publish",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Publishes a common event. This API uses an asynchronous callback to return the result.",
+      "注释信息": [
+        "@param { string } event - Name of the common event to publish. For details, see System Common Events.",
+        "@param { CommonEventPublishData } options - Attributes of the common event to publish.",
+        "@param { AsyncCallback<void> } callback - Callback used to return the result.",
+        "@throws { BusinessError } 1500003 - The common event sending frequency too high.",
+        "@throws { BusinessError } 1500007 - Failed to send the message to the common event service.",
+        "@throws { BusinessError } 1500008 - Failed to initialize the common event service.",
+        "@throws { BusinessError } 1500009 - Failed to obtain system parameters.",
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@crossplatform",
+        "@atomicservice",
+        "@since arkts {'1.1':'20', '1.2':'20'}",
+        "@arkts 1.1&1.2"
+      ],
+      "层级": 1,
+      "上级": "commonEventManager",
+      "since_version": "arkts {'1.1':'20', '1.2':'20'}",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [
+        {
+          "名称": "event",
+          "类型": "string",
+          "必填": true,
+          "说明": "Name of the common event to publish. For details, see System Common Events."
+        },
+        {
+          "名称": "options",
+          "类型": "CommonEventPublishData",
+          "必填": true,
+          "说明": "Attributes of the common event to publish."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "Callback used to return the result."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "1500003",
+          "description": "The common event sending frequency too high."
+        },
+        {
+          "code": "1500007",
+          "description": "Failed to send the message to the common event service."
+        },
+        {
+          "code": "1500008",
+          "description": "Failed to initialize the common event service."
+        },
+        {
+          "code": "1500009",
+          "description": "Failed to obtain system parameters."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "publishAsUser",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Publishes an ordered, sticky, or standard common event to a specified user.",
+      "注释信息": [
+        "@param { string } event - Specified the names of the common events.",
+        "@param { number } userId - Specified the user to receive the common events.",
+        "@param { AsyncCallback<void> } callback - The callback of publishAsUser.",
+        "@throws { BusinessError } 202 - not system app",
+        "@throws { BusinessError } 1500003 - The common event sending frequency too high.",
+        "@throws { BusinessError } 1500007 - Failed to send the message to the common event service.",
+        "@throws { BusinessError } 1500008 - Failed to initialize the common event service.",
+        "@throws { BusinessError } 1500009 - Failed to obtain system parameters.",
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@systemapi",
+        "@since arkts {'1.1':'20', '1.2':'20'}",
+        "@arkts 1.1&1.2"
+      ],
+      "层级": 1,
+      "上级": "commonEventManager",
+      "since_version": "arkts {'1.1':'20', '1.2':'20'}",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [
+        {
+          "名称": "event",
+          "类型": "string",
+          "必填": true,
+          "说明": "Specified the names of the common events."
+        },
+        {
+          "名称": "userId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Specified the user to receive the common events."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "The callback of publishAsUser."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "202",
+          "description": "not system app"
+        },
+        {
+          "code": "1500003",
+          "description": "The common event sending frequency too high."
+        },
+        {
+          "code": "1500007",
+          "description": "Failed to send the message to the common event service."
+        },
+        {
+          "code": "1500008",
+          "description": "Failed to initialize the common event service."
+        },
+        {
+          "code": "1500009",
+          "description": "Failed to obtain system parameters."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "publishAsUser",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Publishes an ordered, sticky, or standard common event to a specified user. content and attributes.",
+      "注释信息": [
+        "@param { string } event - Specified the names of the common events.",
+        "@param { number } userId - Specified the user to receive the common events.",
+        "@param { CommonEventPublishData } options - Indicates the CommonEventPublishData containing the common event",
+        "@param { AsyncCallback<void> } callback - The callback of publishAsUser.",
+        "@throws { BusinessError } 202 - not system app",
+        "@throws { BusinessError } 1500003 - The common event sending frequency too high.",
+        "@throws { BusinessError } 1500007 - Failed to send the message to the common event service.",
+        "@throws { BusinessError } 1500008 - Failed to initialize the common event service.",
+        "@throws { BusinessError } 1500009 - Failed to obtain system parameters.",
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@systemapi",
+        "@since arkts {'1.1':'20', '1.2':'20'}",
+        "@arkts 1.1&1.2"
+      ],
+      "层级": 1,
+      "上级": "commonEventManager",
+      "since_version": "arkts {'1.1':'20', '1.2':'20'}",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [
+        {
+          "名称": "event",
+          "类型": "string",
+          "必填": true,
+          "说明": "Specified the names of the common events."
+        },
+        {
+          "名称": "userId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Specified the user to receive the common events."
+        },
+        {
+          "名称": "options",
+          "类型": "CommonEventPublishData",
+          "必填": true,
+          "说明": "Indicates the CommonEventPublishData containing the common event"
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "The callback of publishAsUser."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "202",
+          "description": "not system app"
+        },
+        {
+          "code": "1500003",
+          "description": "The common event sending frequency too high."
+        },
+        {
+          "code": "1500007",
+          "description": "Failed to send the message to the common event service."
+        },
+        {
+          "code": "1500008",
+          "description": "Failed to initialize the common event service."
+        },
+        {
+          "code": "1500009",
+          "description": "Failed to obtain system parameters."
+        }
+      ],
+      "版本": "API6.0"
+    }
+  ]
+}

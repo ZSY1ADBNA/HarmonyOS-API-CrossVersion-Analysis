@@ -1,0 +1,798 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.ConnectivityKit",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "namespace",
+      "名称": "opp",
+      "所属模块": "@kit.ConnectivityKit",
+      "功能描述": "Provides methods to accessing bluetooth OPP(OBEX OBJECT PUSH Profile)-related capabilities.",
+      "注释信息": [
+        "@namespace opp",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 16"
+      ],
+      "层级": 1,
+      "上级": "@kit.ConnectivityKit",
+      "since_version": "16",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "createOppServerProfile",
+      "返回值": "OppServerProfile",
+      "所属模块": "未知模块",
+      "功能描述": "create the instance of OPP server profile.",
+      "注释信息": [
+        "@returns { OppServerProfile } Returns the instance of opp profile.",
+        "@throws { BusinessError } 202 - Non-system applications are not allowed to use system APIs.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@systemapi",
+        "@since 16"
+      ],
+      "层级": 1,
+      "上级": "opp",
+      "since_version": "16",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "Returns the instance of opp profile.",
+      "error_codes": [
+        {
+          "code": "202",
+          "description": "Non-system applications are not allowed to use system APIs."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "interface",
+      "名称": "OppServerProfile",
+      "所属模块": "未知模块",
+      "功能描述": "Manager OPP server profile.",
+      "注释信息": [
+        "@typedef OppServerProfile",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 16"
+      ],
+      "层级": 2,
+      "上级": "opp",
+      "since_version": "16",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Subscribe the event reported when the file transfer status changes. <br>2. Incorrect parameter types. 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BLUETOOTH and ohos.permission.MANAGE_BLUETOOTH",
+        "@param { 'transferStateChange' } type - Type of transport state change event to listen for.",
+        "@param { Callback<OppTransferInformation> } callback - Callback used to listen for event.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications are not allowed to use system APIs.",
+        "@throws { BusinessError } 203 - This function is prohibited by enterprise management policies.",
+        "@throws { BusinessError } 401 - Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 2900001 - Service stopped.",
+        "@throws { BusinessError } 2900003 - Bluetooth disabled.",
+        "@throws { BusinessError } 2900004 - Profile not supported.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@systemapi",
+        "@since 16"
+      ],
+      "层级": 2,
+      "上级": "OppServerProfile",
+      "since_version": "16",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'transferStateChange'",
+          "必填": true,
+          "说明": "Type of transport state change event to listen for."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<OppTransferInformation>",
+          "必填": true,
+          "说明": "Callback used to listen for event."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications are not allowed to use system APIs."
+        },
+        {
+          "code": "203",
+          "description": "This function is prohibited by enterprise management policies."
+        },
+        {
+          "code": "401",
+          "description": "Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "2900001",
+          "description": "Service stopped."
+        },
+        {
+          "code": "2900003",
+          "description": "Bluetooth disabled."
+        },
+        {
+          "code": "2900004",
+          "description": "Profile not supported."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unsubscribe the event reported when the file transfer status changes. <br>2. Incorrect parameter types. 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BLUETOOTH and ohos.permission.MANAGE_BLUETOOTH",
+        "@param { 'transferStateChange' } type - Type of transport state change event to listen for.",
+        "@param { Callback<OppTransferInformation> } callback - Callback used to listen for event.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications are not allowed to use system APIs.",
+        "@throws { BusinessError } 203 - This function is prohibited by enterprise management policies.",
+        "@throws { BusinessError } 401 - Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 2900001 - Service stopped.",
+        "@throws { BusinessError } 2900003 - Bluetooth disabled.",
+        "@throws { BusinessError } 2900004 - Profile not supported.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@systemapi",
+        "@since 16"
+      ],
+      "层级": 2,
+      "上级": "OppServerProfile",
+      "since_version": "16",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'transferStateChange'",
+          "必填": true,
+          "说明": "Type of transport state change event to listen for."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<OppTransferInformation>",
+          "必填": true,
+          "说明": "Callback used to listen for event."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications are not allowed to use system APIs."
+        },
+        {
+          "code": "203",
+          "description": "This function is prohibited by enterprise management policies."
+        },
+        {
+          "code": "401",
+          "description": "Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "2900001",
+          "description": "Service stopped."
+        },
+        {
+          "code": "2900003",
+          "description": "Bluetooth disabled."
+        },
+        {
+          "code": "2900004",
+          "description": "Profile not supported."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Subscribe to the event of receiving a file transfer request. <br>2. Incorrect parameter types. 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BLUETOOTH and ohos.permission.MANAGE_BLUETOOTH",
+        "@param { 'receiveIncomingFile' } type - Type of the event for receiving a file request to listen for.",
+        "@param { Callback<OppTransferInformation> } callback - Callback used to listen for event.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications are not allowed to use system APIs.",
+        "@throws { BusinessError } 203 - This function is prohibited by enterprise management policies.",
+        "@throws { BusinessError } 401 - Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 2900001 - Service stopped.",
+        "@throws { BusinessError } 2900003 - Bluetooth disabled.",
+        "@throws { BusinessError } 2900004 - Profile not supported.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@systemapi",
+        "@since 16"
+      ],
+      "层级": 2,
+      "上级": "OppServerProfile",
+      "since_version": "16",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'receiveIncomingFile'",
+          "必填": true,
+          "说明": "Type of the event for receiving a file request to listen for."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<OppTransferInformation>",
+          "必填": true,
+          "说明": "Callback used to listen for event."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications are not allowed to use system APIs."
+        },
+        {
+          "code": "203",
+          "description": "This function is prohibited by enterprise management policies."
+        },
+        {
+          "code": "401",
+          "description": "Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "2900001",
+          "description": "Service stopped."
+        },
+        {
+          "code": "2900003",
+          "description": "Bluetooth disabled."
+        },
+        {
+          "code": "2900004",
+          "description": "Profile not supported."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unsubscribe to the event of receiving a file transfer request. <br>2. Incorrect parameter types. 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BLUETOOTH and ohos.permission.MANAGE_BLUETOOTH",
+        "@param { 'receiveIncomingFile' } type - Type of the event for receiving a file request to listen for.",
+        "@param { Callback<OppTransferInformation> } callback - Callback used to listen for event.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications are not allowed to use system APIs.",
+        "@throws { BusinessError } 203 - This function is prohibited by enterprise management policies.",
+        "@throws { BusinessError } 401 - Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 2900001 - Service stopped.",
+        "@throws { BusinessError } 2900003 - Bluetooth disabled.",
+        "@throws { BusinessError } 2900004 - Profile not supported.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@systemapi",
+        "@since 16"
+      ],
+      "层级": 2,
+      "上级": "OppServerProfile",
+      "since_version": "16",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'receiveIncomingFile'",
+          "必填": true,
+          "说明": "Type of the event for receiving a file request to listen for."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<OppTransferInformation>",
+          "必填": true,
+          "说明": "Callback used to listen for event."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications are not allowed to use system APIs."
+        },
+        {
+          "code": "203",
+          "description": "This function is prohibited by enterprise management policies."
+        },
+        {
+          "code": "401",
+          "description": "Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "2900001",
+          "description": "Service stopped."
+        },
+        {
+          "code": "2900003",
+          "description": "Bluetooth disabled."
+        },
+        {
+          "code": "2900004",
+          "description": "Profile not supported."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "sendFile",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Send files to the remote device.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BLUETOOTH and ohos.permission.MANAGE_BLUETOOTH",
+        "@param { string } deviceId - Indicates device ID. For example, \"11:22:33:AA:BB:FF\".",
+        "@param { Array<FileHolder> } fileHolds - Indicates the information about files to be sent.",
+        "@returns { Promise<void> } Returns the promise object.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications are not allowed to use system APIs.",
+        "@throws { BusinessError } 203 - This function is prohibited by enterprise management policies.",
+        "@throws { BusinessError } 401 - Invalid parameter.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 2900001 - Service stopped.",
+        "@throws { BusinessError } 2900003 - Bluetooth switch is off.",
+        "@throws { BusinessError } 2900004 - Profile is not supported.",
+        "@throws { BusinessError } 2900099 - Failed to send file.",
+        "@throws { BusinessError } 2903001 - The file type is not supported.",
+        "@throws { BusinessError } 2903002 - Current Transfer Information is busy.",
+        "@throws { BusinessError } 2903003 - The file is not accessible.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@systemapi",
+        "@since 16"
+      ],
+      "层级": 2,
+      "上级": "OppServerProfile",
+      "since_version": "16",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "deviceId",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates device ID. For example, \"11:22:33:AA:BB:FF\"."
+        },
+        {
+          "名称": "fileHolds",
+          "类型": "Array<FileHolder>",
+          "必填": true,
+          "说明": "Indicates the information about files to be sent."
+        }
+      ],
+      "return_description": "Returns the promise object.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications are not allowed to use system APIs."
+        },
+        {
+          "code": "203",
+          "description": "This function is prohibited by enterprise management policies."
+        },
+        {
+          "code": "401",
+          "description": "Invalid parameter."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "2900001",
+          "description": "Service stopped."
+        },
+        {
+          "code": "2900003",
+          "description": "Bluetooth switch is off."
+        },
+        {
+          "code": "2900004",
+          "description": "Profile is not supported."
+        },
+        {
+          "code": "2900099",
+          "description": "Failed to send file."
+        },
+        {
+          "code": "2903001",
+          "description": "The file type is not supported."
+        },
+        {
+          "code": "2903002",
+          "description": "Current Transfer Information is busy."
+        },
+        {
+          "code": "2903003",
+          "description": "The file is not accessible."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "setIncomingFileConfirmation",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Set the user confirmation information for incoming files.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BLUETOOTH and ohos.permission.MANAGE_BLUETOOTH",
+        "@param { boolean } accept - Indicates whether to accept the incoming file, {@code true} indicates accept or {@code false} otherwise.",
+        "@param { number } fileFd : the receive file fd to receive need contains open when accepting.",
+        "@returns { Promise<void> } Returns the promise object.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications are not allowed to use system APIs.",
+        "@throws { BusinessError } 203 - This function is prohibited by enterprise management policies.",
+        "@throws { BusinessError } 401 - Invalid parameter.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 2900001 - Service stopped.",
+        "@throws { BusinessError } 2900003 - Bluetooth switch is off.",
+        "@throws { BusinessError } 2900004 - Profile is not supported.",
+        "@throws { BusinessError } 2900099 - Failed to confirm the received file information.",
+        "@throws { BusinessError } 2903002 - Current Transfer Information is busy.",
+        "@throws { BusinessError } 2903003 - The file is not accessible.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@systemapi",
+        "@since 16"
+      ],
+      "层级": 2,
+      "上级": "OppServerProfile",
+      "since_version": "16",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "accept",
+          "类型": "boolean",
+          "必填": true,
+          "说明": "Indicates whether to accept the incoming file, {@code true} indicates accept or {@code false} otherwise."
+        },
+        {
+          "名称": "fileFd",
+          "类型": "number",
+          "必填": true,
+          "说明": ": the receive file fd to receive need contains open when accepting."
+        }
+      ],
+      "return_description": "Returns the promise object.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications are not allowed to use system APIs."
+        },
+        {
+          "code": "203",
+          "description": "This function is prohibited by enterprise management policies."
+        },
+        {
+          "code": "401",
+          "description": "Invalid parameter."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "2900001",
+          "description": "Service stopped."
+        },
+        {
+          "code": "2900003",
+          "description": "Bluetooth switch is off."
+        },
+        {
+          "code": "2900004",
+          "description": "Profile is not supported."
+        },
+        {
+          "code": "2900099",
+          "description": "Failed to confirm the received file information."
+        },
+        {
+          "code": "2903002",
+          "description": "Current Transfer Information is busy."
+        },
+        {
+          "code": "2903003",
+          "description": "The file is not accessible."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "cancelTransfer",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "cancel the current file transfer action.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BLUETOOTH and ohos.permission.MANAGE_BLUETOOTH",
+        "@returns { Promise<void> } Returns the promise object.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications are not allowed to use system APIs.",
+        "@throws { BusinessError } 203 - This function is prohibited by enterprise management policies.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 2900001 - Service stopped.",
+        "@throws { BusinessError } 2900003 - Bluetooth switch is off.",
+        "@throws { BusinessError } 2900004 - Profile is not supported.",
+        "@throws { BusinessError } 2900099 - Failed to cancel the current transfer.",
+        "@throws { BusinessError } 2903002 - Current Transfer Information is busy.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@systemapi",
+        "@since 16"
+      ],
+      "层级": 2,
+      "上级": "OppServerProfile",
+      "since_version": "16",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "Returns the promise object.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications are not allowed to use system APIs."
+        },
+        {
+          "code": "203",
+          "description": "This function is prohibited by enterprise management policies."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "2900001",
+          "description": "Service stopped."
+        },
+        {
+          "code": "2900003",
+          "description": "Bluetooth switch is off."
+        },
+        {
+          "code": "2900004",
+          "description": "Profile is not supported."
+        },
+        {
+          "code": "2900099",
+          "description": "Failed to cancel the current transfer."
+        },
+        {
+          "code": "2903002",
+          "description": "Current Transfer Information is busy."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getCurrentTransferInformation",
+      "返回值": "Promise<OppTransferInformation>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the information about the file that is being transferred.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BLUETOOTH and ohos.permission.MANAGE_BLUETOOTH",
+        "@returns { Promise<OppTransferInformation> } Returns the promise object.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications are not allowed to use system APIs.",
+        "@throws { BusinessError } 203 - This function is prohibited by enterprise management policies.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 2900001 - Service stopped.",
+        "@throws { BusinessError } 2900003 - Bluetooth switch is off.",
+        "@throws { BusinessError } 2900004 - Profile is not supported.",
+        "@throws { BusinessError } 2900099 - Failed to obtain the current transmission information.",
+        "@throws { BusinessError } 2903004 - Current Transfer Information is empty.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@systemapi",
+        "@since 16"
+      ],
+      "层级": 2,
+      "上级": "OppServerProfile",
+      "since_version": "16",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "Returns the promise object.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications are not allowed to use system APIs."
+        },
+        {
+          "code": "203",
+          "description": "This function is prohibited by enterprise management policies."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "2900001",
+          "description": "Service stopped."
+        },
+        {
+          "code": "2900003",
+          "description": "Bluetooth switch is off."
+        },
+        {
+          "code": "2900004",
+          "description": "Profile is not supported."
+        },
+        {
+          "code": "2900099",
+          "description": "Failed to obtain the current transmission information."
+        },
+        {
+          "code": "2903004",
+          "description": "Current Transfer Information is empty."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "setLastReceivedFileUri",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Set the URI of the last received file. <br>2. Incorrect parameter types. 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BLUETOOTH and ohos.permission.MANAGE_BLUETOOTH",
+        "@param { string } uri - the uri of last received file.",
+        "@returns { Promise<void> } Returns the promise object.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications are not allowed to use system APIs.",
+        "@throws { BusinessError } 203 - This function is prohibited by enterprise management policies.",
+        "@throws { BusinessError } 401 - Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 2900001 - Service stopped.",
+        "@throws { BusinessError } 2900003 - Bluetooth disabled.",
+        "@throws { BusinessError } 2900004 - Profile not supported.",
+        "@throws { BusinessError } 2900099 - Failed to set the URI of the last file.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@systemapi",
+        "@since 16"
+      ],
+      "层级": 2,
+      "上级": "OppServerProfile",
+      "since_version": "16",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "uri",
+          "类型": "string",
+          "必填": true,
+          "说明": "the uri of last received file."
+        }
+      ],
+      "return_description": "Returns the promise object.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications are not allowed to use system APIs."
+        },
+        {
+          "code": "203",
+          "description": "This function is prohibited by enterprise management policies."
+        },
+        {
+          "code": "401",
+          "description": "Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "2900001",
+          "description": "Service stopped."
+        },
+        {
+          "code": "2900003",
+          "description": "Bluetooth disabled."
+        },
+        {
+          "code": "2900004",
+          "description": "Profile not supported."
+        },
+        {
+          "code": "2900099",
+          "description": "Failed to set the URI of the last file."
+        }
+      ],
+      "版本": "API6.0"
+    }
+  ]
+}

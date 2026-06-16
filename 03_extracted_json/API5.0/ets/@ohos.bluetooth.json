@@ -1,0 +1,1214 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.ConnectivityKit",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "namespace",
+      "名称": "bluetooth",
+      "所属模块": "@kit.ConnectivityKit",
+      "功能描述": "Provides methods to operate or manage Bluetooth.",
+      "注释信息": [
+        "@namespace bluetooth",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 7",
+        "@deprecated since 9",
+        "@useinstead ohos.bluetoothManager"
+      ],
+      "层级": 1,
+      "上级": "@kit.ConnectivityKit",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getState",
+      "返回值": "BluetoothState",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the Bluetooth status of a device. {@link BluetoothState#STATE_TURNING_ON}, {@link BluetoothState#STATE_ON}, {@link BluetoothState#STATE_TURNING_OFF}, {@link BluetoothState#STATE_BLE_TURNING_ON}, {@link BluetoothState#STATE_BLE_ON}, or {@link BluetoothState#STATE_BLE_TURNING_OFF}.",
+      "注释信息": [
+        "@permission ohos.permission.USE_BLUETOOTH",
+        "@returns { BluetoothState } Returns the Bluetooth status, which can be {@link BluetoothState#STATE_OFF},",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 7",
+        "@deprecated since 9",
+        "@useinstead ohos.bluetoothManager/bluetoothManager.getState"
+      ],
+      "层级": 1,
+      "上级": "bluetooth",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "Returns the Bluetooth status, which can be {@link BluetoothState#STATE_OFF},",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getBtConnectionState",
+      "返回值": "ProfileConnectionState",
+      "所属模块": "未知模块",
+      "功能描述": "Get the local device connection state to any profile of any remote device. {@link ProfileConnectionState#STATE_CONNECTING}, {@link ProfileConnectionState#STATE_CONNECTED}, {@link ProfileConnectionState#STATE_DISCONNECTING}.",
+      "注释信息": [
+        "@permission ohos.permission.USE_BLUETOOTH",
+        "@returns { ProfileConnectionState } One of {@link ProfileConnectionState#STATE_DISCONNECTED},",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 7",
+        "@deprecated since 9",
+        "@useinstead ohos.bluetoothManager/bluetoothManager.getBtConnectionState"
+      ],
+      "层级": 1,
+      "上级": "bluetooth",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "One of {@link ProfileConnectionState#STATE_DISCONNECTED},",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "pairDevice",
+      "返回值": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Starts pairing with a remote Bluetooth device.",
+      "注释信息": [
+        "@permission ohos.permission.DISCOVER_BLUETOOTH",
+        "@param { string } deviceId - The address of the remote device to pair.",
+        "@returns { boolean } Returns {@code true} if the pairing process is started; returns {@code false} otherwise.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 7",
+        "@deprecated since 9",
+        "@useinstead ohos.bluetoothManager/bluetoothManager.pairDevice"
+      ],
+      "层级": 1,
+      "上级": "bluetooth",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "deviceId",
+          "类型": "string",
+          "必填": true,
+          "说明": "The address of the remote device to pair."
+        }
+      ],
+      "return_description": "Returns {@code true} if the pairing process is started; returns {@code false} otherwise.",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "cancelPairedDevice",
+      "返回值": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Remove a paired remote device.",
+      "注释信息": [
+        "@permission ohos.permission.DISCOVER_BLUETOOTH",
+        "@param { string } deviceId - The address of the remote device to be removed.",
+        "@returns { boolean } Returns {@code true} if the cancel process is started; returns {@code false} otherwise.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@systemapi Hide this for inner system use",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.bluetoothManager/bluetoothManager.cancelPairedDevice"
+      ],
+      "层级": 1,
+      "上级": "bluetooth",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "deviceId",
+          "类型": "string",
+          "必填": true,
+          "说明": "The address of the remote device to be removed."
+        }
+      ],
+      "return_description": "Returns {@code true} if the cancel process is started; returns {@code false} otherwise.",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getRemoteDeviceName",
+      "返回值": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the name of a peer Bluetooth device.",
+      "注释信息": [
+        "@permission ohos.permission.USE_BLUETOOTH",
+        "@param { string } deviceId - The address of the remote device.",
+        "@returns { string } Returns the device name in character string format.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.bluetoothManager/bluetoothManager.getRemoteDeviceName"
+      ],
+      "层级": 1,
+      "上级": "bluetooth",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "deviceId",
+          "类型": "string",
+          "必填": true,
+          "说明": "The address of the remote device."
+        }
+      ],
+      "return_description": "Returns the device name in character string format.",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getRemoteDeviceClass",
+      "返回值": "DeviceClass",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the class of a peer Bluetooth device.",
+      "注释信息": [
+        "@permission ohos.permission.USE_BLUETOOTH",
+        "@param { string } deviceId - The address of the remote device.",
+        "@returns { DeviceClass } The class of the remote device, {@link DeviceClass}.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.bluetoothManager/bluetoothManager.getRemoteDeviceClass"
+      ],
+      "层级": 1,
+      "上级": "bluetooth",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "deviceId",
+          "类型": "string",
+          "必填": true,
+          "说明": "The address of the remote device."
+        }
+      ],
+      "return_description": "The class of the remote device, {@link DeviceClass}.",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "enableBluetooth",
+      "返回值": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Enables Bluetooth on a device.",
+      "注释信息": [
+        "@permission ohos.permission.DISCOVER_BLUETOOTH",
+        "@returns { boolean } Returns {@code true} if Bluetooth is being enabled; returns {@code false} if an error occurs.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.bluetoothManager/bluetoothManager.enableBluetooth"
+      ],
+      "层级": 1,
+      "上级": "bluetooth",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "Returns {@code true} if Bluetooth is being enabled; returns {@code false} if an error occurs.",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "disableBluetooth",
+      "返回值": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Disables Bluetooth on a device.",
+      "注释信息": [
+        "@permission ohos.permission.DISCOVER_BLUETOOTH",
+        "@returns { boolean } Returns {@code true} if Bluetooth is being disabled; returns {@code false} if an error occurs.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.bluetoothManager/bluetoothManager.disableBluetooth"
+      ],
+      "层级": 1,
+      "上级": "bluetooth",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "Returns {@code true} if Bluetooth is being disabled; returns {@code false} if an error occurs.",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getLocalName",
+      "返回值": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the Bluetooth local name of a device.",
+      "注释信息": [
+        "@permission ohos.permission.USE_BLUETOOTH",
+        "@returns { string } Returns the name the device.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.bluetoothManager/bluetoothManager.getLocalName"
+      ],
+      "层级": 1,
+      "上级": "bluetooth",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "Returns the name the device.",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getPairedDevices",
+      "返回值": "Array<string>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the list of Bluetooth devices that have been paired with the current device.",
+      "注释信息": [
+        "@permission ohos.permission.USE_BLUETOOTH",
+        "@returns { Array<string> } Returns a list of paired Bluetooth devices's address.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.bluetoothManager/bluetoothManager.getPairedDevices"
+      ],
+      "层级": 1,
+      "上级": "bluetooth",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "Returns a list of paired Bluetooth devices's address.",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getProfileConnState",
+      "返回值": "ProfileConnectionState",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the connection state of profile.",
+      "注释信息": [
+        "@permission ohos.permission.USE_BLUETOOTH",
+        "@param { ProfileId } profileId - The profile id.",
+        "@returns { ProfileConnectionState } Returns the connection state.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.bluetoothManager/bluetoothManager.getProfileConnectionState"
+      ],
+      "层级": 1,
+      "上级": "bluetooth",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "profileId",
+          "类型": "ProfileId",
+          "必填": true,
+          "说明": "The profile id."
+        }
+      ],
+      "return_description": "Returns the connection state.",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "setDevicePairingConfirmation",
+      "返回值": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Sets the confirmation of pairing with a certain device.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_BLUETOOTH",
+        "@param { string } device - The address of the remote device.",
+        "@param { boolean } accept - Indicates whether to accept the pairing request, {@code true} indicates accept or {@code false} otherwise.",
+        "@returns { boolean } Returns {@code true} if the pairing confirmation is set; returns {@code false} otherwise.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.bluetoothManager/bluetoothManager.setDevicePairingConfirmation"
+      ],
+      "层级": 1,
+      "上级": "bluetooth",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "device",
+          "类型": "string",
+          "必填": true,
+          "说明": "The address of the remote device."
+        },
+        {
+          "名称": "accept",
+          "类型": "boolean",
+          "必填": true,
+          "说明": "Indicates whether to accept the pairing request, {@code true} indicates accept or {@code false} otherwise."
+        }
+      ],
+      "return_description": "Returns {@code true} if the pairing confirmation is set; returns {@code false} otherwise.",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "setLocalName",
+      "返回值": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Sets the Bluetooth friendly name of a device.",
+      "注释信息": [
+        "@permission ohos.permission.DISCOVER_BLUETOOTH",
+        "@param { string } name - Indicates a valid Bluetooth name.",
+        "@returns { boolean } Returns {@code true} if the Bluetooth name is set successfully; returns {@code false} otherwise.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.bluetoothManager/bluetoothManager.setLocalName"
+      ],
+      "层级": 1,
+      "上级": "bluetooth",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "name",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates a valid Bluetooth name."
+        }
+      ],
+      "return_description": "Returns {@code true} if the Bluetooth name is set successfully; returns {@code false} otherwise.",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "setBluetoothScanMode",
+      "返回值": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Sets the Bluetooth scan mode for a device.",
+      "注释信息": [
+        "@permission ohos.permission.USE_BLUETOOTH",
+        "@param { ScanMode } mode - Indicates the Bluetooth scan mode to set, {@link ScanMode}.",
+        "@param { number } duration - Indicates the duration in seconds, in which the host is discoverable.",
+        "@returns { boolean } Returns {@code true} if the Bluetooth scan mode is set; returns {@code false} otherwise.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.bluetoothManager/bluetoothManager.setBluetoothScanMode"
+      ],
+      "层级": 1,
+      "上级": "bluetooth",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "mode",
+          "类型": "ScanMode",
+          "必填": true,
+          "说明": "Indicates the Bluetooth scan mode to set, {@link ScanMode}."
+        },
+        {
+          "名称": "duration",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the duration in seconds, in which the host is discoverable."
+        }
+      ],
+      "return_description": "Returns {@code true} if the Bluetooth scan mode is set; returns {@code false} otherwise.",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getBluetoothScanMode",
+      "返回值": "ScanMode",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the Bluetooth scanning mode of a device.",
+      "注释信息": [
+        "@permission ohos.permission.USE_BLUETOOTH",
+        "@returns { ScanMode } Returns the Bluetooth scanning mode, {@link ScanMode}.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.bluetoothManager/bluetoothManager.getBluetoothScanMode"
+      ],
+      "层级": 1,
+      "上级": "bluetooth",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "Returns the Bluetooth scanning mode, {@link ScanMode}.",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "startBluetoothDiscovery",
+      "返回值": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Starts scanning Bluetooth devices.",
+      "注释信息": [
+        "@permission ohos.permission.DISCOVER_BLUETOOTH and ohos.permission.LOCATION",
+        "@returns { boolean } Returns {@code true} if the scan is started successfully; returns {@code false} otherwise.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.bluetoothManager/bluetoothManager.startBluetoothDiscovery"
+      ],
+      "层级": 1,
+      "上级": "bluetooth",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "Returns {@code true} if the scan is started successfully; returns {@code false} otherwise.",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "stopBluetoothDiscovery",
+      "返回值": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Stops Bluetooth device scanning.",
+      "注释信息": [
+        "@permission ohos.permission.DISCOVER_BLUETOOTH",
+        "@returns { boolean } Returns {@code true} if scanning is stopped successfully; returns {@code false} otherwise.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.bluetoothManager/bluetoothManager.stopBluetoothDiscovery"
+      ],
+      "层级": 1,
+      "上级": "bluetooth",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "Returns {@code true} if scanning is stopped successfully; returns {@code false} otherwise.",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Subscribe the event reported when a remote Bluetooth device is discovered.",
+      "注释信息": [
+        "@permission ohos.permission.USE_BLUETOOTH",
+        "@param { 'bluetoothDeviceFind' } type - Type of the discovering event to listen for.",
+        "@param { Callback<Array<string>> } callback - Callback used to listen for the discovering event.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.bluetoothManager/bluetoothManager.on#event:bluetoothDeviceFind"
+      ],
+      "层级": 1,
+      "上级": "bluetooth",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'bluetoothDeviceFind'",
+          "必填": true,
+          "说明": "Type of the discovering event to listen for."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<Array<string>>",
+          "必填": true,
+          "说明": "Callback used to listen for the discovering event."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unsubscribe the event reported when a remote Bluetooth device is discovered.",
+      "注释信息": [
+        "@permission ohos.permission.USE_BLUETOOTH",
+        "@param { 'bluetoothDeviceFind' } type - Type of the discovering event to listen for.",
+        "@param { Callback<Array<string>> } callback - Callback used to listen for the discovering event.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.bluetoothManager/bluetoothManager.off#event:bluetoothDeviceFind"
+      ],
+      "层级": 1,
+      "上级": "bluetooth",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'bluetoothDeviceFind'",
+          "必填": true,
+          "说明": "Type of the discovering event to listen for."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<Array<string>>",
+          "必填": true,
+          "说明": "Callback used to listen for the discovering event."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Subscribe the event reported when a remote Bluetooth device is bonded.",
+      "注释信息": [
+        "@permission ohos.permission.USE_BLUETOOTH",
+        "@param { 'bondStateChange' } type - Type of the bond state event to listen for.",
+        "@param { Callback<BondStateParam> } callback - Callback used to listen for the bond state event, {@link BondStateParam}.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.bluetoothManager/bluetoothManager.on#event:bondStateChange"
+      ],
+      "层级": 1,
+      "上级": "bluetooth",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'bondStateChange'",
+          "必填": true,
+          "说明": "Type of the bond state event to listen for."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<BondStateParam>",
+          "必填": true,
+          "说明": "Callback used to listen for the bond state event, {@link BondStateParam}."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unsubscribe the event reported when a remote Bluetooth device is bonded.",
+      "注释信息": [
+        "@permission ohos.permission.USE_BLUETOOTH",
+        "@param { 'bondStateChange' } type - Type of the bond state event to listen for.",
+        "@param { Callback<BondStateParam> } callback - Callback used to listen for the bond state event.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.bluetoothManager/bluetoothManager.off#event:bondStateChange"
+      ],
+      "层级": 1,
+      "上级": "bluetooth",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'bondStateChange'",
+          "必填": true,
+          "说明": "Type of the bond state event to listen for."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<BondStateParam>",
+          "必填": true,
+          "说明": "Callback used to listen for the bond state event."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Subscribe the event of a pairing request from a remote Bluetooth device.",
+      "注释信息": [
+        "@permission ohos.permission.DISCOVER_BLUETOOTH",
+        "@param { 'pinRequired' } type - Type of the pairing request event to listen for.",
+        "@param { Callback<PinRequiredParam> } callback - Callback used to listen for the pairing request event.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.bluetoothManager/bluetoothManager.on#event:pinRequired"
+      ],
+      "层级": 1,
+      "上级": "bluetooth",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'pinRequired'",
+          "必填": true,
+          "说明": "Type of the pairing request event to listen for."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<PinRequiredParam>",
+          "必填": true,
+          "说明": "Callback used to listen for the pairing request event."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unsubscribe the event of a pairing request from a remote Bluetooth device.",
+      "注释信息": [
+        "@permission ohos.permission.DISCOVER_BLUETOOTH",
+        "@param { 'pinRequired' } type - Type of the pairing request event to listen for.",
+        "@param { Callback<PinRequiredParam> } callback - Callback used to listen for the pairing request event.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.bluetoothManager/bluetoothManager.off#event:pinRequired"
+      ],
+      "层级": 1,
+      "上级": "bluetooth",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'pinRequired'",
+          "必填": true,
+          "说明": "Type of the pairing request event to listen for."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<PinRequiredParam>",
+          "必填": true,
+          "说明": "Callback used to listen for the pairing request event."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Subscribe the event reported when the Bluetooth state changes.",
+      "注释信息": [
+        "@permission ohos.permission.USE_BLUETOOTH",
+        "@param { 'stateChange' } type - Type of the Bluetooth state changes event to listen for.",
+        "@param { Callback<BluetoothState> } callback - Callback used to listen for the Bluetooth state event.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.bluetoothManager/bluetoothManager.on#event:stateChange"
+      ],
+      "层级": 1,
+      "上级": "bluetooth",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'stateChange'",
+          "必填": true,
+          "说明": "Type of the Bluetooth state changes event to listen for."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<BluetoothState>",
+          "必填": true,
+          "说明": "Callback used to listen for the Bluetooth state event."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unsubscribe the event reported when the Bluetooth state changes.",
+      "注释信息": [
+        "@permission ohos.permission.USE_BLUETOOTH",
+        "@param { 'stateChange' } type - Type of the Bluetooth state changes event to listen for.",
+        "@param { Callback<BluetoothState> } callback - Callback used to listen for the Bluetooth state event.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.bluetoothManager/bluetoothManager.off#event:stateChange"
+      ],
+      "层级": 1,
+      "上级": "bluetooth",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'stateChange'",
+          "必填": true,
+          "说明": "Type of the Bluetooth state changes event to listen for."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<BluetoothState>",
+          "必填": true,
+          "说明": "Callback used to listen for the Bluetooth state event."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "sppListen",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Creates a Bluetooth server listening socket.",
+      "注释信息": [
+        "@permission ohos.permission.USE_BLUETOOTH",
+        "@param { string } name - Indicates the service name.",
+        "@param { SppOption } option - Indicates the listen parameters {@link SppOption}.",
+        "@param { AsyncCallback<number> } callback - Callback used to return a server socket ID.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.bluetoothManager/bluetoothManager.sppListen"
+      ],
+      "层级": 1,
+      "上级": "bluetooth",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "name",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates the service name."
+        },
+        {
+          "名称": "option",
+          "类型": "SppOption",
+          "必填": true,
+          "说明": "Indicates the listen parameters {@link SppOption}."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<number>",
+          "必填": true,
+          "说明": "Callback used to return a server socket ID."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "sppAccept",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Waits for a remote device to connect.",
+      "注释信息": [
+        "@param { number } serverSocket - Indicates the server socket ID, returned by {@link sppListen}.",
+        "@param { AsyncCallback<number> } callback - Callback used to return a client socket ID.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.bluetoothManager/bluetoothManager.sppAccept"
+      ],
+      "层级": 1,
+      "上级": "bluetooth",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "serverSocket",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the server socket ID, returned by {@link sppListen}."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<number>",
+          "必填": true,
+          "说明": "Callback used to return a client socket ID."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "sppConnect",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Connects to a remote device over the socket.",
+      "注释信息": [
+        "@permission ohos.permission.USE_BLUETOOTH",
+        "@param { string } device - The address of the remote device to connect.",
+        "@param { SppOption } option - Indicates the connect parameters {@link SppOption}.",
+        "@param { AsyncCallback<number> } callback - Callback used to return a client socket ID.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.bluetoothManager/bluetoothManager.sppConnect"
+      ],
+      "层级": 1,
+      "上级": "bluetooth",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "device",
+          "类型": "string",
+          "必填": true,
+          "说明": "The address of the remote device to connect."
+        },
+        {
+          "名称": "option",
+          "类型": "SppOption",
+          "必填": true,
+          "说明": "Indicates the connect parameters {@link SppOption}."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<number>",
+          "必填": true,
+          "说明": "Callback used to return a client socket ID."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "sppCloseServerSocket",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Disables an spp server socket and releases related resources.",
+      "注释信息": [
+        "@param { number } socket - Indicates the server socket ID, returned by {@link sppListen}.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.bluetoothManager/bluetoothManager.sppCloseServerSocket"
+      ],
+      "层级": 1,
+      "上级": "bluetooth",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "socket",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the server socket ID, returned by {@link sppListen}."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "sppCloseClientSocket",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Disables an spp client socket and releases related resources.",
+      "注释信息": [
+        "@param { number } socket - Indicates the client socket ID, returned by {@link sppAccept} or {@link sppConnect}.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.bluetoothManager/bluetoothManager.sppCloseClientSocket"
+      ],
+      "层级": 1,
+      "上级": "bluetooth",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "socket",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the client socket ID, returned by {@link sppAccept} or {@link sppConnect}."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "sppWrite",
+      "返回值": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Write data through the socket.",
+      "注释信息": [
+        "@param { number } clientSocket - Indicates the client socket ID, returned by {@link sppAccept} or {@link sppConnect}.",
+        "@param { ArrayBuffer } data - Indicates the data to write.",
+        "@returns { boolean } Returns {@code true} if the data is write successfully; returns {@code false} otherwise.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.bluetoothManager/bluetoothManager.sppWrite"
+      ],
+      "层级": 1,
+      "上级": "bluetooth",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "clientSocket",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the client socket ID, returned by {@link sppAccept} or {@link sppConnect}."
+        },
+        {
+          "名称": "data",
+          "类型": "ArrayBuffer",
+          "必填": true,
+          "说明": "Indicates the data to write."
+        }
+      ],
+      "return_description": "Returns {@code true} if the data is write successfully; returns {@code false} otherwise.",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Subscribe the event reported when data is read from the socket.",
+      "注释信息": [
+        "@param { 'sppRead' } type - Type of the spp read event to listen for.",
+        "@param { number } clientSocket - Client socket ID, which is obtained by sppAccept or sppConnect.",
+        "@param { Callback<ArrayBuffer> } callback - Callback used to listen for the spp read event.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.bluetoothManager/bluetoothManager.on#event:sppRead"
+      ],
+      "层级": 1,
+      "上级": "bluetooth",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'sppRead'",
+          "必填": true,
+          "说明": "Type of the spp read event to listen for."
+        },
+        {
+          "名称": "clientSocket",
+          "类型": "number",
+          "必填": true,
+          "说明": "Client socket ID, which is obtained by sppAccept or sppConnect."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<ArrayBuffer>",
+          "必填": true,
+          "说明": "Callback used to listen for the spp read event."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unsubscribe the event reported when data is read from the socket.",
+      "注释信息": [
+        "@param { 'sppRead' } type - Type of the spp read event to listen for.",
+        "@param { number } clientSocket - Client socket ID, which is obtained by sppAccept or sppConnect.",
+        "@param { Callback<ArrayBuffer> } callback - Callback used to listen for the spp read event.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.bluetoothManager/bluetoothManager.off#event:sppRead"
+      ],
+      "层级": 1,
+      "上级": "bluetooth",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'sppRead'",
+          "必填": true,
+          "说明": "Type of the spp read event to listen for."
+        },
+        {
+          "名称": "clientSocket",
+          "类型": "number",
+          "必填": true,
+          "说明": "Client socket ID, which is obtained by sppAccept or sppConnect."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<ArrayBuffer>",
+          "必填": true,
+          "说明": "Callback used to listen for the spp read event."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getProfile",
+      "返回值": "A2dpSourceProfile | HandsFreeAudioGatewayProfile",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the instance of profile.",
+      "注释信息": [
+        "@param { ProfileId } profileId - The profile id..",
+        "@returns { A2dpSourceProfile | HandsFreeAudioGatewayProfile } Returns instance of profile.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.bluetoothManager/bluetoothManager.getProfileInstance"
+      ],
+      "层级": 1,
+      "上级": "bluetooth",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "profileId",
+          "类型": "ProfileId",
+          "必填": true,
+          "说明": "The profile id.."
+        }
+      ],
+      "return_description": "Returns instance of profile.",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "interface",
+      "名称": "BaseProfile",
+      "所属模块": "未知模块",
+      "功能描述": "Base interface of profile.",
+      "注释信息": [
+        "@typedef BaseProfile",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 7",
+        "@deprecated since 9",
+        "@useinstead ohos.bluetoothManager/bluetoothManager.BaseProfile"
+      ],
+      "层级": 2,
+      "上级": "bluetooth",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getConnectionDevices",
+      "返回值": "Array<string>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the connected devices list of profile.",
+      "注释信息": [
+        "@permission ohos.permission.USE_BLUETOOTH",
+        "@returns { Array<string> } Returns the address of connected devices list.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.bluetoothManager/bluetoothManager.BaseProfile#getConnectionDevices"
+      ],
+      "层级": 2,
+      "上级": "BaseProfile",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "Returns the address of connected devices list.",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getDeviceState",
+      "返回值": "ProfileConnectionState",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the profile state of device.",
+      "注释信息": [
+        "@permission ohos.permission.USE_BLUETOOTH",
+        "@param { string } device - The address of bluetooth device.",
+        "@returns { ProfileConnectionState } Returns {@link ProfileConnectionState} of device.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.bluetoothManager/bluetoothManager.BaseProfile#getDeviceState"
+      ],
+      "层级": 2,
+      "上级": "BaseProfile",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "device",
+          "类型": "string",
+          "必填": true,
+          "说明": "The address of bluetooth device."
+        }
+      ],
+      "return_description": "Returns {@link ProfileConnectionState} of device.",
+      "error_codes": [],
+      "版本": "API5.0"
+    }
+  ]
+}

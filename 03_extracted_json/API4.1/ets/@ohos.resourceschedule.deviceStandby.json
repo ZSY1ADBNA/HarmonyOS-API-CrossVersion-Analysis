@@ -1,0 +1,483 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.BackgroundTasksKit",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "namespace",
+      "名称": "deviceStandby",
+      "所属模块": "@kit.BackgroundTasksKit",
+      "功能描述": "Provides methods for managing device standby, including the methods for querying standby status and exemption list.",
+      "注释信息": [
+        "@namespace deviceStandby",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "@kit.BackgroundTasksKit",
+      "since_version": "10",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "getExemptedApps",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Returns the information about the specified exempted application.",
+      "注释信息": [
+        "@permission ohos.permission.DEVICE_STANDBY_EXEMPTION",
+        "@param { number } resourceTypes - the combination of {@link ResourceType} values.",
+        "@param { AsyncCallback<Array<ExemptedAppInfo>> } callback - the callback of getExemptedApps.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Not System App.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 9800001 - Memory operation failed.",
+        "@throws { BusinessError } 9800002 - Parcel operation failed.",
+        "@throws { BusinessError } 9800003 - Inner transact failed.",
+        "@throws { BusinessError } 9800004 - System service operation failed.",
+        "@throws { BusinessError } 18700001 - Caller information verification failed.",
+        "@syscap SystemCapability.ResourceSchedule.DeviceStandby",
+        "@systemapi Hide this for inner system use.",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "deviceStandby",
+      "since_version": "10",
+      "system_capability": "SystemCapability.ResourceSchedule.DeviceStandby",
+      "parameters": [
+        {
+          "名称": "resourceTypes",
+          "类型": "number",
+          "必填": true,
+          "说明": "the combination of {@link ResourceType} values."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<Array<ExemptedAppInfo>>",
+          "必填": true,
+          "说明": "the callback of getExemptedApps."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Not System App."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "9800001",
+          "description": "Memory operation failed."
+        },
+        {
+          "code": "9800002",
+          "description": "Parcel operation failed."
+        },
+        {
+          "code": "9800003",
+          "description": "Inner transact failed."
+        },
+        {
+          "code": "9800004",
+          "description": "System service operation failed."
+        },
+        {
+          "code": "18700001",
+          "description": "Caller information verification failed."
+        }
+      ],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "getExemptedApps",
+      "返回值": "Promise<Array<ExemptedAppInfo>>",
+      "所属模块": "未知模块",
+      "功能描述": "Returns the information about the specified exempted application.",
+      "注释信息": [
+        "@permission ohos.permission.DEVICE_STANDBY_EXEMPTION",
+        "@param { number } resourceTypes - the combination of {@link ResourceType} values.",
+        "@returns { Promise<Array<ExemptedAppInfo>> } the promise returned by getExemptedApps.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Not System App.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 9800001 - Memory operation failed.",
+        "@throws { BusinessError } 9800002 - Parcel operation failed.",
+        "@throws { BusinessError } 9800003 - Inner transact failed.",
+        "@throws { BusinessError } 9800004 - System service operation failed.",
+        "@throws { BusinessError } 18700001 - Caller information verification failed.",
+        "@syscap SystemCapability.ResourceSchedule.DeviceStandby",
+        "@systemapi Hide this for inner system use.",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "deviceStandby",
+      "since_version": "10",
+      "system_capability": "SystemCapability.ResourceSchedule.DeviceStandby",
+      "parameters": [
+        {
+          "名称": "resourceTypes",
+          "类型": "number",
+          "必填": true,
+          "说明": "the combination of {@link ResourceType} values."
+        }
+      ],
+      "return_description": "the promise returned by getExemptedApps.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Not System App."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "9800001",
+          "description": "Memory operation failed."
+        },
+        {
+          "code": "9800002",
+          "description": "Parcel operation failed."
+        },
+        {
+          "code": "9800003",
+          "description": "Inner transact failed."
+        },
+        {
+          "code": "9800004",
+          "description": "System service operation failed."
+        },
+        {
+          "code": "18700001",
+          "description": "Caller information verification failed."
+        }
+      ],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "requestExemptionResource",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Requests exemption resources.",
+      "注释信息": [
+        "@permission ohos.permission.DEVICE_STANDBY_EXEMPTION",
+        "@param { ResourceRequest } request - requesting or releasing resources.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Not System App.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 9800001 - Memory operation failed.",
+        "@throws { BusinessError } 9800002 - Parcel operation failed.",
+        "@throws { BusinessError } 9800003 - Inner transact failed.",
+        "@throws { BusinessError } 9800004 - System service operation failed.",
+        "@throws { BusinessError } 18700001 - Caller information verification failed.",
+        "@syscap SystemCapability.ResourceSchedule.DeviceStandby",
+        "@systemapi Hide this for inner system use.",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "deviceStandby",
+      "since_version": "10",
+      "system_capability": "SystemCapability.ResourceSchedule.DeviceStandby",
+      "parameters": [
+        {
+          "名称": "request",
+          "类型": "ResourceRequest",
+          "必填": true,
+          "说明": "requesting or releasing resources."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Not System App."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "9800001",
+          "description": "Memory operation failed."
+        },
+        {
+          "code": "9800002",
+          "description": "Parcel operation failed."
+        },
+        {
+          "code": "9800003",
+          "description": "Inner transact failed."
+        },
+        {
+          "code": "9800004",
+          "description": "System service operation failed."
+        },
+        {
+          "code": "18700001",
+          "description": "Caller information verification failed."
+        }
+      ],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "releaseExemptionResource",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Releases exemption resources.",
+      "注释信息": [
+        "@permission ohos.permission.DEVICE_STANDBY_EXEMPTION",
+        "@param { ResourceRequest } request - requesting or releasing resources.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Not System App.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 9800001 - Memory operation failed.",
+        "@throws { BusinessError } 9800002 - Parcel operation failed.",
+        "@throws { BusinessError } 9800003 - Inner transact failed.",
+        "@throws { BusinessError } 9800004 - System service operation failed.",
+        "@throws { BusinessError } 18700001 - Caller information verification failed.",
+        "@syscap SystemCapability.ResourceSchedule.DeviceStandby",
+        "@systemapi Hide this for inner system use.",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "deviceStandby",
+      "since_version": "10",
+      "system_capability": "SystemCapability.ResourceSchedule.DeviceStandby",
+      "parameters": [
+        {
+          "名称": "request",
+          "类型": "ResourceRequest",
+          "必填": true,
+          "说明": "requesting or releasing resources."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Not System App."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "9800001",
+          "description": "Memory operation failed."
+        },
+        {
+          "code": "9800002",
+          "description": "Parcel operation failed."
+        },
+        {
+          "code": "9800003",
+          "description": "Inner transact failed."
+        },
+        {
+          "code": "9800004",
+          "description": "System service operation failed."
+        },
+        {
+          "code": "18700001",
+          "description": "Caller information verification failed."
+        }
+      ],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "enum",
+      "名称": "ResourceType",
+      "所属模块": "未知模块",
+      "功能描述": "The type of exemption resources requested by the application.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.ResourceSchedule.DeviceStandby",
+        "@systemapi Hide this for inner system use.",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "deviceStandby",
+      "since_version": "10",
+      "system_capability": "SystemCapability.ResourceSchedule.DeviceStandby",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "NETWORK",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "The resource for non-standby network access.",
+      "注释信息": [
+        "@syscap SystemCapability.ResourceSchedule.DeviceStandby",
+        "@systemapi Hide this for inner system use.",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "ResourceType",
+      "since_version": "10",
+      "system_capability": "SystemCapability.ResourceSchedule.DeviceStandby",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "RUNNING_LOCK",
+      "值": "1 << 1",
+      "所属模块": "未知模块",
+      "功能描述": "The resource for non-standby cpu running-lock.",
+      "注释信息": [
+        "@syscap SystemCapability.ResourceSchedule.DeviceStandby",
+        "@systemapi Hide this for inner system use.",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "ResourceType",
+      "since_version": "10",
+      "system_capability": "SystemCapability.ResourceSchedule.DeviceStandby",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "TIMER",
+      "值": "1 << 2",
+      "所属模块": "未知模块",
+      "功能描述": "The resource for non-standby timer.",
+      "注释信息": [
+        "@syscap SystemCapability.ResourceSchedule.DeviceStandby",
+        "@systemapi Hide this for inner system use.",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "ResourceType",
+      "since_version": "10",
+      "system_capability": "SystemCapability.ResourceSchedule.DeviceStandby",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "WORK_SCHEDULER",
+      "值": "1 << 3",
+      "所属模块": "未知模块",
+      "功能描述": "The resource for non-standby workscheduler.",
+      "注释信息": [
+        "@syscap SystemCapability.ResourceSchedule.DeviceStandby",
+        "@systemapi Hide this for inner system use.",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "ResourceType",
+      "since_version": "10",
+      "system_capability": "SystemCapability.ResourceSchedule.DeviceStandby",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "AUTO_SYNC",
+      "值": "1 << 4",
+      "所属模块": "未知模块",
+      "功能描述": "The resource for non-standby automatic synchronization.",
+      "注释信息": [
+        "@syscap SystemCapability.ResourceSchedule.DeviceStandby",
+        "@systemapi Hide this for inner system use.",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "ResourceType",
+      "since_version": "10",
+      "system_capability": "SystemCapability.ResourceSchedule.DeviceStandby",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "PUSH",
+      "值": "1 << 5",
+      "所属模块": "未知模块",
+      "功能描述": "The resource for non-standby push-kit.",
+      "注释信息": [
+        "@syscap SystemCapability.ResourceSchedule.DeviceStandby",
+        "@systemapi Hide this for inner system use.",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "ResourceType",
+      "since_version": "10",
+      "system_capability": "SystemCapability.ResourceSchedule.DeviceStandby",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "FREEZE",
+      "值": "1 << 6",
+      "所属模块": "未知模块",
+      "功能描述": "The resource for non-standby freezing application.",
+      "注释信息": [
+        "@syscap SystemCapability.ResourceSchedule.DeviceStandby",
+        "@systemapi Hide this for inner system use.",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "ResourceType",
+      "since_version": "10",
+      "system_capability": "SystemCapability.ResourceSchedule.DeviceStandby",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    }
+  ]
+}

@@ -1,0 +1,1252 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.TelephonyKit",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "namespace",
+      "名称": "sms",
+      "所属模块": "@kit.TelephonyKit",
+      "功能描述": "Provides the capabilities and methods for obtaining Short Message Service (SMS) management objects.",
+      "注释信息": [
+        "@namespace sms",
+        "@syscap SystemCapability.Telephony.SmsMms",
+        "@since 6"
+      ],
+      "层级": 1,
+      "上级": "@kit.TelephonyKit",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Telephony.SmsMms",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "createMessage",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Creates an SMS message instance based on the protocol data unit (PDU) and the specified SMS protocol. <p>After receiving the original PDU data, the system creates an SMS message instance according to the specified SMS protocol. SMS, and the value {@code 3gpp2} indicates CDMA/LTE SMS. returns {@code null} if {@code pdu} is empty or {@code specification} is not supported. Incorrect parameter types.",
+      "注释信息": [
+        "@param { Array<number> } pdu - Indicates the original data, which is obtained from the received SMS.",
+        "@param { string } specification - Indicates the SMS protocol type. The value {@code 3gpp} indicates GSM/UMTS/LTE",
+        "@param { AsyncCallback<ShortMessage> } callback - Indicates the callback for getting an SMS message instance;",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Operation failed. Cannot connect to service.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error code.",
+        "@syscap SystemCapability.Telephony.SmsMms",
+        "@since 6"
+      ],
+      "层级": 1,
+      "上级": "sms",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Telephony.SmsMms",
+      "parameters": [
+        {
+          "名称": "pdu",
+          "类型": "Array<number>",
+          "必填": true,
+          "说明": "Indicates the original data, which is obtained from the received SMS."
+        },
+        {
+          "名称": "specification",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates the SMS protocol type. The value {@code 3gpp} indicates GSM/UMTS/LTE"
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<ShortMessage>",
+          "必填": true,
+          "说明": "Indicates the callback for getting an SMS message instance;"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Operation failed. Cannot connect to service."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error code."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "createMessage",
+      "返回值": "Promise<ShortMessage>",
+      "所属模块": "未知模块",
+      "功能描述": "Creates an SMS message instance based on the protocol data unit (PDU) and the specified SMS protocol. <p>After receiving the original PDU data, the system creates an SMS message instance according to the specified SMS protocol. SMS, and the value {@code 3gpp2} indicates CDMA/LTE SMS. returns {@code null} if {@code pdu} is empty or {@code specification} is not supported. Incorrect parameter types.",
+      "注释信息": [
+        "@param { Array<number> } pdu - Indicates the original data, which is obtained from the received SMS.",
+        "@param { string } specification - Indicates the SMS protocol type. The value {@code 3gpp} indicates GSM/UMTS/LTE",
+        "@returns { Promise<ShortMessage> } Returns an SMS message instance;",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Operation failed. Cannot connect to service.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error code.",
+        "@syscap SystemCapability.Telephony.SmsMms",
+        "@since 6"
+      ],
+      "层级": 1,
+      "上级": "sms",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Telephony.SmsMms",
+      "parameters": [
+        {
+          "名称": "pdu",
+          "类型": "Array<number>",
+          "必填": true,
+          "说明": "Indicates the original data, which is obtained from the received SMS."
+        },
+        {
+          "名称": "specification",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates the SMS protocol type. The value {@code 3gpp} indicates GSM/UMTS/LTE"
+        }
+      ],
+      "return_description": "Returns an SMS message instance;",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Operation failed. Cannot connect to service."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error code."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "sendMessage",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Sends a text or data SMS message. <p>This method checks whether the length of an SMS message exceeds the maximum length. If the maximum length is exceeded, the SMS message is split into multiple parts and sent separately. Incorrect parameter types.",
+      "注释信息": [
+        "@permission ohos.permission.SEND_MESSAGES",
+        "@param { SendMessageOptions } options - Indicates the parameters and callback for sending the SMS message.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Operation failed. Cannot connect to service.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error code.",
+        "@syscap SystemCapability.Telephony.SmsMms",
+        "@since 6",
+        "@deprecated since 10",
+        "@useinstead telephony.sms#sendShortMessage"
+      ],
+      "层级": 1,
+      "上级": "sms",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Telephony.SmsMms",
+      "parameters": [
+        {
+          "名称": "options",
+          "类型": "SendMessageOptions",
+          "必填": true,
+          "说明": "Indicates the parameters and callback for sending the SMS message."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Operation failed. Cannot connect to service."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error code."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "sendShortMessage",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Sends a text or data SMS message. <p>This method checks whether the length of an SMS message exceeds the maximum length. If the maximum length is exceeded, the SMS message is split into multiple parts and sent separately. Incorrect parameter types.",
+      "注释信息": [
+        "@permission ohos.permission.SEND_MESSAGES",
+        "@param { SendMessageOptions } options - Indicates the parameters and callback for sending the SMS message.",
+        "@param { AsyncCallback<void> } callback - The callback of sendShortMessage.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Operation failed. Cannot connect to service.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error code.",
+        "@syscap SystemCapability.Telephony.SmsMms",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "sms",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Telephony.SmsMms",
+      "parameters": [
+        {
+          "名称": "options",
+          "类型": "SendMessageOptions",
+          "必填": true,
+          "说明": "Indicates the parameters and callback for sending the SMS message."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "The callback of sendShortMessage."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Operation failed. Cannot connect to service."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error code."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "sendShortMessage",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Sends a text or data SMS message. <p>This method checks whether the length of an SMS message exceeds the maximum length. If the maximum length is exceeded, the SMS message is split into multiple parts and sent separately. Incorrect parameter types.",
+      "注释信息": [
+        "@permission ohos.permission.SEND_MESSAGES",
+        "@param { SendMessageOptions } options - Indicates the parameters and callback for sending the SMS message.",
+        "@returns { Promise<void> } The promise returned by the sendShortMessage.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Operation failed. Cannot connect to service.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error code.",
+        "@syscap SystemCapability.Telephony.SmsMms",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "sms",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Telephony.SmsMms",
+      "parameters": [
+        {
+          "名称": "options",
+          "类型": "SendMessageOptions",
+          "必填": true,
+          "说明": "Indicates the parameters and callback for sending the SMS message."
+        }
+      ],
+      "return_description": "The promise returned by the sendShortMessage.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Operation failed. Cannot connect to service."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error code."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getDefaultSmsSlotId",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the default SIM card for sending SMS messages. messages. Returns {@code 0} if the default SIM card for sending SMS messages is in card slot 1; Returns {@code 1} if the default SIM card for sending SMS messages is in card slot 2.",
+      "注释信息": [
+        "@param { AsyncCallback<number> } callback - Indicates the callback for getting the default SIM card for sending SMS",
+        "@syscap SystemCapability.Telephony.SmsMms",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "sms",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Telephony.SmsMms",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<number>",
+          "必填": true,
+          "说明": "Indicates the callback for getting the default SIM card for sending SMS"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getDefaultSmsSlotId",
+      "返回值": "Promise<number>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the default SIM card for sending SMS messages. Returns {@code 1} if the default SIM card for sending SMS messages is in card slot 2.",
+      "注释信息": [
+        "@returns { Promise<number> } Returns {@code 0} if the default SIM card for sending SMS messages is in card slot 1;",
+        "@syscap SystemCapability.Telephony.SmsMms",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "sms",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Telephony.SmsMms",
+      "parameters": [],
+      "return_description": "Returns {@code 0} if the default SIM card for sending SMS messages is in card slot 1;",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "hasSmsCapability",
+      "返回值": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Returns whether a device is capable of sending and receiving SMS messages. Returns {@code false} otherwise.",
+      "注释信息": [
+        "@returns { boolean } Returns {@code true} if the device is capable of sending and receiving SMS messages;",
+        "@syscap SystemCapability.Telephony.SmsMms",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "sms",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Telephony.SmsMms",
+      "parameters": [],
+      "return_description": "Returns {@code true} if the device is capable of sending and receiving SMS messages;",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getDefaultSmsSimId",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the default SIM ID for sending SMS messages. SIM ID will increase from 1. Incorrect parameter types.",
+      "注释信息": [
+        "@param { AsyncCallback<number> } callback - Returns the SIM ID of the default sms sim and",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Operation failed. Cannot connect to service.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300004 - Do not have sim card.",
+        "@throws { BusinessError } 8300999 - Unknown error code.",
+        "@throws { BusinessError } 8301001 - SIM card is not activated.",
+        "@syscap SystemCapability.Telephony.SmsMms",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "sms",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Telephony.SmsMms",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<number>",
+          "必填": true,
+          "说明": "Returns the SIM ID of the default sms sim and"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Operation failed. Cannot connect to service."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300004",
+          "description": "Do not have sim card."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error code."
+        },
+        {
+          "code": "8301001",
+          "description": "SIM card is not activated."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getDefaultSmsSimId",
+      "返回值": "Promise<number>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the default SIM ID for sending SMS messages. SIM ID will increase from 1.",
+      "注释信息": [
+        "@returns { Promise<number> } Returns the SIM ID of the default sms sim and",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Operation failed. Cannot connect to service.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300004 - Do not have sim card.",
+        "@throws { BusinessError } 8300999 - Unknown error code.",
+        "@throws { BusinessError } 8301001 - SIM card is not activated.",
+        "@syscap SystemCapability.Telephony.SmsMms",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "sms",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Telephony.SmsMms",
+      "parameters": [],
+      "return_description": "Returns the SIM ID of the default sms sim and",
+      "error_codes": [
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Operation failed. Cannot connect to service."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300004",
+          "description": "Do not have sim card."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error code."
+        },
+        {
+          "code": "8301001",
+          "description": "SIM card is not activated."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "ShortMessage",
+      "所属模块": "未知模块",
+      "功能描述": "Defines an SMS message instance.",
+      "注释信息": [
+        "@interface ShortMessage",
+        "@syscap SystemCapability.Telephony.SmsMms",
+        "@since 6"
+      ],
+      "层级": 2,
+      "上级": "sms",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Telephony.SmsMms",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "visibleMessageBody",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the SMS message body.",
+      "注释信息": [
+        "@type { string }",
+        "@syscap SystemCapability.Telephony.SmsMms",
+        "@since 6"
+      ],
+      "层级": 2,
+      "上级": "ShortMessage",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Telephony.SmsMms",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "visibleRawAddress",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the address of the sender, which is to be displayed on the UI.",
+      "注释信息": [
+        "@type { string }",
+        "@syscap SystemCapability.Telephony.SmsMms",
+        "@since 6"
+      ],
+      "层级": 2,
+      "上级": "ShortMessage",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Telephony.SmsMms",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "messageClass",
+      "属性类型": "ShortMessageClass",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the SMS type.",
+      "注释信息": [
+        "@type { ShortMessageClass }",
+        "@syscap SystemCapability.Telephony.SmsMms",
+        "@since 6"
+      ],
+      "层级": 2,
+      "上级": "ShortMessage",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Telephony.SmsMms",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "protocolId",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the protocol identifier.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.Telephony.SmsMms",
+        "@since 6"
+      ],
+      "层级": 2,
+      "上级": "ShortMessage",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Telephony.SmsMms",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "scAddress",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the short message service center (SMSC) address.",
+      "注释信息": [
+        "@type { string }",
+        "@syscap SystemCapability.Telephony.SmsMms",
+        "@since 6"
+      ],
+      "层级": 2,
+      "上级": "ShortMessage",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Telephony.SmsMms",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "scTimestamp",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the SMSC timestamp.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.Telephony.SmsMms",
+        "@since 6"
+      ],
+      "层级": 2,
+      "上级": "ShortMessage",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Telephony.SmsMms",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "isReplaceMessage",
+      "属性类型": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates whether the received SMS is a \"replace short message\".",
+      "注释信息": [
+        "@type { boolean }",
+        "@syscap SystemCapability.Telephony.SmsMms",
+        "@since 6"
+      ],
+      "层级": 2,
+      "上级": "ShortMessage",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Telephony.SmsMms",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "hasReplyPath",
+      "属性类型": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates whether the received SMS contains \"TP-Reply-Path\".",
+      "注释信息": [
+        "@type { boolean }",
+        "@syscap SystemCapability.Telephony.SmsMms",
+        "@since 6"
+      ],
+      "层级": 2,
+      "上级": "ShortMessage",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Telephony.SmsMms",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "pdu",
+      "属性类型": "Array<number>",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates Protocol Data Units (PDUs) from an SMS message.",
+      "注释信息": [
+        "@type { Array<number> }",
+        "@syscap SystemCapability.Telephony.SmsMms",
+        "@since 6"
+      ],
+      "层级": 2,
+      "上级": "ShortMessage",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Telephony.SmsMms",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "status",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the SMS message status from the SMS-STATUS-REPORT message sent by the Short Message Service Center (SMSC).",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.Telephony.SmsMms",
+        "@since 6"
+      ],
+      "层级": 2,
+      "上级": "ShortMessage",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Telephony.SmsMms",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "isSmsStatusReportMessage",
+      "属性类型": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates whether the current message is SMS-STATUS-REPORT.",
+      "注释信息": [
+        "@type { boolean }",
+        "@syscap SystemCapability.Telephony.SmsMms",
+        "@since 6"
+      ],
+      "层级": 2,
+      "上级": "ShortMessage",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Telephony.SmsMms",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "ShortMessageClass",
+      "所属模块": "未知模块",
+      "功能描述": "Enumerates SMS message types.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.Telephony.SmsMms",
+        "@since 6"
+      ],
+      "层级": 2,
+      "上级": "sms",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Telephony.SmsMms",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "UNKNOWN",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates an unknown type.",
+      "注释信息": [
+        "@syscap SystemCapability.Telephony.SmsMms",
+        "@since 6"
+      ],
+      "层级": 2,
+      "上级": "ShortMessageClass",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Telephony.SmsMms",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "INSTANT_MESSAGE",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates an instant message, which is displayed immediately after being received.",
+      "注释信息": [
+        "@syscap SystemCapability.Telephony.SmsMms",
+        "@since 6"
+      ],
+      "层级": 2,
+      "上级": "ShortMessageClass",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Telephony.SmsMms",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "OPTIONAL_MESSAGE",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates an SMS message that can be stored on the device or SIM card based on the storage status.",
+      "注释信息": [
+        "@syscap SystemCapability.Telephony.SmsMms",
+        "@since 6"
+      ],
+      "层级": 2,
+      "上级": "ShortMessageClass",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Telephony.SmsMms",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "SIM_MESSAGE",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates an SMS message containing SIM card information, which is to be stored in a SIM card.",
+      "注释信息": [
+        "@syscap SystemCapability.Telephony.SmsMms",
+        "@since 6"
+      ],
+      "层级": 2,
+      "上级": "ShortMessageClass",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Telephony.SmsMms",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "FORWARD_MESSAGE",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates an SMS message to be forwarded to another device.",
+      "注释信息": [
+        "@syscap SystemCapability.Telephony.SmsMms",
+        "@since 6"
+      ],
+      "层级": 2,
+      "上级": "ShortMessageClass",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Telephony.SmsMms",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "SendMessageOptions",
+      "所属模块": "未知模块",
+      "功能描述": "Provides the options (including callbacks) for sending an SMS message.",
+      "注释信息": [
+        "@interface SendMessageOptions",
+        "@syscap SystemCapability.Telephony.SmsMms",
+        "@since 6"
+      ],
+      "层级": 2,
+      "上级": "sms",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Telephony.SmsMms",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "slotId",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the ID of the SIM card slot used for sending the SMS message.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.Telephony.SmsMms",
+        "@since 6"
+      ],
+      "层级": 2,
+      "上级": "SendMessageOptions",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Telephony.SmsMms",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "destinationHost",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the address to which the SMS message is sent.",
+      "注释信息": [
+        "@type { string }",
+        "@syscap SystemCapability.Telephony.SmsMms",
+        "@since 6"
+      ],
+      "层级": 2,
+      "上级": "SendMessageOptions",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Telephony.SmsMms",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "serviceCenter",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the SMSC address. If the value is {@code null}, the default SMSC address of the SIM card.",
+      "注释信息": [
+        "@type { ?string }",
+        "@syscap SystemCapability.Telephony.SmsMms",
+        "@since 6"
+      ],
+      "层级": 2,
+      "上级": "SendMessageOptions",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Telephony.SmsMms",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "content",
+      "属性类型": "string | Array<number>",
+      "所属模块": "未知模块",
+      "功能描述": "If the content is a string, this is a short message. If the content is a byte array, this is a data message.",
+      "注释信息": [
+        "@type { string | Array<number> }",
+        "@syscap SystemCapability.Telephony.SmsMms",
+        "@since 6"
+      ],
+      "层级": 2,
+      "上级": "SendMessageOptions",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Telephony.SmsMms",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "destinationPort",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "If send data message, destinationPort is mandatory. Otherwise is optional.",
+      "注释信息": [
+        "@type { ?number }",
+        "@syscap SystemCapability.Telephony.SmsMms",
+        "@since 6"
+      ],
+      "层级": 2,
+      "上级": "SendMessageOptions",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Telephony.SmsMms",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "sendCallback",
+      "属性类型": "AsyncCallback<ISendShortMessageCallback>",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the callback invoked after the SMS message is sent.",
+      "注释信息": [
+        "@type { ?AsyncCallback<ISendShortMessageCallback> }",
+        "@syscap SystemCapability.Telephony.SmsMms",
+        "@since 6"
+      ],
+      "层级": 2,
+      "上级": "SendMessageOptions",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Telephony.SmsMms",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "deliveryCallback",
+      "属性类型": "AsyncCallback<IDeliveryShortMessageCallback>",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the callback invoked after the SMS message is delivered.",
+      "注释信息": [
+        "@type { ?AsyncCallback<IDeliveryShortMessageCallback> }",
+        "@syscap SystemCapability.Telephony.SmsMms",
+        "@since 6"
+      ],
+      "层级": 2,
+      "上级": "SendMessageOptions",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Telephony.SmsMms",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "ISendShortMessageCallback",
+      "所属模块": "未知模块",
+      "功能描述": "Provides the callback for the SMS message sending result.",
+      "注释信息": [
+        "@interface ISendShortMessageCallback",
+        "@syscap SystemCapability.Telephony.SmsMms",
+        "@since 6"
+      ],
+      "层级": 2,
+      "上级": "sms",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Telephony.SmsMms",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "result",
+      "属性类型": "SendSmsResult",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the SMS message sending result.",
+      "注释信息": [
+        "@type { SendSmsResult }",
+        "@syscap SystemCapability.Telephony.SmsMms",
+        "@since 6"
+      ],
+      "层级": 2,
+      "上级": "ISendShortMessageCallback",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Telephony.SmsMms",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "url",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the URI to store the sent SMS message.",
+      "注释信息": [
+        "@type { string }",
+        "@syscap SystemCapability.Telephony.SmsMms",
+        "@since 6"
+      ],
+      "层级": 2,
+      "上级": "ISendShortMessageCallback",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Telephony.SmsMms",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "isLastPart",
+      "属性类型": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Specifies whether this is the last part of a multi-part SMS message.",
+      "注释信息": [
+        "@type { boolean }",
+        "@syscap SystemCapability.Telephony.SmsMms",
+        "@since 6"
+      ],
+      "层级": 2,
+      "上级": "ISendShortMessageCallback",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Telephony.SmsMms",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "IDeliveryShortMessageCallback",
+      "所属模块": "未知模块",
+      "功能描述": "Provides the callback for the SMS message delivery report.",
+      "注释信息": [
+        "@interface IDeliveryShortMessageCallback",
+        "@syscap SystemCapability.Telephony.SmsMms",
+        "@since 6"
+      ],
+      "层级": 2,
+      "上级": "sms",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Telephony.SmsMms",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "pdu",
+      "属性类型": "Array<number>",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the SMS delivery report.",
+      "注释信息": [
+        "@type { Array<number> }",
+        "@syscap SystemCapability.Telephony.SmsMms",
+        "@since 6"
+      ],
+      "层级": 2,
+      "上级": "IDeliveryShortMessageCallback",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Telephony.SmsMms",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "SendSmsResult",
+      "所属模块": "未知模块",
+      "功能描述": "Enumerates SMS message sending results.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.Telephony.SmsMms",
+        "@since 6"
+      ],
+      "层级": 2,
+      "上级": "sms",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Telephony.SmsMms",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "SEND_SMS_SUCCESS",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the SMS message is successfully sent.",
+      "注释信息": [
+        "@syscap SystemCapability.Telephony.SmsMms",
+        "@since 6"
+      ],
+      "层级": 2,
+      "上级": "SendSmsResult",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Telephony.SmsMms",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "SEND_SMS_FAILURE_UNKNOWN",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that sending the SMS message fails due to an unknown reason.",
+      "注释信息": [
+        "@syscap SystemCapability.Telephony.SmsMms",
+        "@since 6"
+      ],
+      "层级": 2,
+      "上级": "SendSmsResult",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Telephony.SmsMms",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "SEND_SMS_FAILURE_RADIO_OFF",
+      "值": "2",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that sending the SMS fails because the modem is powered off.",
+      "注释信息": [
+        "@syscap SystemCapability.Telephony.SmsMms",
+        "@since 6"
+      ],
+      "层级": 2,
+      "上级": "SendSmsResult",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Telephony.SmsMms",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "SEND_SMS_FAILURE_SERVICE_UNAVAILABLE",
+      "值": "3",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that sending the SMS message fails because the network is unavailable or does not support sending or reception of SMS messages.",
+      "注释信息": [
+        "@syscap SystemCapability.Telephony.SmsMms",
+        "@since 6"
+      ],
+      "层级": 2,
+      "上级": "SendSmsResult",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Telephony.SmsMms",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    }
+  ]
+}

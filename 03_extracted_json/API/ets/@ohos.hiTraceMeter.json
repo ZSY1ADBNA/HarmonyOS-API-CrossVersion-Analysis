@@ -1,0 +1,591 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.PerformanceAnalysisKit",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "namespace",
+      "名称": "hiTraceMeter",
+      "所属模块": "@kit.PerformanceAnalysisKit",
+      "功能描述": "Provides interfaces to trace a task for performance measure, the logs can be capture by the hitrace cmdline on the device. <p>This interfaces trace the start, end, and value changes of key processes that last for at least 3 ms. <p>Example: Track the beginning of a context: <pre>{@code hiTraceMeter.startAsyncTrace(hiTraceMeter.HiTraceOutputLevel.COMMERCIAL, \"checkName\", 111, \"test\", \"key=value\"); }</pre> Track the end of a context: <pre>{@code hiTraceMeter.finishAsyncTrace(hiTraceMeter.HiTraceOutputLevel.COMMERCIAL, \"checkName\", 111); }</pre> To trace the number of layers, which is 3: <pre>{@code hiTraceMeter.traceByValue(hiTraceMeter.HiTraceOutputLevel.COMMERCIAL, \"curLayer\", 3); }</pre> <p>Each {@code startTrace} matches one {@code finishTrace}, and they must have the same name and taskId. <p>Each {@code startSyncTrace} matches one {@code finishSyncTrace}, and they must have the same level and name. <p>Each {@code startAsyncTrace} matches one {@code finishAsyncTrace}, and they must have the same level, name and taskId.",
+      "注释信息": [
+        "@namespace hiTraceMeter",
+        "@syscap SystemCapability.HiviewDFX.HiTrace",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "@kit.PerformanceAnalysisKit",
+      "since_version": "20",
+      "system_capability": "SystemCapability.HiviewDFX.HiTrace",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "HiTraceOutputLevel",
+      "所属模块": "未知模块",
+      "功能描述": "Enumerates the HiTrace output levels. The output level threshold system parameter determines the minimum output trace.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.HiviewDFX.HiTrace",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "hiTraceMeter",
+      "since_version": "20",
+      "system_capability": "SystemCapability.HiviewDFX.HiTrace",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "DEBUG",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "Ouput level only for debug usage.",
+      "注释信息": [
+        "@syscap SystemCapability.HiviewDFX.HiTrace",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "HiTraceOutputLevel",
+      "since_version": "20",
+      "system_capability": "SystemCapability.HiviewDFX.HiTrace",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "INFO",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Output level for log version usage.",
+      "注释信息": [
+        "@syscap SystemCapability.HiviewDFX.HiTrace",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "HiTraceOutputLevel",
+      "since_version": "20",
+      "system_capability": "SystemCapability.HiviewDFX.HiTrace",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CRITICAL",
+      "值": "2",
+      "所属模块": "未知模块",
+      "功能描述": "Output level for log version usage, with higher priority than INFO.",
+      "注释信息": [
+        "@syscap SystemCapability.HiviewDFX.HiTrace",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "HiTraceOutputLevel",
+      "since_version": "20",
+      "system_capability": "SystemCapability.HiviewDFX.HiTrace",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMERCIAL",
+      "值": "3",
+      "所属模块": "未知模块",
+      "功能描述": "Output level for nolog version usage.",
+      "注释信息": [
+        "@syscap SystemCapability.HiviewDFX.HiTrace",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "HiTraceOutputLevel",
+      "since_version": "20",
+      "system_capability": "SystemCapability.HiviewDFX.HiTrace",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "MAX",
+      "值": "COMMERCIAL",
+      "所属模块": "未知模块",
+      "功能描述": "Output level range limit.",
+      "注释信息": [
+        "@syscap SystemCapability.HiviewDFX.HiTrace",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "HiTraceOutputLevel",
+      "since_version": "20",
+      "system_capability": "SystemCapability.HiviewDFX.HiTrace",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "startTrace",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Records a trace marking it as the start of a task, can with the expected completion time between startTrace and finishTrace. This method is invoked at the start of a transaction to indicate that a task has started, whose name is specified by {@code name}, and the taskId is used to distinguish the tasks. It must be followed by {@link #finishTrace}, the name and taskId need to be the same.",
+      "注释信息": [
+        "@param { string } name Indicates the task name.",
+        "@param { number } taskId The unique id used to distinguish the tasks and match with the id in follow finishTrace.",
+        "@syscap SystemCapability.HiviewDFX.HiTrace",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "hiTraceMeter",
+      "since_version": "20",
+      "system_capability": "SystemCapability.HiviewDFX.HiTrace",
+      "parameters": [
+        {
+          "名称": "name",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates the task name."
+        },
+        {
+          "名称": "taskId",
+          "类型": "number",
+          "必填": true,
+          "说明": "The unique id used to distinguish the tasks and match with the id in follow finishTrace."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "finishTrace",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Records a trace and marks it as the end of a task. This method is invoked at the end of a transaction to indicate that a task has ended, whose name is specified by {@code name}. This method must be invoked after {@link #startTrace}. {@code taskId} of startTrace.",
+      "注释信息": [
+        "@param { string } name Indicates the task name. It must be the same with the {@code name} of startTrace.",
+        "@param { number } taskId The unique id used to distinguish the tasks and must be the same with the",
+        "@syscap SystemCapability.HiviewDFX.HiTrace",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "hiTraceMeter",
+      "since_version": "20",
+      "system_capability": "SystemCapability.HiviewDFX.HiTrace",
+      "parameters": [
+        {
+          "名称": "name",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates the task name. It must be the same with the {@code name} of startTrace."
+        },
+        {
+          "名称": "taskId",
+          "类型": "number",
+          "必填": true,
+          "说明": "The unique id used to distinguish the tasks and must be the same with the"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "traceByValue",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Records a trace for generating a count, such as clock pulse and the number of layers.",
+      "注释信息": [
+        "@param { string } name Indicates the name used to identify the count.",
+        "@param { number } count Indicates the number of the count.",
+        "@syscap SystemCapability.HiviewDFX.HiTrace",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "hiTraceMeter",
+      "since_version": "20",
+      "system_capability": "SystemCapability.HiviewDFX.HiTrace",
+      "parameters": [
+        {
+          "名称": "name",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates the name used to identify the count."
+        },
+        {
+          "名称": "count",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the number of the count."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "startSyncTrace",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Records a trace marking it as the start of a task. This method is invoked at the start of a transaction to indicate that a task has started, whose name is specified by {@code name}, and the taskId is used to distinguish the tasks. It must be followed by {@link #finishSyncTrace}, called by the same thread with the same level. as separator.",
+      "注释信息": [
+        "@param { HiTraceOutputLevel } level Indicates trace output priority level.",
+        "@param { string } name Indicates the task name.",
+        "@param { string } [customArgs] Indicates key=value pair to be output in trace; multiple pairs should use comma",
+        "@syscap SystemCapability.HiviewDFX.HiTrace",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "hiTraceMeter",
+      "since_version": "20",
+      "system_capability": "SystemCapability.HiviewDFX.HiTrace",
+      "parameters": [
+        {
+          "名称": "level",
+          "类型": "HiTraceOutputLevel",
+          "必填": true,
+          "说明": "Indicates trace output priority level."
+        },
+        {
+          "名称": "name",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates the task name."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "string } [customArgs] Indicates key=value pair to be output in trace; multiple pairs should use comma"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "finishSyncTrace",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Records a trace and marks it as the end of a task. This method is invoked at the end of a transaction to indicate that the nearest running task tracked by startSyncTrace that has yet to be marked by finishSyncTrace, has ended. This method must be invoked after {@link #startSyncTrace}, called by the same thread with the same level.",
+      "注释信息": [
+        "@param { HiTraceOutputLevel } level Indicates trace output priority level.",
+        "@syscap SystemCapability.HiviewDFX.HiTrace",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "hiTraceMeter",
+      "since_version": "20",
+      "system_capability": "SystemCapability.HiviewDFX.HiTrace",
+      "parameters": [
+        {
+          "名称": "level",
+          "类型": "HiTraceOutputLevel",
+          "必填": true,
+          "说明": "Indicates trace output priority level."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "startAsyncTrace",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Records a trace marking it as the start of a task. This method is invoked at the start of a transaction to indicate that a task has started, whose name is specified by {@code name}, and the taskId is used to distinguish the tasks. It must be followed by a corresponding {@link #finishAsyncTrace}, with the same level, name, and taskId. corresponding finishAsyncTrace. as Separator.",
+      "注释信息": [
+        "@param { HiTraceOutputLevel } level Indicates trace output priority level.",
+        "@param { string } name Indicates the task name.",
+        "@param { number } taskId The unique id used to distinguish the task and match with the id of the",
+        "@param { string } customCategory Indicates the label to aggregate asynchronous task display.",
+        "@param { string } [customArgs] Indicates key=value pair to be output in trace; multiple pairs should use comma",
+        "@syscap SystemCapability.HiviewDFX.HiTrace",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "hiTraceMeter",
+      "since_version": "20",
+      "system_capability": "SystemCapability.HiviewDFX.HiTrace",
+      "parameters": [
+        {
+          "名称": "level",
+          "类型": "HiTraceOutputLevel",
+          "必填": true,
+          "说明": "Indicates trace output priority level."
+        },
+        {
+          "名称": "name",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates the task name."
+        },
+        {
+          "名称": "taskId",
+          "类型": "number",
+          "必填": true,
+          "说明": "The unique id used to distinguish the task and match with the id of the"
+        },
+        {
+          "名称": "customCategory",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates the label to aggregate asynchronous task display."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "string } [customArgs] Indicates key=value pair to be output in trace; multiple pairs should use comma"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "finishAsyncTrace",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Records a trace and marks it as the end of a task. This method is invoked at the end of a transaction to indicate that a task has ended, whose name is specified by {@code name}. This method must be invoked after {@link #startAsyncTrace}, with the same level, name, and taskId. It is not required to be invoked by the same thread calling startAsyncTrace. startAsyncTrace.",
+      "注释信息": [
+        "@param { HiTraceOutputLevel } level Indicates trace output priority level.",
+        "@param { string } name Indicates the task name.",
+        "@param { number } taskId The unique id used to distinguish the task and match with the id of the corresponding",
+        "@syscap SystemCapability.HiviewDFX.HiTrace",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "hiTraceMeter",
+      "since_version": "20",
+      "system_capability": "SystemCapability.HiviewDFX.HiTrace",
+      "parameters": [
+        {
+          "名称": "level",
+          "类型": "HiTraceOutputLevel",
+          "必填": true,
+          "说明": "Indicates trace output priority level."
+        },
+        {
+          "名称": "name",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates the task name."
+        },
+        {
+          "名称": "taskId",
+          "类型": "number",
+          "必填": true,
+          "说明": "The unique id used to distinguish the task and match with the id of the corresponding"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "traceByValue",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Records a trace for generating a count, such as clock pulse and the number of layers.",
+      "注释信息": [
+        "@param { HiTraceOutputLevel } level Indicates trace output priority level.",
+        "@param { string } name Indicates the name used to identify the count.",
+        "@param { number } count Indicates the number of the count.",
+        "@syscap SystemCapability.HiviewDFX.HiTrace",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "hiTraceMeter",
+      "since_version": "20",
+      "system_capability": "SystemCapability.HiviewDFX.HiTrace",
+      "parameters": [
+        {
+          "名称": "level",
+          "类型": "HiTraceOutputLevel",
+          "必填": true,
+          "说明": "Indicates trace output priority level."
+        },
+        {
+          "名称": "name",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates the name used to identify the count."
+        },
+        {
+          "名称": "count",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the number of the count."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "isTraceEnabled",
+      "返回值": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Return whether the current process is allowed to output trace.",
+      "注释信息": [
+        "@returns { boolean } The status of whether the current process is allowed to output trace.",
+        "@syscap SystemCapability.HiviewDFX.HiTrace",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "hiTraceMeter",
+      "since_version": "20",
+      "system_capability": "SystemCapability.HiviewDFX.HiTrace",
+      "parameters": [],
+      "return_description": "The status of whether the current process is allowed to output trace.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "type_alias",
+      "名称": "TraceEventListener",
+      "所属模块": "未知模块",
+      "功能描述": "Defines the callback type used in trace status switch event. The value of traceStatus indicates the current trace status.",
+      "注释信息": [
+        "@typedef { function } TraceEventListener",
+        "@param { boolean } traceStatus The current trace status, true for open, false for close.",
+        "@syscap SystemCapability.HiviewDFX.HiTrace",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 1,
+      "上级": "hiTraceMeter",
+      "since_version": "22",
+      "system_capability": "SystemCapability.HiviewDFX.HiTrace",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "registerTraceListener",
+      "返回值": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Register trace switch notification callback. Register a callback function to execute specific trace-related behavior when trace status is changed. The current status will be passed as 0 for off or 1 for on as callback function paramter representing current trace status. The maximum number of registered callback functions is 10. >= 0: Successfully registered and callback index used for unregister. -1: Reaches max number of callback functions. -2: Invalid parameter.",
+      "注释信息": [
+        "@param { TraceEventListener } callback - The callback function to be invoked when trace status is changed.",
+        "@returns { number } The callback registeration status.",
+        "@syscap SystemCapability.HiviewDFX.HiTrace",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 1,
+      "上级": "hiTraceMeter",
+      "since_version": "22",
+      "system_capability": "SystemCapability.HiviewDFX.HiTrace",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "TraceEventListener",
+          "必填": true,
+          "说明": "The callback function to be invoked when trace status is changed."
+        }
+      ],
+      "return_description": "The callback registeration status.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "unregisterTraceListener",
+      "返回值": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Unregister trace switch notification callback. Unregister the callback function registeration for trace switch notification with provided registered callback function index. 0: Success. -1: Callback function with target index has not been registered. -2: Invalid index range.",
+      "注释信息": [
+        "@param { number } index - The callback function index to be unregistered.",
+        "@returns { number } The callback unregisteration status.",
+        "@syscap SystemCapability.HiviewDFX.HiTrace",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 1,
+      "上级": "hiTraceMeter",
+      "since_version": "22",
+      "system_capability": "SystemCapability.HiviewDFX.HiTrace",
+      "parameters": [
+        {
+          "名称": "index",
+          "类型": "number",
+          "必填": true,
+          "说明": "The callback function index to be unregistered."
+        }
+      ],
+      "return_description": "The callback unregisteration status.",
+      "error_codes": [],
+      "版本": "API"
+    }
+  ]
+}

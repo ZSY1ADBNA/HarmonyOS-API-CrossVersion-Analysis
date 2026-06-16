@@ -1,0 +1,3470 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.ConnectivityKit",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "namespace",
+      "名称": "wifi",
+      "所属模块": "@kit.ConnectivityKit",
+      "功能描述": "Provides methods to operate or manage Wi-Fi.",
+      "注释信息": [
+        "@namespace wifi",
+        "@syscap SystemCapability.Communication.WiFi.STA",
+        "@since 6"
+      ],
+      "层级": 1,
+      "上级": "@kit.ConnectivityKit",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Communication.WiFi.STA",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "isWifiActive",
+      "返回值": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Queries the Wi-Fi status",
+      "注释信息": [
+        "@permission ohos.permission.GET_WIFI_INFO",
+        "@returns { boolean } Returns {@code true} if the Wi-Fi is active, returns {@code false} otherwise.",
+        "@syscap SystemCapability.Communication.WiFi.STA",
+        "@since 6",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.isWifiActive"
+      ],
+      "层级": 1,
+      "上级": "wifi",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Communication.WiFi.STA",
+      "parameters": [],
+      "return_description": "Returns {@code true} if the Wi-Fi is active, returns {@code false} otherwise.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "scan",
+      "返回值": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Scans Wi-Fi hotspot. <p>This API works in asynchronous mode.</p>",
+      "注释信息": [
+        "@permission ohos.permission.SET_WIFI_INFO and ohos.permission.LOCATION",
+        "@returns { boolean } Returns {@code true} if the accessibility is succeed; returns {@code false} otherwise.",
+        "@syscap SystemCapability.Communication.WiFi.STA",
+        "@since 6",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.scan"
+      ],
+      "层级": 1,
+      "上级": "wifi",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Communication.WiFi.STA",
+      "parameters": [],
+      "return_description": "Returns {@code true} if the accessibility is succeed; returns {@code false} otherwise.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getScanInfos",
+      "返回值": "Promise<Array<WifiScanInfo>>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the hotspot information that scanned.",
+      "注释信息": [
+        "@permission ohos.permission.GET_WIFI_INFO and (ohos.permission.GET_WIFI_PEERS_MAC or ohos.permission.LOCATION)",
+        "@returns { Promise<Array<WifiScanInfo>> } Returns information about scanned Wi-Fi hotspot if any.",
+        "@syscap SystemCapability.Communication.WiFi.STA",
+        "@since 6",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.getScanInfoList"
+      ],
+      "层级": 1,
+      "上级": "wifi",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Communication.WiFi.STA",
+      "parameters": [],
+      "return_description": "Returns information about scanned Wi-Fi hotspot if any.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getScanInfos",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the hotspot information that scanned.",
+      "注释信息": [
+        "@permission ohos.permission.GET_WIFI_INFO and (ohos.permission.GET_WIFI_PEERS_MAC or ohos.permission.LOCATION)",
+        "@param { AsyncCallback<Array<WifiScanInfo>> } get information about scanned Wi-Fi hotspot if any.",
+        "@syscap SystemCapability.Communication.WiFi.STA",
+        "@since 6",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.getScanInfoList"
+      ],
+      "层级": 1,
+      "上级": "wifi",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Communication.WiFi.STA",
+      "parameters": [
+        {
+          "名称": "get",
+          "类型": "AsyncCallback<Array<WifiScanInfo>>",
+          "必填": true,
+          "说明": "information about scanned Wi-Fi hotspot if any."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "addUntrustedConfig",
+      "返回值": "Promise<boolean>",
+      "所属模块": "未知模块",
+      "功能描述": "Adds a specified untrusted hotspot configuration. <p>This method adds one configuration at a time. After this configuration is added, your device will determine whether to connect to the hotspot.",
+      "注释信息": [
+        "@permission ohos.permission.SET_WIFI_INFO",
+        "@param { WifiDeviceConfig } config - Indicates the device configuration for connection to the Wi-Fi network.",
+        "@returns { Promise<boolean> }  Returns {@code true} if the untrusted hotspot configuration is added, returns {@code false} otherwise.",
+        "@syscap SystemCapability.Communication.WiFi.STA",
+        "@since 7",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.addCandidateConfig"
+      ],
+      "层级": 1,
+      "上级": "wifi",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Communication.WiFi.STA",
+      "parameters": [
+        {
+          "名称": "config",
+          "类型": "WifiDeviceConfig",
+          "必填": true,
+          "说明": "Indicates the device configuration for connection to the Wi-Fi network."
+        }
+      ],
+      "return_description": "Returns {@code true} if the untrusted hotspot configuration is added, returns {@code false} otherwise.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "addUntrustedConfig",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Adds a specified untrusted hotspot configuration. <p>This method adds one configuration at a time. After this configuration is added, your device will determine whether to connect to the hotspot.",
+      "注释信息": [
+        "@permission ohos.permission.SET_WIFI_INFO",
+        "@param { WifiDeviceConfig } config - Indicates the device configuration for connection to the Wi-Fi network.",
+        "@param { AsyncCallback<boolean> }",
+        "@syscap SystemCapability.Communication.WiFi.STA",
+        "@since 7",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.addCandidateConfig"
+      ],
+      "层级": 1,
+      "上级": "wifi",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Communication.WiFi.STA",
+      "parameters": [
+        {
+          "名称": "config",
+          "类型": "WifiDeviceConfig",
+          "必填": true,
+          "说明": "Indicates the device configuration for connection to the Wi-Fi network."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "AsyncCallback<boolean> }"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "removeUntrustedConfig",
+      "返回值": "Promise<boolean>",
+      "所属模块": "未知模块",
+      "功能描述": "Removes a specified untrusted hotspot configuration. <p>This method removes one configuration at a time.",
+      "注释信息": [
+        "@permission ohos.permission.SET_WIFI_INFO",
+        "@param { WifiDeviceConfig } config - Indicates the device configuration for connection to the Wi-Fi network.",
+        "@returns { Promise<boolean> } Returns {@code true} if the untrusted hotspot configuration is removed, returns {@code false} otherwise.",
+        "@syscap SystemCapability.Communication.WiFi.STA",
+        "@since 7",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.removeCandidateConfig"
+      ],
+      "层级": 1,
+      "上级": "wifi",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Communication.WiFi.STA",
+      "parameters": [
+        {
+          "名称": "config",
+          "类型": "WifiDeviceConfig",
+          "必填": true,
+          "说明": "Indicates the device configuration for connection to the Wi-Fi network."
+        }
+      ],
+      "return_description": "Returns {@code true} if the untrusted hotspot configuration is removed, returns {@code false} otherwise.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "removeUntrustedConfig",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Removes a specified untrusted hotspot configuration. <p>This method removes one configuration at a time.",
+      "注释信息": [
+        "@permission ohos.permission.SET_WIFI_INFO",
+        "@param { WifiDeviceConfig } config - Indicates the device configuration for connection to the Wi-Fi network.",
+        "@param { AsyncCallback<boolean> }",
+        "@syscap SystemCapability.Communication.WiFi.STA",
+        "@since 7",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.removeCandidateConfig"
+      ],
+      "层级": 1,
+      "上级": "wifi",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Communication.WiFi.STA",
+      "parameters": [
+        {
+          "名称": "config",
+          "类型": "WifiDeviceConfig",
+          "必填": true,
+          "说明": "Indicates the device configuration for connection to the Wi-Fi network."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "AsyncCallback<boolean> }"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getSignalLevel",
+      "返回值": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Calculates the Wi-Fi signal level based on the Wi-Fi RSSI and frequency band.",
+      "注释信息": [
+        "@permission ohos.permission.GET_WIFI_INFO",
+        "@param { number } rssi Indicates the Wi-Fi RSSI.",
+        "@param { number } band Indicates the Wi-Fi frequency band.",
+        "@returns { number } Returns Wi-Fi signal level ranging from 0 to 4.",
+        "@syscap SystemCapability.Communication.WiFi.STA",
+        "@since 6",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.getSignalLevel"
+      ],
+      "层级": 1,
+      "上级": "wifi",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Communication.WiFi.STA",
+      "parameters": [
+        {
+          "名称": "rssi",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the Wi-Fi RSSI."
+        },
+        {
+          "名称": "band",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the Wi-Fi frequency band."
+        }
+      ],
+      "return_description": "Returns Wi-Fi signal level ranging from 0 to 4.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getLinkedInfo",
+      "返回值": "Promise<WifiLinkedInfo>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains information about a Wi-Fi connection.",
+      "注释信息": [
+        "@permission ohos.permission.GET_WIFI_INFO",
+        "@returns { Promise<WifiLinkedInfo> } Returns Wi-Fi linked information.",
+        "@syscap SystemCapability.Communication.WiFi.STA",
+        "@since 6",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.getLinkedInfo"
+      ],
+      "层级": 1,
+      "上级": "wifi",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Communication.WiFi.STA",
+      "parameters": [],
+      "return_description": "Returns Wi-Fi linked information.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getLinkedInfo",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains information about a Wi-Fi connection.",
+      "注释信息": [
+        "@permission ohos.permission.GET_WIFI_INFO",
+        "@param { AsyncCallback<WifiLinkedInfo> } get Wi-Fi linked information.",
+        "@syscap SystemCapability.Communication.WiFi.STA",
+        "@since 6",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.getLinkedInfo"
+      ],
+      "层级": 1,
+      "上级": "wifi",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Communication.WiFi.STA",
+      "parameters": [
+        {
+          "名称": "get",
+          "类型": "AsyncCallback<WifiLinkedInfo>",
+          "必填": true,
+          "说明": "Wi-Fi linked information."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "isConnected",
+      "返回值": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Checks whether a Wi-Fi connection has been set up.",
+      "注释信息": [
+        "@permission ohos.permission.GET_WIFI_INFO",
+        "@returns { boolean } Returns {@code true} if a Wi-Fi connection has been set up, returns {@code false} otherwise.",
+        "@syscap SystemCapability.Communication.WiFi.STA",
+        "@since 7",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.isConnected"
+      ],
+      "层级": 1,
+      "上级": "wifi",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Communication.WiFi.STA",
+      "parameters": [],
+      "return_description": "Returns {@code true} if a Wi-Fi connection has been set up, returns {@code false} otherwise.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "isFeatureSupported",
+      "返回值": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Checks whether this device supports a specified feature.",
+      "注释信息": [
+        "@permission ohos.permission.GET_WIFI_INFO",
+        "@param { number } featureId Indicates the ID of the feature.",
+        "@returns { boolean } Returns {@code true} if this device supports the specified feature, returns {@code false} otherwise.",
+        "@syscap SystemCapability.Communication.WiFi.Core",
+        "@since 7",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.isFeatureSupported"
+      ],
+      "层级": 1,
+      "上级": "wifi",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Communication.WiFi.Core",
+      "parameters": [
+        {
+          "名称": "featureId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the ID of the feature."
+        }
+      ],
+      "return_description": "Returns {@code true} if this device supports the specified feature, returns {@code false} otherwise.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getIpInfo",
+      "返回值": "IpInfo",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the IP information of a Wi-Fi connection. <p>The IP information includes the host IP address, gateway address, and DNS information.",
+      "注释信息": [
+        "@permission ohos.permission.GET_WIFI_INFO",
+        "@returns { IpInfo } Returns the IP information of the Wi-Fi connection.",
+        "@syscap SystemCapability.Communication.WiFi.STA",
+        "@since 7",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.getIpInfo"
+      ],
+      "层级": 1,
+      "上级": "wifi",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Communication.WiFi.STA",
+      "parameters": [],
+      "return_description": "Returns the IP information of the Wi-Fi connection.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getCountryCode",
+      "返回值": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the country code of this device.",
+      "注释信息": [
+        "@permission ohos.permission.GET_WIFI_INFO",
+        "@returns { string } Returns the country code of this device.",
+        "@syscap SystemCapability.Communication.WiFi.Core",
+        "@since 7",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.getCountryCode"
+      ],
+      "层级": 1,
+      "上级": "wifi",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Communication.WiFi.Core",
+      "parameters": [],
+      "return_description": "Returns the country code of this device.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getP2pLinkedInfo",
+      "返回值": "Promise<WifiP2pLinkedInfo>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains information about a P2P connection.",
+      "注释信息": [
+        "@permission ohos.permission.GET_WIFI_INFO",
+        "@returns { Promise<WifiP2pLinkedInfo> } Returns the P2P connection information.",
+        "@syscap SystemCapability.Communication.WiFi.P2P",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.getP2pLinkedInfo"
+      ],
+      "层级": 1,
+      "上级": "wifi",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Communication.WiFi.P2P",
+      "parameters": [],
+      "return_description": "Returns the P2P connection information.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getP2pLinkedInfo",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains information about a P2P connection.",
+      "注释信息": [
+        "@permission ohos.permission.GET_WIFI_INFO",
+        "@param { AsyncCallback<WifiP2pLinkedInfo> } get the P2P connection information.",
+        "@syscap SystemCapability.Communication.WiFi.P2P",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.getP2pLinkedInfo"
+      ],
+      "层级": 1,
+      "上级": "wifi",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Communication.WiFi.P2P",
+      "parameters": [
+        {
+          "名称": "get",
+          "类型": "AsyncCallback<WifiP2pLinkedInfo>",
+          "必填": true,
+          "说明": "the P2P connection information."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getCurrentGroup",
+      "返回值": "Promise<WifiP2pGroupInfo>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains information about the current group.",
+      "注释信息": [
+        "@permission ohos.permission.GET_WIFI_INFO and ohos.permission.LOCATION",
+        "@returns { Promise<WifiP2pGroupInfo> } Returns the current group information.",
+        "@syscap SystemCapability.Communication.WiFi.P2P",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.getCurrentGroup"
+      ],
+      "层级": 1,
+      "上级": "wifi",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Communication.WiFi.P2P",
+      "parameters": [],
+      "return_description": "Returns the current group information.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getCurrentGroup",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains information about the current group.",
+      "注释信息": [
+        "@permission ohos.permission.GET_WIFI_INFO and ohos.permission.LOCATION",
+        "@param { AsyncCallback<WifiP2pGroupInfo> } get the current group information.",
+        "@syscap SystemCapability.Communication.WiFi.P2P",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.getCurrentGroup"
+      ],
+      "层级": 1,
+      "上级": "wifi",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Communication.WiFi.P2P",
+      "parameters": [
+        {
+          "名称": "get",
+          "类型": "AsyncCallback<WifiP2pGroupInfo>",
+          "必填": true,
+          "说明": "the current group information."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getP2pPeerDevices",
+      "返回值": "Promise<WifiP2pDevice[]>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the information about the found devices.",
+      "注释信息": [
+        "@permission ohos.permission.GET_WIFI_INFO and ohos.permission.LOCATION",
+        "@returns { Promise<WifiP2pDevice[]> } Returns the found devices list.",
+        "@syscap SystemCapability.Communication.WiFi.P2P",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.getP2pPeerDevices"
+      ],
+      "层级": 1,
+      "上级": "wifi",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Communication.WiFi.P2P",
+      "parameters": [],
+      "return_description": "Returns the found devices list.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getP2pPeerDevices",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the information about the found devices.",
+      "注释信息": [
+        "@permission ohos.permission.GET_WIFI_INFO and ohos.permission.LOCATION",
+        "@param { AsyncCallback<WifiP2pDevice[]> } Returns the found devices list.",
+        "@syscap SystemCapability.Communication.WiFi.P2P",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.getP2pPeerDevices"
+      ],
+      "层级": 1,
+      "上级": "wifi",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Communication.WiFi.P2P",
+      "parameters": [
+        {
+          "名称": "Returns",
+          "类型": "AsyncCallback<WifiP2pDevice[]>",
+          "必填": true,
+          "说明": "the found devices list."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "createGroup",
+      "返回值": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Creates a P2P group.",
+      "注释信息": [
+        "@permission ohos.permission.GET_WIFI_INFO",
+        "@param { WifiP2PConfig } config Indicates the configuration for creating a group.",
+        "@returns { boolean } Returns {@code true} if the operation is successful, returns {@code false} otherwise.",
+        "@syscap SystemCapability.Communication.WiFi.P2P",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.createP2pGroup"
+      ],
+      "层级": 1,
+      "上级": "wifi",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Communication.WiFi.P2P",
+      "parameters": [
+        {
+          "名称": "config",
+          "类型": "WifiP2PConfig",
+          "必填": true,
+          "说明": "Indicates the configuration for creating a group."
+        }
+      ],
+      "return_description": "Returns {@code true} if the operation is successful, returns {@code false} otherwise.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "removeGroup",
+      "返回值": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Removes a P2P group.",
+      "注释信息": [
+        "@permission ohos.permission.GET_WIFI_INFO",
+        "@returns { boolean } Returns {@code true} if the operation is successful, returns {@code false} otherwise.",
+        "@syscap SystemCapability.Communication.WiFi.P2P",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.removeP2pGroup"
+      ],
+      "层级": 1,
+      "上级": "wifi",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Communication.WiFi.P2P",
+      "parameters": [],
+      "return_description": "Returns {@code true} if the operation is successful, returns {@code false} otherwise.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "p2pConnect",
+      "返回值": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Initiates a P2P connection to a device with the specified configuration.",
+      "注释信息": [
+        "@permission ohos.permission.GET_WIFI_INFO and ohos.permission.LOCATION",
+        "@param { WifiP2PConfig } config Indicates the configuration for connecting to a specific group.",
+        "@returns { boolean } Returns {@code true} if the operation is successful, returns {@code false} otherwise.",
+        "@syscap SystemCapability.Communication.WiFi.P2P",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.p2pConnect"
+      ],
+      "层级": 1,
+      "上级": "wifi",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Communication.WiFi.P2P",
+      "parameters": [
+        {
+          "名称": "config",
+          "类型": "WifiP2PConfig",
+          "必填": true,
+          "说明": "Indicates the configuration for connecting to a specific group."
+        }
+      ],
+      "return_description": "Returns {@code true} if the operation is successful, returns {@code false} otherwise.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "p2pCancelConnect",
+      "返回值": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Canceling a P2P connection.",
+      "注释信息": [
+        "@permission ohos.permission.GET_WIFI_INFO",
+        "@returns { boolean } Returns {@code true} if the operation is successful, returns {@code false} otherwise.",
+        "@syscap SystemCapability.Communication.WiFi.P2P",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.p2pCancelConnect"
+      ],
+      "层级": 1,
+      "上级": "wifi",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Communication.WiFi.P2P",
+      "parameters": [],
+      "return_description": "Returns {@code true} if the operation is successful, returns {@code false} otherwise.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "startDiscoverDevices",
+      "返回值": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Discover Wi-Fi P2P devices.",
+      "注释信息": [
+        "@permission ohos.permission.GET_WIFI_INFO and ohos.permission.LOCATION",
+        "@returns { boolean } Returns {@code true} if the operation is successful, returns {@code false} otherwise.",
+        "@syscap SystemCapability.Communication.WiFi.P2P",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.startDiscoverP2pDevices"
+      ],
+      "层级": 1,
+      "上级": "wifi",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Communication.WiFi.P2P",
+      "parameters": [],
+      "return_description": "Returns {@code true} if the operation is successful, returns {@code false} otherwise.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "stopDiscoverDevices",
+      "返回值": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Stops discovering Wi-Fi P2P devices.",
+      "注释信息": [
+        "@permission ohos.permission.GET_WIFI_INFO",
+        "@returns { boolean } Returns {@code true} if the operation is successful, returns {@code false} otherwise.",
+        "@syscap SystemCapability.Communication.WiFi.P2P",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.stopDiscoverP2pDevices"
+      ],
+      "层级": 1,
+      "上级": "wifi",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Communication.WiFi.P2P",
+      "parameters": [],
+      "return_description": "Returns {@code true} if the operation is successful, returns {@code false} otherwise.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Subscribe Wi-Fi status change events.",
+      "注释信息": [
+        "@permission ohos.permission.GET_WIFI_INFO",
+        "@param { 'wifiStateChange' } type - event name.",
+        "@param { Callback<number> } callback - the callback of on, 0: inactive, 1: active, 2: activating, 3: de-activating",
+        "@syscap SystemCapability.Communication.WiFi.STA",
+        "@since 7",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.on#event:wifiStateChange"
+      ],
+      "层级": 1,
+      "上级": "wifi",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Communication.WiFi.STA",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'wifiStateChange'",
+          "必填": true,
+          "说明": "event name."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<number>",
+          "必填": true,
+          "说明": "the callback of on, 0: inactive, 1: active, 2: activating, 3: de-activating"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unsubscribe Wi-Fi status change events. <p>All callback functions will be deregistered If there is no specific callback parameter.</p>",
+      "注释信息": [
+        "@permission ohos.permission.GET_WIFI_INFO",
+        "@param { 'wifiStateChange' } type - event name.",
+        "@param { Callback<number> } callback - the callback of on, 0: inactive, 1: active, 2: activating, 3: de-activating",
+        "@syscap SystemCapability.Communication.WiFi.STA",
+        "@since 7",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.off#event:wifiStateChange"
+      ],
+      "层级": 1,
+      "上级": "wifi",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Communication.WiFi.STA",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'wifiStateChange'",
+          "必填": true,
+          "说明": "event name."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<number>",
+          "必填": true,
+          "说明": "the callback of on, 0: inactive, 1: active, 2: activating, 3: de-activating"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Subscribe Wi-Fi connection change events.",
+      "注释信息": [
+        "@permission ohos.permission.GET_WIFI_INFO",
+        "@param { 'wifiConnectionChange' } type - event name.",
+        "@param { Callback<number> } callback - the callback of on, 0: disconnected, 1: connected",
+        "@syscap SystemCapability.Communication.WiFi.STA",
+        "@since 7",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.on#event:wifiConnectionChange"
+      ],
+      "层级": 1,
+      "上级": "wifi",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Communication.WiFi.STA",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'wifiConnectionChange'",
+          "必填": true,
+          "说明": "event name."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<number>",
+          "必填": true,
+          "说明": "the callback of on, 0: disconnected, 1: connected"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unsubscribe Wi-Fi connection change events. <p>All callback functions will be deregistered If there is no specific callback parameter.</p>",
+      "注释信息": [
+        "@permission ohos.permission.GET_WIFI_INFO",
+        "@param { 'wifiConnectionChange' } type - event name.",
+        "@param { Callback<number> } callback - the callback of on, 0: disconnected, 1: connected",
+        "@syscap SystemCapability.Communication.WiFi.STA",
+        "@since 7",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.off#event:wifiConnectionChange"
+      ],
+      "层级": 1,
+      "上级": "wifi",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Communication.WiFi.STA",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'wifiConnectionChange'",
+          "必填": true,
+          "说明": "event name."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<number>",
+          "必填": true,
+          "说明": "the callback of on, 0: disconnected, 1: connected"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Subscribe Wi-Fi scan status change events.",
+      "注释信息": [
+        "@permission ohos.permission.GET_WIFI_INFO",
+        "@param { 'wifiScanStateChange' } type - event name.",
+        "@param { Callback<number> } callback - the callback of on, 0: scan fail, 1: scan success",
+        "@syscap SystemCapability.Communication.WiFi.STA",
+        "@since 7",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.on#event:wifiScanStateChange"
+      ],
+      "层级": 1,
+      "上级": "wifi",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Communication.WiFi.STA",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'wifiScanStateChange'",
+          "必填": true,
+          "说明": "event name."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<number>",
+          "必填": true,
+          "说明": "the callback of on, 0: scan fail, 1: scan success"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unsubscribe Wi-Fi scan status change events. <p>All callback functions will be deregistered If there is no specific callback parameter.</p>",
+      "注释信息": [
+        "@permission ohos.permission.GET_WIFI_INFO",
+        "@param { 'wifiScanStateChange' } type - event name.",
+        "@param { Callback<number> } callback - the callback of on, 0: scan fail, 1: scan success",
+        "@syscap SystemCapability.Communication.WiFi.STA",
+        "@since 7",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.off#event:wifiScanStateChange"
+      ],
+      "层级": 1,
+      "上级": "wifi",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Communication.WiFi.STA",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'wifiScanStateChange'",
+          "必填": true,
+          "说明": "event name."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<number>",
+          "必填": true,
+          "说明": "the callback of on, 0: scan fail, 1: scan success"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Subscribe Wi-Fi rssi change events.",
+      "注释信息": [
+        "@permission ohos.permission.GET_WIFI_INFO",
+        "@param { 'wifiRssiChange' } type - event name.",
+        "@param { Callback<number> } callback - the callback of on",
+        "@syscap SystemCapability.Communication.WiFi.STA",
+        "@since 7",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.on#event:wifiRssiChange"
+      ],
+      "层级": 1,
+      "上级": "wifi",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Communication.WiFi.STA",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'wifiRssiChange'",
+          "必填": true,
+          "说明": "event name."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<number>",
+          "必填": true,
+          "说明": "the callback of on"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unsubscribe Wi-Fi rssi change events. <p>All callback functions will be deregistered If there is no specific callback parameter.</p>",
+      "注释信息": [
+        "@permission ohos.permission.GET_WIFI_INFO",
+        "@param { 'wifiRssiChange' } type - event name.",
+        "@param { Callback<number> } callback - the callback of on",
+        "@syscap SystemCapability.Communication.WiFi.STA",
+        "@since 7",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.off#event:wifiRssiChange"
+      ],
+      "层级": 1,
+      "上级": "wifi",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Communication.WiFi.STA",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'wifiRssiChange'",
+          "必填": true,
+          "说明": "event name."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<number>",
+          "必填": true,
+          "说明": "the callback of on"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Subscribe Wi-Fi hotspot state change events.",
+      "注释信息": [
+        "@permission ohos.permission.GET_WIFI_INFO",
+        "@param { 'hotspotStateChange' } type - event name.",
+        "@param { Callback<number> } callback - the callback of on, 0: inactive, 1: active, 2: activating, 3: de-activating",
+        "@syscap SystemCapability.Communication.WiFi.AP.Core",
+        "@since 7",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.on#event:hotspotStateChange"
+      ],
+      "层级": 1,
+      "上级": "wifi",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Communication.WiFi.AP.Core",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'hotspotStateChange'",
+          "必填": true,
+          "说明": "event name."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<number>",
+          "必填": true,
+          "说明": "the callback of on, 0: inactive, 1: active, 2: activating, 3: de-activating"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unsubscribe Wi-Fi hotspot state change events. <p>All callback functions will be deregistered If there is no specific callback parameter.</p>",
+      "注释信息": [
+        "@permission ohos.permission.GET_WIFI_INFO",
+        "@param { 'hotspotStateChange' } type - event name.",
+        "@param { Callback<number> } callback - the callback of on, 0: inactive, 1: active, 2: activating, 3: de-activating",
+        "@syscap SystemCapability.Communication.WiFi.AP.Core",
+        "@since 7",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.off#event:hotspotStateChange"
+      ],
+      "层级": 1,
+      "上级": "wifi",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Communication.WiFi.AP.Core",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'hotspotStateChange'",
+          "必填": true,
+          "说明": "event name."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<number>",
+          "必填": true,
+          "说明": "the callback of on, 0: inactive, 1: active, 2: activating, 3: de-activating"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Subscribe P2P status change events.",
+      "注释信息": [
+        "@permission ohos.permission.GET_WIFI_INFO",
+        "@param { 'p2pStateChange' } type - event name.",
+        "@param { Callback<number> } callback - the callback of on, 1: idle, 2: starting, 3:started, 4: closing, 5: closed",
+        "@syscap SystemCapability.Communication.WiFi.P2P",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.on#event:p2pStateChange"
+      ],
+      "层级": 1,
+      "上级": "wifi",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Communication.WiFi.P2P",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'p2pStateChange'",
+          "必填": true,
+          "说明": "event name."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<number>",
+          "必填": true,
+          "说明": "the callback of on, 1: idle, 2: starting, 3:started, 4: closing, 5: closed"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unsubscribe P2P status change events.",
+      "注释信息": [
+        "@permission ohos.permission.GET_WIFI_INFO",
+        "@param { 'p2pStateChange' } type - event name.",
+        "@param { Callback<number> } callback - the callback of on, 1: idle, 2: starting, 3:started, 4: closing, 5: closed",
+        "@syscap SystemCapability.Communication.WiFi.P2P",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.off#event:p2pStateChange"
+      ],
+      "层级": 1,
+      "上级": "wifi",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Communication.WiFi.P2P",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'p2pStateChange'",
+          "必填": true,
+          "说明": "event name."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<number>",
+          "必填": true,
+          "说明": "the callback of on, 1: idle, 2: starting, 3:started, 4: closing, 5: closed"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Subscribe P2P connection change events.",
+      "注释信息": [
+        "@permission ohos.permission.GET_WIFI_INFO",
+        "@param { 'p2pConnectionChange' } type - event name.",
+        "@param { Callback<WifiP2pLinkedInfo> } callback - the callback of on",
+        "@syscap SystemCapability.Communication.WiFi.P2P",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.on#event:p2pConnectionChange"
+      ],
+      "层级": 1,
+      "上级": "wifi",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Communication.WiFi.P2P",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'p2pConnectionChange'",
+          "必填": true,
+          "说明": "event name."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<WifiP2pLinkedInfo>",
+          "必填": true,
+          "说明": "the callback of on"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unsubscribe P2P connection change events.",
+      "注释信息": [
+        "@permission ohos.permission.GET_WIFI_INFO",
+        "@param { 'p2pConnectionChange' } type - event name.",
+        "@param { Callback<WifiP2pLinkedInfo> } callback - the callback of on",
+        "@syscap SystemCapability.Communication.WiFi.P2P",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.off#event:p2pConnectionChange"
+      ],
+      "层级": 1,
+      "上级": "wifi",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Communication.WiFi.P2P",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'p2pConnectionChange'",
+          "必填": true,
+          "说明": "event name."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<WifiP2pLinkedInfo>",
+          "必填": true,
+          "说明": "the callback of on"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Subscribe P2P local device change events.",
+      "注释信息": [
+        "@permission ohos.permission.GET_WIFI_INFO and ohos.permission.LOCATION",
+        "@param { 'p2pDeviceChange' } type - event name.",
+        "@param { Callback<WifiP2pDevice> } callback - the callback of on",
+        "@syscap SystemCapability.Communication.WiFi.P2P",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.on#event:p2pDeviceChange"
+      ],
+      "层级": 1,
+      "上级": "wifi",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Communication.WiFi.P2P",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'p2pDeviceChange'",
+          "必填": true,
+          "说明": "event name."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<WifiP2pDevice>",
+          "必填": true,
+          "说明": "the callback of on"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unsubscribe P2P local device change events.",
+      "注释信息": [
+        "@permission ohos.permission.LOCATION",
+        "@param { 'p2pDeviceChange' } type - event name.",
+        "@param { Callback<WifiP2pDevice> } callback - the callback of on",
+        "@syscap SystemCapability.Communication.WiFi.P2P",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.off#event:p2pDeviceChange"
+      ],
+      "层级": 1,
+      "上级": "wifi",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Communication.WiFi.P2P",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'p2pDeviceChange'",
+          "必填": true,
+          "说明": "event name."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<WifiP2pDevice>",
+          "必填": true,
+          "说明": "the callback of on"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Subscribe P2P peer device change events.",
+      "注释信息": [
+        "@permission ohos.permission.GET_WIFI_INFO and ohos.permission.LOCATION",
+        "@param { 'p2pPeerDeviceChange' } type - event name.",
+        "@param { Callback<WifiP2pDevice[]> } callback - the callback of on",
+        "@syscap SystemCapability.Communication.WiFi.P2P",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.on#event:p2pPeerDeviceChange"
+      ],
+      "层级": 1,
+      "上级": "wifi",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Communication.WiFi.P2P",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'p2pPeerDeviceChange'",
+          "必填": true,
+          "说明": "event name."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<WifiP2pDevice[]>",
+          "必填": true,
+          "说明": "the callback of on"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unsubscribe P2P peer device change events.",
+      "注释信息": [
+        "@permission ohos.permission.LOCATION",
+        "@param { 'p2pPeerDeviceChange' } type - event name.",
+        "@param { Callback<WifiP2pDevice[]> } callback - the callback of on",
+        "@syscap SystemCapability.Communication.WiFi.P2P",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.off#event:p2pPeerDeviceChange"
+      ],
+      "层级": 1,
+      "上级": "wifi",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Communication.WiFi.P2P",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'p2pPeerDeviceChange'",
+          "必填": true,
+          "说明": "event name."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<WifiP2pDevice[]>",
+          "必填": true,
+          "说明": "the callback of on"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Subscribe P2P persistent group change events.",
+      "注释信息": [
+        "@permission ohos.permission.GET_WIFI_INFO",
+        "@param { 'p2pPersistentGroupChange' } type - event name.",
+        "@param { Callback<void> } callback - the callback of on",
+        "@syscap SystemCapability.Communication.WiFi.P2P",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.on#event:p2pPersistentGroupChange"
+      ],
+      "层级": 1,
+      "上级": "wifi",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Communication.WiFi.P2P",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'p2pPersistentGroupChange'",
+          "必填": true,
+          "说明": "event name."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<void>",
+          "必填": true,
+          "说明": "the callback of on"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unsubscribe P2P persistent group change events.",
+      "注释信息": [
+        "@permission ohos.permission.GET_WIFI_INFO",
+        "@param { 'p2pPersistentGroupChange' } type - event name.",
+        "@param { Callback<void> } callback - the callback of on",
+        "@syscap SystemCapability.Communication.WiFi.P2P",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.off#event:p2pPersistentGroupChange"
+      ],
+      "层级": 1,
+      "上级": "wifi",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Communication.WiFi.P2P",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'p2pPersistentGroupChange'",
+          "必填": true,
+          "说明": "event name."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<void>",
+          "必填": true,
+          "说明": "the callback of on"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Subscribe P2P discovery events.",
+      "注释信息": [
+        "@permission ohos.permission.GET_WIFI_INFO",
+        "@param { 'p2pDiscoveryChange' } type - event name.",
+        "@param { Callback<number> } callback - the callback of on",
+        "@syscap SystemCapability.Communication.WiFi.P2P",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.on#event:p2pDiscoveryChange"
+      ],
+      "层级": 1,
+      "上级": "wifi",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Communication.WiFi.P2P",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'p2pDiscoveryChange'",
+          "必填": true,
+          "说明": "event name."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<number>",
+          "必填": true,
+          "说明": "the callback of on"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unsubscribe P2P discovery events.",
+      "注释信息": [
+        "@permission ohos.permission.GET_WIFI_INFO",
+        "@param { 'p2pDiscoveryChange' } type - event name.",
+        "@param { Callback<number> } callback - the callback of on",
+        "@syscap SystemCapability.Communication.WiFi.P2P",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.off#event:p2pDiscoveryChange"
+      ],
+      "层级": 1,
+      "上级": "wifi",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Communication.WiFi.P2P",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'p2pDiscoveryChange'",
+          "必填": true,
+          "说明": "event name."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<number>",
+          "必填": true,
+          "说明": "the callback of on"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "WifiDeviceConfig",
+      "所属模块": "未知模块",
+      "功能描述": "Wi-Fi device configuration information.",
+      "注释信息": [
+        "@interface WifiDeviceConfig",
+        "@syscap SystemCapability.Communication.WiFi.STA",
+        "@since 6",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.WifiDeviceConfig"
+      ],
+      "层级": 2,
+      "上级": "wifi",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Communication.WiFi.STA",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "ssid",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Wi-Fi SSID: the maximum length is 32",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.WiFi.STA",
+        "@since 6",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.WifiDeviceConfig.ssid"
+      ],
+      "层级": 2,
+      "上级": "WifiDeviceConfig",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Communication.WiFi.STA",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "bssid",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Wi-Fi bssid(MAC): the length is 6",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.WiFi.STA",
+        "@since 6",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.WifiDeviceConfig.bssid"
+      ],
+      "层级": 2,
+      "上级": "WifiDeviceConfig",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Communication.WiFi.STA",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "preSharedKey",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Wi-Fi key: maximum length is 64",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.WiFi.STA",
+        "@since 6",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.WifiDeviceConfig.preSharedKey"
+      ],
+      "层级": 2,
+      "上级": "WifiDeviceConfig",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Communication.WiFi.STA",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "isHiddenSsid",
+      "属性类型": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Hide SSID or not, false(default): not hide",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.WiFi.STA",
+        "@since 6",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.WifiDeviceConfig.isHiddenSsid"
+      ],
+      "层级": 2,
+      "上级": "WifiDeviceConfig",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Communication.WiFi.STA",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "securityType",
+      "属性类型": "WifiSecurityType",
+      "所属模块": "未知模块",
+      "功能描述": "Security type: reference definition of WifiSecurityType",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.WiFi.STA",
+        "@since 6",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.WifiDeviceConfig.securityType"
+      ],
+      "层级": 2,
+      "上级": "WifiDeviceConfig",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Communication.WiFi.STA",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "WifiScanInfo",
+      "所属模块": "未知模块",
+      "功能描述": "Describes the scanned Wi-Fi information.",
+      "注释信息": [
+        "@interface WifiScanInfo",
+        "@syscap SystemCapability.Communication.WiFi.STA",
+        "@since 6",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.WifiScanInfo"
+      ],
+      "层级": 2,
+      "上级": "wifi",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Communication.WiFi.STA",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "ssid",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Wi-Fi SSID: the maximum length is 32",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.WiFi.STA",
+        "@since 6",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.WifiScanInfo.ssid"
+      ],
+      "层级": 2,
+      "上级": "WifiScanInfo",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Communication.WiFi.STA",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "bssid",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Wi-Fi bssid(MAC): the length is 6",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.WiFi.STA",
+        "@since 6",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.WifiScanInfo.bssid"
+      ],
+      "层级": 2,
+      "上级": "WifiScanInfo",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Communication.WiFi.STA",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "capabilities",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Hotspot capability",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.WiFi.STA",
+        "@since 6",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.WifiScanInfo.capabilities"
+      ],
+      "层级": 2,
+      "上级": "WifiScanInfo",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Communication.WiFi.STA",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "securityType",
+      "属性类型": "WifiSecurityType",
+      "所属模块": "未知模块",
+      "功能描述": "Security type: reference definition of WifiSecurityType",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.WiFi.STA",
+        "@since 6",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.WifiScanInfo.securityType"
+      ],
+      "层级": 2,
+      "上级": "WifiScanInfo",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Communication.WiFi.STA",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "rssi",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Received signal strength indicator (RSSI)",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.WiFi.STA",
+        "@since 6",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.WifiScanInfo.rssi"
+      ],
+      "层级": 2,
+      "上级": "WifiScanInfo",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Communication.WiFi.STA",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "band",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Frequency band, 1: 2.4G, 2: 5G",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.WiFi.STA",
+        "@since 6",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.WifiScanInfo.band"
+      ],
+      "层级": 2,
+      "上级": "WifiScanInfo",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Communication.WiFi.STA",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "frequency",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Frequency",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.WiFi.STA",
+        "@since 6",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.WifiScanInfo.frequency"
+      ],
+      "层级": 2,
+      "上级": "WifiScanInfo",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Communication.WiFi.STA",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "channelWidth",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Channel width",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.WiFi.STA",
+        "@since 6",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.WifiScanInfo.channelWidth"
+      ],
+      "层级": 2,
+      "上级": "WifiScanInfo",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Communication.WiFi.STA",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "timestamp",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Time stamp",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.WiFi.STA",
+        "@since 6",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.WifiScanInfo.timestamp"
+      ],
+      "层级": 2,
+      "上级": "WifiScanInfo",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Communication.WiFi.STA",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "WifiSecurityType",
+      "所属模块": "未知模块",
+      "功能描述": "Describes the wifi security type.",
+      "注释信息": [
+        "@enum { number } WifiSecurityType",
+        "@syscap SystemCapability.Communication.WiFi.Core",
+        "@since 6",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.WifiSecurityType"
+      ],
+      "层级": 2,
+      "上级": "wifi",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Communication.WiFi.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "WIFI_SEC_TYPE_INVALID",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "Invalid security type",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.WiFi.Core",
+        "@since 6",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.WifiSecurityType.WIFI_SEC_TYPE_INVALID"
+      ],
+      "层级": 2,
+      "上级": "WifiSecurityType",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Communication.WiFi.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "WIFI_SEC_TYPE_OPEN",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Open",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.WiFi.Core",
+        "@since 6",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.WifiSecurityType.WIFI_SEC_TYPE_OPEN"
+      ],
+      "层级": 2,
+      "上级": "WifiSecurityType",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Communication.WiFi.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "WIFI_SEC_TYPE_WEP",
+      "值": "2",
+      "所属模块": "未知模块",
+      "功能描述": "Wired Equivalent Privacy (WEP)",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.WiFi.Core",
+        "@since 6",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.WifiSecurityType.WIFI_SEC_TYPE_WEP"
+      ],
+      "层级": 2,
+      "上级": "WifiSecurityType",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Communication.WiFi.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "WIFI_SEC_TYPE_PSK",
+      "值": "3",
+      "所属模块": "未知模块",
+      "功能描述": "Pre-shared key (PSK)",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.WiFi.Core",
+        "@since 6",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.WifiSecurityType.WIFI_SEC_TYPE_PSK"
+      ],
+      "层级": 2,
+      "上级": "WifiSecurityType",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Communication.WiFi.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "WIFI_SEC_TYPE_SAE",
+      "值": "4",
+      "所属模块": "未知模块",
+      "功能描述": "Simultaneous Authentication of Equals (SAE)",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.WiFi.Core",
+        "@since 6",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.WifiSecurityType.WIFI_SEC_TYPE_SAE"
+      ],
+      "层级": 2,
+      "上级": "WifiSecurityType",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Communication.WiFi.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "WifiLinkedInfo",
+      "所属模块": "未知模块",
+      "功能描述": "Wi-Fi connection information.",
+      "注释信息": [
+        "@interface WifiLinkedInfo",
+        "@syscap SystemCapability.Communication.WiFi.STA",
+        "@since 6",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.WifiLinkedInfo"
+      ],
+      "层级": 2,
+      "上级": "wifi",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Communication.WiFi.STA",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "ssid",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "The SSID of the Wi-Fi hotspot",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.WiFi.STA",
+        "@since 6",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.WifiLinkedInfo.ssid"
+      ],
+      "层级": 2,
+      "上级": "WifiLinkedInfo",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Communication.WiFi.STA",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "bssid",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "The BSSID of the Wi-Fi hotspot",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.WiFi.STA",
+        "@since 6",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.WifiLinkedInfo.bssid"
+      ],
+      "层级": 2,
+      "上级": "WifiLinkedInfo",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Communication.WiFi.STA",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "rssi",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "The RSSI(dBm) of a Wi-Fi access point.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.WiFi.STA",
+        "@since 6",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.WifiLinkedInfo.rssi"
+      ],
+      "层级": 2,
+      "上级": "WifiLinkedInfo",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Communication.WiFi.STA",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "band",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "The frequency band of a Wi-Fi access point.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.WiFi.STA",
+        "@since 6",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.WifiLinkedInfo.band"
+      ],
+      "层级": 2,
+      "上级": "WifiLinkedInfo",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Communication.WiFi.STA",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "linkSpeed",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "The speed of a Wi-Fi access point.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.WiFi.STA",
+        "@since 6",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.WifiLinkedInfo.linkSpeed"
+      ],
+      "层级": 2,
+      "上级": "WifiLinkedInfo",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Communication.WiFi.STA",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "frequency",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "The frequency of a Wi-Fi access point.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.WiFi.STA",
+        "@since 6",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.WifiLinkedInfo.frequency"
+      ],
+      "层级": 2,
+      "上级": "WifiLinkedInfo",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Communication.WiFi.STA",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "isHidden",
+      "属性类型": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Whether the SSID of the access point (AP) of this Wi-Fi connection is hidden.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.WiFi.STA",
+        "@since 6",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.WifiLinkedInfo.isHidden"
+      ],
+      "层级": 2,
+      "上级": "WifiLinkedInfo",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Communication.WiFi.STA",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "isRestricted",
+      "属性类型": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Whether this Wi-Fi connection restricts the data volume.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.WiFi.STA",
+        "@since 6",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.WifiLinkedInfo.isRestricted"
+      ],
+      "层级": 2,
+      "上级": "WifiLinkedInfo",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Communication.WiFi.STA",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "macAddress",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "The Wi-Fi MAC address of a device.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.WiFi.STA",
+        "@since 6",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.WifiLinkedInfo.macAddress"
+      ],
+      "层级": 2,
+      "上级": "WifiLinkedInfo",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Communication.WiFi.STA",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "ipAddress",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "The IP address of this Wi-Fi connection.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.WiFi.STA",
+        "@since 6",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.WifiLinkedInfo.ipAddress"
+      ],
+      "层级": 2,
+      "上级": "WifiLinkedInfo",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Communication.WiFi.STA",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "connState",
+      "属性类型": "ConnState",
+      "所属模块": "未知模块",
+      "功能描述": "The state of this Wi-Fi connection.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.WiFi.STA",
+        "@since 6",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.WifiLinkedInfo.connState"
+      ],
+      "层级": 2,
+      "上级": "WifiLinkedInfo",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Communication.WiFi.STA",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "IpInfo",
+      "所属模块": "未知模块",
+      "功能描述": "Wi-Fi IP information.",
+      "注释信息": [
+        "@interface IpInfo",
+        "@syscap SystemCapability.Communication.WiFi.STA",
+        "@since 7",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.IpInfo"
+      ],
+      "层级": 2,
+      "上级": "wifi",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Communication.WiFi.STA",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "ipAddress",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "The IP address of the Wi-Fi connection",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.WiFi.AP.Core",
+        "@since 7",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.IpInfo.ipAddress"
+      ],
+      "层级": 2,
+      "上级": "IpInfo",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Communication.WiFi.AP.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "gateway",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "The gateway of the Wi-Fi connection",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.WiFi.AP.Core",
+        "@since 7",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.IpInfo.gateway"
+      ],
+      "层级": 2,
+      "上级": "IpInfo",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Communication.WiFi.AP.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "netmask",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "The network mask of the Wi-Fi connection",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.WiFi.AP.Core",
+        "@since 7",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.IpInfo.netmask"
+      ],
+      "层级": 2,
+      "上级": "IpInfo",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Communication.WiFi.AP.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "primaryDns",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "The primary DNS server IP address of the Wi-Fi connection",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.WiFi.AP.Core",
+        "@since 7",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.IpInfo.primaryDns"
+      ],
+      "层级": 2,
+      "上级": "IpInfo",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Communication.WiFi.AP.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "secondDns",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "T he secondary DNS server IP address of the Wi-Fi connection",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.WiFi.AP.Core",
+        "@since 7",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.IpInfo.secondDns"
+      ],
+      "层级": 2,
+      "上级": "IpInfo",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Communication.WiFi.AP.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "serverIp",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "The DHCP server IP address of the Wi-Fi connection",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.WiFi.AP.Core",
+        "@since 7",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.IpInfo.serverIp"
+      ],
+      "层级": 2,
+      "上级": "IpInfo",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Communication.WiFi.AP.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "leaseDuration",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "The IP address lease duration of the Wi-Fi connection",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.WiFi.AP.Core",
+        "@since 7",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.IpInfo.leaseDuration"
+      ],
+      "层级": 2,
+      "上级": "IpInfo",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Communication.WiFi.AP.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "ConnState",
+      "所属模块": "未知模块",
+      "功能描述": "The state of Wi-Fi connection enumeration.",
+      "注释信息": [
+        "@enum { number } ConnState",
+        "@syscap SystemCapability.Communication.WiFi.STA",
+        "@since 6",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.ConnState"
+      ],
+      "层级": 2,
+      "上级": "wifi",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Communication.WiFi.STA",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "SCANNING",
+      "所属模块": "未知模块",
+      "功能描述": "The device is searching for an available AP.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.WiFi.STA",
+        "@since 6",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.ConnState.SCANNING"
+      ],
+      "层级": 2,
+      "上级": "ConnState",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Communication.WiFi.STA",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CONNECTING",
+      "所属模块": "未知模块",
+      "功能描述": "The Wi-Fi connection is being set up.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.WiFi.STA",
+        "@since 6",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.ConnState.CONNECTING"
+      ],
+      "层级": 2,
+      "上级": "ConnState",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Communication.WiFi.STA",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "AUTHENTICATING",
+      "所属模块": "未知模块",
+      "功能描述": "The Wi-Fi connection is being authenticated.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.WiFi.STA",
+        "@since 6",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.ConnState.AUTHENTICATING"
+      ],
+      "层级": 2,
+      "上级": "ConnState",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Communication.WiFi.STA",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "OBTAINING_IPADDR",
+      "所属模块": "未知模块",
+      "功能描述": "The IP address of the Wi-Fi connection is being obtained.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.WiFi.STA",
+        "@since 6",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.ConnState.OBTAINING_IPADDR"
+      ],
+      "层级": 2,
+      "上级": "ConnState",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Communication.WiFi.STA",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CONNECTED",
+      "所属模块": "未知模块",
+      "功能描述": "The Wi-Fi connection has been set up.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.WiFi.STA",
+        "@since 6",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.ConnState.CONNECTED"
+      ],
+      "层级": 2,
+      "上级": "ConnState",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Communication.WiFi.STA",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "DISCONNECTING",
+      "所属模块": "未知模块",
+      "功能描述": "The Wi-Fi connection is being torn down.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.WiFi.STA",
+        "@since 6",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.ConnState.DISCONNECTING"
+      ],
+      "层级": 2,
+      "上级": "ConnState",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Communication.WiFi.STA",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "DISCONNECTED",
+      "所属模块": "未知模块",
+      "功能描述": "The Wi-Fi connection has been torn down.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.WiFi.STA",
+        "@since 6",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.ConnState.DISCONNECTED"
+      ],
+      "层级": 2,
+      "上级": "ConnState",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Communication.WiFi.STA",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "UNKNOWN",
+      "所属模块": "未知模块",
+      "功能描述": "Failed to set up the Wi-Fi connection.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.WiFi.STA",
+        "@since 6",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.ConnState.UNKNOWN"
+      ],
+      "层级": 2,
+      "上级": "ConnState",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Communication.WiFi.STA",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "WifiP2pDevice",
+      "所属模块": "未知模块",
+      "功能描述": "P2P device information.",
+      "注释信息": [
+        "@interface WifiP2pDevice",
+        "@syscap SystemCapability.Communication.WiFi.P2P",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.WifiP2pDevice"
+      ],
+      "层级": 2,
+      "上级": "wifi",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Communication.WiFi.P2P",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "deviceName",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Device name",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.WiFi.P2P",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.WifiP2pDevice.deviceName"
+      ],
+      "层级": 2,
+      "上级": "WifiP2pDevice",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Communication.WiFi.P2P",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "deviceAddress",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Device mac address",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.WiFi.P2P",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.WifiP2pDevice.deviceAddress"
+      ],
+      "层级": 2,
+      "上级": "WifiP2pDevice",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Communication.WiFi.P2P",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "primaryDeviceType",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Primary device type",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.WiFi.P2P",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.WifiP2pDevice.primaryDeviceType"
+      ],
+      "层级": 2,
+      "上级": "WifiP2pDevice",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Communication.WiFi.P2P",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "deviceStatus",
+      "属性类型": "P2pDeviceStatus",
+      "所属模块": "未知模块",
+      "功能描述": "Device status",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.WiFi.P2P",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.WifiP2pDevice.deviceStatus"
+      ],
+      "层级": 2,
+      "上级": "WifiP2pDevice",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Communication.WiFi.P2P",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "groupCapabilitys",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Device group capabilities",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.WiFi.P2P",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.WifiP2pDevice.groupCapabilitys"
+      ],
+      "层级": 2,
+      "上级": "WifiP2pDevice",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Communication.WiFi.P2P",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "WifiP2PConfig",
+      "所属模块": "未知模块",
+      "功能描述": "P2P config.",
+      "注释信息": [
+        "@interface WifiP2PConfig",
+        "@syscap SystemCapability.Communication.WiFi.P2P",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.WifiP2PConfig"
+      ],
+      "层级": 2,
+      "上级": "wifi",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Communication.WiFi.P2P",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "deviceAddress",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Device mac address s",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.WiFi.P2P",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.WifiP2PConfig.deviceAddress"
+      ],
+      "层级": 2,
+      "上级": "WifiP2PConfig",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Communication.WiFi.P2P",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "netId",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Group network ID. When creating a group, -1 indicates creates a temporary group, -2: indicates creates a persistent group",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.WiFi.P2P",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.WifiP2PConfig.netId"
+      ],
+      "层级": 2,
+      "上级": "WifiP2PConfig",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Communication.WiFi.P2P",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "passphrase",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "The passphrase of this {@code WifiP2pConfig} instance",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.WiFi.P2P",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.WifiP2PConfig.passphrase"
+      ],
+      "层级": 2,
+      "上级": "WifiP2PConfig",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Communication.WiFi.P2P",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "groupName",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Group name",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.WiFi.P2P",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.WifiP2PConfig.groupName"
+      ],
+      "层级": 2,
+      "上级": "WifiP2PConfig",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Communication.WiFi.P2P",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "goBand",
+      "属性类型": "GroupOwnerBand",
+      "所属模块": "未知模块",
+      "功能描述": "Group owner band",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.WiFi.P2P",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.WifiP2PConfig.goBand"
+      ],
+      "层级": 2,
+      "上级": "WifiP2PConfig",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Communication.WiFi.P2P",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "WifiP2pGroupInfo",
+      "所属模块": "未知模块",
+      "功能描述": "P2P group information.",
+      "注释信息": [
+        "@interface WifiP2pGroupInfo",
+        "@syscap SystemCapability.Communication.WiFi.P2P",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.WifiP2pGroupInfo"
+      ],
+      "层级": 2,
+      "上级": "wifi",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Communication.WiFi.P2P",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "isP2pGo",
+      "属性类型": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates whether it is group owner",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.WiFi.P2P",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.WifiP2pGroupInfo.isP2pGo"
+      ],
+      "层级": 2,
+      "上级": "WifiP2pGroupInfo",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Communication.WiFi.P2P",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "ownerInfo",
+      "属性类型": "WifiP2pDevice",
+      "所属模块": "未知模块",
+      "功能描述": "Group owner information",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.WiFi.P2P",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.WifiP2pGroupInfo.ownerInfo"
+      ],
+      "层级": 2,
+      "上级": "WifiP2pGroupInfo",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Communication.WiFi.P2P",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "passphrase",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "The group passphrase",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.WiFi.P2P",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.WifiP2pGroupInfo.passphrase"
+      ],
+      "层级": 2,
+      "上级": "WifiP2pGroupInfo",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Communication.WiFi.P2P",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": null,
+      "所属模块": "未知模块",
+      "功能描述": "Interface name",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.WiFi.P2P",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.WifiP2pGroupInfo.interface"
+      ],
+      "层级": 2,
+      "上级": "WifiP2pGroupInfo",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Communication.WiFi.P2P",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "groupName",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Group name",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.WiFi.P2P",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.WifiP2pGroupInfo.groupName"
+      ],
+      "层级": 2,
+      "上级": "WifiP2pGroupInfo",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Communication.WiFi.P2P",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "networkId",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Network ID",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.WiFi.P2P",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.WifiP2pGroupInfo.networkId"
+      ],
+      "层级": 2,
+      "上级": "WifiP2pGroupInfo",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Communication.WiFi.P2P",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "frequency",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Frequency",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.WiFi.P2P",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.WifiP2pGroupInfo.frequency"
+      ],
+      "层级": 2,
+      "上级": "WifiP2pGroupInfo",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Communication.WiFi.P2P",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "clientDevices",
+      "属性类型": "WifiP2pDevice[]",
+      "所属模块": "未知模块",
+      "功能描述": "Client list",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.WiFi.P2P",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.WifiP2pGroupInfo.clientDevices"
+      ],
+      "层级": 2,
+      "上级": "WifiP2pGroupInfo",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Communication.WiFi.P2P",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "goIpAddress",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Group owner IP address",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.WiFi.P2P",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.WifiP2pGroupInfo.goIpAddress"
+      ],
+      "层级": 2,
+      "上级": "WifiP2pGroupInfo",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Communication.WiFi.P2P",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "P2pConnectState",
+      "所属模块": "未知模块",
+      "功能描述": "P2P connection status.",
+      "注释信息": [
+        "@enum { number } P2pConnectState",
+        "@syscap SystemCapability.Communication.WiFi.P2P",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.P2pConnectState"
+      ],
+      "层级": 2,
+      "上级": "wifi",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Communication.WiFi.P2P",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "DISCONNECTED",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "p2p is disconnected.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.WiFi.P2P",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.P2pConnectState.DISCONNECTED"
+      ],
+      "层级": 2,
+      "上级": "P2pConnectState",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Communication.WiFi.P2P",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CONNECTED",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "p2p is connected.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.WiFi.P2P",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.P2pConnectState.CONNECTED"
+      ],
+      "层级": 2,
+      "上级": "P2pConnectState",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Communication.WiFi.P2P",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "WifiP2pLinkedInfo",
+      "所属模块": "未知模块",
+      "功能描述": "P2P linked information.",
+      "注释信息": [
+        "@typedef WifiP2pLinkedInfo",
+        "@syscap SystemCapability.Communication.WiFi.P2P",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.WifiP2pLinkedInfo"
+      ],
+      "层级": 2,
+      "上级": "wifi",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Communication.WiFi.P2P",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "connectState",
+      "属性类型": "P2pConnectState",
+      "所属模块": "未知模块",
+      "功能描述": "Connection status",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.WiFi.P2P",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.WifiP2pLinkedInfo.connectState"
+      ],
+      "层级": 2,
+      "上级": "WifiP2pLinkedInfo",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Communication.WiFi.P2P",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "isGroupOwner",
+      "属性类型": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates whether it is group owner",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.WiFi.P2P",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.WifiP2pLinkedInfo.isGroupOwner"
+      ],
+      "层级": 2,
+      "上级": "WifiP2pLinkedInfo",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Communication.WiFi.P2P",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "groupOwnerAddr",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Group owner address",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.WiFi.P2P",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.WifiP2pLinkedInfo.groupOwnerAddr"
+      ],
+      "层级": 2,
+      "上级": "WifiP2pLinkedInfo",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Communication.WiFi.P2P",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "P2pDeviceStatus",
+      "所属模块": "未知模块",
+      "功能描述": "P2P device status.",
+      "注释信息": [
+        "@enum { number } P2pDeviceStatus",
+        "@syscap SystemCapability.Communication.WiFi.P2P",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.P2pDeviceStatus"
+      ],
+      "层级": 2,
+      "上级": "wifi",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Communication.WiFi.P2P",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CONNECTED",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "Indicate p2p device is connected.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.WiFi.P2P",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.P2pDeviceStatus.CONNECTED"
+      ],
+      "层级": 2,
+      "上级": "P2pDeviceStatus",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Communication.WiFi.P2P",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "INVITED",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Indicate p2p device is invited.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.WiFi.P2P",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.P2pDeviceStatus.INVITED"
+      ],
+      "层级": 2,
+      "上级": "P2pDeviceStatus",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Communication.WiFi.P2P",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "FAILED",
+      "值": "2",
+      "所属模块": "未知模块",
+      "功能描述": "Indicate p2p device is failed.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.WiFi.P2P",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.P2pDeviceStatus.FAILED"
+      ],
+      "层级": 2,
+      "上级": "P2pDeviceStatus",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Communication.WiFi.P2P",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "AVAILABLE",
+      "值": "3",
+      "所属模块": "未知模块",
+      "功能描述": "Indicate p2p device is available.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.WiFi.P2P",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.P2pDeviceStatus.AVAILABLE"
+      ],
+      "层级": 2,
+      "上级": "P2pDeviceStatus",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Communication.WiFi.P2P",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "UNAVAILABLE",
+      "值": "4",
+      "所属模块": "未知模块",
+      "功能描述": "Indicate p2p device is unavailable.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.WiFi.P2P",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.P2pDeviceStatus.UNAVAILABLE"
+      ],
+      "层级": 2,
+      "上级": "P2pDeviceStatus",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Communication.WiFi.P2P",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "GroupOwnerBand",
+      "所属模块": "未知模块",
+      "功能描述": "P2P group owner band.",
+      "注释信息": [
+        "@enum { number } GroupOwnerBand",
+        "@syscap SystemCapability.Communication.WiFi.P2P",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.GroupOwnerBand"
+      ],
+      "层级": 2,
+      "上级": "wifi",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Communication.WiFi.P2P",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "GO_BAND_AUTO",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "default band.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.WiFi.P2P",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.GroupOwnerBand.GO_BAND_AUTO"
+      ],
+      "层级": 2,
+      "上级": "GroupOwnerBand",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Communication.WiFi.P2P",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "GO_BAND_2GHZ",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "2.4G band.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.WiFi.P2P",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.GroupOwnerBand.GO_BAND_2GHZ"
+      ],
+      "层级": 2,
+      "上级": "GroupOwnerBand",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Communication.WiFi.P2P",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "GO_BAND_5GHZ",
+      "值": "2",
+      "所属模块": "未知模块",
+      "功能描述": "5G band.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.WiFi.P2P",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.wifiManager/wifiManager.GroupOwnerBand.GO_BAND_5GHZ"
+      ],
+      "层级": 2,
+      "上级": "GroupOwnerBand",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Communication.WiFi.P2P",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    }
+  ]
+}

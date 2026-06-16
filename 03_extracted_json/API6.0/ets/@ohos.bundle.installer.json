@@ -1,0 +1,2551 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.AbilityKit",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "namespace",
+      "名称": "installer",
+      "所属模块": "@kit.AbilityKit",
+      "功能描述": "Support install, upgrade, remove and recover bundles on the devices.",
+      "注释信息": [
+        "@namespace installer",
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@systemapi",
+        "@since arkts {'1.1':'9', '1.2':'20'}",
+        "@arkts 1.1&1.2"
+      ],
+      "层级": 1,
+      "上级": "@kit.AbilityKit",
+      "since_version": "arkts {'1.1':'9', '1.2':'20'}",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getBundleInstaller",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the interface used to install bundle.",
+      "注释信息": [
+        "@param { AsyncCallback<BundleInstaller> } callback - The callback of BundleInstaller object.",
+        "@throws { BusinessError } 202 - Permission verification failed. A non-system application calls a system API.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Incorrect parameter types.",
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@systemapi",
+        "@since arkts {'1.1':'9', '1.2':'20'}",
+        "@arkts 1.1&1.2"
+      ],
+      "层级": 1,
+      "上级": "installer",
+      "since_version": "arkts {'1.1':'9', '1.2':'20'}",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<BundleInstaller>",
+          "必填": true,
+          "说明": "The callback of BundleInstaller object."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "202",
+          "description": "Permission verification failed. A non-system application calls a system API."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Incorrect parameter types."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getBundleInstaller",
+      "返回值": "Promise<BundleInstaller>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the interface used to install bundle.",
+      "注释信息": [
+        "@returns { Promise<BundleInstaller> } BundleInstaller object.",
+        "@throws { BusinessError } 202 - Permission verification failed. A non-system application calls a system API.",
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@systemapi",
+        "@since arkts {'1.1':'9', '1.2':'20'}",
+        "@arkts 1.1&1.2"
+      ],
+      "层级": 1,
+      "上级": "installer",
+      "since_version": "arkts {'1.1':'9', '1.2':'20'}",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "BundleInstaller object.",
+      "error_codes": [
+        {
+          "code": "202",
+          "description": "Permission verification failed. A non-system application calls a system API."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getBundleInstallerSync",
+      "返回值": "BundleInstaller",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the interface used to install bundle.",
+      "注释信息": [
+        "@returns { BundleInstaller } BundleInstaller object.",
+        "@throws { BusinessError } 202 - Permission verification failed. A non-system application calls a system API.",
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@systemapi",
+        "@since arkts {'1.1':'10', '1.2':'20'}",
+        "@arkts 1.1&1.2"
+      ],
+      "层级": 1,
+      "上级": "installer",
+      "since_version": "arkts {'1.1':'10', '1.2':'20'}",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "BundleInstaller object.",
+      "error_codes": [
+        {
+          "code": "202",
+          "description": "Permission verification failed. A non-system application calls a system API."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "interface",
+      "名称": "BundleInstaller",
+      "所属模块": "未知模块",
+      "功能描述": "Bundle installer interface, include install uninstall recover.",
+      "注释信息": [
+        "@interface BundleInstaller",
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@systemapi",
+        "@since arkts {'1.1':'9', '1.2':'20'}",
+        "@arkts 1.1&1.2"
+      ],
+      "层级": 2,
+      "上级": "installer",
+      "since_version": "arkts {'1.1':'9', '1.2':'20'}",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "install",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Install HAPs for an application. To install a non-enterprise application, you must have the permission ohos.permission.INSTALL_BUNDLE. To install an enterprise application, you must have the permission ohos.permission.INSTALL_ENTERPRISE_BUNDLE. To install an enterprise administrator application, you must have the permission ohos.permission.INSTALL_ENTERPRISE_MDM_BUNDLE. To install an enterprise normal application, you must have the permission ohos.permission.INSTALL_ENTERPRISE_NORMAL_BUNDLE. To install an internal beta application, you must have the permission ohos.permission.INSTALL_INTERNALTESTING_BUNDLE. 'ohos.permission.INSTALL_ENTERPRISE_MDM_BUNDLE' or 'ohos.permission.INSTALL_ENTERPRISE_NORMAL_BUNDLE'. (required APL: system_basic or system_core). <br>bundle name but different signature information exists on the device.",
+      "注释信息": [
+        "@permission ohos.permission.INSTALL_BUNDLE or ohos.permission.INSTALL_ENTERPRISE_BUNDLE or ohos.permission.INSTALL_ENTERPRISE_MDM_BUNDLE or ohos.permission.INSTALL_ENTERPRISE_NORMAL_BUNDLE",
+        "@param { Array<string> } hapFilePaths - Indicates the path where the HAP of the application is stored.",
+        "@param { InstallParam } installParam - Indicates other parameters required for the installation.",
+        "@param { AsyncCallback<void> } callback - The callback of installing HAPs result.",
+        "@throws { BusinessError } 201 - Calling interface without permission 'ohos.permission.INSTALL_BUNDLE' or 'ohos.permission.INSTALL_ENTERPRISE_BUNDLE' or",
+        "@throws { BusinessError } 202 - Permission verification failed. A non-system application calls a system API.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter hapFiles is needed for code signature; 4. The size of specifiedDistributionType is greater than 128; 5. The size of additionalInfo is greater than 3000.",
+        "@throws { BusinessError } 17700004 - The specified user ID is not found.",
+        "@throws { BusinessError } 17700010 - Failed to install the HAP because the HAP fails to be parsed.",
+        "@throws { BusinessError } 17700011 - Failed to install the HAP because the HAP signature fails to be verified.",
+        "@throws { BusinessError } 17700012 - Failed to install the HAP because the HAP path is invalid or the HAP is too large.",
+        "@throws { BusinessError } 17700015 - Failed to install the HAPs because they have different configuration information.",
+        "@throws { BusinessError } 17700016 - Failed to install the HAP because of insufficient system disk space.",
+        "@throws { BusinessError } 17700017 - Failed to install the HAP since the version of the HAP to install is too early.",
+        "@throws { BusinessError } 17700018 - Failed to install because the dependent module does not exist.",
+        "@throws { BusinessError } 17700031 - Failed to install the HAP because the overlay check of the HAP is failed.",
+        "@throws { BusinessError } 17700036 - Failed to install the HSP because lacks appropriate permissions.",
+        "@throws { BusinessError } 17700039 - Failed to install because disallow install a shared bundle by hapFilePaths.",
+        "@throws { BusinessError } 17700041 - Failed to install because enterprise device management disallow install.",
+        "@throws { BusinessError } 17700042 - Failed to install the HAP because of incorrect URI in the data proxy.",
+        "@throws { BusinessError } 17700043 - Failed to install the HAP because of low APL in the non-system data proxy",
+        "@throws { BusinessError } 17700044 - Failed to install the HAP because the isolationMode configured is not supported.",
+        "@throws { BusinessError } 17700047 - Failed to install the HAP because the VersionCode to be updated is not greater than the current VersionCode.",
+        "@throws { BusinessError } 17700048 - Failed to install the HAP because the code signature verification is failed.",
+        "@throws { BusinessError } 17700050 - Failed to install the HAP because enterprise normal/MDM bundle cannot be installed on non-enterprise device.",
+        "@throws { BusinessError } 17700052 - Failed to install the HAP because debug bundle cannot be installed under non-developer mode.",
+        "@throws { BusinessError } 17700054 - Failed to install the HAP because the HAP requests wrong permissions.",
+        "@throws { BusinessError } 17700058 - Failed to install the HAP because the device has been controlled.",
+        "@throws { BusinessError } 17700066 - Failed to install the HAP because installing the native package failed.",
+        "@throws { BusinessError } 17700073 - Failed to install the HAP because an application with the same",
+        "@throws { BusinessError } 17700076 - Failed to install the HAP or HSP because the app distribution type is not allowed.",
+        "@throws { BusinessError } 17700077 - Failed to install the HAP and restore to preinstalled bundle.",
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@systemapi",
+        "@since arkts {'1.1':'18', '1.2':'20'}",
+        "@arkts 1.1&1.2"
+      ],
+      "层级": 2,
+      "上级": "BundleInstaller",
+      "since_version": "arkts {'1.1':'18', '1.2':'20'}",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [
+        {
+          "名称": "hapFilePaths",
+          "类型": "Array<string>",
+          "必填": true,
+          "说明": "Indicates the path where the HAP of the application is stored."
+        },
+        {
+          "名称": "installParam",
+          "类型": "InstallParam",
+          "必填": true,
+          "说明": "Indicates other parameters required for the installation."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "The callback of installing HAPs result."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Calling interface without permission 'ohos.permission.INSTALL_BUNDLE' or 'ohos.permission.INSTALL_ENTERPRISE_BUNDLE' or"
+        },
+        {
+          "code": "202",
+          "description": "Permission verification failed. A non-system application calls a system API."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter hapFiles is needed for code signature; 4. The size of specifiedDistributionType is greater than 128; 5. The size of additionalInfo is greater than 3000."
+        },
+        {
+          "code": "17700004",
+          "description": "The specified user ID is not found."
+        },
+        {
+          "code": "17700010",
+          "description": "Failed to install the HAP because the HAP fails to be parsed."
+        },
+        {
+          "code": "17700011",
+          "description": "Failed to install the HAP because the HAP signature fails to be verified."
+        },
+        {
+          "code": "17700012",
+          "description": "Failed to install the HAP because the HAP path is invalid or the HAP is too large."
+        },
+        {
+          "code": "17700015",
+          "description": "Failed to install the HAPs because they have different configuration information."
+        },
+        {
+          "code": "17700016",
+          "description": "Failed to install the HAP because of insufficient system disk space."
+        },
+        {
+          "code": "17700017",
+          "description": "Failed to install the HAP since the version of the HAP to install is too early."
+        },
+        {
+          "code": "17700018",
+          "description": "Failed to install because the dependent module does not exist."
+        },
+        {
+          "code": "17700031",
+          "description": "Failed to install the HAP because the overlay check of the HAP is failed."
+        },
+        {
+          "code": "17700036",
+          "description": "Failed to install the HSP because lacks appropriate permissions."
+        },
+        {
+          "code": "17700039",
+          "description": "Failed to install because disallow install a shared bundle by hapFilePaths."
+        },
+        {
+          "code": "17700041",
+          "description": "Failed to install because enterprise device management disallow install."
+        },
+        {
+          "code": "17700042",
+          "description": "Failed to install the HAP because of incorrect URI in the data proxy."
+        },
+        {
+          "code": "17700043",
+          "description": "Failed to install the HAP because of low APL in the non-system data proxy"
+        },
+        {
+          "code": "17700044",
+          "description": "Failed to install the HAP because the isolationMode configured is not supported."
+        },
+        {
+          "code": "17700047",
+          "description": "Failed to install the HAP because the VersionCode to be updated is not greater than the current VersionCode."
+        },
+        {
+          "code": "17700048",
+          "description": "Failed to install the HAP because the code signature verification is failed."
+        },
+        {
+          "code": "17700050",
+          "description": "Failed to install the HAP because enterprise normal/MDM bundle cannot be installed on non-enterprise device."
+        },
+        {
+          "code": "17700052",
+          "description": "Failed to install the HAP because debug bundle cannot be installed under non-developer mode."
+        },
+        {
+          "code": "17700054",
+          "description": "Failed to install the HAP because the HAP requests wrong permissions."
+        },
+        {
+          "code": "17700058",
+          "description": "Failed to install the HAP because the device has been controlled."
+        },
+        {
+          "code": "17700066",
+          "description": "Failed to install the HAP because installing the native package failed."
+        },
+        {
+          "code": "17700073",
+          "description": "Failed to install the HAP because an application with the same"
+        },
+        {
+          "code": "17700076",
+          "description": "Failed to install the HAP or HSP because the app distribution type is not allowed."
+        },
+        {
+          "code": "17700077",
+          "description": "Failed to install the HAP and restore to preinstalled bundle."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "install",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Install HAPs for an application. To install a non-enterprise application, you must have the permission ohos.permission.INSTALL_BUNDLE. To install an enterprise application, you must have the permission ohos.permission.INSTALL_ENTERPRISE_BUNDLE. To install an enterprise administrator application, you must have the permission ohos.permission.INSTALL_ENTERPRISE_MDM_BUNDLE. To install an enterprise normal application, you must have the permission ohos.permission.INSTALL_ENTERPRISE_NORMAL_BUNDLE. To install an internal beta application, you must have the permission ohos.permission.INSTALL_INTERNALTESTING_BUNDLE. 'ohos.permission.INSTALL_ENTERPRISE_MDM_BUNDLE' or 'ohos.permission.INSTALL_ENTERPRISE_NORMAL_BUNDLE'. (required APL: system_basic or system_core). <br>bundle name but different signature information exists on the device.",
+      "注释信息": [
+        "@permission ohos.permission.INSTALL_BUNDLE or ohos.permission.INSTALL_ENTERPRISE_BUNDLE or ohos.permission.INSTALL_ENTERPRISE_MDM_BUNDLE or ohos.permission.INSTALL_ENTERPRISE_NORMAL_BUNDLE",
+        "@param { Array<string> } hapFilePaths - Indicates the path where the HAP of the application is stored.",
+        "@param { AsyncCallback<void> } callback - The callback of installing HAPs result.",
+        "@throws { BusinessError } 201 - Calling interface without permission 'ohos.permission.INSTALL_BUNDLE' or 'ohos.permission.INSTALL_ENTERPRISE_BUNDLE' or",
+        "@throws { BusinessError } 202 - Permission verification failed. A non-system application calls a system API.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.",
+        "@throws { BusinessError } 17700010 - Failed to install the HAP because the HAP fails to be parsed.",
+        "@throws { BusinessError } 17700011 - Failed to install the HAP because the HAP signature fails to be verified.",
+        "@throws { BusinessError } 17700012 - Failed to install the HAP because the HAP path is invalid or the HAP is too large.",
+        "@throws { BusinessError } 17700015 - Failed to install the HAPs because they have different configuration information.",
+        "@throws { BusinessError } 17700016 - Failed to install the HAP because of insufficient system disk space.",
+        "@throws { BusinessError } 17700017 - Failed to install the HAP since the version of the HAP to install is too early.",
+        "@throws { BusinessError } 17700018 - Failed to install because the dependent module does not exist.",
+        "@throws { BusinessError } 17700031 - Failed to install the HAP because the overlay check of the HAP is failed.",
+        "@throws { BusinessError } 17700036 - Failed to install the HSP because lacks appropriate permissions.",
+        "@throws { BusinessError } 17700039 - Failed to install because disallow install a shared bundle by hapFilePaths.",
+        "@throws { BusinessError } 17700041 - Failed to install because enterprise device management disallow install.",
+        "@throws { BusinessError } 17700042 - Failed to install the HAP because of incorrect URI in the data proxy.",
+        "@throws { BusinessError } 17700043 - Failed to install the HAP because of low APL in the non-system data proxy",
+        "@throws { BusinessError } 17700044 - Failed to install the HAP because the isolationMode configured is not supported.",
+        "@throws { BusinessError } 17700047 - Failed to install the HAP because the VersionCode to be updated is not greater than the current VersionCode.",
+        "@throws { BusinessError } 17700048 - Failed to install the HAP because the code signature verification is failed.",
+        "@throws { BusinessError } 17700050 - Failed to install the HAP because enterprise normal/MDM bundle cannot be installed on non-enterprise device.",
+        "@throws { BusinessError } 17700052 - Failed to install the HAP because debug bundle cannot be installed under non-developer mode.",
+        "@throws { BusinessError } 17700054 - Failed to install the HAP because the HAP requests wrong permissions.",
+        "@throws { BusinessError } 17700058 - Failed to install the HAP because the device has been controlled.",
+        "@throws { BusinessError } 17700066 - Failed to install the HAP because installing the native package failed.",
+        "@throws { BusinessError } 17700073 - Failed to install the HAP because an application with the same",
+        "@throws { BusinessError } 17700076 - Failed to install the HAP or HSP because the app distribution type is not allowed.",
+        "@throws { BusinessError } 17700077 - Failed to install the HAP and restore to preinstalled bundle.",
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@systemapi",
+        "@since arkts {'1.1':'18', '1.2':'20'}",
+        "@arkts 1.1&1.2"
+      ],
+      "层级": 2,
+      "上级": "BundleInstaller",
+      "since_version": "arkts {'1.1':'18', '1.2':'20'}",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [
+        {
+          "名称": "hapFilePaths",
+          "类型": "Array<string>",
+          "必填": true,
+          "说明": "Indicates the path where the HAP of the application is stored."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "The callback of installing HAPs result."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Calling interface without permission 'ohos.permission.INSTALL_BUNDLE' or 'ohos.permission.INSTALL_ENTERPRISE_BUNDLE' or"
+        },
+        {
+          "code": "202",
+          "description": "Permission verification failed. A non-system application calls a system API."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types."
+        },
+        {
+          "code": "17700010",
+          "description": "Failed to install the HAP because the HAP fails to be parsed."
+        },
+        {
+          "code": "17700011",
+          "description": "Failed to install the HAP because the HAP signature fails to be verified."
+        },
+        {
+          "code": "17700012",
+          "description": "Failed to install the HAP because the HAP path is invalid or the HAP is too large."
+        },
+        {
+          "code": "17700015",
+          "description": "Failed to install the HAPs because they have different configuration information."
+        },
+        {
+          "code": "17700016",
+          "description": "Failed to install the HAP because of insufficient system disk space."
+        },
+        {
+          "code": "17700017",
+          "description": "Failed to install the HAP since the version of the HAP to install is too early."
+        },
+        {
+          "code": "17700018",
+          "description": "Failed to install because the dependent module does not exist."
+        },
+        {
+          "code": "17700031",
+          "description": "Failed to install the HAP because the overlay check of the HAP is failed."
+        },
+        {
+          "code": "17700036",
+          "description": "Failed to install the HSP because lacks appropriate permissions."
+        },
+        {
+          "code": "17700039",
+          "description": "Failed to install because disallow install a shared bundle by hapFilePaths."
+        },
+        {
+          "code": "17700041",
+          "description": "Failed to install because enterprise device management disallow install."
+        },
+        {
+          "code": "17700042",
+          "description": "Failed to install the HAP because of incorrect URI in the data proxy."
+        },
+        {
+          "code": "17700043",
+          "description": "Failed to install the HAP because of low APL in the non-system data proxy"
+        },
+        {
+          "code": "17700044",
+          "description": "Failed to install the HAP because the isolationMode configured is not supported."
+        },
+        {
+          "code": "17700047",
+          "description": "Failed to install the HAP because the VersionCode to be updated is not greater than the current VersionCode."
+        },
+        {
+          "code": "17700048",
+          "description": "Failed to install the HAP because the code signature verification is failed."
+        },
+        {
+          "code": "17700050",
+          "description": "Failed to install the HAP because enterprise normal/MDM bundle cannot be installed on non-enterprise device."
+        },
+        {
+          "code": "17700052",
+          "description": "Failed to install the HAP because debug bundle cannot be installed under non-developer mode."
+        },
+        {
+          "code": "17700054",
+          "description": "Failed to install the HAP because the HAP requests wrong permissions."
+        },
+        {
+          "code": "17700058",
+          "description": "Failed to install the HAP because the device has been controlled."
+        },
+        {
+          "code": "17700066",
+          "description": "Failed to install the HAP because installing the native package failed."
+        },
+        {
+          "code": "17700073",
+          "description": "Failed to install the HAP because an application with the same"
+        },
+        {
+          "code": "17700076",
+          "description": "Failed to install the HAP or HSP because the app distribution type is not allowed."
+        },
+        {
+          "code": "17700077",
+          "description": "Failed to install the HAP and restore to preinstalled bundle."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "install",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Install haps for an application. To install a non-enterprise application, you must have the permission ohos.permission.INSTALL_BUNDLE. To install an enterprise application, you must have the permission ohos.permission.INSTALL_ENTERPRISE_BUNDLE. To install an enterprise administrator application, you must have the permission ohos.permission.INSTALL_ENTERPRISE_MDM_BUNDLE. To install an enterprise normal application, you must have the permission ohos.permission.INSTALL_ENTERPRISE_NORMAL_BUNDLE. To install an internal beta application, you must have the permission ohos.permission.INSTALL_INTERNALTESTING_BUNDLE. 'ohos.permission.INSTALL_ENTERPRISE_MDM_BUNDLE' or 'ohos.permission.INSTALL_ENTERPRISE_NORMAL_BUNDLE'. (required APL: system_basic or system_core). <br>bundle name but different signature information exists on the device.",
+      "注释信息": [
+        "@permission ohos.permission.INSTALL_BUNDLE or ohos.permission.INSTALL_ENTERPRISE_BUNDLE or ohos.permission.INSTALL_ENTERPRISE_MDM_BUNDLE or ohos.permission.INSTALL_ENTERPRISE_NORMAL_BUNDLE",
+        "@param { Array<string> } hapFilePaths - Indicates the path where the HAP of the application is stored.",
+        "@param { InstallParam } [installParam] - Indicates other parameters required for the installation.",
+        "@returns { Promise<void> } the promise returned by the function.",
+        "@throws { BusinessError } 201 - Calling interface without permission 'ohos.permission.INSTALL_BUNDLE' or 'ohos.permission.INSTALL_ENTERPRISE_BUNDLE' or",
+        "@throws { BusinessError } 202 - Permission verification failed. A non-system application calls a system API.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter hapFiles is needed for code signature; 4. The size of specifiedDistributionType is greater than 128; 5. The size of additionalInfo is greater than 3000.",
+        "@throws { BusinessError } 17700004 - The specified user ID is not found.",
+        "@throws { BusinessError } 17700010 - Failed to install the HAP because the HAP fails to be parsed.",
+        "@throws { BusinessError } 17700011 - Failed to install the HAP because the HAP signature fails to be verified.",
+        "@throws { BusinessError } 17700012 - Failed to install the HAP because the HAP path is invalid or the HAP is too large.",
+        "@throws { BusinessError } 17700015 - Failed to install the HAPs because they have different configuration information.",
+        "@throws { BusinessError } 17700016 - Failed to install the HAP because of insufficient system disk space.",
+        "@throws { BusinessError } 17700017 - Failed to install the HAP since the version of the HAP to install is too early.",
+        "@throws { BusinessError } 17700018 - Failed to install because the dependent module does not exist.",
+        "@throws { BusinessError } 17700031 - Failed to install the HAP because the overlay check of the HAP is failed.",
+        "@throws { BusinessError } 17700036 - Failed to install the HSP because lacks appropriate permissions.",
+        "@throws { BusinessError } 17700039 - Failed to install because disallow install a shared bundle by hapFilePaths.",
+        "@throws { BusinessError } 17700041 - Failed to install because enterprise device management disallow install.",
+        "@throws { BusinessError } 17700042 - Failed to install the HAP because of incorrect URI in the data proxy.",
+        "@throws { BusinessError } 17700043 - Failed to install the HAP because of low APL in the non-system data proxy",
+        "@throws { BusinessError } 17700044 - Failed to install the HAP because the isolationMode configured is not supported.",
+        "@throws { BusinessError } 17700047 - Failed to install the HAP because the VersionCode to be updated is not greater than the current VersionCode.",
+        "@throws { BusinessError } 17700048 - Failed to install the HAP because the code signature verification is failed.",
+        "@throws { BusinessError } 17700050 - Failed to install the HAP because enterprise normal/MDM bundle cannot be installed on non-enterprise device.",
+        "@throws { BusinessError } 17700052 - Failed to install the HAP because debug bundle cannot be installed under non-developer mode.",
+        "@throws { BusinessError } 17700054 - Failed to install the HAP because the HAP requests wrong permissions.",
+        "@throws { BusinessError } 17700058 - Failed to install the HAP because the device has been controlled.",
+        "@throws { BusinessError } 17700066 - Failed to install the HAP because installing the native package failed.",
+        "@throws { BusinessError } 17700073 - Failed to install the HAP because an application with the same",
+        "@throws { BusinessError } 17700076 - Failed to install the HAP or HSP because the app distribution type is not allowed.",
+        "@throws { BusinessError } 17700077 - Failed to install the HAP and restore to preinstalled bundle.",
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@systemapi",
+        "@since arkts {'1.1':'18', '1.2':'20'}",
+        "@arkts 1.1&1.2"
+      ],
+      "层级": 2,
+      "上级": "BundleInstaller",
+      "since_version": "arkts {'1.1':'18', '1.2':'20'}",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [
+        {
+          "名称": "hapFilePaths",
+          "类型": "Array<string>",
+          "必填": true,
+          "说明": "Indicates the path where the HAP of the application is stored."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "InstallParam } [installParam] - Indicates other parameters required for the installation."
+        }
+      ],
+      "return_description": "the promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Calling interface without permission 'ohos.permission.INSTALL_BUNDLE' or 'ohos.permission.INSTALL_ENTERPRISE_BUNDLE' or"
+        },
+        {
+          "code": "202",
+          "description": "Permission verification failed. A non-system application calls a system API."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter hapFiles is needed for code signature; 4. The size of specifiedDistributionType is greater than 128; 5. The size of additionalInfo is greater than 3000."
+        },
+        {
+          "code": "17700004",
+          "description": "The specified user ID is not found."
+        },
+        {
+          "code": "17700010",
+          "description": "Failed to install the HAP because the HAP fails to be parsed."
+        },
+        {
+          "code": "17700011",
+          "description": "Failed to install the HAP because the HAP signature fails to be verified."
+        },
+        {
+          "code": "17700012",
+          "description": "Failed to install the HAP because the HAP path is invalid or the HAP is too large."
+        },
+        {
+          "code": "17700015",
+          "description": "Failed to install the HAPs because they have different configuration information."
+        },
+        {
+          "code": "17700016",
+          "description": "Failed to install the HAP because of insufficient system disk space."
+        },
+        {
+          "code": "17700017",
+          "description": "Failed to install the HAP since the version of the HAP to install is too early."
+        },
+        {
+          "code": "17700018",
+          "description": "Failed to install because the dependent module does not exist."
+        },
+        {
+          "code": "17700031",
+          "description": "Failed to install the HAP because the overlay check of the HAP is failed."
+        },
+        {
+          "code": "17700036",
+          "description": "Failed to install the HSP because lacks appropriate permissions."
+        },
+        {
+          "code": "17700039",
+          "description": "Failed to install because disallow install a shared bundle by hapFilePaths."
+        },
+        {
+          "code": "17700041",
+          "description": "Failed to install because enterprise device management disallow install."
+        },
+        {
+          "code": "17700042",
+          "description": "Failed to install the HAP because of incorrect URI in the data proxy."
+        },
+        {
+          "code": "17700043",
+          "description": "Failed to install the HAP because of low APL in the non-system data proxy"
+        },
+        {
+          "code": "17700044",
+          "description": "Failed to install the HAP because the isolationMode configured is not supported."
+        },
+        {
+          "code": "17700047",
+          "description": "Failed to install the HAP because the VersionCode to be updated is not greater than the current VersionCode."
+        },
+        {
+          "code": "17700048",
+          "description": "Failed to install the HAP because the code signature verification is failed."
+        },
+        {
+          "code": "17700050",
+          "description": "Failed to install the HAP because enterprise normal/MDM bundle cannot be installed on non-enterprise device."
+        },
+        {
+          "code": "17700052",
+          "description": "Failed to install the HAP because debug bundle cannot be installed under non-developer mode."
+        },
+        {
+          "code": "17700054",
+          "description": "Failed to install the HAP because the HAP requests wrong permissions."
+        },
+        {
+          "code": "17700058",
+          "description": "Failed to install the HAP because the device has been controlled."
+        },
+        {
+          "code": "17700066",
+          "description": "Failed to install the HAP because installing the native package failed."
+        },
+        {
+          "code": "17700073",
+          "description": "Failed to install the HAP because an application with the same"
+        },
+        {
+          "code": "17700076",
+          "description": "Failed to install the HAP or HSP because the app distribution type is not allowed."
+        },
+        {
+          "code": "17700077",
+          "description": "Failed to install the HAP and restore to preinstalled bundle."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "uninstall",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Uninstall an application.",
+      "注释信息": [
+        "@permission ohos.permission.INSTALL_BUNDLE or ohos.permission.UNINSTALL_BUNDLE",
+        "@param { string } bundleName - Indicates the bundle name of the application to be uninstalled.",
+        "@param { InstallParam } installParam - Indicates other parameters required for the uninstallation.",
+        "@param { AsyncCallback<void> } callback - The callback of uninstalling application result.",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission required to call the API.",
+        "@throws { BusinessError } 202 - Permission verification failed. A non-system application calls a system API.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.",
+        "@throws { BusinessError } 17700001 - The specified bundle name is not found.",
+        "@throws { BusinessError } 17700004 - The specified user ID is not found.",
+        "@throws { BusinessError } 17700020 - The specified bundle is a pre-installed bundle and cannot be uninstalled.",
+        "@throws { BusinessError } 17700040 - The specified bundle is a shared bundle and cannot be uninstalled.",
+        "@throws { BusinessError } 17700045 - Failed to uninstall the HAP because uninstall is not allowed by the enterprise device management.",
+        "@throws { BusinessError } 17700060 - The specified application cannot be uninstalled.",
+        "@throws { BusinessError } 17700062 - Failed to uninstall the app because the app is locked.",
+        "@throws { BusinessError } 17700067 - Failed to uninstall the HAP because uninstalling the native package failed.",
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@systemapi",
+        "@since arkts {'1.1':'15', '1.2':'20'}",
+        "@arkts 1.1&1.2"
+      ],
+      "层级": 2,
+      "上级": "BundleInstaller",
+      "since_version": "arkts {'1.1':'15', '1.2':'20'}",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [
+        {
+          "名称": "bundleName",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates the bundle name of the application to be uninstalled."
+        },
+        {
+          "名称": "installParam",
+          "类型": "InstallParam",
+          "必填": true,
+          "说明": "Indicates other parameters required for the uninstallation."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "The callback of uninstalling application result."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission required to call the API."
+        },
+        {
+          "code": "202",
+          "description": "Permission verification failed. A non-system application calls a system API."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types."
+        },
+        {
+          "code": "17700001",
+          "description": "The specified bundle name is not found."
+        },
+        {
+          "code": "17700004",
+          "description": "The specified user ID is not found."
+        },
+        {
+          "code": "17700020",
+          "description": "The specified bundle is a pre-installed bundle and cannot be uninstalled."
+        },
+        {
+          "code": "17700040",
+          "description": "The specified bundle is a shared bundle and cannot be uninstalled."
+        },
+        {
+          "code": "17700045",
+          "description": "Failed to uninstall the HAP because uninstall is not allowed by the enterprise device management."
+        },
+        {
+          "code": "17700060",
+          "description": "The specified application cannot be uninstalled."
+        },
+        {
+          "code": "17700062",
+          "description": "Failed to uninstall the app because the app is locked."
+        },
+        {
+          "code": "17700067",
+          "description": "Failed to uninstall the HAP because uninstalling the native package failed."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "uninstall",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Uninstall an application.",
+      "注释信息": [
+        "@permission ohos.permission.INSTALL_BUNDLE or ohos.permission.UNINSTALL_BUNDLE",
+        "@param { string } bundleName - Indicates the bundle name of the application to be uninstalled.",
+        "@param { AsyncCallback<void> } callback - The callback of uninstalling application result.",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission required to call the API.",
+        "@throws { BusinessError } 202 - Permission verification failed. A non-system application calls a system API.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.",
+        "@throws { BusinessError } 17700001 - The specified bundle name is not found.",
+        "@throws { BusinessError } 17700020 - The specified bundle is a pre-installed bundle and cannot be uninstalled.",
+        "@throws { BusinessError } 17700040 - The specified bundle is a shared bundle and cannot be uninstalled.",
+        "@throws { BusinessError } 17700045 - Failed to uninstall the HAP because uninstall is not allowed by the enterprise device management.",
+        "@throws { BusinessError } 17700060 - The specified application cannot be uninstalled.",
+        "@throws { BusinessError } 17700067 - Failed to uninstall the HAP because uninstalling the native package failed.",
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@systemapi",
+        "@since arkts {'1.1':'13', '1.2':'20'}",
+        "@arkts 1.1&1.2"
+      ],
+      "层级": 2,
+      "上级": "BundleInstaller",
+      "since_version": "arkts {'1.1':'13', '1.2':'20'}",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [
+        {
+          "名称": "bundleName",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates the bundle name of the application to be uninstalled."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "The callback of uninstalling application result."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission required to call the API."
+        },
+        {
+          "code": "202",
+          "description": "Permission verification failed. A non-system application calls a system API."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types."
+        },
+        {
+          "code": "17700001",
+          "description": "The specified bundle name is not found."
+        },
+        {
+          "code": "17700020",
+          "description": "The specified bundle is a pre-installed bundle and cannot be uninstalled."
+        },
+        {
+          "code": "17700040",
+          "description": "The specified bundle is a shared bundle and cannot be uninstalled."
+        },
+        {
+          "code": "17700045",
+          "description": "Failed to uninstall the HAP because uninstall is not allowed by the enterprise device management."
+        },
+        {
+          "code": "17700060",
+          "description": "The specified application cannot be uninstalled."
+        },
+        {
+          "code": "17700067",
+          "description": "Failed to uninstall the HAP because uninstalling the native package failed."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "uninstall",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Uninstall an application.",
+      "注释信息": [
+        "@permission ohos.permission.INSTALL_BUNDLE or ohos.permission.UNINSTALL_BUNDLE",
+        "@param { string } bundleName - Indicates the bundle name of the application to be uninstalled.",
+        "@param { InstallParam } [installParam] - Indicates other parameters required for the uninstallation.",
+        "@returns { Promise<void> } the promise returned by the function.",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission required to call the API.",
+        "@throws { BusinessError } 202 - Permission verification failed. A non-system application calls a system API.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.",
+        "@throws { BusinessError } 17700001 - The specified bundle name is not found.",
+        "@throws { BusinessError } 17700004 - The specified user ID is not found.",
+        "@throws { BusinessError } 17700020 - The specified bundle is a pre-installed bundle and cannot be uninstalled.",
+        "@throws { BusinessError } 17700040 - The specified bundle is a shared bundle and cannot be uninstalled.",
+        "@throws { BusinessError } 17700045 - Failed to uninstall the HAP because uninstall is not allowed by the enterprise device management.",
+        "@throws { BusinessError } 17700060 - The specified application cannot be uninstalled.",
+        "@throws { BusinessError } 17700062 - Failed to uninstall the app because the app is locked.",
+        "@throws { BusinessError } 17700067 - Failed to uninstall the HAP because uninstalling the native package failed.",
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@systemapi",
+        "@since arkts {'1.1':'15', '1.2':'20'}",
+        "@arkts 1.1&1.2"
+      ],
+      "层级": 2,
+      "上级": "BundleInstaller",
+      "since_version": "arkts {'1.1':'15', '1.2':'20'}",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [
+        {
+          "名称": "bundleName",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates the bundle name of the application to be uninstalled."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "InstallParam } [installParam] - Indicates other parameters required for the uninstallation."
+        }
+      ],
+      "return_description": "the promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission required to call the API."
+        },
+        {
+          "code": "202",
+          "description": "Permission verification failed. A non-system application calls a system API."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types."
+        },
+        {
+          "code": "17700001",
+          "description": "The specified bundle name is not found."
+        },
+        {
+          "code": "17700004",
+          "description": "The specified user ID is not found."
+        },
+        {
+          "code": "17700020",
+          "description": "The specified bundle is a pre-installed bundle and cannot be uninstalled."
+        },
+        {
+          "code": "17700040",
+          "description": "The specified bundle is a shared bundle and cannot be uninstalled."
+        },
+        {
+          "code": "17700045",
+          "description": "Failed to uninstall the HAP because uninstall is not allowed by the enterprise device management."
+        },
+        {
+          "code": "17700060",
+          "description": "The specified application cannot be uninstalled."
+        },
+        {
+          "code": "17700062",
+          "description": "Failed to uninstall the app because the app is locked."
+        },
+        {
+          "code": "17700067",
+          "description": "Failed to uninstall the HAP because uninstalling the native package failed."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "recover",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Recover an application. <br>from being installed on this device or by specified users. <br>bundle name but different signature information exists on the device.",
+      "注释信息": [
+        "@permission ohos.permission.INSTALL_BUNDLE or ohos.permission.RECOVER_BUNDLE",
+        "@param { string } bundleName - Indicates the bundle name of the application to be recovered.",
+        "@param { InstallParam } installParam - Indicates other parameters required for the recover.",
+        "@param { AsyncCallback<void> } callback - The callback of recovering application result.",
+        "@throws { BusinessError } 201 - Calling interface without permission 'ohos.permission.INSTALL_BUNDLE' or 'ohos.permission.RECOVER_BUNDLE'.",
+        "@throws { BusinessError } 202 - Permission verification failed. A non-system application calls a system API.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.",
+        "@throws { BusinessError } 17700001 - The specified bundle name is not found.",
+        "@throws { BusinessError } 17700004 - The specified user ID is not found.",
+        "@throws { BusinessError } 17700058 - Failed to install the HAP because this application is prohibited",
+        "@throws { BusinessError } 17700073 - Failed to install the HAP because an application with the same",
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@systemapi",
+        "@since arkts {'1.1':'14', '1.2':'20'}",
+        "@arkts 1.1&1.2"
+      ],
+      "层级": 2,
+      "上级": "BundleInstaller",
+      "since_version": "arkts {'1.1':'14', '1.2':'20'}",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [
+        {
+          "名称": "bundleName",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates the bundle name of the application to be recovered."
+        },
+        {
+          "名称": "installParam",
+          "类型": "InstallParam",
+          "必填": true,
+          "说明": "Indicates other parameters required for the recover."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "The callback of recovering application result."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Calling interface without permission 'ohos.permission.INSTALL_BUNDLE' or 'ohos.permission.RECOVER_BUNDLE'."
+        },
+        {
+          "code": "202",
+          "description": "Permission verification failed. A non-system application calls a system API."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types."
+        },
+        {
+          "code": "17700001",
+          "description": "The specified bundle name is not found."
+        },
+        {
+          "code": "17700004",
+          "description": "The specified user ID is not found."
+        },
+        {
+          "code": "17700058",
+          "description": "Failed to install the HAP because this application is prohibited"
+        },
+        {
+          "code": "17700073",
+          "description": "Failed to install the HAP because an application with the same"
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "recover",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Recover an application. <br>from being installed on this device or by specified users. <br>bundle name but different signature information exists on the device.",
+      "注释信息": [
+        "@permission ohos.permission.INSTALL_BUNDLE or ohos.permission.RECOVER_BUNDLE",
+        "@param { string } bundleName - Indicates the bundle name of the application to be recovered.",
+        "@param { AsyncCallback<void> } callback - The callback of recovering application result.",
+        "@throws { BusinessError } 201 - Calling interface without permission 'ohos.permission.INSTALL_BUNDLE' or 'ohos.permission.RECOVER_BUNDLE'.",
+        "@throws { BusinessError } 202 - Permission verification failed. A non-system application calls a system API.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.",
+        "@throws { BusinessError } 17700001 - The specified bundle name is not found.",
+        "@throws { BusinessError } 17700058 - Failed to install the HAP because this application is prohibited",
+        "@throws { BusinessError } 17700073 - Failed to install the HAP because an application with the same",
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@systemapi",
+        "@since arkts {'1.1':'14', '1.2':'20'}",
+        "@arkts 1.1&1.2"
+      ],
+      "层级": 2,
+      "上级": "BundleInstaller",
+      "since_version": "arkts {'1.1':'14', '1.2':'20'}",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [
+        {
+          "名称": "bundleName",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates the bundle name of the application to be recovered."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "The callback of recovering application result."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Calling interface without permission 'ohos.permission.INSTALL_BUNDLE' or 'ohos.permission.RECOVER_BUNDLE'."
+        },
+        {
+          "code": "202",
+          "description": "Permission verification failed. A non-system application calls a system API."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types."
+        },
+        {
+          "code": "17700001",
+          "description": "The specified bundle name is not found."
+        },
+        {
+          "code": "17700058",
+          "description": "Failed to install the HAP because this application is prohibited"
+        },
+        {
+          "code": "17700073",
+          "description": "Failed to install the HAP because an application with the same"
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "recover",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Recover an application. <br>from being installed on this device or by specified users. <br>bundle name but different signature information exists on the device.",
+      "注释信息": [
+        "@permission ohos.permission.INSTALL_BUNDLE or ohos.permission.RECOVER_BUNDLE",
+        "@param { string } bundleName - Indicates the bundle name of the application to be recovered.",
+        "@param { InstallParam } installParam - Indicates other parameters required for the recover.",
+        "@returns { Promise<void> } the promise returned by the function.",
+        "@throws { BusinessError } 201 - Calling interface without permission 'ohos.permission.INSTALL_BUNDLE' or 'ohos.permission.RECOVER_BUNDLE'.",
+        "@throws { BusinessError } 202 - Permission verification failed. A non-system application calls a system API.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.",
+        "@throws { BusinessError } 17700001 - The specified bundle name is not found.",
+        "@throws { BusinessError } 17700004 - The specified user ID is not found.",
+        "@throws { BusinessError } 17700058 - Failed to install the HAP because this application is prohibited",
+        "@throws { BusinessError } 17700073 - Failed to install the HAP because an application with the same",
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@systemapi",
+        "@since arkts {'1.1':'14', '1.2':'20'}",
+        "@arkts 1.1&1.2"
+      ],
+      "层级": 2,
+      "上级": "BundleInstaller",
+      "since_version": "arkts {'1.1':'14', '1.2':'20'}",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [
+        {
+          "名称": "bundleName",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates the bundle name of the application to be recovered."
+        },
+        {
+          "名称": "installParam",
+          "类型": "InstallParam",
+          "必填": true,
+          "说明": "Indicates other parameters required for the recover."
+        }
+      ],
+      "return_description": "the promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Calling interface without permission 'ohos.permission.INSTALL_BUNDLE' or 'ohos.permission.RECOVER_BUNDLE'."
+        },
+        {
+          "code": "202",
+          "description": "Permission verification failed. A non-system application calls a system API."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types."
+        },
+        {
+          "code": "17700001",
+          "description": "The specified bundle name is not found."
+        },
+        {
+          "code": "17700004",
+          "description": "The specified user ID is not found."
+        },
+        {
+          "code": "17700058",
+          "description": "Failed to install the HAP because this application is prohibited"
+        },
+        {
+          "code": "17700073",
+          "description": "Failed to install the HAP because an application with the same"
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "uninstall",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Uninstall a shared bundle.",
+      "注释信息": [
+        "@permission ohos.permission.INSTALL_BUNDLE or ohos.permission.UNINSTALL_BUNDLE",
+        "@param { UninstallParam } uninstallParam - Indicates parameters required for the uninstall.",
+        "@param { AsyncCallback<void> } callback - The callback of uninstalling shared bundle result.",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission required to call the API.",
+        "@throws { BusinessError } 202 - Permission verification failed. A non-system application calls a system API.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.",
+        "@throws { BusinessError } 17700020 - The specified bundle is a pre-installed bundle and cannot be uninstalled.",
+        "@throws { BusinessError } 17700037 - The version of shared bundle is dependent on other applications.",
+        "@throws { BusinessError } 17700038 - The specified shared bundle does not exist.",
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@systemapi",
+        "@since arkts {'1.1':'10', '1.2':'20'}",
+        "@arkts 1.1&1.2"
+      ],
+      "层级": 2,
+      "上级": "BundleInstaller",
+      "since_version": "arkts {'1.1':'10', '1.2':'20'}",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [
+        {
+          "名称": "uninstallParam",
+          "类型": "UninstallParam",
+          "必填": true,
+          "说明": "Indicates parameters required for the uninstall."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "The callback of uninstalling shared bundle result."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission required to call the API."
+        },
+        {
+          "code": "202",
+          "description": "Permission verification failed. A non-system application calls a system API."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types."
+        },
+        {
+          "code": "17700020",
+          "description": "The specified bundle is a pre-installed bundle and cannot be uninstalled."
+        },
+        {
+          "code": "17700037",
+          "description": "The version of shared bundle is dependent on other applications."
+        },
+        {
+          "code": "17700038",
+          "description": "The specified shared bundle does not exist."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "uninstall",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Uninstall a shared bundle.",
+      "注释信息": [
+        "@permission ohos.permission.INSTALL_BUNDLE or ohos.permission.UNINSTALL_BUNDLE",
+        "@param { UninstallParam } uninstallParam - Indicates parameters required for the uninstall.",
+        "@returns { Promise<void> } the promise returned by the function.",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission required to call the API.",
+        "@throws { BusinessError } 202 - Permission verification failed. A non-system application calls a system API.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.",
+        "@throws { BusinessError } 17700020 - The specified bundle is a pre-installed bundle and cannot be uninstalled.",
+        "@throws { BusinessError } 17700037 - The version of shared bundle is dependent on other applications.",
+        "@throws { BusinessError } 17700038 - The specified shared bundle does not exist.",
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@systemapi",
+        "@since arkts {'1.1':'10', '1.2':'20'}",
+        "@arkts 1.1&1.2"
+      ],
+      "层级": 2,
+      "上级": "BundleInstaller",
+      "since_version": "arkts {'1.1':'10', '1.2':'20'}",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [
+        {
+          "名称": "uninstallParam",
+          "类型": "UninstallParam",
+          "必填": true,
+          "说明": "Indicates parameters required for the uninstall."
+        }
+      ],
+      "return_description": "the promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission required to call the API."
+        },
+        {
+          "code": "202",
+          "description": "Permission verification failed. A non-system application calls a system API."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types."
+        },
+        {
+          "code": "17700020",
+          "description": "The specified bundle is a pre-installed bundle and cannot be uninstalled."
+        },
+        {
+          "code": "17700037",
+          "description": "The version of shared bundle is dependent on other applications."
+        },
+        {
+          "code": "17700038",
+          "description": "The specified shared bundle does not exist."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "updateBundleForSelf",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Updates this enterprise application. 2. Incorrect parameter types; 3. Parameter hapFiles is needed for code signature; 4. The size of specifiedDistributionType is greater than 128; 5. The size of additionalInfo is greater than 3000. (required APL: system_basic or system_core).",
+      "注释信息": [
+        "@permission ohos.permission.INSTALL_SELF_BUNDLE",
+        "@param { Array<string> } hapFilePaths - Indicates the path where the HAP of the application is stored.",
+        "@param { InstallParam } installParam - Indicates other parameters required for the installation.",
+        "@param { AsyncCallback<void> } callback - Indicates the callback used to return the HAP installation result.",
+        "@throws { BusinessError } 201 - Calling interface without permission 'ohos.permission.INSTALL_SELF_BUNDLE'.",
+        "@throws { BusinessError } 202 - Permission verification failed. A non-system application calls a system API.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 17700004 - The specified user ID is not found.",
+        "@throws { BusinessError } 17700010 - Failed to install the HAP because the HAP fails to be parsed.",
+        "@throws { BusinessError } 17700011 - Failed to install the HAP because the HAP signature fails to be verified.",
+        "@throws { BusinessError } 17700012 - Failed to install the HAP because the HAP path is invalid or the HAP is too large.",
+        "@throws { BusinessError } 17700015 - Failed to install the HAPs because they have different configuration information.",
+        "@throws { BusinessError } 17700016 - Failed to install the HAP because of insufficient system disk space.",
+        "@throws { BusinessError } 17700017 - Failed to install the HAP since the version of the HAP to install is too early.",
+        "@throws { BusinessError } 17700018 - Failed to install because the dependent module does not exist.",
+        "@throws { BusinessError } 17700039 - Failed to install because disallow install a shared bundle by hapFilePaths.",
+        "@throws { BusinessError } 17700041 - Failed to install because enterprise device management disallow install.",
+        "@throws { BusinessError } 17700042 - Failed to install the HAP because of incorrect URI in the data proxy.",
+        "@throws { BusinessError } 17700043 - Failed to install the HAP because of low APL in the non-system data proxy",
+        "@throws { BusinessError } 17700044 - Failed to install the HAP because the isolationMode configured is not supported.",
+        "@throws { BusinessError } 17700047 - Failed to install the HAP because the VersionCode to be updated is not greater than the current VersionCode.",
+        "@throws { BusinessError } 17700048 - Failed to install the HAP because the code signature verification is failed.",
+        "@throws { BusinessError } 17700049 - Failed to install the HAP because the bundleName is different from the bundleName of the caller application.",
+        "@throws { BusinessError } 17700050 - Failed to install the HAP because enterprise normal/MDM bundle cannot be installed on non-enterprise device.",
+        "@throws { BusinessError } 17700051 - Failed to install the HAP because the distribution type of caller application is not enterprise_mdm.",
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@systemapi",
+        "@since arkts {'1.1':'12', '1.2':'20'}",
+        "@arkts 1.1&1.2"
+      ],
+      "层级": 2,
+      "上级": "BundleInstaller",
+      "since_version": "arkts {'1.1':'12', '1.2':'20'}",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [
+        {
+          "名称": "hapFilePaths",
+          "类型": "Array<string>",
+          "必填": true,
+          "说明": "Indicates the path where the HAP of the application is stored."
+        },
+        {
+          "名称": "installParam",
+          "类型": "InstallParam",
+          "必填": true,
+          "说明": "Indicates other parameters required for the installation."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "Indicates the callback used to return the HAP installation result."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Calling interface without permission 'ohos.permission.INSTALL_SELF_BUNDLE'."
+        },
+        {
+          "code": "202",
+          "description": "Permission verification failed. A non-system application calls a system API."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "17700004",
+          "description": "The specified user ID is not found."
+        },
+        {
+          "code": "17700010",
+          "description": "Failed to install the HAP because the HAP fails to be parsed."
+        },
+        {
+          "code": "17700011",
+          "description": "Failed to install the HAP because the HAP signature fails to be verified."
+        },
+        {
+          "code": "17700012",
+          "description": "Failed to install the HAP because the HAP path is invalid or the HAP is too large."
+        },
+        {
+          "code": "17700015",
+          "description": "Failed to install the HAPs because they have different configuration information."
+        },
+        {
+          "code": "17700016",
+          "description": "Failed to install the HAP because of insufficient system disk space."
+        },
+        {
+          "code": "17700017",
+          "description": "Failed to install the HAP since the version of the HAP to install is too early."
+        },
+        {
+          "code": "17700018",
+          "description": "Failed to install because the dependent module does not exist."
+        },
+        {
+          "code": "17700039",
+          "description": "Failed to install because disallow install a shared bundle by hapFilePaths."
+        },
+        {
+          "code": "17700041",
+          "description": "Failed to install because enterprise device management disallow install."
+        },
+        {
+          "code": "17700042",
+          "description": "Failed to install the HAP because of incorrect URI in the data proxy."
+        },
+        {
+          "code": "17700043",
+          "description": "Failed to install the HAP because of low APL in the non-system data proxy"
+        },
+        {
+          "code": "17700044",
+          "description": "Failed to install the HAP because the isolationMode configured is not supported."
+        },
+        {
+          "code": "17700047",
+          "description": "Failed to install the HAP because the VersionCode to be updated is not greater than the current VersionCode."
+        },
+        {
+          "code": "17700048",
+          "description": "Failed to install the HAP because the code signature verification is failed."
+        },
+        {
+          "code": "17700049",
+          "description": "Failed to install the HAP because the bundleName is different from the bundleName of the caller application."
+        },
+        {
+          "code": "17700050",
+          "description": "Failed to install the HAP because enterprise normal/MDM bundle cannot be installed on non-enterprise device."
+        },
+        {
+          "code": "17700051",
+          "description": "Failed to install the HAP because the distribution type of caller application is not enterprise_mdm."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "updateBundleForSelf",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Updates this enterprise application. (required APL: system_basic or system_core).",
+      "注释信息": [
+        "@permission ohos.permission.INSTALL_SELF_BUNDLE",
+        "@param { Array<string> } hapFilePaths - Indicates the path where the HAP of the application is stored.",
+        "@param { AsyncCallback<void> } callback - Indicates the callback used to return the HAP installation result.",
+        "@throws { BusinessError } 201 - Calling interface without permission 'ohos.permission.INSTALL_SELF_BUNDLE'.",
+        "@throws { BusinessError } 202 - Permission verification failed. A non-system application calls a system API.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.",
+        "@throws { BusinessError } 17700010 - Failed to install the HAP because the HAP fails to be parsed.",
+        "@throws { BusinessError } 17700011 - Failed to install the HAP because the HAP signature fails to be verified.",
+        "@throws { BusinessError } 17700012 - Failed to install the HAP because the HAP path is invalid or the HAP is too large.",
+        "@throws { BusinessError } 17700015 - Failed to install the HAPs because they have different configuration information.",
+        "@throws { BusinessError } 17700016 - Failed to install the HAP because of insufficient system disk space.",
+        "@throws { BusinessError } 17700017 - Failed to install the HAP since the version of the HAP to install is too early.",
+        "@throws { BusinessError } 17700018 - Failed to install because the dependent module does not exist.",
+        "@throws { BusinessError } 17700039 - Failed to install because disallow install a shared bundle by hapFilePaths.",
+        "@throws { BusinessError } 17700041 - Failed to install because enterprise device management disallow install.",
+        "@throws { BusinessError } 17700042 - Failed to install the HAP because of incorrect URI in the data proxy.",
+        "@throws { BusinessError } 17700043 - Failed to install the HAP because of low APL in the non-system data proxy",
+        "@throws { BusinessError } 17700044 - Failed to install the HAP because the isolationMode configured is not supported.",
+        "@throws { BusinessError } 17700047 - Failed to install the HAP because the VersionCode to be updated is not greater than the current VersionCode.",
+        "@throws { BusinessError } 17700048 - Failed to install the HAP because the code signature verification is failed.",
+        "@throws { BusinessError } 17700049 - Failed to install the HAP because the bundleName is different from the bundleName of the caller application.",
+        "@throws { BusinessError } 17700050 - Failed to install the HAP because enterprise normal/MDM bundle cannot be installed on non-enterprise device.",
+        "@throws { BusinessError } 17700051 - Failed to install the HAP because the distribution type of caller application is not enterprise_mdm.",
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@systemapi",
+        "@since arkts {'1.1':'12', '1.2':'20'}",
+        "@arkts 1.1&1.2"
+      ],
+      "层级": 2,
+      "上级": "BundleInstaller",
+      "since_version": "arkts {'1.1':'12', '1.2':'20'}",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [
+        {
+          "名称": "hapFilePaths",
+          "类型": "Array<string>",
+          "必填": true,
+          "说明": "Indicates the path where the HAP of the application is stored."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "Indicates the callback used to return the HAP installation result."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Calling interface without permission 'ohos.permission.INSTALL_SELF_BUNDLE'."
+        },
+        {
+          "code": "202",
+          "description": "Permission verification failed. A non-system application calls a system API."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types."
+        },
+        {
+          "code": "17700010",
+          "description": "Failed to install the HAP because the HAP fails to be parsed."
+        },
+        {
+          "code": "17700011",
+          "description": "Failed to install the HAP because the HAP signature fails to be verified."
+        },
+        {
+          "code": "17700012",
+          "description": "Failed to install the HAP because the HAP path is invalid or the HAP is too large."
+        },
+        {
+          "code": "17700015",
+          "description": "Failed to install the HAPs because they have different configuration information."
+        },
+        {
+          "code": "17700016",
+          "description": "Failed to install the HAP because of insufficient system disk space."
+        },
+        {
+          "code": "17700017",
+          "description": "Failed to install the HAP since the version of the HAP to install is too early."
+        },
+        {
+          "code": "17700018",
+          "description": "Failed to install because the dependent module does not exist."
+        },
+        {
+          "code": "17700039",
+          "description": "Failed to install because disallow install a shared bundle by hapFilePaths."
+        },
+        {
+          "code": "17700041",
+          "description": "Failed to install because enterprise device management disallow install."
+        },
+        {
+          "code": "17700042",
+          "description": "Failed to install the HAP because of incorrect URI in the data proxy."
+        },
+        {
+          "code": "17700043",
+          "description": "Failed to install the HAP because of low APL in the non-system data proxy"
+        },
+        {
+          "code": "17700044",
+          "description": "Failed to install the HAP because the isolationMode configured is not supported."
+        },
+        {
+          "code": "17700047",
+          "description": "Failed to install the HAP because the VersionCode to be updated is not greater than the current VersionCode."
+        },
+        {
+          "code": "17700048",
+          "description": "Failed to install the HAP because the code signature verification is failed."
+        },
+        {
+          "code": "17700049",
+          "description": "Failed to install the HAP because the bundleName is different from the bundleName of the caller application."
+        },
+        {
+          "code": "17700050",
+          "description": "Failed to install the HAP because enterprise normal/MDM bundle cannot be installed on non-enterprise device."
+        },
+        {
+          "code": "17700051",
+          "description": "Failed to install the HAP because the distribution type of caller application is not enterprise_mdm."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "updateBundleForSelf",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Updates this enterprise application. 2. Incorrect parameter types; 3. Parameter hapFiles is needed for code signature; 4. The size of specifiedDistributionType is greater than 128; 5. The size of additionalInfo is greater than 3000. (required APL: system_basic or system_core).",
+      "注释信息": [
+        "@permission ohos.permission.INSTALL_SELF_BUNDLE",
+        "@param { Array<string> } hapFilePaths - Indicates the path where the HAP of the application is stored.",
+        "@param { InstallParam } installParam - Indicates other parameters required for the installation.",
+        "@returns { Promise<void> } the promise returned by the function.",
+        "@throws { BusinessError } 201 - Calling interface without permission 'ohos.permission.INSTALL_SELF_BUNDLE'.",
+        "@throws { BusinessError } 202 - Permission verification failed. A non-system application calls a system API.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 17700004 - The specified user ID is not found.",
+        "@throws { BusinessError } 17700010 - Failed to install the HAP because the HAP fails to be parsed.",
+        "@throws { BusinessError } 17700011 - Failed to install the HAP because the HAP signature fails to be verified.",
+        "@throws { BusinessError } 17700012 - Failed to install the HAP because the HAP path is invalid or the HAP is too large.",
+        "@throws { BusinessError } 17700015 - Failed to install the HAPs because they have different configuration information.",
+        "@throws { BusinessError } 17700016 - Failed to install the HAP because of insufficient system disk space.",
+        "@throws { BusinessError } 17700017 - Failed to install the HAP since the version of the HAP to install is too early.",
+        "@throws { BusinessError } 17700018 - Failed to install because the dependent module does not exist.",
+        "@throws { BusinessError } 17700039 - Failed to install because disallow install a shared bundle by hapFilePaths.",
+        "@throws { BusinessError } 17700041 - Failed to install because enterprise device management disallow install.",
+        "@throws { BusinessError } 17700042 - Failed to install the HAP because of incorrect URI in the data proxy.",
+        "@throws { BusinessError } 17700043 - Failed to install the HAP because of low APL in the non-system data proxy",
+        "@throws { BusinessError } 17700044 - Failed to install the HAP because the isolationMode configured is not supported.",
+        "@throws { BusinessError } 17700047 - Failed to install the HAP because the VersionCode to be updated is not greater than the current VersionCode.",
+        "@throws { BusinessError } 17700048 - Failed to install the HAP because the code signature verification is failed.",
+        "@throws { BusinessError } 17700049 - Failed to install the HAP because the bundleName is different from the bundleName of the caller application.",
+        "@throws { BusinessError } 17700050 - Failed to install the HAP because enterprise normal/MDM bundle cannot be installed on non-enterprise device.",
+        "@throws { BusinessError } 17700051 - Failed to install the HAP because the distribution type of caller application is not enterprise_mdm.",
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@systemapi",
+        "@since arkts {'1.1':'12', '1.2':'20'}",
+        "@arkts 1.1&1.2"
+      ],
+      "层级": 2,
+      "上级": "BundleInstaller",
+      "since_version": "arkts {'1.1':'12', '1.2':'20'}",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [
+        {
+          "名称": "hapFilePaths",
+          "类型": "Array<string>",
+          "必填": true,
+          "说明": "Indicates the path where the HAP of the application is stored."
+        },
+        {
+          "名称": "installParam",
+          "类型": "InstallParam",
+          "必填": true,
+          "说明": "Indicates other parameters required for the installation."
+        }
+      ],
+      "return_description": "the promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Calling interface without permission 'ohos.permission.INSTALL_SELF_BUNDLE'."
+        },
+        {
+          "code": "202",
+          "description": "Permission verification failed. A non-system application calls a system API."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "17700004",
+          "description": "The specified user ID is not found."
+        },
+        {
+          "code": "17700010",
+          "description": "Failed to install the HAP because the HAP fails to be parsed."
+        },
+        {
+          "code": "17700011",
+          "description": "Failed to install the HAP because the HAP signature fails to be verified."
+        },
+        {
+          "code": "17700012",
+          "description": "Failed to install the HAP because the HAP path is invalid or the HAP is too large."
+        },
+        {
+          "code": "17700015",
+          "description": "Failed to install the HAPs because they have different configuration information."
+        },
+        {
+          "code": "17700016",
+          "description": "Failed to install the HAP because of insufficient system disk space."
+        },
+        {
+          "code": "17700017",
+          "description": "Failed to install the HAP since the version of the HAP to install is too early."
+        },
+        {
+          "code": "17700018",
+          "description": "Failed to install because the dependent module does not exist."
+        },
+        {
+          "code": "17700039",
+          "description": "Failed to install because disallow install a shared bundle by hapFilePaths."
+        },
+        {
+          "code": "17700041",
+          "description": "Failed to install because enterprise device management disallow install."
+        },
+        {
+          "code": "17700042",
+          "description": "Failed to install the HAP because of incorrect URI in the data proxy."
+        },
+        {
+          "code": "17700043",
+          "description": "Failed to install the HAP because of low APL in the non-system data proxy"
+        },
+        {
+          "code": "17700044",
+          "description": "Failed to install the HAP because the isolationMode configured is not supported."
+        },
+        {
+          "code": "17700047",
+          "description": "Failed to install the HAP because the VersionCode to be updated is not greater than the current VersionCode."
+        },
+        {
+          "code": "17700048",
+          "description": "Failed to install the HAP because the code signature verification is failed."
+        },
+        {
+          "code": "17700049",
+          "description": "Failed to install the HAP because the bundleName is different from the bundleName of the caller application."
+        },
+        {
+          "code": "17700050",
+          "description": "Failed to install the HAP because enterprise normal/MDM bundle cannot be installed on non-enterprise device."
+        },
+        {
+          "code": "17700051",
+          "description": "Failed to install the HAP because the distribution type of caller application is not enterprise_mdm."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "uninstallUpdates",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Uninstall updates for a pre-installed application. <br>bundle name but different signature information exists on the device.",
+      "注释信息": [
+        "@permission ohos.permission.INSTALL_BUNDLE or ohos.permission.UNINSTALL_BUNDLE",
+        "@param { string } bundleName - Indicates the bundle name of the application to be uninstalled updates.",
+        "@param { InstallParam } installParam - Indicates other parameters required for the uninstall.",
+        "@returns { Promise<void> } the promise returned by the function.",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission required to call the API.",
+        "@throws { BusinessError } 202 - Permission verification failed. A non-system application calls a system API.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.",
+        "@throws { BusinessError } 17700001 - The specified bundle name is not found.",
+        "@throws { BusinessError } 17700045 - Failed to uninstall because enterprise device management disallow uninstall.",
+        "@throws { BusinessError } 17700057 - Failed to uninstall updates because the HAP is not pre-installed.",
+        "@throws { BusinessError } 17700060 - The specified application cannot be uninstalled.",
+        "@throws { BusinessError } 17700067 - Failed to uninstall the HAP because uninstalling the native package failed.",
+        "@throws { BusinessError } 17700073 - Failed to install the HAP because an application with the same",
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@systemapi",
+        "@since arkts {'1.1':'13', '1.2':'20'}",
+        "@arkts 1.1&1.2"
+      ],
+      "层级": 2,
+      "上级": "BundleInstaller",
+      "since_version": "arkts {'1.1':'13', '1.2':'20'}",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [
+        {
+          "名称": "bundleName",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates the bundle name of the application to be uninstalled updates."
+        },
+        {
+          "名称": "installParam",
+          "类型": "InstallParam",
+          "必填": true,
+          "说明": "Indicates other parameters required for the uninstall."
+        }
+      ],
+      "return_description": "the promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission required to call the API."
+        },
+        {
+          "code": "202",
+          "description": "Permission verification failed. A non-system application calls a system API."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types."
+        },
+        {
+          "code": "17700001",
+          "description": "The specified bundle name is not found."
+        },
+        {
+          "code": "17700045",
+          "description": "Failed to uninstall because enterprise device management disallow uninstall."
+        },
+        {
+          "code": "17700057",
+          "description": "Failed to uninstall updates because the HAP is not pre-installed."
+        },
+        {
+          "code": "17700060",
+          "description": "The specified application cannot be uninstalled."
+        },
+        {
+          "code": "17700067",
+          "description": "Failed to uninstall the HAP because uninstalling the native package failed."
+        },
+        {
+          "code": "17700073",
+          "description": "Failed to install the HAP because an application with the same"
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "addExtResource",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Add extend resources.",
+      "注释信息": [
+        "@permission ohos.permission.INSTALL_BUNDLE",
+        "@param { string } bundleName - Indicates the bundleName.",
+        "@param { Array<string> } filePaths - Indicates the file path for extend resources.",
+        "@returns { Promise<void> } Returns addExtResource result.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Permission denied, non-system app called system api.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.",
+        "@throws { BusinessError } 17700001 - The specified bundleName is not found.",
+        "@throws { BusinessError } 17700301 - AddExtResource failed due to parse file failed.",
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@systemapi",
+        "@since arkts {'1.1':'12', '1.2':'20'}",
+        "@arkts 1.1&1.2"
+      ],
+      "层级": 2,
+      "上级": "BundleInstaller",
+      "since_version": "arkts {'1.1':'12', '1.2':'20'}",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [
+        {
+          "名称": "bundleName",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates the bundleName."
+        },
+        {
+          "名称": "filePaths",
+          "类型": "Array<string>",
+          "必填": true,
+          "说明": "Indicates the file path for extend resources."
+        }
+      ],
+      "return_description": "Returns addExtResource result.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Permission denied, non-system app called system api."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types."
+        },
+        {
+          "code": "17700001",
+          "description": "The specified bundleName is not found."
+        },
+        {
+          "code": "17700301",
+          "description": "AddExtResource failed due to parse file failed."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "removeExtResource",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Remove extend resources.",
+      "注释信息": [
+        "@permission ohos.permission.INSTALL_BUNDLE or ohos.permission.UNINSTALL_BUNDLE",
+        "@param { string } bundleName - Indicates the bundleName.",
+        "@param { Array<string> } moduleNames - Indicates the moduleNames for extend resources.",
+        "@returns { Promise<void> } Returns removeExtResource result.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Permission denied, non-system app called system api.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.",
+        "@throws { BusinessError } 17700001 - The specified bundleName is not found.",
+        "@throws { BusinessError } 17700302 - RemoveExtResource failed due to module does not exist.",
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@systemapi",
+        "@since arkts {'1.1':'12', '1.2':'20'}",
+        "@arkts 1.1&1.2"
+      ],
+      "层级": 2,
+      "上级": "BundleInstaller",
+      "since_version": "arkts {'1.1':'12', '1.2':'20'}",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [
+        {
+          "名称": "bundleName",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates the bundleName."
+        },
+        {
+          "名称": "moduleNames",
+          "类型": "Array<string>",
+          "必填": true,
+          "说明": "Indicates the moduleNames for extend resources."
+        }
+      ],
+      "return_description": "Returns removeExtResource result.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Permission denied, non-system app called system api."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types."
+        },
+        {
+          "code": "17700001",
+          "description": "The specified bundleName is not found."
+        },
+        {
+          "code": "17700302",
+          "description": "RemoveExtResource failed due to module does not exist."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "createAppClone",
+      "返回值": "Promise<number>",
+      "所属模块": "未知模块",
+      "功能描述": "Create clone instance for an application.",
+      "注释信息": [
+        "@permission ohos.permission.INSTALL_CLONE_BUNDLE",
+        "@param { string } bundleName - Indicates the path where the HAP of the application is stored.",
+        "@param { CreateAppCloneParam } [createAppCloneParam] Indicates the optional params of create clone app.",
+        "@returns { Promise<number> } Return the appIndex of the clone application.",
+        "@throws { BusinessError } 201 - Calling interface without permission 'ohos.permission.INSTALL_CLONE_BUNDLE'.",
+        "@throws { BusinessError } 202 - Permission verification failed. A non-system application calls a system API.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.",
+        "@throws { BusinessError } 17700001 - The specified bundleName cannot be found or the bundle is not installed by the specified user.",
+        "@throws { BusinessError } 17700004 - The userId is invalid.",
+        "@throws { BusinessError } 17700061 - The appIndex is not in valid range or already exists.",
+        "@throws { BusinessError } 17700069 - The app does not support the creation of an appClone instance.",
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@systemapi",
+        "@since arkts {'1.1':'12', '1.2':'20'}",
+        "@arkts 1.1&1.2"
+      ],
+      "层级": 2,
+      "上级": "BundleInstaller",
+      "since_version": "arkts {'1.1':'12', '1.2':'20'}",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [
+        {
+          "名称": "bundleName",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates the path where the HAP of the application is stored."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "CreateAppCloneParam } [createAppCloneParam] Indicates the optional params of create clone app."
+        }
+      ],
+      "return_description": "Return the appIndex of the clone application.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Calling interface without permission 'ohos.permission.INSTALL_CLONE_BUNDLE'."
+        },
+        {
+          "code": "202",
+          "description": "Permission verification failed. A non-system application calls a system API."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types."
+        },
+        {
+          "code": "17700001",
+          "description": "The specified bundleName cannot be found or the bundle is not installed by the specified user."
+        },
+        {
+          "code": "17700004",
+          "description": "The userId is invalid."
+        },
+        {
+          "code": "17700061",
+          "description": "The appIndex is not in valid range or already exists."
+        },
+        {
+          "code": "17700069",
+          "description": "The app does not support the creation of an appClone instance."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "destroyAppClone",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Destroy clone instance for an application.",
+      "注释信息": [
+        "@permission ohos.permission.UNINSTALL_CLONE_BUNDLE",
+        "@param { string } bundleName - Indicates the path where the HAP of the application is stored.",
+        "@param { number } appIndex - Indicates the clone application's index.",
+        "@param { number } [userId] - userId Indicates the user ID.",
+        "@returns { Promise<void> } the promise returned by the function.",
+        "@throws { BusinessError } 201 - Calling interface without permission 'ohos.permission.UNINSTALL_CLONE_BUNDLE'.",
+        "@throws { BusinessError } 202 - Permission verification failed. A non-system application calls a system API.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.",
+        "@throws { BusinessError } 17700001 - The specified bundleName cannot be found or the bundle is not installed by the specified user.",
+        "@throws { BusinessError } 17700004 - The userId is invalid.",
+        "@throws { BusinessError } 17700061 - AppIndex not in valid range.",
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@systemapi",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "BundleInstaller",
+      "since_version": "12",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [
+        {
+          "名称": "bundleName",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates the path where the HAP of the application is stored."
+        },
+        {
+          "名称": "appIndex",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the clone application's index."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "number } [userId] - userId Indicates the user ID."
+        }
+      ],
+      "return_description": "the promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Calling interface without permission 'ohos.permission.UNINSTALL_CLONE_BUNDLE'."
+        },
+        {
+          "code": "202",
+          "description": "Permission verification failed. A non-system application calls a system API."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types."
+        },
+        {
+          "code": "17700001",
+          "description": "The specified bundleName cannot be found or the bundle is not installed by the specified user."
+        },
+        {
+          "code": "17700004",
+          "description": "The userId is invalid."
+        },
+        {
+          "code": "17700061",
+          "description": "AppIndex not in valid range."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "destroyAppClone",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Destroy clone instance for an application.",
+      "注释信息": [
+        "@permission ohos.permission.UNINSTALL_CLONE_BUNDLE",
+        "@param { string } bundleName - Indicates the bundleName of clone app.",
+        "@param { number } appIndex - Indicates the clone application's index.",
+        "@param { DestroyAppCloneParam } [destroyAppCloneParam] - Indicates other parameters required for the uninstallation.",
+        "@returns { Promise<void> } the promise returned by the function.",
+        "@throws { BusinessError } 201 - Calling interface without permission 'ohos.permission.UNINSTALL_CLONE_BUNDLE'.",
+        "@throws { BusinessError } 202 - Permission verification failed. A non-system application calls a system API.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.",
+        "@throws { BusinessError } 17700001 - The specified bundleName cannot be found or the bundle is not installed by the specified user.",
+        "@throws { BusinessError } 17700004 - The userId is invalid.",
+        "@throws { BusinessError } 17700061 - AppIndex not in valid range.",
+        "@throws { BusinessError } 17700062 - Failed to uninstall the app because the app is locked.",
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@systemapi",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "BundleInstaller",
+      "since_version": "15",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [
+        {
+          "名称": "bundleName",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates the bundleName of clone app."
+        },
+        {
+          "名称": "appIndex",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the clone application's index."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "DestroyAppCloneParam } [destroyAppCloneParam] - Indicates other parameters required for the uninstallation."
+        }
+      ],
+      "return_description": "the promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Calling interface without permission 'ohos.permission.UNINSTALL_CLONE_BUNDLE'."
+        },
+        {
+          "code": "202",
+          "description": "Permission verification failed. A non-system application calls a system API."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types."
+        },
+        {
+          "code": "17700001",
+          "description": "The specified bundleName cannot be found or the bundle is not installed by the specified user."
+        },
+        {
+          "code": "17700004",
+          "description": "The userId is invalid."
+        },
+        {
+          "code": "17700061",
+          "description": "AppIndex not in valid range."
+        },
+        {
+          "code": "17700062",
+          "description": "Failed to uninstall the app because the app is locked."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "destroyAppClone",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Destroy clone instance for an application.",
+      "注释信息": [
+        "@permission ohos.permission.UNINSTALL_CLONE_BUNDLE",
+        "@param { string } bundleName - Indicates the bundleName of clone app.",
+        "@param { number } appIndex - Indicates the clone application's index.",
+        "@param { number | DestroyAppCloneParam } [options] - Indicates other parameters required for the uninstallation.",
+        "@returns { Promise<void> }",
+        "@throws { BusinessError } 201 - Calling interface without permission 'ohos.permission.UNINSTALL_CLONE_BUNDLE'.",
+        "@throws { BusinessError } 202 - Permission verification failed. A non-system application calls a system API.",
+        "@throws { BusinessError } 17700001 - The specified bundleName cannot be found or the bundle is not installed by the specified user.",
+        "@throws { BusinessError } 17700004 - The userId is invalid.",
+        "@throws { BusinessError } 17700061 - AppIndex not in valid range.",
+        "@throws { BusinessError } 17700062 - Failed to uninstall the app because the app is locked.",
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@systemapi",
+        "@since 20",
+        "@arkts 1.2"
+      ],
+      "层级": 2,
+      "上级": "BundleInstaller",
+      "since_version": "20",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [
+        {
+          "名称": "bundleName",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates the bundleName of clone app."
+        },
+        {
+          "名称": "appIndex",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the clone application's index."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "number | DestroyAppCloneParam } [options] - Indicates other parameters required for the uninstallation."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Calling interface without permission 'ohos.permission.UNINSTALL_CLONE_BUNDLE'."
+        },
+        {
+          "code": "202",
+          "description": "Permission verification failed. A non-system application calls a system API."
+        },
+        {
+          "code": "17700001",
+          "description": "The specified bundleName cannot be found or the bundle is not installed by the specified user."
+        },
+        {
+          "code": "17700004",
+          "description": "The userId is invalid."
+        },
+        {
+          "code": "17700061",
+          "description": "AppIndex not in valid range."
+        },
+        {
+          "code": "17700062",
+          "description": "Failed to uninstall the app because the app is locked."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "installPreexistingApp",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Install application by bundle name with specified user. <br>from being installed on this device or by specified users.",
+      "注释信息": [
+        "@permission ohos.permission.INSTALL_BUNDLE",
+        "@param { string } bundleName - Indicates the bundle name of application.",
+        "@param { number } [userId] - userId Indicates the user ID.",
+        "@returns { Promise<void> } the promise returned by the function.",
+        "@throws { BusinessError } 201 - Calling interface without permission 'ohos.permission.INSTALL_BUNDLE'.",
+        "@throws { BusinessError } 202 - Permission verification failed. A non-system application calls a system API.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.",
+        "@throws { BusinessError } 17700001 - The specified bundleName cannot be found or the bundle is not installed by the specified user.",
+        "@throws { BusinessError } 17700004 - The userId is invalid.",
+        "@throws { BusinessError } 17700071 - It is not allowed to install the enterprise bundle.",
+        "@throws { BusinessError } 17700058 - Failed to install the HAP because this application is prohibited",
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@systemapi",
+        "@since arkts {'1.1':'14', '1.2':'20'}",
+        "@arkts 1.1&1.2"
+      ],
+      "层级": 2,
+      "上级": "BundleInstaller",
+      "since_version": "arkts {'1.1':'14', '1.2':'20'}",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [
+        {
+          "名称": "bundleName",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates the bundle name of application."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "number } [userId] - userId Indicates the user ID."
+        }
+      ],
+      "return_description": "the promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Calling interface without permission 'ohos.permission.INSTALL_BUNDLE'."
+        },
+        {
+          "code": "202",
+          "description": "Permission verification failed. A non-system application calls a system API."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types."
+        },
+        {
+          "code": "17700001",
+          "description": "The specified bundleName cannot be found or the bundle is not installed by the specified user."
+        },
+        {
+          "code": "17700004",
+          "description": "The userId is invalid."
+        },
+        {
+          "code": "17700071",
+          "description": "It is not allowed to install the enterprise bundle."
+        },
+        {
+          "code": "17700058",
+          "description": "Failed to install the HAP because this application is prohibited"
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "installPlugin",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Install plugin for host application. <br>bundle name but different signature information exists on the device.",
+      "注释信息": [
+        "@permission ohos.permission.INSTALL_PLUGIN_BUNDLE",
+        "@param { string } hostBundleName - Indicates the bundle name of host application.",
+        "@param { Array<string> } pluginFilePaths - Indicates the file paths of plugin.",
+        "@param { PluginParam } [pluginParam] - Indicates parameters required for install plugin.",
+        "@returns { Promise<void> } the promise returned by the function.",
+        "@throws { BusinessError } 201 - Calling interface without permission 'ohos.permission.INSTALL_PLUGIN_BUNDLE'.",
+        "@throws { BusinessError } 202 - Permission verification failed. A non-system application calls a system API.",
+        "@throws { BusinessError } 17700001 - The specified hostBundleName cannot be found or the bundle is not installed by the specified user.",
+        "@throws { BusinessError } 17700004 - The userId is invalid.",
+        "@throws { BusinessError } 17700010 - Failed to install the plugin because the plugin fails to be parsed.",
+        "@throws { BusinessError } 17700011 - Failed to install the plugin because the plugin signature fails to be verified.",
+        "@throws { BusinessError } 17700012 - Failed to install the plugin because the HSP path is invalid or the HSP is too large.",
+        "@throws { BusinessError } 17700015 - Failed to install the plugin because they have different configuration information.",
+        "@throws { BusinessError } 17700016 - Failed to install the plugin because of insufficient system disk space.",
+        "@throws { BusinessError } 17700017 - Failed to install the plugin since the version of the plugin to install is too early.",
+        "@throws { BusinessError } 17700048 - Failed to install the plugin because the code signature verification is failed.",
+        "@throws { BusinessError } 17700052 - Failed to install the plugin because debug bundle cannot be installed under non-developer mode.",
+        "@throws { BusinessError } 17700073 - Failed to install the plugin because a plugin with the same",
+        "@throws { BusinessError } 17700087 - Failed to install the plugin because the current device does not support plugin.",
+        "@throws { BusinessError } 17700088 - Failed to install the plugin because the host application lacks ohos.permission.kernel.SUPPORT_PLUGIN.",
+        "@throws { BusinessError } 17700089 - Failed to install the plugin because the plugin id fails to be parsed.",
+        "@throws { BusinessError } 17700090 - Failed to install the plugin because the plugin id fails to be verified.",
+        "@throws { BusinessError } 17700091 - Failed to install the plugin because the plugin name is same as host bundle name.",
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@systemapi",
+        "@since arkts {'1.1':'19', '1.2':'20'}",
+        "@arkts 1.1&1.2"
+      ],
+      "层级": 2,
+      "上级": "BundleInstaller",
+      "since_version": "arkts {'1.1':'19', '1.2':'20'}",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [
+        {
+          "名称": "hostBundleName",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates the bundle name of host application."
+        },
+        {
+          "名称": "pluginFilePaths",
+          "类型": "Array<string>",
+          "必填": true,
+          "说明": "Indicates the file paths of plugin."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "PluginParam } [pluginParam] - Indicates parameters required for install plugin."
+        }
+      ],
+      "return_description": "the promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Calling interface without permission 'ohos.permission.INSTALL_PLUGIN_BUNDLE'."
+        },
+        {
+          "code": "202",
+          "description": "Permission verification failed. A non-system application calls a system API."
+        },
+        {
+          "code": "17700001",
+          "description": "The specified hostBundleName cannot be found or the bundle is not installed by the specified user."
+        },
+        {
+          "code": "17700004",
+          "description": "The userId is invalid."
+        },
+        {
+          "code": "17700010",
+          "description": "Failed to install the plugin because the plugin fails to be parsed."
+        },
+        {
+          "code": "17700011",
+          "description": "Failed to install the plugin because the plugin signature fails to be verified."
+        },
+        {
+          "code": "17700012",
+          "description": "Failed to install the plugin because the HSP path is invalid or the HSP is too large."
+        },
+        {
+          "code": "17700015",
+          "description": "Failed to install the plugin because they have different configuration information."
+        },
+        {
+          "code": "17700016",
+          "description": "Failed to install the plugin because of insufficient system disk space."
+        },
+        {
+          "code": "17700017",
+          "description": "Failed to install the plugin since the version of the plugin to install is too early."
+        },
+        {
+          "code": "17700048",
+          "description": "Failed to install the plugin because the code signature verification is failed."
+        },
+        {
+          "code": "17700052",
+          "description": "Failed to install the plugin because debug bundle cannot be installed under non-developer mode."
+        },
+        {
+          "code": "17700073",
+          "description": "Failed to install the plugin because a plugin with the same"
+        },
+        {
+          "code": "17700087",
+          "description": "Failed to install the plugin because the current device does not support plugin."
+        },
+        {
+          "code": "17700088",
+          "description": "Failed to install the plugin because the host application lacks ohos.permission.kernel.SUPPORT_PLUGIN."
+        },
+        {
+          "code": "17700089",
+          "description": "Failed to install the plugin because the plugin id fails to be parsed."
+        },
+        {
+          "code": "17700090",
+          "description": "Failed to install the plugin because the plugin id fails to be verified."
+        },
+        {
+          "code": "17700091",
+          "description": "Failed to install the plugin because the plugin name is same as host bundle name."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "uninstallPlugin",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Uninstall plugin for host application.",
+      "注释信息": [
+        "@permission ohos.permission.UNINSTALL_PLUGIN_BUNDLE",
+        "@param { string } hostBundleName - Indicates the bundle name of host application.",
+        "@param { string } pluginBundleName - Indicates the bundle name of plugin application.",
+        "@param { PluginParam } [pluginParam] - Indicates parameters required for uninstall plugin.",
+        "@returns { Promise<void> } the promise returned by the function.",
+        "@throws { BusinessError } 201 - Calling interface without permission 'ohos.permission.UNINSTALL_PLUGIN_BUNDLE'.",
+        "@throws { BusinessError } 202 - Permission verification failed. A non-system application calls a system API.",
+        "@throws { BusinessError } 17700001 - The specified bundle name is not found.",
+        "@throws { BusinessError } 17700004 - The user id is invalid.",
+        "@throws { BusinessError } 17700092 - Failed to uninstall the plugin because the specified plugin is not found.",
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@systemapi",
+        "@since arkts {'1.1':'19', '1.2':'20'}",
+        "@arkts 1.1&1.2"
+      ],
+      "层级": 2,
+      "上级": "BundleInstaller",
+      "since_version": "arkts {'1.1':'19', '1.2':'20'}",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [
+        {
+          "名称": "hostBundleName",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates the bundle name of host application."
+        },
+        {
+          "名称": "pluginBundleName",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates the bundle name of plugin application."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "PluginParam } [pluginParam] - Indicates parameters required for uninstall plugin."
+        }
+      ],
+      "return_description": "the promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Calling interface without permission 'ohos.permission.UNINSTALL_PLUGIN_BUNDLE'."
+        },
+        {
+          "code": "202",
+          "description": "Permission verification failed. A non-system application calls a system API."
+        },
+        {
+          "code": "17700001",
+          "description": "The specified bundle name is not found."
+        },
+        {
+          "code": "17700004",
+          "description": "The user id is invalid."
+        },
+        {
+          "code": "17700092",
+          "description": "Failed to uninstall the plugin because the specified plugin is not found."
+        }
+      ],
+      "版本": "API6.0"
+    }
+  ]
+}

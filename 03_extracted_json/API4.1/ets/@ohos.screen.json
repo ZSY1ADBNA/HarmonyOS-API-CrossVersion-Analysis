@@ -1,0 +1,1039 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.ArkUI",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "namespace",
+      "名称": "screen",
+      "所属模块": "@kit.ArkUI",
+      "功能描述": "Interface of screen manager",
+      "注释信息": [
+        "@namespace screen",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@systemapi Hide this for inner system use.",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "@kit.ArkUI",
+      "since_version": "9",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "getAllScreens",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Get all screen instances, then can get or set detail information.",
+      "注释信息": [
+        "@param { AsyncCallback<Array<Screen>> } callback the callback of all screens info",
+        "@throws { BusinessError } 1400001 - Invalid display or screen.",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@systemapi Hide this for inner system use.",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "screen",
+      "since_version": "9",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<Array<Screen>>",
+          "必填": true,
+          "说明": "the callback of all screens info"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "1400001",
+          "description": "Invalid display or screen."
+        }
+      ],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "getAllScreens",
+      "返回值": "Promise<Array<Screen>>",
+      "所属模块": "未知模块",
+      "功能描述": "Get all screen instances, then can get or set detail information.",
+      "注释信息": [
+        "@returns { Promise<Array<Screen>> } the result of all screens info",
+        "@throws { BusinessError } 1400001 - Invalid display or screen.",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@systemapi Hide this for inner system use.",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "screen",
+      "since_version": "9",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [],
+      "return_description": "the result of all screens info",
+      "error_codes": [
+        {
+          "code": "1400001",
+          "description": "Invalid display or screen."
+        }
+      ],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Register the callback for screen changes.",
+      "注释信息": [
+        "@param { 'connect' | 'disconnect' | 'change' } eventType the event of screen changes",
+        "@param { Callback<number> } callback Callback used to return the screen ID",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@systemapi Hide this for inner system use.",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "screen",
+      "since_version": "9",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [
+        {
+          "名称": "eventType",
+          "类型": "'connect' | 'disconnect' | 'change'",
+          "必填": true,
+          "说明": "the event of screen changes"
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<number>",
+          "必填": true,
+          "说明": "Callback used to return the screen ID"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error."
+        }
+      ],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unregister the callback for screen changes.",
+      "注释信息": [
+        "@param { 'connect' | 'disconnect' | 'change' } eventType the event of screen changes",
+        "@param { Callback<number> } callback Callback used to return the screen ID",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@systemapi Hide this for inner system use.",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "screen",
+      "since_version": "9",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [
+        {
+          "名称": "eventType",
+          "类型": "'connect' | 'disconnect' | 'change'",
+          "必填": true,
+          "说明": "the event of screen changes"
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<number>",
+          "必填": true,
+          "说明": "Callback used to return the screen ID"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error."
+        }
+      ],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "makeExpand",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Make screens as expand-screen",
+      "注释信息": [
+        "@param { Array<ExpandOption> } options Parameters for expanding the screen",
+        "@param { AsyncCallback<number> } callback callback used to return the group ID of the expanded screens",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 1400001 - Invalid display or screen.",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@systemapi Hide this for inner system use.",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "screen",
+      "since_version": "9",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [
+        {
+          "名称": "options",
+          "类型": "Array<ExpandOption>",
+          "必填": true,
+          "说明": "Parameters for expanding the screen"
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<number>",
+          "必填": true,
+          "说明": "callback used to return the group ID of the expanded screens"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "1400001",
+          "description": "Invalid display or screen."
+        }
+      ],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "makeExpand",
+      "返回值": "Promise<number>",
+      "所属模块": "未知模块",
+      "功能描述": "Make screens as expand-screen",
+      "注释信息": [
+        "@param { Array<ExpandOption> } options Parameters for expanding the screen",
+        "@returns { Promise<number> } used to return the group ID of the expanded screens",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 1400001 - Invalid display or screen.",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@systemapi Hide this for inner system use.",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "screen",
+      "since_version": "9",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [
+        {
+          "名称": "options",
+          "类型": "Array<ExpandOption>",
+          "必填": true,
+          "说明": "Parameters for expanding the screen"
+        }
+      ],
+      "return_description": "used to return the group ID of the expanded screens",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "1400001",
+          "description": "Invalid display or screen."
+        }
+      ],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "stopExpand",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Stop expand screens",
+      "注释信息": [
+        "@param { Array<number> } expandScreen IDs of expand screens to stop",
+        "@param { AsyncCallback<void> } callback used to return the result",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 1400001 - Invalid display or screen.",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@systemapi Hide this for inner system use.",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "screen",
+      "since_version": "10",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [
+        {
+          "名称": "expandScreen",
+          "类型": "Array<number>",
+          "必填": true,
+          "说明": "IDs of expand screens to stop"
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "used to return the result"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "1400001",
+          "description": "Invalid display or screen."
+        }
+      ],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "stopExpand",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Stop expand screens",
+      "注释信息": [
+        "@param { Array<number> } expandScreen IDs of expand screens to stop",
+        "@returns { Promise<void> } promise used to return the result",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 1400001 - Invalid display or screen.",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@systemapi Hide this for inner system use.",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "screen",
+      "since_version": "10",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [
+        {
+          "名称": "expandScreen",
+          "类型": "Array<number>",
+          "必填": true,
+          "说明": "IDs of expand screens to stop"
+        }
+      ],
+      "return_description": "promise used to return the result",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "1400001",
+          "description": "Invalid display or screen."
+        }
+      ],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "makeMirror",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Make screens as mirror-screen",
+      "注释信息": [
+        "@param { number } mainScreen ID of the primary screen",
+        "@param { Array<number> } mirrorScreen IDs of secondary screens",
+        "@param { AsyncCallback<number> } callback Callback used to return the group ID of the secondary screens",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 1400001 - Invalid display or screen.",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@systemapi Hide this for inner system use.",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "screen",
+      "since_version": "9",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [
+        {
+          "名称": "mainScreen",
+          "类型": "number",
+          "必填": true,
+          "说明": "ID of the primary screen"
+        },
+        {
+          "名称": "mirrorScreen",
+          "类型": "Array<number>",
+          "必填": true,
+          "说明": "IDs of secondary screens"
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<number>",
+          "必填": true,
+          "说明": "Callback used to return the group ID of the secondary screens"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "1400001",
+          "description": "Invalid display or screen."
+        }
+      ],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "makeMirror",
+      "返回值": "Promise<number>",
+      "所属模块": "未知模块",
+      "功能描述": "Make screens as mirror-screen",
+      "注释信息": [
+        "@param { number } mainScreen ID of the primary screen",
+        "@param { Array<number> } mirrorScreen IDs of secondary screens",
+        "@returns { Promise<number> } Promise used to return the group ID of the secondary screens",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 1400001 - Invalid display or screen.",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@systemapi Hide this for inner system use.",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "screen",
+      "since_version": "9",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [
+        {
+          "名称": "mainScreen",
+          "类型": "number",
+          "必填": true,
+          "说明": "ID of the primary screen"
+        },
+        {
+          "名称": "mirrorScreen",
+          "类型": "Array<number>",
+          "必填": true,
+          "说明": "IDs of secondary screens"
+        }
+      ],
+      "return_description": "Promise used to return the group ID of the secondary screens",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "1400001",
+          "description": "Invalid display or screen."
+        }
+      ],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "stopMirror",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Stop mirror screens",
+      "注释信息": [
+        "@param { Array<number> } mirrorScreen IDs of mirror screens to stop",
+        "@param { AsyncCallback<void> } callback used to return the result",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 1400001 - Invalid display or screen.",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@systemapi Hide this for inner system use.",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "screen",
+      "since_version": "10",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [
+        {
+          "名称": "mirrorScreen",
+          "类型": "Array<number>",
+          "必填": true,
+          "说明": "IDs of mirror screens to stop"
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "used to return the result"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "1400001",
+          "description": "Invalid display or screen."
+        }
+      ],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "stopMirror",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Stop mirror screens",
+      "注释信息": [
+        "@param { Array<number> } mirrorScreen IDs of mirror screens to stop",
+        "@returns { Promise<void> } promise used to return the result",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 1400001 - Invalid display or screen.",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@systemapi Hide this for inner system use.",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "screen",
+      "since_version": "10",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [
+        {
+          "名称": "mirrorScreen",
+          "类型": "Array<number>",
+          "必填": true,
+          "说明": "IDs of mirror screens to stop"
+        }
+      ],
+      "return_description": "promise used to return the result",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "1400001",
+          "description": "Invalid display or screen."
+        }
+      ],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "createVirtualScreen",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Create virtual screen. if surfaceId is valid, this permission is necessary.",
+      "注释信息": [
+        "@permission ohos.permission.CAPTURE_SCREEN",
+        "@param { VirtualScreenOption } options Indicates the options of the virtual screen.",
+        "@param { AsyncCallback<Screen> } callback Callback used to return the created virtual screen",
+        "@throws { BusinessError } 201 - Permission verification failed.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 1400001 - Invalid display or screen.",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@systemapi Hide this for inner system use.",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "screen",
+      "since_version": "9",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [
+        {
+          "名称": "options",
+          "类型": "VirtualScreenOption",
+          "必填": true,
+          "说明": "Indicates the options of the virtual screen."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<Screen>",
+          "必填": true,
+          "说明": "Callback used to return the created virtual screen"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission verification failed."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "1400001",
+          "description": "Invalid display or screen."
+        }
+      ],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "createVirtualScreen",
+      "返回值": "Promise<Screen>",
+      "所属模块": "未知模块",
+      "功能描述": "Create virtual screen. if surfaceId is valid, this permission is necessary.",
+      "注释信息": [
+        "@permission ohos.permission.CAPTURE_SCREEN",
+        "@param { VirtualScreenOption } options Indicates the options of the virtual screen.",
+        "@returns { Promise<Screen> } Promise used to return the created virtual screen",
+        "@throws { BusinessError } 201 - Permission verification failed.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 1400001 - Invalid display or screen.",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@systemapi Hide this for inner system use.",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "screen",
+      "since_version": "9",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [
+        {
+          "名称": "options",
+          "类型": "VirtualScreenOption",
+          "必填": true,
+          "说明": "Indicates the options of the virtual screen."
+        }
+      ],
+      "return_description": "Promise used to return the created virtual screen",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission verification failed."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "1400001",
+          "description": "Invalid display or screen."
+        }
+      ],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "destroyVirtualScreen",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Destroy virtual screen.",
+      "注释信息": [
+        "@param { number } screenId Indicates the screen id of the virtual screen.",
+        "@param { AsyncCallback<void> } callback Callback used to return the result.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 1400002 - Unauthorized operation.",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@systemapi Hide this for inner system use.",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "screen",
+      "since_version": "9",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [
+        {
+          "名称": "screenId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the screen id of the virtual screen."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "Callback used to return the result."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "1400002",
+          "description": "Unauthorized operation."
+        }
+      ],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "destroyVirtualScreen",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Destroy virtual screen.",
+      "注释信息": [
+        "@param { number } screenId Indicates the screen id of the virtual screen.",
+        "@returns { Promise<void> } Promise that returns no value.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 1400002 - Unauthorized operation.",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@systemapi Hide this for inner system use.",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "screen",
+      "since_version": "9",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [
+        {
+          "名称": "screenId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the screen id of the virtual screen."
+        }
+      ],
+      "return_description": "Promise that returns no value.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "1400002",
+          "description": "Unauthorized operation."
+        }
+      ],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "setVirtualScreenSurface",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Set surface for the virtual screen.",
+      "注释信息": [
+        "@permission ohos.permission.CAPTURE_SCREEN",
+        "@param { number } screenId Indicates the screen id of the virtual screen.",
+        "@param { string } surfaceId Indicates the surface id.",
+        "@param { AsyncCallback<void> } callback Callback used to return the result",
+        "@throws { BusinessError } 201 - Permission verification failed.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 1400001 - Invalid display or screen.",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@systemapi Hide this for inner system use.",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "screen",
+      "since_version": "9",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [
+        {
+          "名称": "screenId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the screen id of the virtual screen."
+        },
+        {
+          "名称": "surfaceId",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates the surface id."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "Callback used to return the result"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission verification failed."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "1400001",
+          "description": "Invalid display or screen."
+        }
+      ],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "setVirtualScreenSurface",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Set surface for the virtual screen.",
+      "注释信息": [
+        "@permission ohos.permission.CAPTURE_SCREEN",
+        "@param { number } screenId Indicates the screen id of the virtual screen.",
+        "@param { string } surfaceId Indicates the surface id.",
+        "@returns { Promise<void> } Promise that returns no value",
+        "@throws { BusinessError } 201 - Permission verification failed.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 1400001 - Invalid display or screen.",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@systemapi Hide this for inner system use.",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "screen",
+      "since_version": "9",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [
+        {
+          "名称": "screenId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the screen id of the virtual screen."
+        },
+        {
+          "名称": "surfaceId",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates the surface id."
+        }
+      ],
+      "return_description": "Promise that returns no value",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission verification failed."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "1400001",
+          "description": "Invalid display or screen."
+        }
+      ],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "isScreenRotationLocked",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Get screen rotation lock status.",
+      "注释信息": [
+        "@param { AsyncCallback<boolean> } callback If true, auto rotate is locked. If false, auto rotate is unlocked",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@systemapi Hide this for inner system use.",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "screen",
+      "since_version": "9",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<boolean>",
+          "必填": true,
+          "说明": "If true, auto rotate is locked. If false, auto rotate is unlocked"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "isScreenRotationLocked",
+      "返回值": "Promise<boolean>",
+      "所属模块": "未知模块",
+      "功能描述": "Get screen rotation lock status.",
+      "注释信息": [
+        "@returns { Promise<boolean> } If true, auto rotate is locked. If false, auto rotate is unlocked",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@systemapi Hide this for inner system use.",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "screen",
+      "since_version": "9",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [],
+      "return_description": "If true, auto rotate is locked. If false, auto rotate is unlocked",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "setScreenRotationLocked",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Set screen rotation lock status.",
+      "注释信息": [
+        "@param { boolean } isLocked Indicates whether the screen rotation switch is locked.",
+        "@param { AsyncCallback<void> } callback Callback used to return the result.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@systemapi Hide this for inner system use.",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "screen",
+      "since_version": "9",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [
+        {
+          "名称": "isLocked",
+          "类型": "boolean",
+          "必填": true,
+          "说明": "Indicates whether the screen rotation switch is locked."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "Callback used to return the result."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error."
+        }
+      ],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "setScreenRotationLocked",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Set screen rotation lock status.",
+      "注释信息": [
+        "@param { boolean } isLocked Indicates whether the screen rotation switch is locked.",
+        "@returns { Promise<void> } Promise that returns no value.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@systemapi Hide this for inner system use.",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "screen",
+      "since_version": "9",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [
+        {
+          "名称": "isLocked",
+          "类型": "boolean",
+          "必填": true,
+          "说明": "Indicates whether the screen rotation switch is locked."
+        }
+      ],
+      "return_description": "Promise that returns no value.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error."
+        }
+      ],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "interface",
+      "名称": "ExpandOption",
+      "所属模块": "未知模块",
+      "功能描述": "The parameter of making expand screen",
+      "注释信息": [
+        "@interface ExpandOption",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@systemapi Hide this for inner system use.",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "screen",
+      "since_version": "9",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "property",
+      "名称": "screenId",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Screen id",
+      "注释信息": [
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@systemapi Hide this for inner system use.",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "ExpandOption",
+      "since_version": "9",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "property",
+      "名称": "startX",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "The start coordinate X of the screen origin",
+      "注释信息": [
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@systemapi Hide this for inner system use.",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "ExpandOption",
+      "since_version": "9",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "property",
+      "名称": "startY",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "The start coordinate Y of the screen origin",
+      "注释信息": [
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@systemapi Hide this for inner system use.",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "ExpandOption",
+      "since_version": "9",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    }
+  ]
+}

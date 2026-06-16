@@ -1,0 +1,796 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.BackgroundTasksKit",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "namespace",
+      "名称": "reminderAgentManager",
+      "所属模块": "@kit.BackgroundTasksKit",
+      "功能描述": "Providers static methods for managing reminders, including publishing or canceling a reminder. Add or remove a notification slot, and obtain or cancel all reminders of the current application.",
+      "注释信息": [
+        "@namespace reminderAgentManager",
+        "@syscap SystemCapability.Notification.ReminderAgent",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "@kit.BackgroundTasksKit",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.ReminderAgent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "publishReminder",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Publishes a scheduled reminder.",
+      "注释信息": [
+        "@permission ohos.permission.PUBLISH_AGENT_REMINDER",
+        "@param { ReminderRequest } reminderReq - Indicates the reminder instance to publish.",
+        "@param { AsyncCallback<number> } callback - Indicates the callback function.",
+        "@throws { BusinessError } 401 - If the input parameter is not valid parameter.",
+        "@throws { BusinessError } 1700001 - Notification is not enabled.",
+        "@throws { BusinessError } 1700002 - The number of reminders exceeds the limit.",
+        "@syscap SystemCapability.Notification.ReminderAgent",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "reminderAgentManager",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.ReminderAgent",
+      "parameters": [
+        {
+          "名称": "reminderReq",
+          "类型": "ReminderRequest",
+          "必填": true,
+          "说明": "Indicates the reminder instance to publish."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<number>",
+          "必填": true,
+          "说明": "Indicates the callback function."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "If the input parameter is not valid parameter."
+        },
+        {
+          "code": "1700001",
+          "description": "Notification is not enabled."
+        },
+        {
+          "code": "1700002",
+          "description": "The number of reminders exceeds the limit."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "publishReminder",
+      "返回值": "Promise<number>",
+      "所属模块": "未知模块",
+      "功能描述": "Publishes a scheduled reminder.",
+      "注释信息": [
+        "@permission ohos.permission.PUBLISH_AGENT_REMINDER",
+        "@param { ReminderRequest } reminderReq - Indicates the reminder instance to publish.",
+        "@returns { Promise<number> } The reminder id.",
+        "@throws { BusinessError } 401 - If the input parameter is not valid parameter.",
+        "@throws { BusinessError } 1700001 - Notification is not enabled.",
+        "@throws { BusinessError } 1700002 - The number of reminders exceeds the limit.",
+        "@syscap SystemCapability.Notification.ReminderAgent",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "reminderAgentManager",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.ReminderAgent",
+      "parameters": [
+        {
+          "名称": "reminderReq",
+          "类型": "ReminderRequest",
+          "必填": true,
+          "说明": "Indicates the reminder instance to publish."
+        }
+      ],
+      "return_description": "The reminder id.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "If the input parameter is not valid parameter."
+        },
+        {
+          "code": "1700001",
+          "description": "Notification is not enabled."
+        },
+        {
+          "code": "1700002",
+          "description": "The number of reminders exceeds the limit."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "cancelReminder",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Cancel a reminder.",
+      "注释信息": [
+        "@param { number } reminderId - Indicates the reminder id.",
+        "@param { AsyncCallback<void> } callback - Indicates the callback function.",
+        "@throws { BusinessError } 401 - If the input parameter is not valid parameter.",
+        "@throws { BusinessError } 1700003 - The reminder does not exist.",
+        "@throws { BusinessError } 1700004 - The bundle name does not exist.",
+        "@syscap SystemCapability.Notification.ReminderAgent",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "reminderAgentManager",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.ReminderAgent",
+      "parameters": [
+        {
+          "名称": "reminderId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the reminder id."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "Indicates the callback function."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "If the input parameter is not valid parameter."
+        },
+        {
+          "code": "1700003",
+          "description": "The reminder does not exist."
+        },
+        {
+          "code": "1700004",
+          "description": "The bundle name does not exist."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "cancelReminder",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Cancel a reminder.",
+      "注释信息": [
+        "@param { number } reminderId - Indicates the reminder id.",
+        "@returns { Promise<void> } The promise returned by the function.",
+        "@throws { BusinessError } 401 - If the input parameter is not valid parameter.",
+        "@throws { BusinessError } 1700003 - The reminder does not exist.",
+        "@throws { BusinessError } 1700004 - The bundle name does not exist.",
+        "@syscap SystemCapability.Notification.ReminderAgent",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "reminderAgentManager",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.ReminderAgent",
+      "parameters": [
+        {
+          "名称": "reminderId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the reminder id."
+        }
+      ],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "If the input parameter is not valid parameter."
+        },
+        {
+          "code": "1700003",
+          "description": "The reminder does not exist."
+        },
+        {
+          "code": "1700004",
+          "description": "The bundle name does not exist."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getValidReminders",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains all the valid reminders of current application.",
+      "注释信息": [
+        "@param { AsyncCallback<Array<ReminderRequest>> } callback - Indicates the callback function.",
+        "@throws { BusinessError } 401 - If the input parameter is not valid parameter.",
+        "@throws { BusinessError } 1700004 - The bundle name does not exist.",
+        "@syscap SystemCapability.Notification.ReminderAgent",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "reminderAgentManager",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.ReminderAgent",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<Array<ReminderRequest>>",
+          "必填": true,
+          "说明": "Indicates the callback function."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "If the input parameter is not valid parameter."
+        },
+        {
+          "code": "1700004",
+          "description": "The bundle name does not exist."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getValidReminders",
+      "返回值": "Promise<Array<ReminderRequest>>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains all the valid reminders of current application.",
+      "注释信息": [
+        "@returns { Promise<Array<ReminderRequest>> } The promise returned by the function.",
+        "@throws { BusinessError } 401 - If the input parameter is not valid parameter.",
+        "@throws { BusinessError } 1700004 - The bundle name does not exist.",
+        "@syscap SystemCapability.Notification.ReminderAgent",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "reminderAgentManager",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.ReminderAgent",
+      "parameters": [],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "If the input parameter is not valid parameter."
+        },
+        {
+          "code": "1700004",
+          "description": "The bundle name does not exist."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "cancelAllReminders",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Cancel all the reminders of current application.",
+      "注释信息": [
+        "@param { AsyncCallback<void> } callback - Indicates the callback function.",
+        "@throws { BusinessError } 401 - If the input parameter is not valid parameter.",
+        "@throws { BusinessError } 1700004 - The bundle name does not exist.",
+        "@syscap SystemCapability.Notification.ReminderAgent",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "reminderAgentManager",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.ReminderAgent",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "Indicates the callback function."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "If the input parameter is not valid parameter."
+        },
+        {
+          "code": "1700004",
+          "description": "The bundle name does not exist."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "cancelAllReminders",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Cancel all the reminders of current application.",
+      "注释信息": [
+        "@returns { Promise<void> } The promise returned by the function.",
+        "@throws { BusinessError } 401 - If the input parameter is not valid parameter.",
+        "@throws { BusinessError } 1700004 - The bundle name does not exist.",
+        "@syscap SystemCapability.Notification.ReminderAgent",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "reminderAgentManager",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.ReminderAgent",
+      "parameters": [],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "If the input parameter is not valid parameter."
+        },
+        {
+          "code": "1700004",
+          "description": "The bundle name does not exist."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "addNotificationSlot",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Add notification slot.",
+      "注释信息": [
+        "@param { NotificationSlot } slot - Indicates the slot.",
+        "@param { AsyncCallback<void> } callback - Indicates the callback function.",
+        "@throws { BusinessError } 401 - If the input parameter is not valid parameter.",
+        "@syscap SystemCapability.Notification.ReminderAgent",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "reminderAgentManager",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.ReminderAgent",
+      "parameters": [
+        {
+          "名称": "slot",
+          "类型": "NotificationSlot",
+          "必填": true,
+          "说明": "Indicates the slot."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "Indicates the callback function."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "If the input parameter is not valid parameter."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "addNotificationSlot",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Add notification slot.",
+      "注释信息": [
+        "@param { NotificationSlot } slot - Indicates the slot.",
+        "@returns { Promise<void> } The promise returned by the function.",
+        "@throws { BusinessError } 401 - If the input parameter is not valid parameter.",
+        "@syscap SystemCapability.Notification.ReminderAgent",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "reminderAgentManager",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.ReminderAgent",
+      "parameters": [
+        {
+          "名称": "slot",
+          "类型": "NotificationSlot",
+          "必填": true,
+          "说明": "Indicates the slot."
+        }
+      ],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "If the input parameter is not valid parameter."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "removeNotificationSlot",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Deletes a created notification slot based on the slot type.",
+      "注释信息": [
+        "@param { notification.SlotType } slotType Indicates the type of the slot.",
+        "@param { AsyncCallback<void> } callback - Indicates the callback function.",
+        "@throws { BusinessError } 401 - If the input parameter is not valid parameter.",
+        "@syscap SystemCapability.Notification.ReminderAgent",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "reminderAgentManager",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.ReminderAgent",
+      "parameters": [
+        {
+          "名称": "slotType",
+          "类型": "notification.SlotType",
+          "必填": true,
+          "说明": "Indicates the type of the slot."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "Indicates the callback function."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "If the input parameter is not valid parameter."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "removeNotificationSlot",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Deletes a created notification slot based on the slot type.",
+      "注释信息": [
+        "@param { notification.SlotType } slotType Indicates the type of the slot.",
+        "@returns { Promise<void> } The promise returned by the function.",
+        "@throws { BusinessError } 401 - If the input parameter is not valid parameter.",
+        "@syscap SystemCapability.Notification.ReminderAgent",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "reminderAgentManager",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.ReminderAgent",
+      "parameters": [
+        {
+          "名称": "slotType",
+          "类型": "notification.SlotType",
+          "必填": true,
+          "说明": "Indicates the type of the slot."
+        }
+      ],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "If the input parameter is not valid parameter."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "addExcludeDate",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "add exclude date for calendar reminder request.",
+      "注释信息": [
+        "@param { number } reminderId reminder id",
+        "@param { Date } date date time",
+        "@returns { Promise<void> } The promise returned by the function.",
+        "@throws { BusinessError } 201 - Permission denied",
+        "@throws { BusinessError } 401 - If the input parameter is not valid parameter.",
+        "@throws { BusinessError } 1700003 - The reminder does not exist.",
+        "@syscap SystemCapability.Notification.ReminderAgent",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "reminderAgentManager",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Notification.ReminderAgent",
+      "parameters": [
+        {
+          "名称": "reminderId",
+          "类型": "number",
+          "必填": true,
+          "说明": "reminder id"
+        },
+        {
+          "名称": "date",
+          "类型": "Date",
+          "必填": true,
+          "说明": "date time"
+        }
+      ],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied"
+        },
+        {
+          "code": "401",
+          "description": "If the input parameter is not valid parameter."
+        },
+        {
+          "code": "1700003",
+          "description": "The reminder does not exist."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "deleteExcludeDates",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "delete exclude date for calendar reminder request.",
+      "注释信息": [
+        "@param { number } reminderId reminder id",
+        "@returns { Promise<void> } The promise returned by the function.",
+        "@throws { BusinessError } 201 - Permission denied",
+        "@throws { BusinessError } 1700003 - The reminder does not exist.",
+        "@syscap SystemCapability.Notification.ReminderAgent",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "reminderAgentManager",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Notification.ReminderAgent",
+      "parameters": [
+        {
+          "名称": "reminderId",
+          "类型": "number",
+          "必填": true,
+          "说明": "reminder id"
+        }
+      ],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied"
+        },
+        {
+          "code": "1700003",
+          "description": "The reminder does not exist."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getExcludeDates",
+      "返回值": "Promise<Array<Date>>",
+      "所属模块": "未知模块",
+      "功能描述": "get exclude dates",
+      "注释信息": [
+        "@param { number } reminderId reminder id",
+        "@returns { Promise<Array<Date>> } The promise returned by the function.",
+        "@throws { BusinessError } 201 - Permission denied",
+        "@throws { BusinessError } 1700003 - The reminder does not exist.",
+        "@syscap SystemCapability.Notification.ReminderAgent",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "reminderAgentManager",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Notification.ReminderAgent",
+      "parameters": [
+        {
+          "名称": "reminderId",
+          "类型": "number",
+          "必填": true,
+          "说明": "reminder id"
+        }
+      ],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied"
+        },
+        {
+          "code": "1700003",
+          "description": "The reminder does not exist."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getAllValidReminders",
+      "返回值": "Promise<Array<ReminderInfo>>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains all the valid reminders of current application, include reminderId.",
+      "注释信息": [
+        "@returns { Promise<Array<ReminderInfo>> } The promise returned by the function.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@syscap SystemCapability.Notification.ReminderAgent",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "reminderAgentManager",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Notification.ReminderAgent",
+      "parameters": [],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "updateReminder",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Updates a scheduled reminder.",
+      "注释信息": [
+        "@permission ohos.permission.PUBLISH_AGENT_REMINDER",
+        "@param { reminderId } number - Indicates the reminder id.",
+        "@param { ReminderRequest } reminderReq - Indicates the reminder.",
+        "@returns { Promise<void> } The promise returned by the function.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 1700003 - The reminder does not exist.",
+        "@throws { BusinessError } 1700007 - If the input parameter is not valid parameter.",
+        "@syscap SystemCapability.Notification.ReminderAgent",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "reminderAgentManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Notification.ReminderAgent",
+      "parameters": [
+        {
+          "名称": "number",
+          "类型": "reminderId",
+          "必填": true,
+          "说明": "Indicates the reminder id."
+        },
+        {
+          "名称": "reminderReq",
+          "类型": "ReminderRequest",
+          "必填": true,
+          "说明": "Indicates the reminder."
+        }
+      ],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "1700003",
+          "description": "The reminder does not exist."
+        },
+        {
+          "code": "1700007",
+          "description": "If the input parameter is not valid parameter."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "enum",
+      "名称": "ActionButtonType",
+      "所属模块": "未知模块",
+      "功能描述": "Declares action button type.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.Notification.ReminderAgent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "reminderAgentManager",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.ReminderAgent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "ACTION_BUTTON_TYPE_CLOSE",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "Button for closing the reminder.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.ReminderAgent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "ActionButtonType",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.ReminderAgent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "ACTION_BUTTON_TYPE_SNOOZE",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Button for snoozing the reminder.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.ReminderAgent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "ActionButtonType",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.ReminderAgent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "ACTION_BUTTON_TYPE_CUSTOM",
+      "值": "2",
+      "所属模块": "未知模块",
+      "功能描述": "The custom button.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.ReminderAgent",
+        "@systemapi Hide this for inner system use.",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "ActionButtonType",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Notification.ReminderAgent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    }
+  ]
+}

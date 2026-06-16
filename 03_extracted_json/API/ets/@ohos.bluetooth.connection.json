@@ -1,0 +1,3370 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.ConnectivityKit",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "namespace",
+      "名称": "connection",
+      "所属模块": "@kit.ConnectivityKit",
+      "功能描述": "Provides methods to operate or manage Bluetooth.",
+      "注释信息": [
+        "@namespace connection",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 13"
+      ],
+      "层级": 1,
+      "上级": "@kit.ConnectivityKit",
+      "since_version": "13",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "type_alias",
+      "名称": "ProfileConnectionState",
+      "所属模块": "未知模块",
+      "功能描述": "Indicate the profile connection state.",
+      "注释信息": [
+        "@typedef { constant.ProfileConnectionState } ProfileConnectionState",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@crossplatform",
+        "@since 13"
+      ],
+      "层级": 1,
+      "上级": "connection",
+      "since_version": "13",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "type_alias",
+      "名称": "ProfileId",
+      "所属模块": "未知模块",
+      "功能描述": "Indicate the profile id.",
+      "注释信息": [
+        "@typedef { constant.ProfileId } ProfileId",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@crossplatform",
+        "@since 13"
+      ],
+      "层级": 1,
+      "上级": "connection",
+      "since_version": "13",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "type_alias",
+      "名称": "ProfileUuids",
+      "所属模块": "未知模块",
+      "功能描述": "Indicate the profile uuid.",
+      "注释信息": [
+        "@typedef { constant.ProfileUuids } ProfileUuids",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@crossplatform",
+        "@since 13"
+      ],
+      "层级": 1,
+      "上级": "connection",
+      "since_version": "13",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "type_alias",
+      "名称": "MajorClass",
+      "所属模块": "未知模块",
+      "功能描述": "Indicate the major class of a bluetooth device.",
+      "注释信息": [
+        "@typedef { constant.MajorClass } MajorClass",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@crossplatform",
+        "@since 13"
+      ],
+      "层级": 1,
+      "上级": "connection",
+      "since_version": "13",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "type_alias",
+      "名称": "MajorMinorClass",
+      "所属模块": "未知模块",
+      "功能描述": "Indicate the major minor class of a bluetooth device.",
+      "注释信息": [
+        "@typedef { constant.MajorMinorClass } MajorMinorClass",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@crossplatform",
+        "@since 13"
+      ],
+      "层级": 1,
+      "上级": "connection",
+      "since_version": "13",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "type_alias",
+      "名称": "BluetoothAddress",
+      "所属模块": "未知模块",
+      "功能描述": "Bluetooth device address.",
+      "注释信息": [
+        "@typedef { common.BluetoothAddress } BluetoothAddress",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 21"
+      ],
+      "层级": 1,
+      "上级": "connection",
+      "since_version": "21",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getProfileConnectionState",
+      "返回值": "ProfileConnectionState",
+      "所属模块": "未知模块",
+      "功能描述": "Get the profile connection state of the current device. With profileId, returns the current connection state of this profile, {@link ProfileConnectionState}. Without profileId, if any profile is connected, {@link ProfileConnectionState#STATE_CONNECTED} is returned. Otherwise, {@link ProfileConnectionState#STATE_DISCONNECTED} is returned.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BLUETOOTH",
+        "@param { ProfileId } [profileId] - Indicate the profile id. This is an optional parameter.",
+        "@returns { ProfileConnectionState } Returns the connection state.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Invalid parameter. Possible causes: 1. Incorrect parameter types.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 2900001 - Service stopped.",
+        "@throws { BusinessError } 2900003 - Bluetooth disabled.",
+        "@throws { BusinessError } 2900004 - Profile not supported.",
+        "@throws { BusinessError } 2900099 - Operation failed.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@crossplatform",
+        "@since 13"
+      ],
+      "层级": 1,
+      "上级": "connection",
+      "since_version": "13",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "ProfileId } [profileId] - Indicate the profile id. This is an optional parameter."
+        }
+      ],
+      "return_description": "Returns the connection state.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Invalid parameter. Possible causes: 1. Incorrect parameter types."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "2900001",
+          "description": "Service stopped."
+        },
+        {
+          "code": "2900003",
+          "description": "Bluetooth disabled."
+        },
+        {
+          "code": "2900004",
+          "description": "Profile not supported."
+        },
+        {
+          "code": "2900099",
+          "description": "Operation failed."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "pairDevice",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Starts pairing with a remote Bluetooth device. <br>2. Incorrect parameter types. 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BLUETOOTH",
+        "@param { string } deviceId - Indicates device ID. For example, \"11:22:33:AA:BB:FF\".",
+        "@param { AsyncCallback<void> } callback - the callback of pairDevice.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 2900001 - Service stopped.",
+        "@throws { BusinessError } 2900003 - Bluetooth disabled.",
+        "@throws { BusinessError } 2900099 - Operation failed.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 13"
+      ],
+      "层级": 1,
+      "上级": "connection",
+      "since_version": "13",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "deviceId",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates device ID. For example, \"11:22:33:AA:BB:FF\"."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "the callback of pairDevice."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "2900001",
+          "description": "Service stopped."
+        },
+        {
+          "code": "2900003",
+          "description": "Bluetooth disabled."
+        },
+        {
+          "code": "2900099",
+          "description": "Operation failed."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "pairDevice",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Starts pairing with a remote Bluetooth device. <br>2. Incorrect parameter types. 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BLUETOOTH",
+        "@param { string } deviceId - Indicates device ID. For example, \"11:22:33:AA:BB:FF\".",
+        "@returns { Promise<void> } Returns the promise object.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 2900001 - Service stopped.",
+        "@throws { BusinessError } 2900003 - Bluetooth disabled.",
+        "@throws { BusinessError } 2900099 - Operation failed.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 13"
+      ],
+      "层级": 1,
+      "上级": "connection",
+      "since_version": "13",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "deviceId",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates device ID. For example, \"11:22:33:AA:BB:FF\"."
+        }
+      ],
+      "return_description": "Returns the promise object.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "2900001",
+          "description": "Service stopped."
+        },
+        {
+          "code": "2900003",
+          "description": "Bluetooth disabled."
+        },
+        {
+          "code": "2900099",
+          "description": "Operation failed."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "pairDevice",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Starts pairing with a remote Bluetooth device.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BLUETOOTH",
+        "@param { BluetoothAddress } deviceId - Indicates address of peer device.",
+        "@returns { Promise<void> } Returns the promise object.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 2900001 - Service stopped.",
+        "@throws { BusinessError } 2900003 - Bluetooth disabled.",
+        "@throws { BusinessError } 2900099 - Operation failed.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@crossplatform",
+        "@since 21"
+      ],
+      "层级": 1,
+      "上级": "connection",
+      "since_version": "21",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "deviceId",
+          "类型": "BluetoothAddress",
+          "必填": true,
+          "说明": "Indicates address of peer device."
+        }
+      ],
+      "return_description": "Returns the promise object.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "2900001",
+          "description": "Service stopped."
+        },
+        {
+          "code": "2900003",
+          "description": "Bluetooth disabled."
+        },
+        {
+          "code": "2900099",
+          "description": "Operation failed."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getRemoteDeviceName",
+      "返回值": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the name of a peer Bluetooth device. <br>2. Incorrect parameter types. 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BLUETOOTH",
+        "@param { string } deviceId - Indicates device ID. For example, \"11:22:33:AA:BB:FF\".",
+        "@returns { string } Returns the device name in character string format.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 2900001 - Service stopped.",
+        "@throws { BusinessError } 2900003 - Bluetooth disabled.",
+        "@throws { BusinessError } 2900099 - Operation failed.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 13"
+      ],
+      "层级": 1,
+      "上级": "connection",
+      "since_version": "13",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "deviceId",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates device ID. For example, \"11:22:33:AA:BB:FF\"."
+        }
+      ],
+      "return_description": "Returns the device name in character string format.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "2900001",
+          "description": "Service stopped."
+        },
+        {
+          "code": "2900003",
+          "description": "Bluetooth disabled."
+        },
+        {
+          "code": "2900099",
+          "description": "Operation failed."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getRemoteDeviceName",
+      "返回值": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the name or alias of the Bluetooth peer device. 2. Incorrect parameter types. 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BLUETOOTH",
+        "@param { string } deviceId - Indicates device ID. For example, \"11:22:33:AA:BB:FF\".",
+        "@param { boolean } [alias] - Indicates whether to obtain the device alias. If the parameter is not provided, the device alias is obtained by default.",
+        "@returns { string } Returns the device name in character string format.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 2900001 - Service stopped.",
+        "@throws { BusinessError } 2900003 - Bluetooth disabled.",
+        "@throws { BusinessError } 2900099 - Failed to obtain the name or alias of the peer Bluetooth device.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@atomicservice",
+        "@since 16"
+      ],
+      "层级": 1,
+      "上级": "connection",
+      "since_version": "16",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "deviceId",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates device ID. For example, \"11:22:33:AA:BB:FF\"."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "boolean } [alias] - Indicates whether to obtain the device alias. If the parameter is not provided, the device alias is obtained by default."
+        }
+      ],
+      "return_description": "Returns the device name in character string format.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "2900001",
+          "description": "Service stopped."
+        },
+        {
+          "code": "2900003",
+          "description": "Bluetooth disabled."
+        },
+        {
+          "code": "2900099",
+          "description": "Failed to obtain the name or alias of the peer Bluetooth device."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getRemoteDeviceClass",
+      "返回值": "DeviceClass",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the class of a peer Bluetooth device. <br>2. Incorrect parameter types. 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { string } deviceId - Indicates device ID. For example, \"11:22:33:AA:BB:FF\".",
+        "@returns { DeviceClass } The class of the remote device.",
+        "@throws { BusinessError } 401 - Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 2900001 - Service stopped.",
+        "@throws { BusinessError } 2900003 - Bluetooth disabled.",
+        "@throws { BusinessError } 2900099 - Operation failed.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@crossplatform",
+        "@since 18"
+      ],
+      "层级": 1,
+      "上级": "connection",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "deviceId",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates device ID. For example, \"11:22:33:AA:BB:FF\"."
+        }
+      ],
+      "return_description": "The class of the remote device.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "2900001",
+          "description": "Service stopped."
+        },
+        {
+          "code": "2900003",
+          "description": "Bluetooth disabled."
+        },
+        {
+          "code": "2900099",
+          "description": "Operation failed."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getRemoteDeviceTransport",
+      "返回值": "BluetoothTransport",
+      "所属模块": "未知模块",
+      "功能描述": "Get the transport of the bluetooth device.",
+      "注释信息": [
+        "@param { string } deviceId - Indicates device ID. For example, \"11:22:33:AA:BB:FF\".",
+        "@returns { BluetoothTransport } The transport of bluetooth device.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 2900001 - Service stopped.",
+        "@throws { BusinessError } 2900003 - Bluetooth disabled.",
+        "@throws { BusinessError } 2900099 - Get transport failed.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "connection",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "deviceId",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates device ID. For example, \"11:22:33:AA:BB:FF\"."
+        }
+      ],
+      "return_description": "The transport of bluetooth device.",
+      "error_codes": [
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "2900001",
+          "description": "Service stopped."
+        },
+        {
+          "code": "2900003",
+          "description": "Bluetooth disabled."
+        },
+        {
+          "code": "2900099",
+          "description": "Get transport failed."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getLocalName",
+      "返回值": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the Bluetooth local name of a device.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BLUETOOTH",
+        "@returns { string } Returns the name the device.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 2900001 - Service stopped.",
+        "@throws { BusinessError } 2900099 - Operation failed.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@crossplatform",
+        "@since 13"
+      ],
+      "层级": 1,
+      "上级": "connection",
+      "since_version": "13",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "Returns the name the device.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "2900001",
+          "description": "Service stopped."
+        },
+        {
+          "code": "2900099",
+          "description": "Operation failed."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getPairedDevices",
+      "返回值": "Array<string>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the list of Bluetooth devices that have been paired with the current device.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BLUETOOTH",
+        "@returns { Array<string> } Returns a list of paired Bluetooth devices's address.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 2900001 - Service stopped.",
+        "@throws { BusinessError } 2900003 - Bluetooth disabled.",
+        "@throws { BusinessError } 2900099 - Operation failed.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 13"
+      ],
+      "层级": 1,
+      "上级": "connection",
+      "since_version": "13",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "Returns a list of paired Bluetooth devices's address.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "2900001",
+          "description": "Service stopped."
+        },
+        {
+          "code": "2900003",
+          "description": "Bluetooth disabled."
+        },
+        {
+          "code": "2900099",
+          "description": "Operation failed."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getPairState",
+      "返回值": "BondState",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the pair state of a specified device. <br>2. Incorrect parameter types. 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BLUETOOTH",
+        "@param { string } deviceId - Indicates device ID. For example, \"11:22:33:AA:BB:FF\".",
+        "@returns { BondState } Returns the pair state.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 2900001 - Service stopped.",
+        "@throws { BusinessError } 2900003 - Bluetooth disabled.",
+        "@throws { BusinessError } 2900099 - Operation failed.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 13"
+      ],
+      "层级": 1,
+      "上级": "connection",
+      "since_version": "13",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "deviceId",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates device ID. For example, \"11:22:33:AA:BB:FF\"."
+        }
+      ],
+      "return_description": "Returns the pair state.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "2900001",
+          "description": "Service stopped."
+        },
+        {
+          "code": "2900003",
+          "description": "Bluetooth disabled."
+        },
+        {
+          "code": "2900099",
+          "description": "Operation failed."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "setDevicePairingConfirmation",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Sets the confirmation of pairing with a certain device. <br>2. Incorrect parameter types. 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BLUETOOTH and ohos.permission.MANAGE_BLUETOOTH",
+        "@param { string } deviceId - Indicates device ID. For example, \"11:22:33:AA:BB:FF\".",
+        "@param { boolean } accept - Indicates whether to accept the pairing request, {@code true} indicates accept or {@code false} otherwise.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 2900001 - Service stopped.",
+        "@throws { BusinessError } 2900003 - Bluetooth disabled.",
+        "@throws { BusinessError } 2900099 - Operation failed.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "connection",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "deviceId",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates device ID. For example, \"11:22:33:AA:BB:FF\"."
+        },
+        {
+          "名称": "accept",
+          "类型": "boolean",
+          "必填": true,
+          "说明": "Indicates whether to accept the pairing request, {@code true} indicates accept or {@code false} otherwise."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "2900001",
+          "description": "Service stopped."
+        },
+        {
+          "code": "2900003",
+          "description": "Bluetooth disabled."
+        },
+        {
+          "code": "2900099",
+          "description": "Operation failed."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "setDevicePinCode",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Set the pin during pairing when the pin type is PIN_TYPE_ENTER_PIN_CODE. <br>2. Incorrect parameter types. 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BLUETOOTH",
+        "@param { string } deviceId - Indicates device ID. For example, \"11:22:33:AA:BB:FF\".",
+        "@param { string } code - The pin code entered by the user.",
+        "@param { AsyncCallback<void> } callback - the callback of setDevicePinCode.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 2900001 - Service stopped.",
+        "@throws { BusinessError } 2900003 - Bluetooth disabled.",
+        "@throws { BusinessError } 2900099 - Operation failed.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "connection",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "deviceId",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates device ID. For example, \"11:22:33:AA:BB:FF\"."
+        },
+        {
+          "名称": "code",
+          "类型": "string",
+          "必填": true,
+          "说明": "The pin code entered by the user."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "the callback of setDevicePinCode."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "2900001",
+          "description": "Service stopped."
+        },
+        {
+          "code": "2900003",
+          "description": "Bluetooth disabled."
+        },
+        {
+          "code": "2900099",
+          "description": "Operation failed."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "setDevicePinCode",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Set the pin during pairing when the pin type is PIN_TYPE_ENTER_PIN_CODE. <br>2. Incorrect parameter types. 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BLUETOOTH",
+        "@param { string } deviceId - Indicates device ID. For example, \"11:22:33:AA:BB:FF\".",
+        "@param { string } code - The pin code entered by the user.",
+        "@returns { Promise<void> } Returns the promise object.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 2900001 - Service stopped.",
+        "@throws { BusinessError } 2900003 - Bluetooth disabled.",
+        "@throws { BusinessError } 2900099 - Operation failed.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "connection",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "deviceId",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates device ID. For example, \"11:22:33:AA:BB:FF\"."
+        },
+        {
+          "名称": "code",
+          "类型": "string",
+          "必填": true,
+          "说明": "The pin code entered by the user."
+        }
+      ],
+      "return_description": "Returns the promise object.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "2900001",
+          "description": "Service stopped."
+        },
+        {
+          "code": "2900003",
+          "description": "Bluetooth disabled."
+        },
+        {
+          "code": "2900099",
+          "description": "Operation failed."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "setLocalName",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Sets the Bluetooth friendly name of a device. It is used only by system applications for security. If a non-system application invokes the interface, exception 801 is thrown. <br>2. Incorrect parameter types. 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BLUETOOTH",
+        "@param { string } name - Indicates a valid Bluetooth name.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 2900001 - Service stopped.",
+        "@throws { BusinessError } 2900003 - Bluetooth disabled.",
+        "@throws { BusinessError } 2900099 - Operation failed.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 10",
+        "@deprecated since 12"
+      ],
+      "层级": 1,
+      "上级": "connection",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "name",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates a valid Bluetooth name."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "2900001",
+          "description": "Service stopped."
+        },
+        {
+          "code": "2900003",
+          "description": "Bluetooth disabled."
+        },
+        {
+          "code": "2900099",
+          "description": "Operation failed."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "setBluetoothScanMode",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Sets the Bluetooth scan mode for a device. <br>2. Incorrect parameter types. 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BLUETOOTH",
+        "@param { ScanMode } mode - Indicates the Bluetooth scan mode to set.",
+        "@param { number } duration - Indicates the duration in seconds, in which the host is discoverable.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 2900001 - Service stopped.",
+        "@throws { BusinessError } 2900003 - Bluetooth disabled.",
+        "@throws { BusinessError } 2900099 - Operation failed.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "connection",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "mode",
+          "类型": "ScanMode",
+          "必填": true,
+          "说明": "Indicates the Bluetooth scan mode to set."
+        },
+        {
+          "名称": "duration",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the duration in seconds, in which the host is discoverable."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "2900001",
+          "description": "Service stopped."
+        },
+        {
+          "code": "2900003",
+          "description": "Bluetooth disabled."
+        },
+        {
+          "code": "2900099",
+          "description": "Operation failed."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getBluetoothScanMode",
+      "返回值": "ScanMode",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the Bluetooth scanning mode of a device.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BLUETOOTH",
+        "@returns { ScanMode } Returns the Bluetooth scanning mode.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 2900001 - Service stopped.",
+        "@throws { BusinessError } 2900003 - Bluetooth disabled.",
+        "@throws { BusinessError } 2900099 - Operation failed.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@crossplatform",
+        "@since 13"
+      ],
+      "层级": 1,
+      "上级": "connection",
+      "since_version": "13",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "Returns the Bluetooth scanning mode.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "2900001",
+          "description": "Service stopped."
+        },
+        {
+          "code": "2900003",
+          "description": "Bluetooth disabled."
+        },
+        {
+          "code": "2900099",
+          "description": "Operation failed."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "startBluetoothDiscovery",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Starts scanning Bluetooth devices.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BLUETOOTH",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 2900001 - Service stopped.",
+        "@throws { BusinessError } 2900003 - Bluetooth disabled.",
+        "@throws { BusinessError } 2900099 - Operation failed.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 13"
+      ],
+      "层级": 1,
+      "上级": "connection",
+      "since_version": "13",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "2900001",
+          "description": "Service stopped."
+        },
+        {
+          "code": "2900003",
+          "description": "Bluetooth disabled."
+        },
+        {
+          "code": "2900099",
+          "description": "Operation failed."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "stopBluetoothDiscovery",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Stops Bluetooth device scanning.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BLUETOOTH",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 2900001 - Service stopped.",
+        "@throws { BusinessError } 2900003 - Bluetooth disabled.",
+        "@throws { BusinessError } 2900099 - Operation failed.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 13"
+      ],
+      "层级": 1,
+      "上级": "connection",
+      "since_version": "13",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "2900001",
+          "description": "Service stopped."
+        },
+        {
+          "code": "2900003",
+          "description": "Bluetooth disabled."
+        },
+        {
+          "code": "2900099",
+          "description": "Operation failed."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "isBluetoothDiscovering",
+      "返回值": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Check if bluetooth is discovering.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BLUETOOTH",
+        "@returns { boolean } Returns {@code true} if the local device is discovering; returns {@code false} otherwise.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 2900001 - Service stopped.",
+        "@throws { BusinessError } 2900003 - Bluetooth disabled.",
+        "@throws { BusinessError } 2900099 - Operation failed.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@crossplatform",
+        "@since 13"
+      ],
+      "层级": 1,
+      "上级": "connection",
+      "since_version": "13",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "Returns {@code true} if the local device is discovering; returns {@code false} otherwise.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "2900001",
+          "description": "Service stopped."
+        },
+        {
+          "code": "2900003",
+          "description": "Bluetooth disabled."
+        },
+        {
+          "code": "2900099",
+          "description": "Operation failed."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getRemoteProfileUuids",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the profile UUIDs supported by the remote device.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BLUETOOTH",
+        "@param { string } deviceId - Indicates device ID. For example, \"11:22:33:AA:BB:FF\".",
+        "@param { AsyncCallback<Array<ProfileUuids>> } callback - the callback of getRemoteProfileUuids.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Invalid parameter.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 2900001 - Service stopped.",
+        "@throws { BusinessError } 2900003 - Bluetooth disabled.",
+        "@throws { BusinessError } 2900099 - Operation failed.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@crossplatform",
+        "@since 13"
+      ],
+      "层级": 1,
+      "上级": "connection",
+      "since_version": "13",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "deviceId",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates device ID. For example, \"11:22:33:AA:BB:FF\"."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<Array<ProfileUuids>>",
+          "必填": true,
+          "说明": "the callback of getRemoteProfileUuids."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Invalid parameter."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "2900001",
+          "description": "Service stopped."
+        },
+        {
+          "code": "2900003",
+          "description": "Bluetooth disabled."
+        },
+        {
+          "code": "2900099",
+          "description": "Operation failed."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getRemoteProfileUuids",
+      "返回值": "Promise<Array<ProfileUuids>>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the profile UUIDs supported by the remote device.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BLUETOOTH",
+        "@param { string } deviceId - Indicates device ID. For example, \"11:22:33:AA:BB:FF\".",
+        "@returns { Promise<Array<ProfileUuids>> } Returns the promise object.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Invalid parameter.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 2900001 - Service stopped.",
+        "@throws { BusinessError } 2900003 - Bluetooth disabled.",
+        "@throws { BusinessError } 2900099 - Operation failed.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@crossplatform",
+        "@since 13"
+      ],
+      "层级": 1,
+      "上级": "connection",
+      "since_version": "13",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "deviceId",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates device ID. For example, \"11:22:33:AA:BB:FF\"."
+        }
+      ],
+      "return_description": "Returns the promise object.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Invalid parameter."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "2900001",
+          "description": "Service stopped."
+        },
+        {
+          "code": "2900003",
+          "description": "Bluetooth disabled."
+        },
+        {
+          "code": "2900099",
+          "description": "Operation failed."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "connectAllowedProfiles",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Connects all allowed bluetooth profiles between the local and remote device. 2. Incorrect parameter types. 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BLUETOOTH",
+        "@param { string } deviceId - Indicates device ID. For example, \"11:22:33:AA:BB:FF\".",
+        "@param { AsyncCallback<void> } callback - the callback result.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 2900001 - Service stopped.",
+        "@throws { BusinessError } 2900003 - Bluetooth disabled.",
+        "@throws { BusinessError } 2900099 - Operation failed.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 16"
+      ],
+      "层级": 1,
+      "上级": "connection",
+      "since_version": "16",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "deviceId",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates device ID. For example, \"11:22:33:AA:BB:FF\"."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "the callback result."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "2900001",
+          "description": "Service stopped."
+        },
+        {
+          "code": "2900003",
+          "description": "Bluetooth disabled."
+        },
+        {
+          "code": "2900099",
+          "description": "Operation failed."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "connectAllowedProfiles",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Connects all allowed bluetooth profiles between the local and remote device. 2. Incorrect parameter types. 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BLUETOOTH",
+        "@param { string } deviceId - Indicates device ID. For example, \"11:22:33:AA:BB:FF\".",
+        "@returns { Promise<void> } Returns the promise object.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 2900001 - Service stopped.",
+        "@throws { BusinessError } 2900003 - Bluetooth disabled.",
+        "@throws { BusinessError } 2900099 - Operation failed.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 16"
+      ],
+      "层级": 1,
+      "上级": "connection",
+      "since_version": "16",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "deviceId",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates device ID. For example, \"11:22:33:AA:BB:FF\"."
+        }
+      ],
+      "return_description": "Returns the promise object.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "2900001",
+          "description": "Service stopped."
+        },
+        {
+          "code": "2900003",
+          "description": "Bluetooth disabled."
+        },
+        {
+          "code": "2900099",
+          "description": "Operation failed."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getRemoteDeviceBatteryInfo",
+      "返回值": "Promise<BatteryInfo>",
+      "所属模块": "未知模块",
+      "功能描述": "Get remote device battery information. <br>2. Incorrect parameter types. 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BLUETOOTH",
+        "@param { string } deviceId - Indicates device ID. For example, \"11:22:33:AA:BB:FF\".",
+        "@returns { Promise<BatteryInfo> } Returns battery info.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 2900001 - Service stopped.",
+        "@throws { BusinessError } 2900003 - Bluetooth disabled.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "connection",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "deviceId",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates device ID. For example, \"11:22:33:AA:BB:FF\"."
+        }
+      ],
+      "return_description": "Returns battery info.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "2900001",
+          "description": "Service stopped."
+        },
+        {
+          "code": "2900003",
+          "description": "Bluetooth disabled."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "setRemoteDeviceName",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Modify remote device name. <br>2. Incorrect parameter types. 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BLUETOOTH",
+        "@param { string } deviceId - Indicates device ID. For example, \"11:22:33:AA:BB:FF\".",
+        "@param { string } name - New device name. Max length is 64 bytes.",
+        "@returns { Promise<void> } Returns the promise object.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 2900001 - Service stopped.",
+        "@throws { BusinessError } 2900003 - Bluetooth disabled.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "connection",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "deviceId",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates device ID. For example, \"11:22:33:AA:BB:FF\"."
+        },
+        {
+          "名称": "name",
+          "类型": "string",
+          "必填": true,
+          "说明": "New device name. Max length is 64 bytes."
+        }
+      ],
+      "return_description": "Returns the promise object.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "2900001",
+          "description": "Service stopped."
+        },
+        {
+          "code": "2900003",
+          "description": "Bluetooth disabled."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getLastConnectionTime",
+      "返回值": "Promise<number>",
+      "所属模块": "未知模块",
+      "功能描述": "Get latest connection time of device. <br>2. Incorrect parameter types. 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { string } deviceId - Indicates device ID. For example, \"11:22:33:AA:BB:FF\".",
+        "@returns { Promise<number> } Returns latest connection time.",
+        "@throws { BusinessError } 401 - Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 2900001 - Service stopped.",
+        "@throws { BusinessError } 2900003 - Bluetooth disabled.",
+        "@throws { BusinessError } 2900099 - Operation failed.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 15"
+      ],
+      "层级": 1,
+      "上级": "connection",
+      "since_version": "15",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "deviceId",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates device ID. For example, \"11:22:33:AA:BB:FF\"."
+        }
+      ],
+      "return_description": "Returns latest connection time.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "2900001",
+          "description": "Service stopped."
+        },
+        {
+          "code": "2900003",
+          "description": "Bluetooth disabled."
+        },
+        {
+          "code": "2900099",
+          "description": "Operation failed."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Subscribe the event reported when a remote Bluetooth device is discovered. <br>2. Incorrect parameter types. 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BLUETOOTH",
+        "@param { 'bluetoothDeviceFind' } type - Type of the discovering event to listen for.",
+        "@param { Callback<Array<string>> } callback - Callback used to listen for the discovering event.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 2900099 - Operation failed.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 13"
+      ],
+      "层级": 1,
+      "上级": "connection",
+      "since_version": "13",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'bluetoothDeviceFind'",
+          "必填": true,
+          "说明": "Type of the discovering event to listen for."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<Array<string>>",
+          "必填": true,
+          "说明": "Callback used to listen for the discovering event."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "2900099",
+          "description": "Operation failed."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unsubscribe the event reported when a remote Bluetooth device is discovered.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BLUETOOTH",
+        "@param { 'bluetoothDeviceFind' } type - Type of the discovering event to listen for.",
+        "@param { Callback<Array<string>> } callback - Callback used to listen for the discovering event.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 2900099 - Operation failed.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 13"
+      ],
+      "层级": 1,
+      "上级": "connection",
+      "since_version": "13",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'bluetoothDeviceFind'",
+          "必填": true,
+          "说明": "Type of the discovering event to listen for."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<Array<string>>",
+          "必填": true,
+          "说明": "Callback used to listen for the discovering event."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "2900099",
+          "description": "Operation failed."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Subscribe the event reported when a remote Bluetooth device is discovered. <br>2. Incorrect parameter types. 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BLUETOOTH",
+        "@param { 'discoveryResult' } type - Type of the discovering event to listen for.",
+        "@param { Callback<Array<DiscoveryResult>> } callback - Callback used to listen for the discovering event.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 2900099 - Operation failed.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 18"
+      ],
+      "层级": 1,
+      "上级": "connection",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'discoveryResult'",
+          "必填": true,
+          "说明": "Type of the discovering event to listen for."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<Array<DiscoveryResult>>",
+          "必填": true,
+          "说明": "Callback used to listen for the discovering event."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "2900099",
+          "description": "Operation failed."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unsubscribe the event reported when a remote Bluetooth device is discovered.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BLUETOOTH",
+        "@param { 'discoveryResult' } type - Type of the discovering event to listen for.",
+        "@param { Callback<Array<DiscoveryResult>> } callback - Callback used to listen for the discovering event.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 2900099 - Operation failed.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 18"
+      ],
+      "层级": 1,
+      "上级": "connection",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'discoveryResult'",
+          "必填": true,
+          "说明": "Type of the discovering event to listen for."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<Array<DiscoveryResult>>",
+          "必填": true,
+          "说明": "Callback used to listen for the discovering event."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "2900099",
+          "description": "Operation failed."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Subscribe the event reported when a remote Bluetooth device is bonded. <br>2. Incorrect parameter types. 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BLUETOOTH",
+        "@param { 'bondStateChange' } type - Type of the bond state event to listen for.",
+        "@param { Callback<BondStateParam> } callback - Callback used to listen for the bond state event.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 2900099 - Operation failed.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@crossplatform",
+        "@since 13"
+      ],
+      "层级": 1,
+      "上级": "connection",
+      "since_version": "13",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'bondStateChange'",
+          "必填": true,
+          "说明": "Type of the bond state event to listen for."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<BondStateParam>",
+          "必填": true,
+          "说明": "Callback used to listen for the bond state event."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "2900099",
+          "description": "Operation failed."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unsubscribe the event reported when a remote Bluetooth device is bonded. <br>2. Incorrect parameter types. 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BLUETOOTH",
+        "@param { 'bondStateChange' } type - Type of the bond state event to listen for.",
+        "@param { Callback<BondStateParam> } callback - Callback used to listen for the bond state event.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 2900099 - Operation failed.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@crossplatform",
+        "@since 13"
+      ],
+      "层级": 1,
+      "上级": "connection",
+      "since_version": "13",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'bondStateChange'",
+          "必填": true,
+          "说明": "Type of the bond state event to listen for."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<BondStateParam>",
+          "必填": true,
+          "说明": "Callback used to listen for the bond state event."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "2900099",
+          "description": "Operation failed."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Subscribe the event of a pairing request from a remote Bluetooth device. <br>2. Incorrect parameter types. 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BLUETOOTH",
+        "@param { 'pinRequired' } type - Type of the pairing request event to listen for.",
+        "@param { Callback<PinRequiredParam> } callback - Callback used to listen for the pairing request event.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 2900099 - Operation failed.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "connection",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'pinRequired'",
+          "必填": true,
+          "说明": "Type of the pairing request event to listen for."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<PinRequiredParam>",
+          "必填": true,
+          "说明": "Callback used to listen for the pairing request event."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "2900099",
+          "description": "Operation failed."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unsubscribe the event of a pairing request from a remote Bluetooth device. <br>2. Incorrect parameter types. 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BLUETOOTH",
+        "@param { 'pinRequired' } type - Type of the pairing request event to listen for.",
+        "@param { Callback<PinRequiredParam> } callback - Callback used to listen for the pairing request event.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 2900099 - Operation failed.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "connection",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'pinRequired'",
+          "必填": true,
+          "说明": "Type of the pairing request event to listen for."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<PinRequiredParam>",
+          "必填": true,
+          "说明": "Callback used to listen for the pairing request event."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "2900099",
+          "description": "Operation failed."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Subscribe the event of battery state changed from a remote device.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BLUETOOTH",
+        "@param { 'batteryChange' } type - Type of the battery event to listen for.",
+        "@param { Callback<BatteryInfo> } callback - Callback used to listen.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 2900099 - Operation failed.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "connection",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'batteryChange'",
+          "必填": true,
+          "说明": "Type of the battery event to listen for."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<BatteryInfo>",
+          "必填": true,
+          "说明": "Callback used to listen."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "2900099",
+          "description": "Operation failed."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unsubscribe the event of battery state changed from a remote device.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BLUETOOTH",
+        "@param { 'batteryChange' } type - Type of the battery event to listen for.",
+        "@param { Callback<BatteryInfo> } callback - Callback used to listen.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 2900099 - Operation failed.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "connection",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'batteryChange'",
+          "必填": true,
+          "说明": "Type of the battery event to listen for."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<BatteryInfo>",
+          "必填": true,
+          "说明": "Callback used to listen."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "2900099",
+          "description": "Operation failed."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "onScanModeChange",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Subscribe to an event indicating that the scanning mode of the local device has changed.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BLUETOOTH",
+        "@param { Callback<ScanMode> } callback - Callback used to listen.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 2900099 - Operation failed.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 23"
+      ],
+      "层级": 1,
+      "上级": "connection",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "Callback<ScanMode>",
+          "必填": true,
+          "说明": "Callback used to listen."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "2900099",
+          "description": "Operation failed."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "offScanModeChange",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unsubscribe to an event indicating that the scanning mode of the local device has changed.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BLUETOOTH",
+        "@param { Callback<ScanMode> } [callback] - Callback used to listen.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 2900099 - Operation failed.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 23"
+      ],
+      "层级": 1,
+      "上级": "connection",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "Callback<ScanMode> } [callback] - Callback used to listen."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "2900099",
+          "description": "Operation failed."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "BondStateParam",
+      "所属模块": "未知模块",
+      "功能描述": "Describes the class of a bluetooth device.",
+      "注释信息": [
+        "@typedef BondStateParam",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@crossplatform",
+        "@since 13"
+      ],
+      "层级": 2,
+      "上级": "connection",
+      "since_version": "13",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "deviceId",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Address of a Bluetooth device.",
+      "注释信息": [
+        "@type { string }",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@crossplatform",
+        "@since 13"
+      ],
+      "层级": 2,
+      "上级": "BondStateParam",
+      "since_version": "13",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "state",
+      "属性类型": "BondState",
+      "所属模块": "未知模块",
+      "功能描述": "Profile connection state of the device.",
+      "注释信息": [
+        "@type { BondState }",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@crossplatform",
+        "@since 13"
+      ],
+      "层级": 2,
+      "上级": "BondStateParam",
+      "since_version": "13",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "cause",
+      "属性类型": "UnbondCause",
+      "所属模块": "未知模块",
+      "功能描述": "Cause of unbond.",
+      "注释信息": [
+        "@type { UnbondCause }",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@crossplatform",
+        "@since 13"
+      ],
+      "层级": 2,
+      "上级": "BondStateParam",
+      "since_version": "13",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "PinRequiredParam",
+      "所属模块": "未知模块",
+      "功能描述": "Describes the bond key param.",
+      "注释信息": [
+        "@typedef PinRequiredParam",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "connection",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "deviceId",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "ID of the device to pair.",
+      "注释信息": [
+        "@type { string }",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "PinRequiredParam",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "pinCode",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Key for the device pairing.",
+      "注释信息": [
+        "@type { string }",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "PinRequiredParam",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "DeviceClass",
+      "所属模块": "未知模块",
+      "功能描述": "Describes the class of a bluetooth device.",
+      "注释信息": [
+        "@typedef DeviceClass",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@crossplatform",
+        "@since 13"
+      ],
+      "层级": 2,
+      "上级": "connection",
+      "since_version": "13",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "majorClass",
+      "属性类型": "MajorClass",
+      "所属模块": "未知模块",
+      "功能描述": "Major classes of Bluetooth devices.",
+      "注释信息": [
+        "@type { MajorClass }",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@crossplatform",
+        "@since 13"
+      ],
+      "层级": 2,
+      "上级": "DeviceClass",
+      "since_version": "13",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "majorMinorClass",
+      "属性类型": "MajorMinorClass",
+      "所属模块": "未知模块",
+      "功能描述": "Major and minor classes of Bluetooth devices.",
+      "注释信息": [
+        "@type { MajorMinorClass }",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@crossplatform",
+        "@since 13"
+      ],
+      "层级": 2,
+      "上级": "DeviceClass",
+      "since_version": "13",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "class",
+      "名称": null,
+      "所属模块": "未知模块",
+      "功能描述": "Class of the device.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@crossplatform",
+        "@since 13"
+      ],
+      "层级": 2,
+      "上级": "DeviceClass",
+      "since_version": "13",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "BluetoothTransport",
+      "所属模块": "未知模块",
+      "功能描述": "Enum for the transport of a remote device",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "connection",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "TRANSPORT_BR_EDR",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "The value of bluetooth transport BR/EDR.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "BluetoothTransport",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "TRANSPORT_LE",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "The value of bluetooth transport LE.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "BluetoothTransport",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "TRANSPORT_DUAL",
+      "值": "2",
+      "所属模块": "未知模块",
+      "功能描述": "The value of bluetooth transport DUAL.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "BluetoothTransport",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "TRANSPORT_UNKNOWN",
+      "值": "3",
+      "所属模块": "未知模块",
+      "功能描述": "The unknown bluetooth transport.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "BluetoothTransport",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "ScanMode",
+      "所属模块": "未知模块",
+      "功能描述": "The enum of BR scan mode.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@crossplatform",
+        "@since 13"
+      ],
+      "层级": 2,
+      "上级": "connection",
+      "since_version": "13",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "SCAN_MODE_NONE",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the scan mode is none",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@crossplatform",
+        "@since 13"
+      ],
+      "层级": 2,
+      "上级": "ScanMode",
+      "since_version": "13",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "SCAN_MODE_CONNECTABLE",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the scan mode is connectable",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@crossplatform",
+        "@since 13"
+      ],
+      "层级": 2,
+      "上级": "ScanMode",
+      "since_version": "13",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "SCAN_MODE_GENERAL_DISCOVERABLE",
+      "值": "2",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the scan mode is general discoverable",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "ScanMode",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "SCAN_MODE_LIMITED_DISCOVERABLE",
+      "值": "3",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the scan mode is limited discoverable",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "ScanMode",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "SCAN_MODE_CONNECTABLE_GENERAL_DISCOVERABLE",
+      "值": "4",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the scan mode is connectable and general discoverable",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@crossplatform",
+        "@since 13"
+      ],
+      "层级": 2,
+      "上级": "ScanMode",
+      "since_version": "13",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "SCAN_MODE_CONNECTABLE_LIMITED_DISCOVERABLE",
+      "值": "5",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the scan mode is connectable and limited discoverable",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "ScanMode",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "BondState",
+      "所属模块": "未知模块",
+      "功能描述": "The enum of bond state.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 13"
+      ],
+      "层级": 2,
+      "上级": "connection",
+      "since_version": "13",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "BOND_STATE_INVALID",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "Indicate the bond state is invalid",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 13"
+      ],
+      "层级": 2,
+      "上级": "BondState",
+      "since_version": "13",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "BOND_STATE_BONDING",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Indicate the bond state is bonding",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 13"
+      ],
+      "层级": 2,
+      "上级": "BondState",
+      "since_version": "13",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "BOND_STATE_BONDED",
+      "值": "2",
+      "所属模块": "未知模块",
+      "功能描述": "Indicate the bond state is bonded",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 13"
+      ],
+      "层级": 2,
+      "上级": "BondState",
+      "since_version": "13",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "DiscoveryResult",
+      "所属模块": "未知模块",
+      "功能描述": "Describes the contents of the discovery results",
+      "注释信息": [
+        "@typedef DiscoveryResult",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 18"
+      ],
+      "层级": 2,
+      "上级": "connection",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "deviceId",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Identify of the discovery device",
+      "注释信息": [
+        "@type { string }",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 18"
+      ],
+      "层级": 2,
+      "上级": "DiscoveryResult",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "rssi",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "RSSI of the remote device",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 18"
+      ],
+      "层级": 2,
+      "上级": "DiscoveryResult",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "deviceName",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "The local name of the device",
+      "注释信息": [
+        "@type { string }",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 18"
+      ],
+      "层级": 2,
+      "上级": "DiscoveryResult",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "deviceClass",
+      "属性类型": "DeviceClass",
+      "所属模块": "未知模块",
+      "功能描述": "The class of the device",
+      "注释信息": [
+        "@type { DeviceClass }",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 18"
+      ],
+      "层级": 2,
+      "上级": "DiscoveryResult",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "BatteryInfo",
+      "所属模块": "未知模块",
+      "功能描述": "Describes the contents of the battery information.",
+      "注释信息": [
+        "@typedef BatteryInfo",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "connection",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "batteryLevel",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Electricity value of the general device. {@code -1} means no power information.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "BatteryInfo",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "leftEarBatteryLevel",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Electricity value of the left ear. {@code -1} means no power information.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "BatteryInfo",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "leftEarChargeState",
+      "属性类型": "DeviceChargeState",
+      "所属模块": "未知模块",
+      "功能描述": "The charge state of the left ear.",
+      "注释信息": [
+        "@type { DeviceChargeState }",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "BatteryInfo",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "rightEarBatteryLevel",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Electricity value of the right ear. {@code -1} means no power information.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "BatteryInfo",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "rightEarChargeState",
+      "属性类型": "DeviceChargeState",
+      "所属模块": "未知模块",
+      "功能描述": "The charge state of the right ear.",
+      "注释信息": [
+        "@type { DeviceChargeState }",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "BatteryInfo",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "boxBatteryLevel",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Electricity value of the box. {@code -1} means no power information.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "BatteryInfo",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "boxChargeState",
+      "属性类型": "DeviceChargeState",
+      "所属模块": "未知模块",
+      "功能描述": "The charge state of the box.",
+      "注释信息": [
+        "@type { DeviceChargeState }",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "BatteryInfo",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "DeviceChargeState",
+      "所属模块": "未知模块",
+      "功能描述": "Enum for the charge state.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "connection",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "DEVICE_NORMAL_CHARGE_NOT_CHARGED",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "Not support super charge, and not charged.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "DeviceChargeState",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "DEVICE_NORMAL_CHARGE_IN_CHARGING",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Not support super charge, and in charging.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "DeviceChargeState",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "DEVICE_SUPER_CHARGE_NOT_CHARGED",
+      "值": "2",
+      "所属模块": "未知模块",
+      "功能描述": "Support super charge, and not charged.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "DeviceChargeState",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "DEVICE_SUPER_CHARGE_IN_CHARGING",
+      "值": "3",
+      "所属模块": "未知模块",
+      "功能描述": "Support super charge, and in charging.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "DeviceChargeState",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "UnbondCause",
+      "所属模块": "未知模块",
+      "功能描述": "Enum for cause of unbond.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@crossplatform",
+        "@since 13"
+      ],
+      "层级": 2,
+      "上级": "connection",
+      "since_version": "13",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "USER_REMOVED",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "User proactively removed device.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@crossplatform",
+        "@since 13"
+      ],
+      "层级": 2,
+      "上级": "UnbondCause",
+      "since_version": "13",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "REMOTE_DEVICE_DOWN",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Remote device shut down.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "UnbondCause",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "AUTH_FAILURE",
+      "值": "2",
+      "所属模块": "未知模块",
+      "功能描述": "Wrong PIN code.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "UnbondCause",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "AUTH_REJECTED",
+      "值": "3",
+      "所属模块": "未知模块",
+      "功能描述": "Remote device rejected.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "UnbondCause",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "INTERNAL_ERROR",
+      "值": "4",
+      "所属模块": "未知模块",
+      "功能描述": "Internal error.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "UnbondCause",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    }
+  ]
+}

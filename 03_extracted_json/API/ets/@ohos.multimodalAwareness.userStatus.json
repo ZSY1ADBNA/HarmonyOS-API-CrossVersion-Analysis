@@ -1,0 +1,252 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.MultimodalAwarenessKit",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "namespace",
+      "名称": "userStatus",
+      "所属模块": "@kit.MultimodalAwarenessKit",
+      "功能描述": "This module provides the capability to subscribe to report the user status.",
+      "注释信息": [
+        "@namespace userStatus",
+        "@syscap SystemCapability.MultimodalAwareness.UserStatus",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "@kit.MultimodalAwarenessKit",
+      "since_version": "20",
+      "system_capability": "SystemCapability.MultimodalAwareness.UserStatus",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "UserClassification",
+      "所属模块": "未知模块",
+      "功能描述": "Represents the classification result of the user based on age group, including the detected category (e.g., child or adult) and the confidence score.",
+      "注释信息": [
+        "@interface UserClassification",
+        "@syscap SystemCapability.MultimodalAwareness.UserStatus",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "userStatus",
+      "since_version": "20",
+      "system_capability": "SystemCapability.MultimodalAwareness.UserStatus",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "ageGroup",
+      "属性类型": "UserAgeGroup",
+      "所属模块": "未知模块",
+      "功能描述": "ageGroup",
+      "注释信息": [
+        "@type  { ?UserAgeGroup }",
+        "@syscap SystemCapability.MultimodalAwareness.UserStatus",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "UserClassification",
+      "since_version": "20",
+      "system_capability": "SystemCapability.MultimodalAwareness.UserStatus",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "confidence",
+      "属性类型": "float",
+      "所属模块": "未知模块",
+      "功能描述": "confidence for the detected ageGroup",
+      "注释信息": [
+        "@type  { ?float }",
+        "@syscap SystemCapability.MultimodalAwareness.UserStatus",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "UserClassification",
+      "since_version": "20",
+      "system_capability": "SystemCapability.MultimodalAwareness.UserStatus",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "UserAgeGroup",
+      "所属模块": "未知模块",
+      "功能描述": "Represents the user's age group (e.g., child, adult).",
+      "注释信息": [
+        "@enum { number } UserAgeGroup",
+        "@syscap SystemCapability.MultimodalAwareness.UserStatus",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "userStatus",
+      "since_version": "20",
+      "system_capability": "SystemCapability.MultimodalAwareness.UserStatus",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "OTHERS",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the operator is not a child.",
+      "注释信息": [
+        "@syscap SystemCapability.MultimodalAwareness.UserStatus",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "UserAgeGroup",
+      "since_version": "20",
+      "system_capability": "SystemCapability.MultimodalAwareness.UserStatus",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CHILD",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the operator is a child.",
+      "注释信息": [
+        "@syscap SystemCapability.MultimodalAwareness.UserStatus",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "UserAgeGroup",
+      "since_version": "20",
+      "system_capability": "SystemCapability.MultimodalAwareness.UserStatus",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Subscribe to age group detection feature. <br> device capabilities. <br>1. System error, such as a null pointer and container-related exception. <br>2. Node-API invocation exception, such as invalid Node-API status. <br>1. Callback registration failed. <br>2. Failed to bind the native object to the JS wrapper. <br>3. Node-API invocation exception, such as invalid Node-API status. <br>4. IPC request exception.",
+      "注释信息": [
+        "@param { 'userAgeGroupDetected' } type - Indicates the event type.",
+        "@param { Callback<UserClassification> } callback - Indicates the callback for getting the event data.",
+        "@throws { BusinessError } 801 - Capability not supported. Function can not work correctly due to limited",
+        "@throws { BusinessError } 33900001 - Service exception. Possible causes:",
+        "@throws { BusinessError } 33900002 - Subscription failed. Possible causes:",
+        "@syscap SystemCapability.MultimodalAwareness.UserStatus",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "userStatus",
+      "since_version": "20",
+      "system_capability": "SystemCapability.MultimodalAwareness.UserStatus",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'userAgeGroupDetected'",
+          "必填": true,
+          "说明": "Indicates the event type."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<UserClassification>",
+          "必填": true,
+          "说明": "Indicates the callback for getting the event data."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "801",
+          "description": "Capability not supported. Function can not work correctly due to limited"
+        },
+        {
+          "code": "33900001",
+          "description": "Service exception. Possible causes:"
+        },
+        {
+          "code": "33900002",
+          "description": "Subscription failed. Possible causes:"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unsubscribe to age group detection feature. <br> device capabilities. <br>1. System error, such as a null pointer and container-related exception. <br>2. Node-API invocation exception, such as invalid Node-API status. <br>1. Callback failure. <br>2. Node-API invocation exception, such as invalid Node-API status. <br>3. IPC request exception.",
+      "注释信息": [
+        "@param { 'userAgeGroupDetected' } type - Indicates the event type.",
+        "@param { Callback<UserClassification> } [callback] - Indicates the callback for getting the event data.",
+        "@throws { BusinessError } 801 - Capability not supported. Function can not work correctly due to limited",
+        "@throws { BusinessError } 33900001 - Service exception. Possible causes:",
+        "@throws { BusinessError } 33900003 - Unsubscription failed. Possible causes:",
+        "@syscap SystemCapability.MultimodalAwareness.UserStatus",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "userStatus",
+      "since_version": "20",
+      "system_capability": "SystemCapability.MultimodalAwareness.UserStatus",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'userAgeGroupDetected'",
+          "必填": true,
+          "说明": "Indicates the event type."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "Callback<UserClassification> } [callback] - Indicates the callback for getting the event data."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "801",
+          "description": "Capability not supported. Function can not work correctly due to limited"
+        },
+        {
+          "code": "33900001",
+          "description": "Service exception. Possible causes:"
+        },
+        {
+          "code": "33900003",
+          "description": "Unsubscription failed. Possible causes:"
+        }
+      ],
+      "版本": "API"
+    }
+  ]
+}

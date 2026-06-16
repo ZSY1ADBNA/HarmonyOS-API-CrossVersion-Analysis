@@ -1,0 +1,2373 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.ArkUI",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "namespace",
+      "名称": "PiPWindow",
+      "所属模块": "@kit.ArkUI",
+      "功能描述": "Picture In Picture Window Manager",
+      "注释信息": [
+        "@namespace PiPWindow",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "@kit.ArkUI",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "isPiPEnabled",
+      "返回值": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "If picture-in-picture enabled in current OS.",
+      "注释信息": [
+        "@returns { boolean } true if PictureInPicture enabled, otherwise false",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "PiPWindow",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "true if PictureInPicture enabled, otherwise false",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "create",
+      "返回值": "Promise<PiPController>",
+      "所属模块": "未知模块",
+      "功能描述": "Create picture-in-picture controller the context and componentController in config should not be null. If templateType is specified, make sure it's type of PiPTemplateType. If controlGroups is specified, make sure it correspond to the templateType. 2. Incorrect parameter types. 3. Parameter verification failed",
+      "注释信息": [
+        "@param { PiPConfiguration } config - Params for picture-in-picture controller creation. The config must be valid,",
+        "@returns { Promise<PiPController> } - The promise returned by the function",
+        "@throws { BusinessError } 401 - Params error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 801 - Capability not supported. Failed to call the API due to limited device capabilities.",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "PiPWindow",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [
+        {
+          "名称": "config",
+          "类型": "PiPConfiguration",
+          "必填": true,
+          "说明": "Params for picture-in-picture controller creation. The config must be valid,"
+        }
+      ],
+      "return_description": "- The promise returned by the function",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Params error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported. Failed to call the API due to limited device capabilities."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "create",
+      "返回值": "Promise<PiPController>",
+      "所属模块": "未知模块",
+      "功能描述": "Create picture-in-picture controller the context and componentController in config should not be null. If templateType is specified, make sure it's type of PiPTemplateType. If controlGroups is specified, make sure it correspond to the templateType. Indicates the node which display the content of pip window. 2. Incorrect parameter types. 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { PiPConfiguration } config - Params for picture-in-picture controller creation. The config must be valid,",
+        "@param { typeNode.XComponent } contentNode - Params for picture-in-picture controller creation.",
+        "@returns { Promise<PiPController> } - The promise returned by the function",
+        "@throws { BusinessError } 401 - Params error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 801 - Capability not supported. Failed to call the API due to limited device capabilities.",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "PiPWindow",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [
+        {
+          "名称": "config",
+          "类型": "PiPConfiguration",
+          "必填": true,
+          "说明": "Params for picture-in-picture controller creation. The config must be valid,"
+        },
+        {
+          "名称": "contentNode",
+          "类型": "typeNode.XComponent",
+          "必填": true,
+          "说明": "Params for picture-in-picture controller creation."
+        }
+      ],
+      "return_description": "- The promise returned by the function",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Params error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported. Failed to call the API due to limited device capabilities."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "PiPConfiguration",
+      "所属模块": "未知模块",
+      "功能描述": "PiPConfiguration",
+      "注释信息": [
+        "@interface PiPConfiguration",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "PiPWindow",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "context",
+      "属性类型": "BaseContext",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates window context.",
+      "注释信息": [
+        "@type { BaseContext }",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "PiPConfiguration",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "componentController",
+      "属性类型": "XComponentController",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the origin XComponentController.",
+      "注释信息": [
+        "@type { XComponentController }",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "PiPConfiguration",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "navigationId",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates navigation ID.",
+      "注释信息": [
+        "@type { ?string }",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "PiPConfiguration",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "handleId",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the page ID.",
+      "注释信息": [
+        "@type { ?number } The page ID to which the PiP needs to restore.",
+        "@default -1",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "PiPConfiguration",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "templateType",
+      "属性类型": "PiPTemplateType",
+      "所属模块": "未知模块",
+      "功能描述": "Picture-in-picture template type.",
+      "注释信息": [
+        "@type { ?PiPTemplateType }",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "PiPConfiguration",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "contentWidth",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Describes the width of content to be displayed in PiP window. For adjusting PiP window aspect ratio.",
+      "注释信息": [
+        "@type { ?number }",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "PiPConfiguration",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "contentHeight",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Describes the height of content to be displayed in PiP window. For adjusting PiP window aspect ratio.",
+      "注释信息": [
+        "@type { ?number }",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "PiPConfiguration",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "controlGroups",
+      "属性类型": "Array<PiPControlGroup>",
+      "所属模块": "未知模块",
+      "功能描述": "Describes the custom controls to be displayed in PiP window control panel. If the parameter is empty, only mandatory controls are displayed.",
+      "注释信息": [
+        "@type { ?Array<PiPControlGroup> }",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "PiPConfiguration",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "customUIController",
+      "属性类型": "NodeController",
+      "所属模块": "未知模块",
+      "功能描述": "Describes the customUIController by which we can display a custom layout above pip content.",
+      "注释信息": [
+        "@type { ?NodeController }",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "PiPConfiguration",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "localStorage",
+      "属性类型": "LocalStorage",
+      "所属模块": "未知模块",
+      "功能描述": "Describes the data object shared within the content instance loaded by the window.",
+      "注释信息": [
+        "@type { ?LocalStorage }",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 17"
+      ],
+      "层级": 2,
+      "上级": "PiPConfiguration",
+      "since_version": "17",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "defaultWindowSizeType",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Describes the default picture-in-picture window size as it is started. 0: not set. 1: small size. 2: large size.",
+      "注释信息": [
+        "@type { ?number }",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 19"
+      ],
+      "层级": 2,
+      "上级": "PiPConfiguration",
+      "since_version": "19",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "cornerAdsorptionEnabled",
+      "属性类型": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Describes whether the picture-in-picture is four-corner absorpted or free to move.",
+      "注释信息": [
+        "@type { ?boolean }",
+        "@default true",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "PiPConfiguration",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "PiPWindowSize",
+      "所属模块": "未知模块",
+      "功能描述": "The picture-in-picture window size",
+      "注释信息": [
+        "@interface PiPWindowSize",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "PiPWindow",
+      "since_version": "15",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "width",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "The width of the picture-in-picture window.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "PiPWindowSize",
+      "since_version": "15",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "height",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "The height of the picture-in-picture window.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "PiPWindowSize",
+      "since_version": "15",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "scale",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "The scale of the picture-in-picture window.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "PiPWindowSize",
+      "since_version": "15",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "PiPWindowInfo",
+      "所属模块": "未知模块",
+      "功能描述": "The info of picture-in-picture window",
+      "注释信息": [
+        "@interface PiPWindowInfo",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "PiPWindow",
+      "since_version": "15",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "windowId",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates target window id.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "PiPWindowInfo",
+      "since_version": "15",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "size",
+      "属性类型": "PiPWindowSize",
+      "所属模块": "未知模块",
+      "功能描述": "The picture-in-picture window size.",
+      "注释信息": [
+        "@type { PiPWindowSize }",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "PiPWindowInfo",
+      "since_version": "15",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "PiPTemplateType",
+      "所属模块": "未知模块",
+      "功能描述": "Describe the type of picture-in-picture.",
+      "注释信息": [
+        "@enum { number }.",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "PiPWindow",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "VIDEO_PLAY",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the content to show in picture-in-picture window is video play",
+      "注释信息": [
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "PiPTemplateType",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "VIDEO_CALL",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the content to show in picture-in-picture window is video call",
+      "注释信息": [
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "PiPTemplateType",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "VIDEO_MEETING",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the content to show in picture-in-picture window is video meeting",
+      "注释信息": [
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "PiPTemplateType",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "VIDEO_LIVE",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the content to show in picture-in-picture window is video live",
+      "注释信息": [
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "PiPTemplateType",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "PiPState",
+      "所属模块": "未知模块",
+      "功能描述": "Enum for PiP window callback event type.",
+      "注释信息": [
+        "@enum { number }.",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "PiPWindow",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "ABOUT_TO_START",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "PiP window is about to start.",
+      "注释信息": [
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "PiPState",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "STARTED",
+      "值": "2",
+      "所属模块": "未知模块",
+      "功能描述": "PiP window started.",
+      "注释信息": [
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "PiPState",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "ABOUT_TO_STOP",
+      "值": "3",
+      "所属模块": "未知模块",
+      "功能描述": "PiP window is about to stop.",
+      "注释信息": [
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "PiPState",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "STOPPED",
+      "值": "4",
+      "所属模块": "未知模块",
+      "功能描述": "PiP window stopped.",
+      "注释信息": [
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "PiPState",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "ABOUT_TO_RESTORE",
+      "值": "5",
+      "所属模块": "未知模块",
+      "功能描述": "Restore the original page from PiP window",
+      "注释信息": [
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "PiPState",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "ERROR",
+      "值": "6",
+      "所属模块": "未知模块",
+      "功能描述": "Error occurs during the lifecycle of PiP window.",
+      "注释信息": [
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "PiPState",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "type_alias",
+      "名称": "PiPControlGroup",
+      "所属模块": "未知模块",
+      "功能描述": "Describe optional component groups of PiP window.",
+      "注释信息": [
+        "@typedef { VideoPlayControlGroup | VideoCallControlGroup | VideoMeetingControlGroup | VideoLiveControlGroup }",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "PiPWindow",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "VideoPlayControlGroup",
+      "所属模块": "未知模块",
+      "功能描述": "Enum for video play component groups of PiP window.",
+      "注释信息": [
+        "@enum { number }.",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "PiPWindow",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "VIDEO_PREVIOUS_NEXT",
+      "值": "101",
+      "所属模块": "未知模块",
+      "功能描述": "Previous/Next for video.",
+      "注释信息": [
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "VideoPlayControlGroup",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "FAST_FORWARD_BACKWARD",
+      "值": "102",
+      "所属模块": "未知模块",
+      "功能描述": "Forward/Backward for video.",
+      "注释信息": [
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "VideoPlayControlGroup",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "VideoCallControlGroup",
+      "所属模块": "未知模块",
+      "功能描述": "Enum for video call component groups of PiP window.",
+      "注释信息": [
+        "@enum { number }.",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "PiPWindow",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "MICROPHONE_SWITCH",
+      "值": "201",
+      "所属模块": "未知模块",
+      "功能描述": "Turn on/off the microphone.",
+      "注释信息": [
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "VideoCallControlGroup",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "HANG_UP_BUTTON",
+      "值": "202",
+      "所属模块": "未知模块",
+      "功能描述": "Hang up.",
+      "注释信息": [
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "VideoCallControlGroup",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CAMERA_SWITCH",
+      "值": "203",
+      "所属模块": "未知模块",
+      "功能描述": "Turn on/off the camera",
+      "注释信息": [
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "VideoCallControlGroup",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "MUTE_SWITCH",
+      "值": "204",
+      "所属模块": "未知模块",
+      "功能描述": "Mute switch.",
+      "注释信息": [
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "VideoCallControlGroup",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "VideoMeetingControlGroup",
+      "所属模块": "未知模块",
+      "功能描述": "Enum for video meeting component groups of PiP window.",
+      "注释信息": [
+        "@enum { number }.",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "PiPWindow",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "HANG_UP_BUTTON",
+      "值": "301",
+      "所属模块": "未知模块",
+      "功能描述": "Hang up.",
+      "注释信息": [
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "VideoMeetingControlGroup",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CAMERA_SWITCH",
+      "值": "302",
+      "所属模块": "未知模块",
+      "功能描述": "Turn on/off the camera",
+      "注释信息": [
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "VideoMeetingControlGroup",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "MUTE_SWITCH",
+      "值": "303",
+      "所属模块": "未知模块",
+      "功能描述": "Mute switch.",
+      "注释信息": [
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "VideoMeetingControlGroup",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "MICROPHONE_SWITCH",
+      "值": "304",
+      "所属模块": "未知模块",
+      "功能描述": "Turn on/off the microphone.",
+      "注释信息": [
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "VideoMeetingControlGroup",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "VideoLiveControlGroup",
+      "所属模块": "未知模块",
+      "功能描述": "Enum for video Live component groups of PiP window.",
+      "注释信息": [
+        "@enum { number }.",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "PiPWindow",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "VIDEO_PLAY_PAUSE",
+      "值": "401",
+      "所属模块": "未知模块",
+      "功能描述": "Video play/pause control.",
+      "注释信息": [
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "VideoLiveControlGroup",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "MUTE_SWITCH",
+      "值": "402",
+      "所属模块": "未知模块",
+      "功能描述": "Mute switch.",
+      "注释信息": [
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "VideoLiveControlGroup",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "PiPControlStatus",
+      "所属模块": "未知模块",
+      "功能描述": "Enum for control status.",
+      "注释信息": [
+        "@enum { number }.",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "PiPWindow",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "PLAY",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "The video is in play mode.",
+      "注释信息": [
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "PiPControlStatus",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "PAUSE",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "The video is in pause mode.",
+      "注释信息": [
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "PiPControlStatus",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "OPEN",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "A control with both open and closed states is in an open state.",
+      "注释信息": [
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "PiPControlStatus",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CLOSE",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "A control with both open and closed states is in a close state.",
+      "注释信息": [
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "PiPControlStatus",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "PiPControlType",
+      "所属模块": "未知模块",
+      "功能描述": "Enum for control type.",
+      "注释信息": [
+        "@enum { number }.",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "PiPWindow",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "VIDEO_PLAY_PAUSE",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "Video play/pause control.",
+      "注释信息": [
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "PiPControlType",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "VIDEO_PREVIOUS",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Previous video control.",
+      "注释信息": [
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "PiPControlType",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "VIDEO_NEXT",
+      "值": "2",
+      "所属模块": "未知模块",
+      "功能描述": "Next video control.",
+      "注释信息": [
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "PiPControlType",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "FAST_FORWARD",
+      "值": "3",
+      "所属模块": "未知模块",
+      "功能描述": "Fast-forward control.",
+      "注释信息": [
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "PiPControlType",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "FAST_BACKWARD",
+      "值": "4",
+      "所属模块": "未知模块",
+      "功能描述": "Fast-backward control.",
+      "注释信息": [
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "PiPControlType",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "HANG_UP_BUTTON",
+      "值": "5",
+      "所属模块": "未知模块",
+      "功能描述": "Hang-up control.",
+      "注释信息": [
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "PiPControlType",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "MICROPHONE_SWITCH",
+      "值": "6",
+      "所属模块": "未知模块",
+      "功能描述": "Microphone state switching control.",
+      "注释信息": [
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "PiPControlType",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CAMERA_SWITCH",
+      "值": "7",
+      "所属模块": "未知模块",
+      "功能描述": "Camera state switching control.",
+      "注释信息": [
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "PiPControlType",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "MUTE_SWITCH",
+      "值": "8",
+      "所属模块": "未知模块",
+      "功能描述": "Mute state switching control.",
+      "注释信息": [
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "PiPControlType",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "type_alias",
+      "名称": "PiPActionEventType",
+      "所属模块": "未知模块",
+      "功能描述": "Describe picture-in-picture action event type.",
+      "注释信息": [
+        "@typedef { PiPVideoActionEvent | PiPCallActionEvent | PiPMeetingActionEvent | PiPLiveActionEvent }",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "PiPWindow",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "type_alias",
+      "名称": "PiPVideoActionEvent",
+      "所属模块": "未知模块",
+      "功能描述": "Describe picture-in-picture video template action event type.",
+      "注释信息": [
+        "@typedef { 'playbackStateChanged' | 'nextVideo' | 'previousVideo' | 'fastForward' | 'fastBackward' }",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "PiPWindow",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "type_alias",
+      "名称": "PiPCallActionEvent",
+      "所属模块": "未知模块",
+      "功能描述": "Describe picture-in-picture call template action event type.",
+      "注释信息": [
+        "@typedef { 'hangUp' | 'micStateChanged' | 'videoStateChanged' | 'voiceStateChanged' }",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "PiPWindow",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "type_alias",
+      "名称": "PiPMeetingActionEvent",
+      "所属模块": "未知模块",
+      "功能描述": "Describe picture-in-picture meeting template action event type.",
+      "注释信息": [
+        "@typedef { 'hangUp' | 'voiceStateChanged' | 'videoStateChanged' | 'micStateChanged' }",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "PiPWindow",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "type_alias",
+      "名称": "PiPLiveActionEvent",
+      "所属模块": "未知模块",
+      "功能描述": "Describe picture-in-picture live template action event type.",
+      "注释信息": [
+        "@typedef { 'playbackStateChanged' | 'voiceStateChanged' }",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "PiPWindow",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "type_alias",
+      "名称": "ControlPanelActionEventCallback",
+      "所属模块": "未知模块",
+      "功能描述": "Describe picture-in-picture control panel action event callback.",
+      "注释信息": [
+        "@typedef { function } ControlPanelActionEventCallback",
+        "@param { PiPActionEventType } event - the event from controlPanel",
+        "@param { number } [status] - the status of control button",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "PiPWindow",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "ControlEventParam",
+      "所属模块": "未知模块",
+      "功能描述": "Describe picture-in-picture control event callback.",
+      "注释信息": [
+        "@interface ControlEventParam",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "PiPWindow",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "controlType",
+      "属性类型": "PiPControlType",
+      "所属模块": "未知模块",
+      "功能描述": "The type of control.",
+      "注释信息": [
+        "@type { PiPControlType }",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "ControlEventParam",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "status",
+      "属性类型": "PiPControlStatus",
+      "所属模块": "未知模块",
+      "功能描述": "The status of control.",
+      "注释信息": [
+        "@type { ?PiPControlStatus }",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "ControlEventParam",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "PiPController",
+      "所属模块": "未知模块",
+      "功能描述": "PiPController",
+      "注释信息": [
+        "@interface PiPController",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "PiPWindow",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "startPiP",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Start picture-in-picture",
+      "注释信息": [
+        "@returns { Promise<void> } - The promise returned by the function",
+        "@throws { BusinessError } 1300012 - The PiP window state is abnormal.",
+        "@throws { BusinessError } 1300013 - Failed to create the PiP window.",
+        "@throws { BusinessError } 1300014 - PiP internal error.",
+        "@throws { BusinessError } 1300015 - Repeated PiP operation.",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "PiPController",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "- The promise returned by the function",
+      "error_codes": [
+        {
+          "code": "1300012",
+          "description": "The PiP window state is abnormal."
+        },
+        {
+          "code": "1300013",
+          "description": "Failed to create the PiP window."
+        },
+        {
+          "code": "1300014",
+          "description": "PiP internal error."
+        },
+        {
+          "code": "1300015",
+          "description": "Repeated PiP operation."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "stopPiP",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Stop picture-in-picture.",
+      "注释信息": [
+        "@returns { Promise<void> } - The promise returned by the function.",
+        "@throws { BusinessError } 1300011 - Failed to destroy the PiP window.",
+        "@throws { BusinessError } 1300012 - The PiP window state is abnormal.",
+        "@throws { BusinessError } 1300015 - Repeated PiP operation.",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "PiPController",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "- The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "1300011",
+          "description": "Failed to destroy the PiP window."
+        },
+        {
+          "code": "1300012",
+          "description": "The PiP window state is abnormal."
+        },
+        {
+          "code": "1300015",
+          "description": "Repeated PiP operation."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "setAutoStartEnabled",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Set if auto start picture-in-picture when back home",
+      "注释信息": [
+        "@param { boolean } enable - Enable auto start picture-in-picture when back home",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "PiPController",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [
+        {
+          "名称": "enable",
+          "类型": "boolean",
+          "必填": true,
+          "说明": "Enable auto start picture-in-picture when back home"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "updateContentSize",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Update source content size to adjust PiP window aspect ratio.",
+      "注释信息": [
+        "@param { number } width - Indicate the width of the content. The width can consist of only digits and above 0.",
+        "@param { number } height - Indicate the height of the content. The height can consist of only digits and above 0.",
+        "@throws { BusinessError } 401 - Params error. Possible causes: The PiPController is not created or destroyed.",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "PiPController",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [
+        {
+          "名称": "width",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicate the width of the content. The width can consist of only digits and above 0."
+        },
+        {
+          "名称": "height",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicate the height of the content. The height can consist of only digits and above 0."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Params error. Possible causes: The PiPController is not created or destroyed."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "updatePiPControlStatus",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Set dashboard control status.",
+      "注释信息": [
+        "@param { PiPControlType } controlType - Describe picture-in-picture control type.",
+        "@param { PiPControlStatus } status - Describe picture-in-picture control Status.",
+        "@throws { BusinessError } 401 - Params error. Possible causes: The PiPController is not created or destroyed.",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "PiPController",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [
+        {
+          "名称": "controlType",
+          "类型": "PiPControlType",
+          "必填": true,
+          "说明": "Describe picture-in-picture control type."
+        },
+        {
+          "名称": "status",
+          "类型": "PiPControlStatus",
+          "必填": true,
+          "说明": "Describe picture-in-picture control Status."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Params error. Possible causes: The PiPController is not created or destroyed."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "updateContentNode",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Update the node which display the content of PiP window. 2. Incorrect parameter types. 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { typeNode.XComponent } contentNode - The node which display the content of pip window.",
+        "@returns { Promise<void> } - The promise returned by the function.",
+        "@throws { BusinessError } 401 - Params error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 801 - Capability not supported. Failed to call the API due to limited device capabilities.",
+        "@throws { BusinessError } 1300014 - PiP internal error.",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 18"
+      ],
+      "层级": 2,
+      "上级": "PiPController",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [
+        {
+          "名称": "contentNode",
+          "类型": "typeNode.XComponent",
+          "必填": true,
+          "说明": "The node which display the content of pip window."
+        }
+      ],
+      "return_description": "- The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Params error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported. Failed to call the API due to limited device capabilities."
+        },
+        {
+          "code": "1300014",
+          "description": "PiP internal error."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "setPiPControlEnabled",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Set Dashboard control enable status.",
+      "注释信息": [
+        "@param { PiPControlType } controlType - Describe picture-in-picture control type.",
+        "@param { boolean } enabled - Describe picture-in-picture control enable Status.",
+        "@throws { BusinessError } 401 - Params error. Possible causes: The PiPController is not created or destroyed.",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "PiPController",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [
+        {
+          "名称": "controlType",
+          "类型": "PiPControlType",
+          "必填": true,
+          "说明": "Describe picture-in-picture control type."
+        },
+        {
+          "名称": "enabled",
+          "类型": "boolean",
+          "必填": true,
+          "说明": "Describe picture-in-picture control enable Status."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Params error. Possible causes: The PiPController is not created or destroyed."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getPiPWindowInfo",
+      "返回值": "Promise<PiPWindowInfo>",
+      "所属模块": "未知模块",
+      "功能描述": "Get the info of PiP window.",
+      "注释信息": [
+        "@returns { Promise<PiPWindowInfo> } - The promise used to return the PIP window info.",
+        "@throws { BusinessError } 801 - Capability not supported. Failed to call the API due to limited device capabilities.",
+        "@throws { BusinessError } 1300014 - PiP internal error.",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "PiPController",
+      "since_version": "15",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "- The promise used to return the PIP window info.",
+      "error_codes": [
+        {
+          "code": "801",
+          "description": "Capability not supported. Failed to call the API due to limited device capabilities."
+        },
+        {
+          "code": "1300014",
+          "description": "PiP internal error."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getPiPSettingSwitch",
+      "返回值": "Promise<boolean>",
+      "所属模块": "未知模块",
+      "功能描述": "Get the PiP switch status of system setting.",
+      "注释信息": [
+        "@returns { Promise<boolean> } - The promise used to return the PIP switch status.",
+        "@throws { BusinessError } 801 - Capability not supported. Failed to call the API due to limited device capabilities.",
+        "@throws { BusinessError } 1300014 - PiP internal error.",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "PiPController",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "- The promise used to return the PIP switch status.",
+      "error_codes": [
+        {
+          "code": "801",
+          "description": "Capability not supported. Failed to call the API due to limited device capabilities."
+        },
+        {
+          "code": "1300014",
+          "description": "PiP internal error."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "isPiPActive",
+      "返回值": "Promise<boolean>",
+      "所属模块": "未知模块",
+      "功能描述": "Returns a Boolean value that indicates whether picture-in-picture is active Device Behavior Differences:This interface can be normally invoked on phone, tablet, PC and TV devices, but cannot be invoked on other devices because the controller cannot be created on them. True if PIP window is onscreen, otherwise false.",
+      "注释信息": [
+        "@returns { Promise<boolean> } - The promise used to return the PIP window active status.",
+        "@throws { BusinessError } 1300014 - PiP internal error.",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "PiPController",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "- The promise used to return the PIP window active status.",
+      "error_codes": [
+        {
+          "code": "1300014",
+          "description": "PiP internal error."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Register picture-in-picture control event listener.",
+      "注释信息": [
+        "@param { 'stateChange' } type - Registration type, PiP lifecycle state change, 'stateChange'",
+        "@param { function } callback - Used to handle {'stateChange'} command",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "PiPController",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'stateChange'",
+          "必填": true,
+          "说明": "Registration type, PiP lifecycle state change, 'stateChange'"
+        },
+        {
+          "名称": "callback",
+          "类型": "function",
+          "必填": true,
+          "说明": "Used to handle {'stateChange'} command"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unregister picture-in-picture lifecycle event listener.",
+      "注释信息": [
+        "@param { 'stateChange' } type - Used to unregister listener for {'stateChange'} command",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "PiPController",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'stateChange'",
+          "必填": true,
+          "说明": "Used to unregister listener for {'stateChange'} command"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Register picture-in-picture control event listener.",
+      "注释信息": [
+        "@param { 'controlPanelActionEvent' } type - Registration type, user action event, 'controlPanelActionEvent'",
+        "@param { ControlPanelActionEventCallback } callback - Used to handle {'controlPanelActionEvent'} command.",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "PiPController",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'controlPanelActionEvent'",
+          "必填": true,
+          "说明": "Registration type, user action event, 'controlPanelActionEvent'"
+        },
+        {
+          "名称": "callback",
+          "类型": "ControlPanelActionEventCallback",
+          "必填": true,
+          "说明": "Used to handle {'controlPanelActionEvent'} command."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unregister picture-in-picture lifecycle event listener",
+      "注释信息": [
+        "@param { 'controlPanelActionEvent' } type - Used to unregister listener for {'controlPanelActionEvent'} command",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "PiPController",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'controlPanelActionEvent'",
+          "必填": true,
+          "说明": "Used to unregister listener for {'controlPanelActionEvent'} command"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Register picture-in-picture control event listener.",
+      "注释信息": [
+        "@param { 'controlEvent' } type - Registration type, user action event, 'controlEvent'",
+        "@param { Callback<ControlEventParam> } callback - Used to handle {'controlEvent'} command.",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "PiPController",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'controlEvent'",
+          "必填": true,
+          "说明": "Registration type, user action event, 'controlEvent'"
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<ControlEventParam>",
+          "必填": true,
+          "说明": "Used to handle {'controlEvent'} command."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unregister picture-in-picture control event listener",
+      "注释信息": [
+        "@param { 'controlEvent' } type - Used to unregister listener for {'controlEvent'} command",
+        "@param { Callback<ControlEventParam> } callback - Used to handle {'controlEvent'} command.",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "PiPController",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'controlEvent'",
+          "必填": true,
+          "说明": "Used to unregister listener for {'controlEvent'} command"
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<ControlEventParam>",
+          "必填": true,
+          "说明": "Used to handle {'controlEvent'} command."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Register picture-in-picture window size change event listener window size change event.",
+      "注释信息": [
+        "@param { 'pipWindowSizeChange' } type - The value is fixed at 'pipWindowSizeChange', indicating the picture-in-picture",
+        "@param { Callback<PiPWindowSize> } callback - Callback used to return the picture-in-picture window size.",
+        "@throws { BusinessError } 401 - Params error. Possible causes: Callback is already registered.",
+        "@throws { BusinessError } 801 - Capability not supported. Failed to call the API due to limited device capabilities.",
+        "@throws { BusinessError } 1300014 - PiP internal error.",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "PiPController",
+      "since_version": "15",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'pipWindowSizeChange'",
+          "必填": true,
+          "说明": "The value is fixed at 'pipWindowSizeChange', indicating the picture-in-picture"
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<PiPWindowSize>",
+          "必填": true,
+          "说明": "Callback used to return the picture-in-picture window size."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Params error. Possible causes: Callback is already registered."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported. Failed to call the API due to limited device capabilities."
+        },
+        {
+          "code": "1300014",
+          "description": "PiP internal error."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unregister picture-in-picture window size change event listener window size change event. 2. Incorrect parameter types. 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { 'pipWindowSizeChange' } type - The value is fixed at 'pipWindowSizeChange', indicating the picture-in-picture",
+        "@param { Callback<PiPWindowSize> } callback - Callback used to return the picture-in-picture window size.",
+        "@throws { BusinessError } 401 - Params error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 801 - Capability not supported. Failed to call the API due to limited device capabilities.",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "PiPController",
+      "since_version": "15",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'pipWindowSizeChange'",
+          "必填": true,
+          "说明": "The value is fixed at 'pipWindowSizeChange', indicating the picture-in-picture"
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<PiPWindowSize>",
+          "必填": true,
+          "说明": "Callback used to return the picture-in-picture window size."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Params error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported. Failed to call the API due to limited device capabilities."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Register picture-in-picture active status change listener True indicates that the pip is onscreen, and vice verse.",
+      "注释信息": [
+        "@param { 'activeStatusChange' } type - Registration type, active status change, 'activeStatusChange'",
+        "@param { Callback<boolean> } callback - Used to handle {'activeStatusChange'} command.",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "PiPController",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'activeStatusChange'",
+          "必填": true,
+          "说明": "Registration type, active status change, 'activeStatusChange'"
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<boolean>",
+          "必填": true,
+          "说明": "Used to handle {'activeStatusChange'} command."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unregister picture-in-picture active status change listener all callbacks for the given event type will be removed.",
+      "注释信息": [
+        "@param { 'activeStatusChange' } type - Registration type, active status change, 'activeStatusChange'",
+        "@param { Callback<boolean> } [callback] - Used to handle {'activeStatusChange'} command. If not provided,",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "PiPController",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'activeStatusChange'",
+          "必填": true,
+          "说明": "Registration type, active status change, 'activeStatusChange'"
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "Callback<boolean> } [callback] - Used to handle {'activeStatusChange'} command. If not provided,"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    }
+  ]
+}

@@ -1,0 +1,431 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.InputKit",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "namespace",
+      "名称": "inputConsumer",
+      "所属模块": "@kit.InputKit",
+      "功能描述": "The inputConsumer module provides APIs for subscribing to and unsubscribing from global shortcut keys.",
+      "注释信息": [
+        "@namespace inputConsumer",
+        "@syscap SystemCapability.MultimodalInput.Input.InputConsumer",
+        "@since 14"
+      ],
+      "层级": 1,
+      "上级": "@kit.InputKit",
+      "since_version": "14",
+      "system_capability": "SystemCapability.MultimodalInput.Input.InputConsumer",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "HotkeyOptions",
+      "所属模块": "未知模块",
+      "功能描述": "Defines shortcut key options.",
+      "注释信息": [
+        "@typedef HotkeyOptions",
+        "@syscap SystemCapability.MultimodalInput.Input.InputConsumer",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "inputConsumer",
+      "since_version": "14",
+      "system_capability": "SystemCapability.MultimodalInput.Input.InputConsumer",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "preKeys",
+      "属性类型": "Array<number>",
+      "所属模块": "未知模块",
+      "功能描述": "Modifier key set (including Ctrl, Shift, and Alt). A maximum of two modifier keys are supported. There is no requirement on the sequence of modifier keys. For example, in Ctrl+Shift+Esc, Ctrl and Shift are modifier keys.",
+      "注释信息": [
+        "@type { Array<number> }",
+        "@syscap SystemCapability.MultimodalInput.Input.InputConsumer",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "HotkeyOptions",
+      "since_version": "14",
+      "system_capability": "SystemCapability.MultimodalInput.Input.InputConsumer",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "finalKey",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Modified key, which can be any key except the modifier keys and Meta key. For details about the keys, see Keycode. For example, in Ctrl+Shift+Esc, Esc is called the final key.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.MultimodalInput.Input.InputConsumer",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "HotkeyOptions",
+      "since_version": "14",
+      "system_capability": "SystemCapability.MultimodalInput.Input.InputConsumer",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "isRepeat",
+      "属性类型": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Whether to report repeated key events. The value true means to report repeated key events, and the value false means the opposite. The default value is true.",
+      "注释信息": [
+        "@type { ?boolean }",
+        "@syscap SystemCapability.MultimodalInput.Input.InputConsumer",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "HotkeyOptions",
+      "since_version": "14",
+      "system_capability": "SystemCapability.MultimodalInput.Input.InputConsumer",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "KeyPressedConfig",
+      "所属模块": "未知模块",
+      "功能描述": "Sets the key event consumption configuration.",
+      "注释信息": [
+        "@typedef KeyPressedConfig",
+        "@syscap SystemCapability.MultimodalInput.Input.InputConsumer",
+        "@since 16"
+      ],
+      "层级": 2,
+      "上级": "inputConsumer",
+      "since_version": "16",
+      "system_capability": "SystemCapability.MultimodalInput.Input.InputConsumer",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "key",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Key value. One of KEYCODE_VOLUME_UP/KEYCODE_VOLUME_DOWN/KEYCODE_MEDIA_PLAY_PAUSE/ KEYCODE_MEDIA_PREVIOUS/KEYCODE_MEDIA_NEXT.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.MultimodalInput.Input.InputConsumer",
+        "@since 21"
+      ],
+      "层级": 2,
+      "上级": "KeyPressedConfig",
+      "since_version": "21",
+      "system_capability": "SystemCapability.MultimodalInput.Input.InputConsumer",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "action",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Key event type. Setting the value to 1 indicates that the key is pressed, and setting the value to 2 indicates that the key is pressed and released.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.MultimodalInput.Input.InputConsumer",
+        "@since 21"
+      ],
+      "层级": 2,
+      "上级": "KeyPressedConfig",
+      "since_version": "21",
+      "system_capability": "SystemCapability.MultimodalInput.Input.InputConsumer",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "isRepeat",
+      "属性类型": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "The value true means to report repeated key events, and the value false means the opposite. The default value is true.",
+      "注释信息": [
+        "@type { boolean }",
+        "@syscap SystemCapability.MultimodalInput.Input.InputConsumer",
+        "@since 16"
+      ],
+      "层级": 2,
+      "上级": "KeyPressedConfig",
+      "since_version": "16",
+      "system_capability": "SystemCapability.MultimodalInput.Input.InputConsumer",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getAllSystemHotkeys",
+      "返回值": "Promise<Array<HotkeyOptions>>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains all system hotkeys. This API uses a promise to return the result.",
+      "注释信息": [
+        "@returns { Promise<Array<HotkeyOptions>> } Promise used to return the list of all system shortcut keys.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@syscap SystemCapability.MultimodalInput.Input.InputConsumer",
+        "@since 14"
+      ],
+      "层级": 1,
+      "上级": "inputConsumer",
+      "since_version": "14",
+      "system_capability": "SystemCapability.MultimodalInput.Input.InputConsumer",
+      "parameters": [],
+      "return_description": "Promise used to return the list of all system shortcut keys.",
+      "error_codes": [
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Subscribes to application shortcut key change events based on the specified options. This API uses an asynchronous callback to return the result. <br>2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { 'hotkeyChange' } type - Event type. This parameter has a fixed value of hotkeyChange.",
+        "@param { HotkeyOptions } hotkeyOptions - Shortcut key options.",
+        "@param { Callback<HotkeyOptions> } callback - Callback used to return the application shortcut key change event.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 4200002 - The hotkey has been used by the system.",
+        "@throws { BusinessError } 4200003 - The hotkey has been subscribed to by another.",
+        "@syscap SystemCapability.MultimodalInput.Input.InputConsumer",
+        "@since 14"
+      ],
+      "层级": 1,
+      "上级": "inputConsumer",
+      "since_version": "14",
+      "system_capability": "SystemCapability.MultimodalInput.Input.InputConsumer",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'hotkeyChange'",
+          "必填": true,
+          "说明": "Event type. This parameter has a fixed value of hotkeyChange."
+        },
+        {
+          "名称": "hotkeyOptions",
+          "类型": "HotkeyOptions",
+          "必填": true,
+          "说明": "Shortcut key options."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<HotkeyOptions>",
+          "必填": true,
+          "说明": "Callback used to return the application shortcut key change event."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "4200002",
+          "description": "The hotkey has been used by the system."
+        },
+        {
+          "code": "4200003",
+          "description": "The hotkey has been subscribed to by another."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unsubscribes from application shortcut key change events. If this parameter is left unspecified, listening will be disabled for all callbacks registered for the specified shortcut key options. <br>2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { 'hotkeyChange' } type - Event type. This parameter has a fixed value of hotkeyChange.",
+        "@param { HotkeyOptions } hotkeyOptions - Shortcut key options.",
+        "@param { Callback<HotkeyOptions> } callback - Callback to unregister.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@syscap SystemCapability.MultimodalInput.Input.InputConsumer",
+        "@since 14"
+      ],
+      "层级": 1,
+      "上级": "inputConsumer",
+      "since_version": "14",
+      "system_capability": "SystemCapability.MultimodalInput.Input.InputConsumer",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'hotkeyChange'",
+          "必填": true,
+          "说明": "Event type. This parameter has a fixed value of hotkeyChange."
+        },
+        {
+          "名称": "hotkeyOptions",
+          "类型": "HotkeyOptions",
+          "必填": true,
+          "说明": "Shortcut key options."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<HotkeyOptions>",
+          "必填": true,
+          "说明": "Callback to unregister."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Subscribes to key press events. This API uses an asynchronous callback to return the result. If the current application is in the foreground focus window, a callback is triggered when the specified key is pressed. <br>2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { 'keyPressed' } type - Event type. This parameter has a fixed value of keyPressed.",
+        "@param { KeyPressedConfig } options - Sets the key event consumption configuration.",
+        "@param { Callback<KeyEvent> } callback - Callback used to return key press events.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@syscap SystemCapability.MultimodalInput.Input.InputConsumer",
+        "@since 16"
+      ],
+      "层级": 1,
+      "上级": "inputConsumer",
+      "since_version": "16",
+      "system_capability": "SystemCapability.MultimodalInput.Input.InputConsumer",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'keyPressed'",
+          "必填": true,
+          "说明": "Event type. This parameter has a fixed value of keyPressed."
+        },
+        {
+          "名称": "options",
+          "类型": "KeyPressedConfig",
+          "必填": true,
+          "说明": "Sets the key event consumption configuration."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<KeyEvent>",
+          "必填": true,
+          "说明": "Callback used to return key press events."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unsubscribes from key press events. This API uses an asynchronous callback to return the result. If this parameter is not specified, listening will be disabled for all registered callbacks. <br>2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { 'keyPressed' } type - Event type. This parameter has a fixed value of keyPressed.",
+        "@param { Callback<KeyEvent> } callback - Callback to unregister.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@syscap SystemCapability.MultimodalInput.Input.InputConsumer",
+        "@since 16"
+      ],
+      "层级": 1,
+      "上级": "inputConsumer",
+      "since_version": "16",
+      "system_capability": "SystemCapability.MultimodalInput.Input.InputConsumer",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'keyPressed'",
+          "必填": true,
+          "说明": "Event type. This parameter has a fixed value of keyPressed."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<KeyEvent>",
+          "必填": true,
+          "说明": "Callback to unregister."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        }
+      ],
+      "版本": "API"
+    }
+  ]
+}

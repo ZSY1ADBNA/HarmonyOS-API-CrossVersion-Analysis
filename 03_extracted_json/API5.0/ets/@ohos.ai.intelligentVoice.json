@@ -1,0 +1,4440 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.BasicServicesKit",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "namespace",
+      "名称": "intelligentVoice",
+      "所属模块": "@kit.BasicServicesKit",
+      "功能描述": "",
+      "注释信息": [
+        "@namespace intelligentVoice",
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "@kit.BasicServicesKit",
+      "since_version": "10",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getIntelligentVoiceManager",
+      "返回值": "IntelligentVoiceManager",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains an {@link IntelligentVoiceManager} instance.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_INTELLIGENT_VOICE",
+        "@returns { IntelligentVoiceManager } this {@link IntelligentVoiceManager} object.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Not system application.",
+        "@throws { BusinessError } 22700101 - No memory.",
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "intelligentVoice",
+      "since_version": "10",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [],
+      "return_description": "this {@link IntelligentVoiceManager} object.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Not system application."
+        },
+        {
+          "code": "22700101",
+          "description": "No memory."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "interface",
+      "名称": "IntelligentVoiceManager",
+      "所属模块": "未知模块",
+      "功能描述": "Implements intelligent voice management.",
+      "注释信息": [
+        "@typedef IntelligentVoiceManager",
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "intelligentVoice",
+      "since_version": "10",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getCapabilityInfo",
+      "返回值": "Array<IntelligentVoiceEngineType>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains capability information.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_INTELLIGENT_VOICE",
+        "@returns { Array<IntelligentVoiceEngineType> } array of supported IntelligentVoiceEngineType.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Not system application.",
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "IntelligentVoiceManager",
+      "since_version": "10",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [],
+      "return_description": "array of supported IntelligentVoiceEngineType.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Not system application."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Subscribes service change events. When the state of intelligent voice service changes, the callback is invoked.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_INTELLIGENT_VOICE",
+        "@param { 'serviceChange' } type - Type of the event to listen for. Only the serviceChange event is supported.",
+        "@param { Callback<ServiceChangeType> } callback - Callback is invoked when the event is triggered.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Not system application.",
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "IntelligentVoiceManager",
+      "since_version": "10",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'serviceChange'",
+          "必填": true,
+          "说明": "Type of the event to listen for. Only the serviceChange event is supported."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<ServiceChangeType>",
+          "必填": true,
+          "说明": "Callback is invoked when the event is triggered."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Not system application."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unsubscribes service change events.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_INTELLIGENT_VOICE",
+        "@param { 'serviceChange' } type - Type of the event to listen for. Only the serviceChange event is supported.",
+        "@param { Callback<ServiceChangeType> } [callback] - Callback is invoked when the event is triggered.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Not system application.",
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "IntelligentVoiceManager",
+      "since_version": "10",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'serviceChange'",
+          "必填": true,
+          "说明": "Type of the event to listen for. Only the serviceChange event is supported."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "Callback<ServiceChangeType> } [callback] - Callback is invoked when the event is triggered."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Not system application."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "interface",
+      "名称": "WakeupManager",
+      "所属模块": "未知模块",
+      "功能描述": "Implements wakeup management.",
+      "注释信息": [
+        "@typedef WakeupManager",
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "intelligentVoice",
+      "since_version": "12",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "setParameter",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Sets an intelligent voice parameter. This method uses a promise to return the result.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_INTELLIGENT_VOICE",
+        "@param { string } key - the key of the intelligent voice parameter to set.",
+        "@param { string } value - the value of the intelligent voice parameter to set.",
+        "@returns { Promise<void> } the promise used to return the result.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Not system application.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.",
+        "@throws { BusinessError } 22700102 - Invalid parameter.",
+        "@throws { BusinessError } 22700107 - System error.",
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "WakeupManager",
+      "since_version": "12",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [
+        {
+          "名称": "key",
+          "类型": "string",
+          "必填": true,
+          "说明": "the key of the intelligent voice parameter to set."
+        },
+        {
+          "名称": "value",
+          "类型": "string",
+          "必填": true,
+          "说明": "the value of the intelligent voice parameter to set."
+        }
+      ],
+      "return_description": "the promise used to return the result.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Not system application."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types."
+        },
+        {
+          "code": "22700102",
+          "description": "Invalid parameter."
+        },
+        {
+          "code": "22700107",
+          "description": "System error."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getParameter",
+      "返回值": "Promise<string>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the value of an intelligent voice parameter. This method uses a promise to return the query result.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_INTELLIGENT_VOICE",
+        "@param { string } key - the key of the intelligent voice parameter whose value is to be obtained.",
+        "@returns { Promise<string> } the promise used to return the value of the intelligent voice parameter.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Not system application.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.",
+        "@throws { BusinessError } 22700102 - Invalid parameter.",
+        "@throws { BusinessError } 22700107 - System error.",
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "WakeupManager",
+      "since_version": "12",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [
+        {
+          "名称": "key",
+          "类型": "string",
+          "必填": true,
+          "说明": "the key of the intelligent voice parameter whose value is to be obtained."
+        }
+      ],
+      "return_description": "the promise used to return the value of the intelligent voice parameter.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Not system application."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types."
+        },
+        {
+          "code": "22700102",
+          "description": "Invalid parameter."
+        },
+        {
+          "code": "22700107",
+          "description": "System error."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getUploadFiles",
+      "返回值": "Promise<Array<UploadFile>>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains files needed to upload. This method uses a promise to return the files needed to upload.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_INTELLIGENT_VOICE",
+        "@param { number } maxCount - the maximum count of upload files. The maxCount should be greater than 0 and smaller than 101",
+        "@returns { Promise<Array<UploadFile>> } the promise used to return the upload files.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Not system application.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed.",
+        "@throws { BusinessError } 22700101 - No memory.",
+        "@throws { BusinessError } 22700102 - Invalid parameter.",
+        "@throws { BusinessError } 22700107 - System error.",
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "WakeupManager",
+      "since_version": "12",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [
+        {
+          "名称": "maxCount",
+          "类型": "number",
+          "必填": true,
+          "说明": "the maximum count of upload files. The maxCount should be greater than 0 and smaller than 101"
+        }
+      ],
+      "return_description": "the promise used to return the upload files.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Not system application."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed."
+        },
+        {
+          "code": "22700101",
+          "description": "No memory."
+        },
+        {
+          "code": "22700102",
+          "description": "Invalid parameter."
+        },
+        {
+          "code": "22700107",
+          "description": "System error."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getWakeupSourceFiles",
+      "返回值": "Promise<Array<WakeupSourceFile>>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains wakeup source files. This method uses a promise to return the wakeup source files.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_INTELLIGENT_VOICE",
+        "@returns { Promise<Array<WakeupSourceFile>> } the promise used to return the wakeup source files.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Not system application.",
+        "@throws { BusinessError } 22700101 - No memory.",
+        "@throws { BusinessError } 22700107 - System error.",
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "WakeupManager",
+      "since_version": "12",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [],
+      "return_description": "the promise used to return the wakeup source files.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Not system application."
+        },
+        {
+          "code": "22700101",
+          "description": "No memory."
+        },
+        {
+          "code": "22700107",
+          "description": "System error."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "enrollWithWakeupFilesForResult",
+      "返回值": "Promise<EnrollResult>",
+      "所属模块": "未知模块",
+      "功能描述": "Enrolls with wakeup files for result. This method uses a promise to return the enroll result.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_INTELLIGENT_VOICE",
+        "@param { Array<WakeupSourceFile> } wakeupFiles - the wakeup source files needed.",
+        "@param { string } wakeupInfo - wakeup information.",
+        "@returns { Promise<EnrollResult> } the promise used to return the enroll result.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Not system application.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.",
+        "@throws { BusinessError } 22700101 - No memory.",
+        "@throws { BusinessError } 22700102 - Invalid parameter.",
+        "@throws { BusinessError } 22700107 - System error.",
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "WakeupManager",
+      "since_version": "12",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [
+        {
+          "名称": "wakeupFiles",
+          "类型": "Array<WakeupSourceFile>",
+          "必填": true,
+          "说明": "the wakeup source files needed."
+        },
+        {
+          "名称": "wakeupInfo",
+          "类型": "string",
+          "必填": true,
+          "说明": "wakeup information."
+        }
+      ],
+      "return_description": "the promise used to return the enroll result.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Not system application."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types."
+        },
+        {
+          "code": "22700101",
+          "description": "No memory."
+        },
+        {
+          "code": "22700102",
+          "description": "Invalid parameter."
+        },
+        {
+          "code": "22700107",
+          "description": "System error."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "clearUserData",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Clears user data.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_INTELLIGENT_VOICE",
+        "@returns { Promise<void> } the promise used to return the result.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Not system application.",
+        "@throws { BusinessError } 22700107 - System error.",
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "WakeupManager",
+      "since_version": "12",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [],
+      "return_description": "the promise used to return the result.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Not system application."
+        },
+        {
+          "code": "22700107",
+          "description": "System error."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum",
+      "名称": "UploadFileType",
+      "所属模块": "未知模块",
+      "功能描述": "Enumerates upload file type.",
+      "注释信息": [
+        "@enum {number}",
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "intelligentVoice",
+      "since_version": "12",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "ENROLL_FILE",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "Enroll file.",
+      "注释信息": [
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "UploadFileType",
+      "since_version": "12",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "WAKEUP_FILE",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Wakeup file.",
+      "注释信息": [
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "UploadFileType",
+      "since_version": "12",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "interface",
+      "名称": "UploadFile",
+      "所属模块": "未知模块",
+      "功能描述": "Describes upload file information.",
+      "注释信息": [
+        "@typedef UploadFile",
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "intelligentVoice",
+      "since_version": "12",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "property",
+      "名称": "type",
+      "属性类型": "UploadFileType",
+      "所属模块": "未知模块",
+      "功能描述": "Report file type.",
+      "注释信息": [
+        "@type { UploadFileType }",
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "UploadFile",
+      "since_version": "12",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "property",
+      "名称": "filesDescription",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Files description.",
+      "注释信息": [
+        "@type { string }",
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "UploadFile",
+      "since_version": "12",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "property",
+      "名称": "filesContent",
+      "属性类型": "Array<ArrayBuffer>",
+      "所属模块": "未知模块",
+      "功能描述": "Files content.",
+      "注释信息": [
+        "@type { Array<ArrayBuffer> }",
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "UploadFile",
+      "since_version": "12",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "interface",
+      "名称": "WakeupSourceFile",
+      "所属模块": "未知模块",
+      "功能描述": "Describes wakeup source file information.",
+      "注释信息": [
+        "@typedef WakeupSourceFile",
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "intelligentVoice",
+      "since_version": "12",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "property",
+      "名称": "filePath",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "File path.",
+      "注释信息": [
+        "@type { string }",
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "WakeupSourceFile",
+      "since_version": "12",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "property",
+      "名称": "fileContent",
+      "属性类型": "ArrayBuffer",
+      "所属模块": "未知模块",
+      "功能描述": "File content.",
+      "注释信息": [
+        "@type { ArrayBuffer }",
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "WakeupSourceFile",
+      "since_version": "12",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum",
+      "名称": "ServiceChangeType",
+      "所属模块": "未知模块",
+      "功能描述": "Enumerates service change type.",
+      "注释信息": [
+        "@enum {number}",
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "intelligentVoice",
+      "since_version": "10",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "SERVICE_UNAVAILABLE",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "Service unavailable.",
+      "注释信息": [
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "ServiceChangeType",
+      "since_version": "10",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum",
+      "名称": "IntelligentVoiceEngineType",
+      "所属模块": "未知模块",
+      "功能描述": "Enumerates intelligent voice engine type.",
+      "注释信息": [
+        "@enum {number}",
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "intelligentVoice",
+      "since_version": "10",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "ENROLL_ENGINE_TYPE",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "Enroll engine.",
+      "注释信息": [
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "IntelligentVoiceEngineType",
+      "since_version": "10",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "WAKEUP_ENGINE_TYPE",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Wakeup engine.",
+      "注释信息": [
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "IntelligentVoiceEngineType",
+      "since_version": "10",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "UPDATE_ENGINE_TYPE",
+      "值": "2",
+      "所属模块": "未知模块",
+      "功能描述": "Update engine.",
+      "注释信息": [
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "IntelligentVoiceEngineType",
+      "since_version": "10",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "interface",
+      "名称": "EnrollIntelligentVoiceEngineDescriptor",
+      "所属模块": "未知模块",
+      "功能描述": "Describes enroll intelligent voice engine.",
+      "注释信息": [
+        "@typedef EnrollIntelligentVoiceEngineDescriptor",
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "intelligentVoice",
+      "since_version": "10",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "property",
+      "名称": "wakeupPhrase",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Wakeup phrase.",
+      "注释信息": [
+        "@type { string }",
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "EnrollIntelligentVoiceEngineDescriptor",
+      "since_version": "10",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "interface",
+      "名称": "WakeupIntelligentVoiceEngineDescriptor",
+      "所属模块": "未知模块",
+      "功能描述": "Describes wakeup intelligent voice engine.",
+      "注释信息": [
+        "@typedef WakeupIntelligentVoiceEngineDescriptor",
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "intelligentVoice",
+      "since_version": "10",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "property",
+      "名称": "needReconfirm",
+      "属性类型": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Need reconfirm.",
+      "注释信息": [
+        "@type { boolean }",
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "WakeupIntelligentVoiceEngineDescriptor",
+      "since_version": "10",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "property",
+      "名称": "wakeupPhrase",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Wakeup phrase.",
+      "注释信息": [
+        "@type { string }",
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "WakeupIntelligentVoiceEngineDescriptor",
+      "since_version": "10",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum",
+      "名称": "EvaluationResultCode",
+      "所属模块": "未知模块",
+      "功能描述": "Enumerates evaluation result code.",
+      "注释信息": [
+        "@enum {number}",
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "intelligentVoice",
+      "since_version": "12",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "UNKNOWN",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "Unknown.",
+      "注释信息": [
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "EvaluationResultCode",
+      "since_version": "12",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "PASS",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Pass.",
+      "注释信息": [
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "EvaluationResultCode",
+      "since_version": "12",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "WORD_EMPTY",
+      "值": "2",
+      "所属模块": "未知模块",
+      "功能描述": "Word is empty.",
+      "注释信息": [
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "EvaluationResultCode",
+      "since_version": "12",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CHINESE_ONLY",
+      "值": "3",
+      "所属模块": "未知模块",
+      "功能描述": "Only chinese is supported.",
+      "注释信息": [
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "EvaluationResultCode",
+      "since_version": "12",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "INVALID_LENGTH",
+      "值": "4",
+      "所属模块": "未知模块",
+      "功能描述": "Invalid length.",
+      "注释信息": [
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "EvaluationResultCode",
+      "since_version": "12",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "UNUSUAL_WORD",
+      "值": "5",
+      "所属模块": "未知模块",
+      "功能描述": "Unusual word.",
+      "注释信息": [
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "EvaluationResultCode",
+      "since_version": "12",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CONSECUTIVE_SAME_WORD",
+      "值": "6",
+      "所属模块": "未知模块",
+      "功能描述": "Consecutive same word.",
+      "注释信息": [
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "EvaluationResultCode",
+      "since_version": "12",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "TOO_FEW_PHONEMES",
+      "值": "7",
+      "所属模块": "未知模块",
+      "功能描述": "Too few phonemes.",
+      "注释信息": [
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "EvaluationResultCode",
+      "since_version": "12",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "TOO_MANY_PHONEMES",
+      "值": "8",
+      "所属模块": "未知模块",
+      "功能描述": "Too many phonemes.",
+      "注释信息": [
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "EvaluationResultCode",
+      "since_version": "12",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_INSTRUCTION",
+      "值": "9",
+      "所属模块": "未知模块",
+      "功能描述": "Contain common instruction.",
+      "注释信息": [
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "EvaluationResultCode",
+      "since_version": "12",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_SPOKEN_LANGUAGE",
+      "值": "10",
+      "所属模块": "未知模块",
+      "功能描述": "Contain common spoken language.",
+      "注释信息": [
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "EvaluationResultCode",
+      "since_version": "12",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "SENSITIVE_WORD",
+      "值": "11",
+      "所属模块": "未知模块",
+      "功能描述": "Contain sensitive word.",
+      "注释信息": [
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "EvaluationResultCode",
+      "since_version": "12",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "NO_INITIAL_CONSONANT",
+      "值": "12",
+      "所属模块": "未知模块",
+      "功能描述": "Two consecutive words without initial consonant.",
+      "注释信息": [
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "EvaluationResultCode",
+      "since_version": "12",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "REPEATED_PHONEME",
+      "值": "13",
+      "所属模块": "未知模块",
+      "功能描述": "Contain repeated phoneme.",
+      "注释信息": [
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "EvaluationResultCode",
+      "since_version": "12",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "interface",
+      "名称": "EvaluationResult",
+      "所属模块": "未知模块",
+      "功能描述": "Describes evaluation result.",
+      "注释信息": [
+        "@typedef EvaluationResult",
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "intelligentVoice",
+      "since_version": "12",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "property",
+      "名称": "score",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Evaluation score.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "EvaluationResult",
+      "since_version": "12",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "property",
+      "名称": "resultCode",
+      "属性类型": "EvaluationResultCode",
+      "所属模块": "未知模块",
+      "功能描述": "Describes evaluation result code.",
+      "注释信息": [
+        "@type { EvaluationResultCode }",
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "EvaluationResult",
+      "since_version": "12",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getWakeupManager",
+      "返回值": "WakeupManager",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains an {@link WakeupManager} instance.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_INTELLIGENT_VOICE",
+        "@returns { WakeupManager } this {@link WakeupManager} object.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Not system application.",
+        "@throws { BusinessError } 22700101 - No memory.",
+        "@throws { BusinessError } 22700107 - System error.",
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "intelligentVoice",
+      "since_version": "12",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [],
+      "return_description": "this {@link WakeupManager} object.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Not system application."
+        },
+        {
+          "code": "22700101",
+          "description": "No memory."
+        },
+        {
+          "code": "22700107",
+          "description": "System error."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "createEnrollIntelligentVoiceEngine",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains an {@link EnrollIntelligentVoiceEngine} instance. This method uses an asynchronous callback to return the EnrollIntelligentVoiceEngine instance.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_INTELLIGENT_VOICE",
+        "@param { EnrollIntelligentVoiceEngineDescriptor } descriptor - descriptor indicates enroll intelligent voice engine descriptor.",
+        "@param { AsyncCallback<EnrollIntelligentVoiceEngine> } callback - the callback used to return the EnrollIntelligentVoiceEngine instance.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Not system application.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.",
+        "@throws { BusinessError } 22700101 - No memory.",
+        "@throws { BusinessError } 22700102 - Invalid parameter.",
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "intelligentVoice",
+      "since_version": "10",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [
+        {
+          "名称": "descriptor",
+          "类型": "EnrollIntelligentVoiceEngineDescriptor",
+          "必填": true,
+          "说明": "descriptor indicates enroll intelligent voice engine descriptor."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<EnrollIntelligentVoiceEngine>",
+          "必填": true,
+          "说明": "the callback used to return the EnrollIntelligentVoiceEngine instance."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Not system application."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types."
+        },
+        {
+          "code": "22700101",
+          "description": "No memory."
+        },
+        {
+          "code": "22700102",
+          "description": "Invalid parameter."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "createEnrollIntelligentVoiceEngine",
+      "返回值": "Promise<EnrollIntelligentVoiceEngine>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains an {@link EnrollIntelligentVoiceEngine} instance. This method uses a promise to return the EnrollIntelligentVoiceEngine instance.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_INTELLIGENT_VOICE",
+        "@param { EnrollIntelligentVoiceEngineDescriptor } descriptor - descriptor indicates enroll intelligent voice engine descriptor.",
+        "@returns { Promise<EnrollIntelligentVoiceEngine> } the promise used to return the EnrollIntelligentVoiceEngine instance.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Not system application.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.",
+        "@throws { BusinessError } 22700101 - No memory.",
+        "@throws { BusinessError } 22700102 - Invalid parameter.",
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "intelligentVoice",
+      "since_version": "10",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [
+        {
+          "名称": "descriptor",
+          "类型": "EnrollIntelligentVoiceEngineDescriptor",
+          "必填": true,
+          "说明": "descriptor indicates enroll intelligent voice engine descriptor."
+        }
+      ],
+      "return_description": "the promise used to return the EnrollIntelligentVoiceEngine instance.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Not system application."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types."
+        },
+        {
+          "code": "22700101",
+          "description": "No memory."
+        },
+        {
+          "code": "22700102",
+          "description": "Invalid parameter."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "createWakeupIntelligentVoiceEngine",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains an {@link WakeupIntelligentVoiceEngine} instance. This method uses an asynchronous callback to return the WakeupIntelligentVoiceEngine instance.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_INTELLIGENT_VOICE",
+        "@param { WakeupIntelligentVoiceEngineDescriptor } descriptor - descriptor indicates wakeup intelligent voice engine descriptor.",
+        "@param { AsyncCallback<WakeupIntelligentVoiceEngine> } callback - the callback used to return the WakeupIntelligentVoiceEngine instance.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Not system application.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.",
+        "@throws { BusinessError } 22700101 - No memory.",
+        "@throws { BusinessError } 22700102 - Invalid parameter.",
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "intelligentVoice",
+      "since_version": "10",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [
+        {
+          "名称": "descriptor",
+          "类型": "WakeupIntelligentVoiceEngineDescriptor",
+          "必填": true,
+          "说明": "descriptor indicates wakeup intelligent voice engine descriptor."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<WakeupIntelligentVoiceEngine>",
+          "必填": true,
+          "说明": "the callback used to return the WakeupIntelligentVoiceEngine instance."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Not system application."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types."
+        },
+        {
+          "code": "22700101",
+          "description": "No memory."
+        },
+        {
+          "code": "22700102",
+          "description": "Invalid parameter."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "createWakeupIntelligentVoiceEngine",
+      "返回值": "Promise<WakeupIntelligentVoiceEngine>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains an {@link WakeupIntelligentVoiceEngine} instance. This method uses a promise to return the WakeupIntelligentVoiceEngine instance.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_INTELLIGENT_VOICE",
+        "@param { WakeupIntelligentVoiceEngineDescriptor } descriptor - descriptor indicates wakeup intelligent voice engine descriptor.",
+        "@returns { Promise<WakeupIntelligentVoiceEngine> } the promise used to return the WakeupIntelligentVoiceEngine instance.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Not system application.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.",
+        "@throws { BusinessError } 22700101 - No memory.",
+        "@throws { BusinessError } 22700102 - Invalid parameter.",
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "intelligentVoice",
+      "since_version": "10",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [
+        {
+          "名称": "descriptor",
+          "类型": "WakeupIntelligentVoiceEngineDescriptor",
+          "必填": true,
+          "说明": "descriptor indicates wakeup intelligent voice engine descriptor."
+        }
+      ],
+      "return_description": "the promise used to return the WakeupIntelligentVoiceEngine instance.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Not system application."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types."
+        },
+        {
+          "code": "22700101",
+          "description": "No memory."
+        },
+        {
+          "code": "22700102",
+          "description": "Invalid parameter."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "interface",
+      "名称": "EnrollEngineConfig",
+      "所属模块": "未知模块",
+      "功能描述": "Describes enroll engine config.",
+      "注释信息": [
+        "@typedef EnrollEngineConfig",
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "intelligentVoice",
+      "since_version": "10",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "property",
+      "名称": "language",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Language that enroll engine supports.",
+      "注释信息": [
+        "@type { string }",
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "EnrollEngineConfig",
+      "since_version": "10",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "property",
+      "名称": "region",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Region that enroll engine supports.",
+      "注释信息": [
+        "@type { string }",
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "EnrollEngineConfig",
+      "since_version": "10",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum",
+      "名称": "SensibilityType",
+      "所属模块": "未知模块",
+      "功能描述": "Enumerates sensibility type.",
+      "注释信息": [
+        "@enum {number}",
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "intelligentVoice",
+      "since_version": "10",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "LOW_SENSIBILITY",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Low sensibility.",
+      "注释信息": [
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "SensibilityType",
+      "since_version": "10",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "MIDDLE_SENSIBILITY",
+      "值": "2",
+      "所属模块": "未知模块",
+      "功能描述": "Middle sensibility.",
+      "注释信息": [
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "SensibilityType",
+      "since_version": "10",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "HIGH_SENSIBILITY",
+      "值": "3",
+      "所属模块": "未知模块",
+      "功能描述": "High sensibility.",
+      "注释信息": [
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "SensibilityType",
+      "since_version": "10",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "interface",
+      "名称": "WakeupHapInfo",
+      "所属模块": "未知模块",
+      "功能描述": "Describes wakeup hap information.",
+      "注释信息": [
+        "@typedef WakeupHapInfo",
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "intelligentVoice",
+      "since_version": "10",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "property",
+      "名称": "bundleName",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Bundle name.",
+      "注释信息": [
+        "@type { string }",
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "WakeupHapInfo",
+      "since_version": "10",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "property",
+      "名称": "abilityName",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Ability name.",
+      "注释信息": [
+        "@type { string }",
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "WakeupHapInfo",
+      "since_version": "10",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum",
+      "名称": "WakeupIntelligentVoiceEventType",
+      "所属模块": "未知模块",
+      "功能描述": "Enumerates wakeup intelligent voice event type.",
+      "注释信息": [
+        "@enum {number}",
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "intelligentVoice",
+      "since_version": "10",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "INTELLIGENT_VOICE_EVENT_WAKEUP_NONE",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "Wakeup None.",
+      "注释信息": [
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "WakeupIntelligentVoiceEventType",
+      "since_version": "10",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "INTELLIGENT_VOICE_EVENT_RECOGNIZE_COMPLETE",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Recognize complete.",
+      "注释信息": [
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "WakeupIntelligentVoiceEventType",
+      "since_version": "10",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "INTELLIGENT_VOICE_EVENT_HEADSET_RECOGNIZE_COMPLETE",
+      "值": "2",
+      "所属模块": "未知模块",
+      "功能描述": "Headset Recognize complete.",
+      "注释信息": [
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "WakeupIntelligentVoiceEventType",
+      "since_version": "12",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum",
+      "名称": "IntelligentVoiceErrorCode",
+      "所属模块": "未知模块",
+      "功能描述": "Enumerates intelligent voice error code.",
+      "注释信息": [
+        "@enum {number}",
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "intelligentVoice",
+      "since_version": "10",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "INTELLIGENT_VOICE_NO_MEMORY",
+      "值": "22700101",
+      "所属模块": "未知模块",
+      "功能描述": "No memory.",
+      "注释信息": [
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "IntelligentVoiceErrorCode",
+      "since_version": "10",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "INTELLIGENT_VOICE_INVALID_PARAM",
+      "值": "22700102",
+      "所属模块": "未知模块",
+      "功能描述": "Invalid parameter.",
+      "注释信息": [
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "IntelligentVoiceErrorCode",
+      "since_version": "10",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "INTELLIGENT_VOICE_INIT_FAILED",
+      "值": "22700103",
+      "所属模块": "未知模块",
+      "功能描述": "Init failed.",
+      "注释信息": [
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "IntelligentVoiceErrorCode",
+      "since_version": "10",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "INTELLIGENT_VOICE_COMMIT_ENROLL_FAILED",
+      "值": "22700104",
+      "所属模块": "未知模块",
+      "功能描述": "Failed to commit the enrollment.",
+      "注释信息": [
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "IntelligentVoiceErrorCode",
+      "since_version": "10",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "INTELLIGENT_VOICE_START_CAPTURER_FAILED",
+      "值": "22700105",
+      "所属模块": "未知模块",
+      "功能描述": "Start capturer failed.",
+      "注释信息": [
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "IntelligentVoiceErrorCode",
+      "since_version": "12",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "INTELLIGENT_VOICE_READ_FAILED",
+      "值": "22700106",
+      "所属模块": "未知模块",
+      "功能描述": "Read failed.",
+      "注释信息": [
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "IntelligentVoiceErrorCode",
+      "since_version": "12",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "INTELLIGENT_VOICE_SYSTEM_ERROR",
+      "值": "22700107",
+      "所属模块": "未知模块",
+      "功能描述": "System error.",
+      "注释信息": [
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "IntelligentVoiceErrorCode",
+      "since_version": "12",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum",
+      "名称": "EnrollResult",
+      "所属模块": "未知模块",
+      "功能描述": "Enumerates enroll result.",
+      "注释信息": [
+        "@enum {number}",
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "intelligentVoice",
+      "since_version": "10",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "SUCCESS",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "Success.",
+      "注释信息": [
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "EnrollResult",
+      "since_version": "10",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "VPR_TRAIN_FAILED",
+      "值": "-1",
+      "所属模块": "未知模块",
+      "功能描述": "Vpr train failed.",
+      "注释信息": [
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "EnrollResult",
+      "since_version": "10",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "WAKEUP_PHRASE_NOT_MATCH",
+      "值": "-2",
+      "所属模块": "未知模块",
+      "功能描述": "Wakeup phrase not match.",
+      "注释信息": [
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "EnrollResult",
+      "since_version": "10",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "TOO_NOISY",
+      "值": "-3",
+      "所属模块": "未知模块",
+      "功能描述": "Too noisy.",
+      "注释信息": [
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "EnrollResult",
+      "since_version": "10",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "TOO_LOUD",
+      "值": "-4",
+      "所属模块": "未知模块",
+      "功能描述": "Too loud.",
+      "注释信息": [
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "EnrollResult",
+      "since_version": "10",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "INTERVAL_LARGE",
+      "值": "-5",
+      "所属模块": "未知模块",
+      "功能描述": "Interval large.",
+      "注释信息": [
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "EnrollResult",
+      "since_version": "10",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "DIFFERENT_PERSON",
+      "值": "-6",
+      "所属模块": "未知模块",
+      "功能描述": "Different person.",
+      "注释信息": [
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "EnrollResult",
+      "since_version": "10",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "UNKNOWN_ERROR",
+      "值": "-100",
+      "所属模块": "未知模块",
+      "功能描述": "Unknown error.",
+      "注释信息": [
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "EnrollResult",
+      "since_version": "10",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum",
+      "名称": "CapturerChannel",
+      "所属模块": "未知模块",
+      "功能描述": "Enumerates capturer channel.",
+      "注释信息": [
+        "@enum {number}",
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "intelligentVoice",
+      "since_version": "12",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CAPTURER_CHANNEL_1",
+      "值": "0x1 << 0",
+      "所属模块": "未知模块",
+      "功能描述": "Capturer channel 1.",
+      "注释信息": [
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "CapturerChannel",
+      "since_version": "12",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CAPTURER_CHANNEL_2",
+      "值": "0x1 << 1",
+      "所属模块": "未知模块",
+      "功能描述": "Capturer channel 2.",
+      "注释信息": [
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "CapturerChannel",
+      "since_version": "12",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CAPTURER_CHANNEL_3",
+      "值": "0x1 << 2",
+      "所属模块": "未知模块",
+      "功能描述": "Capturer channel 3.",
+      "注释信息": [
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "CapturerChannel",
+      "since_version": "12",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CAPTURER_CHANNEL_4",
+      "值": "0x1 << 3",
+      "所属模块": "未知模块",
+      "功能描述": "Capturer channel 4.",
+      "注释信息": [
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "CapturerChannel",
+      "since_version": "12",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "interface",
+      "名称": "EnrollCallbackInfo",
+      "所属模块": "未知模块",
+      "功能描述": "Describes enroll callback information.",
+      "注释信息": [
+        "@typedef EnrollCallbackInfo",
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "intelligentVoice",
+      "since_version": "10",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "property",
+      "名称": "result",
+      "属性类型": "EnrollResult",
+      "所属模块": "未知模块",
+      "功能描述": "Result.",
+      "注释信息": [
+        "@type { EnrollResult }",
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "EnrollCallbackInfo",
+      "since_version": "10",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "property",
+      "名称": "context",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Describes enroll event context.",
+      "注释信息": [
+        "@type { string }",
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "EnrollCallbackInfo",
+      "since_version": "10",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "interface",
+      "名称": "WakeupIntelligentVoiceEngineCallbackInfo",
+      "所属模块": "未知模块",
+      "功能描述": "Describes wakeup intelligent voice engine callback information.",
+      "注释信息": [
+        "@typedef WakeupIntelligentVoiceEngineCallbackInfo",
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "intelligentVoice",
+      "since_version": "10",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "property",
+      "名称": "eventId",
+      "属性类型": "WakeupIntelligentVoiceEventType",
+      "所属模块": "未知模块",
+      "功能描述": "Wakeup event id.",
+      "注释信息": [
+        "@type { WakeupIntelligentVoiceEventType }",
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "WakeupIntelligentVoiceEngineCallbackInfo",
+      "since_version": "10",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "property",
+      "名称": "isSuccess",
+      "属性类型": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Is success.",
+      "注释信息": [
+        "@type { boolean }",
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "WakeupIntelligentVoiceEngineCallbackInfo",
+      "since_version": "10",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "property",
+      "名称": "context",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Describes wakeup event context.",
+      "注释信息": [
+        "@type { string }",
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "WakeupIntelligentVoiceEngineCallbackInfo",
+      "since_version": "10",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "interface",
+      "名称": "EnrollIntelligentVoiceEngine",
+      "所属模块": "未知模块",
+      "功能描述": "Implements enroll intelligent voice engine.",
+      "注释信息": [
+        "@typedef EnrollIntelligentVoiceEngine",
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "intelligentVoice",
+      "since_version": "10",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getSupportedRegions",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the supported regions, This method uses an asynchronous callback to return the query result.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_INTELLIGENT_VOICE",
+        "@param { AsyncCallback<Array<string>> } callback - the callback used to return the supported regions.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Not system application.",
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "EnrollIntelligentVoiceEngine",
+      "since_version": "10",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<Array<string>>",
+          "必填": true,
+          "说明": "the callback used to return the supported regions."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Not system application."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getSupportedRegions",
+      "返回值": "Promise<Array<string>>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the supported regions, This method uses a promise to return the query result.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_INTELLIGENT_VOICE",
+        "@returns { Promise<Array<string>> } the promise used to return the supported regions.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Not system application.",
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "EnrollIntelligentVoiceEngine",
+      "since_version": "10",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [],
+      "return_description": "the promise used to return the supported regions.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Not system application."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "init",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Initials the engine, This method uses an asynchronous callback to return the result.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_INTELLIGENT_VOICE",
+        "@param { EnrollEngineConfig } config - config indicates enroll engine configuration.",
+        "@param { AsyncCallback<void> } callback - the callback used to return the result.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Not system application.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.",
+        "@throws { BusinessError } 22700102 - Invalid parameter.",
+        "@throws { BusinessError } 22700103 - Init failed.",
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "EnrollIntelligentVoiceEngine",
+      "since_version": "10",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [
+        {
+          "名称": "config",
+          "类型": "EnrollEngineConfig",
+          "必填": true,
+          "说明": "config indicates enroll engine configuration."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "the callback used to return the result."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Not system application."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types."
+        },
+        {
+          "code": "22700102",
+          "description": "Invalid parameter."
+        },
+        {
+          "code": "22700103",
+          "description": "Init failed."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "init",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Initials the engine, This method uses a promise to return the result.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_INTELLIGENT_VOICE",
+        "@param { EnrollEngineConfig } config - config indicates enroll engine configuration.",
+        "@returns { Promise<void> } the promise used to return the result.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Not system application.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.",
+        "@throws { BusinessError } 22700102 - Invalid parameter.",
+        "@throws { BusinessError } 22700103 - Init failed.",
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "EnrollIntelligentVoiceEngine",
+      "since_version": "10",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [
+        {
+          "名称": "config",
+          "类型": "EnrollEngineConfig",
+          "必填": true,
+          "说明": "config indicates enroll engine configuration."
+        }
+      ],
+      "return_description": "the promise used to return the result.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Not system application."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types."
+        },
+        {
+          "code": "22700102",
+          "description": "Invalid parameter."
+        },
+        {
+          "code": "22700103",
+          "description": "Init failed."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "enrollForResult",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Enrolls for result, This method uses an asynchronous callback to return the result.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_INTELLIGENT_VOICE",
+        "@param { boolean } isLast - isLast indicates if it is the last time to enroll.",
+        "@param { AsyncCallback<EnrollCallbackInfo> } callback - the callback used to return the result.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Not system application.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.",
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "EnrollIntelligentVoiceEngine",
+      "since_version": "10",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [
+        {
+          "名称": "isLast",
+          "类型": "boolean",
+          "必填": true,
+          "说明": "isLast indicates if it is the last time to enroll."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<EnrollCallbackInfo>",
+          "必填": true,
+          "说明": "the callback used to return the result."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Not system application."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "enrollForResult",
+      "返回值": "Promise<EnrollCallbackInfo>",
+      "所属模块": "未知模块",
+      "功能描述": "Enrolls for result, This method uses a promise to return the result.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_INTELLIGENT_VOICE",
+        "@param { boolean } isLast - isLast indicates if it is the last time to enroll.",
+        "@returns { Promise<EnrollCallbackInfo> } the promise used to return the result.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Not system application.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.",
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "EnrollIntelligentVoiceEngine",
+      "since_version": "10",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [
+        {
+          "名称": "isLast",
+          "类型": "boolean",
+          "必填": true,
+          "说明": "isLast indicates if it is the last time to enroll."
+        }
+      ],
+      "return_description": "the promise used to return the result.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Not system application."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "stop",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Stops the engine, This method uses an asynchronous callback to return the result.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_INTELLIGENT_VOICE",
+        "@param { AsyncCallback<void> } callback  - the callback used to return the result.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Not system application.",
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "EnrollIntelligentVoiceEngine",
+      "since_version": "10",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "the callback used to return the result."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Not system application."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "stop",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Stops the engine, This method uses a promise to return the result.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_INTELLIGENT_VOICE",
+        "@returns { Promise<void> } the promise used to return the result.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Not system application.",
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "EnrollIntelligentVoiceEngine",
+      "since_version": "10",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [],
+      "return_description": "the promise used to return the result.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Not system application."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "commit",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Commit enroll, This method uses an asynchronous callback to return the result.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_INTELLIGENT_VOICE",
+        "@param { AsyncCallback<void> } callback - the callback used to return the result.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Not system application.",
+        "@throws { BusinessError } 22700104 - Failed to commit the enrollment.",
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "EnrollIntelligentVoiceEngine",
+      "since_version": "10",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "the callback used to return the result."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Not system application."
+        },
+        {
+          "code": "22700104",
+          "description": "Failed to commit the enrollment."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "commit",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Commit enroll, This method uses a promise to return the result.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_INTELLIGENT_VOICE",
+        "@returns { Promise<void> } the promise used to return the result.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Not system application.",
+        "@throws { BusinessError } 22700104 - Failed to commit the enrollment.",
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "EnrollIntelligentVoiceEngine",
+      "since_version": "10",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [],
+      "return_description": "the promise used to return the result.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Not system application."
+        },
+        {
+          "code": "22700104",
+          "description": "Failed to commit the enrollment."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "setWakeupHapInfo",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Sets wakeup hap information, This method uses an asynchronous callback to return the result.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_INTELLIGENT_VOICE",
+        "@param { WakeupHapInfo } info - info indicates wakeup hap information.",
+        "@param { AsyncCallback<void> } callback - the callback used to return the result.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Not system application.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.",
+        "@throws { BusinessError } 22700102 - Invalid parameter.",
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "EnrollIntelligentVoiceEngine",
+      "since_version": "10",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [
+        {
+          "名称": "info",
+          "类型": "WakeupHapInfo",
+          "必填": true,
+          "说明": "info indicates wakeup hap information."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "the callback used to return the result."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Not system application."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types."
+        },
+        {
+          "code": "22700102",
+          "description": "Invalid parameter."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "setWakeupHapInfo",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Sets wakeup hap information, This method uses a promise to return the result.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_INTELLIGENT_VOICE",
+        "@param { WakeupHapInfo } info - info indicates wakeup hap information.",
+        "@returns { Promise<void> } the promise used to return the result.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Not system application.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.",
+        "@throws { BusinessError } 22700102 - Invalid parameter.",
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "EnrollIntelligentVoiceEngine",
+      "since_version": "10",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [
+        {
+          "名称": "info",
+          "类型": "WakeupHapInfo",
+          "必填": true,
+          "说明": "info indicates wakeup hap information."
+        }
+      ],
+      "return_description": "the promise used to return the result.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Not system application."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types."
+        },
+        {
+          "code": "22700102",
+          "description": "Invalid parameter."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "setSensibility",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Sets sensibility, This method uses an asynchronous callback to return the result.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_INTELLIGENT_VOICE",
+        "@param { SensibilityType } sensibility - sensibility to set.",
+        "@param { AsyncCallback<void> } callback - the callback used to return the result.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Not system application.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.",
+        "@throws { BusinessError } 22700102 - Invalid parameter.",
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "EnrollIntelligentVoiceEngine",
+      "since_version": "10",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [
+        {
+          "名称": "sensibility",
+          "类型": "SensibilityType",
+          "必填": true,
+          "说明": "sensibility to set."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "the callback used to return the result."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Not system application."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types."
+        },
+        {
+          "code": "22700102",
+          "description": "Invalid parameter."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "setSensibility",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Sets sensibility, This method uses a promise to return the result.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_INTELLIGENT_VOICE",
+        "@param { SensibilityType } sensibility - sensibility to set.",
+        "@returns { Promise<void> } the promise used to return the result.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Not system application.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.",
+        "@throws { BusinessError } 22700102 - Invalid parameter.",
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "EnrollIntelligentVoiceEngine",
+      "since_version": "10",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [
+        {
+          "名称": "sensibility",
+          "类型": "SensibilityType",
+          "必填": true,
+          "说明": "sensibility to set."
+        }
+      ],
+      "return_description": "the promise used to return the result.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Not system application."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types."
+        },
+        {
+          "code": "22700102",
+          "description": "Invalid parameter."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "setParameter",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Sets an intelligent voice parameter. This method uses an asynchronous callback to return the result.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_INTELLIGENT_VOICE",
+        "@param { string } key - the key of the intelligent voice parameter to set.",
+        "@param { string } value - the value of the intelligent voice parameter to set.",
+        "@param { AsyncCallback<void> } callback - the callback used to return the result.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Not system application.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.",
+        "@throws { BusinessError } 22700102 - Invalid parameter.",
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "EnrollIntelligentVoiceEngine",
+      "since_version": "10",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [
+        {
+          "名称": "key",
+          "类型": "string",
+          "必填": true,
+          "说明": "the key of the intelligent voice parameter to set."
+        },
+        {
+          "名称": "value",
+          "类型": "string",
+          "必填": true,
+          "说明": "the value of the intelligent voice parameter to set."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "the callback used to return the result."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Not system application."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types."
+        },
+        {
+          "code": "22700102",
+          "description": "Invalid parameter."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "setParameter",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Sets an intelligent voice parameter. This method uses a promise to return the result.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_INTELLIGENT_VOICE",
+        "@param { string } key - the key of the intelligent voice parameter to set.",
+        "@param { string } value - the value of the intelligent voice parameter to set.",
+        "@returns { Promise<void> } the promise used to return the result.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Not system application.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.",
+        "@throws { BusinessError } 22700102 - Invalid parameter.",
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "EnrollIntelligentVoiceEngine",
+      "since_version": "10",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [
+        {
+          "名称": "key",
+          "类型": "string",
+          "必填": true,
+          "说明": "the key of the intelligent voice parameter to set."
+        },
+        {
+          "名称": "value",
+          "类型": "string",
+          "必填": true,
+          "说明": "the value of the intelligent voice parameter to set."
+        }
+      ],
+      "return_description": "the promise used to return the result.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Not system application."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types."
+        },
+        {
+          "code": "22700102",
+          "description": "Invalid parameter."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getParameter",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the value of an intelligent voice parameter. This method uses an asynchronous callback to return the query result.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_INTELLIGENT_VOICE",
+        "@param { string } key - the key of the intelligent voice parameter whose value is to be obtained.",
+        "@param { AsyncCallback<string> } callback - the callback used to return the value of the intelligent voice parameter.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Not system application.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.",
+        "@throws { BusinessError } 22700102 - Invalid parameter.",
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "EnrollIntelligentVoiceEngine",
+      "since_version": "10",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [
+        {
+          "名称": "key",
+          "类型": "string",
+          "必填": true,
+          "说明": "the key of the intelligent voice parameter whose value is to be obtained."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<string>",
+          "必填": true,
+          "说明": "the callback used to return the value of the intelligent voice parameter."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Not system application."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types."
+        },
+        {
+          "code": "22700102",
+          "description": "Invalid parameter."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getParameter",
+      "返回值": "Promise<string>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the value of an intelligent voice parameter. This method uses a promise to return the query result.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_INTELLIGENT_VOICE",
+        "@param { string } key - the key of the intelligent voice parameter whose value is to be obtained.",
+        "@returns { Promise<string> } the promise used to return the value of the intelligent voice parameter.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Not system application.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.",
+        "@throws { BusinessError } 22700102 - Invalid parameter.",
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "EnrollIntelligentVoiceEngine",
+      "since_version": "10",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [
+        {
+          "名称": "key",
+          "类型": "string",
+          "必填": true,
+          "说明": "the key of the intelligent voice parameter whose value is to be obtained."
+        }
+      ],
+      "return_description": "the promise used to return the value of the intelligent voice parameter.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Not system application."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types."
+        },
+        {
+          "code": "22700102",
+          "description": "Invalid parameter."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "evaluateForResult",
+      "返回值": "Promise<EvaluationResult>",
+      "所属模块": "未知模块",
+      "功能描述": "Evaluates for result, This method uses a promise to return the result.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_INTELLIGENT_VOICE",
+        "@param { string } word - the word to evaluate.",
+        "@returns { Promise<EvaluationResult> } the promise used to return the result.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Not system application.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.",
+        "@throws { BusinessError } 22700107 - System error.",
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "EnrollIntelligentVoiceEngine",
+      "since_version": "12",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [
+        {
+          "名称": "word",
+          "类型": "string",
+          "必填": true,
+          "说明": "the word to evaluate."
+        }
+      ],
+      "return_description": "the promise used to return the result.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Not system application."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types."
+        },
+        {
+          "code": "22700107",
+          "description": "System error."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "release",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Releases the engine, This method uses an asynchronous callback to return the result.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_INTELLIGENT_VOICE",
+        "@param { AsyncCallback<void> } callback - the callback used to return the result.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Not system application.",
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "EnrollIntelligentVoiceEngine",
+      "since_version": "10",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "the callback used to return the result."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Not system application."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "release",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Releases the engine, This method uses a promise to return the result.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_INTELLIGENT_VOICE",
+        "@returns { Promise<void> } the promise used to return the result.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Not system application.",
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "EnrollIntelligentVoiceEngine",
+      "since_version": "10",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [],
+      "return_description": "the promise used to return the result.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Not system application."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "interface",
+      "名称": "WakeupIntelligentVoiceEngine",
+      "所属模块": "未知模块",
+      "功能描述": "Implements wakeup intelligent voice engine.",
+      "注释信息": [
+        "@typedef WakeupIntelligentVoiceEngine",
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "intelligentVoice",
+      "since_version": "10",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getSupportedRegions",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the supported regions, This method uses an asynchronous callback to return the query result.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_INTELLIGENT_VOICE",
+        "@param { AsyncCallback<Array<string>> } callback - the callback used to return the supported regions.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Not system application.",
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "WakeupIntelligentVoiceEngine",
+      "since_version": "10",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<Array<string>>",
+          "必填": true,
+          "说明": "the callback used to return the supported regions."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Not system application."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getSupportedRegions",
+      "返回值": "Promise<Array<string>>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the supported regions, This method uses a promise to return the query result.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_INTELLIGENT_VOICE",
+        "@returns { Promise<Array<string>> } the promise used to return the supported regions.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Not system application.",
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "WakeupIntelligentVoiceEngine",
+      "since_version": "10",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [],
+      "return_description": "the promise used to return the supported regions.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Not system application."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "setWakeupHapInfo",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Sets wakeup hap information, This method uses an asynchronous callback to return the result.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_INTELLIGENT_VOICE",
+        "@param { WakeupHapInfo } info - info indicates wakeup hap information.",
+        "@param { AsyncCallback<void> } callback - the callback used to return the result.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Not system application.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.",
+        "@throws { BusinessError } 22700102 - Invalid parameter.",
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "WakeupIntelligentVoiceEngine",
+      "since_version": "10",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [
+        {
+          "名称": "info",
+          "类型": "WakeupHapInfo",
+          "必填": true,
+          "说明": "info indicates wakeup hap information."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "the callback used to return the result."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Not system application."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types."
+        },
+        {
+          "code": "22700102",
+          "description": "Invalid parameter."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "setWakeupHapInfo",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Sets wakeup hap information, This method uses a promise to return the result.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_INTELLIGENT_VOICE",
+        "@param { WakeupHapInfo } info - info indicates wakeup hap information.",
+        "@returns { Promise<void> } the promise used to return the result.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Not system application.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.",
+        "@throws { BusinessError } 22700102 - Invalid parameter.",
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "WakeupIntelligentVoiceEngine",
+      "since_version": "10",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [
+        {
+          "名称": "info",
+          "类型": "WakeupHapInfo",
+          "必填": true,
+          "说明": "info indicates wakeup hap information."
+        }
+      ],
+      "return_description": "the promise used to return the result.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Not system application."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types."
+        },
+        {
+          "code": "22700102",
+          "description": "Invalid parameter."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "setSensibility",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Sets sensibility, This method uses an asynchronous callback to return the result.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_INTELLIGENT_VOICE",
+        "@param { SensibilityType } sensibility - sensibility to set.",
+        "@param { AsyncCallback<void> } callback - the callback used to return the result.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Not system application.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.",
+        "@throws { BusinessError } 22700102 - Invalid parameter.",
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "WakeupIntelligentVoiceEngine",
+      "since_version": "10",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [
+        {
+          "名称": "sensibility",
+          "类型": "SensibilityType",
+          "必填": true,
+          "说明": "sensibility to set."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "the callback used to return the result."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Not system application."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types."
+        },
+        {
+          "code": "22700102",
+          "description": "Invalid parameter."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "setSensibility",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Sets sensibility, This method uses a promise to return the result.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_INTELLIGENT_VOICE",
+        "@param { SensibilityType } sensibility - sensibility to set.",
+        "@returns { Promise<void> } the promise used to return the result.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Not system application.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.",
+        "@throws { BusinessError } 22700102 - Invalid parameter.",
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "WakeupIntelligentVoiceEngine",
+      "since_version": "10",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [
+        {
+          "名称": "sensibility",
+          "类型": "SensibilityType",
+          "必填": true,
+          "说明": "sensibility to set."
+        }
+      ],
+      "return_description": "the promise used to return the result.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Not system application."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types."
+        },
+        {
+          "code": "22700102",
+          "description": "Invalid parameter."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "setParameter",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Sets an intelligent voice parameter. This method uses an asynchronous callback to return the result.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_INTELLIGENT_VOICE",
+        "@param { string } key - the key of the intelligent voice parameter to set.",
+        "@param { string } value - the value of the intelligent voice parameter to set.",
+        "@param { AsyncCallback<void> } callback - the callback used to return the result.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Not system application.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.",
+        "@throws { BusinessError } 22700102 - Invalid parameter.",
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "WakeupIntelligentVoiceEngine",
+      "since_version": "10",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [
+        {
+          "名称": "key",
+          "类型": "string",
+          "必填": true,
+          "说明": "the key of the intelligent voice parameter to set."
+        },
+        {
+          "名称": "value",
+          "类型": "string",
+          "必填": true,
+          "说明": "the value of the intelligent voice parameter to set."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "the callback used to return the result."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Not system application."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types."
+        },
+        {
+          "code": "22700102",
+          "description": "Invalid parameter."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "setParameter",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Sets an intelligent voice parameter. This method uses a promise to return the result.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_INTELLIGENT_VOICE",
+        "@param { string } key - the key of the intelligent voice parameter to set.",
+        "@param { string } value - the value of the intelligent voice parameter to set.",
+        "@returns { Promise<void> } the promise used to return the result.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Not system application.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.",
+        "@throws { BusinessError } 22700102 - Invalid parameter.",
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "WakeupIntelligentVoiceEngine",
+      "since_version": "10",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [
+        {
+          "名称": "key",
+          "类型": "string",
+          "必填": true,
+          "说明": "the key of the intelligent voice parameter to set."
+        },
+        {
+          "名称": "value",
+          "类型": "string",
+          "必填": true,
+          "说明": "the value of the intelligent voice parameter to set."
+        }
+      ],
+      "return_description": "the promise used to return the result.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Not system application."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types."
+        },
+        {
+          "code": "22700102",
+          "description": "Invalid parameter."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getParameter",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the value of an intelligent voice parameter. This method uses an asynchronous callback to return the query result.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_INTELLIGENT_VOICE",
+        "@param { string } key - the key of the intelligent voice parameter whose value is to be obtained.",
+        "@param { AsyncCallback<string> } callback - the callback used to return the value of the intelligent voice parameter.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Not system application.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.",
+        "@throws { BusinessError } 22700102 - Invalid parameter.",
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "WakeupIntelligentVoiceEngine",
+      "since_version": "10",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [
+        {
+          "名称": "key",
+          "类型": "string",
+          "必填": true,
+          "说明": "the key of the intelligent voice parameter whose value is to be obtained."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<string>",
+          "必填": true,
+          "说明": "the callback used to return the value of the intelligent voice parameter."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Not system application."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types."
+        },
+        {
+          "code": "22700102",
+          "description": "Invalid parameter."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getParameter",
+      "返回值": "Promise<string>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the value of an intelligent voice parameter. This method uses a promise to return the query result.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_INTELLIGENT_VOICE",
+        "@param { string } key - the key of the intelligent voice parameter whose value is to be obtained.",
+        "@returns { Promise<string> } the promise used to return the value of the intelligent voice parameter.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Not system application.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types.",
+        "@throws { BusinessError } 22700102 - Invalid parameter.",
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "WakeupIntelligentVoiceEngine",
+      "since_version": "10",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [
+        {
+          "名称": "key",
+          "类型": "string",
+          "必填": true,
+          "说明": "the key of the intelligent voice parameter whose value is to be obtained."
+        }
+      ],
+      "return_description": "the promise used to return the value of the intelligent voice parameter.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Not system application."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types."
+        },
+        {
+          "code": "22700102",
+          "description": "Invalid parameter."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getPcm",
+      "返回值": "Promise<ArrayBuffer>",
+      "所属模块": "未知模块",
+      "功能描述": "Gets pulse-code modulation audio. This method uses a promise to return the result.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_INTELLIGENT_VOICE",
+        "@returns { Promise<ArrayBuffer> } the promise used to return the pulse-code modulation audio.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Not system application.",
+        "@throws { BusinessError } 22700101 - No memory.",
+        "@throws { BusinessError } 22700107 - System error.",
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "WakeupIntelligentVoiceEngine",
+      "since_version": "12",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [],
+      "return_description": "the promise used to return the pulse-code modulation audio.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Not system application."
+        },
+        {
+          "code": "22700101",
+          "description": "No memory."
+        },
+        {
+          "code": "22700107",
+          "description": "System error."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "startCapturer",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Starts the capturer. This method uses a promise to return the result.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_INTELLIGENT_VOICE",
+        "@param { number } channels - the channels needed in reading. The channels should be greater than 0 and smaller than 16.",
+        "@returns { Promise<void> } the promise used to return the result.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Not system application.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed.",
+        "@throws { BusinessError } 22700102 - Invalid parameter.",
+        "@throws { BusinessError } 22700105 - Start capturer failed.",
+        "@throws { BusinessError } 22700107 - System error.",
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "WakeupIntelligentVoiceEngine",
+      "since_version": "12",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [
+        {
+          "名称": "channels",
+          "类型": "number",
+          "必填": true,
+          "说明": "the channels needed in reading. The channels should be greater than 0 and smaller than 16."
+        }
+      ],
+      "return_description": "the promise used to return the result.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Not system application."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed."
+        },
+        {
+          "code": "22700102",
+          "description": "Invalid parameter."
+        },
+        {
+          "code": "22700105",
+          "description": "Start capturer failed."
+        },
+        {
+          "code": "22700107",
+          "description": "System error."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "read",
+      "返回值": "Promise<ArrayBuffer>",
+      "所属模块": "未知模块",
+      "功能描述": "Reads the buffer from wakeup engine. This method uses a promise to return the result.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_INTELLIGENT_VOICE",
+        "@returns { Promise<ArrayBuffer> } the promise used to return the buffer.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Not system application.",
+        "@throws { BusinessError } 22700101 - No memory.",
+        "@throws { BusinessError } 22700106 - Read failed.",
+        "@throws { BusinessError } 22700107 - System error.",
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "WakeupIntelligentVoiceEngine",
+      "since_version": "12",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [],
+      "return_description": "the promise used to return the buffer.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Not system application."
+        },
+        {
+          "code": "22700101",
+          "description": "No memory."
+        },
+        {
+          "code": "22700106",
+          "description": "Read failed."
+        },
+        {
+          "code": "22700107",
+          "description": "System error."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "stopCapturer",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Stops the capturer. This method uses a promise to return the result.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_INTELLIGENT_VOICE",
+        "@returns { Promise<void> } the promise used to return the result.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Not system application.",
+        "@throws { BusinessError } 22700107 - System error.",
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "WakeupIntelligentVoiceEngine",
+      "since_version": "12",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [],
+      "return_description": "the promise used to return the result.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Not system application."
+        },
+        {
+          "code": "22700107",
+          "description": "System error."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "release",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Releases the engine, This method uses an asynchronous callback to return the result.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_INTELLIGENT_VOICE",
+        "@param { AsyncCallback<void> } callback - the callback used to return the result.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Not system application.",
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "WakeupIntelligentVoiceEngine",
+      "since_version": "10",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "the callback used to return the result."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Not system application."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "release",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Releases the engine, This method uses a promise to return the result.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_INTELLIGENT_VOICE",
+        "@returns { Promise<void> } the promise used to return the result.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Not system application.",
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "WakeupIntelligentVoiceEngine",
+      "since_version": "10",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [],
+      "return_description": "the promise used to return the result.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Not system application."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Subscribes wakeup intelligent voice events. When wakeup intelligent voice events reach, the callback is invoked.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_INTELLIGENT_VOICE",
+        "@param { 'wakeupIntelligentVoiceEvent' } type - Type of the event to listen for. Only the wakeupIntelligentVoice event is supported.",
+        "@param { Callback<WakeupIntelligentVoiceEngineCallbackInfo> } callback - the callback invoked when the event is triggered.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Not system application.",
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "WakeupIntelligentVoiceEngine",
+      "since_version": "10",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'wakeupIntelligentVoiceEvent'",
+          "必填": true,
+          "说明": "Type of the event to listen for. Only the wakeupIntelligentVoice event is supported."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<WakeupIntelligentVoiceEngineCallbackInfo>",
+          "必填": true,
+          "说明": "the callback invoked when the event is triggered."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Not system application."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unsubscribes wakeup intelligent voice events.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_INTELLIGENT_VOICE",
+        "@param { 'wakeupIntelligentVoiceEvent' } type - Type of the event to listen for. Only the wakeupIntelligentVoice event is supported.",
+        "@param { Callback<WakeupIntelligentVoiceEngineCallbackInfo> } [callback] - the callback invoked when the event is triggered.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Not system application.",
+        "@syscap SystemCapability.AI.IntelligentVoice.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "WakeupIntelligentVoiceEngine",
+      "since_version": "10",
+      "system_capability": "SystemCapability.AI.IntelligentVoice.Core",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'wakeupIntelligentVoiceEvent'",
+          "必填": true,
+          "说明": "Type of the event to listen for. Only the wakeupIntelligentVoice event is supported."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "Callback<WakeupIntelligentVoiceEngineCallbackInfo> } [callback] - the callback invoked when the event is triggered."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Not system application."
+        }
+      ],
+      "版本": "API5.0"
+    }
+  ]
+}

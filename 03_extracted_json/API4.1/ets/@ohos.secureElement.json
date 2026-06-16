@@ -1,0 +1,204 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.ConnectivityKit",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "namespace",
+      "名称": "omapi",
+      "所属模块": "@kit.ConnectivityKit",
+      "功能描述": "Provides APIs for mobile applications to access different SEs in mobile devices, such as SIMs or embedded SEs. See \"Open Mobile API Specification\".",
+      "注释信息": [
+        "@namespace omapi",
+        "@syscap SystemCapability.Communication.SecureElement",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "@kit.ConnectivityKit",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.SecureElement",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "newSEService",
+      "返回值": "SEService",
+      "所属模块": "未知模块",
+      "功能描述": "Establish a new connection that can be used to connect to all the SEs available in the system. The connection process can be quite long, so it happens in an asynchronous way. It is usable only if the specified callback is called or if isConnected() returns true.",
+      "注释信息": [
+        "@param { 'serviceState' } type nfc serviceState",
+        "@param { Callback<ServiceState> } callback - The callback to return the service.",
+        "@returns { SEService } The new SEService instance.",
+        "@throws { BusinessError } 401 - The parameter check failed.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@syscap SystemCapability.Communication.SecureElement",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "omapi",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.SecureElement",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'serviceState'",
+          "必填": true,
+          "说明": "nfc serviceState"
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<ServiceState>",
+          "必填": true,
+          "说明": "The callback to return the service."
+        }
+      ],
+      "return_description": "The new SEService instance.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "The parameter check failed."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        }
+      ],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "interface",
+      "名称": "SEService",
+      "所属模块": "未知模块",
+      "功能描述": "SEService realizes the communication to available SEs on the device.",
+      "注释信息": [
+        "@typedef SEService",
+        "@syscap SystemCapability.Communication.SecureElement",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "omapi",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.SecureElement",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "getReaders",
+      "返回值": "Reader[]",
+      "所属模块": "未知模块",
+      "功能描述": "Returns the list of available SE readers. There must be no duplicated objects in the returned list. All available readers SHALL be listed even if no card is inserted.",
+      "注释信息": [
+        "@returns { Reader[] } The list of available SE readers.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@syscap SystemCapability.Communication.SecureElement",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "SEService",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.SecureElement",
+      "parameters": [],
+      "return_description": "The list of available SE readers.",
+      "error_codes": [
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        }
+      ],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "isConnected",
+      "返回值": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Checks whether or not the service is connected.",
+      "注释信息": [
+        "@returns { boolean } True if the service is connected.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@syscap SystemCapability.Communication.SecureElement",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "SEService",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.SecureElement",
+      "parameters": [],
+      "return_description": "True if the service is connected.",
+      "error_codes": [
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        }
+      ],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "shutdown",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Releases all SE resources allocated by this SEService. As a result isConnected() will return false.",
+      "注释信息": [
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@syscap SystemCapability.Communication.SecureElement",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "SEService",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.SecureElement",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        }
+      ],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "getVersion",
+      "返回值": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Returns the version of the Open Mobile API Specification this implementation is based on.",
+      "注释信息": [
+        "@returns { string } The Open Mobile API version (e.g. “3.3” for Open Mobile API Specification version 3.3).",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@syscap SystemCapability.Communication.SecureElement",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "SEService",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.SecureElement",
+      "parameters": [],
+      "return_description": "The Open Mobile API version (e.g. “3.3” for Open Mobile API Specification version 3.3).",
+      "error_codes": [
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        }
+      ],
+      "版本": "API4.1"
+    }
+  ]
+}

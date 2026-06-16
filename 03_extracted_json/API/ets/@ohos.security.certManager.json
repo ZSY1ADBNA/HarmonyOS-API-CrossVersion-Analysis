@@ -1,0 +1,3296 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.DeviceCertificateKit",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "namespace",
+      "名称": "certificateManager",
+      "所属模块": "@kit.DeviceCertificateKit",
+      "功能描述": "OpenHarmony Universal CertificateManager",
+      "注释信息": [
+        "@namespace certificateManager",
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "@kit.DeviceCertificateKit",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "CMErrorCode",
+      "所属模块": "未知模块",
+      "功能描述": "Enum for result code",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "certificateManager",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CM_ERROR_NO_PERMISSION",
+      "值": "201",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the application has no permission to call the API.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "CMErrorCode",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CM_ERROR_INVALID_PARAMS",
+      "值": "401",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the input parameters are invalid. For example, the number of parameters or the parameter type is incorrect.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "CMErrorCode",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CM_ERROR_GENERIC",
+      "值": "17500001",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that internal error.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "CMErrorCode",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CM_ERROR_NO_FOUND",
+      "值": "17500002",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the certificate does not exist.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "CMErrorCode",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CM_ERROR_INCORRECT_FORMAT",
+      "值": "17500003",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the keystore is in an invalid format or the keystore password is incorrect.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "CMErrorCode",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CM_ERROR_MAX_CERT_COUNT_REACHED",
+      "值": "17500004",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the number of certificates or credentials reaches the maximum allowed.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "CMErrorCode",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CM_ERROR_NO_AUTHORIZATION",
+      "值": "17500005",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the application is not authorized by the user.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "CMErrorCode",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CM_ERROR_DEVICE_ENTER_ADVSECMODE",
+      "值": "17500007",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the device enters advanced security mode.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 18"
+      ],
+      "层级": 2,
+      "上级": "CMErrorCode",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CM_ERROR_STORE_PATH_NOT_SUPPORTED",
+      "值": "17500009",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the device does not support the specified certificate store path.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "CMErrorCode",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CM_ERROR_ACCESS_UKEY_SERVICE_FAILED",
+      "值": "17500010",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that access USB key service failed.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "CMErrorCode",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CM_ERROR_PARAMETER_VALIDATION_FAILED",
+      "值": "17500011",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the input parameters validation failed. For example, the parameter format is incorrect or the value range is invalid.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "CMErrorCode",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "CertInfo",
+      "所属模块": "未知模块",
+      "功能描述": "Provides the CertInfo type.",
+      "注释信息": [
+        "@typedef CertInfo",
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "certificateManager",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "uri",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the uri of certificate.",
+      "注释信息": [
+        "@type { string }",
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "CertInfo",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "certAlias",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the alias of certificate.",
+      "注释信息": [
+        "@type { string }",
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "CertInfo",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "state",
+      "属性类型": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the state of certificate.",
+      "注释信息": [
+        "@type { boolean }",
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "CertInfo",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "issuerName",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the issuer name of certificate.",
+      "注释信息": [
+        "@type { string }",
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "CertInfo",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "subjectName",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the subject name of certificate.",
+      "注释信息": [
+        "@type { string }",
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "CertInfo",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "serial",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the serial number of certificate.",
+      "注释信息": [
+        "@type { string }",
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "CertInfo",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "notBefore",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the not before time of certificate.",
+      "注释信息": [
+        "@type { string }",
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "CertInfo",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "notAfter",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the not after time of certificate.",
+      "注释信息": [
+        "@type { string }",
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "CertInfo",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "fingerprintSha256",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the fingerprint of certificate.",
+      "注释信息": [
+        "@type { string }",
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "CertInfo",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "cert",
+      "属性类型": "Uint8Array",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the certificate binary data.",
+      "注释信息": [
+        "@type { Uint8Array }",
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "CertInfo",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "CertAbstract",
+      "所属模块": "未知模块",
+      "功能描述": "Provides the abstract Cert type.",
+      "注释信息": [
+        "@typedef CertAbstract",
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "certificateManager",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "uri",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the uri of certificate.",
+      "注释信息": [
+        "@type { string }",
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "CertAbstract",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "certAlias",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the alias of certificate.",
+      "注释信息": [
+        "@type { string }",
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "CertAbstract",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "state",
+      "属性类型": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the state of certificate.",
+      "注释信息": [
+        "@type { boolean }",
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "CertAbstract",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "subjectName",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the subject name of certificate.",
+      "注释信息": [
+        "@type { string }",
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "CertAbstract",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "Credential",
+      "所属模块": "未知模块",
+      "功能描述": "Provides the Credential type.",
+      "注释信息": [
+        "@typedef Credential",
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "certificateManager",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "type",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the type of Credential.",
+      "注释信息": [
+        "@type { string }",
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Credential",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "alias",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the alias of Credential.",
+      "注释信息": [
+        "@type { string }",
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Credential",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "keyUri",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the uri of Credential.",
+      "注释信息": [
+        "@type { string }",
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Credential",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "certNum",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the number of certificates included in the credential.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Credential",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "keyNum",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the number of keys included in the credential.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Credential",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "credentialData",
+      "属性类型": "Uint8Array",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the credential binary data.",
+      "注释信息": [
+        "@type { Uint8Array }",
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Credential",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "certPurpose",
+      "属性类型": "CertificatePurpose",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the certificate purpose.",
+      "注释信息": [
+        "@type { ?CertificatePurpose }",
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "Credential",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "CredentialAbstract",
+      "所属模块": "未知模块",
+      "功能描述": "Provides the abstract Credential type.",
+      "注释信息": [
+        "@typedef CredentialAbstract",
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "certificateManager",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "type",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the type of Credential.",
+      "注释信息": [
+        "@type { string }",
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "CredentialAbstract",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "alias",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the alias of Credential.",
+      "注释信息": [
+        "@type { string }",
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "CredentialAbstract",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "keyUri",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the uri of Credential.",
+      "注释信息": [
+        "@type { string }",
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "CredentialAbstract",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "CMResult",
+      "所属模块": "未知模块",
+      "功能描述": "Provides the CMResult type.",
+      "注释信息": [
+        "@typedef CMResult",
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "certificateManager",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "certList",
+      "属性类型": "Array<CertAbstract>",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the certificate list of CMResult.",
+      "注释信息": [
+        "@type { ?Array<CertAbstract> }",
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "CMResult",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "certInfo",
+      "属性类型": "CertInfo",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the certificate info of CMResult.",
+      "注释信息": [
+        "@type { ?CertInfo }",
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "CMResult",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "credentialList",
+      "属性类型": "Array<CredentialAbstract>",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the credential list of CMResult.",
+      "注释信息": [
+        "@type { ?Array<CredentialAbstract> }",
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "CMResult",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "credential",
+      "属性类型": "Credential",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the credential of CMResult.",
+      "注释信息": [
+        "@type { ?Credential }",
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "CMResult",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "appUidList",
+      "属性类型": "Array<string>",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the app uid list of CMResult.",
+      "注释信息": [
+        "@type { ?Array<string> }",
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "CMResult",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "uri",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the certificate uri of CMResult.",
+      "注释信息": [
+        "@type { ?string }",
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "CMResult",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "outData",
+      "属性类型": "Uint8Array",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the outData of CMResult.",
+      "注释信息": [
+        "@type { ?Uint8Array }",
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "CMResult",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "credentialDetailList",
+      "属性类型": "Array<Credential>",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the credential detail list of CMResult.",
+      "注释信息": [
+        "@type { ?Array<Credential> }",
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "CMResult",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "CmKeyPurpose",
+      "所属模块": "未知模块",
+      "功能描述": "Enum for Key Purpose",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "certificateManager",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CM_KEY_PURPOSE_SIGN",
+      "值": "4",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that key for signature.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "CmKeyPurpose",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CM_KEY_PURPOSE_VERIFY",
+      "值": "8",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that key for verify.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "CmKeyPurpose",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "CmKeyDigest",
+      "所属模块": "未知模块",
+      "功能描述": "Enum for Key Digest",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "certificateManager",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CM_DIGEST_NONE",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that key digest is none.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "CmKeyDigest",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CM_DIGEST_MD5",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that key digest is md5.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "CmKeyDigest",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CM_DIGEST_SHA1",
+      "值": "2",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that key digest is sha1.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "CmKeyDigest",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CM_DIGEST_SHA224",
+      "值": "3",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that key digest is sha224.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "CmKeyDigest",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CM_DIGEST_SHA256",
+      "值": "4",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that key digest is sha256.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "CmKeyDigest",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CM_DIGEST_SHA384",
+      "值": "5",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that key digest is sha384.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "CmKeyDigest",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CM_DIGEST_SHA512",
+      "值": "6",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that key digest is sha512.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "CmKeyDigest",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CM_DIGEST_SM3",
+      "值": "7",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that key digest is SM3.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 18"
+      ],
+      "层级": 2,
+      "上级": "CmKeyDigest",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "CmKeyPadding",
+      "所属模块": "未知模块",
+      "功能描述": "Enum for Key Padding",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "certificateManager",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CM_PADDING_NONE",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that key padding is none.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "CmKeyPadding",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CM_PADDING_PSS",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that key padding is PSS.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "CmKeyPadding",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CM_PADDING_PKCS1_V1_5",
+      "值": "2",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that key padding is PKCS1_V1_5.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "CmKeyPadding",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "CMSignatureSpec",
+      "所属模块": "未知模块",
+      "功能描述": "Provides the CMSignatureSpec type.",
+      "注释信息": [
+        "@typedef CMSignatureSpec",
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "certificateManager",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "purpose",
+      "属性类型": "CmKeyPurpose",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the key purpose of CMSignatureSpec.",
+      "注释信息": [
+        "@type { CmKeyPurpose }",
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "CMSignatureSpec",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "padding",
+      "属性类型": "CmKeyPadding",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the key padding of CMSignatureSpec.",
+      "注释信息": [
+        "@type { ?CmKeyPadding }",
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "CMSignatureSpec",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "digest",
+      "属性类型": "CmKeyDigest",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the key digest of CMSignatureSpec.",
+      "注释信息": [
+        "@type { ?CmKeyDigest }",
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "CMSignatureSpec",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "CMHandle",
+      "所属模块": "未知模块",
+      "功能描述": "Provides the CMHandle type.",
+      "注释信息": [
+        "@typedef CMHandle",
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "certificateManager",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "handle",
+      "属性类型": "Uint8Array",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the handle .",
+      "注释信息": [
+        "@type { Uint8Array }",
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "CMHandle",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "installPrivateCertificate",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Install private application certificate. <br>2. Incorrect parameter types; 3. Parameter verification failed. <br>2. Memory operation error; 3. File operation error. Please try again.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_CERT_MANAGER",
+        "@param { Uint8Array } keystore - Indicates the keystore file with key pair and certificate.",
+        "@param { string } keystorePwd - Indicates the password of keystore file.",
+        "@param { string } certAlias - Indicates the certificate name inputted by the user.",
+        "@param { AsyncCallback<CMResult> } callback - The callback of installPrivateCertificate.",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission required to call the API.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 17500001 - Internal error. Possible causes: 1. IPC communication failed;",
+        "@throws { BusinessError } 17500003 - The keystore is in an invalid format or the keystore password is incorrect.",
+        "@throws { BusinessError } 17500004 - The number of certificates or credentials reaches the maximum allowed.",
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "certificateManager",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [
+        {
+          "名称": "keystore",
+          "类型": "Uint8Array",
+          "必填": true,
+          "说明": "Indicates the keystore file with key pair and certificate."
+        },
+        {
+          "名称": "keystorePwd",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates the password of keystore file."
+        },
+        {
+          "名称": "certAlias",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates the certificate name inputted by the user."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<CMResult>",
+          "必填": true,
+          "说明": "The callback of installPrivateCertificate."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission required to call the API."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "17500001",
+          "description": "Internal error. Possible causes: 1. IPC communication failed;"
+        },
+        {
+          "code": "17500003",
+          "description": "The keystore is in an invalid format or the keystore password is incorrect."
+        },
+        {
+          "code": "17500004",
+          "description": "The number of certificates or credentials reaches the maximum allowed."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "installPrivateCertificate",
+      "返回值": "Promise<CMResult>",
+      "所属模块": "未知模块",
+      "功能描述": "Install private application certificate. <br>2. Incorrect parameter types; 3. Parameter verification failed. <br>2. Memory operation error; 3. File operation error. Please try again.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_CERT_MANAGER",
+        "@param { Uint8Array } keystore - Indicates the keystore file with key pair and certificate.",
+        "@param { string } keystorePwd - Indicates the password of keystore file.",
+        "@param { string } certAlias - Indicates the certificate name inputted by the user.",
+        "@returns { Promise<CMResult> } The promise returned by the function.",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission required to call the API.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 17500001 - Internal error. Possible causes: 1. IPC communication failed;",
+        "@throws { BusinessError } 17500003 - The keystore is in an invalid format or the keystore password is incorrect.",
+        "@throws { BusinessError } 17500004 - The number of certificates or credentials reaches the maximum allowed.",
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "certificateManager",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [
+        {
+          "名称": "keystore",
+          "类型": "Uint8Array",
+          "必填": true,
+          "说明": "Indicates the keystore file with key pair and certificate."
+        },
+        {
+          "名称": "keystorePwd",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates the password of keystore file."
+        },
+        {
+          "名称": "certAlias",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates the certificate name inputted by the user."
+        }
+      ],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission required to call the API."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "17500001",
+          "description": "Internal error. Possible causes: 1. IPC communication failed;"
+        },
+        {
+          "code": "17500003",
+          "description": "The keystore is in an invalid format or the keystore password is incorrect."
+        },
+        {
+          "code": "17500004",
+          "description": "The number of certificates or credentials reaches the maximum allowed."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "uninstallPrivateCertificate",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Uninstall the specified normal application certificate. <br>2. Incorrect parameter types; 3. Parameter verification failed. <br>2. Memory operation error; 3. File operation error. Please try again.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_CERT_MANAGER",
+        "@param { string } keyUri - Indicates key's name.",
+        "@param { AsyncCallback<void> } callback - The callback of uninstallPrivateCertificate.",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission required to call the API.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 17500001 - Internal error. Possible causes: 1. IPC communication failed;",
+        "@throws { BusinessError } 17500002 - The certificate does not exist.",
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "certificateManager",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [
+        {
+          "名称": "keyUri",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates key's name."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "The callback of uninstallPrivateCertificate."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission required to call the API."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "17500001",
+          "description": "Internal error. Possible causes: 1. IPC communication failed;"
+        },
+        {
+          "code": "17500002",
+          "description": "The certificate does not exist."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "uninstallPrivateCertificate",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Uninstall the specified normal application certificate. <br>2. Incorrect parameter types; 3. Parameter verification failed. <br>2. Memory operation error; 3. File operation error. Please try again.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_CERT_MANAGER",
+        "@param { string } keyUri - Indicates key's name.",
+        "@returns { Promise<void> } The promise returned by the function.",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission required to call the API.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 17500001 - Internal error. Possible causes: 1. IPC communication failed;",
+        "@throws { BusinessError } 17500002 - The certificate does not exist.",
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "certificateManager",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [
+        {
+          "名称": "keyUri",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates key's name."
+        }
+      ],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission required to call the API."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "17500001",
+          "description": "Internal error. Possible causes: 1. IPC communication failed;"
+        },
+        {
+          "code": "17500002",
+          "description": "The certificate does not exist."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getPrivateCertificate",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Get the detail of private application certificate. <br>2. Incorrect parameter types; 3. Parameter verification failed. <br>2. Memory operation error; 3. File operation error. Please try again.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_CERT_MANAGER",
+        "@param { string } keyUri - Indicates key's name.",
+        "@param { AsyncCallback<CMResult> } callback - The callback of getPrivateCertificate.",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission required to call the API.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 17500001 - Internal error. Possible causes: 1. IPC communication failed;",
+        "@throws { BusinessError } 17500002 - The certificate does not exist.",
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "certificateManager",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [
+        {
+          "名称": "keyUri",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates key's name."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<CMResult>",
+          "必填": true,
+          "说明": "The callback of getPrivateCertificate."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission required to call the API."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "17500001",
+          "description": "Internal error. Possible causes: 1. IPC communication failed;"
+        },
+        {
+          "code": "17500002",
+          "description": "The certificate does not exist."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getPrivateCertificate",
+      "返回值": "Promise<CMResult>",
+      "所属模块": "未知模块",
+      "功能描述": "Get the detail of private application certificate. <br>2. Incorrect parameter types; 3. Parameter verification failed. <br>2. Memory operation error; 3. File operation error. Please try again.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_CERT_MANAGER",
+        "@param { string } keyUri - Indicates key's name.",
+        "@returns { Promise<CMResult> } The promise returned by the function.",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission required to call the API.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 17500001 - Internal error. Possible causes: 1. IPC communication failed;",
+        "@throws { BusinessError } 17500002 - The certificate does not exist.",
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "certificateManager",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [
+        {
+          "名称": "keyUri",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates key's name."
+        }
+      ],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission required to call the API."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "17500001",
+          "description": "Internal error. Possible causes: 1. IPC communication failed;"
+        },
+        {
+          "code": "17500002",
+          "description": "The certificate does not exist."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "init",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Init operation for signing and verifying etc. <br>2. Incorrect parameter types; 3. Parameter verification failed. <br>2. Memory operation error; 3. File operation error. Please try again.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_CERT_MANAGER",
+        "@param { string } authUri - Indicates the authorization relationship between application and application certificate.",
+        "@param { CMSignatureSpec } spec - Indicates the properties of the signature and verification.",
+        "@param { AsyncCallback<CMHandle> } callback - The callback of init.",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission required to call the API.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 17500001 - Internal error. Possible causes: 1. IPC communication failed;",
+        "@throws { BusinessError } 17500002 - The certificate does not exist.",
+        "@throws { BusinessError } 17500005 - The application is not authorized by the user.",
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "certificateManager",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [
+        {
+          "名称": "authUri",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates the authorization relationship between application and application certificate."
+        },
+        {
+          "名称": "spec",
+          "类型": "CMSignatureSpec",
+          "必填": true,
+          "说明": "Indicates the properties of the signature and verification."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<CMHandle>",
+          "必填": true,
+          "说明": "The callback of init."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission required to call the API."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "17500001",
+          "description": "Internal error. Possible causes: 1. IPC communication failed;"
+        },
+        {
+          "code": "17500002",
+          "description": "The certificate does not exist."
+        },
+        {
+          "code": "17500005",
+          "description": "The application is not authorized by the user."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "init",
+      "返回值": "Promise<CMHandle>",
+      "所属模块": "未知模块",
+      "功能描述": "Init operation for signing and verifying etc. <br>2. Incorrect parameter types; 3. Parameter verification failed. <br>2. Memory operation error; 3. File operation error. Please try again.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_CERT_MANAGER",
+        "@param { string } authUri - Indicates the authorization relationship between application and application certificate.",
+        "@param { CMSignatureSpec } spec - Indicates the properties of the signature and verification.",
+        "@returns { Promise<CMHandle> } The promise returned by the function.",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission required to call the API.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 17500001 - Internal error. Possible causes: 1. IPC communication failed;",
+        "@throws { BusinessError } 17500002 - The certificate does not exist.",
+        "@throws { BusinessError } 17500005 - The application is not authorized by the user.",
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "certificateManager",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [
+        {
+          "名称": "authUri",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates the authorization relationship between application and application certificate."
+        },
+        {
+          "名称": "spec",
+          "类型": "CMSignatureSpec",
+          "必填": true,
+          "说明": "Indicates the properties of the signature and verification."
+        }
+      ],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission required to call the API."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "17500001",
+          "description": "Internal error. Possible causes: 1. IPC communication failed;"
+        },
+        {
+          "code": "17500002",
+          "description": "The certificate does not exist."
+        },
+        {
+          "code": "17500005",
+          "description": "The application is not authorized by the user."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "update",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Update operation for signing and verifying etc. <br>2. Incorrect parameter types; 3. Parameter verification failed. <br>2. Memory operation error; 3. File operation error. Please try again.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_CERT_MANAGER",
+        "@param { Uint8Array } handle - Indicates the handle of the init operation.",
+        "@param { Uint8Array } data - Indicates the input value.",
+        "@param { AsyncCallback<void> } callback - The callback of update.",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission required to call the API.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 17500001 - Internal error. Possible causes: 1. IPC communication failed;",
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "certificateManager",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [
+        {
+          "名称": "handle",
+          "类型": "Uint8Array",
+          "必填": true,
+          "说明": "Indicates the handle of the init operation."
+        },
+        {
+          "名称": "data",
+          "类型": "Uint8Array",
+          "必填": true,
+          "说明": "Indicates the input value."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "The callback of update."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission required to call the API."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "17500001",
+          "description": "Internal error. Possible causes: 1. IPC communication failed;"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "update",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Update operation for signing and verifying etc. <br>2. Incorrect parameter types; 3. Parameter verification failed. <br>2. Memory operation error; 3. File operation error. Please try again.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_CERT_MANAGER",
+        "@param { Uint8Array } handle - Indicates the handle of the init operation.",
+        "@param { Uint8Array } data - Indicates the input value.",
+        "@returns { Promise<void> } The promise returned by the function.",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission required to call the API.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 17500001 - Internal error. Possible causes: 1. IPC communication failed;",
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "certificateManager",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [
+        {
+          "名称": "handle",
+          "类型": "Uint8Array",
+          "必填": true,
+          "说明": "Indicates the handle of the init operation."
+        },
+        {
+          "名称": "data",
+          "类型": "Uint8Array",
+          "必填": true,
+          "说明": "Indicates the input value."
+        }
+      ],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission required to call the API."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "17500001",
+          "description": "Internal error. Possible causes: 1. IPC communication failed;"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "finish",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Finish operation for signing and verifying etc. <br>2. Incorrect parameter types; 3. Parameter verification failed. <br>2. Memory operation error; 3. File operation error. Please try again.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_CERT_MANAGER",
+        "@param { Uint8Array } handle - Indicates the handle of the init operation.",
+        "@param { AsyncCallback<CMResult> } callback - The callback of finish.",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission required to call the API.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 17500001 - Internal error. Possible causes: 1. IPC communication failed;",
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "certificateManager",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [
+        {
+          "名称": "handle",
+          "类型": "Uint8Array",
+          "必填": true,
+          "说明": "Indicates the handle of the init operation."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<CMResult>",
+          "必填": true,
+          "说明": "The callback of finish."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission required to call the API."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "17500001",
+          "description": "Internal error. Possible causes: 1. IPC communication failed;"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "finish",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Finish operation for signing and verifying etc. <br>2. Incorrect parameter types; 3. Parameter verification failed. <br>2. Memory operation error; 3. File operation error. Please try again.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_CERT_MANAGER",
+        "@param { Uint8Array } handle - Indicates the handle of the init operation.",
+        "@param { Uint8Array } signature - Indicates the sign data.",
+        "@param { AsyncCallback<CMResult> } callback - The callback of finish.",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission required to call the API.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 17500001 - Internal error. Possible causes: 1. IPC communication failed;",
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "certificateManager",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [
+        {
+          "名称": "handle",
+          "类型": "Uint8Array",
+          "必填": true,
+          "说明": "Indicates the handle of the init operation."
+        },
+        {
+          "名称": "signature",
+          "类型": "Uint8Array",
+          "必填": true,
+          "说明": "Indicates the sign data."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<CMResult>",
+          "必填": true,
+          "说明": "The callback of finish."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission required to call the API."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "17500001",
+          "description": "Internal error. Possible causes: 1. IPC communication failed;"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "finish",
+      "返回值": "Promise<CMResult>",
+      "所属模块": "未知模块",
+      "功能描述": "Finish operation for signing and verifying etc. <br>2. Incorrect parameter types; 3. Parameter verification failed. <br>2. Memory operation error; 3. File operation error. Please try again.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_CERT_MANAGER",
+        "@param { Uint8Array } handle - Indicates the handle of the init operation.",
+        "@param { Uint8Array } [options] signature - Indicates the sign data.",
+        "@returns { Promise<CMResult> } The promise returned by the function.",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission required to call the API.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 17500001 - Internal error. Possible causes: 1. IPC communication failed;",
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "certificateManager",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [
+        {
+          "名称": "handle",
+          "类型": "Uint8Array",
+          "必填": true,
+          "说明": "Indicates the handle of the init operation."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "Uint8Array } [options] signature - Indicates the sign data."
+        }
+      ],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission required to call the API."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "17500001",
+          "description": "Internal error. Possible causes: 1. IPC communication failed;"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "abort",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Abort operation for signing and verifying etc. <br>2. Incorrect parameter types; 3. Parameter verification failed. <br>2. Memory operation error; 3. File operation error. Please try again.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_CERT_MANAGER",
+        "@param { Uint8Array } handle - Indicates the handle of the init operation.",
+        "@param { AsyncCallback<void> } callback - The callback of abort.",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission required to call the API.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 17500001 - Internal error. Possible causes: 1. IPC communication failed;",
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "certificateManager",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [
+        {
+          "名称": "handle",
+          "类型": "Uint8Array",
+          "必填": true,
+          "说明": "Indicates the handle of the init operation."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "The callback of abort."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission required to call the API."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "17500001",
+          "description": "Internal error. Possible causes: 1. IPC communication failed;"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "abort",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Abort operation for signing and verifying etc. <br>2. Incorrect parameter types; 3. Parameter verification failed. <br>2. Memory operation error; 3. File operation error. Please try again.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_CERT_MANAGER",
+        "@param { Uint8Array } handle - Indicates the handle of the init operation.",
+        "@returns { Promise<void> } The promise returned by the function.",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission required to call the API.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 17500001 - Internal error. Possible causes: 1. IPC communication failed;",
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "certificateManager",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [
+        {
+          "名称": "handle",
+          "类型": "Uint8Array",
+          "必填": true,
+          "说明": "Indicates the handle of the init operation."
+        }
+      ],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission required to call the API."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "17500001",
+          "description": "Internal error. Possible causes: 1. IPC communication failed;"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getPublicCertificate",
+      "返回值": "Promise<CMResult>",
+      "所属模块": "未知模块",
+      "功能描述": "Get the detail of public application certificate. <br>2. Incorrect parameter types; 3. Parameter verification failed. <br>2. Memory operation error; 3. File operation error. Please try again.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_CERT_MANAGER",
+        "@param { string } keyUri - Indicates the key's name.",
+        "@returns { Promise<CMResult> } The promise returned by the function.",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission required to call the API.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 17500001 - Internal error. Possible causes: 1. IPC communication failed;",
+        "@throws { BusinessError } 17500002 - The certificate does not exist.",
+        "@throws { BusinessError } 17500005 - The application is not authorized by the user.",
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "certificateManager",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [
+        {
+          "名称": "keyUri",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates the key's name."
+        }
+      ],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission required to call the API."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "17500001",
+          "description": "Internal error. Possible causes: 1. IPC communication failed;"
+        },
+        {
+          "code": "17500002",
+          "description": "The certificate does not exist."
+        },
+        {
+          "code": "17500005",
+          "description": "The application is not authorized by the user."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "isAuthorizedApp",
+      "返回值": "Promise<boolean>",
+      "所属模块": "未知模块",
+      "功能描述": "Whether the current application is authorized by the specified public application certificate. <br>2. Incorrect parameter types; 3. Parameter verification failed. <br>2. Memory operation error; 3. File operation error. Please try again.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_CERT_MANAGER",
+        "@param { string } keyUri - Indicates the key's name.",
+        "@returns { Promise<boolean> } The promise returned by the function.",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission required to call the API.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 17500001 - Internal error. Possible causes: 1. IPC communication failed;",
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "certificateManager",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [
+        {
+          "名称": "keyUri",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates the key's name."
+        }
+      ],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission required to call the API."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "17500001",
+          "description": "Internal error. Possible causes: 1. IPC communication failed;"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getAllUserTrustedCertificates",
+      "返回值": "Promise<CMResult>",
+      "所属模块": "未知模块",
+      "功能描述": "Get a list of all user trusted CA certificates. <br>2. Memory operation error; 3. File operation error. Please try again.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_CERT_MANAGER",
+        "@returns { Promise<CMResult> } The promise returned by the function.",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission required to call the API.",
+        "@throws { BusinessError } 17500001 - Internal error. Possible causes: 1. IPC communication failed;",
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "certificateManager",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission required to call the API."
+        },
+        {
+          "code": "17500001",
+          "description": "Internal error. Possible causes: 1. IPC communication failed;"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getUserTrustedCertificate",
+      "返回值": "Promise<CMResult>",
+      "所属模块": "未知模块",
+      "功能描述": "Get the detail of user trusted CA certificate. <br>2. Incorrect parameter types; 3. Parameter verification failed. <br>2. Memory operation error; 3. File operation error. Please try again.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_CERT_MANAGER",
+        "@param { string } certUri - Indicates the certificate's name.",
+        "@returns { Promise<CMResult> } The promise returned by the function.",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission required to call the API.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 17500001 - Internal error. Possible causes: 1. IPC communication failed;",
+        "@throws { BusinessError } 17500002 - The certificate does not exist.",
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "certificateManager",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [
+        {
+          "名称": "certUri",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates the certificate's name."
+        }
+      ],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission required to call the API."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "17500001",
+          "description": "Internal error. Possible causes: 1. IPC communication failed;"
+        },
+        {
+          "code": "17500002",
+          "description": "The certificate does not exist."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getPrivateCertificates",
+      "返回值": "Promise<CMResult>",
+      "所属模块": "未知模块",
+      "功能描述": "Get all private certificates installed by the application. <br>2. Memory operation error; 3. File operation error. Please try again.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_CERT_MANAGER",
+        "@returns { Promise<CMResult> } The private certificates installed by the application.",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission required to call the API.",
+        "@throws { BusinessError } 17500001 - Internal error. Possible causes: 1. IPC communication failed;",
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 13"
+      ],
+      "层级": 1,
+      "上级": "certificateManager",
+      "since_version": "13",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [],
+      "return_description": "The private certificates installed by the application.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission required to call the API."
+        },
+        {
+          "code": "17500001",
+          "description": "Internal error. Possible causes: 1. IPC communication failed;"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getCertificateStorePath",
+      "返回值": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the path of the certificate file. unspecified; <br>2. Incorrect parameter types; 3. Parameter verification failed. For example, CertStoreProperty.certType is set to CA_CERT_USER, but CertStoreProperty.certScope is not specified. <br>2. Memory operation error; 3. File operation error. Please try again. For example, the device outside China does not support the certificate that uses SM algorithm.",
+      "注释信息": [
+        "@param { CertStoreProperty } property Properties of the certificate file storage path.",
+        "@returns { string } Path of the certificate file obtained.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left",
+        "@throws { BusinessError } 17500001 - Internal error. Possible causes: 1. IPC communication failed;",
+        "@throws { BusinessError } 17500009 - The device does not support the specified certificate storage path,",
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "certificateManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [
+        {
+          "名称": "property",
+          "类型": "CertStoreProperty",
+          "必填": true,
+          "说明": "Properties of the certificate file storage path."
+        }
+      ],
+      "return_description": "Path of the certificate file obtained.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left"
+        },
+        {
+          "code": "17500001",
+          "description": "Internal error. Possible causes: 1. IPC communication failed;"
+        },
+        {
+          "code": "17500009",
+          "description": "The device does not support the specified certificate storage path,"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "installUserTrustedCertificateSync",
+      "返回值": "CMResult",
+      "所属模块": "未知模块",
+      "功能描述": "Install the user trusted CA certificate. <br>2. Incorrect parameter types; 3. Parameter verification failed. <br>2. Memory operation error; 3. File operation error. Please try again.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_ENTERPRISE_USER_TRUSTED_CERT or ohos.permission.ACCESS_USER_TRUSTED_CERT",
+        "@param { Uint8Array } cert - Indicates the certificate file content to be installed.",
+        "@param { CertScope } certScope - Indicates the scope of user ca certificate.",
+        "@returns { CMResult } The certificate uri that identifies the installed certificate.",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission required to call the API.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 17500001 - Internal error. Possible causes: 1. IPC communication failed;",
+        "@throws { BusinessError } 17500003 - Indicates that the certificate is in an invalid format.",
+        "@throws { BusinessError } 17500004 - Indicates that the number of certificates reaches the maximum allowed.",
+        "@throws { BusinessError } 17500007 - Indicates that the device enters advanced security mode. In this mode, the user CA certificate cannot be installed.",
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 18"
+      ],
+      "层级": 1,
+      "上级": "certificateManager",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [
+        {
+          "名称": "cert",
+          "类型": "Uint8Array",
+          "必填": true,
+          "说明": "Indicates the certificate file content to be installed."
+        },
+        {
+          "名称": "certScope",
+          "类型": "CertScope",
+          "必填": true,
+          "说明": "Indicates the scope of user ca certificate."
+        }
+      ],
+      "return_description": "The certificate uri that identifies the installed certificate.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission required to call the API."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "17500001",
+          "description": "Internal error. Possible causes: 1. IPC communication failed;"
+        },
+        {
+          "code": "17500003",
+          "description": "Indicates that the certificate is in an invalid format."
+        },
+        {
+          "code": "17500004",
+          "description": "Indicates that the number of certificates reaches the maximum allowed."
+        },
+        {
+          "code": "17500007",
+          "description": "Indicates that the device enters advanced security mode. In this mode, the user CA certificate cannot be installed."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "AuthStorageLevel",
+      "所属模块": "未知模块",
+      "功能描述": "Enum for storage authentication level",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 18"
+      ],
+      "层级": 2,
+      "上级": "certificateManager",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "EL1",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the file can be accessed after the device is started.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 18"
+      ],
+      "层级": 2,
+      "上级": "AuthStorageLevel",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "EL2",
+      "值": "2",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the file can be accessed after the device is unlocked for the first time.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 18"
+      ],
+      "层级": 2,
+      "上级": "AuthStorageLevel",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "EL4",
+      "值": "4",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the file can be accessed when the device is unlocked.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 18"
+      ],
+      "层级": 2,
+      "上级": "AuthStorageLevel",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "CertStoreProperty",
+      "所属模块": "未知模块",
+      "功能描述": "Provides the certificate file store property type.",
+      "注释信息": [
+        "@typedef CertStoreProperty",
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 18"
+      ],
+      "层级": 2,
+      "上级": "certificateManager",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "certType",
+      "属性类型": "CertType",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the certificate type managed by Certificate Manager.",
+      "注释信息": [
+        "@type { CertType }",
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 18"
+      ],
+      "层级": 2,
+      "上级": "CertStoreProperty",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "certScope",
+      "属性类型": "CertScope",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the scope of user ca certificate. This parameter is valid only when certType is set to CA_CERT_USER.",
+      "注释信息": [
+        "@type { ?CertScope }",
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 18"
+      ],
+      "层级": 2,
+      "上级": "CertStoreProperty",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "certAlg",
+      "属性类型": "CertAlgorithm",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the certificate algorithm type. This parameter is valid only when certType is set to CA_CERT_SYSTEM. default value is INTERNATIONAL.",
+      "注释信息": [
+        "@type { ?CertAlgorithm }",
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "CertStoreProperty",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "CertType",
+      "所属模块": "未知模块",
+      "功能描述": "Enum for certificate type managed by Certificate Manager.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 18"
+      ],
+      "层级": 2,
+      "上级": "certificateManager",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CA_CERT_SYSTEM",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that CA certificate installed by OS.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 18"
+      ],
+      "层级": 2,
+      "上级": "CertType",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CA_CERT_USER",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that CA certificate installed by user.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 18"
+      ],
+      "层级": 2,
+      "上级": "CertType",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "installPrivateCertificate",
+      "返回值": "Promise<CMResult>",
+      "所属模块": "未知模块",
+      "功能描述": "Install private application certificate. <br>2. Incorrect parameter types; 3. Parameter verification failed. <br>2. Memory operation error; 3. File operation error. Please try again.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_CERT_MANAGER",
+        "@param { Uint8Array } keystore - Indicates the keystore file with key pair and certificate.",
+        "@param { string } keystorePwd - Indicates the password of keystore file.",
+        "@param { string } certAlias - Indicates the certificate name inputted by the user.",
+        "@param { AuthStorageLevel } level - Indicates the storage authentication level of key file.",
+        "@returns { Promise<CMResult> } The promise returned by the function.",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission required to call the API.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 17500001 - Internal error. Possible causes: 1. IPC communication failed;",
+        "@throws { BusinessError } 17500003 - The keystore is in an invalid format or the keystore password is incorrect.",
+        "@throws { BusinessError } 17500004 - The number of certificates or credentials reaches the maximum allowed.",
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 18"
+      ],
+      "层级": 1,
+      "上级": "certificateManager",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [
+        {
+          "名称": "keystore",
+          "类型": "Uint8Array",
+          "必填": true,
+          "说明": "Indicates the keystore file with key pair and certificate."
+        },
+        {
+          "名称": "keystorePwd",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates the password of keystore file."
+        },
+        {
+          "名称": "certAlias",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates the certificate name inputted by the user."
+        },
+        {
+          "名称": "level",
+          "类型": "AuthStorageLevel",
+          "必填": true,
+          "说明": "Indicates the storage authentication level of key file."
+        }
+      ],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission required to call the API."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "17500001",
+          "description": "Internal error. Possible causes: 1. IPC communication failed;"
+        },
+        {
+          "code": "17500003",
+          "description": "The keystore is in an invalid format or the keystore password is incorrect."
+        },
+        {
+          "code": "17500004",
+          "description": "The number of certificates or credentials reaches the maximum allowed."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getAllUserTrustedCertificates",
+      "返回值": "Promise<CMResult>",
+      "所属模块": "未知模块",
+      "功能描述": "Get a list of all user trusted CA certificates. <br>2. Incorrect parameter types; 3. Parameter verification failed. <br>2. Memory operation error; 3. File operation error. Please try again.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_CERT_MANAGER",
+        "@param { CertScope } scope - Indicates the scope of user ca certificate.",
+        "@returns { Promise<CMResult> } The user ca certificates.",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission required to call the API.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 17500001 - Internal error. Possible causes: 1. IPC communication failed;",
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 18"
+      ],
+      "层级": 1,
+      "上级": "certificateManager",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [
+        {
+          "名称": "scope",
+          "类型": "CertScope",
+          "必填": true,
+          "说明": "Indicates the scope of user ca certificate."
+        }
+      ],
+      "return_description": "The user ca certificates.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission required to call the API."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "17500001",
+          "description": "Internal error. Possible causes: 1. IPC communication failed;"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "CertScope",
+      "所属模块": "未知模块",
+      "功能描述": "Enum for the scope of user ca certificate.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 18"
+      ],
+      "层级": 2,
+      "上级": "certificateManager",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CURRENT_USER",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the user ca certificate for a current user.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 18"
+      ],
+      "层级": 2,
+      "上级": "CertScope",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "GLOBAL_USER",
+      "值": "2",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the user ca certificate for all users.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 18"
+      ],
+      "层级": 2,
+      "上级": "CertScope",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "uninstallUserTrustedCertificateSync",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Uninstall the user trusted CA certificate. <br>2. Incorrect parameter types; 3. Parameter verification failed. <br>2. Memory operation error; 3. File operation error. Please try again.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_ENTERPRISE_USER_TRUSTED_CERT or ohos.permission.ACCESS_USER_TRUSTED_CERT",
+        "@param { string } certUri - Indicates the certificate uri to be uninstalled.",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission required to call the API.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 17500001 - Internal error. Possible causes: 1. IPC communication failed;",
+        "@throws { BusinessError } 17500002 - Indicates that the certificate does not exist.",
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 18"
+      ],
+      "层级": 1,
+      "上级": "certificateManager",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [
+        {
+          "名称": "certUri",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates the certificate uri to be uninstalled."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission required to call the API."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "17500001",
+          "description": "Internal error. Possible causes: 1. IPC communication failed;"
+        },
+        {
+          "code": "17500002",
+          "description": "Indicates that the certificate does not exist."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "CertAlgorithm",
+      "所属模块": "未知模块",
+      "功能描述": "Enum for the certificate algorithm type.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "certificateManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "INTERNATIONAL",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the international cryptography algorithms, such as RSA, ECC NIST.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "CertAlgorithm",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "SM",
+      "值": "2",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the Commercial Password algorithms, such as SM2, SM4.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "CertAlgorithm",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "CertificatePurpose",
+      "所属模块": "未知模块",
+      "功能描述": "Enum for certificate purpose",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "certificateManager",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "PURPOSE_DEFAULT",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates default certificate purpose.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "CertificatePurpose",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "PURPOSE_ALL",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates all certificate purposes, used for query certificates function.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "CertificatePurpose",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "PURPOSE_SIGN",
+      "值": "2",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates certificate for signature.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "CertificatePurpose",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "PURPOSE_ENCRYPT",
+      "值": "3",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates certificate for encryption.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "CertificatePurpose",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getUkeyCertificate",
+      "返回值": "Promise<CMResult>",
+      "所属模块": "未知模块",
+      "功能描述": "Get the detail of USB key certificate. The application does not have the permission required to call the API. <br>2. Memory operation error; 3. File operation error. Please try again. For example, the parameter format is incorrect or the value range is invalid.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_CERT_MANAGER",
+        "@param { string } keyUri - Indicates the USB key certificate uri.",
+        "@param { UkeyInfo } ukeyInfo - Indicates USB key certificate attribute information.",
+        "@returns { Promise<CMResult> } Indicates the USB key certificate detail.",
+        "@throws { BusinessError } 201 - Permission verification failed.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 17500001 - Internal error. Possible causes: 1. IPC communication failed;",
+        "@throws { BusinessError } 17500002 - Indicates that the certificate does not exist.",
+        "@throws { BusinessError } 17500010 - Indicates that access USB key service failed.",
+        "@throws { BusinessError } 17500011 - Indicates that the input parameters validation failed.",
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 22"
+      ],
+      "层级": 1,
+      "上级": "certificateManager",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [
+        {
+          "名称": "keyUri",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates the USB key certificate uri."
+        },
+        {
+          "名称": "ukeyInfo",
+          "类型": "UkeyInfo",
+          "必填": true,
+          "说明": "Indicates USB key certificate attribute information."
+        }
+      ],
+      "return_description": "Indicates the USB key certificate detail.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission verification failed."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "17500001",
+          "description": "Internal error. Possible causes: 1. IPC communication failed;"
+        },
+        {
+          "code": "17500002",
+          "description": "Indicates that the certificate does not exist."
+        },
+        {
+          "code": "17500010",
+          "description": "Indicates that access USB key service failed."
+        },
+        {
+          "code": "17500011",
+          "description": "Indicates that the input parameters validation failed."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "UkeyInfo",
+      "所属模块": "未知模块",
+      "功能描述": "Provides the USB key certificate attribute information.",
+      "注释信息": [
+        "@typedef UkeyInfo",
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "certificateManager",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "certPurpose",
+      "属性类型": "CertificatePurpose",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the purpose of certificate.",
+      "注释信息": [
+        "@type { ?CertificatePurpose }",
+        "@syscap SystemCapability.Security.CertificateManager",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "UkeyInfo",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Security.CertificateManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    }
+  ]
+}

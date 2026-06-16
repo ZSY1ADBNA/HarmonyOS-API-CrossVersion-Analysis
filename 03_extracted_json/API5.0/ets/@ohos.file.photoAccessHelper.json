@@ -1,0 +1,979 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.MediaLibraryKit",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "namespace",
+      "名称": "photoAccessHelper",
+      "所属模块": "@kit.MediaLibraryKit",
+      "功能描述": "Helper functions to access image and video assets",
+      "注释信息": [
+        "@namespace photoAccessHelper",
+        "@syscap SystemCapability.FileManagement.PhotoAccessHelper.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "@kit.MediaLibraryKit",
+      "since_version": "12",
+      "system_capability": "SystemCapability.FileManagement.PhotoAccessHelper.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getPhotoAccessHelper",
+      "返回值": "PhotoAccessHelper",
+      "所属模块": "未知模块",
+      "功能描述": "Returns an instance of PhotoAccessHelper <br>2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { Context } context - Hap context information",
+        "@returns { PhotoAccessHelper } Instance of PhotoAccessHelper",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@syscap SystemCapability.FileManagement.PhotoAccessHelper.Core",
+        "@StageModelOnly",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "photoAccessHelper",
+      "since_version": "12",
+      "system_capability": "SystemCapability.FileManagement.PhotoAccessHelper.Core",
+      "parameters": [
+        {
+          "名称": "context",
+          "类型": "Context",
+          "必填": true,
+          "说明": "Hap context information"
+        }
+      ],
+      "return_description": "Instance of PhotoAccessHelper",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum",
+      "名称": "PhotoType",
+      "所属模块": "未知模块",
+      "功能描述": "Enumeration of different types of photos",
+      "注释信息": [
+        "@enum { number } PhotoType",
+        "@syscap SystemCapability.FileManagement.PhotoAccessHelper.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "photoAccessHelper",
+      "since_version": "12",
+      "system_capability": "SystemCapability.FileManagement.PhotoAccessHelper.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "IMAGE",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Image asset",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.PhotoAccessHelper.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "PhotoType",
+      "since_version": "12",
+      "system_capability": "SystemCapability.FileManagement.PhotoAccessHelper.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "VIDEO",
+      "所属模块": "未知模块",
+      "功能描述": "Video asset",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.PhotoAccessHelper.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "PhotoType",
+      "since_version": "12",
+      "system_capability": "SystemCapability.FileManagement.PhotoAccessHelper.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum",
+      "名称": "PhotoSubtype",
+      "所属模块": "未知模块",
+      "功能描述": "Enumeration of different categories of photos",
+      "注释信息": [
+        "@enum { number } PhotoSubtype",
+        "@syscap SystemCapability.FileManagement.PhotoAccessHelper.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "photoAccessHelper",
+      "since_version": "12",
+      "system_capability": "SystemCapability.FileManagement.PhotoAccessHelper.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "DEFAULT",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "Default Photo Type",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.PhotoAccessHelper.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "PhotoSubtype",
+      "since_version": "12",
+      "system_capability": "SystemCapability.FileManagement.PhotoAccessHelper.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "SCREENSHOT",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Screenshot Photo Type",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.PhotoAccessHelper.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "PhotoSubtype",
+      "since_version": "10",
+      "system_capability": "SystemCapability.FileManagement.PhotoAccessHelper.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "MOVING_PHOTO",
+      "值": "3",
+      "所属模块": "未知模块",
+      "功能描述": "Moving Photo Type",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.PhotoAccessHelper.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "PhotoSubtype",
+      "since_version": "12",
+      "system_capability": "SystemCapability.FileManagement.PhotoAccessHelper.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "BURST",
+      "值": "4",
+      "所属模块": "未知模块",
+      "功能描述": "Burst Photo Type",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.PhotoAccessHelper.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "PhotoSubtype",
+      "since_version": "12",
+      "system_capability": "SystemCapability.FileManagement.PhotoAccessHelper.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum",
+      "名称": "DynamicRangeType",
+      "所属模块": "未知模块",
+      "功能描述": "Enumeration of dynamic range type",
+      "注释信息": [
+        "@enum { number } DynamicRangeType",
+        "@syscap SystemCapability.FileManagement.PhotoAccessHelper.Core",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "photoAccessHelper",
+      "since_version": "12",
+      "system_capability": "SystemCapability.FileManagement.PhotoAccessHelper.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "SDR",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "SDR(Standard-Dynamic Range) format",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.PhotoAccessHelper.Core",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "DynamicRangeType",
+      "since_version": "12",
+      "system_capability": "SystemCapability.FileManagement.PhotoAccessHelper.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "HDR",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "HDR(High-Dynamic Range) format",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.PhotoAccessHelper.Core",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "DynamicRangeType",
+      "since_version": "12",
+      "system_capability": "SystemCapability.FileManagement.PhotoAccessHelper.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum",
+      "名称": "ThumbnailVisibility",
+      "所属模块": "未知模块",
+      "功能描述": "Ability to access thumbnail",
+      "注释信息": [
+        "@enum { number } ThumbnailVisibility",
+        "@syscap SystemCapability.FileManagement.PhotoAccessHelper.Core",
+        "@systemapi",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "photoAccessHelper",
+      "since_version": "14",
+      "system_capability": "SystemCapability.FileManagement.PhotoAccessHelper.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "INVISIBLE",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "Unable to access thumbnail",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.PhotoAccessHelper.Core",
+        "@systemapi",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "ThumbnailVisibility",
+      "since_version": "14",
+      "system_capability": "SystemCapability.FileManagement.PhotoAccessHelper.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "VISIBLE",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "able to access thumbnail",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.PhotoAccessHelper.Core",
+        "@systemapi",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "ThumbnailVisibility",
+      "since_version": "14",
+      "system_capability": "SystemCapability.FileManagement.PhotoAccessHelper.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum",
+      "名称": "PositionType",
+      "所属模块": "未知模块",
+      "功能描述": "Photo asset position",
+      "注释信息": [
+        "@enum { number } Photo asset position, such as local device or cloud",
+        "@syscap SystemCapability.FileManagement.PhotoAccessHelper.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "photoAccessHelper",
+      "since_version": "10",
+      "system_capability": "SystemCapability.FileManagement.PhotoAccessHelper.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "LOCAL",
+      "值": "1 << 0",
+      "所属模块": "未知模块",
+      "功能描述": "Asset exists only in local device",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.PhotoAccessHelper.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "PositionType",
+      "since_version": "10",
+      "system_capability": "SystemCapability.FileManagement.PhotoAccessHelper.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CLOUD",
+      "值": "1 << 1",
+      "所属模块": "未知模块",
+      "功能描述": "Asset exists only in cloud",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.PhotoAccessHelper.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "PositionType",
+      "since_version": "10",
+      "system_capability": "SystemCapability.FileManagement.PhotoAccessHelper.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum",
+      "名称": "AnalysisType",
+      "所属模块": "未知模块",
+      "功能描述": "Analysis type",
+      "注释信息": [
+        "@enum { number } AnalysisType",
+        "@syscap SystemCapability.FileManagement.PhotoAccessHelper.Core",
+        "@systemapi",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "photoAccessHelper",
+      "since_version": "11",
+      "system_capability": "SystemCapability.FileManagement.PhotoAccessHelper.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "ANALYSIS_AESTHETICS_SCORE",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "Analysis of aesthetics score",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.PhotoAccessHelper.Core",
+        "@systemapi",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "AnalysisType",
+      "since_version": "11",
+      "system_capability": "SystemCapability.FileManagement.PhotoAccessHelper.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "ANALYSIS_LABEL",
+      "所属模块": "未知模块",
+      "功能描述": "Analysis of label",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.PhotoAccessHelper.Core",
+        "@systemapi",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "AnalysisType",
+      "since_version": "11",
+      "system_capability": "SystemCapability.FileManagement.PhotoAccessHelper.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "ANALYSIS_OCR",
+      "所属模块": "未知模块",
+      "功能描述": "Analysis of ocr",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.PhotoAccessHelper.Core",
+        "@systemapi",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "AnalysisType",
+      "since_version": "11",
+      "system_capability": "SystemCapability.FileManagement.PhotoAccessHelper.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "ANALYSIS_FACE",
+      "所属模块": "未知模块",
+      "功能描述": "Analysis of face",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.PhotoAccessHelper.Core",
+        "@systemapi",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "AnalysisType",
+      "since_version": "11",
+      "system_capability": "SystemCapability.FileManagement.PhotoAccessHelper.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "ANALYSIS_OBJECT",
+      "所属模块": "未知模块",
+      "功能描述": "Analysis of object",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.PhotoAccessHelper.Core",
+        "@systemapi",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "AnalysisType",
+      "since_version": "11",
+      "system_capability": "SystemCapability.FileManagement.PhotoAccessHelper.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "ANALYSIS_RECOMMENDATION",
+      "所属模块": "未知模块",
+      "功能描述": "Analysis of recommendation",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.PhotoAccessHelper.Core",
+        "@systemapi",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "AnalysisType",
+      "since_version": "11",
+      "system_capability": "SystemCapability.FileManagement.PhotoAccessHelper.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "ANALYSIS_SEGMENTATION",
+      "所属模块": "未知模块",
+      "功能描述": "Analysis of segmentation",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.PhotoAccessHelper.Core",
+        "@systemapi",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "AnalysisType",
+      "since_version": "11",
+      "system_capability": "SystemCapability.FileManagement.PhotoAccessHelper.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "ANALYSIS_COMPOSITION",
+      "所属模块": "未知模块",
+      "功能描述": "Analysis of composition",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.PhotoAccessHelper.Core",
+        "@systemapi",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "AnalysisType",
+      "since_version": "11",
+      "system_capability": "SystemCapability.FileManagement.PhotoAccessHelper.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "ANALYSIS_SALIENCY",
+      "所属模块": "未知模块",
+      "功能描述": "Analysis of saliency",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.PhotoAccessHelper.Core",
+        "@systemapi",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "AnalysisType",
+      "since_version": "11",
+      "system_capability": "SystemCapability.FileManagement.PhotoAccessHelper.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "ANALYSIS_DETAIL_ADDRESS",
+      "所属模块": "未知模块",
+      "功能描述": "Analysis of photo detail address info",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.PhotoAccessHelper.Core",
+        "@systemapi",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "AnalysisType",
+      "since_version": "11",
+      "system_capability": "SystemCapability.FileManagement.PhotoAccessHelper.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "ANALYSIS_HUMAN_FACE_TAG",
+      "所属模块": "未知模块",
+      "功能描述": "Analysis of human face tag",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.PhotoAccessHelper.Core",
+        "@systemapi",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "AnalysisType",
+      "since_version": "12",
+      "system_capability": "SystemCapability.FileManagement.PhotoAccessHelper.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "ANALYSIS_HEAD_POSITION",
+      "所属模块": "未知模块",
+      "功能描述": "Analysis of head position",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.PhotoAccessHelper.Core",
+        "@systemapi",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "AnalysisType",
+      "since_version": "12",
+      "system_capability": "SystemCapability.FileManagement.PhotoAccessHelper.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "ANALYSIS_BONE_POSE",
+      "所属模块": "未知模块",
+      "功能描述": "Analysis of bone pose",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.PhotoAccessHelper.Core",
+        "@systemapi",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "AnalysisType",
+      "since_version": "12",
+      "system_capability": "SystemCapability.FileManagement.PhotoAccessHelper.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "ANALYSIS_VIDEO_LABEL",
+      "所属模块": "未知模块",
+      "功能描述": "Analysis of video label",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.PhotoAccessHelper.Core",
+        "@systemapi",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "AnalysisType",
+      "since_version": "12",
+      "system_capability": "SystemCapability.FileManagement.PhotoAccessHelper.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "ANALYSIS_HIGHLIGHT",
+      "所属模块": "未知模块",
+      "功能描述": "Analysis of highlight",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.PhotoAccessHelper.Core",
+        "@systemapi",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "AnalysisType",
+      "since_version": "12",
+      "system_capability": "SystemCapability.FileManagement.PhotoAccessHelper.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "ANALYSIS_MULTI_CROP",
+      "所属模块": "未知模块",
+      "功能描述": "Analysis of multi crop",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.PhotoAccessHelper.Core",
+        "@systemapi",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "AnalysisType",
+      "since_version": "12",
+      "system_capability": "SystemCapability.FileManagement.PhotoAccessHelper.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum",
+      "名称": "RecommendationType",
+      "所属模块": "未知模块",
+      "功能描述": "Enumeration of different recommendation type",
+      "注释信息": [
+        "@enum { number } RecommendationType",
+        "@syscap SystemCapability.FileManagement.PhotoAccessHelper.Core",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "photoAccessHelper",
+      "since_version": "11",
+      "system_capability": "SystemCapability.FileManagement.PhotoAccessHelper.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "QR_OR_BAR_CODE",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "QR_OR_BAR_CODE indicates that QR code or barcode photos can be recommended",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.PhotoAccessHelper.Core",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "RecommendationType",
+      "since_version": "11",
+      "system_capability": "SystemCapability.FileManagement.PhotoAccessHelper.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "QR_CODE",
+      "值": "2",
+      "所属模块": "未知模块",
+      "功能描述": "QR_CODE indicates that QR code photos can be recommended",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.PhotoAccessHelper.Core",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "RecommendationType",
+      "since_version": "11",
+      "system_capability": "SystemCapability.FileManagement.PhotoAccessHelper.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "BAR_CODE",
+      "值": "3",
+      "所属模块": "未知模块",
+      "功能描述": "BAR_CODE indicates that barcode photos can be recommended",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.PhotoAccessHelper.Core",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "RecommendationType",
+      "since_version": "11",
+      "system_capability": "SystemCapability.FileManagement.PhotoAccessHelper.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "ID_CARD",
+      "值": "4",
+      "所属模块": "未知模块",
+      "功能描述": "ID_CARD indicates that QR code or barcode photos can be recommended",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.PhotoAccessHelper.Core",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "RecommendationType",
+      "since_version": "11",
+      "system_capability": "SystemCapability.FileManagement.PhotoAccessHelper.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "PROFILE_PICTURE",
+      "值": "5",
+      "所属模块": "未知模块",
+      "功能描述": "PROFILE_PICTURE indicates that profile picture photos can be recommended",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.PhotoAccessHelper.Core",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "RecommendationType",
+      "since_version": "11",
+      "system_capability": "SystemCapability.FileManagement.PhotoAccessHelper.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "PASSPORT",
+      "值": "6",
+      "所属模块": "未知模块",
+      "功能描述": "PASSPORT indicates that passport photos can be recommended",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.PhotoAccessHelper.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "RecommendationType",
+      "since_version": "12",
+      "system_capability": "SystemCapability.FileManagement.PhotoAccessHelper.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "BANK_CARD",
+      "值": "7",
+      "所属模块": "未知模块",
+      "功能描述": "BANK_CARD indicates that bank card photos can be recommended",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.PhotoAccessHelper.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "RecommendationType",
+      "since_version": "12",
+      "system_capability": "SystemCapability.FileManagement.PhotoAccessHelper.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "DRIVER_LICENSE",
+      "值": "8",
+      "所属模块": "未知模块",
+      "功能描述": "DRIVER_LICENSE indicates that driver license photos can be recommended",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.PhotoAccessHelper.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "RecommendationType",
+      "since_version": "12",
+      "system_capability": "SystemCapability.FileManagement.PhotoAccessHelper.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "DRIVING_LICENSE",
+      "值": "9",
+      "所属模块": "未知模块",
+      "功能描述": "DRIVING_LICENSE indicates that driving license photos can be recommended",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.PhotoAccessHelper.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "RecommendationType",
+      "since_version": "12",
+      "system_capability": "SystemCapability.FileManagement.PhotoAccessHelper.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "FEATURED_SINGLE_PORTRAIT",
+      "值": "10",
+      "所属模块": "未知模块",
+      "功能描述": "FEATURED_SINGLE_PORTRAIT indicates that featured single portrait photos can be recommended",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.PhotoAccessHelper.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "RecommendationType",
+      "since_version": "12",
+      "system_capability": "SystemCapability.FileManagement.PhotoAccessHelper.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "FEATURED_SINGLE_PORTRAIT",
+      "值": "10",
+      "所属模块": "未知模块",
+      "功能描述": "FEATURED_SINGLE_PORTRAIT indicates that featured single portrait photos can be recommended",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.PhotoAccessHelper.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "photoAccessHelper",
+      "since_version": "12",
+      "system_capability": "SystemCapability.FileManagement.PhotoAccessHelper.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    }
+  ]
+}

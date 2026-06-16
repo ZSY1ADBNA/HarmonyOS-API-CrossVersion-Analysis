@@ -1,0 +1,354 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.BasicServicesKit",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "namespace",
+      "名称": "usb",
+      "所属模块": "@kit.BasicServicesKit",
+      "功能描述": "",
+      "注释信息": [
+        "@namespace usb",
+        "@syscap SystemCapability.USB.USBManager",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.usbManager"
+      ],
+      "层级": 1,
+      "上级": "@kit.BasicServicesKit",
+      "since_version": "8",
+      "system_capability": "SystemCapability.USB.USBManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "getDevices",
+      "返回值": "Array<Readonly<USBDevice>>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the USB device list.",
+      "注释信息": [
+        "@returns { Array<Readonly<USBDevice>> } USB device list.",
+        "@syscap SystemCapability.USB.USBManager",
+        "@since 8",
+        "@deprecated since 9"
+      ],
+      "层级": 1,
+      "上级": "usb",
+      "since_version": "8",
+      "system_capability": "SystemCapability.USB.USBManager",
+      "parameters": [],
+      "return_description": "USB device list.",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "connectDevice",
+      "返回值": "Readonly<USBDevicePipe>",
+      "所属模块": "未知模块",
+      "功能描述": "Connects to the USB device based on the device information returned by getDevices().",
+      "注释信息": [
+        "@param { USBDevice } device - USB device on the device list returned by getDevices().",
+        "@returns { Readonly<USBDevicePipe> } object for data transfer.",
+        "@syscap SystemCapability.USB.USBManager",
+        "@since 8",
+        "@deprecated since 9"
+      ],
+      "层级": 1,
+      "上级": "usb",
+      "since_version": "8",
+      "system_capability": "SystemCapability.USB.USBManager",
+      "parameters": [
+        {
+          "名称": "device",
+          "类型": "USBDevice",
+          "必填": true,
+          "说明": "USB device on the device list returned by getDevices()."
+        }
+      ],
+      "return_description": "object for data transfer.",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "hasRight",
+      "返回值": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Checks whether the application has the permission to access the device.",
+      "注释信息": [
+        "@param { string } deviceName - device name defined by USBDevice.name.",
+        "@returns { boolean } indicates if the user has the permission to access the device.",
+        "@syscap SystemCapability.USB.USBManager",
+        "@since 8",
+        "@deprecated since 9"
+      ],
+      "层级": 1,
+      "上级": "usb",
+      "since_version": "8",
+      "system_capability": "SystemCapability.USB.USBManager",
+      "parameters": [
+        {
+          "名称": "deviceName",
+          "类型": "string",
+          "必填": true,
+          "说明": "device name defined by USBDevice.name."
+        }
+      ],
+      "return_description": "indicates if the user has the permission to access the device.",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "requestRight",
+      "返回值": "Promise<boolean>",
+      "所属模块": "未知模块",
+      "功能描述": "Requests the temporary permission for a given application to access the USB device.",
+      "注释信息": [
+        "@param { string } deviceName - device name defined by USBDevice.name.",
+        "@returns { Promise<boolean> } indicates if the device access permissions are granted.",
+        "@syscap SystemCapability.USB.USBManager",
+        "@since 8",
+        "@deprecated since 9"
+      ],
+      "层级": 1,
+      "上级": "usb",
+      "since_version": "8",
+      "system_capability": "SystemCapability.USB.USBManager",
+      "parameters": [
+        {
+          "名称": "deviceName",
+          "类型": "string",
+          "必填": true,
+          "说明": "device name defined by USBDevice.name."
+        }
+      ],
+      "return_description": "indicates if the device access permissions are granted.",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "usbFunctionsFromString",
+      "返回值": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Converts the string descriptor of a given USB function list to a numeric mask combination.",
+      "注释信息": [
+        "@param { string } funcs - descriptor of the supported function list.",
+        "@returns { number } the numeric mask combination of the function list.",
+        "@syscap SystemCapability.USB.USBManager",
+        "@systemapi",
+        "@since 9",
+        "@deprecated since 9"
+      ],
+      "层级": 1,
+      "上级": "usb",
+      "since_version": "9",
+      "system_capability": "SystemCapability.USB.USBManager",
+      "parameters": [
+        {
+          "名称": "funcs",
+          "类型": "string",
+          "必填": true,
+          "说明": "descriptor of the supported function list."
+        }
+      ],
+      "return_description": "the numeric mask combination of the function list.",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "usbFunctionsToString",
+      "返回值": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Converts the numeric mask combination of a given USB function list to a string descriptor.",
+      "注释信息": [
+        "@param { FunctionType } funcs - numeric mask combination of the function list.",
+        "@returns { string } - descriptor of the supported function list.",
+        "@syscap SystemCapability.USB.USBManager",
+        "@systemapi",
+        "@since 9",
+        "@deprecated since 9"
+      ],
+      "层级": 1,
+      "上级": "usb",
+      "since_version": "9",
+      "system_capability": "SystemCapability.USB.USBManager",
+      "parameters": [
+        {
+          "名称": "funcs",
+          "类型": "FunctionType",
+          "必填": true,
+          "说明": "numeric mask combination of the function list."
+        }
+      ],
+      "return_description": "- descriptor of the supported function list.",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "setCurrentFunctions",
+      "返回值": "Promise<boolean>",
+      "所属模块": "未知模块",
+      "功能描述": "Sets the current USB function list in Device mode.",
+      "注释信息": [
+        "@param { FunctionType } funcs - numeric mask combination of the supported function list.",
+        "@returns { Promise<boolean> } returns **true** if the setting is successful; returns **false** otherwise.",
+        "@syscap SystemCapability.USB.USBManager",
+        "@systemapi",
+        "@since 9",
+        "@deprecated since 9"
+      ],
+      "层级": 1,
+      "上级": "usb",
+      "since_version": "9",
+      "system_capability": "SystemCapability.USB.USBManager",
+      "parameters": [
+        {
+          "名称": "funcs",
+          "类型": "FunctionType",
+          "必填": true,
+          "说明": "numeric mask combination of the supported function list."
+        }
+      ],
+      "return_description": "returns **true** if the setting is successful; returns **false** otherwise.",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "getCurrentFunctions",
+      "返回值": "FunctionType",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the numeric mask combination for the current USB function list in Device mode.",
+      "注释信息": [
+        "@returns { FunctionType } the numeric mask combination for the current USB function list in FunctionType.",
+        "@syscap SystemCapability.USB.USBManager",
+        "@systemapi",
+        "@since 9",
+        "@deprecated since 9"
+      ],
+      "层级": 1,
+      "上级": "usb",
+      "since_version": "9",
+      "system_capability": "SystemCapability.USB.USBManager",
+      "parameters": [],
+      "return_description": "the numeric mask combination for the current USB function list in FunctionType.",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "getPorts",
+      "返回值": "Array<USBPort>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the USBPort list.",
+      "注释信息": [
+        "@returns { Array<USBPort> } the USBPort list.",
+        "@syscap SystemCapability.USB.USBManager",
+        "@systemapi",
+        "@since 9",
+        "@deprecated since 9"
+      ],
+      "层级": 1,
+      "上级": "usb",
+      "since_version": "9",
+      "system_capability": "SystemCapability.USB.USBManager",
+      "parameters": [],
+      "return_description": "the USBPort list.",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "getSupportedModes",
+      "返回值": "PortModeType",
+      "所属模块": "未知模块",
+      "功能描述": "Gets the mask combination for the supported mode list of the specified USBPort.",
+      "注释信息": [
+        "@param { number } portId",
+        "@returns { PortModeType } the mask combination for the supported mode list in PortModeType.",
+        "@syscap SystemCapability.USB.USBManager",
+        "@systemapi",
+        "@since 9",
+        "@deprecated since 9"
+      ],
+      "层级": 1,
+      "上级": "usb",
+      "since_version": "9",
+      "system_capability": "SystemCapability.USB.USBManager",
+      "parameters": [
+        {
+          "名称": "portId",
+          "类型": "number",
+          "必填": true,
+          "说明": ""
+        }
+      ],
+      "return_description": "the mask combination for the supported mode list in PortModeType.",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "setPortRoles",
+      "返回值": "Promise<boolean>",
+      "所属模块": "未知模块",
+      "功能描述": "Sets the role types supported by the specified USBPort, which can be powerRole (for charging) and dataRole (for data transfer).",
+      "注释信息": [
+        "@param { number } portId - unique ID of the port.",
+        "@param { PowerRoleType } powerRole - charging role.",
+        "@param { DataRoleType } dataRole - data role.",
+        "@returns { Promise<boolean> } returns **true** if the setting is successful; returns **false** otherwise.",
+        "@syscap SystemCapability.USB.USBManager",
+        "@systemapi",
+        "@since 9",
+        "@deprecated since 9"
+      ],
+      "层级": 1,
+      "上级": "usb",
+      "since_version": "9",
+      "system_capability": "SystemCapability.USB.USBManager",
+      "parameters": [
+        {
+          "名称": "portId",
+          "类型": "number",
+          "必填": true,
+          "说明": "unique ID of the port."
+        },
+        {
+          "名称": "powerRole",
+          "类型": "PowerRoleType",
+          "必填": true,
+          "说明": "charging role."
+        },
+        {
+          "名称": "dataRole",
+          "类型": "DataRoleType",
+          "必填": true,
+          "说明": "data role."
+        }
+      ],
+      "return_description": "returns **true** if the setting is successful; returns **false** otherwise.",
+      "error_codes": [],
+      "版本": "API4.1"
+    }
+  ]
+}

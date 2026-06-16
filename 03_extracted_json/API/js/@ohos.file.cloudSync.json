@@ -1,0 +1,3258 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.CoreFileKit",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "namespace",
+      "名称": "cloudSync",
+      "所属模块": "@kit.CoreFileKit",
+      "功能描述": "Provides the capabilities to control cloud file synchronization.",
+      "注释信息": [
+        "@namespace cloudSync",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "@kit.CoreFileKit",
+      "since_version": "11",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "SyncState",
+      "所属模块": "未知模块",
+      "功能描述": "Describes the Sync state type.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "cloudSync",
+      "since_version": "12",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "UPLOADING",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the sync state is uploading.",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "SyncState",
+      "since_version": "12",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "UPLOAD_FAILED",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the sync failed in upload processing.",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "SyncState",
+      "since_version": "12",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "DOWNLOADING",
+      "值": "2",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the sync state is downloading.",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "SyncState",
+      "since_version": "12",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "DOWNLOAD_FAILED",
+      "值": "3",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the sync failed in download processing.",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "SyncState",
+      "since_version": "12",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMPLETED",
+      "值": "4",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the sync finish.",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "SyncState",
+      "since_version": "12",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "STOPPED",
+      "值": "5",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the sync has been stopped.",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "SyncState",
+      "since_version": "12",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "ErrorType",
+      "所属模块": "未知模块",
+      "功能描述": "Describes the Sync Error type.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "cloudSync",
+      "since_version": "12",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "NO_ERROR",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "No error occurred.",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "ErrorType",
+      "since_version": "12",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "NETWORK_UNAVAILABLE",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Synchronization aborted due to network unavailable.",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "ErrorType",
+      "since_version": "12",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "WIFI_UNAVAILABLE",
+      "值": "2",
+      "所属模块": "未知模块",
+      "功能描述": "Synchronization aborted due to wifi unavailable.",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "ErrorType",
+      "since_version": "12",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "BATTERY_LEVEL_LOW",
+      "值": "3",
+      "所属模块": "未知模块",
+      "功能描述": "Synchronization aborted due to low capacity level.",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "ErrorType",
+      "since_version": "12",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "BATTERY_LEVEL_WARNING",
+      "值": "4",
+      "所属模块": "未知模块",
+      "功能描述": "Synchronization aborted due to warning low capacity level.",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "ErrorType",
+      "since_version": "12",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CLOUD_STORAGE_FULL",
+      "值": "5",
+      "所属模块": "未知模块",
+      "功能描述": "Synchronization aborted due to cloud storage is full.",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "ErrorType",
+      "since_version": "12",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "LOCAL_STORAGE_FULL",
+      "值": "6",
+      "所属模块": "未知模块",
+      "功能描述": "Synchronization aborted due to local storage is full.",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "ErrorType",
+      "since_version": "12",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "DEVICE_TEMPERATURE_TOO_HIGH",
+      "值": "7",
+      "所属模块": "未知模块",
+      "功能描述": "Synchronization aborted due to device temperature is too high.",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "ErrorType",
+      "since_version": "12",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "REMOTE_SERVER_ABNORMAL",
+      "值": "8",
+      "所属模块": "未知模块",
+      "功能描述": "Synchronization aborted due to remote server is abnormal.",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "ErrorType",
+      "since_version": "20",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "SyncProgress",
+      "所属模块": "未知模块",
+      "功能描述": "The SyncProgress data structure.",
+      "注释信息": [
+        "@interface SyncProgress",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "cloudSync",
+      "since_version": "12",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "state",
+      "属性类型": "SyncState",
+      "所属模块": "未知模块",
+      "功能描述": "The current sync state.",
+      "注释信息": [
+        "@type { SyncState }",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "SyncProgress",
+      "since_version": "12",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "error",
+      "属性类型": "ErrorType",
+      "所属模块": "未知模块",
+      "功能描述": "The error type of sync.",
+      "注释信息": [
+        "@type { ErrorType }",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "SyncProgress",
+      "since_version": "12",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "State",
+      "所属模块": "未知模块",
+      "功能描述": "Describes the State type of download.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "cloudSync",
+      "since_version": "11",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "RUNNING",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the download task in process now.",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "State",
+      "since_version": "11",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMPLETED",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the download task finished.",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "State",
+      "since_version": "11",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "FAILED",
+      "值": "2",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the download task failed.",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "State",
+      "since_version": "11",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "STOPPED",
+      "值": "3",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the download task stopped.",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "State",
+      "since_version": "11",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "DownloadErrorType",
+      "所属模块": "未知模块",
+      "功能描述": "Describes the download Error type.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "cloudSync",
+      "since_version": "11",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "NO_ERROR",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "No error occurred.",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "DownloadErrorType",
+      "since_version": "11",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "UNKNOWN_ERROR",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "download aborted due to unknown error.",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "DownloadErrorType",
+      "since_version": "11",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "NETWORK_UNAVAILABLE",
+      "值": "2",
+      "所属模块": "未知模块",
+      "功能描述": "download aborted due to network unavailable.",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "DownloadErrorType",
+      "since_version": "11",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "LOCAL_STORAGE_FULL",
+      "值": "3",
+      "所属模块": "未知模块",
+      "功能描述": "download aborted due to local storage is full.",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "DownloadErrorType",
+      "since_version": "11",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CONTENT_NOT_FOUND",
+      "值": "4",
+      "所属模块": "未知模块",
+      "功能描述": "download aborted due to content is not found in the cloud.",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "DownloadErrorType",
+      "since_version": "11",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "FREQUENT_USER_REQUESTS",
+      "值": "5",
+      "所属模块": "未知模块",
+      "功能描述": "download aborted due to frequent user requests.",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "DownloadErrorType",
+      "since_version": "11",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "DownloadProgress",
+      "所属模块": "未知模块",
+      "功能描述": "The DownloadProgress data structure.",
+      "注释信息": [
+        "@interface DownloadProgress",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "cloudSync",
+      "since_version": "11",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "state",
+      "属性类型": "State",
+      "所属模块": "未知模块",
+      "功能描述": "The current download state.",
+      "注释信息": [
+        "@type { State }",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "DownloadProgress",
+      "since_version": "11",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "processed",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "The processed data size for current file.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "DownloadProgress",
+      "since_version": "11",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "size",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "The size of current file.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "DownloadProgress",
+      "since_version": "11",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "uri",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "The uri of current file.",
+      "注释信息": [
+        "@type { string }",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "DownloadProgress",
+      "since_version": "11",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "error",
+      "属性类型": "DownloadErrorType",
+      "所属模块": "未知模块",
+      "功能描述": "The error type of download.",
+      "注释信息": [
+        "@type { DownloadErrorType }",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "DownloadProgress",
+      "since_version": "11",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "DownloadFileType",
+      "所属模块": "未知模块",
+      "功能描述": "Describes the download file type.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "cloudSync",
+      "since_version": "20",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CONTENT",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "Content file type.",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "DownloadFileType",
+      "since_version": "20",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "THUMBNAIL",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Thumbnail file type.",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "DownloadFileType",
+      "since_version": "20",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "LCD",
+      "值": "2",
+      "所属模块": "未知模块",
+      "功能描述": "LCD file type.",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "DownloadFileType",
+      "since_version": "20",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "FailedFileInfo",
+      "所属模块": "未知模块",
+      "功能描述": "FailedFileInfo struct.",
+      "注释信息": [
+        "@interface FailedFileInfo",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "cloudSync",
+      "since_version": "20",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "uri",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "The uri of the file that failes to be downloaded.",
+      "注释信息": [
+        "@type { string }",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "FailedFileInfo",
+      "since_version": "20",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "error",
+      "属性类型": "DownloadErrorType",
+      "所属模块": "未知模块",
+      "功能描述": "Error code of the file that failes to be downloaded.",
+      "注释信息": [
+        "@type { DownloadErrorType }",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "FailedFileInfo",
+      "since_version": "20",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "class",
+      "名称": "MultiDownloadProgress",
+      "所属模块": "未知模块",
+      "功能描述": "MultiDownloadProgress object.",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "cloudSync",
+      "since_version": "20",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "state",
+      "属性类型": "State",
+      "所属模块": "未知模块",
+      "功能描述": "The current download state.",
+      "注释信息": [
+        "@type { State }",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "MultiDownloadProgress",
+      "since_version": "20",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "taskId",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "The download ID of the batch files.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "MultiDownloadProgress",
+      "since_version": "20",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "successfulCount",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "The number of files that downloaded successfully",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "MultiDownloadProgress",
+      "since_version": "20",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "failedCount",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "The number of files that fail to be downloaded.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "MultiDownloadProgress",
+      "since_version": "20",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "totalCount",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Total number of the batch files.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "MultiDownloadProgress",
+      "since_version": "20",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "downloadedSize",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Total size of downloaded files.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "MultiDownloadProgress",
+      "since_version": "20",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "totalSize",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Total size of the batch files.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "MultiDownloadProgress",
+      "since_version": "20",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "errType",
+      "属性类型": "DownloadErrorType",
+      "所属模块": "未知模块",
+      "功能描述": "The error type of download.",
+      "注释信息": [
+        "@type { DownloadErrorType }",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "MultiDownloadProgress",
+      "since_version": "20",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getFailedFiles",
+      "返回值": "Array<FailedFileInfo>",
+      "所属模块": "未知模块",
+      "功能描述": "Get the list of files that fail to be downloaded. <br>1.Failed to access the database or execute the SQL statement. <br>2.System error, such as a null pointer, insufficient memory or a JS engine exception.",
+      "注释信息": [
+        "@returns { Array<FailedFileInfo> } - Return list of files that fail to be downloaded.",
+        "@throws { BusinessError } 22400005 - Inner error. Possible causes:",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "MultiDownloadProgress",
+      "since_version": "20",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "- Return list of files that fail to be downloaded.",
+      "error_codes": [
+        {
+          "code": "22400005",
+          "description": "Inner error. Possible causes:"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getSuccessfulFiles",
+      "返回值": "Array<string>",
+      "所属模块": "未知模块",
+      "功能描述": "Get the list of files that are successfully downloaded. <br>1.Failed to access the database or execute the SQL statement. <br>2.System error, such as a null pointer, insufficient memory or a JS engine exception.",
+      "注释信息": [
+        "@returns { Array<string> } - Return list of files that are successfully downloaded.",
+        "@throws { BusinessError } 22400005 - Inner error. Possible causes:",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "MultiDownloadProgress",
+      "since_version": "20",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "- Return list of files that are successfully downloaded.",
+      "error_codes": [
+        {
+          "code": "22400005",
+          "description": "Inner error. Possible causes:"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "class",
+      "名称": "FileSync",
+      "所属模块": "未知模块",
+      "功能描述": "FileSync object.",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "cloudSync",
+      "since_version": "12",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "constructor",
+      "返回值": "FileSync",
+      "所属模块": "未知模块",
+      "功能描述": "A constructor used to create a FileSync object.",
+      "注释信息": [
+        "@throws { BusinessError } 401 - The input parameter is invalid.Possible causes:Incorrect parameter types.",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "FileSync",
+      "since_version": "12",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "The input parameter is invalid.Possible causes:Incorrect parameter types."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Subscribes to sync progress change event. This method uses a callback to get sync progress changes. <br>2.Incorrect parameter types.",
+      "注释信息": [
+        "@param { 'progress' } event - event type.",
+        "@param { Callback<SyncProgress> } callback - callback function with a `SyncProgress` argument.",
+        "@throws { BusinessError } 401 - The input parameter is invalid.Possible causes:1.Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 13600001 - IPC error",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "FileSync",
+      "since_version": "12",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [
+        {
+          "名称": "event",
+          "类型": "'progress'",
+          "必填": true,
+          "说明": "event type."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<SyncProgress>",
+          "必填": true,
+          "说明": "callback function with a `SyncProgress` argument."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "The input parameter is invalid.Possible causes:1.Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "13600001",
+          "description": "IPC error"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unsubscribes from sync progress event.",
+      "注释信息": [
+        "@param { 'progress' } event - event type.",
+        "@param { Callback<SyncProgress> } [callback] - callback function with a `SyncProgress` argument.",
+        "@throws { BusinessError } 401 - The input parameter is invalid.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types.",
+        "@throws { BusinessError } 13600001 - IPC error",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "FileSync",
+      "since_version": "12",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [
+        {
+          "名称": "event",
+          "类型": "'progress'",
+          "必填": true,
+          "说明": "event type."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "Callback<SyncProgress> } [callback] - callback function with a `SyncProgress` argument."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "The input parameter is invalid.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types."
+        },
+        {
+          "code": "13600001",
+          "description": "IPC error"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "start",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Start the file sync task.",
+      "注释信息": [
+        "@returns { Promise<void> } - Return Promise.",
+        "@throws { BusinessError } 401 - The input parameter is invalid.Possible causes:Incorrect parameter types.",
+        "@throws { BusinessError } 13600001 - IPC error.",
+        "@throws { BusinessError } 22400001 - Cloud status not ready.",
+        "@throws { BusinessError } 22400002 - Network unavailable.",
+        "@throws { BusinessError } 22400003 - Low battery level.",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "FileSync",
+      "since_version": "12",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "- Return Promise.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "The input parameter is invalid.Possible causes:Incorrect parameter types."
+        },
+        {
+          "code": "13600001",
+          "description": "IPC error."
+        },
+        {
+          "code": "22400001",
+          "description": "Cloud status not ready."
+        },
+        {
+          "code": "22400002",
+          "description": "Network unavailable."
+        },
+        {
+          "code": "22400003",
+          "description": "Low battery level."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "start",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Start the file sync task with callback.",
+      "注释信息": [
+        "@param { AsyncCallback<void> } callback - Callback function.",
+        "@throws { BusinessError } 401 - The input parameter is invalid.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types.",
+        "@throws { BusinessError } 13600001 - IPC error.",
+        "@throws { BusinessError } 22400001 - Cloud status not ready.",
+        "@throws { BusinessError } 22400002 - Network unavailable.",
+        "@throws { BusinessError } 22400003 - Low battery level.",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "FileSync",
+      "since_version": "12",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "Callback function."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "The input parameter is invalid.Possible causes:1.Mandatory parameters are left unspecified;2.Incorrect parameter types."
+        },
+        {
+          "code": "13600001",
+          "description": "IPC error."
+        },
+        {
+          "code": "22400001",
+          "description": "Cloud status not ready."
+        },
+        {
+          "code": "22400002",
+          "description": "Network unavailable."
+        },
+        {
+          "code": "22400003",
+          "description": "Low battery level."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "stop",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Stop the file sync task.",
+      "注释信息": [
+        "@returns { Promise<void> } - Return Promise.",
+        "@throws { BusinessError } 401 - The input parameter is invalid.Possible causes:Incorrect parameter types.",
+        "@throws { BusinessError } 13600001 - IPC error.",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "FileSync",
+      "since_version": "12",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "- Return Promise.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "The input parameter is invalid.Possible causes:Incorrect parameter types."
+        },
+        {
+          "code": "13600001",
+          "description": "IPC error."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "stop",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Stop the file sync task with callback. <br>2.Incorrect parameter types.",
+      "注释信息": [
+        "@param { AsyncCallback<void> } callback - Callback function.",
+        "@throws { BusinessError } 401 - The input parameter is invalid.Possible causes:1.Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 13600001 - IPC error.",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "FileSync",
+      "since_version": "12",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "Callback function."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "The input parameter is invalid.Possible causes:1.Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "13600001",
+          "description": "IPC error."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getLastSyncTime",
+      "返回值": "Promise<number>",
+      "所属模块": "未知模块",
+      "功能描述": "Get the last synchronization time.",
+      "注释信息": [
+        "@returns { Promise<number> } - Return the date of last synchronization.",
+        "@throws { BusinessError } 401 - The input parameter is invalid.Possible causes:Incorrect parameter types.",
+        "@throws { BusinessError } 13600001 - IPC error.",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "FileSync",
+      "since_version": "12",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "- Return the date of last synchronization.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "The input parameter is invalid.Possible causes:Incorrect parameter types."
+        },
+        {
+          "code": "13600001",
+          "description": "IPC error."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getLastSyncTime",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Get the last synchronization time. <br>2.Incorrect parameter types.",
+      "注释信息": [
+        "@param { AsyncCallback<number> } callback - Callback function.",
+        "@throws { BusinessError } 401 - The input parameter is invalid.Possible causes:1.Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 13600001 - IPC error.",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "FileSync",
+      "since_version": "12",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<number>",
+          "必填": true,
+          "说明": "Callback function."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "The input parameter is invalid.Possible causes:1.Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "13600001",
+          "description": "IPC error."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "class",
+      "名称": "CloudFileCache",
+      "所属模块": "未知模块",
+      "功能描述": "CloudFileCache object.",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "cloudSync",
+      "since_version": "11",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "constructor",
+      "返回值": "CloudFileCache",
+      "所属模块": "未知模块",
+      "功能描述": "A constructor used to create a CloudFileCache object.",
+      "注释信息": [
+        "@throws { BusinessError } 401 - The input parameter is invalid.Possible causes:Incorrect parameter types.",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "CloudFileCache",
+      "since_version": "11",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "The input parameter is invalid.Possible causes:Incorrect parameter types."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Subscribes to cloud file cache download progress change event. This method uses a callback to get download progress changes. <br>2.Incorrect parameter types.",
+      "注释信息": [
+        "@param { 'progress' } event - event type.",
+        "@param { Callback<DownloadProgress> } callback - callback function with a `DownloadProgress` argument.",
+        "@throws { BusinessError } 401 - The input parameter is invalid.Possible causes:1.Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 13600001 - IPC error",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "CloudFileCache",
+      "since_version": "11",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [
+        {
+          "名称": "event",
+          "类型": "'progress'",
+          "必填": true,
+          "说明": "event type."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<DownloadProgress>",
+          "必填": true,
+          "说明": "callback function with a `DownloadProgress` argument."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "The input parameter is invalid.Possible causes:1.Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "13600001",
+          "description": "IPC error"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Subscribes to a batch of cloud file cache download progress change event. This method uses a callback to get download progress changes. <br>1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. <br>1.Failed to access the database or execute the SQL statement. <br>2.System error, such as a null pointer, insufficient memory or a JS engine exception.",
+      "注释信息": [
+        "@param { 'batchDownload' } event - event type.",
+        "@param { Callback<MultiDownloadProgress> } callback - callback function with a `MultiDownloadProgress` argument.",
+        "@throws { BusinessError } 13900020 - Invalid argument. Possible causes:",
+        "@throws { BusinessError } 22400005 - Inner error. Possible causes:",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "CloudFileCache",
+      "since_version": "20",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [
+        {
+          "名称": "event",
+          "类型": "'batchDownload'",
+          "必填": true,
+          "说明": "event type."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<MultiDownloadProgress>",
+          "必填": true,
+          "说明": "callback function with a `MultiDownloadProgress` argument."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "13900020",
+          "description": "Invalid argument. Possible causes:"
+        },
+        {
+          "code": "22400005",
+          "description": "Inner error. Possible causes:"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unsubscribes from cloud file cache download progress event. <br>2.Incorrect parameter types.",
+      "注释信息": [
+        "@param { 'progress' } event - event type.",
+        "@param { Callback<DownloadProgress> } [callback] - callback function with a `DownloadProgress` argument.",
+        "@throws { BusinessError } 401 - The input parameter is invalid.Possible causes:1.Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 13600001 - IPC error",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "CloudFileCache",
+      "since_version": "11",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [
+        {
+          "名称": "event",
+          "类型": "'progress'",
+          "必填": true,
+          "说明": "event type."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "Callback<DownloadProgress> } [callback] - callback function with a `DownloadProgress` argument."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "The input parameter is invalid.Possible causes:1.Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "13600001",
+          "description": "IPC error"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unsubscribes from cloud file cache download progress event. <br>1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. <br>1.Failed to access the database or execute the SQL statement. <br>2.System error, such as a null pointer, insufficient memory or a JS engine exception.",
+      "注释信息": [
+        "@param { 'batchDownload' } event - event type.",
+        "@param { Callback<MultiDownloadProgress> } [callback] - callback function with a `MultiDownloadProgress` argument.",
+        "@throws { BusinessError } 13900020 - Invalid argument. Possible causes:",
+        "@throws { BusinessError } 22400005 - Inner error. Possible causes:",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "CloudFileCache",
+      "since_version": "20",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [
+        {
+          "名称": "event",
+          "类型": "'batchDownload'",
+          "必填": true,
+          "说明": "event type."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "Callback<MultiDownloadProgress> } [callback] - callback function with a `MultiDownloadProgress` argument."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "13900020",
+          "description": "Invalid argument. Possible causes:"
+        },
+        {
+          "code": "22400005",
+          "description": "Inner error. Possible causes:"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "start",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Start the cloud file cache download task. <br>2.Incorrect parameter types.",
+      "注释信息": [
+        "@param { string } uri - uri of file.",
+        "@returns { Promise<void> } - Return Promise.",
+        "@throws { BusinessError } 401 - The input parameter is invalid.Possible causes:1.Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 13600001 - IPC error.",
+        "@throws { BusinessError } 13900002 - No such file or directory.",
+        "@throws { BusinessError } 13900025 - No space left on device.",
+        "@throws { BusinessError } 14000002 - Invalid URI.",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "CloudFileCache",
+      "since_version": "11",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [
+        {
+          "名称": "uri",
+          "类型": "string",
+          "必填": true,
+          "说明": "uri of file."
+        }
+      ],
+      "return_description": "- Return Promise.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "The input parameter is invalid.Possible causes:1.Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "13600001",
+          "description": "IPC error."
+        },
+        {
+          "code": "13900002",
+          "description": "No such file or directory."
+        },
+        {
+          "code": "13900025",
+          "description": "No space left on device."
+        },
+        {
+          "code": "14000002",
+          "description": "Invalid URI."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "start",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Start the cloud file cache download task with callback. <br>2.Incorrect parameter types.",
+      "注释信息": [
+        "@param { string } uri - uri of file.",
+        "@param { AsyncCallback<void> } callback - Callback function.",
+        "@throws { BusinessError } 401 - The input parameter is invalid.Possible causes:1.Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 13600001 - IPC error.",
+        "@throws { BusinessError } 13900002 - No such file or directory.",
+        "@throws { BusinessError } 13900025 - No space left on device.",
+        "@throws { BusinessError } 14000002 - Invalid URI.",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "CloudFileCache",
+      "since_version": "11",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [
+        {
+          "名称": "uri",
+          "类型": "string",
+          "必填": true,
+          "说明": "uri of file."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "Callback function."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "The input parameter is invalid.Possible causes:1.Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "13600001",
+          "description": "IPC error."
+        },
+        {
+          "code": "13900002",
+          "description": "No such file or directory."
+        },
+        {
+          "code": "13900025",
+          "description": "No space left on device."
+        },
+        {
+          "code": "14000002",
+          "description": "Invalid URI."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "startBatch",
+      "返回值": "Promise<number>",
+      "所属模块": "未知模块",
+      "功能描述": "Batch start the cloud file cache download task. <br>1.IPC failed or timed out. 2.Failed to load the service. <br>1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. <br>1.Failed to access the database or execute the SQL statement. <br>2.System error, such as a null pointer, insufficient memory or a JS engine exception.",
+      "注释信息": [
+        "@param { Array<string> } uris - The list of uri of file.",
+        "@param { DownloadFileType } [fileType] - download file type.",
+        "@returns { Promise<number> } - Return the downloadId in Promise mode.",
+        "@throws { BusinessError } 13600001 - IPC error. Possible causes:",
+        "@throws { BusinessError } 13900020 - Invalid argument. Possible causes:",
+        "@throws { BusinessError } 14000002 - Invalid uri.",
+        "@throws { BusinessError } 22400004 - Exceed the maximum limit.",
+        "@throws { BusinessError } 22400005 - Inner error. Possible causes:",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "CloudFileCache",
+      "since_version": "20",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [
+        {
+          "名称": "uris",
+          "类型": "Array<string>",
+          "必填": true,
+          "说明": "The list of uri of file."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "DownloadFileType } [fileType] - download file type."
+        }
+      ],
+      "return_description": "- Return the downloadId in Promise mode.",
+      "error_codes": [
+        {
+          "code": "13600001",
+          "description": "IPC error. Possible causes:"
+        },
+        {
+          "code": "13900020",
+          "description": "Invalid argument. Possible causes:"
+        },
+        {
+          "code": "14000002",
+          "description": "Invalid uri."
+        },
+        {
+          "code": "22400004",
+          "description": "Exceed the maximum limit."
+        },
+        {
+          "code": "22400005",
+          "description": "Inner error. Possible causes:"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "stop",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Stop the cloud file cache download task. <br>2.Incorrect parameter types.",
+      "注释信息": [
+        "@param { string } uri - uri of file.",
+        "@param { boolean } [needClean] - whether to delete the file that already downloaded.",
+        "@returns { Promise<void> } - Return Promise.",
+        "@throws { BusinessError } 401 - The input parameter is invalid.Possible causes:1.Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 13600001 - IPC error.",
+        "@throws { BusinessError } 13900002 - No such file or directory.",
+        "@throws { BusinessError } 14000002 - Invalid URI.",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "CloudFileCache",
+      "since_version": "12",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [
+        {
+          "名称": "uri",
+          "类型": "string",
+          "必填": true,
+          "说明": "uri of file."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "boolean } [needClean] - whether to delete the file that already downloaded."
+        }
+      ],
+      "return_description": "- Return Promise.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "The input parameter is invalid.Possible causes:1.Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "13600001",
+          "description": "IPC error."
+        },
+        {
+          "code": "13900002",
+          "description": "No such file or directory."
+        },
+        {
+          "code": "14000002",
+          "description": "Invalid URI."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "stop",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Stop the cloud file cache download task with callback. <br>2.Incorrect parameter types.",
+      "注释信息": [
+        "@param { string } uri - uri of file.",
+        "@param { AsyncCallback<void> } callback - Callback function.",
+        "@throws { BusinessError } 401 - The input parameter is invalid.Possible causes:1.Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 13600001 - IPC error.",
+        "@throws { BusinessError } 13900002 - No such file or directory.",
+        "@throws { BusinessError } 14000002 - Invalid URI.",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "CloudFileCache",
+      "since_version": "11",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [
+        {
+          "名称": "uri",
+          "类型": "string",
+          "必填": true,
+          "说明": "uri of file."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "Callback function."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "The input parameter is invalid.Possible causes:1.Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "13600001",
+          "description": "IPC error."
+        },
+        {
+          "code": "13900002",
+          "description": "No such file or directory."
+        },
+        {
+          "code": "14000002",
+          "description": "Invalid URI."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "stopBatch",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Batch stop the cloud file caches download task. <br>1.IPC failed or timed out. 2.Failed to load the service. <br>1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. <br>1.Failed to access the database or execute the SQL statement. <br>2.System error, such as a null pointer, insufficient memory or a JS engine exception.",
+      "注释信息": [
+        "@param { number } downloadId - The download ID of a batch of file cache.",
+        "@param { boolean } [needClean] - whether to delete the file that already downloaded.",
+        "@returns { Promise<void> } - Return Promise.",
+        "@throws { BusinessError } 13600001 - IPC error. Possible causes:",
+        "@throws { BusinessError } 13900020 - Invalid argument. Possible causes:",
+        "@throws { BusinessError } 22400005 - Inner error. Possible causes:",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "CloudFileCache",
+      "since_version": "20",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [
+        {
+          "名称": "downloadId",
+          "类型": "number",
+          "必填": true,
+          "说明": "The download ID of a batch of file cache."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "boolean } [needClean] - whether to delete the file that already downloaded."
+        }
+      ],
+      "return_description": "- Return Promise.",
+      "error_codes": [
+        {
+          "code": "13600001",
+          "description": "IPC error. Possible causes:"
+        },
+        {
+          "code": "13900020",
+          "description": "Invalid argument. Possible causes:"
+        },
+        {
+          "code": "22400005",
+          "description": "Inner error. Possible causes:"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "cleanFileCache",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Clean local content of the file that has been synced to the Cloud <br>1.IPC failed or timed out. 2.Failed to load the service. <br>1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. <br>1.Failed to access the database or execute the SQL statement. <br>2.System error, such as a null pointer, insufficient memory or a JS engine exception.",
+      "注释信息": [
+        "@param { string } uri - uri of file.",
+        "@throws { BusinessError } 13600001 - IPC error. Possible causes:",
+        "@throws { BusinessError } 13900002 - No such file or directory.",
+        "@throws { BusinessError } 13900010 - Try again.",
+        "@throws { BusinessError } 13900012 - Permission denied by the file system",
+        "@throws { BusinessError } 13900020 - Invalid argument. Possible causes:",
+        "@throws { BusinessError } 14000002 - Invalid URI.",
+        "@throws { BusinessError } 22400005 - Inner error. Possible causes:",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "CloudFileCache",
+      "since_version": "20",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [
+        {
+          "名称": "uri",
+          "类型": "string",
+          "必填": true,
+          "说明": "uri of file."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "13600001",
+          "description": "IPC error. Possible causes:"
+        },
+        {
+          "code": "13900002",
+          "description": "No such file or directory."
+        },
+        {
+          "code": "13900010",
+          "description": "Try again."
+        },
+        {
+          "code": "13900012",
+          "description": "Permission denied by the file system"
+        },
+        {
+          "code": "13900020",
+          "description": "Invalid argument. Possible causes:"
+        },
+        {
+          "code": "14000002",
+          "description": "Invalid URI."
+        },
+        {
+          "code": "22400005",
+          "description": "Inner error. Possible causes:"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "FileState",
+      "所属模块": "未知模块",
+      "功能描述": "Describes the external sync state of file.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "cloudSync",
+      "since_version": "20",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "INITIAL_AFTER_DOWNLOAD",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the initial state after a file is downloaded from the cloud to the local host.",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "FileState",
+      "since_version": "20",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "UPLOADING",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the file is uploading now.",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "FileState",
+      "since_version": "20",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "STOPPED",
+      "值": "2",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the file sync task stopped.",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "FileState",
+      "since_version": "20",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "TO_BE_UPLOADED",
+      "值": "3",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the file is waiting for upload.",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "FileState",
+      "since_version": "20",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "UPLOAD_SUCCESS",
+      "值": "4",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the file has been already uploaded successfully.",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "FileState",
+      "since_version": "20",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "UPLOAD_FAILURE",
+      "值": "5",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the file upload failure",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "FileState",
+      "since_version": "20",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getCoreFileSyncState",
+      "返回值": "FileState",
+      "所属模块": "未知模块",
+      "功能描述": "Get the sync state of the specified file. <br>1.IPC failed or timed out. 2.Failed to load the service. <br>1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. <br>1.Failed to access the database or execute the SQL statement. <br>2.System error, such as a null pointer, insufficient memory or a JS engine exception.",
+      "注释信息": [
+        "@param { string } uri - uri of file.",
+        "@returns { FileState } - return the sync state of the specified file.",
+        "@throws { BusinessError } 13600001 - IPC error. Possible causes:",
+        "@throws { BusinessError } 13900002 - No such file or directory.",
+        "@throws { BusinessError } 13900004 - Interrupted system call",
+        "@throws { BusinessError } 13900010 - Try again",
+        "@throws { BusinessError } 13900012 - Permission denied by the file system",
+        "@throws { BusinessError } 13900020 - Invalid argument. Possible causes:",
+        "@throws { BusinessError } 13900031 - Function not implemented",
+        "@throws { BusinessError } 14000002 - Invalid URI.",
+        "@throws { BusinessError } 22400005 - Inner error. Possible causes:",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "cloudSync",
+      "since_version": "20",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [
+        {
+          "名称": "uri",
+          "类型": "string",
+          "必填": true,
+          "说明": "uri of file."
+        }
+      ],
+      "return_description": "- return the sync state of the specified file.",
+      "error_codes": [
+        {
+          "code": "13600001",
+          "description": "IPC error. Possible causes:"
+        },
+        {
+          "code": "13900002",
+          "description": "No such file or directory."
+        },
+        {
+          "code": "13900004",
+          "description": "Interrupted system call"
+        },
+        {
+          "code": "13900010",
+          "description": "Try again"
+        },
+        {
+          "code": "13900012",
+          "description": "Permission denied by the file system"
+        },
+        {
+          "code": "13900020",
+          "description": "Invalid argument. Possible causes:"
+        },
+        {
+          "code": "13900031",
+          "description": "Function not implemented"
+        },
+        {
+          "code": "14000002",
+          "description": "Invalid URI."
+        },
+        {
+          "code": "22400005",
+          "description": "Inner error. Possible causes:"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "registerChange",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Register change notify for the specified uri. <br>2.Incorrect parameter types.",
+      "注释信息": [
+        "@param { string } uri - uri of file.",
+        "@param { boolean } recursion - Whether to monitor the child files.",
+        "@param { Callback<ChangeData> } callback - Returns the changed data.",
+        "@throws { BusinessError } 401 - The input parameter is invalid.Possible causes:1.Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 13900001 - Operation not permitted",
+        "@throws { BusinessError } 13900002 - No such file or directory.",
+        "@throws { BusinessError } 13900012 - Permission denied",
+        "@throws { BusinessError } 14000002 - Invalid URI.",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "cloudSync",
+      "since_version": "12",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [
+        {
+          "名称": "uri",
+          "类型": "string",
+          "必填": true,
+          "说明": "uri of file."
+        },
+        {
+          "名称": "recursion",
+          "类型": "boolean",
+          "必填": true,
+          "说明": "Whether to monitor the child files."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<ChangeData>",
+          "必填": true,
+          "说明": "Returns the changed data."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "The input parameter is invalid.Possible causes:1.Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "13900001",
+          "description": "Operation not permitted"
+        },
+        {
+          "code": "13900002",
+          "description": "No such file or directory."
+        },
+        {
+          "code": "13900012",
+          "description": "Permission denied"
+        },
+        {
+          "code": "14000002",
+          "description": "Invalid URI."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "unregisterChange",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unregister change notify fir the specified uri. <br>2.Incorrect parameter types.",
+      "注释信息": [
+        "@param { string } uri - uri of file.",
+        "@throws { BusinessError } 401 - The input parameter is invalid.Possible causes:1.Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 13900001 - Operation not permitted",
+        "@throws { BusinessError } 13900002 - No such file or directory.",
+        "@throws { BusinessError } 13900012 - Permission denied",
+        "@throws { BusinessError } 14000002 - Invalid URI.",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "cloudSync",
+      "since_version": "12",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [
+        {
+          "名称": "uri",
+          "类型": "string",
+          "必填": true,
+          "说明": "uri of file."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "The input parameter is invalid.Possible causes:1.Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "13900001",
+          "description": "Operation not permitted"
+        },
+        {
+          "code": "13900002",
+          "description": "No such file or directory."
+        },
+        {
+          "code": "13900012",
+          "description": "Permission denied"
+        },
+        {
+          "code": "14000002",
+          "description": "Invalid URI."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "NotifyType",
+      "所属模块": "未知模块",
+      "功能描述": "Enumeration types of data change.",
+      "注释信息": [
+        "@enum { number } NotifyType",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "cloudSync",
+      "since_version": "12",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "NOTIFY_ADDED",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "File has been newly created",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "NotifyType",
+      "since_version": "12",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "NOTIFY_MODIFIED",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "File has been modified.",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "NotifyType",
+      "since_version": "12",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "NOTIFY_DELETED",
+      "值": "2",
+      "所属模块": "未知模块",
+      "功能描述": "File has been deleted.",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "NotifyType",
+      "since_version": "12",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "NOTIFY_RENAMED",
+      "值": "3",
+      "所属模块": "未知模块",
+      "功能描述": "File has been renamed or moved.",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "NotifyType",
+      "since_version": "12",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "ChangeData",
+      "所属模块": "未知模块",
+      "功能描述": "Defines the change data",
+      "注释信息": [
+        "@interface ChangeData",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "cloudSync",
+      "since_version": "12",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "type",
+      "属性类型": "NotifyType",
+      "所属模块": "未知模块",
+      "功能描述": "The notify type of the change.",
+      "注释信息": [
+        "@type {NotifyType}",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "ChangeData",
+      "since_version": "12",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "isDirectory",
+      "属性类型": "Array<boolean>",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates whether the changed uri is directory.",
+      "注释信息": [
+        "@type {Array<boolean>}",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "ChangeData",
+      "since_version": "12",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "uris",
+      "属性类型": "Array<string>",
+      "所属模块": "未知模块",
+      "功能描述": "The changed uris.",
+      "注释信息": [
+        "@type {Array<string>}",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "ChangeData",
+      "since_version": "12",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "HistoryVersion",
+      "所属模块": "未知模块",
+      "功能描述": "Defines the HistoryVersion data structure.",
+      "注释信息": [
+        "@typedef HistoryVersion",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "cloudSync",
+      "since_version": "20",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "editedTime",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "The time when the content of this version file is edited.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "HistoryVersion",
+      "since_version": "20",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "fileSize",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "The size of this history version file.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "HistoryVersion",
+      "since_version": "20",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "versionId",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "The version ID of this version.",
+      "注释信息": [
+        "@type { string }",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "HistoryVersion",
+      "since_version": "20",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "originalFileName",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "The original file name used to create this version.",
+      "注释信息": [
+        "@type { string }",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "HistoryVersion",
+      "since_version": "20",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "sha256",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "The Sha256 check value of this version file.",
+      "注释信息": [
+        "@type { string }",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "HistoryVersion",
+      "since_version": "20",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "autoResolved",
+      "属性类型": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates whether this version automatically resolves the conflict.",
+      "注释信息": [
+        "@type { boolean }",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "HistoryVersion",
+      "since_version": "20",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "VersionDownloadProgress",
+      "所属模块": "未知模块",
+      "功能描述": "Defines the VersionDownloadProgress data structure.",
+      "注释信息": [
+        "@typedef VersionDownloadProgress",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "cloudSync",
+      "since_version": "20",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "state",
+      "属性类型": "State",
+      "所属模块": "未知模块",
+      "功能描述": "The current download task state.",
+      "注释信息": [
+        "@type { State }",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "VersionDownloadProgress",
+      "since_version": "20",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "progress",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "The percentage of downloaded files.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "VersionDownloadProgress",
+      "since_version": "20",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "errType",
+      "属性类型": "DownloadErrorType",
+      "所属模块": "未知模块",
+      "功能描述": "The error type of download.",
+      "注释信息": [
+        "@type { DownloadErrorType }",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "VersionDownloadProgress",
+      "since_version": "20",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "class",
+      "名称": "FileVersion",
+      "所属模块": "未知模块",
+      "功能描述": "FileVersion object.",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "cloudSync",
+      "since_version": "20",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "constructor",
+      "返回值": "FileVersion",
+      "所属模块": "未知模块",
+      "功能描述": "A constructor used to create a FileVersion object. <br>1.Failed to access the database or execute the SQL statement. <br>2.System error, such as a null pointer, insufficient memory or a JS engine exception.",
+      "注释信息": [
+        "@throws { BusinessError } 22400005 - Inner error. Possible causes:",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "FileVersion",
+      "since_version": "20",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "22400005",
+          "description": "Inner error. Possible causes:"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getHistoryVersionList",
+      "返回值": "Promise<Array<HistoryVersion>>",
+      "所属模块": "未知模块",
+      "功能描述": "Get the specified number of most recent historical versions of the file specified by the URI. <br>1.IPC failed or timed out. 2.Failed to load the service. <br>1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. <br>1.Failed to access the database or execute the SQL statement. <br>2.System error, such as a null pointer, insufficient memory or a JS engine exception.",
+      "注释信息": [
+        "@param { string } uri - uri of file.",
+        "@param { number } versionNumLimit - Maximum number of historical versions you want to obtained.",
+        "@returns { Promise<Array<HistoryVersion>> } - Return the most recent history version list of the specified file.",
+        "@throws { BusinessError } 13600001 - IPC error. Possible causes:",
+        "@throws { BusinessError } 13900002 - No such file or directory.",
+        "@throws { BusinessError } 13900010 - Try again.",
+        "@throws { BusinessError } 13900012 - Permission denied by the file system.",
+        "@throws { BusinessError } 13900020 - Invalid argument. Possible causes:",
+        "@throws { BusinessError } 14000002 - Invalid URI.",
+        "@throws { BusinessError } 22400002 - Network unavailable.",
+        "@throws { BusinessError } 22400005 - Inner error. Possible causes:",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "FileVersion",
+      "since_version": "20",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [
+        {
+          "名称": "uri",
+          "类型": "string",
+          "必填": true,
+          "说明": "uri of file."
+        },
+        {
+          "名称": "versionNumLimit",
+          "类型": "number",
+          "必填": true,
+          "说明": "Maximum number of historical versions you want to obtained."
+        }
+      ],
+      "return_description": "- Return the most recent history version list of the specified file.",
+      "error_codes": [
+        {
+          "code": "13600001",
+          "description": "IPC error. Possible causes:"
+        },
+        {
+          "code": "13900002",
+          "description": "No such file or directory."
+        },
+        {
+          "code": "13900010",
+          "description": "Try again."
+        },
+        {
+          "code": "13900012",
+          "description": "Permission denied by the file system."
+        },
+        {
+          "code": "13900020",
+          "description": "Invalid argument. Possible causes:"
+        },
+        {
+          "code": "14000002",
+          "description": "Invalid URI."
+        },
+        {
+          "code": "22400002",
+          "description": "Network unavailable."
+        },
+        {
+          "code": "22400005",
+          "description": "Inner error. Possible causes:"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "downloadHistoryVersion",
+      "返回值": "Promise<string>",
+      "所属模块": "未知模块",
+      "功能描述": "Download the content of the specified history version to the specified temporary directory. <br>1.IPC failed or timed out. 2.Failed to load the service. <br>1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. <br>1.Failed to access the database or execute the SQL statement. <br>2.System error, such as a null pointer, insufficient memory or a JS engine exception.",
+      "注释信息": [
+        "@param { string } uri - Uri of file.",
+        "@param { string } versionId - The version ID of the history version you want.",
+        "@param { Callback<VersionDownloadProgress> } callback - callback function with a `VersionDownloadProgress` argument.",
+        "@returns { Promise<string> } - Return the temporary directory to use for saving the content of the specified history version.",
+        "@throws { BusinessError } 13600001 - IPC error. Possible causes:",
+        "@throws { BusinessError } 13900002 - No such file or directory.",
+        "@throws { BusinessError } 13900010 - Try again.",
+        "@throws { BusinessError } 13900012 - Permission denied by the file system.",
+        "@throws { BusinessError } 13900020 - Invalid argument. Possible causes:",
+        "@throws { BusinessError } 14000002 - Invalid URI.",
+        "@throws { BusinessError } 22400002 - Network unavailable.",
+        "@throws { BusinessError } 22400005 - Inner error. Possible causes:",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "FileVersion",
+      "since_version": "20",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [
+        {
+          "名称": "uri",
+          "类型": "string",
+          "必填": true,
+          "说明": "Uri of file."
+        },
+        {
+          "名称": "versionId",
+          "类型": "string",
+          "必填": true,
+          "说明": "The version ID of the history version you want."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<VersionDownloadProgress>",
+          "必填": true,
+          "说明": "callback function with a `VersionDownloadProgress` argument."
+        }
+      ],
+      "return_description": "- Return the temporary directory to use for saving the content of the specified history version.",
+      "error_codes": [
+        {
+          "code": "13600001",
+          "description": "IPC error. Possible causes:"
+        },
+        {
+          "code": "13900002",
+          "description": "No such file or directory."
+        },
+        {
+          "code": "13900010",
+          "description": "Try again."
+        },
+        {
+          "code": "13900012",
+          "description": "Permission denied by the file system."
+        },
+        {
+          "code": "13900020",
+          "description": "Invalid argument. Possible causes:"
+        },
+        {
+          "code": "14000002",
+          "description": "Invalid URI."
+        },
+        {
+          "code": "22400002",
+          "description": "Network unavailable."
+        },
+        {
+          "code": "22400005",
+          "description": "Inner error. Possible causes:"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "replaceFileWithHistoryVersion",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Replace the content of the specified file with the content of the specified history version. <br>1.IPC failed or timed out. 2.Failed to load the service. <br>1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. <br>1.Failed to access the database or execute the SQL statement. <br>2.System error, such as a null pointer, insufficient memory or a JS engine exception.",
+      "注释信息": [
+        "@param { string } originalUri - The uri of the file whose content you want to replace.",
+        "@param { string } versionUri - The uri of the downloaded history version used to replace the original file.",
+        "@returns { Promise<void> } - Return Promise.",
+        "@throws { BusinessError } 13600001 - IPC error. Possible causes:",
+        "@throws { BusinessError } 13900002 - No such file or directory.",
+        "@throws { BusinessError } 13900005 - I/O error.",
+        "@throws { BusinessError } 13900008 - Bad file descriptor.",
+        "@throws { BusinessError } 13900010 - Try again.",
+        "@throws { BusinessError } 13900012 - Permission denied by the file system.",
+        "@throws { BusinessError } 13900020 - Invalid argument. Possible causes:",
+        "@throws { BusinessError } 14000002 - Invalid URI. Possible causes: 1.originalUri invalid; 2.versionUri invalid.",
+        "@throws { BusinessError } 22400005 - Inner error. Possible causes:",
+        "@throws { BusinessError } 22400007 - The version file specified to replace the original file does not exist.",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "FileVersion",
+      "since_version": "20",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [
+        {
+          "名称": "originalUri",
+          "类型": "string",
+          "必填": true,
+          "说明": "The uri of the file whose content you want to replace."
+        },
+        {
+          "名称": "versionUri",
+          "类型": "string",
+          "必填": true,
+          "说明": "The uri of the downloaded history version used to replace the original file."
+        }
+      ],
+      "return_description": "- Return Promise.",
+      "error_codes": [
+        {
+          "code": "13600001",
+          "description": "IPC error. Possible causes:"
+        },
+        {
+          "code": "13900002",
+          "description": "No such file or directory."
+        },
+        {
+          "code": "13900005",
+          "description": "I/O error."
+        },
+        {
+          "code": "13900008",
+          "description": "Bad file descriptor."
+        },
+        {
+          "code": "13900010",
+          "description": "Try again."
+        },
+        {
+          "code": "13900012",
+          "description": "Permission denied by the file system."
+        },
+        {
+          "code": "13900020",
+          "description": "Invalid argument. Possible causes:"
+        },
+        {
+          "code": "14000002",
+          "description": "Invalid URI. Possible causes: 1.originalUri invalid; 2.versionUri invalid."
+        },
+        {
+          "code": "22400005",
+          "description": "Inner error. Possible causes:"
+        },
+        {
+          "code": "22400007",
+          "description": "The version file specified to replace the original file does not exist."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "isFileConflict",
+      "返回值": "Promise<boolean>",
+      "所属模块": "未知模块",
+      "功能描述": "Check whether the current file content is in conflict with other versions. <br>1.IPC failed or timed out. 2.Failed to load the service. <br>1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. <br>1.Failed to access the database or execute the SQL statement. <br>2.System error, such as a null pointer, insufficient memory or a JS engine exception.",
+      "注释信息": [
+        "@param { string } uri - Uri of file.",
+        "@returns { Promise<boolean> } - Return a Boolean value indicating whether the current file content is in conflict with other versions.",
+        "@throws { BusinessError } 13600001 - IPC error. Possible causes:",
+        "@throws { BusinessError } 13900002 - No such file or directory.",
+        "@throws { BusinessError } 13900010 - Try again.",
+        "@throws { BusinessError } 13900012 - Permission denied by the file system.",
+        "@throws { BusinessError } 13900020 - Invalid argument. Possible causes:",
+        "@throws { BusinessError } 14000002 - Invalid URI.",
+        "@throws { BusinessError } 22400005 - Inner error. Possible causes:",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "FileVersion",
+      "since_version": "20",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [
+        {
+          "名称": "uri",
+          "类型": "string",
+          "必填": true,
+          "说明": "Uri of file."
+        }
+      ],
+      "return_description": "- Return a Boolean value indicating whether the current file content is in conflict with other versions.",
+      "error_codes": [
+        {
+          "code": "13600001",
+          "description": "IPC error. Possible causes:"
+        },
+        {
+          "code": "13900002",
+          "description": "No such file or directory."
+        },
+        {
+          "code": "13900010",
+          "description": "Try again."
+        },
+        {
+          "code": "13900012",
+          "description": "Permission denied by the file system."
+        },
+        {
+          "code": "13900020",
+          "description": "Invalid argument. Possible causes:"
+        },
+        {
+          "code": "14000002",
+          "description": "Invalid URI."
+        },
+        {
+          "code": "22400005",
+          "description": "Inner error. Possible causes:"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "clearFileConflict",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Clean the current file conflict flag after the conflict is resolved. <br>1.IPC failed or timed out. 2.Failed to load the service. <br>1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. <br>1.Failed to access the database or execute the SQL statement. <br>2.System error, such as a null pointer, insufficient memory or a JS engine exception.",
+      "注释信息": [
+        "@param { string } uri - Uri of file.",
+        "@returns { Promise<void> } - Return Promise.",
+        "@throws { BusinessError } 13600001 - IPC error. Possible causes:",
+        "@throws { BusinessError } 13900002 - No such file or directory.",
+        "@throws { BusinessError } 13900010 - Try again.",
+        "@throws { BusinessError } 13900012 - Permission denied by the file system.",
+        "@throws { BusinessError } 13900020 - Invalid argument. Possible causes:",
+        "@throws { BusinessError } 14000002 - Invalid URI.",
+        "@throws { BusinessError } 22400005 - Inner error. Possible causes:",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "FileVersion",
+      "since_version": "20",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [
+        {
+          "名称": "uri",
+          "类型": "string",
+          "必填": true,
+          "说明": "Uri of file."
+        }
+      ],
+      "return_description": "- Return Promise.",
+      "error_codes": [
+        {
+          "code": "13600001",
+          "description": "IPC error. Possible causes:"
+        },
+        {
+          "code": "13900002",
+          "description": "No such file or directory."
+        },
+        {
+          "code": "13900010",
+          "description": "Try again."
+        },
+        {
+          "code": "13900012",
+          "description": "Permission denied by the file system."
+        },
+        {
+          "code": "13900020",
+          "description": "Invalid argument. Possible causes:"
+        },
+        {
+          "code": "14000002",
+          "description": "Invalid URI."
+        },
+        {
+          "code": "22400005",
+          "description": "Inner error. Possible causes:"
+        }
+      ],
+      "版本": "API"
+    }
+  ]
+}

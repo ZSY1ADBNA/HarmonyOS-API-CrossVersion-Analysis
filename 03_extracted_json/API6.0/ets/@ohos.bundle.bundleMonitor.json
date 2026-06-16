@@ -1,0 +1,255 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.AbilityKit",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "namespace",
+      "名称": "bundleMonitor",
+      "所属模块": "@kit.AbilityKit",
+      "功能描述": "Bundle monitor，monitor application installation, updates, and uninstallation events.",
+      "注释信息": [
+        "@namespace bundleMonitor",
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@systemapi",
+        "@since arkts {'1.1':'9', '1.2':'20'}",
+        "@arkts 1.1&1.2"
+      ],
+      "层级": 1,
+      "上级": "@kit.AbilityKit",
+      "since_version": "arkts {'1.1':'9', '1.2':'20'}",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "interface",
+      "名称": "BundleChangedInfo",
+      "所属模块": "未知模块",
+      "功能描述": "This module defines the result information of monitoring install, update and uninstall.",
+      "注释信息": [
+        "@typedef BundleChangedInfo",
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@systemapi",
+        "@since arkts {'1.1':'9', '1.2':'20'}",
+        "@arkts 1.1&1.2"
+      ],
+      "层级": 2,
+      "上级": "bundleMonitor",
+      "since_version": "arkts {'1.1':'9', '1.2':'20'}",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "property",
+      "名称": "bundleName",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "The bundle name",
+      "注释信息": [
+        "@type { string }",
+        "@readonly",
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@systemapi",
+        "@since arkts {'1.1':'9', '1.2':'20'}",
+        "@arkts 1.1&1.2"
+      ],
+      "层级": 2,
+      "上级": "BundleChangedInfo",
+      "since_version": "arkts {'1.1':'9', '1.2':'20'}",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "property",
+      "名称": "userId",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "The user id",
+      "注释信息": [
+        "@type { number }",
+        "@readonly",
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@systemapi",
+        "@since arkts {'1.1':'9', '1.2':'20'}",
+        "@arkts 1.1&1.2"
+      ],
+      "层级": 2,
+      "上级": "BundleChangedInfo",
+      "since_version": "arkts {'1.1':'9', '1.2':'20'}",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "property",
+      "名称": "appIndex",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "The app index of clone app",
+      "注释信息": [
+        "@type { number }",
+        "@readonly",
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@systemapi",
+        "@since arkts {'1.1':'12', '1.2':'20'}",
+        "@arkts 1.1&1.2"
+      ],
+      "层级": 2,
+      "上级": "BundleChangedInfo",
+      "since_version": "arkts {'1.1':'12', '1.2':'20'}",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "type_alias",
+      "名称": "BundleChangedEvent",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the event type of bundle change",
+      "注释信息": [
+        "@typedef { 'add' | 'update' | 'remove' }",
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@systemapi",
+        "@since arkts {'1.1':'9', '1.2':'20'}",
+        "@arkts 1.1&1.2"
+      ],
+      "层级": 1,
+      "上级": "bundleMonitor",
+      "since_version": "arkts {'1.1':'9', '1.2':'20'}",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Register to monitor the installation status",
+      "注释信息": [
+        "@permission ohos.permission.LISTEN_BUNDLE_CHANGE",
+        "@param { BundleChangedEvent } type - Indicates the command should be implement.",
+        "@param { Callback<BundleChangedInfo> } callback - Indicates the callback to be register.",
+        "@throws { BusinessError } 201 - Verify permission denied.",
+        "@throws { BusinessError } 202 - Permission denied, non-system app called system api.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.",
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@systemapi",
+        "@since arkts {'1.1':'9', '1.2':'20'}",
+        "@arkts 1.1&1.2"
+      ],
+      "层级": 1,
+      "上级": "bundleMonitor",
+      "since_version": "arkts {'1.1':'9', '1.2':'20'}",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "BundleChangedEvent",
+          "必填": true,
+          "说明": "Indicates the command should be implement."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<BundleChangedInfo>",
+          "必填": true,
+          "说明": "Indicates the callback to be register."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Verify permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Permission denied, non-system app called system api."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unregister to monitor the installation status",
+      "注释信息": [
+        "@permission ohos.permission.LISTEN_BUNDLE_CHANGE",
+        "@param { BundleChangedEvent } type -type Indicates the command should be implement.",
+        "@param { Callback<BundleChangedInfo> } callback - Indicates the callback to be unregister.",
+        "@throws { BusinessError } 201 - Verify permission denied.",
+        "@throws { BusinessError } 202 - Permission denied, non-system app called system api.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.",
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@systemapi",
+        "@since arkts {'1.1':'9', '1.2':'20'}",
+        "@arkts 1.1&1.2"
+      ],
+      "层级": 1,
+      "上级": "bundleMonitor",
+      "since_version": "arkts {'1.1':'9', '1.2':'20'}",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "BundleChangedEvent",
+          "必填": true,
+          "说明": "type Indicates the command should be implement."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<BundleChangedInfo>",
+          "必填": true,
+          "说明": "Indicates the callback to be unregister."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Verify permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Permission denied, non-system app called system api."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types."
+        }
+      ],
+      "版本": "API6.0"
+    }
+  ]
+}

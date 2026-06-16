@@ -1,0 +1,324 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.CoreFileKit",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "所属模块": "@kit.CoreFileKit",
+      "功能描述": "Describe bundle version",
+      "注释信息": [
+        "@interface BundleVersion",
+        "@syscap SystemCapability.FileManagement.StorageService.Backup",
+        "@StageModelOnly",
+        "@since arkts {'1.1':'10', '1.2':'20'}",
+        "@arkts 1.1&1.2"
+      ],
+      "层级": 1,
+      "上级": "@kit.CoreFileKit",
+      "since_version": "arkts {'1.1':'10', '1.2':'20'}",
+      "system_capability": "SystemCapability.FileManagement.StorageService.Backup",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "class",
+      "名称": "BackupExtensionAbility",
+      "所属模块": "@kit.CoreFileKit",
+      "功能描述": "Class to be override for backup extension ability.",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.StorageService.Backup",
+        "@StageModelOnly",
+        "@since arkts {'1.1':'10', '1.2':'20'}",
+        "@arkts 1.1&1.2"
+      ],
+      "层级": 1,
+      "上级": "@kit.CoreFileKit",
+      "since_version": "arkts {'1.1':'10', '1.2':'20'}",
+      "system_capability": "SystemCapability.FileManagement.StorageService.Backup",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "property",
+      "名称": "context",
+      "属性类型": "BackupExtensionContext",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates backup extension ability context.",
+      "注释信息": [
+        "@type { BackupExtensionContext }",
+        "@syscap SystemCapability.FileManagement.StorageService.Backup",
+        "@StageModelOnly",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "BackupExtensionAbility",
+      "since_version": "12",
+      "system_capability": "SystemCapability.FileManagement.StorageService.Backup",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "onBackup",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Callback to be called when the backup procedure is started. Developer could override this method to build files to be backup.",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.StorageService.Backup",
+        "@StageModelOnly",
+        "@since arkts {'1.1':'10', '1.2':'20'}",
+        "@arkts 1.1&1.2"
+      ],
+      "层级": 1,
+      "上级": "BackupExtensionAbility",
+      "since_version": "arkts {'1.1':'10', '1.2':'20'}",
+      "system_capability": "SystemCapability.FileManagement.StorageService.Backup",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "onBackupEx",
+      "返回值": "string | Promise<string>",
+      "所属模块": "未知模块",
+      "功能描述": "Callback to be called when the backup procedure is started. Developer could override this method to restore. it is an array, each array element includes detail and type now. it includes type, errorCode and errorInfo now.",
+      "注释信息": [
+        "@param { string } backupInfo BackupInfo to be backup, the param is a JSON string,",
+        "@returns { string | Promise<string> } Return backup result, support promise, the result is a JSON string,",
+        "@syscap SystemCapability.FileManagement.StorageService.Backup",
+        "@StageModelOnly",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "BackupExtensionAbility",
+      "since_version": "12",
+      "system_capability": "SystemCapability.FileManagement.StorageService.Backup",
+      "parameters": [
+        {
+          "名称": "backupInfo",
+          "类型": "string",
+          "必填": true,
+          "说明": "BackupInfo to be backup, the param is a JSON string,"
+        }
+      ],
+      "return_description": "Return backup result, support promise, the result is a JSON string,",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "onRestore",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Callback to be called when the restore procedure is started. Developer could override this method to restore from copies for various bundle versions.",
+      "注释信息": [
+        "@param { BundleVersion } bundleVersion Bundle version to be restore.",
+        "@syscap SystemCapability.FileManagement.StorageService.Backup",
+        "@StageModelOnly",
+        "@since arkts {'1.1':'10', '1.2':'20'}",
+        "@arkts 1.1&1.2"
+      ],
+      "层级": 1,
+      "上级": "BackupExtensionAbility",
+      "since_version": "arkts {'1.1':'10', '1.2':'20'}",
+      "system_capability": "SystemCapability.FileManagement.StorageService.Backup",
+      "parameters": [
+        {
+          "名称": "bundleVersion",
+          "类型": "BundleVersion",
+          "必填": true,
+          "说明": "Bundle version to be restore."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "onRestoreEx",
+      "返回值": "string | Promise<string>",
+      "所属模块": "未知模块",
+      "功能描述": "Callback to be called when the restore procedure is started. Developer could override this method to restore. it is an array, each array element includes detail and type now. it includes type, errorCode and errorInfo now.",
+      "注释信息": [
+        "@param { BundleVersion } bundleVersion Bundle version to be restore.",
+        "@param { string } restoreInfo RestoreInfo to be restore, the param is a JSON string,",
+        "@returns { string | Promise<string> } Return restore result, support promise. the result is a JSON string,",
+        "@syscap SystemCapability.FileManagement.StorageService.Backup",
+        "@StageModelOnly",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "BackupExtensionAbility",
+      "since_version": "12",
+      "system_capability": "SystemCapability.FileManagement.StorageService.Backup",
+      "parameters": [
+        {
+          "名称": "bundleVersion",
+          "类型": "BundleVersion",
+          "必填": true,
+          "说明": "Bundle version to be restore."
+        },
+        {
+          "名称": "restoreInfo",
+          "类型": "string",
+          "必填": true,
+          "说明": "RestoreInfo to be restore, the param is a JSON string,"
+        }
+      ],
+      "return_description": "Return restore result, support promise. the result is a JSON string,",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getBackupInfo",
+      "返回值": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Callback to be called when getting application backupInfo. Developer could override this method to provide the backupInfo.",
+      "注释信息": [
+        "@returns { string } Return the backup application's info.",
+        "@syscap SystemCapability.FileManagement.StorageService.Backup",
+        "@systemapi",
+        "@StageModelOnly",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "BackupExtensionAbility",
+      "since_version": "12",
+      "system_capability": "SystemCapability.FileManagement.StorageService.Backup",
+      "parameters": [],
+      "return_description": "Return the backup application's info.",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "onProcess",
+      "返回值": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Callback to be called when getting backup/restore process info. Developer could override this method to provide the backup/restore process info.",
+      "注释信息": [
+        "@returns { string } Return the backup/restore process info.",
+        "@syscap SystemCapability.FileManagement.StorageService.Backup",
+        "@StageModelOnly",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "BackupExtensionAbility",
+      "since_version": "12",
+      "system_capability": "SystemCapability.FileManagement.StorageService.Backup",
+      "parameters": [],
+      "return_description": "Return the backup/restore process info.",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "onRelease",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Callback to be called before extension ability exits. Developer could override this method to clean abnormal data.",
+      "注释信息": [
+        "@param { number } scenario - The value 1 indicates backup and the value 2 indicates restoration.",
+        "@returns { Promise<void> } the promise returned by the function",
+        "@syscap SystemCapability.FileManagement.StorageService.Backup",
+        "@StageModelOnly",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "BackupExtensionAbility",
+      "since_version": "20",
+      "system_capability": "SystemCapability.FileManagement.StorageService.Backup",
+      "parameters": [
+        {
+          "名称": "scenario",
+          "类型": "number",
+          "必填": true,
+          "说明": "The value 1 indicates backup and the value 2 indicates restoration."
+        }
+      ],
+      "return_description": "the promise returned by the function",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getBackupCompatibilityInfo",
+      "返回值": "Promise<string>",
+      "所属模块": "未知模块",
+      "功能描述": "Callback to be called when getting application backup compatibilityInfo. Developer could override this method to provide the backup compatibilityInfo.",
+      "注释信息": [
+        "@param { string } extInfo Information about the capabilities of the peer.",
+        "@returns { Promise<string> } Return backup compatibilityInfo, support promise.",
+        "@syscap SystemCapability.FileManagement.StorageService.Backup",
+        "@systemapi",
+        "@StageModelOnly",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "BackupExtensionAbility",
+      "since_version": "20",
+      "system_capability": "SystemCapability.FileManagement.StorageService.Backup",
+      "parameters": [
+        {
+          "名称": "extInfo",
+          "类型": "string",
+          "必填": true,
+          "说明": "Information about the capabilities of the peer."
+        }
+      ],
+      "return_description": "Return backup compatibilityInfo, support promise.",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getRestoreCompatibilityInfo",
+      "返回值": "Promise<string>",
+      "所属模块": "未知模块",
+      "功能描述": "Callback to be called when getting application restore compatibilityInfo. Developer could override this method to provide the restore compatibilityInfo.",
+      "注释信息": [
+        "@param { string } extInfo Information about the capabilities of the peer.",
+        "@returns { Promise<string> } Return restore compatibilityInfo, support promise.",
+        "@syscap SystemCapability.FileManagement.StorageService.Backup",
+        "@systemapi",
+        "@StageModelOnly",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "BackupExtensionAbility",
+      "since_version": "20",
+      "system_capability": "SystemCapability.FileManagement.StorageService.Backup",
+      "parameters": [
+        {
+          "名称": "extInfo",
+          "类型": "string",
+          "必填": true,
+          "说明": "Information about the capabilities of the peer."
+        }
+      ],
+      "return_description": "Return restore compatibilityInfo, support promise.",
+      "error_codes": [],
+      "版本": "API6.0"
+    }
+  ]
+}

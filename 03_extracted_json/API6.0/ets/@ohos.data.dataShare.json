@@ -1,0 +1,234 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.ArkData",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "namespace",
+      "名称": "dataShare",
+      "所属模块": "@kit.ArkData",
+      "功能描述": "This module provides the dataShare capability for consumer.",
+      "注释信息": [
+        "@namespace dataShare",
+        "@syscap SystemCapability.DistributedDataManager.DataShare.Consumer",
+        "@stagemodelonly",
+        "@since 20",
+        "@arkts 1.1&1.2"
+      ],
+      "层级": 1,
+      "上级": "@kit.ArkData",
+      "since_version": "20",
+      "system_capability": "SystemCapability.DistributedDataManager.DataShare.Consumer",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "interface",
+      "名称": "DataShareHelperOptions",
+      "所属模块": "未知模块",
+      "功能描述": "Manages create datashare helper options.",
+      "注释信息": [
+        "@interface DataShareHelperOptions",
+        "@syscap SystemCapability.DistributedDataManager.DataShare.Consumer",
+        "@systemapi",
+        "@stagemodelonly",
+        "@since arkts {'1.1':'10', '1.2':'20'}",
+        "@arkts 1.1&1.2"
+      ],
+      "层级": 2,
+      "上级": "dataShare",
+      "since_version": "arkts {'1.1':'10', '1.2':'20'}",
+      "system_capability": "SystemCapability.DistributedDataManager.DataShare.Consumer",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "property",
+      "名称": "isProxy",
+      "属性类型": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Specifies whether the {@link DataShareHelper} in proxy mode. If value is true, the {@link DataShareHelper} to be created is in proxy mode, and all operations will not open provider APP as possible",
+      "注释信息": [
+        "@type { ?boolean }",
+        "@default false",
+        "@syscap SystemCapability.DistributedDataManager.DataShare.Consumer",
+        "@systemapi",
+        "@stagemodelonly",
+        "@since arkts {'1.1':'10', '1.2':'20'}",
+        "@arkts 1.1&1.2"
+      ],
+      "层级": 2,
+      "上级": "DataShareHelperOptions",
+      "since_version": "arkts {'1.1':'10', '1.2':'20'}",
+      "system_capability": "SystemCapability.DistributedDataManager.DataShare.Consumer",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "property",
+      "名称": "waitTime",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Specifies the time to wait for connecting extension, in seconds.",
+      "注释信息": [
+        "@type { ?number }",
+        "@default 2",
+        "@syscap SystemCapability.DistributedDataManager.DataShare.Consumer",
+        "@systemapi",
+        "@stagemodelonly",
+        "@since 18"
+      ],
+      "层级": 2,
+      "上级": "DataShareHelperOptions",
+      "since_version": "18",
+      "system_capability": "SystemCapability.DistributedDataManager.DataShare.Consumer",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "createDataShareHelper",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the dataShareHelper. 2. Incorrect parameters types.",
+      "注释信息": [
+        "@param { Context } context - Indicates the application context.",
+        "@param { string } uri - Indicates the path of the file to open.",
+        "@param { AsyncCallback<DataShareHelper> } callback - {DataShareHelper}: The dataShareHelper for consumer.",
+        "@throws { BusinessError } 202 - Permission verification failed. A non-system application calls a system API.",
+        "@throws { BusinessError } 401 - Parameter error.Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 15700010 - The DataShareHelper fails to be initialized.",
+        "@syscap SystemCapability.DistributedDataManager.DataShare.Consumer",
+        "@systemapi",
+        "@stagemodelonly",
+        "@since arkts {'1.1':'19', '1.2':'20'}",
+        "@arkts 1.1&1.2"
+      ],
+      "层级": 1,
+      "上级": "dataShare",
+      "since_version": "arkts {'1.1':'19', '1.2':'20'}",
+      "system_capability": "SystemCapability.DistributedDataManager.DataShare.Consumer",
+      "parameters": [
+        {
+          "名称": "context",
+          "类型": "Context",
+          "必填": true,
+          "说明": "Indicates the application context."
+        },
+        {
+          "名称": "uri",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates the path of the file to open."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<DataShareHelper>",
+          "必填": true,
+          "说明": "{DataShareHelper}: The dataShareHelper for consumer."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "202",
+          "description": "Permission verification failed. A non-system application calls a system API."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error.Possible causes: 1. Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "15700010",
+          "description": "The DataShareHelper fails to be initialized."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "createDataShareHelper",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the dataShareHelper. 2. Incorrect parameters types.",
+      "注释信息": [
+        "@param { Context } context - Indicates the application context.",
+        "@param { string } uri - Indicates the path of the file to open.",
+        "@param { DataShareHelperOptions } options - Indicates the optional config.",
+        "@param { AsyncCallback<DataShareHelper> } callback - {DataShareHelper}: The dataShareHelper for consumer.",
+        "@throws { BusinessError } 202 - Permission verification failed. A non-system application calls a system API.",
+        "@throws { BusinessError } 401 - Parameter error.Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 15700010 - The DataShareHelper fails to be initialized.",
+        "@syscap SystemCapability.DistributedDataManager.DataShare.Consumer",
+        "@systemapi",
+        "@stagemodelonly",
+        "@since arkts {'1.1':'19', '1.2':'20'}",
+        "@arkts 1.1&1.2"
+      ],
+      "层级": 1,
+      "上级": "dataShare",
+      "since_version": "arkts {'1.1':'19', '1.2':'20'}",
+      "system_capability": "SystemCapability.DistributedDataManager.DataShare.Consumer",
+      "parameters": [
+        {
+          "名称": "context",
+          "类型": "Context",
+          "必填": true,
+          "说明": "Indicates the application context."
+        },
+        {
+          "名称": "uri",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates the path of the file to open."
+        },
+        {
+          "名称": "options",
+          "类型": "DataShareHelperOptions",
+          "必填": true,
+          "说明": "Indicates the optional config."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<DataShareHelper>",
+          "必填": true,
+          "说明": "{DataShareHelper}: The dataShareHelper for consumer."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "202",
+          "description": "Permission verification failed. A non-system application calls a system API."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error.Possible causes: 1. Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "15700010",
+          "description": "The DataShareHelper fails to be initialized."
+        }
+      ],
+      "版本": "API6.0"
+    }
+  ]
+}

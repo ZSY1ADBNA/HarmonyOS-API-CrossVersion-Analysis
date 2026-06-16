@@ -1,0 +1,489 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.BasicServicesKit",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "namespace",
+      "名称": "selectionManager",
+      "所属模块": "@kit.BasicServicesKit",
+      "功能描述": "Declares the selectionManager for listening for word selection events and managing word selection panels.",
+      "注释信息": [
+        "@namespace selectionManager",
+        "@syscap SystemCapability.SelectionInput.Selection",
+        "@systemapi",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "@kit.BasicServicesKit",
+      "since_version": "20",
+      "system_capability": "SystemCapability.SelectionInput.Selection",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Registers a callback to listen for the word selection completion event. event.",
+      "注释信息": [
+        "@param { 'selectionCompleted' } type Word selection completion event.",
+        "@param { Callback<SelectionInfo> } callback Callback used to listen for the word selection completion",
+        "@throws { BusinessError } 33600003 Invalid operation. The selection app is not valid.",
+        "@syscap SystemCapability.SelectionInput.Selection",
+        "@systemapi",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "selectionManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.SelectionInput.Selection",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'selectionCompleted'",
+          "必填": true,
+          "说明": "Word selection completion event."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<SelectionInfo>",
+          "必填": true,
+          "说明": "Callback used to listen for the word selection completion"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "33600003",
+          "description": ""
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unregisters the callback used to listen for the word selection completion event. completion event.",
+      "注释信息": [
+        "@param { 'selectionCompleted' } type Word selection completion event.",
+        "@param { Callback<SelectionInfo> } [callback] (Optional) Callback used to listen for the word selection",
+        "@syscap SystemCapability.SelectionInput.Selection",
+        "@systemapi",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "selectionManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.SelectionInput.Selection",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'selectionCompleted'",
+          "必填": true,
+          "说明": "Word selection completion event."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "Callback<SelectionInfo> } [callback] (Optional) Callback used to listen for the word selection"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "createPanel",
+      "返回值": "Promise<Panel>",
+      "所属模块": "未知模块",
+      "功能描述": "Creates a word selection panel.",
+      "注释信息": [
+        "@param { Context } ctx Context on which the word selection panel depends.",
+        "@param { PanelInfo } info Information about the word selection panel.",
+        "@returns { Promise<Panel> } Promise used to return the word selection panel.",
+        "@throws { BusinessError } 33600001 Selection service exception.",
+        "@throws { BusinessError } 33600003 Invalid operation. The selection app is not valid.",
+        "@syscap SystemCapability.SelectionInput.Selection",
+        "@systemapi",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "selectionManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.SelectionInput.Selection",
+      "parameters": [
+        {
+          "名称": "ctx",
+          "类型": "Context",
+          "必填": true,
+          "说明": "Context on which the word selection panel depends."
+        },
+        {
+          "名称": "info",
+          "类型": "PanelInfo",
+          "必填": true,
+          "说明": "Information about the word selection panel."
+        }
+      ],
+      "return_description": "Promise used to return the word selection panel.",
+      "error_codes": [
+        {
+          "code": "33600001",
+          "description": ""
+        },
+        {
+          "code": "33600003",
+          "description": ""
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "destroyPanel",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Destroys the word selection panel.",
+      "注释信息": [
+        "@param { Panel } panel Word selection panel.",
+        "@returns { Promise<void> } Promise that returns no value.",
+        "@throws { BusinessError } 33600001 Selection service exception.",
+        "@syscap SystemCapability.SelectionInput.Selection",
+        "@systemapi",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "selectionManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.SelectionInput.Selection",
+      "parameters": [
+        {
+          "名称": "panel",
+          "类型": "Panel",
+          "必填": true,
+          "说明": "Word selection panel."
+        }
+      ],
+      "return_description": "Promise that returns no value.",
+      "error_codes": [
+        {
+          "code": "33600001",
+          "description": ""
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "interface",
+      "名称": "SelectionInfo",
+      "所属模块": "未知模块",
+      "功能描述": "Defines the information of a word selection event.",
+      "注释信息": [
+        "@typedef SelectionInfo",
+        "@syscap SystemCapability.SelectionInput.Selection",
+        "@systemapi",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "selectionManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.SelectionInput.Selection",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "property",
+      "名称": "text",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Selected text.",
+      "注释信息": [
+        "@type { string }",
+        "@syscap SystemCapability.SelectionInput.Selection",
+        "@systemapi",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "SelectionInfo",
+      "since_version": "20",
+      "system_capability": "SystemCapability.SelectionInput.Selection",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "property",
+      "名称": "selectionType",
+      "属性类型": "SelectionType",
+      "所属模块": "未知模块",
+      "功能描述": "Operation for selecting words.",
+      "注释信息": [
+        "@type { SelectionType }",
+        "@default MOUSE_MOVE",
+        "@syscap SystemCapability.SelectionInput.Selection",
+        "@systemapi",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "SelectionInfo",
+      "since_version": "20",
+      "system_capability": "SystemCapability.SelectionInput.Selection",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "property",
+      "名称": "startDisplayX",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "X-coordinate of the screen where the word selection starts.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.SelectionInput.Selection",
+        "@systemapi",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "SelectionInfo",
+      "since_version": "20",
+      "system_capability": "SystemCapability.SelectionInput.Selection",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "property",
+      "名称": "startDisplayY",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Y-coordinate of the screen where the word selection starts.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.SelectionInput.Selection",
+        "@systemapi",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "SelectionInfo",
+      "since_version": "20",
+      "system_capability": "SystemCapability.SelectionInput.Selection",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "property",
+      "名称": "endDisplayX",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "X-coordinate of the screen where the word selection ends.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.SelectionInput.Selection",
+        "@systemapi",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "SelectionInfo",
+      "since_version": "20",
+      "system_capability": "SystemCapability.SelectionInput.Selection",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "property",
+      "名称": "endDisplayY",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Y-coordinate of the screen where the word selection ends.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.SelectionInput.Selection",
+        "@systemapi",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "SelectionInfo",
+      "since_version": "20",
+      "system_capability": "SystemCapability.SelectionInput.Selection",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "property",
+      "名称": "startWindowX",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "X-coordinate of the window where the word selection starts.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.SelectionInput.Selection",
+        "@systemapi",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "SelectionInfo",
+      "since_version": "20",
+      "system_capability": "SystemCapability.SelectionInput.Selection",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "property",
+      "名称": "startWindowY",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Y-coordinate of the window where the word selection starts.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.SelectionInput.Selection",
+        "@systemapi",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "SelectionInfo",
+      "since_version": "20",
+      "system_capability": "SystemCapability.SelectionInput.Selection",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "property",
+      "名称": "endWindowX",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "X-coordinate of the window where the word selection ends.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.SelectionInput.Selection",
+        "@systemapi",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "SelectionInfo",
+      "since_version": "20",
+      "system_capability": "SystemCapability.SelectionInput.Selection",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "property",
+      "名称": "endWindowY",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Y-coordinate of the window where the word selection ends.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.SelectionInput.Selection",
+        "@systemapi",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "SelectionInfo",
+      "since_version": "20",
+      "system_capability": "SystemCapability.SelectionInput.Selection",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "property",
+      "名称": "displayID",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "ID of the screen where the window with selected words is located.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.SelectionInput.Selection",
+        "@systemapi",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "SelectionInfo",
+      "since_version": "20",
+      "system_capability": "SystemCapability.SelectionInput.Selection",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "property",
+      "名称": "windowID",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "ID of the window where words are selected.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.SelectionInput.Selection",
+        "@systemapi",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "SelectionInfo",
+      "since_version": "20",
+      "system_capability": "SystemCapability.SelectionInput.Selection",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "property",
+      "名称": "bundleName",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Bundle name of the application where words are selected.",
+      "注释信息": [
+        "@type { string }",
+        "@syscap SystemCapability.SelectionInput.Selection",
+        "@systemapi",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "SelectionInfo",
+      "since_version": "20",
+      "system_capability": "SystemCapability.SelectionInput.Selection",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    }
+  ]
+}

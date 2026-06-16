@@ -1,0 +1,1603 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.NetworkKit",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "namespace",
+      "名称": "statistics",
+      "所属模块": "@kit.NetworkKit",
+      "功能描述": "Obtains traffic statistics.",
+      "注释信息": [
+        "@namespace statistics",
+        "@syscap SystemCapability.Communication.NetManager.Core",
+        "@atomicservice",
+        "@since 15"
+      ],
+      "层级": 1,
+      "上级": "@kit.NetworkKit",
+      "since_version": "15",
+      "system_capability": "SystemCapability.Communication.NetManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "type_alias",
+      "名称": "NetBearType",
+      "所属模块": "未知模块",
+      "功能描述": "",
+      "注释信息": [
+        "@typedef {connection.NetBearType}",
+        "@syscap SystemCapability.Communication.NetManager.Core",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "statistics",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Communication.NetManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "method",
+      "名称": "getIfaceRxBytes",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Queries the data traffic (including all TCP and UDP data packets) received through a specified NIC.",
+      "注释信息": [
+        "@param { string } nic - Network interface card.",
+        "@param { AsyncCallback<number> } callback - Returns the data traffic received through the specified NIC.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 2100002 - Failed to connect to the service.",
+        "@throws { BusinessError } 2100003 - System internal error.",
+        "@throws { BusinessError } 2103005 - Failed to read the system map.",
+        "@throws { BusinessError } 2103011 - Failed to create a system map.",
+        "@throws { BusinessError } 2103012 - Failed to obtain the NIC name.",
+        "@syscap SystemCapability.Communication.NetManager.Core",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "statistics",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.NetManager.Core",
+      "parameters": [
+        {
+          "名称": "nic",
+          "类型": "string",
+          "必填": true,
+          "说明": "Network interface card."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<number>",
+          "必填": true,
+          "说明": "Returns the data traffic received through the specified NIC."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "2100002",
+          "description": "Failed to connect to the service."
+        },
+        {
+          "code": "2100003",
+          "description": "System internal error."
+        },
+        {
+          "code": "2103005",
+          "description": "Failed to read the system map."
+        },
+        {
+          "code": "2103011",
+          "description": "Failed to create a system map."
+        },
+        {
+          "code": "2103012",
+          "description": "Failed to obtain the NIC name."
+        }
+      ],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "method",
+      "名称": "getIfaceRxBytes",
+      "返回值": "Promise<number>",
+      "所属模块": "未知模块",
+      "功能描述": "Queries the data traffic (including all TCP and UDP data packets) received through a specified NIC.",
+      "注释信息": [
+        "@param { string } nic - Network interface card.",
+        "@returns { Promise<number> } The promise returned by the function.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 2100002 - Failed to connect to the service.",
+        "@throws { BusinessError } 2100003 - System internal error.",
+        "@throws { BusinessError } 2103005 - Failed to read the system map.",
+        "@throws { BusinessError } 2103011 - Failed to create a system map.",
+        "@throws { BusinessError } 2103012 - Failed to obtain the NIC name.",
+        "@syscap SystemCapability.Communication.NetManager.Core",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "statistics",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.NetManager.Core",
+      "parameters": [
+        {
+          "名称": "nic",
+          "类型": "string",
+          "必填": true,
+          "说明": "Network interface card."
+        }
+      ],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "2100002",
+          "description": "Failed to connect to the service."
+        },
+        {
+          "code": "2100003",
+          "description": "System internal error."
+        },
+        {
+          "code": "2103005",
+          "description": "Failed to read the system map."
+        },
+        {
+          "code": "2103011",
+          "description": "Failed to create a system map."
+        },
+        {
+          "code": "2103012",
+          "description": "Failed to obtain the NIC name."
+        }
+      ],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "method",
+      "名称": "getIfaceTxBytes",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Queries the data traffic (including all TCP and UDP data packets) sent through a specified NIC.",
+      "注释信息": [
+        "@param { string } nic - Network interface card.",
+        "@param { AsyncCallback<number> } callback - Returns the data traffic sent through the specified NIC.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 2100002 - Failed to connect to the service.",
+        "@throws { BusinessError } 2100003 - System internal error.",
+        "@throws { BusinessError } 2103005 - Failed to read the system map.",
+        "@throws { BusinessError } 2103011 - Failed to create a system map.",
+        "@throws { BusinessError } 2103012 - Failed to obtain the NIC name.",
+        "@syscap SystemCapability.Communication.NetManager.Core",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "statistics",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.NetManager.Core",
+      "parameters": [
+        {
+          "名称": "nic",
+          "类型": "string",
+          "必填": true,
+          "说明": "Network interface card."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<number>",
+          "必填": true,
+          "说明": "Returns the data traffic sent through the specified NIC."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "2100002",
+          "description": "Failed to connect to the service."
+        },
+        {
+          "code": "2100003",
+          "description": "System internal error."
+        },
+        {
+          "code": "2103005",
+          "description": "Failed to read the system map."
+        },
+        {
+          "code": "2103011",
+          "description": "Failed to create a system map."
+        },
+        {
+          "code": "2103012",
+          "description": "Failed to obtain the NIC name."
+        }
+      ],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "method",
+      "名称": "getIfaceTxBytes",
+      "返回值": "Promise<number>",
+      "所属模块": "未知模块",
+      "功能描述": "Queries the data traffic (including all TCP and UDP data packets) sent through a specified NIC.",
+      "注释信息": [
+        "@param { string } nic - Network interface card.",
+        "@returns { Promise<number> } The promise returned by the function.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 2100002 - Failed to connect to the service.",
+        "@throws { BusinessError } 2100003 - System internal error.",
+        "@throws { BusinessError } 2103005 - Failed to read the system map.",
+        "@throws { BusinessError } 2103011 - Failed to create a system map.",
+        "@throws { BusinessError } 2103012 - Failed to obtain the NIC name.",
+        "@syscap SystemCapability.Communication.NetManager.Core",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "statistics",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.NetManager.Core",
+      "parameters": [
+        {
+          "名称": "nic",
+          "类型": "string",
+          "必填": true,
+          "说明": "Network interface card."
+        }
+      ],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "2100002",
+          "description": "Failed to connect to the service."
+        },
+        {
+          "code": "2100003",
+          "description": "System internal error."
+        },
+        {
+          "code": "2103005",
+          "description": "Failed to read the system map."
+        },
+        {
+          "code": "2103011",
+          "description": "Failed to create a system map."
+        },
+        {
+          "code": "2103012",
+          "description": "Failed to obtain the NIC name."
+        }
+      ],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "method",
+      "名称": "getCellularRxBytes",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Queries the data traffic (including all TCP and UDP data packets) received through the cellular network.",
+      "注释信息": [
+        "@param { AsyncCallback<number> } callback - Returns the data traffic received through the cellular network.",
+        "@throws { BusinessError } 2100002 - Failed to connect to the service.",
+        "@throws { BusinessError } 2100003 - System internal error.",
+        "@throws { BusinessError } 2103005 - Failed to read the system map.",
+        "@throws { BusinessError } 2103011 - Failed to create a system map.",
+        "@throws { BusinessError } 2103012 - Failed to obtain the NIC name.",
+        "@syscap SystemCapability.Communication.NetManager.Core",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "statistics",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.NetManager.Core",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<number>",
+          "必填": true,
+          "说明": "Returns the data traffic received through the cellular network."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "2100002",
+          "description": "Failed to connect to the service."
+        },
+        {
+          "code": "2100003",
+          "description": "System internal error."
+        },
+        {
+          "code": "2103005",
+          "description": "Failed to read the system map."
+        },
+        {
+          "code": "2103011",
+          "description": "Failed to create a system map."
+        },
+        {
+          "code": "2103012",
+          "description": "Failed to obtain the NIC name."
+        }
+      ],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "method",
+      "名称": "getCellularRxBytes",
+      "返回值": "Promise<number>",
+      "所属模块": "未知模块",
+      "功能描述": "Queries the data traffic (including all TCP and UDP data packets) received through the cellular network.",
+      "注释信息": [
+        "@returns { Promise<number> } The promise returned by the function.",
+        "@throws { BusinessError } 2100002 - Failed to connect to the service.",
+        "@throws { BusinessError } 2100003 - System internal error.",
+        "@throws { BusinessError } 2103005 - Failed to read the system map.",
+        "@throws { BusinessError } 2103011 - Failed to create a system map.",
+        "@throws { BusinessError } 2103012 - Failed to obtain the NIC name.",
+        "@syscap SystemCapability.Communication.NetManager.Core",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "statistics",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.NetManager.Core",
+      "parameters": [],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "2100002",
+          "description": "Failed to connect to the service."
+        },
+        {
+          "code": "2100003",
+          "description": "System internal error."
+        },
+        {
+          "code": "2103005",
+          "description": "Failed to read the system map."
+        },
+        {
+          "code": "2103011",
+          "description": "Failed to create a system map."
+        },
+        {
+          "code": "2103012",
+          "description": "Failed to obtain the NIC name."
+        }
+      ],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "method",
+      "名称": "getCellularTxBytes",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Queries the data traffic (including all TCP and UDP data packets) sent through the cellular network.",
+      "注释信息": [
+        "@param { AsyncCallback<number> } callback - Returns the data traffic sent through the cellular network.",
+        "@throws { BusinessError } 2100002 - Failed to connect to the service.",
+        "@throws { BusinessError } 2100003 - System internal error.",
+        "@throws { BusinessError } 2103005 - Failed to read the system map.",
+        "@throws { BusinessError } 2103011 - Failed to create a system map.",
+        "@throws { BusinessError } 2103012 - Failed to obtain the NIC name.",
+        "@syscap SystemCapability.Communication.NetManager.Core",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "statistics",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.NetManager.Core",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<number>",
+          "必填": true,
+          "说明": "Returns the data traffic sent through the cellular network."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "2100002",
+          "description": "Failed to connect to the service."
+        },
+        {
+          "code": "2100003",
+          "description": "System internal error."
+        },
+        {
+          "code": "2103005",
+          "description": "Failed to read the system map."
+        },
+        {
+          "code": "2103011",
+          "description": "Failed to create a system map."
+        },
+        {
+          "code": "2103012",
+          "description": "Failed to obtain the NIC name."
+        }
+      ],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "method",
+      "名称": "getCellularTxBytes",
+      "返回值": "Promise<number>",
+      "所属模块": "未知模块",
+      "功能描述": "Queries the data traffic (including all TCP and UDP data packets) sent through the cellular network.",
+      "注释信息": [
+        "@returns { Promise<number> } The promise returned by the function.",
+        "@throws { BusinessError } 2100002 - Failed to connect to the service.",
+        "@throws { BusinessError } 2100003 - System internal error.",
+        "@throws { BusinessError } 2103005 - Failed to read the system map.",
+        "@throws { BusinessError } 2103011 - Failed to create a system map.",
+        "@throws { BusinessError } 2103012 - Failed to obtain the NIC name.",
+        "@syscap SystemCapability.Communication.NetManager.Core",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "statistics",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.NetManager.Core",
+      "parameters": [],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "2100002",
+          "description": "Failed to connect to the service."
+        },
+        {
+          "code": "2100003",
+          "description": "System internal error."
+        },
+        {
+          "code": "2103005",
+          "description": "Failed to read the system map."
+        },
+        {
+          "code": "2103011",
+          "description": "Failed to create a system map."
+        },
+        {
+          "code": "2103012",
+          "description": "Failed to obtain the NIC name."
+        }
+      ],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "method",
+      "名称": "getAllRxBytes",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Queries the data traffic (including all TCP and UDP data packets) received through all NICs.",
+      "注释信息": [
+        "@param { AsyncCallback<number> } callback - Returns the data traffic received through all NICs.",
+        "@throws { BusinessError } 2100002 - Failed to connect to the service.",
+        "@throws { BusinessError } 2100003 - System internal error.",
+        "@throws { BusinessError } 2103005 - Failed to read the system map.",
+        "@throws { BusinessError } 2103011 - Failed to create a system map.",
+        "@syscap SystemCapability.Communication.NetManager.Core",
+        "@atomicservice",
+        "@since 15"
+      ],
+      "层级": 1,
+      "上级": "statistics",
+      "since_version": "15",
+      "system_capability": "SystemCapability.Communication.NetManager.Core",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<number>",
+          "必填": true,
+          "说明": "Returns the data traffic received through all NICs."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "2100002",
+          "description": "Failed to connect to the service."
+        },
+        {
+          "code": "2100003",
+          "description": "System internal error."
+        },
+        {
+          "code": "2103005",
+          "description": "Failed to read the system map."
+        },
+        {
+          "code": "2103011",
+          "description": "Failed to create a system map."
+        }
+      ],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "method",
+      "名称": "getAllRxBytes",
+      "返回值": "Promise<number>",
+      "所属模块": "未知模块",
+      "功能描述": "Queries the data traffic (including all TCP and UDP data packets) received through all NICs.",
+      "注释信息": [
+        "@returns { Promise<number> } The promise returned by the function.",
+        "@throws { BusinessError } 2100002 - Failed to connect to the service.",
+        "@throws { BusinessError } 2100003 - System internal error.",
+        "@throws { BusinessError } 2103005 - Failed to read the system map.",
+        "@throws { BusinessError } 2103011 - Failed to create a system map.",
+        "@syscap SystemCapability.Communication.NetManager.Core",
+        "@atomicservice",
+        "@since 15"
+      ],
+      "层级": 1,
+      "上级": "statistics",
+      "since_version": "15",
+      "system_capability": "SystemCapability.Communication.NetManager.Core",
+      "parameters": [],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "2100002",
+          "description": "Failed to connect to the service."
+        },
+        {
+          "code": "2100003",
+          "description": "System internal error."
+        },
+        {
+          "code": "2103005",
+          "description": "Failed to read the system map."
+        },
+        {
+          "code": "2103011",
+          "description": "Failed to create a system map."
+        }
+      ],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "method",
+      "名称": "getAllTxBytes",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Queries the data traffic (including all TCP and UDP data packets) sent through all NICs.",
+      "注释信息": [
+        "@param { AsyncCallback<number> } callback - Returns the data traffic sent through all NICs.",
+        "@throws { BusinessError } 2100002 - Failed to connect to the service.",
+        "@throws { BusinessError } 2100003 - System internal error.",
+        "@throws { BusinessError } 2103005 - Failed to read the system map.",
+        "@throws { BusinessError } 2103011 - Failed to create a system map.",
+        "@syscap SystemCapability.Communication.NetManager.Core",
+        "@atomicservice",
+        "@since 15"
+      ],
+      "层级": 1,
+      "上级": "statistics",
+      "since_version": "15",
+      "system_capability": "SystemCapability.Communication.NetManager.Core",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<number>",
+          "必填": true,
+          "说明": "Returns the data traffic sent through all NICs."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "2100002",
+          "description": "Failed to connect to the service."
+        },
+        {
+          "code": "2100003",
+          "description": "System internal error."
+        },
+        {
+          "code": "2103005",
+          "description": "Failed to read the system map."
+        },
+        {
+          "code": "2103011",
+          "description": "Failed to create a system map."
+        }
+      ],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "method",
+      "名称": "getAllTxBytes",
+      "返回值": "Promise<number>",
+      "所属模块": "未知模块",
+      "功能描述": "Queries the data traffic (including all TCP and UDP data packets) sent through all NICs.",
+      "注释信息": [
+        "@returns { Promise<number> } The promise returned by the function.",
+        "@throws { BusinessError } 2100002 - Failed to connect to the service.",
+        "@throws { BusinessError } 2100003 - System internal error.",
+        "@throws { BusinessError } 2103005 - Failed to read the system map.",
+        "@throws { BusinessError } 2103011 - Failed to create a system map.",
+        "@syscap SystemCapability.Communication.NetManager.Core",
+        "@atomicservice",
+        "@since 15"
+      ],
+      "层级": 1,
+      "上级": "statistics",
+      "since_version": "15",
+      "system_capability": "SystemCapability.Communication.NetManager.Core",
+      "parameters": [],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "2100002",
+          "description": "Failed to connect to the service."
+        },
+        {
+          "code": "2100003",
+          "description": "System internal error."
+        },
+        {
+          "code": "2103005",
+          "description": "Failed to read the system map."
+        },
+        {
+          "code": "2103011",
+          "description": "Failed to create a system map."
+        }
+      ],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "method",
+      "名称": "getUidRxBytes",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Queries the data traffic (including all TCP and UDP data packets) received by a specified application.",
+      "注释信息": [
+        "@param { number } uid - Indicates the process ID of the application.",
+        "@param { AsyncCallback<number> } callback - Returns the data traffic received by the specified application.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 2100002 - Failed to connect to the service.",
+        "@throws { BusinessError } 2100003 - System internal error.",
+        "@throws { BusinessError } 2103005 - Failed to read the system map.",
+        "@throws { BusinessError } 2103011 - Failed to create a system map.",
+        "@syscap SystemCapability.Communication.NetManager.Core",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "statistics",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.NetManager.Core",
+      "parameters": [
+        {
+          "名称": "uid",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the process ID of the application."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<number>",
+          "必填": true,
+          "说明": "Returns the data traffic received by the specified application."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "2100002",
+          "description": "Failed to connect to the service."
+        },
+        {
+          "code": "2100003",
+          "description": "System internal error."
+        },
+        {
+          "code": "2103005",
+          "description": "Failed to read the system map."
+        },
+        {
+          "code": "2103011",
+          "description": "Failed to create a system map."
+        }
+      ],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "method",
+      "名称": "getUidRxBytes",
+      "返回值": "Promise<number>",
+      "所属模块": "未知模块",
+      "功能描述": "Queries the data traffic (including all TCP and UDP data packets) received by a specified application.",
+      "注释信息": [
+        "@param { number } uid - Indicates the process ID of the application.",
+        "@returns { Promise<number> } The promise returned by the function.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 2100002 - Failed to connect to the service.",
+        "@throws { BusinessError } 2100003 - System internal error.",
+        "@throws { BusinessError } 2103005 - Failed to read the system map.",
+        "@throws { BusinessError } 2103011 - Failed to create a system map.",
+        "@syscap SystemCapability.Communication.NetManager.Core",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "statistics",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.NetManager.Core",
+      "parameters": [
+        {
+          "名称": "uid",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the process ID of the application."
+        }
+      ],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "2100002",
+          "description": "Failed to connect to the service."
+        },
+        {
+          "code": "2100003",
+          "description": "System internal error."
+        },
+        {
+          "code": "2103005",
+          "description": "Failed to read the system map."
+        },
+        {
+          "code": "2103011",
+          "description": "Failed to create a system map."
+        }
+      ],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "method",
+      "名称": "getUidTxBytes",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Queries the data traffic (including all TCP and UDP data packets) sent by a specified application.",
+      "注释信息": [
+        "@param { number } uid - Indicates the process ID of the application.",
+        "@param { AsyncCallback<number> } callback - Returns the data traffic sent by the specified application.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 2100002 - Failed to connect to the service.",
+        "@throws { BusinessError } 2100003 - System internal error.",
+        "@throws { BusinessError } 2103005 - Failed to read the system map.",
+        "@throws { BusinessError } 2103011 - Failed to create a system map.",
+        "@syscap SystemCapability.Communication.NetManager.Core",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "statistics",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.NetManager.Core",
+      "parameters": [
+        {
+          "名称": "uid",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the process ID of the application."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<number>",
+          "必填": true,
+          "说明": "Returns the data traffic sent by the specified application."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "2100002",
+          "description": "Failed to connect to the service."
+        },
+        {
+          "code": "2100003",
+          "description": "System internal error."
+        },
+        {
+          "code": "2103005",
+          "description": "Failed to read the system map."
+        },
+        {
+          "code": "2103011",
+          "description": "Failed to create a system map."
+        }
+      ],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "method",
+      "名称": "getUidTxBytes",
+      "返回值": "Promise<number>",
+      "所属模块": "未知模块",
+      "功能描述": "Queries the data traffic (including all TCP and UDP data packets) sent by a specified application.",
+      "注释信息": [
+        "@param { number } uid - Indicates the process ID of the application.",
+        "@returns { Promise<number> } The promise returned by the function.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 2100002 - Failed to connect to the service.",
+        "@throws { BusinessError } 2100003 - System internal error.",
+        "@throws { BusinessError } 2103005 - Failed to read the system map.",
+        "@throws { BusinessError } 2103011 - Failed to create a system map.",
+        "@syscap SystemCapability.Communication.NetManager.Core",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "statistics",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.NetManager.Core",
+      "parameters": [
+        {
+          "名称": "uid",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the process ID of the application."
+        }
+      ],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "2100002",
+          "description": "Failed to connect to the service."
+        },
+        {
+          "code": "2100003",
+          "description": "System internal error."
+        },
+        {
+          "code": "2103005",
+          "description": "Failed to read the system map."
+        },
+        {
+          "code": "2103011",
+          "description": "Failed to create a system map."
+        }
+      ],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Register notifications of network traffic updates.",
+      "注释信息": [
+        "@permission ohos.permission.GET_NETWORK_STATS",
+        "@param { 'netStatsChange' } type - Indicates Event name.",
+        "@param { Callback<NetStatsChangeInfo> } callback - The callback of on.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 2100002 - Failed to connect to the service.",
+        "@throws { BusinessError } 2100003 - System internal error.",
+        "@syscap SystemCapability.Communication.NetManager.Core",
+        "@systemapi Hide this for inner system use.",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "statistics",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Communication.NetManager.Core",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'netStatsChange'",
+          "必填": true,
+          "说明": "Indicates Event name."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<NetStatsChangeInfo>",
+          "必填": true,
+          "说明": "The callback of on."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "2100002",
+          "description": "Failed to connect to the service."
+        },
+        {
+          "code": "2100003",
+          "description": "System internal error."
+        }
+      ],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unregister notifications of network traffic updates.",
+      "注释信息": [
+        "@permission ohos.permission.GET_NETWORK_STATS",
+        "@param { 'netStatsChange' } type - Indicates Event name.",
+        "@param { Callback<NetStatsChangeInfo> } callback - The callback of off.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 2100002 - Failed to connect to the service.",
+        "@throws { BusinessError } 2100003 - System internal error.",
+        "@syscap SystemCapability.Communication.NetManager.Core",
+        "@systemapi Hide this for inner system use.",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "statistics",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Communication.NetManager.Core",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'netStatsChange'",
+          "必填": true,
+          "说明": "Indicates Event name."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<NetStatsChangeInfo>",
+          "必填": true,
+          "说明": "The callback of off."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "2100002",
+          "description": "Failed to connect to the service."
+        },
+        {
+          "code": "2100003",
+          "description": "System internal error."
+        }
+      ],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "method",
+      "名称": "getTrafficStatsByIface",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Get the traffic usage details of the network interface in the specified time period.",
+      "注释信息": [
+        "@permission ohos.permission.GET_NETWORK_STATS",
+        "@param { IfaceInfo } ifaceInfo - Detailed query content. See {@link IfaceInfo}.",
+        "@param { AsyncCallback<NetStatsInfo> } callback - Returns the {@link NetStatsInfo} object;",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 2100001 - Invalid parameter value.",
+        "@throws { BusinessError } 2100002 - Failed to connect to the service.",
+        "@throws { BusinessError } 2100003 - System internal error.",
+        "@throws { BusinessError } 2103017 - Failed to read the database.",
+        "@syscap SystemCapability.Communication.NetManager.Core",
+        "@systemapi Hide this for inner system use.",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "statistics",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.NetManager.Core",
+      "parameters": [
+        {
+          "名称": "ifaceInfo",
+          "类型": "IfaceInfo",
+          "必填": true,
+          "说明": "Detailed query content. See {@link IfaceInfo}."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<NetStatsInfo>",
+          "必填": true,
+          "说明": "Returns the {@link NetStatsInfo} object;"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "2100001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "2100002",
+          "description": "Failed to connect to the service."
+        },
+        {
+          "code": "2100003",
+          "description": "System internal error."
+        },
+        {
+          "code": "2103017",
+          "description": "Failed to read the database."
+        }
+      ],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "method",
+      "名称": "getTrafficStatsByIface",
+      "返回值": "Promise<NetStatsInfo>",
+      "所属模块": "未知模块",
+      "功能描述": "Get the traffic usage details of the network interface in the specified time period.",
+      "注释信息": [
+        "@permission ohos.permission.GET_NETWORK_STATS",
+        "@param { IfaceInfo } ifaceInfo - Detailed query content. See {@link IfaceInfo}.",
+        "@returns { Promise<NetStatsInfo> } The promise returned by the function.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 2100001 - Invalid parameter value.",
+        "@throws { BusinessError } 2100002 - Failed to connect to the service.",
+        "@throws { BusinessError } 2100003 - System internal error.",
+        "@throws { BusinessError } 2103017 - Failed to read the database.",
+        "@syscap SystemCapability.Communication.NetManager.Core",
+        "@systemapi Hide this for inner system use.",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "statistics",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.NetManager.Core",
+      "parameters": [
+        {
+          "名称": "ifaceInfo",
+          "类型": "IfaceInfo",
+          "必填": true,
+          "说明": "Detailed query content. See {@link IfaceInfo}."
+        }
+      ],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "2100001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "2100002",
+          "description": "Failed to connect to the service."
+        },
+        {
+          "code": "2100003",
+          "description": "System internal error."
+        },
+        {
+          "code": "2103017",
+          "description": "Failed to read the database."
+        }
+      ],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "method",
+      "名称": "getTrafficStatsByUid",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Get the traffic usage details of the specified time period of the application.",
+      "注释信息": [
+        "@permission ohos.permission.GET_NETWORK_STATS",
+        "@param { UidInfo } uidInfo - Detailed query content. See {@link UidInfo}.",
+        "@param { AsyncCallback<NetStatsInfo> } callback - Returns the {@link NetStatsInfo} object;",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 2100001 - Invalid parameter value.",
+        "@throws { BusinessError } 2100002 - Failed to connect to the service.",
+        "@throws { BusinessError } 2100003 - System internal error.",
+        "@throws { BusinessError } 2103017 - Failed to read the database.",
+        "@syscap SystemCapability.Communication.NetManager.Core",
+        "@systemapi Hide this for inner system use.",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "statistics",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.NetManager.Core",
+      "parameters": [
+        {
+          "名称": "uidInfo",
+          "类型": "UidInfo",
+          "必填": true,
+          "说明": "Detailed query content. See {@link UidInfo}."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<NetStatsInfo>",
+          "必填": true,
+          "说明": "Returns the {@link NetStatsInfo} object;"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "2100001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "2100002",
+          "description": "Failed to connect to the service."
+        },
+        {
+          "code": "2100003",
+          "description": "System internal error."
+        },
+        {
+          "code": "2103017",
+          "description": "Failed to read the database."
+        }
+      ],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "method",
+      "名称": "getTrafficStatsByUid",
+      "返回值": "Promise<NetStatsInfo>",
+      "所属模块": "未知模块",
+      "功能描述": "Get the traffic usage details of the specified time period of the application.",
+      "注释信息": [
+        "@permission ohos.permission.GET_NETWORK_STATS",
+        "@param { UidInfo } uidInfo - Detailed query content. See {@link UidInfo}.",
+        "@returns { Promise<NetStatsInfo> } The promise returned by the function.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 2100001 - Invalid parameter value.",
+        "@throws { BusinessError } 2100002 - Failed to connect to the service.",
+        "@throws { BusinessError } 2100003 - System internal error.",
+        "@throws { BusinessError } 2103017 - Failed to read the database.",
+        "@syscap SystemCapability.Communication.NetManager.Core",
+        "@systemapi Hide this for inner system use.",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "statistics",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.NetManager.Core",
+      "parameters": [
+        {
+          "名称": "uidInfo",
+          "类型": "UidInfo",
+          "必填": true,
+          "说明": "Detailed query content. See {@link UidInfo}."
+        }
+      ],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "2100001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "2100002",
+          "description": "Failed to connect to the service."
+        },
+        {
+          "code": "2100003",
+          "description": "System internal error."
+        },
+        {
+          "code": "2103017",
+          "description": "Failed to read the database."
+        }
+      ],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "method",
+      "名称": "getSockfdRxBytes",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Queries the data traffic (including all TCP and UDP data packets) received through a specified sockfd.",
+      "注释信息": [
+        "@param { number } sockfd - Indicates the file descriptor of the given socket.",
+        "@param { AsyncCallback<number> } callback - Returns the data traffic bytes received by the specified sockfd.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 2100001 - Invalid parameter value.",
+        "@throws { BusinessError } 2100002 - Failed to connect to the service.",
+        "@throws { BusinessError } 2100003 - System internal error.",
+        "@syscap SystemCapability.Communication.NetManager.Core",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "statistics",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Communication.NetManager.Core",
+      "parameters": [
+        {
+          "名称": "sockfd",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the file descriptor of the given socket."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<number>",
+          "必填": true,
+          "说明": "Returns the data traffic bytes received by the specified sockfd."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "2100001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "2100002",
+          "description": "Failed to connect to the service."
+        },
+        {
+          "code": "2100003",
+          "description": "System internal error."
+        }
+      ],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "method",
+      "名称": "getSockfdRxBytes",
+      "返回值": "Promise<number>",
+      "所属模块": "未知模块",
+      "功能描述": "Queries the data traffic (including all TCP and UDP data packets) received through a specified sockfd.",
+      "注释信息": [
+        "@param { number } sockfd - Indicates the file descriptor of the given socket.",
+        "@returns { Promise<number> } Returns the data traffic bytes received by the specified sockfd.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 2100001 - Invalid parameter value.",
+        "@throws { BusinessError } 2100002 - Failed to connect to the service.",
+        "@throws { BusinessError } 2100003 - System internal error.",
+        "@syscap SystemCapability.Communication.NetManager.Core",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "statistics",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Communication.NetManager.Core",
+      "parameters": [
+        {
+          "名称": "sockfd",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the file descriptor of the given socket."
+        }
+      ],
+      "return_description": "Returns the data traffic bytes received by the specified sockfd.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "2100001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "2100002",
+          "description": "Failed to connect to the service."
+        },
+        {
+          "code": "2100003",
+          "description": "System internal error."
+        }
+      ],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "method",
+      "名称": "getSockfdTxBytes",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Queries the data traffic (including all TCP and UDP data packets) sent through a specified sockfd.",
+      "注释信息": [
+        "@param { number } sockfd - Indicates the file descriptor of the given socket.",
+        "@param { AsyncCallback<number> } callback - Returns the data traffic bytes sent by the specified sockfd.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 2100001 - Invalid parameter value",
+        "@throws { BusinessError } 2100002 - Failed to connect to the service.",
+        "@throws { BusinessError } 2100003 - System internal error.",
+        "@syscap SystemCapability.Communication.NetManager.Core",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "statistics",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Communication.NetManager.Core",
+      "parameters": [
+        {
+          "名称": "sockfd",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the file descriptor of the given socket."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<number>",
+          "必填": true,
+          "说明": "Returns the data traffic bytes sent by the specified sockfd."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "2100001",
+          "description": "Invalid parameter value"
+        },
+        {
+          "code": "2100002",
+          "description": "Failed to connect to the service."
+        },
+        {
+          "code": "2100003",
+          "description": "System internal error."
+        }
+      ],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "method",
+      "名称": "getSockfdTxBytes",
+      "返回值": "Promise<number>",
+      "所属模块": "未知模块",
+      "功能描述": "Queries the data traffic (including all TCP and UDP data packets) sent through a specified sockfd.",
+      "注释信息": [
+        "@param { number } sockfd - Indicates the file descriptor of the given socket.",
+        "@returns { Promise<number> } Returns the data traffic bytes sent by the specified sockfd.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 2100001 - Invalid parameter value",
+        "@throws { BusinessError } 2100002 - Failed to connect to the service.",
+        "@throws { BusinessError } 2100003 - System internal error.",
+        "@syscap SystemCapability.Communication.NetManager.Core",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "statistics",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Communication.NetManager.Core",
+      "parameters": [
+        {
+          "名称": "sockfd",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the file descriptor of the given socket."
+        }
+      ],
+      "return_description": "Returns the data traffic bytes sent by the specified sockfd.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "2100001",
+          "description": "Invalid parameter value"
+        },
+        {
+          "code": "2100002",
+          "description": "Failed to connect to the service."
+        },
+        {
+          "code": "2100003",
+          "description": "System internal error."
+        }
+      ],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "interface",
+      "名称": "IfaceInfo",
+      "所属模块": "未知模块",
+      "功能描述": "Parameters for obtaining detailed information on network interface traffic usage.",
+      "注释信息": [
+        "@interface IfaceInfo",
+        "@syscap SystemCapability.Communication.NetManager.Core",
+        "@systemapi Hide this for inner system use.",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "statistics",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.NetManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "property",
+      "名称": "iface",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Network interface for querying traffic.",
+      "注释信息": [
+        "@type {string}",
+        "@syscap SystemCapability.Communication.NetManager.Core",
+        "@systemapi Hide this for inner system use.",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "IfaceInfo",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.NetManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "property",
+      "名称": "startTime",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Start time for querying traffic.",
+      "注释信息": [
+        "@type {number}",
+        "@syscap SystemCapability.Communication.NetManager.Core",
+        "@systemapi Hide this for inner system use.",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "IfaceInfo",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.NetManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "property",
+      "名称": "endTime",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "End time for querying traffic.",
+      "注释信息": [
+        "@type {number}",
+        "@syscap SystemCapability.Communication.NetManager.Core",
+        "@systemapi Hide this for inner system use.",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "IfaceInfo",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.NetManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.1"
+    }
+  ]
+}

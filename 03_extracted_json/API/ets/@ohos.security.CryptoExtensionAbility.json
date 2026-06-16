@@ -1,0 +1,838 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.UniversalKeystoreKit",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "HuksCryptoExtensionResultCode",
+      "所属模块": "@kit.UniversalKeystoreKit",
+      "功能描述": "Enum for crypto extension ability result code, used by HuksCryptoExtensionResult.resultCode.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.Security.Huks.CryptoExtension",
+        "@stagemodelonly",
+        "@since 22"
+      ],
+      "层级": 1,
+      "上级": "@kit.UniversalKeystoreKit",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Security.Huks.CryptoExtension",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "HUKS_CRYPTO_EXTENSION_ERR_EXTENSION_FAIL",
+      "值": "34800000",
+      "所属模块": "未知模块",
+      "功能描述": "An error occurred in the crypto extension. Possible causes: 1. The input parameter is invalid. 2. The crypto extension encountered an unresolvable error state.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.Huks.CryptoExtension",
+        "@stagemodelonly",
+        "@since 22"
+      ],
+      "层级": 1,
+      "上级": "HuksCryptoExtensionResultCode",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Security.Huks.CryptoExtension",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "HUKS_CRYPTO_EXTENSION_ERR_UKEY_NOT_EXIST",
+      "值": "34800001",
+      "所属模块": "未知模块",
+      "功能描述": "The UKey does not exist. Possible causes: 1. The UKey has been removed. 2. The crypto extension maintained an error UKey state.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.Huks.CryptoExtension",
+        "@stagemodelonly",
+        "@since 22"
+      ],
+      "层级": 1,
+      "上级": "HuksCryptoExtensionResultCode",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Security.Huks.CryptoExtension",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "HUKS_CRYPTO_EXTENSION_ERR_UKEY_DRIVER_FAIL",
+      "值": "34800002",
+      "所属模块": "未知模块",
+      "功能描述": "The UKey driver error. This means an unknown error has occurred in the UKey driver.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.Huks.CryptoExtension",
+        "@stagemodelonly",
+        "@since 22"
+      ],
+      "层级": 1,
+      "上级": "HuksCryptoExtensionResultCode",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Security.Huks.CryptoExtension",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "HUKS_CRYPTO_EXTENSION_ERR_PIN_NO_AUTH",
+      "值": "34800003",
+      "所属模块": "未知模块",
+      "功能描述": "The UKey PIN is not authenticated. Please verify the UKey PIN first.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.Huks.CryptoExtension",
+        "@stagemodelonly",
+        "@since 22"
+      ],
+      "层级": 1,
+      "上级": "HuksCryptoExtensionResultCode",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Security.Huks.CryptoExtension",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "HUKS_CRYPTO_EXTENSION_ERR_HANDLE_NOT_EXIST",
+      "值": "34800004",
+      "所属模块": "未知模块",
+      "功能描述": "The handle does not exist. Possible causes: 1. The handle you entered is invalid. 2. The states of huks service and crypto extension are inconsistent. Due to an exception, the handle held by huks service was not released.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.Huks.CryptoExtension",
+        "@stagemodelonly",
+        "@since 22"
+      ],
+      "层级": 1,
+      "上级": "HuksCryptoExtensionResultCode",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Security.Huks.CryptoExtension",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "HUKS_CRYPTO_EXTENSION_ERR_HANDLE_UNAVAILABLE",
+      "值": "34800005",
+      "所属模块": "未知模块",
+      "功能描述": "The handle is unavailable, possibly due to an inconsistent state between the crypto extension and the UKey.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.Huks.CryptoExtension",
+        "@stagemodelonly",
+        "@since 22"
+      ],
+      "层级": 1,
+      "上级": "HuksCryptoExtensionResultCode",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Security.Huks.CryptoExtension",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "HUKS_CRYPTO_EXTENSION_ERR_PIN_INCORRECT",
+      "值": "34800006",
+      "所属模块": "未知模块",
+      "功能描述": "The UKey PIN is not correct. Please check the PIN you entered.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.Huks.CryptoExtension",
+        "@stagemodelonly",
+        "@since 22"
+      ],
+      "层级": 1,
+      "上级": "HuksCryptoExtensionResultCode",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Security.Huks.CryptoExtension",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "HUKS_CRYPTO_EXTENSION_ERR_PIN_LOCKED",
+      "值": "34800007",
+      "所属模块": "未知模块",
+      "功能描述": "The UKey PIN is locked because the maximum allowed number of attempts has been exceeded.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.Huks.CryptoExtension",
+        "@stagemodelonly",
+        "@since 22"
+      ],
+      "层级": 1,
+      "上级": "HuksCryptoExtensionResultCode",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Security.Huks.CryptoExtension",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "HuksCryptoExtensionCertInfo",
+      "所属模块": "@kit.UniversalKeystoreKit",
+      "功能描述": "Represents the information of certificate.",
+      "注释信息": [
+        "@typedef HuksCryptoExtensionCertInfo",
+        "@syscap SystemCapability.Security.Huks.CryptoExtension",
+        "@since 22"
+      ],
+      "层级": 1,
+      "上级": "@kit.UniversalKeystoreKit",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Security.Huks.CryptoExtension",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "purpose",
+      "属性类型": "certificateManager.CertificatePurpose",
+      "所属模块": "未知模块",
+      "功能描述": "The type of the certificate, sign or encrypt.",
+      "注释信息": [
+        "@type { certificateManager.CertificatePurpose }",
+        "@syscap SystemCapability.Security.Huks.CryptoExtension",
+        "@since 22"
+      ],
+      "层级": 1,
+      "上级": "HuksCryptoExtensionCertInfo",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Security.Huks.CryptoExtension",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "resourceId",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "The resource index of the certificate.",
+      "注释信息": [
+        "@type { string }",
+        "@syscap SystemCapability.Security.Huks.CryptoExtension",
+        "@since 22"
+      ],
+      "层级": 1,
+      "上级": "HuksCryptoExtensionCertInfo",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Security.Huks.CryptoExtension",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "cert",
+      "属性类型": "Uint8Array",
+      "所属模块": "未知模块",
+      "功能描述": "The content of the certificate.",
+      "注释信息": [
+        "@type { Uint8Array }",
+        "@syscap SystemCapability.Security.Huks.CryptoExtension",
+        "@since 22"
+      ],
+      "层级": 1,
+      "上级": "HuksCryptoExtensionCertInfo",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Security.Huks.CryptoExtension",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "HuksCryptoExtensionResult",
+      "所属模块": "@kit.UniversalKeystoreKit",
+      "功能描述": "Represents the operation result of crypto extension.",
+      "注释信息": [
+        "@typedef HuksCryptoExtensionResult",
+        "@syscap SystemCapability.Security.Huks.CryptoExtension",
+        "@since 22"
+      ],
+      "层级": 1,
+      "上级": "@kit.UniversalKeystoreKit",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Security.Huks.CryptoExtension",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "resultCode",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Returned code.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.Security.Huks.CryptoExtension",
+        "@since 22"
+      ],
+      "层级": 1,
+      "上级": "HuksCryptoExtensionResult",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Security.Huks.CryptoExtension",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "handle",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "The provider resource handle.",
+      "注释信息": [
+        "@type { ?string }",
+        "@syscap SystemCapability.Security.Huks.CryptoExtension",
+        "@since 22"
+      ],
+      "层级": 1,
+      "上级": "HuksCryptoExtensionResult",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Security.Huks.CryptoExtension",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "authState",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Auth state.",
+      "注释信息": [
+        "@type { ?number }",
+        "@syscap SystemCapability.Security.Huks.CryptoExtension",
+        "@since 22"
+      ],
+      "层级": 1,
+      "上级": "HuksCryptoExtensionResult",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Security.Huks.CryptoExtension",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "retryCount",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "The remaining retry count when the PIN is incorrect.",
+      "注释信息": [
+        "@type { ?number }",
+        "@syscap SystemCapability.Security.Huks.CryptoExtension",
+        "@since 22"
+      ],
+      "层级": 1,
+      "上级": "HuksCryptoExtensionResult",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Security.Huks.CryptoExtension",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "certs",
+      "属性类型": "Array<HuksCryptoExtensionCertInfo>",
+      "所属模块": "未知模块",
+      "功能描述": "The cert array.",
+      "注释信息": [
+        "@type { ?Array<HuksCryptoExtensionCertInfo>}",
+        "@syscap SystemCapability.Security.Huks.CryptoExtension",
+        "@since 22"
+      ],
+      "层级": 1,
+      "上级": "HuksCryptoExtensionResult",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Security.Huks.CryptoExtension",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "property",
+      "属性类型": "Array<huksExternalCrypto.HuksExternalCryptoParam>",
+      "所属模块": "未知模块",
+      "功能描述": "Returned property info.",
+      "注释信息": [
+        "@type { ?Array<huksExternalCrypto.HuksExternalCryptoParam> }",
+        "@syscap SystemCapability.Security.Huks.CryptoExtension",
+        "@since 22"
+      ],
+      "层级": 1,
+      "上级": "HuksCryptoExtensionResult",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Security.Huks.CryptoExtension",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "outData",
+      "属性类型": "Uint8Array",
+      "所属模块": "未知模块",
+      "功能描述": "Returned data.",
+      "注释信息": [
+        "@type { ?Uint8Array}",
+        "@syscap SystemCapability.Security.Huks.CryptoExtension",
+        "@since 22"
+      ],
+      "层级": 1,
+      "上级": "HuksCryptoExtensionResult",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Security.Huks.CryptoExtension",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "class",
+      "名称": "CryptoExtensionAbility",
+      "所属模块": "@kit.UniversalKeystoreKit",
+      "功能描述": "Class to be override for external crypto extension ability.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.Huks.CryptoExtension",
+        "@since 22"
+      ],
+      "层级": 1,
+      "上级": "@kit.UniversalKeystoreKit",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Security.Huks.CryptoExtension",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "onOpenResource",
+      "返回值": "Promise<HuksCryptoExtensionResult>",
+      "所属模块": "未知模块",
+      "功能描述": "Callback to be called to open the resource handle before crypto operations. NOTE: the handle returned must be closed by onCloseResource. the properties of the operation. HuksCryptoExtensionResult.resultCode may have the following values: 0 - The operation is successful 34800000 - An error occurred in the crypto extension. Possible causes: 1. The input parameter is invalid. 2. The crypto extension encountered an unresolvable error state. 34800001 - The UKey does not exist. Possible causes: 1. The UKey has been removed. 2. The crypto extension maintained an error UKey state. 34800002 - The UKey driver error. This means an unknown error has occurred in the UKey driver. 34800004 - The resourceId does not exist. This indicates that the resourceId has an incorrect device name, application name, or container name.",
+      "注释信息": [
+        "@param { string } resourceId - resourceId indicates the resource id of the provider.",
+        "@param { Array<huksExternalCrypto.HuksExternalCryptoParam> } params - params indicates",
+        "@returns { Promise<HuksCryptoExtensionResult> } the promise returned by the function.",
+        "@syscap SystemCapability.Security.Huks.CryptoExtension",
+        "@since 22"
+      ],
+      "层级": 1,
+      "上级": "CryptoExtensionAbility",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Security.Huks.CryptoExtension",
+      "parameters": [
+        {
+          "名称": "resourceId",
+          "类型": "string",
+          "必填": true,
+          "说明": "resourceId indicates the resource id of the provider."
+        },
+        {
+          "名称": "params",
+          "类型": "Array<huksExternalCrypto.HuksExternalCryptoParam>",
+          "必填": true,
+          "说明": "params indicates"
+        }
+      ],
+      "return_description": "the promise returned by the function.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "onCloseResource",
+      "返回值": "Promise<HuksCryptoExtensionResult>",
+      "所属模块": "未知模块",
+      "功能描述": "Callback to be called to close the resource handle. the properties of the operation. HuksCryptoExtensionResult.resultCode may have the following values: 0 - The operation is successful 34800000 - An error occurred in the crypto extension. Possible causes: 1. The input parameter is invalid. 2. The crypto extension encountered an unresolvable error state. 34800002 - The UKey driver error. This means an unknown error has occurred in the UKey driver. 34800004 - The handle does not exist. Possible causes: 1. The handle you entered is invalid. 2. The states of huks service and crypto extension are inconsistent. Due to an exception, the handle held by huks service was not released. 34800005 - The handle is unavailable, possibly due to an inconsistent state between the crypto extension and the UKey.",
+      "注释信息": [
+        "@param { string } handle - handle indicates the handle opened by onOpenResource.",
+        "@param { Array<huksExternalCrypto.HuksExternalCryptoParam> } params - params indicates",
+        "@returns { Promise<HuksCryptoExtensionResult> } the promise returned by the function.",
+        "@syscap SystemCapability.Security.Huks.CryptoExtension",
+        "@since 22"
+      ],
+      "层级": 1,
+      "上级": "CryptoExtensionAbility",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Security.Huks.CryptoExtension",
+      "parameters": [
+        {
+          "名称": "handle",
+          "类型": "string",
+          "必填": true,
+          "说明": "handle indicates the handle opened by onOpenResource."
+        },
+        {
+          "名称": "params",
+          "类型": "Array<huksExternalCrypto.HuksExternalCryptoParam>",
+          "必填": true,
+          "说明": "params indicates"
+        }
+      ],
+      "return_description": "the promise returned by the function.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "onGetProperty",
+      "返回值": "Promise<HuksCryptoExtensionResult>",
+      "所属模块": "未知模块",
+      "功能描述": "Callback to be called to do general get operations of the provider. to be operated as defined in GMT 0016-2023. the properties of the operation. HuksCryptoExtensionResult.resultCode may have the following values: 0 - The operation is successful 34800000 - An error occurred in the crypto extension. Possible causes: 1. The input parameter is invalid. 2. The crypto extension encountered an unresolvable error state. 34800002 - The UKey driver error. This means an unknown error has occurred in the UKey driver. 34800003 - The UKey PIN is not authenticated. Please verify the UKey PIN first. 34800004 - The handle does not exist. Possible causes: 1. The handle you entered is invalid. 2. The states of huks service and crypto extension are inconsistent. Due to an exception, the handle held by huks service was not released. 34800005 - The handle is unavailable, possibly due to an inconsistent state between the crypto extension and the UKey. 34800007 - The UKey PIN is locked because the maximum allowed number of attempts has been exceeded.",
+      "注释信息": [
+        "@param { string } handle - handle indicates the handle opened by onOpenResource.",
+        "@param { string } propertyId - propertyId indicates the name of the property function",
+        "@param { Array<huksExternalCrypto.HuksExternalCryptoParam> } params - params indicates",
+        "@returns { Promise<HuksCryptoExtensionResult> } the promise returned by the function.",
+        "@syscap SystemCapability.Security.Huks.CryptoExtension",
+        "@since 22"
+      ],
+      "层级": 1,
+      "上级": "CryptoExtensionAbility",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Security.Huks.CryptoExtension",
+      "parameters": [
+        {
+          "名称": "handle",
+          "类型": "string",
+          "必填": true,
+          "说明": "handle indicates the handle opened by onOpenResource."
+        },
+        {
+          "名称": "propertyId",
+          "类型": "string",
+          "必填": true,
+          "说明": "propertyId indicates the name of the property function"
+        },
+        {
+          "名称": "params",
+          "类型": "Array<huksExternalCrypto.HuksExternalCryptoParam>",
+          "必填": true,
+          "说明": "params indicates"
+        }
+      ],
+      "return_description": "the promise returned by the function.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "onAuthUkeyPin",
+      "返回值": "Promise<HuksCryptoExtensionResult>",
+      "所属模块": "未知模块",
+      "功能描述": "Callback to be called to verify PIN of the provider handle. the properties of the operation. HuksCryptoExtensionResult.resultCode may have the following values: 0 - The operation is successful 34800000 - An error occurred in the crypto extension. Possible causes: 1. The input parameter is invalid. 2. The crypto extension encountered an unresolvable error state. 34800002 - The UKey driver error. This means an unknown error has occurred in the UKey driver. 34800004 - The handle does not exist. Possible causes: 1. The handle you entered is invalid. 2. The states of huks service and crypto extension are inconsistent. Due to an exception, the handle held by huks service was not released. 34800005 - The handle is unavailable, possibly due to an inconsistent state between the crypto extension and the UKey. 34800006 - The UKey PIN is not correct. Please check the PIN you entered. 34800007 - The UKey PIN is locked because the maximum allowed number of attempts has been exceeded.",
+      "注释信息": [
+        "@param { string } handle - handle indicates the handle opened by onOpenResource.",
+        "@param { Array<huksExternalCrypto.HuksExternalCryptoParam> } params - params indicates",
+        "@returns { Promise<HuksCryptoExtensionResult> } the promise returned by the function.",
+        "@syscap SystemCapability.Security.Huks.CryptoExtension",
+        "@since 22"
+      ],
+      "层级": 1,
+      "上级": "CryptoExtensionAbility",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Security.Huks.CryptoExtension",
+      "parameters": [
+        {
+          "名称": "handle",
+          "类型": "string",
+          "必填": true,
+          "说明": "handle indicates the handle opened by onOpenResource."
+        },
+        {
+          "名称": "params",
+          "类型": "Array<huksExternalCrypto.HuksExternalCryptoParam>",
+          "必填": true,
+          "说明": "params indicates"
+        }
+      ],
+      "return_description": "the promise returned by the function.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "onGetUkeyPinAuthState",
+      "返回值": "Promise<HuksCryptoExtensionResult>",
+      "所属模块": "未知模块",
+      "功能描述": "Callback to get the PIN auth state of the provider handle. the properties of the operation. HuksCryptoExtensionResult.resultCode may have the following values: 0 - The operation is successful 34800000 - An error occurred in the crypto extension. Possible causes: 1. The input parameter is invalid. 2. The crypto extension encountered an unresolvable error state. 34800002 - The UKey driver error. This means an unknown error has occurred in the UKey driver. 34800004 - The handle does not exist. Possible causes: 1. The handle you entered is invalid. 2. The states of huks service and crypto extension are inconsistent. Due to an exception, the handle held by huks service was not released. 34800005 - The handle is unavailable, possibly due to an inconsistent state between the crypto extension and the UKey.",
+      "注释信息": [
+        "@param { string } handle - handle indicates the handle opened by onOpenResource.",
+        "@param { Array<huksExternalCrypto.HuksExternalCryptoParam> } params - params indicates",
+        "@returns { Promise<HuksCryptoExtensionResult> } the promise returned by the function.",
+        "@syscap SystemCapability.Security.Huks.CryptoExtension",
+        "@since 22"
+      ],
+      "层级": 1,
+      "上级": "CryptoExtensionAbility",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Security.Huks.CryptoExtension",
+      "parameters": [
+        {
+          "名称": "handle",
+          "类型": "string",
+          "必填": true,
+          "说明": "handle indicates the handle opened by onOpenResource."
+        },
+        {
+          "名称": "params",
+          "类型": "Array<huksExternalCrypto.HuksExternalCryptoParam>",
+          "必填": true,
+          "说明": "params indicates"
+        }
+      ],
+      "return_description": "the promise returned by the function.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "onClearUkeyPinAuthState",
+      "返回值": "Promise<HuksCryptoExtensionResult>",
+      "所属模块": "未知模块",
+      "功能描述": "Callback to clear the PIN auth state of the provider handle. the properties of the operation. HuksCryptoExtensionResult.resultCode may have the following values: 0 - The operation is successful 34800000 - An error occurred in the crypto extension. Possible causes: 1. The input parameter is invalid. 2. The crypto extension encountered an unresolvable error state. 34800002 - The UKey driver error. This means an unknown error has occurred in the UKey driver. 34800004 - The handle does not exist. Possible causes: 1. The handle you entered is invalid. 2. The states of huks service and crypto extension are inconsistent. Due to an exception, the handle held by huks service was not released. 34800005 - The handle is unavailable, possibly due to an inconsistent state between the crypto extension and the UKey.",
+      "注释信息": [
+        "@param { string } handle - handle indicates the handle opened by onOpenResource.",
+        "@param { Array<huksExternalCrypto.HuksExternalCryptoParam> } params - params indicates",
+        "@returns { Promise<HuksCryptoExtensionResult> } the promise returned by the function.",
+        "@syscap SystemCapability.Security.Huks.CryptoExtension",
+        "@since 22"
+      ],
+      "层级": 1,
+      "上级": "CryptoExtensionAbility",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Security.Huks.CryptoExtension",
+      "parameters": [
+        {
+          "名称": "handle",
+          "类型": "string",
+          "必填": true,
+          "说明": "handle indicates the handle opened by onOpenResource."
+        },
+        {
+          "名称": "params",
+          "类型": "Array<huksExternalCrypto.HuksExternalCryptoParam>",
+          "必填": true,
+          "说明": "params indicates"
+        }
+      ],
+      "return_description": "the promise returned by the function.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "onInitSession",
+      "返回值": "Promise<HuksCryptoExtensionResult>",
+      "所属模块": "未知模块",
+      "功能描述": "Callback to do the initialize operation. HuksCryptoExtensionResult.resultCode may have the following values: 0 - The operation is successful 34800000 - An error occurred in the crypto extension. Possible causes: 1. The input parameter is invalid. 2. The crypto extension encountered an unresolvable error state. 34800002 - The UKey driver error. This means an unknown error has occurred in the UKey driver. 34800003 - The UKey PIN is not authenticated. Please verify the UKey PIN first. 34800004 - The handle does not exist. Possible causes: 1. The handle you entered is invalid. 2. The states of huks service and crypto extension are inconsistent. Due to an exception, the handle held by huks service was not released. 34800005 - The handle is unavailable, possibly due to an inconsistent state between the crypto extension and the UKey. 34800007 - The UKey PIN is locked because the maximum allowed number of attempts has been exceeded.",
+      "注释信息": [
+        "@param { string } handle - handle indicates the handle opened by onOpenResource.",
+        "@param { huks.HuksOptions } params - params indicates the properties of the operation.",
+        "@returns { Promise<HuksCryptoExtensionResult> } the promise returned by the function.",
+        "@syscap SystemCapability.Security.Huks.CryptoExtension",
+        "@since 22"
+      ],
+      "层级": 1,
+      "上级": "CryptoExtensionAbility",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Security.Huks.CryptoExtension",
+      "parameters": [
+        {
+          "名称": "handle",
+          "类型": "string",
+          "必填": true,
+          "说明": "handle indicates the handle opened by onOpenResource."
+        },
+        {
+          "名称": "params",
+          "类型": "huks.HuksOptions",
+          "必填": true,
+          "说明": "params indicates the properties of the operation."
+        }
+      ],
+      "return_description": "the promise returned by the function.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "onUpdateSession",
+      "返回值": "Promise<HuksCryptoExtensionResult>",
+      "所属模块": "未知模块",
+      "功能描述": "Callback to do update operation. HuksCryptoExtensionResult.resultCode may have the following values: 0 - The operation is successful 34800000 - An error occurred in the crypto extension. Possible causes: 1. The input parameter is invalid. 2. The crypto extension encountered an unresolvable error state. 34800002 - The UKey driver error. This means an unknown error has occurred in the UKey driver. 34800003 - The UKey PIN is not authenticated. Please verify the UKey PIN first. 34800004 - The handle does not exist. Possible causes: 1. The handle you entered is invalid. 2. The states of huks service and crypto extension are inconsistent. Due to an exception, the handle held by huks service was not released. 34800005 - The handle is unavailable, possibly due to an inconsistent state between the crypto extension and the UKey. 34800007 - The UKey PIN is locked because the maximum allowed number of attempts has been exceeded.",
+      "注释信息": [
+        "@param { string } initHandle - initHandle indicates the handle returned by onInitSession.",
+        "@param { huks.HuksOptions } params - params indicates the properties of the operation.",
+        "@returns { Promise<HuksCryptoExtensionResult> } the promise returned by the function.",
+        "@syscap SystemCapability.Security.Huks.CryptoExtension",
+        "@since 22"
+      ],
+      "层级": 1,
+      "上级": "CryptoExtensionAbility",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Security.Huks.CryptoExtension",
+      "parameters": [
+        {
+          "名称": "initHandle",
+          "类型": "string",
+          "必填": true,
+          "说明": "initHandle indicates the handle returned by onInitSession."
+        },
+        {
+          "名称": "params",
+          "类型": "huks.HuksOptions",
+          "必填": true,
+          "说明": "params indicates the properties of the operation."
+        }
+      ],
+      "return_description": "the promise returned by the function.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "onFinishSession",
+      "返回值": "Promise<HuksCryptoExtensionResult>",
+      "所属模块": "未知模块",
+      "功能描述": "Callback to do the finish operation. HuksCryptoExtensionResult.resultCode may have the following values: 0 - The operation is successful 34800000 - An error occurred in the crypto extension. Possible causes: 1. The input parameter is invalid. 2. The crypto extension encountered an unresolvable error state. 34800002 - The UKey driver error. This means an unknown error has occurred in the UKey driver. 34800003 - The UKey PIN is not authenticated. Please verify the UKey PIN first. 34800004 - The handle does not exist. Possible causes: 1. The handle you entered is invalid. 2. The states of huks service and crypto extension are inconsistent. Due to an exception, the handle held by huks service was not released. 34800005 - The handle is unavailable, possibly due to an inconsistent state between the crypto extension and the UKey. 34800007 - The UKey PIN is locked because the maximum allowed number of attempts has been exceeded.",
+      "注释信息": [
+        "@param { string } initHandle - initHandle indicates the handle returned by onInitSession.",
+        "@param { huks.HuksOptions } params - params indicates the properties of the operation.",
+        "@returns { Promise<HuksCryptoExtensionResult> } the promise returned by the function.",
+        "@syscap SystemCapability.Security.Huks.CryptoExtension",
+        "@since 22"
+      ],
+      "层级": 1,
+      "上级": "CryptoExtensionAbility",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Security.Huks.CryptoExtension",
+      "parameters": [
+        {
+          "名称": "initHandle",
+          "类型": "string",
+          "必填": true,
+          "说明": "initHandle indicates the handle returned by onInitSession."
+        },
+        {
+          "名称": "params",
+          "类型": "huks.HuksOptions",
+          "必填": true,
+          "说明": "params indicates the properties of the operation."
+        }
+      ],
+      "return_description": "the promise returned by the function.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "onExportCertificate",
+      "返回值": "Promise<HuksCryptoExtensionResult>",
+      "所属模块": "未知模块",
+      "功能描述": "Callback to export certificates specified by the resource id. the properties of the operation. HuksCryptoExtensionResult.resultCode may have the following values: 0 - The operation is successful 34800000 - An error occurred in the crypto extension. Possible causes: 1. The input parameter is invalid. 2. The crypto extension encountered an unresolvable error state. 34800001 - The UKey does not exist. Possible causes: 1. The UKey has been removed. 2. The crypto extension maintained an error UKey state. 34800002 - The UKey driver error. This means an unknown error has occurred in the UKey driver. 34800004 - The resourceId does not exist. This indicates that the resourceId has an incorrect device name, application name, or container name.",
+      "注释信息": [
+        "@param { string } resourceId - resourceId indicates the resource id of the extension.",
+        "@param { Array<huksExternalCrypto.HuksExternalCryptoParam> } [params] - params indicates",
+        "@returns { Promise<HuksCryptoExtensionResult> } the promise returned by the function.",
+        "@syscap SystemCapability.Security.Huks.CryptoExtension",
+        "@since 22"
+      ],
+      "层级": 1,
+      "上级": "CryptoExtensionAbility",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Security.Huks.CryptoExtension",
+      "parameters": [
+        {
+          "名称": "resourceId",
+          "类型": "string",
+          "必填": true,
+          "说明": "resourceId indicates the resource id of the extension."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "Array<huksExternalCrypto.HuksExternalCryptoParam> } [params] - params indicates"
+        }
+      ],
+      "return_description": "the promise returned by the function.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "onEnumCertificates",
+      "返回值": "Promise<HuksCryptoExtensionResult>",
+      "所属模块": "未知模块",
+      "功能描述": "Callback to list all certificates of the provider. the properties of the operation. HuksCryptoExtensionResult.resultCode may have the following values: 0 - The operation is successful 34800000 - An error occurred in the crypto extension. Possible causes: 1. The input parameter is invalid. 2. The crypto extension encountered an unresolvable error state. 34800001 - The UKey does not exist. Possible causes: 1. The UKey has been removed. 2. The crypto extension maintained an error UKey state. 34800002 - The UKey driver error. This means an unknown error has occurred in the UKey driver.",
+      "注释信息": [
+        "@param { Array<huksExternalCrypto.HuksExternalCryptoParam> } [params] - params indicates",
+        "@returns { Promise<HuksCryptoExtensionResult> } the promise returned by the function.",
+        "@syscap SystemCapability.Security.Huks.CryptoExtension",
+        "@since 22"
+      ],
+      "层级": 1,
+      "上级": "CryptoExtensionAbility",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Security.Huks.CryptoExtension",
+      "parameters": [
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "Array<huksExternalCrypto.HuksExternalCryptoParam> } [params] - params indicates"
+        }
+      ],
+      "return_description": "the promise returned by the function.",
+      "error_codes": [],
+      "版本": "API"
+    }
+  ]
+}

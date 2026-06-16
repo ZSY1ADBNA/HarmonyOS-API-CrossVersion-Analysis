@@ -1,0 +1,561 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.CoreFileKit",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "namespace",
+      "名称": "cloudSyncManager",
+      "所属模块": "@kit.CoreFileKit",
+      "功能描述": "Provides the capabilities to manage the state and data of cloud file synchronization.",
+      "注释信息": [
+        "@namespace cloudSyncManager",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSyncManager",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "@kit.CoreFileKit",
+      "since_version": "10",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSyncManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "DownloadStopReason",
+      "所属模块": "未知模块",
+      "功能描述": "Describes the reason why the download task stop.",
+      "注释信息": [
+        "@enum { number } DownloadStopReason",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSyncManager",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "cloudSyncManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSyncManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "NO_STOP",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "download task is not stopped.",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSyncManager",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "DownloadStopReason",
+      "since_version": "20",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSyncManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "NETWORK_UNAVAILABLE",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Network is unavailable.",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSyncManager",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "DownloadStopReason",
+      "since_version": "20",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSyncManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "LOCAL_STORAGE_FULL",
+      "值": "2",
+      "所属模块": "未知模块",
+      "功能描述": "The local storage space is full.",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSyncManager",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "DownloadStopReason",
+      "since_version": "20",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSyncManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "TEMPERATURE_LIMIT",
+      "值": "3",
+      "所属模块": "未知模块",
+      "功能描述": "Temperature control Limits.",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSyncManager",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "DownloadStopReason",
+      "since_version": "20",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSyncManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "USER_STOPPED",
+      "值": "4",
+      "所属模块": "未知模块",
+      "功能描述": "User stopped the download task.",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSyncManager",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "DownloadStopReason",
+      "since_version": "20",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSyncManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "APP_UNLOAD",
+      "值": "5",
+      "所属模块": "未知模块",
+      "功能描述": "The local application has been unloaded.",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSyncManager",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "DownloadStopReason",
+      "since_version": "20",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSyncManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "OTHER_REASON",
+      "值": "6",
+      "所属模块": "未知模块",
+      "功能描述": "Other reasons of some internal error.",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSyncManager",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "DownloadStopReason",
+      "since_version": "20",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSyncManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "DownloadState",
+      "所属模块": "未知模块",
+      "功能描述": "Describes the state type of downgrade download.",
+      "注释信息": [
+        "@enum { number } DownloadState",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSyncManager",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "cloudSyncManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSyncManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "RUNNING",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the download task in process now.",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSyncManager",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "DownloadState",
+      "since_version": "20",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSyncManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMPLETED",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the download task finished.",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSyncManager",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "DownloadState",
+      "since_version": "20",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSyncManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "STOPPED",
+      "值": "2",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the download task stopped.",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSyncManager",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "DownloadState",
+      "since_version": "20",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSyncManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "CloudFileInfo",
+      "所属模块": "未知模块",
+      "功能描述": "Defines the CloudFileInfo data structure.",
+      "注释信息": [
+        "@typedef CloudFileInfo",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSyncManager",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "cloudSyncManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSyncManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "cloudFileCount",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Total number of files located in the cloud.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSyncManager",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "CloudFileInfo",
+      "since_version": "20",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSyncManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "cloudFileTotalSize",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Total size of files located in the cloud, in units of bytes.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSyncManager",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "CloudFileInfo",
+      "since_version": "20",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSyncManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "localFileCount",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Total number of files located locally.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSyncManager",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "CloudFileInfo",
+      "since_version": "20",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSyncManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "localFileTotalSize",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Total size of files located locally, in units of bytes.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSyncManager",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "CloudFileInfo",
+      "since_version": "20",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSyncManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "bothFileCount",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Total number of files located both locally and in the cloud.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSyncManager",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "CloudFileInfo",
+      "since_version": "20",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSyncManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "bothFileTotalSize",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Total size of files located both locally and in the cloud, in units of bytes.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSyncManager",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "CloudFileInfo",
+      "since_version": "20",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSyncManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "class",
+      "名称": "DownloadProgress",
+      "所属模块": "未知模块",
+      "功能描述": "Defines DownloadProgress object.",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSyncManager",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "cloudSyncManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSyncManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "state",
+      "属性类型": "DownloadState",
+      "所属模块": "未知模块",
+      "功能描述": "The current download task state.",
+      "注释信息": [
+        "@type { DownloadState }",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSyncManager",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "DownloadProgress",
+      "since_version": "20",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSyncManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "successfulCount",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "The number of files that downloaded successfully",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSyncManager",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "DownloadProgress",
+      "since_version": "20",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSyncManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "failedCount",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "The number of files that fail to be downloaded.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSyncManager",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "DownloadProgress",
+      "since_version": "20",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSyncManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "totalCount",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Total number of all files to be downloaded.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSyncManager",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "DownloadProgress",
+      "since_version": "20",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSyncManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "downloadedSize",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Total size of downloaded files.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSyncManager",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "DownloadProgress",
+      "since_version": "20",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSyncManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "totalSize",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Total size of all files to be downloaded.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSyncManager",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "DownloadProgress",
+      "since_version": "20",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSyncManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "stopReason",
+      "属性类型": "DownloadStopReason",
+      "所属模块": "未知模块",
+      "功能描述": "The reason for stopping the download task.",
+      "注释信息": [
+        "@type { DownloadStopReason }",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSyncManager",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "DownloadProgress",
+      "since_version": "20",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSyncManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    }
+  ]
+}

@@ -1,0 +1,354 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.AbilityKit",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "namespace",
+      "名称": "childProcessManager",
+      "所属模块": "@kit.AbilityKit",
+      "功能描述": "This module provides the capability to start and manage child process.",
+      "注释信息": [
+        "@namespace childProcessManager",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "@kit.AbilityKit",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "StartMode",
+      "所属模块": "未知模块",
+      "功能描述": "Enum for the process start mode.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@stagemodelonly",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "childProcessManager",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "SELF_FORK",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "Fork child process by application self. Binder IPC can not be used in child process in this mode, may cause crash.",
+      "注释信息": [
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@stagemodelonly",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "StartMode",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "APP_SPAWN_FORK",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Fork child process by app spawn.",
+      "注释信息": [
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@stagemodelonly",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "StartMode",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "startChildProcess",
+      "返回值": "Promise<number>",
+      "所属模块": "未知模块",
+      "功能描述": "Start child process with the given src entry and start mode. 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types; 3.Parameter verification failed.",
+      "注释信息": [
+        "@param { string } srcEntry - Child process source file entrance to be started.",
+        "@param { StartMode } startMode - Child process start mode.",
+        "@returns { Promise<number> } Returns the started child process pid.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 16000050 - Internal error.",
+        "@throws { BusinessError } 16000061 - Operation not supported.",
+        "@throws { BusinessError } 16000062 - The number of child processes exceeds the upper limit.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@stagemodelonly",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "childProcessManager",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "srcEntry",
+          "类型": "string",
+          "必填": true,
+          "说明": "Child process source file entrance to be started."
+        },
+        {
+          "名称": "startMode",
+          "类型": "StartMode",
+          "必填": true,
+          "说明": "Child process start mode."
+        }
+      ],
+      "return_description": "Returns the started child process pid.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "16000050",
+          "description": "Internal error."
+        },
+        {
+          "code": "16000061",
+          "description": "Operation not supported."
+        },
+        {
+          "code": "16000062",
+          "description": "The number of child processes exceeds the upper limit."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "startChildProcess",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Start child process with the given src entry and mode. 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types; 3.Parameter verification failed.",
+      "注释信息": [
+        "@param { string } srcEntry - Child process source file entrance to be started.",
+        "@param { StartMode } startMode - Child process start mode.",
+        "@param { AsyncCallback<number> } callback - The callback of startChildProcess.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 16000050 - Internal error.",
+        "@throws { BusinessError } 16000061 - Operation not supported.",
+        "@throws { BusinessError } 16000062 - The number of child processes exceeds the upper limit.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@stagemodelonly",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "childProcessManager",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "srcEntry",
+          "类型": "string",
+          "必填": true,
+          "说明": "Child process source file entrance to be started."
+        },
+        {
+          "名称": "startMode",
+          "类型": "StartMode",
+          "必填": true,
+          "说明": "Child process start mode."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<number>",
+          "必填": true,
+          "说明": "The callback of startChildProcess."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "16000050",
+          "description": "Internal error."
+        },
+        {
+          "code": "16000061",
+          "description": "Operation not supported."
+        },
+        {
+          "code": "16000062",
+          "description": "The number of child processes exceeds the upper limit."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "startArkChildProcess",
+      "返回值": "Promise<number>",
+      "所属模块": "未知模块",
+      "功能描述": "Start child process with the given args and options. 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types; 3.Parameter verification failed.",
+      "注释信息": [
+        "@param { string } srcEntry - Indicates child process source file entrance to be started.",
+        "@param { ChildProcessArgs } args - Indicates args to pass to child process.",
+        "@param { ChildProcessOptions } [options] - Indicates options for starting child process.",
+        "@returns { Promise<number> } Returns the started child process pid.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 16000050 - Internal error.",
+        "@throws { BusinessError } 16000061 - Operation not supported.",
+        "@throws { BusinessError } 16000062 - The number of child processes exceeds the upper limit.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@stagemodelonly",
+        "@since 13"
+      ],
+      "层级": 1,
+      "上级": "childProcessManager",
+      "since_version": "13",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "srcEntry",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates child process source file entrance to be started."
+        },
+        {
+          "名称": "args",
+          "类型": "ChildProcessArgs",
+          "必填": true,
+          "说明": "Indicates args to pass to child process."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "ChildProcessOptions } [options] - Indicates options for starting child process."
+        }
+      ],
+      "return_description": "Returns the started child process pid.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "16000050",
+          "description": "Internal error."
+        },
+        {
+          "code": "16000061",
+          "description": "Operation not supported."
+        },
+        {
+          "code": "16000062",
+          "description": "The number of child processes exceeds the upper limit."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "startNativeChildProcess",
+      "返回值": "Promise<number>",
+      "所属模块": "未知模块",
+      "功能描述": "Start native child process with the given args and options. 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types; 3.Parameter verification failed.",
+      "注释信息": [
+        "@param { string } entryPoint - Indicates entry point of child process, consisting of library and entry function, such as \"libEntry.so:Main\".",
+        "@param { ChildProcessArgs } args - Indicates args to pass to child process.",
+        "@param { ChildProcessOptions } [options] - Indicates options for starting child process.",
+        "@returns { Promise<number> } Returns the started child process pid.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 801 - Capability not supported. Failed to call the API due to limited device capabilities.",
+        "@throws { BusinessError } 16000050 - Internal error.",
+        "@throws { BusinessError } 16000061 - Operation not supported.",
+        "@throws { BusinessError } 16000062 - The number of child processes exceeds the upper limit.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@stagemodelonly",
+        "@since 13"
+      ],
+      "层级": 1,
+      "上级": "childProcessManager",
+      "since_version": "13",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "entryPoint",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates entry point of child process, consisting of library and entry function, such as \"libEntry.so:Main\"."
+        },
+        {
+          "名称": "args",
+          "类型": "ChildProcessArgs",
+          "必填": true,
+          "说明": "Indicates args to pass to child process."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "ChildProcessOptions } [options] - Indicates options for starting child process."
+        }
+      ],
+      "return_description": "Returns the started child process pid.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported. Failed to call the API due to limited device capabilities."
+        },
+        {
+          "code": "16000050",
+          "description": "Internal error."
+        },
+        {
+          "code": "16000061",
+          "description": "Operation not supported."
+        },
+        {
+          "code": "16000062",
+          "description": "The number of child processes exceeds the upper limit."
+        }
+      ],
+      "版本": "API"
+    }
+  ]
+}

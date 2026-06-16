@@ -1,0 +1,1277 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.DistributedServiceKit",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "namespace",
+      "名称": "distributedDeviceManager",
+      "所属模块": "@kit.DistributedServiceKit",
+      "功能描述": "Providers interfaces to create a {@link deviceManager} instances.",
+      "注释信息": [
+        "@namespace distributedDeviceManager",
+        "@syscap SystemCapability.DistributedHardware.DeviceManager",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "@kit.DistributedServiceKit",
+      "since_version": "10",
+      "system_capability": "SystemCapability.DistributedHardware.DeviceManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "DeviceBasicInfo",
+      "所属模块": "未知模块",
+      "功能描述": "Basic description information of a distributed device.",
+      "注释信息": [
+        "@interface DeviceBasicInfo",
+        "@syscap SystemCapability.DistributedHardware.DeviceManager",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "distributedDeviceManager",
+      "since_version": "10",
+      "system_capability": "SystemCapability.DistributedHardware.DeviceManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "deviceId",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Device identifier. The actual value is udid-hash confused with appid and salt value based on sha256. This id remains unchanged after application installation. If the application is uninstalled and reinstalled, the obtained ID will change.",
+      "注释信息": [
+        "@type { string }",
+        "@syscap SystemCapability.DistributedHardware.DeviceManager",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "DeviceBasicInfo",
+      "since_version": "10",
+      "system_capability": "SystemCapability.DistributedHardware.DeviceManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "deviceName",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Device name.",
+      "注释信息": [
+        "@type { string }",
+        "@syscap SystemCapability.DistributedHardware.DeviceManager",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "DeviceBasicInfo",
+      "since_version": "10",
+      "system_capability": "SystemCapability.DistributedHardware.DeviceManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "deviceType",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the device type represented by a string, which can be {@code phone}, {@code tablet}, {@code tv}, {@code smartVision}, {@code car}.",
+      "注释信息": [
+        "@type { string }",
+        "@syscap SystemCapability.DistributedHardware.DeviceManager",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "DeviceBasicInfo",
+      "since_version": "10",
+      "system_capability": "SystemCapability.DistributedHardware.DeviceManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "networkId",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Device network id.",
+      "注释信息": [
+        "@type { ?string }",
+        "@syscap SystemCapability.DistributedHardware.DeviceManager",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "DeviceBasicInfo",
+      "since_version": "10",
+      "system_capability": "SystemCapability.DistributedHardware.DeviceManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "DeviceStateChange",
+      "所属模块": "未知模块",
+      "功能描述": "The state of the nearby devices.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.DistributedHardware.DeviceManager",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "distributedDeviceManager",
+      "since_version": "10",
+      "system_capability": "SystemCapability.DistributedHardware.DeviceManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "UNKNOWN",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "This state indicates the device is online but the state is unknown,The distributed function cannot used until state changes to AVAILABLE.",
+      "注释信息": [
+        "@syscap SystemCapability.DistributedHardware.DeviceManager",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "DeviceStateChange",
+      "since_version": "10",
+      "system_capability": "SystemCapability.DistributedHardware.DeviceManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "AVAILABLE",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "This state indicates the device has been synchronized to the database, Now the distributed function can be used.",
+      "注释信息": [
+        "@syscap SystemCapability.DistributedHardware.DeviceManager",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "DeviceStateChange",
+      "since_version": "10",
+      "system_capability": "SystemCapability.DistributedHardware.DeviceManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "UNAVAILABLE",
+      "值": "2",
+      "所属模块": "未知模块",
+      "功能描述": "This state indicates the device is offline.",
+      "注释信息": [
+        "@syscap SystemCapability.DistributedHardware.DeviceManager",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "DeviceStateChange",
+      "since_version": "10",
+      "system_capability": "SystemCapability.DistributedHardware.DeviceManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "createDeviceManager",
+      "返回值": "DeviceManager",
+      "所属模块": "未知模块",
+      "功能描述": "Creates an {@code DeviceManager} instance. To manage devices, you must first call this method to obtain a {@code DeviceManager} instance and then use this instance to call other device management methods. 1. Mandatory parameters are left unspecified; 2. Incorrect parameter type; 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { string } bundleName - Indicates the bundle name of the application.",
+        "@returns { DeviceManager } - Return the DeviceManager object.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@syscap SystemCapability.DistributedHardware.DeviceManager",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "distributedDeviceManager",
+      "since_version": "10",
+      "system_capability": "SystemCapability.DistributedHardware.DeviceManager",
+      "parameters": [
+        {
+          "名称": "bundleName",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates the bundle name of the application."
+        }
+      ],
+      "return_description": "- Return the DeviceManager object.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "releaseDeviceManager",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Releases the {@code DeviceManager} instance that is no longer used. 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { DeviceManager } deviceManager - Indicates the {@code DeviceManager} instance.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 11600101 - Failed to execute the function.",
+        "@syscap SystemCapability.DistributedHardware.DeviceManager",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "distributedDeviceManager",
+      "since_version": "10",
+      "system_capability": "SystemCapability.DistributedHardware.DeviceManager",
+      "parameters": [
+        {
+          "名称": "deviceManager",
+          "类型": "DeviceManager",
+          "必填": true,
+          "说明": "Indicates the {@code DeviceManager} instance."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "11600101",
+          "description": "Failed to execute the function."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "DeviceManager",
+      "所属模块": "未知模块",
+      "功能描述": "Provides methods for managing devices.",
+      "注释信息": [
+        "@interface DeviceManager",
+        "@syscap SystemCapability.DistributedHardware.DeviceManager",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "distributedDeviceManager",
+      "since_version": "10",
+      "system_capability": "SystemCapability.DistributedHardware.DeviceManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getAvailableDeviceListSync",
+      "返回值": "Array<DeviceBasicInfo>",
+      "所属模块": "未知模块",
+      "功能描述": "Get a list of available devices. This interface query all authorized and connectable devices.",
+      "注释信息": [
+        "@permission ohos.permission.DISTRIBUTED_DATASYNC",
+        "@returns { Array<DeviceBasicInfo> } - Returns a list of available devices.",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission required to call the API.",
+        "@throws { BusinessError } 11600101 - Failed to execute the function.",
+        "@syscap SystemCapability.DistributedHardware.DeviceManager",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "DeviceManager",
+      "since_version": "10",
+      "system_capability": "SystemCapability.DistributedHardware.DeviceManager",
+      "parameters": [],
+      "return_description": "- Returns a list of available devices.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission required to call the API."
+        },
+        {
+          "code": "11600101",
+          "description": "Failed to execute the function."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getAvailableDeviceList",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Get a list of available devices. This interface query all authorized and connectable devices. invoked upon getAvailableDeviceList.",
+      "注释信息": [
+        "@permission ohos.permission.DISTRIBUTED_DATASYNC",
+        "@param { AsyncCallback<Array<DeviceBasicInfo>> } callback - Indicates the callback to be",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission required to call the API.",
+        "@throws { BusinessError } 11600101 - Failed to execute the function.",
+        "@syscap SystemCapability.DistributedHardware.DeviceManager",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "DeviceManager",
+      "since_version": "10",
+      "system_capability": "SystemCapability.DistributedHardware.DeviceManager",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<Array<DeviceBasicInfo>>",
+          "必填": true,
+          "说明": "Indicates the callback to be"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission required to call the API."
+        },
+        {
+          "code": "11600101",
+          "description": "Failed to execute the function."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getAvailableDeviceList",
+      "返回值": "Promise<Array<DeviceBasicInfo>>",
+      "所属模块": "未知模块",
+      "功能描述": "Get a list of available devices. This interface query all authorized and connectable devices.",
+      "注释信息": [
+        "@permission ohos.permission.DISTRIBUTED_DATASYNC",
+        "@returns { Promise<Array<DeviceBasicInfo>> } - Returns a list of available devices.",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission required to call the API.",
+        "@throws { BusinessError } 11600101 - Failed to execute the function.",
+        "@syscap SystemCapability.DistributedHardware.DeviceManager",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "DeviceManager",
+      "since_version": "10",
+      "system_capability": "SystemCapability.DistributedHardware.DeviceManager",
+      "parameters": [],
+      "return_description": "- Returns a list of available devices.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission required to call the API."
+        },
+        {
+          "code": "11600101",
+          "description": "Failed to execute the function."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getLocalDeviceNetworkId",
+      "返回值": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Get the network id of the local device.",
+      "注释信息": [
+        "@permission ohos.permission.DISTRIBUTED_DATASYNC",
+        "@returns { string } - Returns local device network id.",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission required to call the API.",
+        "@throws { BusinessError } 11600101 - Failed to execute the function.",
+        "@syscap SystemCapability.DistributedHardware.DeviceManager",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "DeviceManager",
+      "since_version": "10",
+      "system_capability": "SystemCapability.DistributedHardware.DeviceManager",
+      "parameters": [],
+      "return_description": "- Returns local device network id.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission required to call the API."
+        },
+        {
+          "code": "11600101",
+          "description": "Failed to execute the function."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getLocalDeviceName",
+      "返回值": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Get the device name of the local device.",
+      "注释信息": [
+        "@permission ohos.permission.DISTRIBUTED_DATASYNC",
+        "@returns { string } - Returns local device name.",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission required to call the API.",
+        "@throws { BusinessError } 11600101 - Failed to execute the function.",
+        "@syscap SystemCapability.DistributedHardware.DeviceManager",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "DeviceManager",
+      "since_version": "10",
+      "system_capability": "SystemCapability.DistributedHardware.DeviceManager",
+      "parameters": [],
+      "return_description": "- Returns local device name.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission required to call the API."
+        },
+        {
+          "code": "11600101",
+          "description": "Failed to execute the function."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getLocalDeviceType",
+      "返回值": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Get the device type of the local device. required to call the API.",
+      "注释信息": [
+        "@permission ohos.permission.DISTRIBUTED_DATASYNC",
+        "@returns { number } - Returns local device type.",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission",
+        "@throws { BusinessError } 11600101 - Failed to execute the function.",
+        "@syscap SystemCapability.DistributedHardware.DeviceManager",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "DeviceManager",
+      "since_version": "10",
+      "system_capability": "SystemCapability.DistributedHardware.DeviceManager",
+      "parameters": [],
+      "return_description": "- Returns local device type.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission"
+        },
+        {
+          "code": "11600101",
+          "description": "Failed to execute the function."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getLocalDeviceId",
+      "返回值": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Get the device id of the local device. This id remains unchanged after application installation. If the application is uninstalled and reinstalled, the obtained ID will change.",
+      "注释信息": [
+        "@permission ohos.permission.DISTRIBUTED_DATASYNC",
+        "@returns { string } - Device identifier. The actual value is udid-hash confused with appid and salt value based on sha256.",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission required to call the API.",
+        "@throws { BusinessError } 11600101 - Failed to execute the function.",
+        "@syscap SystemCapability.DistributedHardware.DeviceManager",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "DeviceManager",
+      "since_version": "10",
+      "system_capability": "SystemCapability.DistributedHardware.DeviceManager",
+      "parameters": [],
+      "return_description": "- Device identifier. The actual value is udid-hash confused with appid and salt value based on sha256.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission required to call the API."
+        },
+        {
+          "code": "11600101",
+          "description": "Failed to execute the function."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getDeviceName",
+      "返回值": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Get the device name by network id. 1. Mandatory parameters are left unspecified; 2. Incorrect parameter type; 3. Parameter verification failed; 4. The size of specified networkId is greater than 255.",
+      "注释信息": [
+        "@permission ohos.permission.DISTRIBUTED_DATASYNC",
+        "@param { string } networkId - Device network id.",
+        "@returns { string } - Returns device name.",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission required to call the API.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 11600101 - Failed to execute the function.",
+        "@syscap SystemCapability.DistributedHardware.DeviceManager",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "DeviceManager",
+      "since_version": "10",
+      "system_capability": "SystemCapability.DistributedHardware.DeviceManager",
+      "parameters": [
+        {
+          "名称": "networkId",
+          "类型": "string",
+          "必填": true,
+          "说明": "Device network id."
+        }
+      ],
+      "return_description": "- Returns device name.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission required to call the API."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "11600101",
+          "description": "Failed to execute the function."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getDeviceType",
+      "返回值": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Get the device type by network id. required to call the API. 1. Mandatory parameters are left unspecified; 2. Incorrect parameter type; 3. Parameter verification failed; 4. The size of specified networkId is greater than 255.",
+      "注释信息": [
+        "@permission ohos.permission.DISTRIBUTED_DATASYNC",
+        "@param { string } networkId - Device network id.",
+        "@returns { number } - Returns device type.",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 11600101 - Failed to execute the function.",
+        "@syscap SystemCapability.DistributedHardware.DeviceManager",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "DeviceManager",
+      "since_version": "10",
+      "system_capability": "SystemCapability.DistributedHardware.DeviceManager",
+      "parameters": [
+        {
+          "名称": "networkId",
+          "类型": "string",
+          "必填": true,
+          "说明": "Device network id."
+        }
+      ],
+      "return_description": "- Returns device type.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission"
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "11600101",
+          "description": "Failed to execute the function."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "startDiscovering",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Start to discover nearby devices. discoverTargetType : 1     - Discovery target as a device by default, the value is 1. The type of filterOptions is map. The map are as follows: availableStatus: 0-1       - Discover devices only are credible, The value is 0 indicates device isn't credible; 0: Devices are offline, client need to bind the device by calling bindTarget() and then connect to it. 1: Devices already online, client can make connection. discoverDistance: 0-100    - Discover devices within a certain distance from the local, the unit is cm. authenticationStatus: 0-1  - Discover devices based on different authentication status: 0: Devices not authenticated. 1: Devices already authenticated. The value is 1 indicates device is trust. authorizationType: 0-2     - Discover devices based on different authorization type: 0: Devices authenticated based on temporary negotiated session key. 1: Devices authenticated based on the same account credential key. 2: Devices authenticated based on different account credential keys. 1. Mandatory parameters are left unspecified; 2. Incorrect parameter type; 3. Parameter verification failed. required to call the API.",
+      "注释信息": [
+        "@permission ohos.permission.DISTRIBUTED_DATASYNC",
+        "@param { object } discoverParam - Identifies the type of target discovered:",
+        "@param { object } filterOptions - FilterOptions to filter discovery device.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission",
+        "@throws { BusinessError } 11600104 - Discovery unavailable.",
+        "@throws { BusinessError } 11600101 - Failed to execute the function.",
+        "@syscap SystemCapability.DistributedHardware.DeviceManager",
+        "@since 10"
+      ],
+      "层级": 3,
+      "上级": "DeviceManager",
+      "since_version": "10",
+      "system_capability": "SystemCapability.DistributedHardware.DeviceManager",
+      "parameters": [
+        {
+          "名称": "discoverParam",
+          "类型": "object",
+          "必填": true,
+          "说明": "Identifies the type of target discovered:"
+        },
+        {
+          "名称": "filterOptions",
+          "类型": "object",
+          "必填": true,
+          "说明": "FilterOptions to filter discovery device."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission"
+        },
+        {
+          "code": "11600104",
+          "description": "Discovery unavailable."
+        },
+        {
+          "code": "11600101",
+          "description": "Failed to execute the function."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "stopDiscovering",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Stop discovering nearby devices.",
+      "注释信息": [
+        "@permission ohos.permission.DISTRIBUTED_DATASYNC",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission required to call the API.",
+        "@throws { BusinessError } 11600101 - Failed to execute the function.",
+        "@syscap SystemCapability.DistributedHardware.DeviceManager",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "DeviceManager",
+      "since_version": "10",
+      "system_capability": "SystemCapability.DistributedHardware.DeviceManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission required to call the API."
+        },
+        {
+          "code": "11600101",
+          "description": "Failed to execute the function."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "bindTarget",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Bind the specified target. \"bindType\" : 1,           - This value is type of bind, the values are as follows: 1 - The bind type is pin code . \"targetPkgName\" : \"xxxx\", - The package name of binding target. \"appName\" : \"xxxx\",       - The app name that try to bind the target. \"appOperation\" : \"xxxx\"   - The reason why the app want to bind the target package. \"customDescription\" : \"xxxx\" - The detail description of the operation. 1. Mandatory parameters are left unspecified; 2. Incorrect parameter type; 3. Parameter verification failed; 4. The size of specified deviceId is greater than 255. required to call the API.",
+      "注释信息": [
+        "@permission ohos.permission.DISTRIBUTED_DATASYNC",
+        "@param { string } deviceId - id of device to bind.",
+        "@param { object } bindParam - parameters of device to bind, The parameter type is map,such as:",
+        "@param { AsyncCallback<{deviceId: string;}> } callback - indicates the callback to be invoked upon bindDevice.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission",
+        "@throws { BusinessError } 11600101 - Failed to execute the function.",
+        "@throws { BusinessError } 11600103 - Authentication unavailable.",
+        "@syscap SystemCapability.DistributedHardware.DeviceManager",
+        "@since 10"
+      ],
+      "层级": 3,
+      "上级": "DeviceManager",
+      "since_version": "10",
+      "system_capability": "SystemCapability.DistributedHardware.DeviceManager",
+      "parameters": [
+        {
+          "名称": "deviceId",
+          "类型": "string",
+          "必填": true,
+          "说明": "id of device to bind."
+        },
+        {
+          "名称": "bindParam",
+          "类型": "object",
+          "必填": true,
+          "说明": "parameters of device to bind, The parameter type is map,such as:"
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "AsyncCallback<{deviceId: string;}> } callback - indicates the callback to be invoked upon bindDevice."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission"
+        },
+        {
+          "code": "11600101",
+          "description": "Failed to execute the function."
+        },
+        {
+          "code": "11600103",
+          "description": "Authentication unavailable."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "unbindTarget",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unbind the specified target. 1. Mandatory parameters are left unspecified; 2. Incorrect parameter type; 3. Parameter verification failed; 4. The size of specified deviceId is greater than 255.",
+      "注释信息": [
+        "@permission ohos.permission.DISTRIBUTED_DATASYNC",
+        "@param { string } deviceId - id of device to unbind",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission required to call the API.",
+        "@throws { BusinessError } 11600101 - Failed to execute the function.",
+        "@syscap SystemCapability.DistributedHardware.DeviceManager",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "DeviceManager",
+      "since_version": "10",
+      "system_capability": "SystemCapability.DistributedHardware.DeviceManager",
+      "parameters": [
+        {
+          "名称": "deviceId",
+          "类型": "string",
+          "必填": true,
+          "说明": "id of device to unbind"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission required to call the API."
+        },
+        {
+          "code": "11600101",
+          "description": "Failed to execute the function."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Register a device state callback so that the application can be notified upon device state changes based on the application bundle name. Indicates the device state callback to register. required to call the API. 1. Mandatory parameters are left unspecified; 2. Incorrect parameter type; 3. Parameter verification failed; 4. The size of specified type is greater than 255.",
+      "注释信息": [
+        "@permission ohos.permission.DISTRIBUTED_DATASYNC",
+        "@param { 'deviceStateChange' } type - Device state change.",
+        "@param { Callback<{ action: DeviceStateChange; device: DeviceBasicInfo; }> } callback",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@syscap SystemCapability.DistributedHardware.DeviceManager",
+        "@since 10"
+      ],
+      "层级": 3,
+      "上级": "DeviceManager",
+      "since_version": "10",
+      "system_capability": "SystemCapability.DistributedHardware.DeviceManager",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'deviceStateChange'",
+          "必填": true,
+          "说明": "Device state change."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "Callback<{ action: DeviceStateChange; device: DeviceBasicInfo; }> } callback"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission"
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "UnRegister device state callback based on the application bundle name. Indicates the device state callback to unregister. required to call the API. 1. Mandatory parameters are left unspecified; 2. Incorrect parameter type; 3. Parameter verification failed; 4. The size of specified type is greater than 255.",
+      "注释信息": [
+        "@permission ohos.permission.DISTRIBUTED_DATASYNC",
+        "@param { 'deviceStateChange' } type - Device state change.",
+        "@param { Callback<{ action: DeviceStateChange; device: DeviceBasicInfo; }> } callback",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@syscap SystemCapability.DistributedHardware.DeviceManager",
+        "@since 10"
+      ],
+      "层级": 3,
+      "上级": "DeviceManager",
+      "since_version": "10",
+      "system_capability": "SystemCapability.DistributedHardware.DeviceManager",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'deviceStateChange'",
+          "必填": true,
+          "说明": "Device state change."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "Callback<{ action: DeviceStateChange; device: DeviceBasicInfo; }> } callback"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission"
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Register a device discovery result callback so that the application can be notified when discovery success. required to call the API. 1. Mandatory parameters are left unspecified; 2. Incorrect parameter type; 3. Parameter verification failed; 4. The size of specified type is greater than 255.",
+      "注释信息": [
+        "@permission ohos.permission.DISTRIBUTED_DATASYNC",
+        "@param { 'discoverSuccess' } type - Successfully discovered device.",
+        "@param { Callback<{ device: DeviceBasicInfo; }> } callback - Indicates the device discovery callback to register.",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@syscap SystemCapability.DistributedHardware.DeviceManager",
+        "@since 10"
+      ],
+      "层级": 3,
+      "上级": "DeviceManager",
+      "since_version": "10",
+      "system_capability": "SystemCapability.DistributedHardware.DeviceManager",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'discoverSuccess'",
+          "必填": true,
+          "说明": "Successfully discovered device."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "Callback<{ device: DeviceBasicInfo; }> } callback - Indicates the device discovery callback to register."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission"
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "UnRegister the device discovery result callback. unregister. required to call the API. 1. Mandatory parameters are left unspecified; 2. Incorrect parameter type; 3. Parameter verification failed; 4. The size of specified type is greater than 255.",
+      "注释信息": [
+        "@permission ohos.permission.DISTRIBUTED_DATASYNC",
+        "@param { 'discoverSuccess' } type - Successfully discovered device.",
+        "@param { Callback<{ device: DeviceBasicInfo; }> } callback - Indicates the device discovery callback to",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@syscap SystemCapability.DistributedHardware.DeviceManager",
+        "@since 10"
+      ],
+      "层级": 3,
+      "上级": "DeviceManager",
+      "since_version": "10",
+      "system_capability": "SystemCapability.DistributedHardware.DeviceManager",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'discoverSuccess'",
+          "必填": true,
+          "说明": "Successfully discovered device."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "Callback<{ device: DeviceBasicInfo; }> } callback - Indicates the device discovery callback to"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission"
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Register a device name change callback so that the application can be notified when discovery success. required to call the API. 1. Mandatory parameters are left unspecified; 2. Incorrect parameter type; 3. Parameter verification failed; 4. The size of specified type is greater than 255.",
+      "注释信息": [
+        "@permission ohos.permission.DISTRIBUTED_DATASYNC",
+        "@param { 'deviceNameChange' } type - Changed device name.",
+        "@param { Callback<{ deviceName: string; }> } callback - Indicates the device name change callback to register.",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@syscap SystemCapability.DistributedHardware.DeviceManager",
+        "@since 10"
+      ],
+      "层级": 3,
+      "上级": "DeviceManager",
+      "since_version": "10",
+      "system_capability": "SystemCapability.DistributedHardware.DeviceManager",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'deviceNameChange'",
+          "必填": true,
+          "说明": "Changed device name."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "Callback<{ deviceName: string; }> } callback - Indicates the device name change callback to register."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission"
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "UnRegister the device name change result callback. required to call the API. 1. Mandatory parameters are left unspecified; 2. Incorrect parameter type; 3. Parameter verification failed; 4. The size of specified type is greater than 255.",
+      "注释信息": [
+        "@permission ohos.permission.DISTRIBUTED_DATASYNC",
+        "@param { 'deviceNameChange' } type - Changed device name.",
+        "@param { Callback<{ deviceName: string; }> } callback - Indicates the device name change callback to unregister.",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@syscap SystemCapability.DistributedHardware.DeviceManager",
+        "@since 10"
+      ],
+      "层级": 3,
+      "上级": "DeviceManager",
+      "since_version": "10",
+      "system_capability": "SystemCapability.DistributedHardware.DeviceManager",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'deviceNameChange'",
+          "必填": true,
+          "说明": "Changed device name."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "Callback<{ deviceName: string; }> } callback - Indicates the device name change callback to unregister."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission"
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Register a device discovery result callback so that the application can be notified when discover failed. Indicates the device found result callback to register. required to call the API. 1. Mandatory parameters are left unspecified; 2. Incorrect parameter type; 3. Parameter verification failed; 4. The size of specified type is greater than 255.",
+      "注释信息": [
+        "@permission ohos.permission.DISTRIBUTED_DATASYNC",
+        "@param { 'discoverFailure' } type - Discovery Device Failure.",
+        "@param { Callback<{ reason: number}> } callback",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@syscap SystemCapability.DistributedHardware.DeviceManager",
+        "@since 10"
+      ],
+      "层级": 3,
+      "上级": "DeviceManager",
+      "since_version": "10",
+      "system_capability": "SystemCapability.DistributedHardware.DeviceManager",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'discoverFailure'",
+          "必填": true,
+          "说明": "Discovery Device Failure."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "Callback<{ reason: number}> } callback"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission"
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "UnRegister the device discovery result callback. required to call the API. 1. Mandatory parameters are left unspecified; 2. Incorrect parameter type; 3. Parameter verification failed; 4. The size of specified type is greater than 255.",
+      "注释信息": [
+        "@permission ohos.permission.DISTRIBUTED_DATASYNC",
+        "@param { 'discoverFailure' } type - Discovery Device Failure.",
+        "@param { Callback<{ reason: number}> } callback - Indicates the device found result callback to unregister.",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@syscap SystemCapability.DistributedHardware.DeviceManager",
+        "@since 10"
+      ],
+      "层级": 3,
+      "上级": "DeviceManager",
+      "since_version": "10",
+      "system_capability": "SystemCapability.DistributedHardware.DeviceManager",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'discoverFailure'",
+          "必填": true,
+          "说明": "Discovery Device Failure."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "Callback<{ reason: number}> } callback - Indicates the device found result callback to unregister."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission"
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Register a serviceError callback so that the application can be notified when devicemanager service died required to call the API. 1. Mandatory parameters are left unspecified; 2. Incorrect parameter type; 3. Parameter verification failed; 4. The size of specified type is greater than 255.",
+      "注释信息": [
+        "@permission ohos.permission.DISTRIBUTED_DATASYNC",
+        "@param { 'serviceDie' } type - Service death.",
+        "@param { Callback<{}> } callback - Indicates the service error callback to register.",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@syscap SystemCapability.DistributedHardware.DeviceManager",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "DeviceManager",
+      "since_version": "10",
+      "system_capability": "SystemCapability.DistributedHardware.DeviceManager",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'serviceDie'",
+          "必填": true,
+          "说明": "Service death."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "Callback<{}> } callback - Indicates the service error callback to register."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission"
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "UnRegister the service error callback. required to call the API. 1. Mandatory parameters are left unspecified; 2. Incorrect parameter type; 3. Parameter verification failed; 4. The size of specified type is greater than 255.",
+      "注释信息": [
+        "@permission ohos.permission.DISTRIBUTED_DATASYNC",
+        "@param { 'serviceDie' } type - Service death.",
+        "@param { Callback<{}> } callback - Indicates the service error callback to unregister.",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@syscap SystemCapability.DistributedHardware.DeviceManager",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "DeviceManager",
+      "since_version": "10",
+      "system_capability": "SystemCapability.DistributedHardware.DeviceManager",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'serviceDie'",
+          "必填": true,
+          "说明": "Service death."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "Callback<{}> } callback - Indicates the service error callback to unregister."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission"
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        }
+      ],
+      "版本": "API"
+    }
+  ]
+}

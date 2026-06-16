@@ -1,0 +1,664 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.ArkData",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "namespace",
+      "名称": "intelligence",
+      "所属模块": "@kit.ArkData",
+      "功能描述": "Provides methods for intelligent data processing.",
+      "注释信息": [
+        "@namespace intelligence",
+        "@syscap SystemCapability.DistributedDataManager.DataIntelligence.Core",
+        "@since 15"
+      ],
+      "层级": 1,
+      "上级": "@kit.ArkData",
+      "since_version": "15",
+      "system_capability": "SystemCapability.DistributedDataManager.DataIntelligence.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getTextEmbeddingModel",
+      "返回值": "Promise<TextEmbedding>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains a text embedding model. <br>2. Incorrect parameter types.",
+      "注释信息": [
+        "@param { ModelConfig } config - The configuration of the embedding model.",
+        "@returns { Promise<TextEmbedding> } The promise returned by the function.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 31300000 - Inner error.",
+        "@syscap SystemCapability.DistributedDataManager.DataIntelligence.Core",
+        "@since 15"
+      ],
+      "层级": 1,
+      "上级": "intelligence",
+      "since_version": "15",
+      "system_capability": "SystemCapability.DistributedDataManager.DataIntelligence.Core",
+      "parameters": [
+        {
+          "名称": "config",
+          "类型": "ModelConfig",
+          "必填": true,
+          "说明": "The configuration of the embedding model."
+        }
+      ],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "31300000",
+          "description": "Inner error."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getImageEmbeddingModel",
+      "返回值": "Promise<ImageEmbedding>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains an image embedding model. <br>2. Incorrect parameter types.",
+      "注释信息": [
+        "@param { ModelConfig } config - The configuration of the embedding model.",
+        "@returns { Promise<ImageEmbedding> } The promise returned by the function.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 31300000 - Inner error.",
+        "@syscap SystemCapability.DistributedDataManager.DataIntelligence.Core",
+        "@since 15"
+      ],
+      "层级": 1,
+      "上级": "intelligence",
+      "since_version": "15",
+      "system_capability": "SystemCapability.DistributedDataManager.DataIntelligence.Core",
+      "parameters": [
+        {
+          "名称": "config",
+          "类型": "ModelConfig",
+          "必填": true,
+          "说明": "The configuration of the embedding model."
+        }
+      ],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "31300000",
+          "description": "Inner error."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "ModelConfig",
+      "所属模块": "未知模块",
+      "功能描述": "Manages configurations of the embedding model.",
+      "注释信息": [
+        "@interface ModelConfig",
+        "@syscap SystemCapability.DistributedDataManager.DataIntelligence.Core",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "intelligence",
+      "since_version": "15",
+      "system_capability": "SystemCapability.DistributedDataManager.DataIntelligence.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "version",
+      "属性类型": "ModelVersion",
+      "所属模块": "未知模块",
+      "功能描述": "Version of the model. The outputs of text or image embedding models with the same version are in the same vector space.",
+      "注释信息": [
+        "@type { ModelVersion }",
+        "@syscap SystemCapability.DistributedDataManager.DataIntelligence.Core",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "ModelConfig",
+      "since_version": "15",
+      "system_capability": "SystemCapability.DistributedDataManager.DataIntelligence.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "isNpuAvailable",
+      "属性类型": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates whether NPU is used.",
+      "注释信息": [
+        "@type { boolean }",
+        "@syscap SystemCapability.DistributedDataManager.DataIntelligence.Core",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "ModelConfig",
+      "since_version": "15",
+      "system_capability": "SystemCapability.DistributedDataManager.DataIntelligence.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "cachePath",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "If NPU is used for accelerating, a local path is required for model caching.",
+      "注释信息": [
+        "@type { ?string }",
+        "@syscap SystemCapability.DistributedDataManager.DataIntelligence.Core",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "ModelConfig",
+      "since_version": "15",
+      "system_capability": "SystemCapability.DistributedDataManager.DataIntelligence.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "ModelVersion",
+      "所属模块": "未知模块",
+      "功能描述": "Version of the model.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.DistributedDataManager.DataIntelligence.Core",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "intelligence",
+      "since_version": "15",
+      "system_capability": "SystemCapability.DistributedDataManager.DataIntelligence.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "BASIC_MODEL",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "The basic embedding model.",
+      "注释信息": [
+        "@syscap SystemCapability.DistributedDataManager.DataIntelligence.Core",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "ModelVersion",
+      "since_version": "15",
+      "system_capability": "SystemCapability.DistributedDataManager.DataIntelligence.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "TextEmbedding",
+      "所属模块": "未知模块",
+      "功能描述": "Describes the text embedding functions of the multi-modal embedding model. Chinese and English are supported.",
+      "注释信息": [
+        "@interface TextEmbedding",
+        "@syscap SystemCapability.DistributedDataManager.DataIntelligence.Core",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "intelligence",
+      "since_version": "15",
+      "system_capability": "SystemCapability.DistributedDataManager.DataIntelligence.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "loadModel",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Loads this text embedding model. If the loading fails, an error code is returned.",
+      "注释信息": [
+        "@returns { Promise<void> } The promise returned by the function.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 31300000 - Inner error.",
+        "@syscap SystemCapability.DistributedDataManager.DataIntelligence.Core",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "TextEmbedding",
+      "since_version": "15",
+      "system_capability": "SystemCapability.DistributedDataManager.DataIntelligence.Core",
+      "parameters": [],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "31300000",
+          "description": "Inner error."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "releaseModel",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Releases this text embedding model. If the releasing fails, an error code is returned.",
+      "注释信息": [
+        "@returns { Promise<void> } The promise returned by the function.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 31300000 - Inner error.",
+        "@syscap SystemCapability.DistributedDataManager.DataIntelligence.Core",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "TextEmbedding",
+      "since_version": "15",
+      "system_capability": "SystemCapability.DistributedDataManager.DataIntelligence.Core",
+      "parameters": [],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "31300000",
+          "description": "Inner error."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getEmbedding",
+      "返回值": "Promise<Array<number>>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the embedding vector of the given text. The model can process up to 512 characters of text per inference, supporting both Chinese and English. <br>2. Incorrect parameter types.",
+      "注释信息": [
+        "@param { string } text - The input text of the embedding model.",
+        "@returns { Promise<Array<number>> } The promise used to return the embedding result.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 31300000 - Inner error.",
+        "@syscap SystemCapability.DistributedDataManager.DataIntelligence.Core",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "TextEmbedding",
+      "since_version": "15",
+      "system_capability": "SystemCapability.DistributedDataManager.DataIntelligence.Core",
+      "parameters": [
+        {
+          "名称": "text",
+          "类型": "string",
+          "必填": true,
+          "说明": "The input text of the embedding model."
+        }
+      ],
+      "return_description": "The promise used to return the embedding result.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "31300000",
+          "description": "Inner error."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getEmbedding",
+      "返回值": "Promise<Array<Array<number>>>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the embedding vector of a given batch of text. The model can process up to 512 characters of text per inference, supporting both Chinese and English. <br>2. Incorrect parameter types.",
+      "注释信息": [
+        "@param { Array<string> } batchTexts - The input batch of texts of the embedding model.",
+        "@returns { Promise<Array<Array<number>>> } The promise used to return the embedding result.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 31300000 - Inner error.",
+        "@syscap SystemCapability.DistributedDataManager.DataIntelligence.Core",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "TextEmbedding",
+      "since_version": "15",
+      "system_capability": "SystemCapability.DistributedDataManager.DataIntelligence.Core",
+      "parameters": [
+        {
+          "名称": "batchTexts",
+          "类型": "Array<string>",
+          "必填": true,
+          "说明": "The input batch of texts of the embedding model."
+        }
+      ],
+      "return_description": "The promise used to return the embedding result.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "31300000",
+          "description": "Inner error."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "ImageEmbedding",
+      "所属模块": "未知模块",
+      "功能描述": "Describes the image embedding functions of the multi-modal embedding model.",
+      "注释信息": [
+        "@interface ImageEmbedding",
+        "@syscap SystemCapability.DistributedDataManager.DataIntelligence.Core",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "intelligence",
+      "since_version": "15",
+      "system_capability": "SystemCapability.DistributedDataManager.DataIntelligence.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "loadModel",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Loads this image embedding model. If the loading fails, an error code is returned.",
+      "注释信息": [
+        "@returns { Promise<void> } The promise returned by the function.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 31300000 - Inner error.",
+        "@syscap SystemCapability.DistributedDataManager.DataIntelligence.Core",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "ImageEmbedding",
+      "since_version": "15",
+      "system_capability": "SystemCapability.DistributedDataManager.DataIntelligence.Core",
+      "parameters": [],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "31300000",
+          "description": "Inner error."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "releaseModel",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Releases this image embedding model. If the releasing fails, an error code is returned.",
+      "注释信息": [
+        "@returns { Promise<void> } The promise returned by the function.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 31300000 - Inner error.",
+        "@syscap SystemCapability.DistributedDataManager.DataIntelligence.Core",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "ImageEmbedding",
+      "since_version": "15",
+      "system_capability": "SystemCapability.DistributedDataManager.DataIntelligence.Core",
+      "parameters": [],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "31300000",
+          "description": "Inner error."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getEmbedding",
+      "返回值": "Promise<Array<number>>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the embedding vector of the given image. The model can handle images below 20 MB in size in a single inference. <br>2. Incorrect parameter types.",
+      "注释信息": [
+        "@param { Image } image - The input image of the embedding model.",
+        "@returns { Promise<Array<number>> } The promise used to return the embedding result.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 31300000 - Inner error.",
+        "@syscap SystemCapability.DistributedDataManager.DataIntelligence.Core",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "ImageEmbedding",
+      "since_version": "15",
+      "system_capability": "SystemCapability.DistributedDataManager.DataIntelligence.Core",
+      "parameters": [
+        {
+          "名称": "image",
+          "类型": "Image",
+          "必填": true,
+          "说明": "The input image of the embedding model."
+        }
+      ],
+      "return_description": "The promise used to return the embedding result.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "31300000",
+          "description": "Inner error."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "type_alias",
+      "名称": "Image",
+      "所属模块": "未知模块",
+      "功能描述": "The type of the image can be its URI.",
+      "注释信息": [
+        "@typedef { string } Image",
+        "@syscap SystemCapability.DistributedDataManager.RelationalStore.Core",
+        "@since 15"
+      ],
+      "层级": 1,
+      "上级": "intelligence",
+      "since_version": "15",
+      "system_capability": "SystemCapability.DistributedDataManager.RelationalStore.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "splitText",
+      "返回值": "Promise<Array<string>>",
+      "所属模块": "未知模块",
+      "功能描述": "Splits text. <br>2. Incorrect parameter types.",
+      "注释信息": [
+        "@param { string } text - Text for chunking. The length of the text is no longer then 100k tokens.",
+        "@param { SplitConfig } config - Configurations of text chunking.",
+        "@returns { Promise<Array<string>> } The promise used to return the result.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 31300000 - Inner error.",
+        "@syscap SystemCapability.DistributedDataManager.DataIntelligence.Core",
+        "@since 15"
+      ],
+      "层级": 1,
+      "上级": "intelligence",
+      "since_version": "15",
+      "system_capability": "SystemCapability.DistributedDataManager.DataIntelligence.Core",
+      "parameters": [
+        {
+          "名称": "text",
+          "类型": "string",
+          "必填": true,
+          "说明": "Text for chunking. The length of the text is no longer then 100k tokens."
+        },
+        {
+          "名称": "config",
+          "类型": "SplitConfig",
+          "必填": true,
+          "说明": "Configurations of text chunking."
+        }
+      ],
+      "return_description": "The promise used to return the result.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "31300000",
+          "description": "Inner error."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "SplitConfig",
+      "所属模块": "未知模块",
+      "功能描述": "Manages text chunk process configurations.",
+      "注释信息": [
+        "@interface SplitConfig",
+        "@syscap SystemCapability.DistributedDataManager.DataIntelligence.Core",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "intelligence",
+      "since_version": "15",
+      "system_capability": "SystemCapability.DistributedDataManager.DataIntelligence.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "size",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "The maximun size of chunks.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.DistributedDataManager.DataIntelligence.Core",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "SplitConfig",
+      "since_version": "15",
+      "system_capability": "SystemCapability.DistributedDataManager.DataIntelligence.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "overlapRatio",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "The ratio of overlap between adjacent chunks.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.DistributedDataManager.DataIntelligence.Core",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "SplitConfig",
+      "since_version": "15",
+      "system_capability": "SystemCapability.DistributedDataManager.DataIntelligence.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    }
+  ]
+}

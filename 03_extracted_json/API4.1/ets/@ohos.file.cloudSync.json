@@ -1,0 +1,2424 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.CoreFileKit",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "namespace",
+      "名称": "cloudSync",
+      "所属模块": "@kit.CoreFileKit",
+      "功能描述": "Provides the capabilities to control cloud file synchronization.",
+      "注释信息": [
+        "@namespace cloudSync",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "@kit.CoreFileKit",
+      "since_version": "11",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "enum",
+      "名称": "SyncState",
+      "所属模块": "未知模块",
+      "功能描述": "Describes the Sync state type.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "cloudSync",
+      "since_version": "10",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "UPLOADING",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the sync state is uploading.",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "SyncState",
+      "since_version": "10",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "UPLOAD_FAILED",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the sync failed in upload processing.",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "SyncState",
+      "since_version": "10",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "DOWNLOADING",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the sync state is downloading.",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "SyncState",
+      "since_version": "10",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "DOWNLOAD_FAILED",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the sync failed in download processing.",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "SyncState",
+      "since_version": "10",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMPLETED",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the sync finish.",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "SyncState",
+      "since_version": "10",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "STOPPED",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the sync has been stopped.",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "SyncState",
+      "since_version": "10",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "enum",
+      "名称": "ErrorType",
+      "所属模块": "未知模块",
+      "功能描述": "Describes the Sync Error type.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "cloudSync",
+      "since_version": "10",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "NO_ERROR",
+      "所属模块": "未知模块",
+      "功能描述": "No error occurred.",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "ErrorType",
+      "since_version": "10",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "NETWORK_UNAVAILABLE",
+      "所属模块": "未知模块",
+      "功能描述": "Synchronization aborted due to network unavailable.",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "ErrorType",
+      "since_version": "10",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "WIFI_UNAVAILABLE",
+      "所属模块": "未知模块",
+      "功能描述": "Synchronization aborted due to wifi unavailable.",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "ErrorType",
+      "since_version": "10",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "BATTERY_LEVEL_LOW",
+      "所属模块": "未知模块",
+      "功能描述": "Synchronization aborted due to low capacity level.",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "ErrorType",
+      "since_version": "10",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "BATTERY_LEVEL_WARNING",
+      "所属模块": "未知模块",
+      "功能描述": "Synchronization aborted due to warning low capacity level.",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "ErrorType",
+      "since_version": "10",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CLOUD_STORAGE_FULL",
+      "所属模块": "未知模块",
+      "功能描述": "Synchronization aborted due to cloud storage is full.",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "ErrorType",
+      "since_version": "10",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "LOCAL_STORAGE_FULL",
+      "所属模块": "未知模块",
+      "功能描述": "Synchronization aborted due to local storage is full.",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "ErrorType",
+      "since_version": "10",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "interface",
+      "名称": "SyncProgress",
+      "所属模块": "未知模块",
+      "功能描述": "The SyncProgress data structure.",
+      "注释信息": [
+        "@interface SyncProgress",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "cloudSync",
+      "since_version": "10",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "property",
+      "名称": "state",
+      "属性类型": "SyncState",
+      "所属模块": "未知模块",
+      "功能描述": "The current sync state.",
+      "注释信息": [
+        "@type { SyncState }",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "SyncProgress",
+      "since_version": "10",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "property",
+      "名称": "error",
+      "属性类型": "ErrorType",
+      "所属模块": "未知模块",
+      "功能描述": "The error type of sync.",
+      "注释信息": [
+        "@type { ErrorType }",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "SyncProgress",
+      "since_version": "10",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "class",
+      "名称": "GallerySync",
+      "所属模块": "未知模块",
+      "功能描述": "GallerySync object.",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "cloudSync",
+      "since_version": "10",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "constructor",
+      "返回值": "GallerySync",
+      "所属模块": "未知模块",
+      "功能描述": "A constructor used to create a GallerySync object.",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "GallerySync",
+      "since_version": "10",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Subscribes to sync progress change event. This method uses a callback to get sync progress changes.",
+      "注释信息": [
+        "@permission ohos.permission.CLOUDFILE_SYNC",
+        "@param { 'progress' } evt - event type.",
+        "@param { function } callback - callback function with a `SyncProgress` argument.",
+        "@throws { BusinessError } 201 - Permission verification failed.",
+        "@throws { BusinessError } 202 - The caller is not a system application.",
+        "@throws { BusinessError } 401 - The input parameter is invalid.",
+        "@throws { BusinessError } 13600001 - IPC error",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "GallerySync",
+      "since_version": "10",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [
+        {
+          "名称": "evt",
+          "类型": "'progress'",
+          "必填": true,
+          "说明": "event type."
+        },
+        {
+          "名称": "callback",
+          "类型": "function",
+          "必填": true,
+          "说明": "callback function with a `SyncProgress` argument."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission verification failed."
+        },
+        {
+          "code": "202",
+          "description": "The caller is not a system application."
+        },
+        {
+          "code": "401",
+          "description": "The input parameter is invalid."
+        },
+        {
+          "code": "13600001",
+          "description": "IPC error"
+        }
+      ],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unsubscribes from sync progress event.",
+      "注释信息": [
+        "@permission ohos.permission.CLOUDFILE_SYNC",
+        "@param { 'progress' } evt - event type.",
+        "@param { function } callback - callback function with a `SyncProgress` argument.",
+        "@throws { BusinessError } 201 - Permission verification failed.",
+        "@throws { BusinessError } 202 - The caller is not a system application.",
+        "@throws { BusinessError } 401 - The input parameter is invalid.",
+        "@throws { BusinessError } 13600001 - IPC error",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "GallerySync",
+      "since_version": "10",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [
+        {
+          "名称": "evt",
+          "类型": "'progress'",
+          "必填": true,
+          "说明": "event type."
+        },
+        {
+          "名称": "callback",
+          "类型": "function",
+          "必填": true,
+          "说明": "callback function with a `SyncProgress` argument."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission verification failed."
+        },
+        {
+          "code": "202",
+          "description": "The caller is not a system application."
+        },
+        {
+          "code": "401",
+          "description": "The input parameter is invalid."
+        },
+        {
+          "code": "13600001",
+          "description": "IPC error"
+        }
+      ],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unsubscribes all callbacks objects from sync progress event.",
+      "注释信息": [
+        "@permission ohos.permission.CLOUDFILE_SYNC",
+        "@param { 'progress' } evt - event type.",
+        "@throws { BusinessError } 201 - Permission verification failed.",
+        "@throws { BusinessError } 202 - The caller is not a system application.",
+        "@throws { BusinessError } 401 - The input parameter is invalid.",
+        "@throws { BusinessError } 13600001 - IPC error",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "GallerySync",
+      "since_version": "10",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [
+        {
+          "名称": "evt",
+          "类型": "'progress'",
+          "必填": true,
+          "说明": "event type."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission verification failed."
+        },
+        {
+          "code": "202",
+          "description": "The caller is not a system application."
+        },
+        {
+          "code": "401",
+          "description": "The input parameter is invalid."
+        },
+        {
+          "code": "13600001",
+          "description": "IPC error"
+        }
+      ],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "start",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Start the gallery sync task.",
+      "注释信息": [
+        "@permission ohos.permission.CLOUDFILE_SYNC",
+        "@returns { Promise<void> } - Return Promise.",
+        "@throws { BusinessError } 201 - Permission verification failed.",
+        "@throws { BusinessError } 202 - The caller is not a system application.",
+        "@throws { BusinessError } 401 - The input parameter is invalid.",
+        "@throws { BusinessError } 22400001 - Cloud status not ready.",
+        "@throws { BusinessError } 22400002 - Network unavailable.",
+        "@throws { BusinessError } 22400003 - Battery level warning.",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "GallerySync",
+      "since_version": "10",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "- Return Promise.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission verification failed."
+        },
+        {
+          "code": "202",
+          "description": "The caller is not a system application."
+        },
+        {
+          "code": "401",
+          "description": "The input parameter is invalid."
+        },
+        {
+          "code": "22400001",
+          "description": "Cloud status not ready."
+        },
+        {
+          "code": "22400002",
+          "description": "Network unavailable."
+        },
+        {
+          "code": "22400003",
+          "description": "Battery level warning."
+        }
+      ],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "start",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Start the gallery sync task with callback.",
+      "注释信息": [
+        "@permission ohos.permission.CLOUDFILE_SYNC",
+        "@param { AsyncCallback<void> } [callback] - Callback function.",
+        "@throws { BusinessError } 201 - Permission verification failed.",
+        "@throws { BusinessError } 202 - The caller is not a system application.",
+        "@throws { BusinessError } 401 - The input parameter is invalid.",
+        "@throws { BusinessError } 22400001 - Cloud status not ready.",
+        "@throws { BusinessError } 22400002 - Network unavailable.",
+        "@throws { BusinessError } 22400003 - Battery level warning.",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "GallerySync",
+      "since_version": "10",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "AsyncCallback<void> } [callback] - Callback function."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission verification failed."
+        },
+        {
+          "code": "202",
+          "description": "The caller is not a system application."
+        },
+        {
+          "code": "401",
+          "description": "The input parameter is invalid."
+        },
+        {
+          "code": "22400001",
+          "description": "Cloud status not ready."
+        },
+        {
+          "code": "22400002",
+          "description": "Network unavailable."
+        },
+        {
+          "code": "22400003",
+          "description": "Battery level warning."
+        }
+      ],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "stop",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Stop the gallery sync task.",
+      "注释信息": [
+        "@permission ohos.permission.CLOUDFILE_SYNC",
+        "@returns { Promise<void> } - Return Promise.",
+        "@throws { BusinessError } 201 - Permission verification failed.",
+        "@throws { BusinessError } 202 - The caller is not a system application.",
+        "@throws { BusinessError } 401 - The input parameter is invalid.",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "GallerySync",
+      "since_version": "10",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "- Return Promise.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission verification failed."
+        },
+        {
+          "code": "202",
+          "description": "The caller is not a system application."
+        },
+        {
+          "code": "401",
+          "description": "The input parameter is invalid."
+        }
+      ],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "stop",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Stop the gallery sync task with callback.",
+      "注释信息": [
+        "@permission ohos.permission.CLOUDFILE_SYNC",
+        "@param { AsyncCallback<void> } [callback] - Callback function.",
+        "@throws { BusinessError } 201 - Permission verification failed.",
+        "@throws { BusinessError } 202 - The caller is not a system application.",
+        "@throws { BusinessError } 401 - The input parameter is invalid.",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "GallerySync",
+      "since_version": "10",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "AsyncCallback<void> } [callback] - Callback function."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission verification failed."
+        },
+        {
+          "code": "202",
+          "description": "The caller is not a system application."
+        },
+        {
+          "code": "401",
+          "description": "The input parameter is invalid."
+        }
+      ],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "enum",
+      "名称": "State",
+      "所属模块": "未知模块",
+      "功能描述": "Describes the State type of download.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "cloudSync",
+      "since_version": "11",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "RUNNING",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the download task in process now.",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "State",
+      "since_version": "11",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMPLETED",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the download task finished.",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "State",
+      "since_version": "11",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "FAILED",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the download task failed.",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "State",
+      "since_version": "11",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "STOPPED",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the download task stopped.",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "State",
+      "since_version": "11",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "enum",
+      "名称": "DownloadErrorType",
+      "所属模块": "未知模块",
+      "功能描述": "Describes the download Error type.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "cloudSync",
+      "since_version": "11",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "NO_ERROR",
+      "所属模块": "未知模块",
+      "功能描述": "No error occurred.",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "DownloadErrorType",
+      "since_version": "11",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "UNKNOWN_ERROR",
+      "所属模块": "未知模块",
+      "功能描述": "download aborted due to unknown error.",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "DownloadErrorType",
+      "since_version": "11",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "NETWORK_UNAVAILABLE",
+      "所属模块": "未知模块",
+      "功能描述": "download aborted due to network unavailable.",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "DownloadErrorType",
+      "since_version": "11",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "LOCAL_STORAGE_FULL",
+      "所属模块": "未知模块",
+      "功能描述": "download aborted due to local storage is full.",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "DownloadErrorType",
+      "since_version": "11",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CONTENT_NOT_FOUND",
+      "所属模块": "未知模块",
+      "功能描述": "download aborted due to content is not found in the cloud.",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "DownloadErrorType",
+      "since_version": "11",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "FREQUENT_USER_REQUESTS",
+      "所属模块": "未知模块",
+      "功能描述": "download aborted due to frequent user requests.",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "DownloadErrorType",
+      "since_version": "11",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "interface",
+      "名称": "DownloadProgress",
+      "所属模块": "未知模块",
+      "功能描述": "The DownloadProgress data structure.",
+      "注释信息": [
+        "@interface DownloadProgress",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "cloudSync",
+      "since_version": "11",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "property",
+      "名称": "state",
+      "属性类型": "State",
+      "所属模块": "未知模块",
+      "功能描述": "The current download state.",
+      "注释信息": [
+        "@type { State }",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "DownloadProgress",
+      "since_version": "11",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "property",
+      "名称": "processed",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "The processed data size for current file.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "DownloadProgress",
+      "since_version": "11",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "property",
+      "名称": "size",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "The size of current file.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "DownloadProgress",
+      "since_version": "11",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "property",
+      "名称": "uri",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "The uri of current file.",
+      "注释信息": [
+        "@type { string }",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "DownloadProgress",
+      "since_version": "11",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "property",
+      "名称": "error",
+      "属性类型": "DownloadErrorType",
+      "所属模块": "未知模块",
+      "功能描述": "The error type of download.",
+      "注释信息": [
+        "@type { DownloadErrorType }",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "DownloadProgress",
+      "since_version": "11",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "class",
+      "名称": "Download",
+      "所属模块": "未知模块",
+      "功能描述": "Download object.",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "cloudSync",
+      "since_version": "10",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "constructor",
+      "返回值": "Download",
+      "所属模块": "未知模块",
+      "功能描述": "A constructor used to create a Download object.",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "Download",
+      "since_version": "10",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Subscribes to download progress change event. This method uses a callback to get download progress changes.",
+      "注释信息": [
+        "@permission ohos.permission.CLOUDFILE_SYNC",
+        "@param { 'progress' } evt - event type.",
+        "@param { function } callback - callback function with a `DownloadProgress` argument.",
+        "@throws { BusinessError } 201 - Permission verification failed.",
+        "@throws { BusinessError } 202 - The caller is not a system application.",
+        "@throws { BusinessError } 401 - The input parameter is invalid.",
+        "@throws { BusinessError } 13600001 - IPC error",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "Download",
+      "since_version": "10",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [
+        {
+          "名称": "evt",
+          "类型": "'progress'",
+          "必填": true,
+          "说明": "event type."
+        },
+        {
+          "名称": "callback",
+          "类型": "function",
+          "必填": true,
+          "说明": "callback function with a `DownloadProgress` argument."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission verification failed."
+        },
+        {
+          "code": "202",
+          "description": "The caller is not a system application."
+        },
+        {
+          "code": "401",
+          "description": "The input parameter is invalid."
+        },
+        {
+          "code": "13600001",
+          "description": "IPC error"
+        }
+      ],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unsubscribes from download progress event.",
+      "注释信息": [
+        "@permission ohos.permission.CLOUDFILE_SYNC",
+        "@param { 'progress' } evt - event type.",
+        "@param { function } callback - callback function with a `DownloadProgress` argument.",
+        "@throws { BusinessError } 201 - Permission verification failed.",
+        "@throws { BusinessError } 202 - The caller is not a system application.",
+        "@throws { BusinessError } 401 - The input parameter is invalid.",
+        "@throws { BusinessError } 13600001 - IPC error",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "Download",
+      "since_version": "10",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [
+        {
+          "名称": "evt",
+          "类型": "'progress'",
+          "必填": true,
+          "说明": "event type."
+        },
+        {
+          "名称": "callback",
+          "类型": "function",
+          "必填": true,
+          "说明": "callback function with a `DownloadProgress` argument."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission verification failed."
+        },
+        {
+          "code": "202",
+          "description": "The caller is not a system application."
+        },
+        {
+          "code": "401",
+          "description": "The input parameter is invalid."
+        },
+        {
+          "code": "13600001",
+          "description": "IPC error"
+        }
+      ],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unsubscribes all callbacks objects from download progress event.",
+      "注释信息": [
+        "@permission ohos.permission.CLOUDFILE_SYNC",
+        "@param { 'progress' } evt - event type.",
+        "@throws { BusinessError } 201 - Permission verification failed.",
+        "@throws { BusinessError } 202 - The caller is not a system application.",
+        "@throws { BusinessError } 401 - The input parameter is invalid.",
+        "@throws { BusinessError } 13600001 - IPC error",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "Download",
+      "since_version": "10",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [
+        {
+          "名称": "evt",
+          "类型": "'progress'",
+          "必填": true,
+          "说明": "event type."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission verification failed."
+        },
+        {
+          "code": "202",
+          "description": "The caller is not a system application."
+        },
+        {
+          "code": "401",
+          "description": "The input parameter is invalid."
+        },
+        {
+          "code": "13600001",
+          "description": "IPC error"
+        }
+      ],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "start",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Start the download task.",
+      "注释信息": [
+        "@permission ohos.permission.CLOUDFILE_SYNC",
+        "@param { string } uri - uri of file.",
+        "@returns { Promise<void> } - Return Promise.",
+        "@throws { BusinessError } 201 - Permission verification failed.",
+        "@throws { BusinessError } 202 - The caller is not a system application.",
+        "@throws { BusinessError } 401 - The input parameter is invalid.",
+        "@throws { BusinessError } 13900002 - No such file or directory.",
+        "@throws { BusinessError } 13900025 - No space left on device.",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "Download",
+      "since_version": "10",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [
+        {
+          "名称": "uri",
+          "类型": "string",
+          "必填": true,
+          "说明": "uri of file."
+        }
+      ],
+      "return_description": "- Return Promise.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission verification failed."
+        },
+        {
+          "code": "202",
+          "description": "The caller is not a system application."
+        },
+        {
+          "code": "401",
+          "description": "The input parameter is invalid."
+        },
+        {
+          "code": "13900002",
+          "description": "No such file or directory."
+        },
+        {
+          "code": "13900025",
+          "description": "No space left on device."
+        }
+      ],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "start",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Start the download task with callback.",
+      "注释信息": [
+        "@permission ohos.permission.CLOUDFILE_SYNC",
+        "@param { string } uri - uri of file.",
+        "@param { AsyncCallback<void> } [callback] - Callback function.",
+        "@throws { BusinessError } 201 - Permission verification failed.",
+        "@throws { BusinessError } 202 - The caller is not a system application.",
+        "@throws { BusinessError } 401 - The input parameter is invalid.",
+        "@throws { BusinessError } 13900002 - No such file or directory.",
+        "@throws { BusinessError } 13900025 - No space left on device.",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "Download",
+      "since_version": "10",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [
+        {
+          "名称": "uri",
+          "类型": "string",
+          "必填": true,
+          "说明": "uri of file."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "AsyncCallback<void> } [callback] - Callback function."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission verification failed."
+        },
+        {
+          "code": "202",
+          "description": "The caller is not a system application."
+        },
+        {
+          "code": "401",
+          "description": "The input parameter is invalid."
+        },
+        {
+          "code": "13900002",
+          "description": "No such file or directory."
+        },
+        {
+          "code": "13900025",
+          "description": "No space left on device."
+        }
+      ],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "stop",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Stop the download task.",
+      "注释信息": [
+        "@permission ohos.permission.CLOUDFILE_SYNC",
+        "@param { string } uri - uri of file.",
+        "@returns { Promise<void> } - Return Promise.",
+        "@throws { BusinessError } 201 - Permission verification failed.",
+        "@throws { BusinessError } 202 - The caller is not a system application.",
+        "@throws { BusinessError } 401 - The input parameter is invalid.",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "Download",
+      "since_version": "10",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [
+        {
+          "名称": "uri",
+          "类型": "string",
+          "必填": true,
+          "说明": "uri of file."
+        }
+      ],
+      "return_description": "- Return Promise.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission verification failed."
+        },
+        {
+          "code": "202",
+          "description": "The caller is not a system application."
+        },
+        {
+          "code": "401",
+          "description": "The input parameter is invalid."
+        }
+      ],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "stop",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Stop the download task with callback.",
+      "注释信息": [
+        "@permission ohos.permission.CLOUDFILE_SYNC",
+        "@param { string } uri - uri of file.",
+        "@param { AsyncCallback<void> } [callback] - Callback function.",
+        "@throws { BusinessError } 201 - Permission verification failed.",
+        "@throws { BusinessError } 202 - The caller is not a system application.",
+        "@throws { BusinessError } 401 - The input parameter is invalid.",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "Download",
+      "since_version": "10",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [
+        {
+          "名称": "uri",
+          "类型": "string",
+          "必填": true,
+          "说明": "uri of file."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "AsyncCallback<void> } [callback] - Callback function."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission verification failed."
+        },
+        {
+          "code": "202",
+          "description": "The caller is not a system application."
+        },
+        {
+          "code": "401",
+          "description": "The input parameter is invalid."
+        }
+      ],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "class",
+      "名称": "FileSync",
+      "所属模块": "未知模块",
+      "功能描述": "FileSync object.",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@systemapi",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "cloudSync",
+      "since_version": "11",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "constructor",
+      "返回值": "FileSync",
+      "所属模块": "未知模块",
+      "功能描述": "A constructor used to create a FileSync object.",
+      "注释信息": [
+        "@throws { BusinessError } 202 - Permission verification failed, application which is not a system application uses system API.",
+        "@throws { BusinessError } 401 - The input parameter is invalid.",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@systemapi",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "FileSync",
+      "since_version": "11",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "202",
+          "description": "Permission verification failed, application which is not a system application uses system API."
+        },
+        {
+          "code": "401",
+          "description": "The input parameter is invalid."
+        }
+      ],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Subscribes to sync progress change event. This method uses a callback to get sync progress changes.",
+      "注释信息": [
+        "@permission ohos.permission.CLOUDFILE_SYNC",
+        "@param { 'progress' } event - event type.",
+        "@param { Callback<SyncProgress> } callback - callback function with a `SyncProgress` argument.",
+        "@throws { BusinessError } 201 - Permission verification failed, usually the result returned by VerifyAccessToken.",
+        "@throws { BusinessError } 202 - Permission verification failed, application which is not a system application uses system API.",
+        "@throws { BusinessError } 401 - The input parameter is invalid.",
+        "@throws { BusinessError } 13600001 - IPC error",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@systemapi",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "FileSync",
+      "since_version": "11",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [
+        {
+          "名称": "event",
+          "类型": "'progress'",
+          "必填": true,
+          "说明": "event type."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<SyncProgress>",
+          "必填": true,
+          "说明": "callback function with a `SyncProgress` argument."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission verification failed, usually the result returned by VerifyAccessToken."
+        },
+        {
+          "code": "202",
+          "description": "Permission verification failed, application which is not a system application uses system API."
+        },
+        {
+          "code": "401",
+          "description": "The input parameter is invalid."
+        },
+        {
+          "code": "13600001",
+          "description": "IPC error"
+        }
+      ],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unsubscribes from sync progress event.",
+      "注释信息": [
+        "@permission ohos.permission.CLOUDFILE_SYNC",
+        "@param { 'progress' } event - event type.",
+        "@param { Callback<SyncProgress> } [callback] - callback function with a `SyncProgress` argument.",
+        "@throws { BusinessError } 201 - Permission verification failed, usually the result returned by VerifyAccessToken.",
+        "@throws { BusinessError } 202 - Permission verification failed, application which is not a system application uses system API.",
+        "@throws { BusinessError } 401 - The input parameter is invalid.",
+        "@throws { BusinessError } 13600001 - IPC error",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@systemapi",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "FileSync",
+      "since_version": "11",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [
+        {
+          "名称": "event",
+          "类型": "'progress'",
+          "必填": true,
+          "说明": "event type."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "Callback<SyncProgress> } [callback] - callback function with a `SyncProgress` argument."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission verification failed, usually the result returned by VerifyAccessToken."
+        },
+        {
+          "code": "202",
+          "description": "Permission verification failed, application which is not a system application uses system API."
+        },
+        {
+          "code": "401",
+          "description": "The input parameter is invalid."
+        },
+        {
+          "code": "13600001",
+          "description": "IPC error"
+        }
+      ],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "start",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Start the file sync task.",
+      "注释信息": [
+        "@permission ohos.permission.CLOUDFILE_SYNC",
+        "@returns { Promise<void> } - Return Promise.",
+        "@throws { BusinessError } 201 - Permission verification failed, usually the result returned by VerifyAccessToken.",
+        "@throws { BusinessError } 202 - Permission verification failed, application which is not a system application uses system API.",
+        "@throws { BusinessError } 401 - The input parameter is invalid.",
+        "@throws { BusinessError } 13600001 - IPC error.",
+        "@throws { BusinessError } 22400001 - Cloud status not ready.",
+        "@throws { BusinessError } 22400002 - Network unavailable.",
+        "@throws { BusinessError } 22400003 - Battery level warning.",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@systemapi",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "FileSync",
+      "since_version": "11",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "- Return Promise.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission verification failed, usually the result returned by VerifyAccessToken."
+        },
+        {
+          "code": "202",
+          "description": "Permission verification failed, application which is not a system application uses system API."
+        },
+        {
+          "code": "401",
+          "description": "The input parameter is invalid."
+        },
+        {
+          "code": "13600001",
+          "description": "IPC error."
+        },
+        {
+          "code": "22400001",
+          "description": "Cloud status not ready."
+        },
+        {
+          "code": "22400002",
+          "description": "Network unavailable."
+        },
+        {
+          "code": "22400003",
+          "description": "Battery level warning."
+        }
+      ],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "start",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Start the file sync task with callback.",
+      "注释信息": [
+        "@permission ohos.permission.CLOUDFILE_SYNC",
+        "@param { AsyncCallback<void> } callback - Callback function.",
+        "@throws { BusinessError } 201 - Permission verification failed, usually the result returned by VerifyAccessToken.",
+        "@throws { BusinessError } 202 - Permission verification failed, application which is not a system application uses system API.",
+        "@throws { BusinessError } 401 - The input parameter is invalid.",
+        "@throws { BusinessError } 13600001 - IPC error.",
+        "@throws { BusinessError } 22400001 - Cloud status not ready.",
+        "@throws { BusinessError } 22400002 - Network unavailable.",
+        "@throws { BusinessError } 22400003 - Battery level warning.",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@systemapi",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "FileSync",
+      "since_version": "11",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "Callback function."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission verification failed, usually the result returned by VerifyAccessToken."
+        },
+        {
+          "code": "202",
+          "description": "Permission verification failed, application which is not a system application uses system API."
+        },
+        {
+          "code": "401",
+          "description": "The input parameter is invalid."
+        },
+        {
+          "code": "13600001",
+          "description": "IPC error."
+        },
+        {
+          "code": "22400001",
+          "description": "Cloud status not ready."
+        },
+        {
+          "code": "22400002",
+          "description": "Network unavailable."
+        },
+        {
+          "code": "22400003",
+          "description": "Battery level warning."
+        }
+      ],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "stop",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Stop the file sync task.",
+      "注释信息": [
+        "@permission ohos.permission.CLOUDFILE_SYNC",
+        "@returns { Promise<void> } - Return Promise.",
+        "@throws { BusinessError } 201 - Permission verification failed, usually the result returned by VerifyAccessToken.",
+        "@throws { BusinessError } 202 - Permission verification failed, application which is not a system application uses system API.",
+        "@throws { BusinessError } 401 - The input parameter is invalid.",
+        "@throws { BusinessError } 13600001 - IPC error.",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@systemapi",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "FileSync",
+      "since_version": "11",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "- Return Promise.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission verification failed, usually the result returned by VerifyAccessToken."
+        },
+        {
+          "code": "202",
+          "description": "Permission verification failed, application which is not a system application uses system API."
+        },
+        {
+          "code": "401",
+          "description": "The input parameter is invalid."
+        },
+        {
+          "code": "13600001",
+          "description": "IPC error."
+        }
+      ],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "stop",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Stop the file sync task with callback.",
+      "注释信息": [
+        "@permission ohos.permission.CLOUDFILE_SYNC",
+        "@param { AsyncCallback<void> } callback - Callback function.",
+        "@throws { BusinessError } 201 - Permission verification failed, usually the result returned by VerifyAccessToken.",
+        "@throws { BusinessError } 202 - Permission verification failed, application which is not a system application uses system API.",
+        "@throws { BusinessError } 401 - The input parameter is invalid.",
+        "@throws { BusinessError } 13600001 - IPC error.",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@systemapi",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "FileSync",
+      "since_version": "11",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "Callback function."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission verification failed, usually the result returned by VerifyAccessToken."
+        },
+        {
+          "code": "202",
+          "description": "Permission verification failed, application which is not a system application uses system API."
+        },
+        {
+          "code": "401",
+          "description": "The input parameter is invalid."
+        },
+        {
+          "code": "13600001",
+          "description": "IPC error."
+        }
+      ],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "getLastSyncTime",
+      "返回值": "Promise<number>",
+      "所属模块": "未知模块",
+      "功能描述": "Get the last synchronization time.",
+      "注释信息": [
+        "@permission ohos.permission.CLOUDFILE_SYNC",
+        "@returns { Promise<number> } - Return the date of last synchronization.",
+        "@throws { BusinessError } 201 - Permission verification failed, usually the result returned by VerifyAccessToken.",
+        "@throws { BusinessError } 202 - Permission verification failed, application which is not a system application uses system API.",
+        "@throws { BusinessError } 401 - The input parameter is invalid.",
+        "@throws { BusinessError } 13600001 - IPC error.",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@systemapi",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "FileSync",
+      "since_version": "11",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "- Return the date of last synchronization.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission verification failed, usually the result returned by VerifyAccessToken."
+        },
+        {
+          "code": "202",
+          "description": "Permission verification failed, application which is not a system application uses system API."
+        },
+        {
+          "code": "401",
+          "description": "The input parameter is invalid."
+        },
+        {
+          "code": "13600001",
+          "description": "IPC error."
+        }
+      ],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "getLastSyncTime",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Get the last synchronization time.",
+      "注释信息": [
+        "@permission ohos.permission.CLOUDFILE_SYNC",
+        "@param { AsyncCallback<number> } callback - Callback function.",
+        "@throws { BusinessError } 201 - Permission verification failed, usually the result returned by VerifyAccessToken.",
+        "@throws { BusinessError } 202 - Permission verification failed, application which is not a system application uses system API.",
+        "@throws { BusinessError } 401 - The input parameter is invalid.",
+        "@throws { BusinessError } 13600001 - IPC error.",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@systemapi",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "FileSync",
+      "since_version": "11",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<number>",
+          "必填": true,
+          "说明": "Callback function."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission verification failed, usually the result returned by VerifyAccessToken."
+        },
+        {
+          "code": "202",
+          "description": "Permission verification failed, application which is not a system application uses system API."
+        },
+        {
+          "code": "401",
+          "description": "The input parameter is invalid."
+        },
+        {
+          "code": "13600001",
+          "description": "IPC error."
+        }
+      ],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "class",
+      "名称": "CloudFileCache",
+      "所属模块": "未知模块",
+      "功能描述": "CloudFileCache object.",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "cloudSync",
+      "since_version": "11",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "constructor",
+      "返回值": "CloudFileCache",
+      "所属模块": "未知模块",
+      "功能描述": "A constructor used to create a CloudFileCache object.",
+      "注释信息": [
+        "@throws { BusinessError } 401 - The input parameter is invalid.",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "CloudFileCache",
+      "since_version": "11",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "The input parameter is invalid."
+        }
+      ],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Subscribes to cloud file cache download progress change event. This method uses a callback to get download progress changes.",
+      "注释信息": [
+        "@param { 'progress' } event - event type.",
+        "@param { Callback<DownloadProgress> } callback - callback function with a `DownloadProgress` argument.",
+        "@throws { BusinessError } 401 - The input parameter is invalid.",
+        "@throws { BusinessError } 13600001 - IPC error",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "CloudFileCache",
+      "since_version": "11",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [
+        {
+          "名称": "event",
+          "类型": "'progress'",
+          "必填": true,
+          "说明": "event type."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<DownloadProgress>",
+          "必填": true,
+          "说明": "callback function with a `DownloadProgress` argument."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "The input parameter is invalid."
+        },
+        {
+          "code": "13600001",
+          "description": "IPC error"
+        }
+      ],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unsubscribes from cloud file cache download progress event.",
+      "注释信息": [
+        "@param { 'progress' } event - event type.",
+        "@param { Callback<DownloadProgress> } [callback] - callback function with a `DownloadProgress` argument.",
+        "@throws { BusinessError } 401 - The input parameter is invalid.",
+        "@throws { BusinessError } 13600001 - IPC error",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "CloudFileCache",
+      "since_version": "11",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [
+        {
+          "名称": "event",
+          "类型": "'progress'",
+          "必填": true,
+          "说明": "event type."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "Callback<DownloadProgress> } [callback] - callback function with a `DownloadProgress` argument."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "The input parameter is invalid."
+        },
+        {
+          "code": "13600001",
+          "description": "IPC error"
+        }
+      ],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "start",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Start the cloud file cache download task.",
+      "注释信息": [
+        "@param { string } uri - uri of file.",
+        "@returns { Promise<void> } - Return Promise.",
+        "@throws { BusinessError } 401 - The input parameter is invalid.",
+        "@throws { BusinessError } 13600001 - IPC error.",
+        "@throws { BusinessError } 13900002 - No such file or directory.",
+        "@throws { BusinessError } 13900025 - No space left on device.",
+        "@throws { BusinessError } 14000002 - Invalid uri.",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "CloudFileCache",
+      "since_version": "11",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [
+        {
+          "名称": "uri",
+          "类型": "string",
+          "必填": true,
+          "说明": "uri of file."
+        }
+      ],
+      "return_description": "- Return Promise.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "The input parameter is invalid."
+        },
+        {
+          "code": "13600001",
+          "description": "IPC error."
+        },
+        {
+          "code": "13900002",
+          "description": "No such file or directory."
+        },
+        {
+          "code": "13900025",
+          "description": "No space left on device."
+        },
+        {
+          "code": "14000002",
+          "description": "Invalid uri."
+        }
+      ],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "start",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Start the cloud file cache download task with callback.",
+      "注释信息": [
+        "@param { string } uri - uri of file.",
+        "@param { AsyncCallback<void> } callback - Callback function.",
+        "@throws { BusinessError } 401 - The input parameter is invalid.",
+        "@throws { BusinessError } 13600001 - IPC error.",
+        "@throws { BusinessError } 13900002 - No such file or directory.",
+        "@throws { BusinessError } 13900025 - No space left on device.",
+        "@throws { BusinessError } 14000002 - Invalid uri.",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "CloudFileCache",
+      "since_version": "11",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [
+        {
+          "名称": "uri",
+          "类型": "string",
+          "必填": true,
+          "说明": "uri of file."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "Callback function."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "The input parameter is invalid."
+        },
+        {
+          "code": "13600001",
+          "description": "IPC error."
+        },
+        {
+          "code": "13900002",
+          "description": "No such file or directory."
+        },
+        {
+          "code": "13900025",
+          "description": "No space left on device."
+        },
+        {
+          "code": "14000002",
+          "description": "Invalid uri."
+        }
+      ],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "stop",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Stop the cloud file cache download task.",
+      "注释信息": [
+        "@param { string } uri - uri of file.",
+        "@returns { Promise<void> } - Return Promise.",
+        "@throws { BusinessError } 401 - The input parameter is invalid.",
+        "@throws { BusinessError } 13600001 - IPC error.",
+        "@throws { BusinessError } 13900002 - No such file or directory.",
+        "@throws { BusinessError } 14000002 - Invalid uri.",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "CloudFileCache",
+      "since_version": "11",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [
+        {
+          "名称": "uri",
+          "类型": "string",
+          "必填": true,
+          "说明": "uri of file."
+        }
+      ],
+      "return_description": "- Return Promise.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "The input parameter is invalid."
+        },
+        {
+          "code": "13600001",
+          "description": "IPC error."
+        },
+        {
+          "code": "13900002",
+          "description": "No such file or directory."
+        },
+        {
+          "code": "14000002",
+          "description": "Invalid uri."
+        }
+      ],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "stop",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Stop the cloud file cache download task with callback.",
+      "注释信息": [
+        "@param { string } uri - uri of file.",
+        "@param { AsyncCallback<void> } callback - Callback function.",
+        "@throws { BusinessError } 401 - The input parameter is invalid.",
+        "@throws { BusinessError } 13600001 - IPC error.",
+        "@throws { BusinessError } 13900002 - No such file or directory.",
+        "@throws { BusinessError } 14000002 - Invalid uri.",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "CloudFileCache",
+      "since_version": "11",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [
+        {
+          "名称": "uri",
+          "类型": "string",
+          "必填": true,
+          "说明": "uri of file."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "Callback function."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "The input parameter is invalid."
+        },
+        {
+          "code": "13600001",
+          "description": "IPC error."
+        },
+        {
+          "code": "13900002",
+          "description": "No such file or directory."
+        },
+        {
+          "code": "14000002",
+          "description": "Invalid uri."
+        }
+      ],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "cleanCache",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Clean the local file cache.",
+      "注释信息": [
+        "@permission ohos.permission.CLOUDFILE_SYNC",
+        "@param { string } uri - uri of file.",
+        "@throws { BusinessError } 201 - Permission verification failed, usually the result returned by VerifyAccessToken.",
+        "@throws { BusinessError } 202 - Permission verification failed, application which is not a system application uses system API.",
+        "@throws { BusinessError } 401 - The input parameter is invalid.",
+        "@throws { BusinessError } 13600001 - IPC error.",
+        "@throws { BusinessError } 13900002 - No such file or directory.",
+        "@throws { BusinessError } 14000002 - Invalid uri.",
+        "@syscap SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+        "@systemapi",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "CloudFileCache",
+      "since_version": "11",
+      "system_capability": "SystemCapability.FileManagement.DistributedFileService.CloudSync.Core",
+      "parameters": [
+        {
+          "名称": "uri",
+          "类型": "string",
+          "必填": true,
+          "说明": "uri of file."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission verification failed, usually the result returned by VerifyAccessToken."
+        },
+        {
+          "code": "202",
+          "description": "Permission verification failed, application which is not a system application uses system API."
+        },
+        {
+          "code": "401",
+          "description": "The input parameter is invalid."
+        },
+        {
+          "code": "13600001",
+          "description": "IPC error."
+        },
+        {
+          "code": "13900002",
+          "description": "No such file or directory."
+        },
+        {
+          "code": "14000002",
+          "description": "Invalid uri."
+        }
+      ],
+      "版本": "API4.1"
+    }
+  ]
+}

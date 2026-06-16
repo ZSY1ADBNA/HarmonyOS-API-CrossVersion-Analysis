@@ -1,0 +1,572 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.BasicServicesKit",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "namespace",
+      "名称": "runningLock",
+      "所属模块": "@kit.BasicServicesKit",
+      "功能描述": "Provides a mechanism to prevent the system from hibernating so that the applications can run in the background or when the screen is off. <p>{@link create} can be called to obtain a {@link RunningLock}. <p>{@link hold} can be called to set the lock duration, during which the system will not hibernate. After the lock duration times out, the lock is automatically released and the system hibernates if no other {@link RunningLock} is set.",
+      "注释信息": [
+        "@namespace runningLock",
+        "@syscap SystemCapability.PowerManager.PowerManager.Core",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "@kit.BasicServicesKit",
+      "since_version": "7",
+      "system_capability": "SystemCapability.PowerManager.PowerManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "class",
+      "名称": "RunningLock",
+      "所属模块": "未知模块",
+      "功能描述": "Provides a mechanism to prevent the system from hibernating so that the applications can run in the background or when the screen is off.",
+      "注释信息": [
+        "@syscap SystemCapability.PowerManager.PowerManager.Core",
+        "@since 7"
+      ],
+      "层级": 2,
+      "上级": "runningLock",
+      "since_version": "7",
+      "system_capability": "SystemCapability.PowerManager.PowerManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "lock",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Prevents the system from hibernating and sets the lock duration. This method requires the ohos.permission.RUNNING_LOCK permission. released and the system hibernates if no other {@link RunningLock} is set.",
+      "注释信息": [
+        "@permission ohos.permission.RUNNING_LOCK",
+        "@param { number } timeout Indicates the lock duration (ms). After the lock duration times out, the lock is automatically",
+        "@syscap SystemCapability.PowerManager.PowerManager.Core",
+        "@since 7",
+        "@deprecated since 9",
+        "@useinstead RunningLock#hold"
+      ],
+      "层级": 2,
+      "上级": "RunningLock",
+      "since_version": "7",
+      "system_capability": "SystemCapability.PowerManager.PowerManager.Core",
+      "parameters": [
+        {
+          "名称": "timeout",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the lock duration (ms). After the lock duration times out, the lock is automatically"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "hold",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Prevents the system from hibernating and sets the lock duration. This method requires the ohos.permission.RUNNING_LOCK permission. the lock is automatically released and the system hibernates if no other {@link RunningLock} is set. timeout parameter must be of type int.",
+      "注释信息": [
+        "@permission ohos.permission.RUNNING_LOCK",
+        "@param { number } timeout Indicates the lock duration (ms). After the lock duration times out,",
+        "@throws { BusinessError } 201 – If the permission is denied.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Incorrect parameter types;",
+        "@syscap SystemCapability.PowerManager.PowerManager.Core",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "RunningLock",
+      "since_version": "9",
+      "system_capability": "SystemCapability.PowerManager.PowerManager.Core",
+      "parameters": [
+        {
+          "名称": "timeout",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the lock duration (ms). After the lock duration times out,"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": ""
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Incorrect parameter types;"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "isUsed",
+      "返回值": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Checks whether a lock is held or in use.",
+      "注释信息": [
+        "@returns { boolean } Returns true if the lock is held or in use; returns false if the lock has been released.",
+        "@syscap SystemCapability.PowerManager.PowerManager.Core",
+        "@since 7",
+        "@deprecated since 9",
+        "@useinstead RunningLock#isHolding"
+      ],
+      "层级": 2,
+      "上级": "RunningLock",
+      "since_version": "7",
+      "system_capability": "SystemCapability.PowerManager.PowerManager.Core",
+      "parameters": [],
+      "return_description": "Returns true if the lock is held or in use; returns false if the lock has been released.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "isHolding",
+      "返回值": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Checks whether a lock is held or in use.",
+      "注释信息": [
+        "@returns { boolean } Returns true if the lock is held or in use; returns false if the lock has been released.",
+        "@syscap SystemCapability.PowerManager.PowerManager.Core",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "RunningLock",
+      "since_version": "9",
+      "system_capability": "SystemCapability.PowerManager.PowerManager.Core",
+      "parameters": [],
+      "return_description": "Returns true if the lock is held or in use; returns false if the lock has been released.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "unlock",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Release the {@link RunningLock} that prevents the system from hibernating. This method requires the ohos.permission.RUNNING_LOCK permission.",
+      "注释信息": [
+        "@permission ohos.permission.RUNNING_LOCK",
+        "@syscap SystemCapability.PowerManager.PowerManager.Core",
+        "@since 7",
+        "@deprecated since 9",
+        "@useinstead RunningLock#unhold"
+      ],
+      "层级": 2,
+      "上级": "RunningLock",
+      "since_version": "7",
+      "system_capability": "SystemCapability.PowerManager.PowerManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "unhold",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Release the {@link RunningLock} that prevents the system from hibernating. This method requires the ohos.permission.RUNNING_LOCK permission.",
+      "注释信息": [
+        "@permission ohos.permission.RUNNING_LOCK",
+        "@throws { BusinessError } 201 – If the permission is denied.",
+        "@syscap SystemCapability.PowerManager.PowerManager.Core",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "RunningLock",
+      "since_version": "9",
+      "system_capability": "SystemCapability.PowerManager.PowerManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": ""
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "RunningLockType",
+      "所属模块": "未知模块",
+      "功能描述": "Enumerates the {@link RunningLock} types. <p>These {@link RunningLock} types are available: {@link BACKGROUND}, {@link PROXIMITY_SCREEN_CONTROL} and {@link BACKGROUND_USER_IDLE}. {@link BACKGROUND} ensures that applications can run in the background. {@link PROXIMITY_SCREEN_CONTROL} determines whether to turn on or off the screen based on the proximity sensor. {@link BACKGROUND_USER_IDLE} ensures that applications can prevent the system from automatic sleep due to a period of idle user activity.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.PowerManager.PowerManager.Core",
+        "@since 7"
+      ],
+      "层级": 2,
+      "上级": "runningLock",
+      "since_version": "7",
+      "system_capability": "SystemCapability.PowerManager.PowerManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "BACKGROUND",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the lock that prevents the system from hibernating.",
+      "注释信息": [
+        "@syscap SystemCapability.PowerManager.PowerManager.Core",
+        "@since 7",
+        "@deprecated since 10"
+      ],
+      "层级": 2,
+      "上级": "RunningLockType",
+      "since_version": "7",
+      "system_capability": "SystemCapability.PowerManager.PowerManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "PROXIMITY_SCREEN_CONTROL",
+      "值": "2",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the lock that determines whether to turn on or off the screen based on the proximity sensor. For example, during a call, if the proximity sensor detects that the device is moving close to the user's ear, the screen turns off; if the proximity sensor detects that the device is moving away from the user's ear, the screen turns on.",
+      "注释信息": [
+        "@syscap SystemCapability.PowerManager.PowerManager.Core",
+        "@since 7"
+      ],
+      "层级": 2,
+      "上级": "RunningLockType",
+      "since_version": "7",
+      "system_capability": "SystemCapability.PowerManager.PowerManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "BACKGROUND_USER_IDLE",
+      "值": "129",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the lock that prevents the system from automatic sleep due to a period of idle user activity, but cannot prevent the forcing sleep such as scenarios of lid close, etc. The caller must listen to the {@link ohos.commonEventManager#commonEventManager#COMMON_EVENT_ENTER_FORCE_SLEEP} to release this lock.",
+      "注释信息": [
+        "@syscap SystemCapability.PowerManager.PowerManager.Core",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "RunningLockType",
+      "since_version": "23",
+      "system_capability": "SystemCapability.PowerManager.PowerManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "isRunningLockTypeSupported",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Checks whether the specified {@link RunningLockType} is supported. {@link RunningLockType} is supported.",
+      "注释信息": [
+        "@param { RunningLockType } type Indicates the specified {@link RunningLockType}.",
+        "@param { AsyncCallback<boolean> } callback Indicates the callback function contains the result whether the specified",
+        "@syscap SystemCapability.PowerManager.PowerManager.Core",
+        "@since 7",
+        "@deprecated since 9",
+        "@useinstead RunningLock#isSupported"
+      ],
+      "层级": 1,
+      "上级": "runningLock",
+      "since_version": "7",
+      "system_capability": "SystemCapability.PowerManager.PowerManager.Core",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "RunningLockType",
+          "必填": true,
+          "说明": "Indicates the specified {@link RunningLockType}."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<boolean>",
+          "必填": true,
+          "说明": "Indicates the callback function contains the result whether the specified"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "isRunningLockTypeSupported",
+      "返回值": "Promise<boolean>",
+      "所属模块": "未知模块",
+      "功能描述": "Checks whether the specified {@link RunningLockType} is supported. returns false otherwise.",
+      "注释信息": [
+        "@param { RunningLockType } type Indicates the specified {@link RunningLockType}.",
+        "@returns { Promise<boolean> } Returns true if the specified {@link RunningLockType} is supported;",
+        "@syscap SystemCapability.PowerManager.PowerManager.Core",
+        "@since 7",
+        "@deprecated since 9",
+        "@useinstead RunningLock#isSupported"
+      ],
+      "层级": 1,
+      "上级": "runningLock",
+      "since_version": "7",
+      "system_capability": "SystemCapability.PowerManager.PowerManager.Core",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "RunningLockType",
+          "必填": true,
+          "说明": "Indicates the specified {@link RunningLockType}."
+        }
+      ],
+      "return_description": "Returns true if the specified {@link RunningLockType} is supported;",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "isSupported",
+      "返回值": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Checks whether the specified {@link RunningLockType} is supported. the RunningLockType type is an enumeration class. 2. Parameter verification failed.",
+      "注释信息": [
+        "@param { RunningLockType } type Indicates the specified {@link RunningLockType}.",
+        "@returns { boolean } Whether the specified {@link RunningLockType} is supported.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Incorrect parameter types;",
+        "@syscap SystemCapability.PowerManager.PowerManager.Core",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "runningLock",
+      "since_version": "9",
+      "system_capability": "SystemCapability.PowerManager.PowerManager.Core",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "RunningLockType",
+          "必填": true,
+          "说明": "Indicates the specified {@link RunningLockType}."
+        }
+      ],
+      "return_description": "Whether the specified {@link RunningLockType} is supported.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Incorrect parameter types;"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "createRunningLock",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Creates a {@link RunningLock} object. <p>This method requires the ohos.permission.RUNNING_LOCK permission. <p>The {@link RunningLock} object can be used to perform a lock operation to prevent the system from hibernating. a suffix.",
+      "注释信息": [
+        "@permission ohos.permission.RUNNING_LOCK",
+        "@param { string } name Indicates the {@link RunningLock} name. A recommended name consists of the package or class name and",
+        "@param { RunningLockType } type Indicates the {@link RunningLockType}.",
+        "@param { AsyncCallback<RunningLock> } callback Indicates the callback contains the {@link RunningLock} object.",
+        "@syscap SystemCapability.PowerManager.PowerManager.Core",
+        "@since 7",
+        "@deprecated since 9",
+        "@useinstead RunningLock#create"
+      ],
+      "层级": 1,
+      "上级": "runningLock",
+      "since_version": "7",
+      "system_capability": "SystemCapability.PowerManager.PowerManager.Core",
+      "parameters": [
+        {
+          "名称": "name",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates the {@link RunningLock} name. A recommended name consists of the package or class name and"
+        },
+        {
+          "名称": "type",
+          "类型": "RunningLockType",
+          "必填": true,
+          "说明": "Indicates the {@link RunningLockType}."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<RunningLock>",
+          "必填": true,
+          "说明": "Indicates the callback contains the {@link RunningLock} object."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "createRunningLock",
+      "返回值": "Promise<RunningLock>",
+      "所属模块": "未知模块",
+      "功能描述": "Creates a {@link RunningLock} object. <p>This method requires the ohos.permission.RUNNING_LOCK permission. <p>The {@link RunningLock} object can be used to perform a lock operation to prevent the system from hibernating. a suffix.",
+      "注释信息": [
+        "@permission ohos.permission.RUNNING_LOCK",
+        "@param { string } name Indicates the {@link RunningLock} name. A recommended name consists of the package or class name and",
+        "@param { RunningLockType } type Indicates the {@link RunningLockType}.",
+        "@returns { Promise<RunningLock> } Returns the {@link RunningLock} object.",
+        "@syscap SystemCapability.PowerManager.PowerManager.Core",
+        "@since 7",
+        "@deprecated since 9",
+        "@useinstead RunningLock#create"
+      ],
+      "层级": 1,
+      "上级": "runningLock",
+      "since_version": "7",
+      "system_capability": "SystemCapability.PowerManager.PowerManager.Core",
+      "parameters": [
+        {
+          "名称": "name",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates the {@link RunningLock} name. A recommended name consists of the package or class name and"
+        },
+        {
+          "名称": "type",
+          "类型": "RunningLockType",
+          "必填": true,
+          "说明": "Indicates the {@link RunningLockType}."
+        }
+      ],
+      "return_description": "Returns the {@link RunningLock} object.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "create",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Creates a {@link RunningLock} object. <p>This method requires the ohos.permission.RUNNING_LOCK permission. <p>The {@link RunningLock} object can be used to perform a lock operation to prevent the system from hibernating. class name and a suffix. name parameter must be of type string. the RunningLockType type is an enumeration class. AsyncCallback encapsulates a class of RunningLock type",
+      "注释信息": [
+        "@permission ohos.permission.RUNNING_LOCK",
+        "@param { string } name Indicates the {@link RunningLock} name. A recommended name consists of the package or",
+        "@param { RunningLockType } type Indicates the {@link RunningLockType}.",
+        "@param { AsyncCallback<RunningLock> } callback Indicates the callback of {@link RunningLock} object.",
+        "@throws { BusinessError } 201 - If the permission is denied.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Parameter verification failed.",
+        "@syscap SystemCapability.PowerManager.PowerManager.Core",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "runningLock",
+      "since_version": "9",
+      "system_capability": "SystemCapability.PowerManager.PowerManager.Core",
+      "parameters": [
+        {
+          "名称": "name",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates the {@link RunningLock} name. A recommended name consists of the package or"
+        },
+        {
+          "名称": "type",
+          "类型": "RunningLockType",
+          "必填": true,
+          "说明": "Indicates the {@link RunningLockType}."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<RunningLock>",
+          "必填": true,
+          "说明": "Indicates the callback of {@link RunningLock} object."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "If the permission is denied."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Parameter verification failed."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "create",
+      "返回值": "Promise<RunningLock>",
+      "所属模块": "未知模块",
+      "功能描述": "Creates a {@link RunningLock} object. <p>This method requires the ohos.permission.RUNNING_LOCK permission. <p>The {@link RunningLock} object can be used to perform a lock operation to prevent the system from hibernating. class name and a suffix. name parameter must be of type string. the RunningLockType type is an enumeration class.",
+      "注释信息": [
+        "@permission ohos.permission.RUNNING_LOCK",
+        "@param { string } name Indicates the {@link RunningLock} name. A recommended name consists of the package or",
+        "@param { RunningLockType } type Indicates the {@link RunningLockType}.",
+        "@returns { Promise<RunningLock> } The {@link RunningLock} object.",
+        "@throws { BusinessError } 201 - If the permission is denied.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Parameter verification failed.",
+        "@syscap SystemCapability.PowerManager.PowerManager.Core",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "runningLock",
+      "since_version": "9",
+      "system_capability": "SystemCapability.PowerManager.PowerManager.Core",
+      "parameters": [
+        {
+          "名称": "name",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates the {@link RunningLock} name. A recommended name consists of the package or"
+        },
+        {
+          "名称": "type",
+          "类型": "RunningLockType",
+          "必填": true,
+          "说明": "Indicates the {@link RunningLockType}."
+        }
+      ],
+      "return_description": "The {@link RunningLock} object.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "If the permission is denied."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Parameter verification failed."
+        }
+      ],
+      "版本": "API"
+    }
+  ]
+}

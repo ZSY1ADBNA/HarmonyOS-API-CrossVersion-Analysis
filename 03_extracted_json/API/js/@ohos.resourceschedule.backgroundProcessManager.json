@@ -1,0 +1,371 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.BackgroundTasksKit",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "namespace",
+      "名称": "backgroundProcessManager",
+      "所属模块": "@kit.BackgroundTasksKit",
+      "功能描述": "Declares the BackgroundProcessManager interfaces.",
+      "注释信息": [
+        "@namespace backgroundProcessManager",
+        "@syscap SystemCapability.Resourceschedule.BackgroundProcessManager",
+        "@since 17"
+      ],
+      "层级": 1,
+      "上级": "@kit.BackgroundTasksKit",
+      "since_version": "17",
+      "system_capability": "SystemCapability.Resourceschedule.BackgroundProcessManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "ProcessPriority",
+      "所属模块": "未知模块",
+      "功能描述": "Describes the level of BackgroundProcessManager priority.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.Resourceschedule.BackgroundProcessManager",
+        "@since 17"
+      ],
+      "层级": 2,
+      "上级": "backgroundProcessManager",
+      "since_version": "17",
+      "system_capability": "SystemCapability.Resourceschedule.BackgroundProcessManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "PROCESS_BACKGROUND",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Means the process has stopped working and in the background",
+      "注释信息": [
+        "@syscap SystemCapability.Resourceschedule.BackgroundProcessManager",
+        "@since 17"
+      ],
+      "层级": 2,
+      "上级": "ProcessPriority",
+      "since_version": "17",
+      "system_capability": "SystemCapability.Resourceschedule.BackgroundProcessManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "PROCESS_INACTIVE",
+      "值": "2",
+      "所属模块": "未知模块",
+      "功能描述": "Means the process is working in the background",
+      "注释信息": [
+        "@syscap SystemCapability.Resourceschedule.BackgroundProcessManager",
+        "@since 17"
+      ],
+      "层级": 2,
+      "上级": "ProcessPriority",
+      "since_version": "17",
+      "system_capability": "SystemCapability.Resourceschedule.BackgroundProcessManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "PowerSaveMode",
+      "所属模块": "未知模块",
+      "功能描述": "Description the status of the power saving mode.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.Resourceschedule.BackgroundProcessManager",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "backgroundProcessManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Resourceschedule.BackgroundProcessManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "EFFICIENCY_MODE",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Means the process request not to enter power saving mode This setting may be overridden by settings in Task Manager",
+      "注释信息": [
+        "@syscap SystemCapability.Resourceschedule.BackgroundProcessManager",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "PowerSaveMode",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Resourceschedule.BackgroundProcessManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "DEFAULT_MODE",
+      "值": "2",
+      "所属模块": "未知模块",
+      "功能描述": "Means the process operating mode follows the system and may enter power saving mode",
+      "注释信息": [
+        "@syscap SystemCapability.Resourceschedule.BackgroundProcessManager",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "PowerSaveMode",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Resourceschedule.BackgroundProcessManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "setProcessPriority",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Set the priority of process.",
+      "注释信息": [
+        "@param { number } pid - Indicates the pid of the process to be set.",
+        "@param { ProcessPriority } priority - Indicates the priority to set. Specific priority can be referenced ProcessPriority",
+        "@returns { Promise<void> } The promise returned by the function.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: priority is out of range.",
+        "@syscap SystemCapability.Resourceschedule.BackgroundProcessManager",
+        "@since 17"
+      ],
+      "层级": 1,
+      "上级": "backgroundProcessManager",
+      "since_version": "17",
+      "system_capability": "SystemCapability.Resourceschedule.BackgroundProcessManager",
+      "parameters": [
+        {
+          "名称": "pid",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the pid of the process to be set."
+        },
+        {
+          "名称": "priority",
+          "类型": "ProcessPriority",
+          "必填": true,
+          "说明": "Indicates the priority to set. Specific priority can be referenced ProcessPriority"
+        }
+      ],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: priority is out of range."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "resetProcessPriority",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Reset the priority of process.",
+      "注释信息": [
+        "@param { number } pid - Indicates the pid of the process to be reset.",
+        "@returns { Promise<void> } The promise returned by the function.",
+        "@syscap SystemCapability.Resourceschedule.BackgroundProcessManager",
+        "@since 17"
+      ],
+      "层级": 1,
+      "上级": "backgroundProcessManager",
+      "since_version": "17",
+      "system_capability": "SystemCapability.Resourceschedule.BackgroundProcessManager",
+      "parameters": [
+        {
+          "名称": "pid",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the pid of the process to be reset."
+        }
+      ],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "setPowerSaveMode",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Set the power saving mode of process. The setting may fail due to user setting reasons or <br>  system scheduling reasons. <br> For details, please refer to PowerSaveModeStatus. <br>  1. Mandatory parameters are left unspecified; <br>  2. Incorrect parameter types; 3. PowerSaveMode status is out of range.",
+      "注释信息": [
+        "@permission ohos.permission.BACKGROUND_MANAGER_POWER_SAVE_MODE",
+        "@param { number } pid - Indicates the pid of the power saving mode to be set.",
+        "@param { PowerSaveMode } powerSaveMode - Indicates the power saving mode that needs to be set.",
+        "@returns { Promise<void> } The promise returned by the function.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 31800002 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 31800003 - Setup erro, This setting is overridden by settings in Task Manager",
+        "@throws { BusinessError } 31800004 - The setting failed due to system scheduling reasons.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@syscap SystemCapability.Resourceschedule.BackgroundProcessManager",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "backgroundProcessManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Resourceschedule.BackgroundProcessManager",
+      "parameters": [
+        {
+          "名称": "pid",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the pid of the power saving mode to be set."
+        },
+        {
+          "名称": "powerSaveMode",
+          "类型": "PowerSaveMode",
+          "必填": true,
+          "说明": "Indicates the power saving mode that needs to be set."
+        }
+      ],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "31800002",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "31800003",
+          "description": "Setup erro, This setting is overridden by settings in Task Manager"
+        },
+        {
+          "code": "31800004",
+          "description": "The setting failed due to system scheduling reasons."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "isPowerSaveMode",
+      "返回值": "Promise<boolean>",
+      "所属模块": "未知模块",
+      "功能描述": "Check if the process is in power saving mode. <br> 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types;",
+      "注释信息": [
+        "@permission ohos.permission.BACKGROUND_MANAGER_POWER_SAVE_MODE",
+        "@param { number } pid - Indicates the process to be checked is the pid of the power saving mode.",
+        "@returns { Promise<boolean> } The promise returns whether it is in power saving mode.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 31800002 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@syscap SystemCapability.Resourceschedule.BackgroundProcessManager",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "backgroundProcessManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Resourceschedule.BackgroundProcessManager",
+      "parameters": [
+        {
+          "名称": "pid",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the process to be checked is the pid of the power saving mode."
+        }
+      ],
+      "return_description": "The promise returns whether it is in power saving mode.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "31800002",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getPowerSaveMode",
+      "返回值": "Promise<PowerSaveMode>",
+      "所属模块": "未知模块",
+      "功能描述": "Get the power saving mode of the process. 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types;",
+      "注释信息": [
+        "@permission ohos.permission.BACKGROUND_MANAGER_POWER_SAVE_MODE",
+        "@param { number } pid - Indicates the process to be checked is the pid of the power saving mode.",
+        "@returns { Promise<PowerSaveMode> } The promise returns the power saving mode of the process.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 31800002 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@syscap SystemCapability.Resourceschedule.BackgroundProcessManager",
+        "@since 23"
+      ],
+      "层级": 1,
+      "上级": "backgroundProcessManager",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Resourceschedule.BackgroundProcessManager",
+      "parameters": [
+        {
+          "名称": "pid",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the process to be checked is the pid of the power saving mode."
+        }
+      ],
+      "return_description": "The promise returns the power saving mode of the process.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "31800002",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        }
+      ],
+      "版本": "API"
+    }
+  ]
+}

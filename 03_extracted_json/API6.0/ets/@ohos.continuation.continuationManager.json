@@ -1,0 +1,654 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.AbilityKit",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "namespace",
+      "名称": "continuationManager",
+      "所属模块": "@kit.AbilityKit",
+      "功能描述": "Provides methods for interacting with the continuation manager service, including methods for registering and Unregister the ability to hop, updating the device connection state, and showing the list of devices that can be selected for hopping.",
+      "注释信息": [
+        "@namespace continuationManager",
+        "@syscap SystemCapability.Ability.DistributedAbilityManager",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "@kit.AbilityKit",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Ability.DistributedAbilityManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Called when the user selects devices from the candidate device list. You can implement your own processing logic in this callback to initiate the hop process. selection module, returning the device ID,device type, and device name for developers to use <br>2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.DISTRIBUTED_DATASYNC",
+        "@param { 'deviceSelected' } type - deviceSelected.",
+        "@param { number } token - Registered token.",
+        "@param { Callback<Array<ContinuationResult>> } callback - Called when the user selects a device from the device",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 16600001 - The system ability works abnormally.",
+        "@throws { BusinessError } 16600002 - The specified token or callback is not registered.",
+        "@throws { BusinessError } 16600004 - The specified callback has been registered.",
+        "@syscap SystemCapability.Ability.DistributedAbilityManager",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "continuationManager",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Ability.DistributedAbilityManager",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'deviceSelected'",
+          "必填": true,
+          "说明": "deviceSelected."
+        },
+        {
+          "名称": "token",
+          "类型": "number",
+          "必填": true,
+          "说明": "Registered token."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<Array<ContinuationResult>>",
+          "必填": true,
+          "说明": "Called when the user selects a device from the device"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "16600001",
+          "description": "The system ability works abnormally."
+        },
+        {
+          "code": "16600002",
+          "description": "The specified token or callback is not registered."
+        },
+        {
+          "code": "16600004",
+          "description": "The specified callback has been registered."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Called when devices are disconnected from the continuation manager service. You can implement your own processing logic in this callback, such as notifying the user of the disconnection. <br>2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.DISTRIBUTED_DATASYNC",
+        "@param { 'deviceSelected' } type - deviceSelected.",
+        "@param { number } token - Registered token.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 16600001 - The system ability works abnormally.",
+        "@throws { BusinessError } 16600002 - The specified token or callback is not registered.",
+        "@throws { BusinessError } 16600004 - The specified callback has been registered.",
+        "@syscap SystemCapability.Ability.DistributedAbilityManager",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "continuationManager",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Ability.DistributedAbilityManager",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'deviceSelected'",
+          "必填": true,
+          "说明": "deviceSelected."
+        },
+        {
+          "名称": "token",
+          "类型": "number",
+          "必填": true,
+          "说明": "Registered token."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "16600001",
+          "description": "The system ability works abnormally."
+        },
+        {
+          "code": "16600002",
+          "description": "The specified token or callback is not registered."
+        },
+        {
+          "code": "16600004",
+          "description": "The specified callback has been registered."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Called when devices are disconnected from the continuation manager service. You can implement your own processing logic in this callback, such as notifying the user of the disconnection. device selection module, returning the device ID, device type, and device name for developers to use <br>2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.DISTRIBUTED_DATASYNC",
+        "@param { 'deviceUnselected' } type - deviceUnselected.",
+        "@param { number } token - Registered token.",
+        "@param { Callback<Array<ContinuationResult>> } callback - Called when the user disconnects the device from the",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 16600001 - The system ability works abnormally.",
+        "@throws { BusinessError } 16600002 - The specified token or callback is not registered.",
+        "@throws { BusinessError } 16600004 - The specified callback has been registered.",
+        "@syscap SystemCapability.Ability.DistributedAbilityManager",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "continuationManager",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Ability.DistributedAbilityManager",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'deviceUnselected'",
+          "必填": true,
+          "说明": "deviceUnselected."
+        },
+        {
+          "名称": "token",
+          "类型": "number",
+          "必填": true,
+          "说明": "Registered token."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<Array<ContinuationResult>>",
+          "必填": true,
+          "说明": "Called when the user disconnects the device from the"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "16600001",
+          "description": "The system ability works abnormally."
+        },
+        {
+          "code": "16600002",
+          "description": "The specified token or callback is not registered."
+        },
+        {
+          "code": "16600004",
+          "description": "The specified callback has been registered."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Called when devices are disconnected from the continuation manager service. You can implement your own processing logic in this callback, such as notifying the user of the disconnection. <br>2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.DISTRIBUTED_DATASYNC",
+        "@param { 'deviceUnselected' } type - deviceUnselected.",
+        "@param { number } token - Registered token.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 16600001 - The system ability works abnormally.",
+        "@throws { BusinessError } 16600002 - The specified token or callback is not registered.",
+        "@throws { BusinessError } 16600004 - The specified callback has been registered.",
+        "@syscap SystemCapability.Ability.DistributedAbilityManager",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "continuationManager",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Ability.DistributedAbilityManager",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'deviceUnselected'",
+          "必填": true,
+          "说明": "deviceUnselected."
+        },
+        {
+          "名称": "token",
+          "类型": "number",
+          "必填": true,
+          "说明": "Registered token."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "16600001",
+          "description": "The system ability works abnormally."
+        },
+        {
+          "code": "16600002",
+          "description": "The specified token or callback is not registered."
+        },
+        {
+          "code": "16600004",
+          "description": "The specified callback has been registered."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Called when the user selects a device from the candidate device list. You can implement your own processing logic in this callback to initiate the hop process. module, returning the device ID,device type, and device name for developers to use.",
+      "注释信息": [
+        "@param { 'deviceConnect' } type - deviceConnect.",
+        "@param { Callback<ContinuationResult> } callback - Called when the user selects a device from the device selection",
+        "@syscap SystemCapability.Ability.DistributedAbilityManager",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.continuation.continuationManager/continuationManager#on"
+      ],
+      "层级": 1,
+      "上级": "continuationManager",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Ability.DistributedAbilityManager",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'deviceConnect'",
+          "必填": true,
+          "说明": "deviceConnect."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<ContinuationResult>",
+          "必填": true,
+          "说明": "Called when the user selects a device from the device selection"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Called when the user selects a device from the candidate device list. You can implement your own processing logic in this callback to initiate the hop process. selection module, returning the device ID,device type, and device name for developers to use.",
+      "注释信息": [
+        "@param { 'deviceConnect' } type - deviceConnect.",
+        "@param { Callback<ContinuationResult> } [callback] - Called when the user selects a device from the device",
+        "@syscap SystemCapability.Ability.DistributedAbilityManager",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.continuation.continuationManager/continuationManager#off"
+      ],
+      "层级": 1,
+      "上级": "continuationManager",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Ability.DistributedAbilityManager",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'deviceConnect'",
+          "必填": true,
+          "说明": "deviceConnect."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "Callback<ContinuationResult> } [callback] - Called when the user selects a device from the device"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Called when a device is disconnected from the continuation manager service. You can implement your own processing logic in this callback, such as notifying the user of the disconnection. module, returning the device ID for developers to use.",
+      "注释信息": [
+        "@param { 'deviceDisconnect' } type - deviceDisconnect.",
+        "@param { Callback<string> } callback - Called when the user disconnects the device from the device selection",
+        "@syscap SystemCapability.Ability.DistributedAbilityManager",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.continuation.continuationManager/continuationManager#on"
+      ],
+      "层级": 1,
+      "上级": "continuationManager",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Ability.DistributedAbilityManager",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'deviceDisconnect'",
+          "必填": true,
+          "说明": "deviceDisconnect."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<string>",
+          "必填": true,
+          "说明": "Called when the user disconnects the device from the device selection"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Called when a device is disconnected from the continuation manager service. You can implement your own processing logic in this callback, such as notifying the user of the disconnection. returning the device ID,device type, and device name for developers to use.",
+      "注释信息": [
+        "@param { 'deviceDisconnect' } type - deviceDisconnect.",
+        "@param { Callback<string> } [callback] - Called when the user selects a device from the device selection module,",
+        "@syscap SystemCapability.Ability.DistributedAbilityManager",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.continuation.continuationManager/continuationManager#off"
+      ],
+      "层级": 1,
+      "上级": "continuationManager",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Ability.DistributedAbilityManager",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'deviceDisconnect'",
+          "必填": true,
+          "说明": "deviceDisconnect."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "Callback<string> } [callback] - Called when the user selects a device from the device selection module,"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "register",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Registers an ability to be hopped with the continuation manager service and obtains the registration token assigned to the ability. the flow management service.",
+      "注释信息": [
+        "@param { AsyncCallback<number> } callback - The AsyncCallback form returns the token generated after connecting to",
+        "@syscap SystemCapability.Ability.DistributedAbilityManager",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.continuation.continuationManager/continuationManager#registerContinuation"
+      ],
+      "层级": 1,
+      "上级": "continuationManager",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Ability.DistributedAbilityManager",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<number>",
+          "必填": true,
+          "说明": "The AsyncCallback form returns the token generated after connecting to"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "register",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Registers an ability to be hopped with the continuation manager service and obtains the registration token assigned to the ability. parameters used to filter the list of available devices. connecting to the flow management service.",
+      "注释信息": [
+        "@param { ContinuationExtraParams } options - Indicates the {@link ExtraParams} object containing the extra",
+        "@param { AsyncCallback<number> } callback - The AsyncCallback form returns the token generated after",
+        "@syscap SystemCapability.Ability.DistributedAbilityManager",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.continuation.continuationManager/continuationManager#registerContinuation"
+      ],
+      "层级": 1,
+      "上级": "continuationManager",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Ability.DistributedAbilityManager",
+      "parameters": [
+        {
+          "名称": "options",
+          "类型": "ContinuationExtraParams",
+          "必填": true,
+          "说明": "Indicates the {@link ExtraParams} object containing the extra"
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<number>",
+          "必填": true,
+          "说明": "The AsyncCallback form returns the token generated after"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "register",
+      "返回值": "Promise<number>",
+      "所属模块": "未知模块",
+      "功能描述": "Registers an ability to be hopped with the continuation manager service and obtains the registration token assigned to the ability. parameters used to filter the list of available devices. is connected.",
+      "注释信息": [
+        "@param { ContinuationExtraParams } [options] - Indicates the {@link ExtraParams} object containing the extra",
+        "@returns { Promise<number> } callback Indicates the callback to be invoked when the continuation manager service",
+        "@syscap SystemCapability.Ability.DistributedAbilityManager",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.continuation.continuationManager/continuationManager#registerContinuation"
+      ],
+      "层级": 1,
+      "上级": "continuationManager",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Ability.DistributedAbilityManager",
+      "parameters": [
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "ContinuationExtraParams } [options] - Indicates the {@link ExtraParams} object containing the extra"
+        }
+      ],
+      "return_description": "callback Indicates the callback to be invoked when the continuation manager service",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "unregister",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unregisters a specified ability from the continuation manager service based on the token obtained during ability registration.",
+      "注释信息": [
+        "@param { number } token - Indicates the registration token of the ability.",
+        "@param { AsyncCallback<void> } callback - AsyncCallback returns the interface call result.",
+        "@syscap SystemCapability.Ability.DistributedAbilityManager",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.continuation.continuationManager/continuationManager#unregisterContinuation"
+      ],
+      "层级": 1,
+      "上级": "continuationManager",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Ability.DistributedAbilityManager",
+      "parameters": [
+        {
+          "名称": "token",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the registration token of the ability."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "AsyncCallback returns the interface call result."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "unregister",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Unregisters a specified ability from the continuation manager service based on the token obtained during ability registration. service is connected.",
+      "注释信息": [
+        "@param { number } token - Indicates the registration token of the ability.",
+        "@returns { Promise<void> } callback Indicates the callback to be invoked when the continuation manager",
+        "@syscap SystemCapability.Ability.DistributedAbilityManager",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.continuation.continuationManager/continuationManager#unregisterContinuation"
+      ],
+      "层级": 1,
+      "上级": "continuationManager",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Ability.DistributedAbilityManager",
+      "parameters": [
+        {
+          "名称": "token",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the registration token of the ability."
+        }
+      ],
+      "return_description": "callback Indicates the callback to be invoked when the continuation manager",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "updateConnectStatus",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Updates the connection state of the device where the specified ability is successfully hopped.",
+      "注释信息": [
+        "@param { number } token - Indicates the registration token of the ability.",
+        "@param { string } deviceId - Indicates the ID of the device whose connection state is to be updated.",
+        "@param { DeviceConnectState } status - Indicates the connection state to update.",
+        "@param { AsyncCallback<void> } callback - AsyncCallback returns the interface call result.",
+        "@syscap SystemCapability.Ability.DistributedAbilityManager",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.continuation.continuationManager/continuationManager#updateContinuationState"
+      ],
+      "层级": 1,
+      "上级": "continuationManager",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Ability.DistributedAbilityManager",
+      "parameters": [
+        {
+          "名称": "token",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the registration token of the ability."
+        },
+        {
+          "名称": "deviceId",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates the ID of the device whose connection state is to be updated."
+        },
+        {
+          "名称": "status",
+          "类型": "DeviceConnectState",
+          "必填": true,
+          "说明": "Indicates the connection state to update."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "AsyncCallback returns the interface call result."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    }
+  ]
+}

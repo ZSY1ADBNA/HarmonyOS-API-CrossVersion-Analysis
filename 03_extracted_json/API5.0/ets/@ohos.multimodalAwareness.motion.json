@@ -1,0 +1,271 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.MultimodalAwarenessKit",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "namespace",
+      "名称": "motion",
+      "所属模块": "@kit.MultimodalAwarenessKit",
+      "功能描述": "This module provides the capability to subscribe to report the action or motion.",
+      "注释信息": [
+        "@namespace motion",
+        "@syscap SystemCapability.MultimodalAwarness.Motion",
+        "@since 15"
+      ],
+      "层级": 1,
+      "上级": "@kit.MultimodalAwarenessKit",
+      "since_version": "15",
+      "system_capability": "SystemCapability.MultimodalAwarness.Motion",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum",
+      "名称": "OperatingHandStatus",
+      "所属模块": "未知模块",
+      "功能描述": "Enum for operating hand status.",
+      "注释信息": [
+        "@enum { number } OperatingHandStatus",
+        "@syscap SystemCapability.MultimodalAwarness.Motion",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "motion",
+      "since_version": "15",
+      "system_capability": "SystemCapability.MultimodalAwarness.Motion",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "UNKNOWN_STATUS",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "indicates nothing has been detected.",
+      "注释信息": [
+        "@syscap SystemCapability.MultimodalAwarness.Motion",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "OperatingHandStatus",
+      "since_version": "15",
+      "system_capability": "SystemCapability.MultimodalAwarness.Motion",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "LEFT_HAND_OPERATED",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "indicates the operating hand is left hand.",
+      "注释信息": [
+        "@syscap SystemCapability.MultimodalAwarness.Motion",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "OperatingHandStatus",
+      "since_version": "15",
+      "system_capability": "SystemCapability.MultimodalAwarness.Motion",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "RIGHT_HAND_OPERATED",
+      "值": "2",
+      "所属模块": "未知模块",
+      "功能描述": "indicates the operating hand is right hand.",
+      "注释信息": [
+        "@syscap SystemCapability.MultimodalAwarness.Motion",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "OperatingHandStatus",
+      "since_version": "15",
+      "system_capability": "SystemCapability.MultimodalAwarness.Motion",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Subscribe to detect the operating hand changed event. <br> event forbidden by permission: ohos.permission.ACTIVITY_MOTION. <br> device capabilities.",
+      "注释信息": [
+        "@permission ohos.permission.ACTIVITY_MOTION",
+        "@param { 'operatingHandChanged' } type - Indicates the event type.",
+        "@param { Callback<OperatingHandStatus> } callback - Indicates the callback for getting the event data.",
+        "@throws { BusinessError } 201 - Permission denied. An attempt was made to subscribe operatingHandChanged",
+        "@throws { BusinessError } 401 - Parameter error. Parameter verification failed.",
+        "@throws { BusinessError } 801 - Capability not supported. Function can not work correctly due to limited",
+        "@throws { BusinessError } 31500001 - Service exception.",
+        "@throws { BusinessError } 31500002 - Subscribe Failed.",
+        "@syscap SystemCapability.MultimodalAwarness.Motion",
+        "@since 15"
+      ],
+      "层级": 1,
+      "上级": "motion",
+      "since_version": "15",
+      "system_capability": "SystemCapability.MultimodalAwarness.Motion",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'operatingHandChanged'",
+          "必填": true,
+          "说明": "Indicates the event type."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<OperatingHandStatus>",
+          "必填": true,
+          "说明": "Indicates the callback for getting the event data."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied. An attempt was made to subscribe operatingHandChanged"
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Parameter verification failed."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported. Function can not work correctly due to limited"
+        },
+        {
+          "code": "31500001",
+          "description": "Service exception."
+        },
+        {
+          "code": "31500002",
+          "description": "Subscribe Failed."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unsubscribe to detect the operating hand changed event. <br> event forbidden by permission: ohos.permission.ACTIVITY_MOTION. <br> device capabilities.",
+      "注释信息": [
+        "@permission ohos.permission.ACTIVITY_MOTION",
+        "@param { 'operatingHandChanged' } type - Indicates the event type.",
+        "@param { Callback<OperatingHandStatus> } callback - Indicates the callback for getting the event data.",
+        "@throws { BusinessError } 201 - Permission denied. An attempt was made to unsubscribe operatingHandChanged",
+        "@throws { BusinessError } 401 - Parameter error. Parameter verification failed.",
+        "@throws { BusinessError } 801 - Capability not supported. Function can not work correctly due to limited",
+        "@throws { BusinessError } 31500001 - Service exception.",
+        "@throws { BusinessError } 31500003 - Unsubscribe Failed.",
+        "@syscap SystemCapability.MultimodalAwarness.Motion",
+        "@since 15"
+      ],
+      "层级": 1,
+      "上级": "motion",
+      "since_version": "15",
+      "system_capability": "SystemCapability.MultimodalAwarness.Motion",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'operatingHandChanged'",
+          "必填": true,
+          "说明": "Indicates the event type."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<OperatingHandStatus>",
+          "必填": true,
+          "说明": "Indicates the callback for getting the event data."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied. An attempt was made to unsubscribe operatingHandChanged"
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Parameter verification failed."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported. Function can not work correctly due to limited"
+        },
+        {
+          "code": "31500001",
+          "description": "Service exception."
+        },
+        {
+          "code": "31500003",
+          "description": "Unsubscribe Failed."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getRecentOperatingHandStatus",
+      "返回值": "OperatingHandStatus",
+      "所属模块": "未知模块",
+      "功能描述": "Get the recent operating hand status. <br> status forbidden by permission: ohos.permission.ACTIVITY_MOTION. <br> device capabilities.",
+      "注释信息": [
+        "@permission ohos.permission.ACTIVITY_MOTION",
+        "@returns { OperatingHandStatus } The result of operating hand status.",
+        "@throws { BusinessError } 201 - Permission denied. An attempt was made to get the recent operating hand",
+        "@throws { BusinessError } 801 - Capability not supported. Function can not work correctly due to limited",
+        "@throws { BusinessError } 31500001 - Service exception.",
+        "@syscap SystemCapability.MultimodalAwarness.Motion",
+        "@since 15"
+      ],
+      "层级": 1,
+      "上级": "motion",
+      "since_version": "15",
+      "system_capability": "SystemCapability.MultimodalAwarness.Motion",
+      "parameters": [],
+      "return_description": "The result of operating hand status.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied. An attempt was made to get the recent operating hand"
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported. Function can not work correctly due to limited"
+        },
+        {
+          "code": "31500001",
+          "description": "Service exception."
+        }
+      ],
+      "版本": "API5.0"
+    }
+  ]
+}

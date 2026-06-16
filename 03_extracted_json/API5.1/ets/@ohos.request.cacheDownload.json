@@ -1,0 +1,220 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.BasicServicesKit",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "namespace",
+      "名称": "cacheDownload",
+      "所属模块": "@kit.BasicServicesKit",
+      "功能描述": "Cache download capability provider.",
+      "注释信息": [
+        "@namespace cacheDownload",
+        "@syscap SystemCapability.Request.FileTransferAgent",
+        "@since 18"
+      ],
+      "层级": 1,
+      "上级": "@kit.BasicServicesKit",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Request.FileTransferAgent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "interface",
+      "名称": "CacheDownloadOptions",
+      "所属模块": "未知模块",
+      "功能描述": "Options of the cache download task.",
+      "注释信息": [
+        "@typedef CacheDownloadOptions",
+        "@syscap SystemCapability.Request.FileTransferAgent",
+        "@since 18"
+      ],
+      "层级": 2,
+      "上级": "cacheDownload",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Request.FileTransferAgent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "property",
+      "名称": "headers",
+      "属性类型": "Record<string, string>",
+      "所属模块": "未知模块",
+      "功能描述": "HTTP headers added to the cache download request.",
+      "注释信息": [
+        "@type { ?Record<string, string> }",
+        "@syscap SystemCapability.Request.FileTransferAgent",
+        "@since 18"
+      ],
+      "层级": 2,
+      "上级": "CacheDownloadOptions",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Request.FileTransferAgent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "method",
+      "名称": "download",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Downloads resources at the specified URL. Resources will be stored in memory cache or files cache. The maximum size of the specified URL is 8192 bytes. The maximum size of a single resource after decompression is 20,971,520 bytes(20 MB). If the decompressed size of the downloaded resource exceeds the limit, it will not be recorded in the cache. <br>2. Incorrect parameter type. 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.INTERNET",
+        "@param { string } url - URL of the cache download target.",
+        "@param { CacheDownloadOptions } options - Options of the cache download task.",
+        "@throws { BusinessError } 201 - permission denied.",
+        "@throws { BusinessError } 401 - parameter error. Possible causes: 1. Missing mandatory parameters.",
+        "@syscap SystemCapability.Request.FileTransferAgent",
+        "@since 18"
+      ],
+      "层级": 1,
+      "上级": "cacheDownload",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Request.FileTransferAgent",
+      "parameters": [
+        {
+          "名称": "url",
+          "类型": "string",
+          "必填": true,
+          "说明": "URL of the cache download target."
+        },
+        {
+          "名称": "options",
+          "类型": "CacheDownloadOptions",
+          "必填": true,
+          "说明": "Options of the cache download task."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "permission denied."
+        },
+        {
+          "code": "401",
+          "description": "parameter error. Possible causes: 1. Missing mandatory parameters."
+        }
+      ],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "method",
+      "名称": "cancel",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Cancels an ongoing cache download task based on the target URL. The maximum size of the specified URL is 8192 bytes. <br>2. Incorrect parameter type. 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { string } url - URL of the cache download target.",
+        "@throws { BusinessError } 401 - parameter error. Possible causes: 1. Missing mandatory parameters.",
+        "@syscap SystemCapability.Request.FileTransferAgent",
+        "@since 18"
+      ],
+      "层级": 1,
+      "上级": "cacheDownload",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Request.FileTransferAgent",
+      "parameters": [
+        {
+          "名称": "url",
+          "类型": "string",
+          "必填": true,
+          "说明": "URL of the cache download target."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "parameter error. Possible causes: 1. Missing mandatory parameters."
+        }
+      ],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "method",
+      "名称": "setMemoryCacheSize",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Sets the size of the memory cache used to store downloaded content. The default size is 0 bytes. The maximum size is 1,073,741,824 bytes(1 GB). <br>2. Incorrect parameter type. 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { number } bytes - The maximum amount of data cached in memory, in bytes.",
+        "@throws { BusinessError } 401 - parameter error. Possible causes: 1. Missing mandatory parameters.",
+        "@syscap SystemCapability.Request.FileTransferAgent",
+        "@since 18"
+      ],
+      "层级": 1,
+      "上级": "cacheDownload",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Request.FileTransferAgent",
+      "parameters": [
+        {
+          "名称": "bytes",
+          "类型": "number",
+          "必填": true,
+          "说明": "The maximum amount of data cached in memory, in bytes."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "parameter error. Possible causes: 1. Missing mandatory parameters."
+        }
+      ],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "method",
+      "名称": "setFileCacheSize",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Sets the size of the file cache used to store downloaded content. The default size is 104,857,600 bytes(100 MB). The maximum size is 4,294,967,296 bytes(4 GB). <br>2. Incorrect parameter type. 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { number } bytes - The maximum amount of data cached in files, in bytes.",
+        "@throws { BusinessError } 401 - parameter error. Possible causes: 1. Missing mandatory parameters.",
+        "@syscap SystemCapability.Request.FileTransferAgent",
+        "@since 18"
+      ],
+      "层级": 1,
+      "上级": "cacheDownload",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Request.FileTransferAgent",
+      "parameters": [
+        {
+          "名称": "bytes",
+          "类型": "number",
+          "必填": true,
+          "说明": "The maximum amount of data cached in files, in bytes."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "parameter error. Possible causes: 1. Missing mandatory parameters."
+        }
+      ],
+      "版本": "API5.1"
+    }
+  ]
+}

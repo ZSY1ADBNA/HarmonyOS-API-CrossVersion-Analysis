@@ -1,0 +1,325 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.UserAuthenticationKit",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "namespace",
+      "名称": "userAccessCtrl",
+      "所属模块": "@kit.UserAuthenticationKit",
+      "功能描述": "User access control",
+      "注释信息": [
+        "@namespace userAccessCtrl",
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@since arkts {'1.1':'18','1.2':'20'}",
+        "@arkts 1.1&1.2"
+      ],
+      "层级": 1,
+      "上级": "@kit.UserAuthenticationKit",
+      "since_version": "arkts {'1.1':'18','1.2':'20'}",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "verifyAuthToken",
+      "返回值": "Promise<AuthToken>",
+      "所属模块": "未知模块",
+      "功能描述": "Verify the authentication token. <br>1. Mandatory parameters are left unspecified. <br>2. Incorrect parameter types. <br>3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.USE_USER_ACCESS_MANAGER",
+        "@param { Uint8Array } authToken - AuthToken to be verified.",
+        "@param { int } allowableDuration - Allowable time interval from the authToken is issued till now in milliseconds.",
+        "@returns { Promise<AuthToken> } Returns parsed authToken.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Permission denied. Called by non-system application.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 12500002 - General operation error.",
+        "@throws { BusinessError } 12500015 - AuthToken integrity check failed.",
+        "@throws { BusinessError } 12500016 - AuthToken has expired.",
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@systemapi Hide this for inner system use.",
+        "@since arkts {'1.1':'18','1.2':'20'}",
+        "@arkts 1.1&1.2"
+      ],
+      "层级": 1,
+      "上级": "userAccessCtrl",
+      "since_version": "arkts {'1.1':'18','1.2':'20'}",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [
+        {
+          "名称": "authToken",
+          "类型": "Uint8Array",
+          "必填": true,
+          "说明": "AuthToken to be verified."
+        },
+        {
+          "名称": "allowableDuration",
+          "类型": "int",
+          "必填": true,
+          "说明": "Allowable time interval from the authToken is issued till now in milliseconds."
+        }
+      ],
+      "return_description": "Returns parsed authToken.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Permission denied. Called by non-system application."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "12500002",
+          "description": "General operation error."
+        },
+        {
+          "code": "12500015",
+          "description": "AuthToken integrity check failed."
+        },
+        {
+          "code": "12500016",
+          "description": "AuthToken has expired."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "interface",
+      "名称": "AuthToken",
+      "所属模块": "未知模块",
+      "功能描述": "Authentication token.",
+      "注释信息": [
+        "@typedef AuthToken",
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@systemapi Hide this for inner system use.",
+        "@since arkts {'1.1':'18','1.2':'20'}",
+        "@arkts 1.1&1.2"
+      ],
+      "层级": 2,
+      "上级": "userAccessCtrl",
+      "since_version": "arkts {'1.1':'18','1.2':'20'}",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "property",
+      "名称": "challenge",
+      "属性类型": "Uint8Array",
+      "所属模块": "未知模块",
+      "功能描述": "Pass in challenge value.",
+      "注释信息": [
+        "@type { Uint8Array }",
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@systemapi Hide this for inner system use.",
+        "@since arkts {'1.1':'18','1.2':'20'}",
+        "@arkts 1.1&1.2"
+      ],
+      "层级": 2,
+      "上级": "AuthToken",
+      "since_version": "arkts {'1.1':'18','1.2':'20'}",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "property",
+      "名称": "authTrustLevel",
+      "属性类型": "userAuth.AuthTrustLevel",
+      "所属模块": "未知模块",
+      "功能描述": "Trust level of authentication result.",
+      "注释信息": [
+        "@type { userAuth.AuthTrustLevel }",
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@systemapi Hide this for inner system use.",
+        "@since arkts {'1.1':'18','1.2':'20'}",
+        "@arkts 1.1&1.2"
+      ],
+      "层级": 2,
+      "上级": "AuthToken",
+      "since_version": "arkts {'1.1':'18','1.2':'20'}",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "property",
+      "名称": "authType",
+      "属性类型": "userAuth.UserAuthType",
+      "所属模块": "未知模块",
+      "功能描述": "Credential type for authentication.",
+      "注释信息": [
+        "@type { userAuth.UserAuthType }",
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@systemapi Hide this for inner system use.",
+        "@since arkts {'1.1':'18','1.2':'20'}",
+        "@arkts 1.1&1.2"
+      ],
+      "层级": 2,
+      "上级": "AuthToken",
+      "since_version": "arkts {'1.1':'18','1.2':'20'}",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "property",
+      "名称": "tokenType",
+      "属性类型": "AuthTokenType",
+      "所属模块": "未知模块",
+      "功能描述": "The type of authToken.",
+      "注释信息": [
+        "@type { AuthTokenType }",
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@systemapi Hide this for inner system use.",
+        "@since arkts {'1.1':'18','1.2':'20'}",
+        "@arkts 1.1&1.2"
+      ],
+      "层级": 2,
+      "上级": "AuthToken",
+      "since_version": "arkts {'1.1':'18','1.2':'20'}",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "property",
+      "名称": "userId",
+      "属性类型": "int",
+      "所属模块": "未知模块",
+      "功能描述": "The user id of authToken.",
+      "注释信息": [
+        "@type { int }",
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@systemapi Hide this for inner system use.",
+        "@since arkts {'1.1':'18','1.2':'20'}",
+        "@arkts 1.1&1.2"
+      ],
+      "层级": 2,
+      "上级": "AuthToken",
+      "since_version": "arkts {'1.1':'18','1.2':'20'}",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "property",
+      "名称": "timeInterval",
+      "属性类型": "bigint",
+      "所属模块": "未知模块",
+      "功能描述": "The time interval from the authToken is issued till now in milliseconds.",
+      "注释信息": [
+        "@type { bigint }",
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@systemapi Hide this for inner system use.",
+        "@since arkts {'1.1':'18','1.2':'20'}",
+        "@arkts 1.1&1.2"
+      ],
+      "层级": 2,
+      "上级": "AuthToken",
+      "since_version": "arkts {'1.1':'18','1.2':'20'}",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "property",
+      "名称": "secureUid",
+      "属性类型": "bigint",
+      "所属模块": "未知模块",
+      "功能描述": "The secure uid of authToken.",
+      "注释信息": [
+        "@type { ?bigint }",
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@systemapi Hide this for inner system use.",
+        "@since arkts {'1.1':'18','1.2':'20'}",
+        "@arkts 1.1&1.2"
+      ],
+      "层级": 2,
+      "上级": "AuthToken",
+      "since_version": "arkts {'1.1':'18','1.2':'20'}",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "property",
+      "名称": "enrolledId",
+      "属性类型": "bigint",
+      "所属模块": "未知模块",
+      "功能描述": "The enrolled id of authToken.",
+      "注释信息": [
+        "@type { ?bigint }",
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@systemapi Hide this for inner system use.",
+        "@since arkts {'1.1':'18','1.2':'20'}",
+        "@arkts 1.1&1.2"
+      ],
+      "层级": 2,
+      "上级": "AuthToken",
+      "since_version": "arkts {'1.1':'18','1.2':'20'}",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "property",
+      "名称": "credentialId",
+      "属性类型": "bigint",
+      "所属模块": "未知模块",
+      "功能描述": "The credential id of authToken.",
+      "注释信息": [
+        "@type { ?bigint }",
+        "@syscap SystemCapability.UserIAM.UserAuth.Core",
+        "@systemapi Hide this for inner system use.",
+        "@since arkts {'1.1':'18','1.2':'20'}",
+        "@arkts 1.1&1.2"
+      ],
+      "层级": 2,
+      "上级": "AuthToken",
+      "since_version": "arkts {'1.1':'18','1.2':'20'}",
+      "system_capability": "SystemCapability.UserIAM.UserAuth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    }
+  ]
+}

@@ -1,0 +1,208 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.PerformanceAnalysisKit",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "namespace",
+      "名称": "jsLeakWatcher",
+      "所属模块": "@kit.PerformanceAnalysisKit",
+      "功能描述": "This module provides the capability to monitor leakage of JS objects.",
+      "注释信息": [
+        "@namespace jsLeakWatcher",
+        "@syscap SystemCapability.HiviewDFX.HiChecker",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "@kit.PerformanceAnalysisKit",
+      "since_version": "12",
+      "system_capability": "SystemCapability.HiviewDFX.HiChecker",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "enable",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Enable or disable jsLeakWatcher.",
+      "注释信息": [
+        "@param { boolean } isEnable - True is enable jsLeakWatcher, false is disable jsLeakWatcher.",
+        "@syscap SystemCapability.HiviewDFX.HiChecker",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "jsLeakWatcher",
+      "since_version": "12",
+      "system_capability": "SystemCapability.HiviewDFX.HiChecker",
+      "parameters": [
+        {
+          "名称": "isEnable",
+          "类型": "boolean",
+          "必填": true,
+          "说明": "True is enable jsLeakWatcher, false is disable jsLeakWatcher."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "watch",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Register an object that needs to be monitored.",
+      "注释信息": [
+        "@param { object } obj - Object being monitored.",
+        "@param { string } msg - Customized object information.",
+        "@syscap SystemCapability.HiviewDFX.HiChecker",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "jsLeakWatcher",
+      "since_version": "12",
+      "system_capability": "SystemCapability.HiviewDFX.HiChecker",
+      "parameters": [
+        {
+          "名称": "obj",
+          "类型": "object",
+          "必填": true,
+          "说明": "Object being monitored."
+        },
+        {
+          "名称": "msg",
+          "类型": "string",
+          "必填": true,
+          "说明": "Customized object information."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "check",
+      "返回值": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Check suspected leaked objects.",
+      "注释信息": [
+        "@returns { string } List of suspected leaked objects in JSON format.",
+        "@syscap SystemCapability.HiviewDFX.HiChecker",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "jsLeakWatcher",
+      "since_version": "12",
+      "system_capability": "SystemCapability.HiviewDFX.HiChecker",
+      "parameters": [],
+      "return_description": "List of suspected leaked objects in JSON format.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "dump",
+      "返回值": "Array<string>",
+      "所属模块": "未知模块",
+      "功能描述": "Dump leak list and heap snapshot.",
+      "注释信息": [
+        "@param { string } filePath - Directory for exporting files.",
+        "@returns { Array<string> } The array of exported results, index 0 is leakListFileName, index 1 is heapSnapShotFileName.",
+        "@throws { BusinessError } 401 - Parameter error. The filepath is invalid.",
+        "@syscap SystemCapability.HiviewDFX.HiChecker",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "jsLeakWatcher",
+      "since_version": "12",
+      "system_capability": "SystemCapability.HiviewDFX.HiChecker",
+      "parameters": [
+        {
+          "名称": "filePath",
+          "类型": "string",
+          "必填": true,
+          "说明": "Directory for exporting files."
+        }
+      ],
+      "return_description": "The array of exported results, index 0 is leakListFileName, index 1 is heapSnapShotFileName.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. The filepath is invalid."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "enableLeakWatcher",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Enables or disables jsLeakWatcher. This interface can detect js object memory leaks in a single call, which is more concise than the previous method requiring four function (enable,watch,check dump) calls.If there is a memory leak, the leak file will be returned to the developer through the callback function. Input parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types; 3.Parameter verification failed.",
+      "注释信息": [
+        "@param { boolean } isEnabled - Whether to enable or disable jsLeankWatcher. The value true means to enable the feature, and false means the opposite.",
+        "@param { Array<string> } configs - Array of types of objects to watch.",
+        "@param { Callback<Array<string>> } callback - Callback invoked when an object-related memory leak is detected.",
+        "@throws { BusinessError } 10801001 - The parameter isEnabled is invalid.",
+        "@throws { BusinessError } 10801002 - The parameter config is invalid.",
+        "@throws { BusinessError } 10801003 - The parameter callback is invalid.",
+        "@syscap SystemCapability.HiviewDFX.HiChecker",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "jsLeakWatcher",
+      "since_version": "20",
+      "system_capability": "SystemCapability.HiviewDFX.HiChecker",
+      "parameters": [
+        {
+          "名称": "isEnabled",
+          "类型": "boolean",
+          "必填": true,
+          "说明": "Whether to enable or disable jsLeankWatcher. The value true means to enable the feature, and false means the opposite."
+        },
+        {
+          "名称": "configs",
+          "类型": "Array<string>",
+          "必填": true,
+          "说明": "Array of types of objects to watch."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<Array<string>>",
+          "必填": true,
+          "说明": "Callback invoked when an object-related memory leak is detected."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "10801001",
+          "description": "The parameter isEnabled is invalid."
+        },
+        {
+          "code": "10801002",
+          "description": "The parameter config is invalid."
+        },
+        {
+          "code": "10801003",
+          "description": "The parameter callback is invalid."
+        }
+      ],
+      "版本": "API"
+    }
+  ]
+}

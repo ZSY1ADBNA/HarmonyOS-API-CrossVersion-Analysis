@@ -1,0 +1,313 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.TelephonyKit",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "namespace",
+      "名称": "eSIM",
+      "所属模块": "@kit.TelephonyKit",
+      "功能描述": "This indicates that the eSIM card performs the profile management operation synchronously. Includes methods defined by GSMA Spec (SGP.22) and customized methods.",
+      "注释信息": [
+        "@namespace eSIM",
+        "@syscap SystemCapability.Telephony.CoreService.Esim",
+        "@since 18"
+      ],
+      "层级": 1,
+      "上级": "@kit.TelephonyKit",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Telephony.CoreService.Esim",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "isSupported",
+      "返回值": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Whether embedded subscriptions are currently supported. 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { number } slotId - Indicates the card slot index number.",
+        "@returns { boolean } Returns {@code true} if the eSIM capability is supported; returns {@code false} otherwise.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 3120001 - Service connection failed.",
+        "@throws { BusinessError } 3120002 - System internal error.",
+        "@syscap SystemCapability.Telephony.CoreService.Esim",
+        "@since 18"
+      ],
+      "层级": 1,
+      "上级": "eSIM",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Telephony.CoreService.Esim",
+      "parameters": [
+        {
+          "名称": "slotId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the card slot index number."
+        }
+      ],
+      "return_description": "Returns {@code true} if the eSIM capability is supported; returns {@code false} otherwise.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "3120001",
+          "description": "Service connection failed."
+        },
+        {
+          "code": "3120002",
+          "description": "System internal error."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "addProfile",
+      "返回值": "Promise<boolean>",
+      "所属模块": "未知模块",
+      "功能描述": "Starts a page through an ability, on which users can touch the button to download a profile. returns {@code false} otherwise. 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.SET_TELEPHONY_ESIM_STATE_OPEN",
+        "@param { DownloadableProfile } profile - Bound profile package data returned by the SM-DP+ server.",
+        "@returns { Promise<boolean> } Returns {@code true} if the profile is added successfully;",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 3120001 - Service connection failed.",
+        "@throws { BusinessError } 3120002 - System internal error.",
+        "@syscap SystemCapability.Telephony.CoreService.Esim",
+        "@since 18"
+      ],
+      "层级": 1,
+      "上级": "eSIM",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Telephony.CoreService.Esim",
+      "parameters": [
+        {
+          "名称": "profile",
+          "类型": "DownloadableProfile",
+          "必填": true,
+          "说明": "Bound profile package data returned by the SM-DP+ server."
+        }
+      ],
+      "return_description": "Returns {@code true} if the profile is added successfully;",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "3120001",
+          "description": "Service connection failed."
+        },
+        {
+          "code": "3120002",
+          "description": "System internal error."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "AccessRule",
+      "所属模块": "未知模块",
+      "功能描述": "Establishes a single UICC access rule pursuant to the GlobalPlatform Secure Element Access Control specification.",
+      "注释信息": [
+        "@interface AccessRule",
+        "@syscap SystemCapability.Telephony.CoreService.Esim",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "eSIM",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Telephony.CoreService.Esim",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "certificateHashHexStr",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Certificate hash hexadecimal string.",
+      "注释信息": [
+        "@type { string }",
+        "@syscap SystemCapability.Telephony.CoreService.Esim",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "AccessRule",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Telephony.CoreService.Esim",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "packageName",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "The name of package.",
+      "注释信息": [
+        "@type { string }",
+        "@syscap SystemCapability.Telephony.CoreService.Esim",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "AccessRule",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Telephony.CoreService.Esim",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "accessType",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "The type of access.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.Telephony.CoreService.Esim",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "AccessRule",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Telephony.CoreService.Esim",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "DownloadableProfile",
+      "所属模块": "未知模块",
+      "功能描述": "Information about a profile which is downloadable to an eUICC using.",
+      "注释信息": [
+        "@interface DownloadableProfile",
+        "@syscap SystemCapability.Telephony.CoreService.Esim",
+        "@since 18"
+      ],
+      "层级": 2,
+      "上级": "eSIM",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Telephony.CoreService.Esim",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "activationCode",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Activation code.",
+      "注释信息": [
+        "@type { string }",
+        "@syscap SystemCapability.Telephony.CoreService.Esim",
+        "@since 18"
+      ],
+      "层级": 2,
+      "上级": "DownloadableProfile",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Telephony.CoreService.Esim",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "confirmationCode",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Confirmation code.",
+      "注释信息": [
+        "@type { ?string }",
+        "@syscap SystemCapability.Telephony.CoreService.Esim",
+        "@since 18"
+      ],
+      "层级": 2,
+      "上级": "DownloadableProfile",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Telephony.CoreService.Esim",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "carrierName",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Carrier name.",
+      "注释信息": [
+        "@type { ?string }",
+        "@syscap SystemCapability.Telephony.CoreService.Esim",
+        "@since 18"
+      ],
+      "层级": 2,
+      "上级": "DownloadableProfile",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Telephony.CoreService.Esim",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "accessRules",
+      "属性类型": "Array<AccessRule>",
+      "所属模块": "未知模块",
+      "功能描述": "Gets the accessRules.",
+      "注释信息": [
+        "@type { ?Array<AccessRule> }",
+        "@syscap SystemCapability.Telephony.CoreService.Esim",
+        "@since 18"
+      ],
+      "层级": 2,
+      "上级": "DownloadableProfile",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Telephony.CoreService.Esim",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    }
+  ]
+}

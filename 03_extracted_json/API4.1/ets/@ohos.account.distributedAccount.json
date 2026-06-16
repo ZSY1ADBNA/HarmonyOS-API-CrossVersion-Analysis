@@ -1,0 +1,590 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.BasicServicesKit",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "namespace",
+      "名称": "distributedAccount",
+      "所属模块": "@kit.BasicServicesKit",
+      "功能描述": "This module provides the capability to manage distributed accounts.",
+      "注释信息": [
+        "@namespace distributedAccount",
+        "@syscap SystemCapability.Account.OsAccount",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "@kit.BasicServicesKit",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Account.OsAccount",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "getDistributedAccountAbility",
+      "返回值": "DistributedAccountAbility",
+      "所属模块": "未知模块",
+      "功能描述": "Gets the ability of the distributed account.",
+      "注释信息": [
+        "@returns { DistributedAccountAbility } Ability to manage operations of distributed account.",
+        "@syscap SystemCapability.Account.OsAccount",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "distributedAccount",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Account.OsAccount",
+      "parameters": [],
+      "return_description": "Ability to manage operations of distributed account.",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "interface",
+      "名称": "DistributedAccountAbility",
+      "所属模块": "未知模块",
+      "功能描述": "Defines distributed account functions and interfaces.",
+      "注释信息": [
+        "@interface DistributedAccountAbility",
+        "@syscap SystemCapability.Account.OsAccount",
+        "@since 7"
+      ],
+      "层级": 2,
+      "上级": "distributedAccount",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Account.OsAccount",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "queryOsAccountDistributedInfo",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Queries the distributed information of the current OS account.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_LOCAL_ACCOUNTS or ohos.permission.DISTRIBUTED_DATASYNC",
+        "@param { AsyncCallback<DistributedInfo> } callback - Asynchronous callback interface.",
+        "@syscap SystemCapability.Account.OsAccount",
+        "@since 7",
+        "@deprecated since 9",
+        "@useinstead distributedAccount.DistributedAccountAbility#getOsAccountDistributedInfo"
+      ],
+      "层级": 2,
+      "上级": "DistributedAccountAbility",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Account.OsAccount",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<DistributedInfo>",
+          "必填": true,
+          "说明": "Asynchronous callback interface."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "queryOsAccountDistributedInfo",
+      "返回值": "Promise<DistributedInfo>",
+      "所属模块": "未知模块",
+      "功能描述": "Queries the distributed information of the current OS account.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_LOCAL_ACCOUNTS or ohos.permission.DISTRIBUTED_DATASYNC",
+        "@returns { Promise<DistributedInfo> } The distributed information of the current OS account.",
+        "@syscap SystemCapability.Account.OsAccount",
+        "@since 7",
+        "@deprecated since 9",
+        "@useinstead distributedAccount.DistributedAccountAbility#getOsAccountDistributedInfo"
+      ],
+      "层级": 2,
+      "上级": "DistributedAccountAbility",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Account.OsAccount",
+      "parameters": [],
+      "return_description": "The distributed information of the current OS account.",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "getOsAccountDistributedInfo",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Gets the distributed information of the current OS account.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_DISTRIBUTED_ACCOUNTS or ohos.permission.GET_DISTRIBUTED_ACCOUNTS or ohos.permission.DISTRIBUTED_DATASYNC",
+        "@param { AsyncCallback<DistributedInfo> } callback - Asynchronous callback interface.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - The parameter check failed.",
+        "@throws { BusinessError } 12300001 - System service exception.",
+        "@syscap SystemCapability.Account.OsAccount",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "DistributedAccountAbility",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Account.OsAccount",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<DistributedInfo>",
+          "必填": true,
+          "说明": "Asynchronous callback interface."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "The parameter check failed."
+        },
+        {
+          "code": "12300001",
+          "description": "System service exception."
+        }
+      ],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "getOsAccountDistributedInfo",
+      "返回值": "Promise<DistributedInfo>",
+      "所属模块": "未知模块",
+      "功能描述": "Gets the distributed information of the current OS account.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_DISTRIBUTED_ACCOUNTS or ohos.permission.GET_DISTRIBUTED_ACCOUNTS or ohos.permission.DISTRIBUTED_DATASYNC",
+        "@returns { Promise<DistributedInfo> } The distributed information of the current OS account.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - The parameter check failed.",
+        "@throws { BusinessError } 12300001 - System service exception.",
+        "@syscap SystemCapability.Account.OsAccount",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "DistributedAccountAbility",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Account.OsAccount",
+      "parameters": [],
+      "return_description": "The distributed information of the current OS account.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "The parameter check failed."
+        },
+        {
+          "code": "12300001",
+          "description": "System service exception."
+        }
+      ],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "getOsAccountDistributedInfoByLocalId",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Gets the distributed information of the specified OS account.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_DISTRIBUTED_ACCOUNTS or ohos.permission.INTERACT_ACROSS_LOCAL_ACCOUNTS",
+        "@param { number } localId - Indicates the local ID of the specified OS account.",
+        "@param { AsyncCallback<DistributedInfo> } callback - Asynchronous callback interface.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Not system application.",
+        "@throws { BusinessError } 401 - The parameter check failed.",
+        "@throws { BusinessError } 12300001 - System service exception.",
+        "@throws { BusinessError } 12300003 - Account not found.",
+        "@syscap SystemCapability.Account.OsAccount",
+        "@systemapi Hide this for inner system use.",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "DistributedAccountAbility",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Account.OsAccount",
+      "parameters": [
+        {
+          "名称": "localId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the local ID of the specified OS account."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<DistributedInfo>",
+          "必填": true,
+          "说明": "Asynchronous callback interface."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Not system application."
+        },
+        {
+          "code": "401",
+          "description": "The parameter check failed."
+        },
+        {
+          "code": "12300001",
+          "description": "System service exception."
+        },
+        {
+          "code": "12300003",
+          "description": "Account not found."
+        }
+      ],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "getOsAccountDistributedInfoByLocalId",
+      "返回值": "Promise<DistributedInfo>",
+      "所属模块": "未知模块",
+      "功能描述": "Gets the distributed information of the specified OS account.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_DISTRIBUTED_ACCOUNTS or ohos.permission.INTERACT_ACROSS_LOCAL_ACCOUNTS",
+        "@param { number } localId - Indicates the local ID of the specified OS account.",
+        "@returns { Promise<DistributedInfo> } The distributed information of the specified OS account.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Not system application.",
+        "@throws { BusinessError } 401 - The parameter check failed.",
+        "@throws { BusinessError } 12300001 - System service exception.",
+        "@throws { BusinessError } 12300003 - Account not found.",
+        "@syscap SystemCapability.Account.OsAccount",
+        "@systemapi Hide this for inner system use.",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "DistributedAccountAbility",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Account.OsAccount",
+      "parameters": [
+        {
+          "名称": "localId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the local ID of the specified OS account."
+        }
+      ],
+      "return_description": "The distributed information of the specified OS account.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Not system application."
+        },
+        {
+          "code": "401",
+          "description": "The parameter check failed."
+        },
+        {
+          "code": "12300001",
+          "description": "System service exception."
+        },
+        {
+          "code": "12300003",
+          "description": "Account not found."
+        }
+      ],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "updateOsAccountDistributedInfo",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Updates the distributed information of the OS account.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_LOCAL_ACCOUNTS",
+        "@param { DistributedInfo } accountInfo - Indicates the information of the OS account used for a distributed system.",
+        "@param { AsyncCallback<void> } callback - Asynchronous callback interface.",
+        "@syscap SystemCapability.Account.OsAccount",
+        "@since 7",
+        "@deprecated since 9",
+        "@useinstead distributedAccount.DistributedAccountAbility#setOsAccountDistributedInfo"
+      ],
+      "层级": 2,
+      "上级": "DistributedAccountAbility",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Account.OsAccount",
+      "parameters": [
+        {
+          "名称": "accountInfo",
+          "类型": "DistributedInfo",
+          "必填": true,
+          "说明": "Indicates the information of the OS account used for a distributed system."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "Asynchronous callback interface."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "updateOsAccountDistributedInfo",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Updates the distributed information of the OS account.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_LOCAL_ACCOUNTS",
+        "@param { DistributedInfo } accountInfo - Indicates the information of the OS account used for a distributed system.",
+        "@returns { Promise<void> } The promise returned by the function.",
+        "@syscap SystemCapability.Account.OsAccount",
+        "@since 7",
+        "@deprecated since 9",
+        "@useinstead distributedAccount.DistributedAccountAbility#setOsAccountDistributedInfo"
+      ],
+      "层级": 2,
+      "上级": "DistributedAccountAbility",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Account.OsAccount",
+      "parameters": [
+        {
+          "名称": "accountInfo",
+          "类型": "DistributedInfo",
+          "必填": true,
+          "说明": "Indicates the information of the OS account used for a distributed system."
+        }
+      ],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "setOsAccountDistributedInfo",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Sets the distributed information of the OS account.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_DISTRIBUTED_ACCOUNTS",
+        "@param { DistributedInfo } accountInfo - Indicates the information of the OS account used for a distributed system.",
+        "@param { AsyncCallback<void> } callback - Asynchronous callback interface.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - The parameter check failed.",
+        "@throws { BusinessError } 12300001 - System service exception.",
+        "@throws { BusinessError } 12300002 - Invalid accountInfo.",
+        "@throws { BusinessError } 12300003 - Account not found.",
+        "@syscap SystemCapability.Account.OsAccount",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "DistributedAccountAbility",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Account.OsAccount",
+      "parameters": [
+        {
+          "名称": "accountInfo",
+          "类型": "DistributedInfo",
+          "必填": true,
+          "说明": "Indicates the information of the OS account used for a distributed system."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "Asynchronous callback interface."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "The parameter check failed."
+        },
+        {
+          "code": "12300001",
+          "description": "System service exception."
+        },
+        {
+          "code": "12300002",
+          "description": "Invalid accountInfo."
+        },
+        {
+          "code": "12300003",
+          "description": "Account not found."
+        }
+      ],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "setOsAccountDistributedInfo",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Sets the distributed information of the OS account.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_DISTRIBUTED_ACCOUNTS",
+        "@param { DistributedInfo } accountInfo - Indicates the information of the OS account used for a distributed system.",
+        "@returns { Promise<void> } The promise returned by the function.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - The parameter check failed.",
+        "@throws { BusinessError } 12300001 - System service exception.",
+        "@throws { BusinessError } 12300002 - Invalid accountInfo.",
+        "@throws { BusinessError } 12300003 - Account not found.",
+        "@syscap SystemCapability.Account.OsAccount",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "DistributedAccountAbility",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Account.OsAccount",
+      "parameters": [
+        {
+          "名称": "accountInfo",
+          "类型": "DistributedInfo",
+          "必填": true,
+          "说明": "Indicates the information of the OS account used for a distributed system."
+        }
+      ],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "The parameter check failed."
+        },
+        {
+          "code": "12300001",
+          "description": "System service exception."
+        },
+        {
+          "code": "12300002",
+          "description": "Invalid accountInfo."
+        },
+        {
+          "code": "12300003",
+          "description": "Account not found."
+        }
+      ],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "setOsAccountDistributedInfoByLocalId",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Sets the distributed information of the specified OS account.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_DISTRIBUTED_ACCOUNTS",
+        "@param { number } localId - Indicates the local ID of the OS account.",
+        "@param { DistributedInfo } distributedInfo - Indicates the distributed information.",
+        "@param { AsyncCallback<void> } callback - Asynchronous callback interface.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Not system application.",
+        "@throws { BusinessError } 401 - The parameter check failed.",
+        "@throws { BusinessError } 12300001 - System service exception.",
+        "@throws { BusinessError } 12300002 - Invalid distributedInfo.",
+        "@throws { BusinessError } 12300003 - Account identified by localId or by distributedInfo not found.",
+        "@throws { BusinessError } 12300008 - Restricted OS account.",
+        "@syscap SystemCapability.Account.OsAccount",
+        "@systemapi Hide this for inner system use.",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "DistributedAccountAbility",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Account.OsAccount",
+      "parameters": [
+        {
+          "名称": "localId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the local ID of the OS account."
+        },
+        {
+          "名称": "distributedInfo",
+          "类型": "DistributedInfo",
+          "必填": true,
+          "说明": "Indicates the distributed information."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "Asynchronous callback interface."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Not system application."
+        },
+        {
+          "code": "401",
+          "description": "The parameter check failed."
+        },
+        {
+          "code": "12300001",
+          "description": "System service exception."
+        },
+        {
+          "code": "12300002",
+          "description": "Invalid distributedInfo."
+        },
+        {
+          "code": "12300003",
+          "description": "Account identified by localId or by distributedInfo not found."
+        },
+        {
+          "code": "12300008",
+          "description": "Restricted OS account."
+        }
+      ],
+      "版本": "API4.1"
+    }
+  ]
+}

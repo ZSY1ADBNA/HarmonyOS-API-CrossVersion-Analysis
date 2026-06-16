@@ -1,0 +1,908 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.AVSessionKit",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "namespace",
+      "名称": "avSession",
+      "所属模块": "@kit.AVSessionKit",
+      "功能描述": "",
+      "注释信息": [
+        "@namespace avSession",
+        "@syscap SystemCapability.Multimedia.AVSession.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "@kit.AVSessionKit",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Multimedia.AVSession.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "method",
+      "名称": "createAVSession",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Create an AVSession instance. An ability can only create one AVSession 2.Parameter verification failed.",
+      "注释信息": [
+        "@param { Context } context - The context of application",
+        "@param { string } tag - A user-defined name for this session",
+        "@param { AVSessionType } type - The type of session {@link AVSessionType}",
+        "@param { AsyncCallback<AVSession> } callback - async callback for AVSession.",
+        "@throws { BusinessError } 401 - parameter check failed. 1.Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 6600101 - Session service exception.",
+        "@syscap SystemCapability.Multimedia.AVSession.Core",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "avSession",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Multimedia.AVSession.Core",
+      "parameters": [
+        {
+          "名称": "context",
+          "类型": "Context",
+          "必填": true,
+          "说明": "The context of application"
+        },
+        {
+          "名称": "tag",
+          "类型": "string",
+          "必填": true,
+          "说明": "A user-defined name for this session"
+        },
+        {
+          "名称": "type",
+          "类型": "AVSessionType",
+          "必填": true,
+          "说明": "The type of session {@link AVSessionType}"
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<AVSession>",
+          "必填": true,
+          "说明": "async callback for AVSession."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "parameter check failed. 1.Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "6600101",
+          "description": "Session service exception."
+        }
+      ],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "method",
+      "名称": "createAVSession",
+      "返回值": "Promise<AVSession>",
+      "所属模块": "未知模块",
+      "功能描述": "Create an AVSession instance. An ability can only create one AVSession 2.Parameter verification failed.",
+      "注释信息": [
+        "@param { Context } context - The context of application",
+        "@param { string } tag - A user-defined name for this session",
+        "@param { AVSessionType } type - The type of session {@link AVSessionType}",
+        "@returns { Promise<AVSession> } Promise for AVSession",
+        "@throws { BusinessError } 401 - parameter check failed. 1.Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 6600101 - Session service exception.",
+        "@syscap SystemCapability.Multimedia.AVSession.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "avSession",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Multimedia.AVSession.Core",
+      "parameters": [
+        {
+          "名称": "context",
+          "类型": "Context",
+          "必填": true,
+          "说明": "The context of application"
+        },
+        {
+          "名称": "tag",
+          "类型": "string",
+          "必填": true,
+          "说明": "A user-defined name for this session"
+        },
+        {
+          "名称": "type",
+          "类型": "AVSessionType",
+          "必填": true,
+          "说明": "The type of session {@link AVSessionType}"
+        }
+      ],
+      "return_description": "Promise for AVSession",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "parameter check failed. 1.Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "6600101",
+          "description": "Session service exception."
+        }
+      ],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "method",
+      "名称": "getAllSessionDescriptors",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Get all avsession descriptors of the system",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_MEDIA_RESOURCES",
+        "@param { AsyncCallback<Array<Readonly<AVSessionDescriptor>>> } callback - async callback for an array of AVSessionDescriptors.",
+        "@throws { BusinessError } 201 - permission denied",
+        "@throws { BusinessError } 202 - Not System App.",
+        "@throws { BusinessError } 6600101 - Session service exception.",
+        "@syscap SystemCapability.Multimedia.AVSession.Manager",
+        "@systemapi",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "avSession",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Multimedia.AVSession.Manager",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<Array<Readonly<AVSessionDescriptor>>>",
+          "必填": true,
+          "说明": "async callback for an array of AVSessionDescriptors."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "permission denied"
+        },
+        {
+          "code": "202",
+          "description": "Not System App."
+        },
+        {
+          "code": "6600101",
+          "description": "Session service exception."
+        }
+      ],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "method",
+      "名称": "getAllSessionDescriptors",
+      "返回值": "Promise<Array<Readonly<AVSessionDescriptor>>>",
+      "所属模块": "未知模块",
+      "功能描述": "Get all avsession descriptors of the system",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_MEDIA_RESOURCES",
+        "@returns { Promise<Array<Readonly<AVSessionDescriptor>>> } Promise for an array of AVSessionDescriptors",
+        "@throws { BusinessError } 201 - permission denied",
+        "@throws { BusinessError } 202 - Not System App.",
+        "@throws { BusinessError } 6600101 - Session service exception.",
+        "@syscap SystemCapability.Multimedia.AVSession.Manager",
+        "@systemapi",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "avSession",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Multimedia.AVSession.Manager",
+      "parameters": [],
+      "return_description": "Promise for an array of AVSessionDescriptors",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "permission denied"
+        },
+        {
+          "code": "202",
+          "description": "Not System App."
+        },
+        {
+          "code": "6600101",
+          "description": "Session service exception."
+        }
+      ],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "method",
+      "名称": "getHistoricalSessionDescriptors",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Get history avsession records. These sessions have been destroyed. If provided '0' or not provided, the maximum value is determined by the system. 2.Incorrect parameter types.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_MEDIA_RESOURCES",
+        "@param { number } maxSize - Specifies the maximum size of the returned value array.",
+        "@param { AsyncCallback<Array<Readonly<AVSessionDescriptor>>> } callback - async callback for an array of AVSessionDescriptors.",
+        "@throws { BusinessError } 201 - permission denied",
+        "@throws { BusinessError } 202 - Not System App",
+        "@throws { BusinessError } 401 - parameter check failed. Possible causes: 1.Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 6600101 - Session service exception.",
+        "@syscap SystemCapability.Multimedia.AVSession.Manager",
+        "@systemapi Hide this for inner system use",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "avSession",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Multimedia.AVSession.Manager",
+      "parameters": [
+        {
+          "名称": "maxSize",
+          "类型": "number",
+          "必填": true,
+          "说明": "Specifies the maximum size of the returned value array."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<Array<Readonly<AVSessionDescriptor>>>",
+          "必填": true,
+          "说明": "async callback for an array of AVSessionDescriptors."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "permission denied"
+        },
+        {
+          "code": "202",
+          "description": "Not System App"
+        },
+        {
+          "code": "401",
+          "description": "parameter check failed. Possible causes: 1.Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "6600101",
+          "description": "Session service exception."
+        }
+      ],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "method",
+      "名称": "getHistoricalSessionDescriptors",
+      "返回值": "Promise<Array<Readonly<AVSessionDescriptor>>>",
+      "所属模块": "未知模块",
+      "功能描述": "Get history avsession records. These sessions have been destroyed. If provided '0' or not provided, the maximum value is determined by the system. 2.Incorrect parameter types.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_MEDIA_RESOURCES",
+        "@param { number } maxSize - Specifies the maximum size of the returned value array.",
+        "@returns { Promise<Array<Readonly<AVSessionDescriptor>>> } Promise for an array of AVSessionDescriptors",
+        "@throws { BusinessError } 201 - permission denied",
+        "@throws { BusinessError } 202 - Not System App",
+        "@throws { BusinessError } 401 - parameter check failed. 1.Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 6600101 - Session service exception.",
+        "@syscap SystemCapability.Multimedia.AVSession.Manager",
+        "@systemapi Hide this for inner system use",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "avSession",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Multimedia.AVSession.Manager",
+      "parameters": [
+        {
+          "名称": "maxSize",
+          "类型": "number",
+          "必填": true,
+          "说明": "Specifies the maximum size of the returned value array."
+        }
+      ],
+      "return_description": "Promise for an array of AVSessionDescriptors",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "permission denied"
+        },
+        {
+          "code": "202",
+          "description": "Not System App"
+        },
+        {
+          "code": "401",
+          "description": "parameter check failed. 1.Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "6600101",
+          "description": "Session service exception."
+        }
+      ],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "method",
+      "名称": "getHistoricalAVQueueInfos",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Get history play list information records. If provided '0' or not provided, the maximum value is determined by the system. 2.Incorrect parameter types.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_MEDIA_RESOURCES",
+        "@param { number } maxSize - Specifies the maximum size of the returned value array.",
+        "@param { number } maxAppSize - Specifies the maximum app size of the returned value array.",
+        "@param { AsyncCallback<Array<Readonly<AVQueueInfo>>> } callback - async callback for an array of AVQueueInfo.",
+        "@throws { BusinessError } 201 - permission denied",
+        "@throws { BusinessError } 202 - Not System App.",
+        "@throws { BusinessError } 401 - parameter check failed. 1.Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 6600101 - Session service exception.",
+        "@syscap SystemCapability.Multimedia.AVSession.Manager",
+        "@systemapi Hide this for inner system use",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "avSession",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Multimedia.AVSession.Manager",
+      "parameters": [
+        {
+          "名称": "maxSize",
+          "类型": "number",
+          "必填": true,
+          "说明": "Specifies the maximum size of the returned value array."
+        },
+        {
+          "名称": "maxAppSize",
+          "类型": "number",
+          "必填": true,
+          "说明": "Specifies the maximum app size of the returned value array."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<Array<Readonly<AVQueueInfo>>>",
+          "必填": true,
+          "说明": "async callback for an array of AVQueueInfo."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "permission denied"
+        },
+        {
+          "code": "202",
+          "description": "Not System App."
+        },
+        {
+          "code": "401",
+          "description": "parameter check failed. 1.Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "6600101",
+          "description": "Session service exception."
+        }
+      ],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "method",
+      "名称": "getHistoricalAVQueueInfos",
+      "返回值": "Promise<Array<Readonly<AVQueueInfo>>>",
+      "所属模块": "未知模块",
+      "功能描述": "Get history play list information records. 2.Incorrect parameter types.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_MEDIA_RESOURCES",
+        "@param { number } maxSize - Specifies the maximum size of the returned value array.",
+        "@param { number } maxAppSize - Specifies the maximum app size of the returned value array.",
+        "@returns { Promise<Array<Readonly<AVQueueInfo>>> } Promise for an array of AVQueueInfo",
+        "@throws { BusinessError } 401 - parameter check failed. 1.Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 6600101 - Session service exception.",
+        "@syscap SystemCapability.Multimedia.AVSession.Manager",
+        "@systemapi Hide this for inner system use",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "avSession",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Multimedia.AVSession.Manager",
+      "parameters": [
+        {
+          "名称": "maxSize",
+          "类型": "number",
+          "必填": true,
+          "说明": "Specifies the maximum size of the returned value array."
+        },
+        {
+          "名称": "maxAppSize",
+          "类型": "number",
+          "必填": true,
+          "说明": "Specifies the maximum app size of the returned value array."
+        }
+      ],
+      "return_description": "Promise for an array of AVQueueInfo",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "parameter check failed. 1.Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "6600101",
+          "description": "Session service exception."
+        }
+      ],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "method",
+      "名称": "createController",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Create an avsession controller If provided 'default', the system will create a default controller, Used to control the system default session 2.Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_MEDIA_RESOURCES",
+        "@param { string } sessionId - Specifies the sessionId to create the controller.",
+        "@param { AsyncCallback<AVSessionController> } callback - async callback for AVSessionController.",
+        "@throws { BusinessError } 201 - permission denied",
+        "@throws { BusinessError } 202 - Not System App.",
+        "@throws { BusinessError } 401 - parameter check failed. 1.Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 6600101 - Session service exception.",
+        "@throws { BusinessError } 6600102 - The session does not exist.",
+        "@syscap SystemCapability.Multimedia.AVSession.Manager",
+        "@systemapi",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "avSession",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Multimedia.AVSession.Manager",
+      "parameters": [
+        {
+          "名称": "sessionId",
+          "类型": "string",
+          "必填": true,
+          "说明": "Specifies the sessionId to create the controller."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<AVSessionController>",
+          "必填": true,
+          "说明": "async callback for AVSessionController."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "permission denied"
+        },
+        {
+          "code": "202",
+          "description": "Not System App."
+        },
+        {
+          "code": "401",
+          "description": "parameter check failed. 1.Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "6600101",
+          "description": "Session service exception."
+        },
+        {
+          "code": "6600102",
+          "description": "The session does not exist."
+        }
+      ],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "method",
+      "名称": "createController",
+      "返回值": "Promise<AVSessionController>",
+      "所属模块": "未知模块",
+      "功能描述": "Create an avsession controller If provided 'default', the system will create a default controller, Used to control the system default session 2.Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_MEDIA_RESOURCES",
+        "@param { string } sessionId - Specifies the sessionId to create the controller.",
+        "@returns { Promise<AVSessionController> } Promise for AVSessionController",
+        "@throws { BusinessError } 201 - permission denied",
+        "@throws { BusinessError } 202 - Not System App.",
+        "@throws { BusinessError } 401 - parameter check failed. 1.Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 6600101 - Session service exception.",
+        "@throws { BusinessError } 6600102 - The session does not exist.",
+        "@syscap SystemCapability.Multimedia.AVSession.Manager",
+        "@systemapi",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "avSession",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Multimedia.AVSession.Manager",
+      "parameters": [
+        {
+          "名称": "sessionId",
+          "类型": "string",
+          "必填": true,
+          "说明": "Specifies the sessionId to create the controller."
+        }
+      ],
+      "return_description": "Promise for AVSessionController",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "permission denied"
+        },
+        {
+          "code": "202",
+          "description": "Not System App."
+        },
+        {
+          "code": "401",
+          "description": "parameter check failed. 1.Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "6600101",
+          "description": "Session service exception."
+        },
+        {
+          "code": "6600102",
+          "description": "The session does not exist."
+        }
+      ],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "method",
+      "名称": "castAudio",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Cast Audio to the remote devices or cast back local device 'all' means cast all the media audio of this device to remote. 2.Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_MEDIA_RESOURCES",
+        "@param { SessionToken | 'all' } session - Specifies the sessionId which to send to remote.",
+        "@param { Array<audio.AudioDeviceDescriptor> } audioDevices - Specifies the audio devices to cast.",
+        "@param { AsyncCallback<void> } callback - The asyncCallback triggered when the command is executed successfully",
+        "@throws { BusinessError } 201 - permission denied",
+        "@throws { BusinessError } 202 - Not System App.",
+        "@throws { BusinessError } 401 - parameter check failed. 1.Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 6600101 - Session service exception.",
+        "@throws { BusinessError } 6600102 - The session does not exist.",
+        "@throws { BusinessError } 6600104 - The remote session connection failed.",
+        "@syscap SystemCapability.Multimedia.AVSession.Manager",
+        "@systemapi",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "avSession",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Multimedia.AVSession.Manager",
+      "parameters": [
+        {
+          "名称": "session",
+          "类型": "SessionToken | 'all'",
+          "必填": true,
+          "说明": "Specifies the sessionId which to send to remote."
+        },
+        {
+          "名称": "audioDevices",
+          "类型": "Array<audio.AudioDeviceDescriptor>",
+          "必填": true,
+          "说明": "Specifies the audio devices to cast."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "The asyncCallback triggered when the command is executed successfully"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "permission denied"
+        },
+        {
+          "code": "202",
+          "description": "Not System App."
+        },
+        {
+          "code": "401",
+          "description": "parameter check failed. 1.Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "6600101",
+          "description": "Session service exception."
+        },
+        {
+          "code": "6600102",
+          "description": "The session does not exist."
+        },
+        {
+          "code": "6600104",
+          "description": "The remote session connection failed."
+        }
+      ],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "method",
+      "名称": "castAudio",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Cast Audio to the remote devices or cast back local device 'all' means cast all the media audio of this device to remote. 2.Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_MEDIA_RESOURCES",
+        "@param { SessionToken | 'all' } session - Specifies the sessionId which to send to remote.",
+        "@param { Array<audio.AudioDeviceDescriptor> } audioDevices - Specifies the audio devices to cast.",
+        "@returns { Promise<void> } void promise when executed successfully",
+        "@throws { BusinessError } 201 - permission denied",
+        "@throws { BusinessError } 202 - Not System App.",
+        "@throws { BusinessError } 401 - parameter check failed. 1.Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 6600101 - Session service exception.",
+        "@throws { BusinessError } 6600102 - The session does not exist.",
+        "@throws { BusinessError } 6600104 - The remote session  connection failed.",
+        "@syscap SystemCapability.Multimedia.AVSession.Manager",
+        "@systemapi",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "avSession",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Multimedia.AVSession.Manager",
+      "parameters": [
+        {
+          "名称": "session",
+          "类型": "SessionToken | 'all'",
+          "必填": true,
+          "说明": "Specifies the sessionId which to send to remote."
+        },
+        {
+          "名称": "audioDevices",
+          "类型": "Array<audio.AudioDeviceDescriptor>",
+          "必填": true,
+          "说明": "Specifies the audio devices to cast."
+        }
+      ],
+      "return_description": "void promise when executed successfully",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "permission denied"
+        },
+        {
+          "code": "202",
+          "description": "Not System App."
+        },
+        {
+          "code": "401",
+          "description": "parameter check failed. 1.Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "6600101",
+          "description": "Session service exception."
+        },
+        {
+          "code": "6600102",
+          "description": "The session does not exist."
+        },
+        {
+          "code": "6600104",
+          "description": "The remote session  connection failed."
+        }
+      ],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "method",
+      "名称": "startAVPlayback",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Start an application for media playback. 2.Incorrect parameter types. 3.Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_MEDIA_RESOURCES",
+        "@param { string } bundleName - Specifies the bundleName which to be started.",
+        "@param { string } assetId - Specifies the assetId to be started.",
+        "@returns { Promise<void> } void promise when executed successfully",
+        "@throws { BusinessError } 201 - permission denied",
+        "@throws { BusinessError } 202 - Not System App. Interface caller is not a system app.",
+        "@throws { BusinessError } 401 - parameter check failed. 1.Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 6600101 - Session service exception.",
+        "@syscap SystemCapability.Multimedia.AVSession.Manager",
+        "@systemapi",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "avSession",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Multimedia.AVSession.Manager",
+      "parameters": [
+        {
+          "名称": "bundleName",
+          "类型": "string",
+          "必填": true,
+          "说明": "Specifies the bundleName which to be started."
+        },
+        {
+          "名称": "assetId",
+          "类型": "string",
+          "必填": true,
+          "说明": "Specifies the assetId to be started."
+        }
+      ],
+      "return_description": "void promise when executed successfully",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "permission denied"
+        },
+        {
+          "code": "202",
+          "description": "Not System App. Interface caller is not a system app."
+        },
+        {
+          "code": "401",
+          "description": "parameter check failed. 1.Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "6600101",
+          "description": "Session service exception."
+        }
+      ],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "method",
+      "名称": "getDistributedSessionController",
+      "返回值": "Promise<Array<AVSessionController>>",
+      "所属模块": "未知模块",
+      "功能描述": "Get distributed avsession controller",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_MEDIA_RESOURCES",
+        "@param { DistributedSessionType } distributedSessionType - Specifies the distributed session type.",
+        "@returns { Promise<Array<AVSessionController>> } Promise for AVSessionController.",
+        "@throws { BusinessError } 201 - permission denied",
+        "@throws { BusinessError } 202 - Not System App.",
+        "@throws { BusinessError } 6600101 - Session service exception.",
+        "@throws { BusinessError } 6600109 - The remote connection is not established.",
+        "@syscap SystemCapability.Multimedia.AVSession.Manager",
+        "@systemapi",
+        "@since 18"
+      ],
+      "层级": 1,
+      "上级": "avSession",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Multimedia.AVSession.Manager",
+      "parameters": [
+        {
+          "名称": "distributedSessionType",
+          "类型": "DistributedSessionType",
+          "必填": true,
+          "说明": "Specifies the distributed session type."
+        }
+      ],
+      "return_description": "Promise for AVSessionController.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "permission denied"
+        },
+        {
+          "code": "202",
+          "description": "Not System App."
+        },
+        {
+          "code": "6600101",
+          "description": "Session service exception."
+        },
+        {
+          "code": "6600109",
+          "description": "The remote connection is not established."
+        }
+      ],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "interface",
+      "名称": "SessionToken",
+      "所属模块": "未知模块",
+      "功能描述": "Session token. Used to judge the legitimacy of the session.",
+      "注释信息": [
+        "@typedef SessionToken",
+        "@syscap SystemCapability.Multimedia.AVSession.Manager",
+        "@systemapi",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "avSession",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Multimedia.AVSession.Manager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "property",
+      "名称": "sessionId",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "The unique session id of the avsession object",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_MEDIA_RESOURCES",
+        "@type { string }",
+        "@syscap SystemCapability.Multimedia.AVSession.Manager",
+        "@systemapi",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "SessionToken",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Multimedia.AVSession.Manager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "property",
+      "名称": "pid",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Process id of session",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_MEDIA_RESOURCES",
+        "@type { ?number }",
+        "@syscap SystemCapability.Multimedia.AVSession.Manager",
+        "@systemapi",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "SessionToken",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Multimedia.AVSession.Manager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "property",
+      "名称": "uid",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "User id",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_MEDIA_RESOURCES",
+        "@type { ?number }",
+        "@syscap SystemCapability.Multimedia.AVSession.Manager",
+        "@systemapi",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "SessionToken",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Multimedia.AVSession.Manager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.1"
+    }
+  ]
+}

@@ -1,0 +1,381 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.MDMKit",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "namespace",
+      "名称": "accountManager",
+      "所属模块": "@kit.MDMKit",
+      "功能描述": "This module provides the capability to manage the accounts of the enterprise devices.",
+      "注释信息": [
+        "@namespace accountManager",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "@kit.MDMKit",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "disallowAddLocalAccount",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Disallow the user of device add local account. This function can be called by a super administrator.",
+      "注释信息": [
+        "@permission ohos.permission.ENTERPRISE_SET_ACCOUNT_POLICY",
+        "@param { Want } admin - admin indicates the administrator ability information.",
+        "@param { boolean } disallow - true if the user is not allowed to add local account.",
+        "@param { AsyncCallback<void> } callback - the callback of disallowAddLocalAccount.",
+        "@throws { BusinessError } 9200001 - the application is not an administrator of the device.",
+        "@throws { BusinessError } 9200002 - the administrator application does not have permission to manage the device.",
+        "@throws { BusinessError } 201 - the application does not have permission to call this function.",
+        "@throws { BusinessError } 202 - not system application.",
+        "@throws { BusinessError } 401 - invalid input parameter.",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@systemapi",
+        "@StageModelOnly",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "accountManager",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [
+        {
+          "名称": "admin",
+          "类型": "Want",
+          "必填": true,
+          "说明": "admin indicates the administrator ability information."
+        },
+        {
+          "名称": "disallow",
+          "类型": "boolean",
+          "必填": true,
+          "说明": "true if the user is not allowed to add local account."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "the callback of disallowAddLocalAccount."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "9200001",
+          "description": "the application is not an administrator of the device."
+        },
+        {
+          "code": "9200002",
+          "description": "the administrator application does not have permission to manage the device."
+        },
+        {
+          "code": "201",
+          "description": "the application does not have permission to call this function."
+        },
+        {
+          "code": "202",
+          "description": "not system application."
+        },
+        {
+          "code": "401",
+          "description": "invalid input parameter."
+        }
+      ],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "disallowAddLocalAccount",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Disallow the user of device add local account. This function can be called by a super administrator.",
+      "注释信息": [
+        "@permission ohos.permission.ENTERPRISE_SET_ACCOUNT_POLICY",
+        "@param { Want } admin - admin indicates the administrator ability information.",
+        "@param { boolean } disallow - true if the user is not allowed to add local account.",
+        "@returns { Promise<void> } the promise returned by the disallowAddLocalAccount.",
+        "@throws { BusinessError } 9200001 - the application is not an administrator of the device.",
+        "@throws { BusinessError } 9200002 - the administrator application does not have permission to manage the device.",
+        "@throws { BusinessError } 201 - the application does not have permission to call this function.",
+        "@throws { BusinessError } 202 - not system application.",
+        "@throws { BusinessError } 401 - invalid input parameter.",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@systemapi",
+        "@StageModelOnly",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "accountManager",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [
+        {
+          "名称": "admin",
+          "类型": "Want",
+          "必填": true,
+          "说明": "admin indicates the administrator ability information."
+        },
+        {
+          "名称": "disallow",
+          "类型": "boolean",
+          "必填": true,
+          "说明": "true if the user is not allowed to add local account."
+        }
+      ],
+      "return_description": "the promise returned by the disallowAddLocalAccount.",
+      "error_codes": [
+        {
+          "code": "9200001",
+          "description": "the application is not an administrator of the device."
+        },
+        {
+          "code": "9200002",
+          "description": "the administrator application does not have permission to manage the device."
+        },
+        {
+          "code": "201",
+          "description": "the application does not have permission to call this function."
+        },
+        {
+          "code": "202",
+          "description": "not system application."
+        },
+        {
+          "code": "401",
+          "description": "invalid input parameter."
+        }
+      ],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "disallowAddOsAccountByUser",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Disallows the user to add an OS account. This function can be called by a super administrator.",
+      "注释信息": [
+        "@permission ohos.permission.ENTERPRISE_SET_ACCOUNT_POLICY",
+        "@param { Want } admin - admin indicates the administrator ability information.",
+        "@param { number } userId - indicates the user ID.",
+        "@param { boolean } disallow - true if the specific user is not allowed to add an OS account.",
+        "@throws { BusinessError } 9200001 - the application is not an administrator of the device.",
+        "@throws { BusinessError } 9200002 - the administrator application does not have permission to manage the device.",
+        "@throws { BusinessError } 201 - the application does not have permission to call this function.",
+        "@throws { BusinessError } 202 - not system application.",
+        "@throws { BusinessError } 401 - invalid input parameter.",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@systemapi",
+        "@stagemodelonly",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "accountManager",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [
+        {
+          "名称": "admin",
+          "类型": "Want",
+          "必填": true,
+          "说明": "admin indicates the administrator ability information."
+        },
+        {
+          "名称": "userId",
+          "类型": "number",
+          "必填": true,
+          "说明": "indicates the user ID."
+        },
+        {
+          "名称": "disallow",
+          "类型": "boolean",
+          "必填": true,
+          "说明": "true if the specific user is not allowed to add an OS account."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "9200001",
+          "description": "the application is not an administrator of the device."
+        },
+        {
+          "code": "9200002",
+          "description": "the administrator application does not have permission to manage the device."
+        },
+        {
+          "code": "201",
+          "description": "the application does not have permission to call this function."
+        },
+        {
+          "code": "202",
+          "description": "not system application."
+        },
+        {
+          "code": "401",
+          "description": "invalid input parameter."
+        }
+      ],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "isAddOsAccountByUserDisallowed",
+      "返回值": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Queries whether the user is disallowed to add an OS account. This function can be called by a super administrator.",
+      "注释信息": [
+        "@permission ohos.permission.ENTERPRISE_SET_ACCOUNT_POLICY",
+        "@param { Want } admin - admin indicates the administrator ability information.",
+        "@param { number } userId - indicates the user ID.",
+        "@returns { boolean } true if the specific user is not allowed to add an OS account.",
+        "@throws { BusinessError } 9200001 - the application is not an administrator of the device.",
+        "@throws { BusinessError } 9200002 - the administrator application does not have permission to manage the device.",
+        "@throws { BusinessError } 201 - the application does not have permission to call this function.",
+        "@throws { BusinessError } 202 - not system application.",
+        "@throws { BusinessError } 401 - invalid input parameter.",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@systemapi",
+        "@stagemodelonly",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "accountManager",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [
+        {
+          "名称": "admin",
+          "类型": "Want",
+          "必填": true,
+          "说明": "admin indicates the administrator ability information."
+        },
+        {
+          "名称": "userId",
+          "类型": "number",
+          "必填": true,
+          "说明": "indicates the user ID."
+        }
+      ],
+      "return_description": "true if the specific user is not allowed to add an OS account.",
+      "error_codes": [
+        {
+          "code": "9200001",
+          "description": "the application is not an administrator of the device."
+        },
+        {
+          "code": "9200002",
+          "description": "the administrator application does not have permission to manage the device."
+        },
+        {
+          "code": "201",
+          "description": "the application does not have permission to call this function."
+        },
+        {
+          "code": "202",
+          "description": "not system application."
+        },
+        {
+          "code": "401",
+          "description": "invalid input parameter."
+        }
+      ],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "addOsAccount",
+      "返回值": "osAccount.OsAccountInfo",
+      "所属模块": "未知模块",
+      "功能描述": "Adds an OS account using the name and account type. This function can be called by a super administrator.",
+      "注释信息": [
+        "@permission ohos.permission.ENTERPRISE_SET_ACCOUNT_POLICY",
+        "@param { Want } admin - admin indicates the administrator ability information.",
+        "@param { string } name - the OS account name.",
+        "@param { osAccount.OsAccountType } type - the OS account type.",
+        "@returns { osAccount.OsAccountInfo } information about the OS account added.",
+        "@throws { BusinessError } 9200001 - the application is not an administrator of the device.",
+        "@throws { BusinessError } 9200002 - the administrator application does not have permission to manage the device.",
+        "@throws { BusinessError } 9201003 - failed to add an OS account.",
+        "@throws { BusinessError } 201 - the application does not have permission to call this function.",
+        "@throws { BusinessError } 202 - not system application.",
+        "@throws { BusinessError } 401 - invalid input parameter.",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@systemapi",
+        "@stagemodelonly",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "accountManager",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [
+        {
+          "名称": "admin",
+          "类型": "Want",
+          "必填": true,
+          "说明": "admin indicates the administrator ability information."
+        },
+        {
+          "名称": "name",
+          "类型": "string",
+          "必填": true,
+          "说明": "the OS account name."
+        },
+        {
+          "名称": "type",
+          "类型": "osAccount.OsAccountType",
+          "必填": true,
+          "说明": "the OS account type."
+        }
+      ],
+      "return_description": "information about the OS account added.",
+      "error_codes": [
+        {
+          "code": "9200001",
+          "description": "the application is not an administrator of the device."
+        },
+        {
+          "code": "9200002",
+          "description": "the administrator application does not have permission to manage the device."
+        },
+        {
+          "code": "9201003",
+          "description": "failed to add an OS account."
+        },
+        {
+          "code": "201",
+          "description": "the application does not have permission to call this function."
+        },
+        {
+          "code": "202",
+          "description": "not system application."
+        },
+        {
+          "code": "401",
+          "description": "invalid input parameter."
+        }
+      ],
+      "版本": "API4.1"
+    }
+  ]
+}

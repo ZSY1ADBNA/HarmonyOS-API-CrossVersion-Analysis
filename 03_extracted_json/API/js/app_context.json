@@ -1,0 +1,1485 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.AbilityKit",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "Context",
+      "父类": "BaseContext",
+      "所属模块": "@kit.AbilityKit",
+      "功能描述": "The context of an ability or an application.  It allows access to application-specific resources, request and verification permissions. Can only be obtained through the ability.",
+      "注释信息": [
+        "@extends BaseContext",
+        "@interface Context",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@FAModelOnly",
+        "@since 6"
+      ],
+      "层级": 1,
+      "上级": "@kit.AbilityKit",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getOrCreateLocalDir",
+      "返回值": "Promise<string>",
+      "所属模块": "未知模块",
+      "功能描述": "Get the local root dir of an app. If it is the first call, the dir will be created. If in the context of the ability, return the root dir of the ability; if in the context of the application, return the root dir of the application.",
+      "注释信息": [
+        "@returns { Promise<string> } the root dir",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@FAModelOnly",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "Context",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [],
+      "return_description": "the root dir",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getOrCreateLocalDir",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Get the local root dir of an app. If it is the first call, the dir will be created. If in the context of the ability, return the root dir of the ability; if in the context of the application, return the root dir of the application.",
+      "注释信息": [
+        "@param { AsyncCallback<string> } callback - Returns the local root directory of the application.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@FAModelOnly",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "Context",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<string>",
+          "必填": true,
+          "说明": "Returns the local root directory of the application."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "verifyPermission",
+      "返回值": "Promise<number>",
+      "所属模块": "未知模块",
+      "功能描述": "Verify whether the specified permission is allowed for a particular pid and uid running in the system. Pid and uid are optional. If you do not pass in pid and uid, it will check your own permission. and UID have the permission; callback with {@code -1} otherwise.",
+      "注释信息": [
+        "@param { string } permission - The name of the specified permission.",
+        "@param { PermissionOptions } [options] - Permission Options.",
+        "@returns { Promise<number> } asynchronous callback with {@code 0} if the PID",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@FAModelOnly",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "Context",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "permission",
+          "类型": "string",
+          "必填": true,
+          "说明": "The name of the specified permission."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "PermissionOptions } [options] - Permission Options."
+        }
+      ],
+      "return_description": "asynchronous callback with {@code 0} if the PID",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "verifyPermission",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Verify whether the specified permission is allowed for a particular pid and uid running in the system. Pid and uid are optional. If you do not pass in pid and uid, it will check your own permission. -1 has no permission.",
+      "注释信息": [
+        "@param { string } permission - The name of the specified permission",
+        "@param { PermissionOptions } options - Permission Options",
+        "@param { AsyncCallback<number> } callback - Return permission verification result, 0 has permission,",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@FAModelOnly",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "Context",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "permission",
+          "类型": "string",
+          "必填": true,
+          "说明": "The name of the specified permission"
+        },
+        {
+          "名称": "options",
+          "类型": "PermissionOptions",
+          "必填": true,
+          "说明": "Permission Options"
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<number>",
+          "必填": true,
+          "说明": "Return permission verification result, 0 has permission,"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "verifyPermission",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Verify whether the specified permission is allowed for a particular pid and uid running in the system. Pid and uid are optional. If you do not pass in pid and uid, it will check your own permission. -1 has no permission.",
+      "注释信息": [
+        "@param { string } permission - The name of the specified permission",
+        "@param { AsyncCallback<number> } callback - Return permission verification result, 0 has permission,",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@FAModelOnly",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "Context",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "permission",
+          "类型": "string",
+          "必填": true,
+          "说明": "The name of the specified permission"
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<number>",
+          "必填": true,
+          "说明": "Return permission verification result, 0 has permission,"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "requestPermissionsFromUser",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Requests certain permissions from the system.",
+      "注释信息": [
+        "@param { Array<string> } permissions - Indicates the list of permissions to be requested.parameter cannot be null.",
+        "@param { number } requestCode - Indicates the request code to be passed to the PermissionRequestResult",
+        "@param { AsyncCallback<PermissionRequestResult> } resultCallback - Return authorization result information.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@FAModelOnly",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "Context",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "permissions",
+          "类型": "Array<string>",
+          "必填": true,
+          "说明": "Indicates the list of permissions to be requested.parameter cannot be null."
+        },
+        {
+          "名称": "requestCode",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the request code to be passed to the PermissionRequestResult"
+        },
+        {
+          "名称": "resultCallback",
+          "类型": "AsyncCallback<PermissionRequestResult>",
+          "必填": true,
+          "说明": "Return authorization result information."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "requestPermissionsFromUser",
+      "返回值": "Promise<PermissionRequestResult>",
+      "所属模块": "未知模块",
+      "功能描述": "Requests certain permissions from the system.",
+      "注释信息": [
+        "@param { Array<string> } permissions - Indicates the list of permissions to be requested.Parameter cannot be null.",
+        "@param { number } requestCode - Indicates the request code to be passed to the PermissionRequestResult",
+        "@returns { Promise<PermissionRequestResult> } Indicates the request code to be passed to PermissionRequestResult.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@FAModelOnly",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "Context",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "permissions",
+          "类型": "Array<string>",
+          "必填": true,
+          "说明": "Indicates the list of permissions to be requested.Parameter cannot be null."
+        },
+        {
+          "名称": "requestCode",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the request code to be passed to the PermissionRequestResult"
+        }
+      ],
+      "return_description": "Indicates the request code to be passed to PermissionRequestResult.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getApplicationInfo",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains information about the current application.",
+      "注释信息": [
+        "@param { AsyncCallback<ApplicationInfo> } callback - Returns information about the current application.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@FAModelOnly",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "Context",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<ApplicationInfo>",
+          "必填": true,
+          "说明": "Returns information about the current application."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getApplicationInfo",
+      "返回值": "Promise<ApplicationInfo>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains information about the current application.",
+      "注释信息": [
+        "@returns { Promise<ApplicationInfo> } Information about the current application.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@FAModelOnly",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "Context",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [],
+      "return_description": "Information about the current application.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getBundleName",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the bundle name of the current ability.",
+      "注释信息": [
+        "@param { AsyncCallback<string> } callback - Returns the Bundle name of the current capability.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@FAModelOnly",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "Context",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<string>",
+          "必填": true,
+          "说明": "Returns the Bundle name of the current capability."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getBundleName",
+      "返回值": "Promise<string>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the bundle name of the current ability.",
+      "注释信息": [
+        "@returns { Promise<string> } The Bundle name of the current capability.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@FAModelOnly",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "Context",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [],
+      "return_description": "The Bundle name of the current capability.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getDisplayOrientation",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the current display orientation of this ability.",
+      "注释信息": [
+        "@param { AsyncCallback<bundle.DisplayOrientation> } callback - Indicates the realistic direction of the screen.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@FAModelOnly",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "Context",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<bundle.DisplayOrientation>",
+          "必填": true,
+          "说明": "Indicates the realistic direction of the screen."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getDisplayOrientation",
+      "返回值": "Promise<bundle.DisplayOrientation>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the current display orientation of this ability.",
+      "注释信息": [
+        "@returns { Promise<bundle.DisplayOrientation> } Indicates the screen display direction.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@FAModelOnly",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "Context",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [],
+      "return_description": "Indicates the screen display direction.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getExternalCacheDir",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the absolute path to the application-specific cache directory",
+      "注释信息": [
+        "@param { AsyncCallback<string> } callback - Returns the absolute path of the application's cache directory.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@FAModelOnly",
+        "@since 6",
+        "@deprecated since 7"
+      ],
+      "层级": 1,
+      "上级": "Context",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<string>",
+          "必填": true,
+          "说明": "Returns the absolute path of the application's cache directory."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getExternalCacheDir",
+      "返回值": "Promise<string>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the absolute path to the application-specific cache directory",
+      "注释信息": [
+        "@returns { Promise<string> } Return the cache directory of the application.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@FAModelOnly",
+        "@since 6",
+        "@deprecated since 7"
+      ],
+      "层级": 1,
+      "上级": "Context",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [],
+      "return_description": "Return the cache directory of the application.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "setDisplayOrientation",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Sets the display orientation of the current ability.",
+      "注释信息": [
+        "@param { bundle.DisplayOrientation } orientation - Indicates the new orientation for the current ability.",
+        "@param { AsyncCallback<void> } callback - Indicates the realistic direction of the screen.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@FAModelOnly",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "Context",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "orientation",
+          "类型": "bundle.DisplayOrientation",
+          "必填": true,
+          "说明": "Indicates the new orientation for the current ability."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "Indicates the realistic direction of the screen."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "setDisplayOrientation",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Sets the display orientation of the current ability.",
+      "注释信息": [
+        "@param { bundle.DisplayOrientation } orientation - Indicates the new orientation for the current ability.",
+        "@returns { Promise<void> } the promise returned by the function.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@FAModelOnly",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "Context",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "orientation",
+          "类型": "bundle.DisplayOrientation",
+          "必填": true,
+          "说明": "Indicates the new orientation for the current ability."
+        }
+      ],
+      "return_description": "the promise returned by the function.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "setShowOnLockScreen",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Sets whether to show this ability on top of the lock screen whenever the lock screen is displayed, keeping the ability in the ACTIVE state. The interface can only take effect in API8 and below versions. to show it on the lock screen, and the value false means not.",
+      "注释信息": [
+        "@param { boolean } show - Specifies whether to show this ability on top of the lock screen. The value true means",
+        "@param { AsyncCallback<void> } callback - Returns the callback result.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@FAModelOnly",
+        "@since 7",
+        "@deprecated since 9",
+        "@useinstead ohos.window/window.WindowStage#setShowOnLockScreen"
+      ],
+      "层级": 1,
+      "上级": "Context",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "show",
+          "类型": "boolean",
+          "必填": true,
+          "说明": "Specifies whether to show this ability on top of the lock screen. The value true means"
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "Returns the callback result."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "setShowOnLockScreen",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Sets whether to show this ability on top of the lock screen whenever the lock screen is displayed, keeping the ability in the ACTIVE state. The interface can only take effect in API8 and below versions. show it on the lock screen, and the value false means not.",
+      "注释信息": [
+        "@param { boolean } show - Specifies whether to show this ability on top of the lock screen. The value true means to",
+        "@returns { Promise<void> } the promise returned by the function.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@FAModelOnly",
+        "@since 7",
+        "@deprecated since 9",
+        "@useinstead ohos.window/window.WindowStage#setShowOnLockScreen"
+      ],
+      "层级": 1,
+      "上级": "Context",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "show",
+          "类型": "boolean",
+          "必填": true,
+          "说明": "Specifies whether to show this ability on top of the lock screen. The value true means to"
+        }
+      ],
+      "return_description": "the promise returned by the function.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "setWakeUpScreen",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Sets whether to wake up the screen when this ability is restored. and the value false means not.",
+      "注释信息": [
+        "@param { boolean } wakeUp - Specifies whether to wake up the screen. The value true means to wake it up,",
+        "@param { AsyncCallback<void> } callback - Returns the callback result.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@FAModelOnly",
+        "@since 7",
+        "@deprecated since 12",
+        "@useinstead ohos.window.Window#setWakeUpScreen"
+      ],
+      "层级": 1,
+      "上级": "Context",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "wakeUp",
+          "类型": "boolean",
+          "必填": true,
+          "说明": "Specifies whether to wake up the screen. The value true means to wake it up,"
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "Returns the callback result."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "setWakeUpScreen",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Sets whether to wake up the screen when this ability is restored. value false means not.",
+      "注释信息": [
+        "@param { boolean } wakeUp - Specifies whether to wake up the screen. The value true means to wake it up, and the",
+        "@returns { Promise<void> } the promise returned by the function.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@FAModelOnly",
+        "@since 7",
+        "@deprecated since 12",
+        "@useinstead ohos.window.Window#setWakeUpScreen"
+      ],
+      "层级": 1,
+      "上级": "Context",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "wakeUp",
+          "类型": "boolean",
+          "必填": true,
+          "说明": "Specifies whether to wake up the screen. The value true means to wake it up, and the"
+        }
+      ],
+      "return_description": "the promise returned by the function.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getProcessInfo",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains information about the current process, including the process ID and name.",
+      "注释信息": [
+        "@param { AsyncCallback<ProcessInfo> } callback - Return current process information.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@FAModelOnly",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "Context",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<ProcessInfo>",
+          "必填": true,
+          "说明": "Return current process information."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getProcessInfo",
+      "返回值": "Promise<ProcessInfo>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains information about the current process, including the process ID and name.",
+      "注释信息": [
+        "@returns { Promise<ProcessInfo> } Information about the current process.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@FAModelOnly",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "Context",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [],
+      "return_description": "Information about the current process.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getElementName",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the ohos.bundle.ElementName object of the current ability.This method is available only to Page abilities.",
+      "注释信息": [
+        "@param { AsyncCallback<ElementName> } callback - Returns the ohos.bundle.ElementName of the current capability.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@FAModelOnly",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "Context",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<ElementName>",
+          "必填": true,
+          "说明": "Returns the ohos.bundle.ElementName of the current capability."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getElementName",
+      "返回值": "Promise<ElementName>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the ohos.bundle.ElementName object of the current ability.This method is available only to Page abilities.",
+      "注释信息": [
+        "@returns { Promise<ElementName> } The ohos.bundle.ElementName object of the current capability.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@FAModelOnly",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "Context",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [],
+      "return_description": "The ohos.bundle.ElementName object of the current capability.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getProcessName",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the name of the current process.",
+      "注释信息": [
+        "@param { AsyncCallback<string> } callback - Return current process name.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@FAModelOnly",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "Context",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<string>",
+          "必填": true,
+          "说明": "Return current process name."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getProcessName",
+      "返回值": "Promise<string>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the name of the current process.",
+      "注释信息": [
+        "@returns { Promise<string> } Returns the name of the current process.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@FAModelOnly",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "Context",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [],
+      "return_description": "Returns the name of the current process.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getCallingBundle",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the bundle name of the ability that called the current ability.",
+      "注释信息": [
+        "@param { AsyncCallback<string> } callback - Returns the Bundle name of the ability caller.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@FAModelOnly",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "Context",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<string>",
+          "必填": true,
+          "说明": "Returns the Bundle name of the ability caller."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getCallingBundle",
+      "返回值": "Promise<string>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the bundle name of the ability that called the current ability.",
+      "注释信息": [
+        "@returns { Promise<string> } Returns the Bundle name of the ability caller.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@FAModelOnly",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "Context",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [],
+      "return_description": "Returns the Bundle name of the ability caller.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getFilesDir",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the file directory of this application on the internal storage.",
+      "注释信息": [
+        "@param { AsyncCallback<string> } callback - Return the file directory of this application on internal storage.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@FAModelOnly",
+        "@since 6"
+      ],
+      "层级": 1,
+      "上级": "Context",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<string>",
+          "必填": true,
+          "说明": "Return the file directory of this application on internal storage."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getFilesDir",
+      "返回值": "Promise<string>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the file directory of this application on the internal storage.",
+      "注释信息": [
+        "@returns { Promise<string> } Return the file directory of this application on internal storage.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@FAModelOnly",
+        "@since 6"
+      ],
+      "层级": 1,
+      "上级": "Context",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [],
+      "return_description": "Return the file directory of this application on internal storage.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getCacheDir",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the cache directory of this application on the internal storage.",
+      "注释信息": [
+        "@param { AsyncCallback<string> } callback - Returns the internal storage directory of the application.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@FAModelOnly",
+        "@since 6"
+      ],
+      "层级": 1,
+      "上级": "Context",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<string>",
+          "必填": true,
+          "说明": "Returns the internal storage directory of the application."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getCacheDir",
+      "返回值": "Promise<string>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the cache directory of this application on the internal storage.",
+      "注释信息": [
+        "@returns { Promise<string> } Returns the internal storage directory of the application.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@FAModelOnly",
+        "@since 6"
+      ],
+      "层级": 1,
+      "上级": "Context",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [],
+      "return_description": "Returns the internal storage directory of the application.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getOrCreateDistributedDir",
+      "返回值": "Promise<string>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the distributed file path for storing ability or application data files. If the distributed file path does not exist, the system will create a path and return the created path. call, a directory will be created.",
+      "注释信息": [
+        "@returns { Promise<string> } Returns the distributed file path of the Ability or application. If it is the first",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@FAModelOnly",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "Context",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [],
+      "return_description": "Returns the distributed file path of the Ability or application. If it is the first",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getOrCreateDistributedDir",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the distributed file path for storing ability or application data files. If the distributed file path does not exist, the system will create a path and return the created path. If the path does not exist,the system will create a path and return the created path.",
+      "注释信息": [
+        "@param { AsyncCallback<string> } callback - Returns the distributed file path of Ability or application.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@FAModelOnly",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "Context",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<string>",
+          "必填": true,
+          "说明": "Returns the distributed file path of Ability or application."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getAppType",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the application type.",
+      "注释信息": [
+        "@param { AsyncCallback<string> } callback - Returns the type of the current application.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@FAModelOnly",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "Context",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<string>",
+          "必填": true,
+          "说明": "Returns the type of the current application."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getAppType",
+      "返回值": "Promise<string>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the application type.",
+      "注释信息": [
+        "@returns { Promise<string> } Returns the type of this app.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@FAModelOnly",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "Context",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [],
+      "return_description": "Returns the type of this app.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getHapModuleInfo",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the ModuleInfo object for this application.",
+      "注释信息": [
+        "@param { AsyncCallback<HapModuleInfo> } callback - Returns the ModuleInfo object of the application.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@FAModelOnly",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "Context",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<HapModuleInfo>",
+          "必填": true,
+          "说明": "Returns the ModuleInfo object of the application."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getHapModuleInfo",
+      "返回值": "Promise<HapModuleInfo>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the ModuleInfo object for this application.",
+      "注释信息": [
+        "@returns { Promise<HapModuleInfo> } Return to the ModuleInfo of the application and enjoy it.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@FAModelOnly",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "Context",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [],
+      "return_description": "Return to the ModuleInfo of the application and enjoy it.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getAppVersionInfo",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the application version information.",
+      "注释信息": [
+        "@param { AsyncCallback<AppVersionInfo> } callback - Return application version information.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@FAModelOnly",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "Context",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<AppVersionInfo>",
+          "必填": true,
+          "说明": "Return application version information."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getAppVersionInfo",
+      "返回值": "Promise<AppVersionInfo>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the application version information.",
+      "注释信息": [
+        "@returns { Promise<AppVersionInfo> } Return application version information.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@FAModelOnly",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "Context",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [],
+      "return_description": "Return application version information.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getApplicationContext",
+      "返回值": "Context",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the context of this application.",
+      "注释信息": [
+        "@returns { Context } Return application context information.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@FAModelOnly",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "Context",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [],
+      "return_description": "Return application context information.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getAbilityInfo",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Checks the detailed information of this ability.",
+      "注释信息": [
+        "@param { AsyncCallback<AbilityInfo> } callback - Return the detailed information of the current belonging Ability.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@FAModelOnly",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "Context",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<AbilityInfo>",
+          "必填": true,
+          "说明": "Return the detailed information of the current belonging Ability."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getAbilityInfo",
+      "返回值": "Promise<AbilityInfo>",
+      "所属模块": "未知模块",
+      "功能描述": "Checks the detailed information of this ability.",
+      "注释信息": [
+        "@returns { Promise<AbilityInfo> } Return the detailed information of the current belonging Ability.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@FAModelOnly",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "Context",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [],
+      "return_description": "Return the detailed information of the current belonging Ability.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "isUpdatingConfigurations",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Checks whether the configuration of this ability is changing.",
+      "注释信息": [
+        "@param { AsyncCallback<boolean> } callback - True if the configuration of the capability is being changed, otherwise false.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@FAModelOnly",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "Context",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<boolean>",
+          "必填": true,
+          "说明": "True if the configuration of the capability is being changed, otherwise false."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "isUpdatingConfigurations",
+      "返回值": "Promise<boolean>",
+      "所属模块": "未知模块",
+      "功能描述": "Checks whether the configuration of this ability is changing.",
+      "注释信息": [
+        "@returns { Promise<boolean> } true if the configuration of this ability is changing and false otherwise.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@FAModelOnly",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "Context",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [],
+      "return_description": "true if the configuration of this ability is changing and false otherwise.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "printDrawnCompleted",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Inform the system of the time required for drawing this Page ability.",
+      "注释信息": [
+        "@param { AsyncCallback<void> } callback - Represents the specified callback method.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@FAModelOnly",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "Context",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "Represents the specified callback method."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "printDrawnCompleted",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Inform the system of the time required for drawing this Page ability.",
+      "注释信息": [
+        "@returns { Promise<void> } The promise form returns the result.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@FAModelOnly",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "Context",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [],
+      "return_description": "The promise form returns the result.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "PermissionRequestResult",
+      "所属模块": "@kit.AbilityKit",
+      "功能描述": "",
+      "注释信息": [
+        "@typedef PermissionRequestResult",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@FAModelOnly",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "@kit.AbilityKit",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "requestCode",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "",
+      "注释信息": [
+        "@type { number }",
+        "@default The request code passed in by the user",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@FAModelOnly",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "PermissionRequestResult",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "permissions",
+      "属性类型": "Array<string>",
+      "所属模块": "未知模块",
+      "功能描述": "",
+      "注释信息": [
+        "@type { Array<string> }",
+        "@default The permissions passed in by the user",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@FAModelOnly",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "PermissionRequestResult",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "authResults",
+      "属性类型": "Array<number>",
+      "所属模块": "未知模块",
+      "功能描述": "",
+      "注释信息": [
+        "@type { Array<number> }",
+        "@default The results for the corresponding request permissions",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@FAModelOnly",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "PermissionRequestResult",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "PermissionOptions",
+      "所属模块": "@kit.AbilityKit",
+      "功能描述": "",
+      "注释信息": [
+        "@typedef PermissionOptions",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@FAModelOnly",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "@kit.AbilityKit",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "pid",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "",
+      "注释信息": [
+        "@type { ?number }",
+        "@default The process id",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@FAModelOnly",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "PermissionOptions",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "uid",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "",
+      "注释信息": [
+        "@type { ?number }",
+        "@default The user id",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@FAModelOnly",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "PermissionOptions",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    }
+  ]
+}

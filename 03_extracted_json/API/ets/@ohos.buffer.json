@@ -1,0 +1,3560 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.ArkTS",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "namespace",
+      "名称": "buffer",
+      "所属模块": "@kit.ArkTS",
+      "功能描述": "The Buffer class is a global type for dealing with binary data directly. It can be constructed in a variety of ways.",
+      "注释信息": [
+        "@namespace buffer",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "@kit.ArkTS",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "type_alias",
+      "名称": "BufferEncoding",
+      "所属模块": "未知模块",
+      "功能描述": "This parameter specifies the type of a common encoding format.",
+      "注释信息": [
+        "@typedef { 'ascii' | 'utf8' | 'utf-8' | 'utf16le' | 'ucs2' | 'ucs-2' | 'base64' | 'base64url' | 'latin1' | 'binary' | 'hex' }",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "buffer",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "TypedArray",
+      "父类": "Int8Array",
+      "所属模块": "未知模块",
+      "功能描述": "TypedArray inherits the features and methods of Int8Array",
+      "注释信息": [
+        "@extends Int8Array",
+        "@typedef TypedArray",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "buffer",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "alloc",
+      "返回值": "Buffer",
+      "所属模块": "未知模块",
+      "功能描述": "Creates and initializes a Buffer instance of the specified length. 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types; 3.Parameter verification failed.",
+      "注释信息": [
+        "@param { number } size - Size of the Buffer instance to create, in bytes.",
+        "@param { string | Buffer | number } [fill] - Value to be filled in the buffer. The default value is 0.",
+        "@param { BufferEncoding } [encoding] - Encoding format (valid only when fill is a string). The default value is 'utf8'.",
+        "@returns { Buffer } Return a new allocated Buffer",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "buffer",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "size",
+          "类型": "number",
+          "必填": true,
+          "说明": "Size of the Buffer instance to create, in bytes."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "BufferEncoding } [encoding] - Encoding format (valid only when fill is a string). The default value is 'utf8'."
+        }
+      ],
+      "return_description": "Return a new allocated Buffer",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "allocUninitializedFromPool",
+      "返回值": "Buffer",
+      "所属模块": "未知模块",
+      "功能描述": "Creates a Buffer instance of the specified size from the buffer pool, without initializing it. You need to use fill() to initialize the Buffer instance created. 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types; 3.Parameter verification failed.",
+      "注释信息": [
+        "@param { number } size - Size of the Buffer instance to create, in bytes.",
+        "@returns { Buffer } Return a new allocated Buffer",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "buffer",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "size",
+          "类型": "number",
+          "必填": true,
+          "说明": "Size of the Buffer instance to create, in bytes."
+        }
+      ],
+      "return_description": "Return a new allocated Buffer",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "allocUninitialized",
+      "返回值": "Buffer",
+      "所属模块": "未知模块",
+      "功能描述": "Creates a Buffer instance of the specified size, without initializing it. 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types; 3.Parameter verification failed.",
+      "注释信息": [
+        "@param { number } size - Size of the Buffer instance to create, in bytes.",
+        "@returns { Buffer } Return a new allocated Buffer",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "buffer",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "size",
+          "类型": "number",
+          "必填": true,
+          "说明": "Size of the Buffer instance to create, in bytes."
+        }
+      ],
+      "return_description": "Return a new allocated Buffer",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "byteLength",
+      "返回值": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the number of bytes of a string based on the encoding format. 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types.",
+      "注释信息": [
+        "@param { string | Buffer | TypedArray | DataView | ArrayBuffer | SharedArrayBuffer } string - Target string.",
+        "@param { BufferEncoding } [encoding] - Encoding format of the string. The default value is 'utf8'.",
+        "@returns { number } The number of bytes contained within `string`",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "buffer",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "string",
+          "类型": "string | Buffer | TypedArray | DataView | ArrayBuffer | SharedArrayBuffer",
+          "必填": true,
+          "说明": "Target string."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "BufferEncoding } [encoding] - Encoding format of the string. The default value is 'utf8'."
+        }
+      ],
+      "return_description": "The number of bytes contained within `string`",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "concat",
+      "返回值": "Buffer",
+      "所属模块": "未知模块",
+      "功能描述": "Concatenates an array of Buffer instances of the specified length into a new instance. 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types; 3.Parameter verification failed.",
+      "注释信息": [
+        "@param { Buffer[] | Uint8Array[] } list - Array of instances to concatenate.",
+        "@param { number } [totalLength] - Total length of bytes to be copied. The default value is 0.",
+        "@returns { Buffer } Return a new allocated Buffer",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 10200001 - The value of \"length\" is out of range. It must be >= 0 and <= uint32 max. Received value is: [length]",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "buffer",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "list",
+          "类型": "Buffer[] | Uint8Array[]",
+          "必填": true,
+          "说明": "Array of instances to concatenate."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "number } [totalLength] - Total length of bytes to be copied. The default value is 0."
+        }
+      ],
+      "return_description": "Return a new allocated Buffer",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "10200001",
+          "description": "The value of \"length\" is out of range. It must be >= 0 and <= uint32 max. Received value is: [length]"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "from",
+      "返回值": "Buffer",
+      "所属模块": "未知模块",
+      "功能描述": "Allocates a new Buffer using an array of bytes in the range 0 – 255. Array entries outside that range will be truncated to fit into it. 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types.",
+      "注释信息": [
+        "@param { number[] } array - array array an array of bytes in the range 0 – 255",
+        "@returns { Buffer } Return a new allocated Buffer",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "buffer",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "array",
+          "类型": "number[]",
+          "必填": true,
+          "说明": "array array an array of bytes in the range 0 – 255"
+        }
+      ],
+      "return_description": "Return a new allocated Buffer",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "from",
+      "返回值": "Buffer",
+      "所属模块": "未知模块",
+      "功能描述": "This creates a view of the ArrayBuffer without copying the underlying memory. SharedArrayBuffer, for example the .buffer property of a TypedArray. 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. It must be >= [left range] and <= [right range]. Received value is: [byteOffset/length]",
+      "注释信息": [
+        "@param { ArrayBuffer | SharedArrayBuffer } arrayBuffer - arrayBuffer arrayBuffer An ArrayBuffer,",
+        "@param { number } [byteOffset] - byteOffset [byteOffset = 0] Index of first byte to expose",
+        "@param { number } [length] - length [length = arrayBuffer.byteLength - byteOffset] Number of bytes to expose",
+        "@returns { Buffer } Return a view of the ArrayBuffer",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 10200001 - The value of \"[byteOffset/length]\" is out of range.",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "buffer",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "arrayBuffer",
+          "类型": "ArrayBuffer | SharedArrayBuffer",
+          "必填": true,
+          "说明": "arrayBuffer arrayBuffer An ArrayBuffer,"
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "number } [length] - length [length = arrayBuffer.byteLength - byteOffset] Number of bytes to expose"
+        }
+      ],
+      "return_description": "Return a view of the ArrayBuffer",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "10200001",
+          "description": "The value of \"[byteOffset/length]\" is out of range."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "from",
+      "返回值": "Buffer",
+      "所属模块": "未知模块",
+      "功能描述": "Copies the passed buffer data onto a new Buffer instance. 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types.",
+      "注释信息": [
+        "@param { Buffer | Uint8Array } buffer - buffer buffer An existing Buffer or Uint8Array from which to copy data",
+        "@returns { Buffer } Return a new allocated Buffer",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "buffer",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "buffer",
+          "类型": "Buffer | Uint8Array",
+          "必填": true,
+          "说明": "buffer buffer An existing Buffer or Uint8Array from which to copy data"
+        }
+      ],
+      "return_description": "Return a new allocated Buffer",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "from",
+      "返回值": "Buffer",
+      "所属模块": "未知模块",
+      "功能描述": "For the object whose value returned by valueof() function is strictly equal to object or supports symbol To primitive object, a new buffer instance is created. 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types.",
+      "注释信息": [
+        "@param { Object } object - object object An object supporting Symbol.toPrimitive or valueOf()",
+        "@param { number | string } offsetOrEncoding - offsetOrEncoding offsetOrEncoding A byte-offset or encoding",
+        "@param { number } length - length length A length",
+        "@returns { Buffer } Return a new allocated Buffer",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "buffer",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "object",
+          "类型": "Object",
+          "必填": true,
+          "说明": "object object An object supporting Symbol.toPrimitive or valueOf()"
+        },
+        {
+          "名称": "offsetOrEncoding",
+          "类型": "number | string",
+          "必填": true,
+          "说明": "offsetOrEncoding offsetOrEncoding A byte-offset or encoding"
+        },
+        {
+          "名称": "length",
+          "类型": "number",
+          "必填": true,
+          "说明": "length length A length"
+        }
+      ],
+      "return_description": "Return a new allocated Buffer",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "from",
+      "返回值": "Buffer",
+      "所属模块": "未知模块",
+      "功能描述": "Creates a new Buffer containing string. The encoding parameter identifies the character encoding to be used when converting string into bytes. 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types.",
+      "注释信息": [
+        "@param { String } string - string string  A string to encode",
+        "@param { BufferEncoding } [encoding] - encoding [encoding='utf8'] The encoding of string",
+        "@returns { Buffer } Return a new Buffer containing string",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "buffer",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "string",
+          "类型": "String",
+          "必填": true,
+          "说明": "string string  A string to encode"
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "BufferEncoding } [encoding] - encoding [encoding='utf8'] The encoding of string"
+        }
+      ],
+      "return_description": "Return a new Buffer containing string",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "isBuffer",
+      "返回值": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Checks whether the specified object is a Buffer instance.",
+      "注释信息": [
+        "@param { Object } obj - Object to check.",
+        "@returns { boolean } true or false",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "buffer",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "obj",
+          "类型": "Object",
+          "必填": true,
+          "说明": "Object to check."
+        }
+      ],
+      "return_description": "true or false",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "isEncoding",
+      "返回值": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Checks whether the encoding format is supported.",
+      "注释信息": [
+        "@param { string } encoding - Encoding format.",
+        "@returns { boolean } true or false",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "buffer",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "encoding",
+          "类型": "string",
+          "必填": true,
+          "说明": "Encoding format."
+        }
+      ],
+      "return_description": "true or false",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "compare",
+      "返回值": "-1 | 0 | 1",
+      "所属模块": "未知模块",
+      "功能描述": "Compares buf1 to buf2 1 is returned if target should come before buf when sorted. -1 is returned if target should come after buf when sorted. 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types.",
+      "注释信息": [
+        "@param { Buffer | Uint8Array } buf1 - buf1 buf1 A Buffer or Uint8Array instance.",
+        "@param { Buffer | Uint8Array } buf2 - buf2 buf2 A Buffer or Uint8Array instance.",
+        "@returns { -1 | 0 | 1 } 0 is returned if target is the same as buf",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "buffer",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "buf1",
+          "类型": "Buffer | Uint8Array",
+          "必填": true,
+          "说明": "buf1 buf1 A Buffer or Uint8Array instance."
+        },
+        {
+          "名称": "buf2",
+          "类型": "Buffer | Uint8Array",
+          "必填": true,
+          "说明": "buf2 buf2 A Buffer or Uint8Array instance."
+        }
+      ],
+      "return_description": "0 is returned if target is the same as buf",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "transcode",
+      "返回值": "Buffer",
+      "所属模块": "未知模块",
+      "功能描述": "Transcodes the given Buffer or Uint8Array object from one encoding format to another. 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types.",
+      "注释信息": [
+        "@param { Buffer | Uint8Array } source - Instance to encode.",
+        "@param { string } fromEnc - Current encoding format",
+        "@param { string } toEnc - Target encoding format.",
+        "@returns { Buffer } Returns a new Buffer instance",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "buffer",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "source",
+          "类型": "Buffer | Uint8Array",
+          "必填": true,
+          "说明": "Instance to encode."
+        },
+        {
+          "名称": "fromEnc",
+          "类型": "string",
+          "必填": true,
+          "说明": "Current encoding format"
+        },
+        {
+          "名称": "toEnc",
+          "类型": "string",
+          "必填": true,
+          "说明": "Target encoding format."
+        }
+      ],
+      "return_description": "Returns a new Buffer instance",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "class",
+      "名称": "Buffer",
+      "所属模块": "未知模块",
+      "功能描述": "The Buffer object is a method of handling buffers dedicated to binary data.",
+      "注释信息": [
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "buffer",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "length",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Returns the number of bytes in buf",
+      "注释信息": [
+        "@type { number }",
+        "@throws { BusinessError } 10200013 - Length  cannot be set for the buffer that has only a getter.",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Buffer",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "10200013",
+          "description": "Length  cannot be set for the buffer that has only a getter."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "buffer",
+      "属性类型": "ArrayBuffer",
+      "所属模块": "未知模块",
+      "功能描述": "The underlying ArrayBuffer object based on which this Buffer object is created.",
+      "注释信息": [
+        "@type { ArrayBuffer }",
+        "@throws { BusinessError } 10200013 - Buffer cannot be set for the buffer that has only a getter.",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Buffer",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "10200013",
+          "description": "Buffer cannot be set for the buffer that has only a getter."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "byteOffset",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "The byteOffset of the Buffers underlying ArrayBuffer object",
+      "注释信息": [
+        "@type { number }",
+        "@throws { BusinessError } 10200013 - ByteOffset  cannot be set for the buffer that has only a getter.",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Buffer",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "10200013",
+          "description": "ByteOffset  cannot be set for the buffer that has only a getter."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "fill",
+      "返回值": "Buffer",
+      "所属模块": "未知模块",
+      "功能描述": "Fills this Buffer instance at the specified position. By default, data is filled cyclically. 1.Incorrect parameter types; 2.Parameter verification failed.",
+      "注释信息": [
+        "@param { string | Buffer | Uint8Array | number } value - Value to fill.",
+        "@param { number } [offset] - Offset to the start position in this Buffer instance where data is filled. The default value is 0.",
+        "@param { number } [end] - Offset to the end position in this Buffer instance (not inclusive). The default value is the length of this Buffer instance.",
+        "@param { BufferEncoding } [encoding] - Encoding format (valid only when value is a string). The default value is 'utf8'.",
+        "@returns { Buffer } A reference to buf",
+        "@throws { BusinessError } 10200001 - The value of \"[offset/end]\" is out of range. It must be >= 0 and <= [right range]. Received value is: [offset/end]",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Buffer",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "value",
+          "类型": "string | Buffer | Uint8Array | number",
+          "必填": true,
+          "说明": "Value to fill."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "BufferEncoding } [encoding] - Encoding format (valid only when value is a string). The default value is 'utf8'."
+        }
+      ],
+      "return_description": "A reference to buf",
+      "error_codes": [
+        {
+          "code": "10200001",
+          "description": "The value of \"[offset/end]\" is out of range. It must be >= 0 and <= [right range]. Received value is: [offset/end]"
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "compare",
+      "返回值": "-1 | 0 | 1",
+      "所属模块": "未知模块",
+      "功能描述": "Compares buf with target and returns a number indicating whether buf comes before, after, or is the same as target in sort order. Comparison is based on the actual sequence of bytes in each Buffer. 1 is returned if target should come before buf when sorted. -1 is returned if target should come after buf when sorted. 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. It must be >= 0 and <= [right range]. Received value is: [targetStart/targetEnd/sourceStart/sourceEnd]",
+      "注释信息": [
+        "@param { Buffer | Uint8Array } target - target target A Buffer or Uint8Array with which to compare buf",
+        "@param { number } [targetStart] - targetStart [targetStart = 0] The offset within target at which to begin comparison",
+        "@param { number } [targetEnd] - targetEnd [targetEnd = target.length] The offset within target at which to end comparison (not inclusive)",
+        "@param { number } [sourceStart] - sourceStart [sourceStart = 0] The offset within buf at which to begin comparison",
+        "@param { number } [sourceEnd] - sourceEnd [sourceEnd = buf.length] The offset within buf at which to end comparison (not inclusive)",
+        "@returns { -1 | 0 | 1 } 0 is returned if target is the same as buf",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 10200001 - The value of \"[targetStart/targetEnd/sourceStart/sourceEnd]\" is out of range.",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Buffer",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "target",
+          "类型": "Buffer | Uint8Array",
+          "必填": true,
+          "说明": "target target A Buffer or Uint8Array with which to compare buf"
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "number } [sourceEnd] - sourceEnd [sourceEnd = buf.length] The offset within buf at which to end comparison (not inclusive)"
+        }
+      ],
+      "return_description": "0 is returned if target is the same as buf",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "10200001",
+          "description": "The value of \"[targetStart/targetEnd/sourceStart/sourceEnd]\" is out of range."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "copy",
+      "返回值": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Copies data at the specified position in this Buffer instance to the specified position in another Buffer instance. The default value is the length of this Buffer instance. 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types. Received value is: [targetStart/sourceStart/sourceEnd]",
+      "注释信息": [
+        "@param { Buffer | Uint8Array } target - Instance to which data is copied.",
+        "@param { number } [targetStart] - Offset to the start position in the target instance where data is copied. The default value is 0.",
+        "@param { number } [sourceStart] - Offset to the start position in this Buffer instance where data is copied. The default value is 0.",
+        "@param { number } [sourceEnd] - Offset to the end position in this Buffer instance (not inclusive).",
+        "@returns { number } The number of bytes copied",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 10200001 - The value of \"[targetStart/sourceStart/sourceEnd]\" is out of range. It must be >= 0.",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Buffer",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "target",
+          "类型": "Buffer | Uint8Array",
+          "必填": true,
+          "说明": "Instance to which data is copied."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "number } [sourceEnd] - Offset to the end position in this Buffer instance (not inclusive)."
+        }
+      ],
+      "return_description": "The number of bytes copied",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "10200001",
+          "description": "The value of \"[targetStart/sourceStart/sourceEnd]\" is out of range. It must be >= 0."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "equals",
+      "返回值": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Checks whether this Buffer instance is the same as another Buffer instance.",
+      "注释信息": [
+        "@param { Uint8Array | Buffer } otherBuffer - Buffer instance to compare.",
+        "@returns { boolean } true or false",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types.",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Buffer",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "otherBuffer",
+          "类型": "Uint8Array | Buffer",
+          "必填": true,
+          "说明": "Buffer instance to compare."
+        }
+      ],
+      "return_description": "true or false",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "includes",
+      "返回值": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Checks whether this Buffer instance contains the specified value. Number of bytes to skip before starting to check data. If the offset is a negative number, data is checked from the end of the Buffer instance. The default value is 0. 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types.",
+      "注释信息": [
+        "@param { string | number | Buffer | Uint8Array } value - Value to match.",
+        "@param { number } [byteOffset] - Number of bytes to skip before starting to check data.",
+        "@param { BufferEncoding } [encoding] - Encoding format (valid only when value is a string). The default value is 'utf8'.",
+        "@returns { boolean } true or false",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Buffer",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "value",
+          "类型": "string | number | Buffer | Uint8Array",
+          "必填": true,
+          "说明": "Value to match."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "BufferEncoding } [encoding] - Encoding format (valid only when value is a string). The default value is 'utf8'."
+        }
+      ],
+      "return_description": "true or false",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "indexOf",
+      "返回值": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the index of the first occurrence of the specified value in this Buffer instance. If the offset is a negative number, data is checked from the end of the Buffer instance. The default value is 0. 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types.",
+      "注释信息": [
+        "@param { string | number | Buffer | Uint8Array } value - Value to match.",
+        "@param { number } [byteOffset] - Number of bytes to skip before starting to check data.",
+        "@param { BufferEncoding } [encoding] - Encoding format (valid only when value is a string). The default value is 'utf8'.",
+        "@returns { number } The index of the first occurrence of value in buf, or -1 if buf does not contain value",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Buffer",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "value",
+          "类型": "string | number | Buffer | Uint8Array",
+          "必填": true,
+          "说明": "Value to match."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "BufferEncoding } [encoding] - Encoding format (valid only when value is a string). The default value is 'utf8'."
+        }
+      ],
+      "return_description": "The index of the first occurrence of value in buf, or -1 if buf does not contain value",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "keys",
+      "返回值": "IterableIterator<number>",
+      "所属模块": "未知模块",
+      "功能描述": "Creates and returns an iterator that contains the keys of this Buffer instance.",
+      "注释信息": [
+        "@returns { IterableIterator<number> }",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Buffer",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "values",
+      "返回值": "IterableIterator<number>",
+      "所属模块": "未知模块",
+      "功能描述": "Creates and returns an iterator that contains the values of this Buffer instance.",
+      "注释信息": [
+        "@returns { IterableIterator<number> }",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Buffer",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "entries",
+      "返回值": "IterableIterator<[",
+      "所属模块": "未知模块",
+      "功能描述": "Creates and returns an iterator that contains key-value pairs of this Buffer instance.",
+      "注释信息": [
+        "@returns { IterableIterator<[ number, number ]> }",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Buffer",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "lastIndexOf",
+      "返回值": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the index of the last occurrence of the specified value in this Buffer instance. If the offset is a negative number, data is checked from the end of the Buffer instance. The default value is the length of this Buffer instance. 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types.",
+      "注释信息": [
+        "@param { string | number | Buffer | Uint8Array } value - Value to match.",
+        "@param { number } [byteOffset] - Number of bytes to skip before starting to check data.",
+        "@param { BufferEncoding } [encoding] - Encoding format (valid only when value is a string). The default value is 'utf8'.",
+        "@returns { number } The index of the last occurrence of value in buf, or -1 if buf does not contain value",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Buffer",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "value",
+          "类型": "string | number | Buffer | Uint8Array",
+          "必填": true,
+          "说明": "Value to match."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "BufferEncoding } [encoding] - Encoding format (valid only when value is a string). The default value is 'utf8'."
+        }
+      ],
+      "return_description": "The index of the last occurrence of value in buf, or -1 if buf does not contain value",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "readBigInt64BE",
+      "返回值": "bigint",
+      "所属模块": "未知模块",
+      "功能描述": "Reads a 64-bit, big-endian, signed big integer from this Buffer instance at the specified offset.",
+      "注释信息": [
+        "@param { number } [offset] - Number of bytes to skip before starting to read data. The default value is 0. The value range is [0, Buffer.length - 8].",
+        "@returns { bigint } Return a signed, big-endian 64-bit integer",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1.Incorrect parameter types.",
+        "@throws { BusinessError } 10200001 - The value of \"offset\" is out of range. It must be >= 0 and <= buf.length - 8. Received value is: [offset]",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Buffer",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "number } [offset] - Number of bytes to skip before starting to read data. The default value is 0. The value range is [0, Buffer.length - 8]."
+        }
+      ],
+      "return_description": "Return a signed, big-endian 64-bit integer",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1.Incorrect parameter types."
+        },
+        {
+          "code": "10200001",
+          "description": "The value of \"offset\" is out of range. It must be >= 0 and <= buf.length - 8. Received value is: [offset]"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "readBigInt64LE",
+      "返回值": "bigint",
+      "所属模块": "未知模块",
+      "功能描述": "Reads a 64-bit, little-endian, signed big integer from this Buffer instance at the specified offset.",
+      "注释信息": [
+        "@param { number } [offset] - Number of bytes to skip before starting to read data. The default value is 0. The value range is [0, Buffer.length - 8].",
+        "@returns { bigint } Return a signed, little-endian 64-bit integer",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1.Incorrect parameter types.",
+        "@throws { BusinessError } 10200001 - The value of \"offset\" is out of range. It must be >= 0 and <= buf.length - 8. Received value is: [offset]",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Buffer",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "number } [offset] - Number of bytes to skip before starting to read data. The default value is 0. The value range is [0, Buffer.length - 8]."
+        }
+      ],
+      "return_description": "Return a signed, little-endian 64-bit integer",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1.Incorrect parameter types."
+        },
+        {
+          "code": "10200001",
+          "description": "The value of \"offset\" is out of range. It must be >= 0 and <= buf.length - 8. Received value is: [offset]"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "readBigUInt64BE",
+      "返回值": "bigint",
+      "所属模块": "未知模块",
+      "功能描述": "Reads a 64-bit, big-endian, unsigned big integer from this Buffer instance at the specified offset.",
+      "注释信息": [
+        "@param { number } [offset] - Number of bytes to skip before starting to read data. The default value is 0. The value range is [0, Buffer.length - 8].",
+        "@returns { bigint } Return a unsigned, big-endian 64-bit integer",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1.Incorrect parameter types.",
+        "@throws { BusinessError } 10200001 - The value of \"offset\" is out of range. It must be >= 0 and <= buf.length - 8. Received value is: [offset]",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Buffer",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "number } [offset] - Number of bytes to skip before starting to read data. The default value is 0. The value range is [0, Buffer.length - 8]."
+        }
+      ],
+      "return_description": "Return a unsigned, big-endian 64-bit integer",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1.Incorrect parameter types."
+        },
+        {
+          "code": "10200001",
+          "description": "The value of \"offset\" is out of range. It must be >= 0 and <= buf.length - 8. Received value is: [offset]"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "readBigUInt64LE",
+      "返回值": "bigint",
+      "所属模块": "未知模块",
+      "功能描述": "Reads a 64-bit, little-endian, unsigned big integer from this Buffer instance at the specified offset.",
+      "注释信息": [
+        "@param { number } [offset] - Number of bytes to skip before starting to read data. The default value is 0. The value range is [0, Buffer.length - 8].",
+        "@returns { bigint } Return a unsigned, little-endian 64-bit integer",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1.Incorrect parameter types.",
+        "@throws { BusinessError } 10200001 - The value of \"offset\" is out of range. It must be >= 0 and <= buf.length - 8. Received value is: [offset]",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Buffer",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "number } [offset] - Number of bytes to skip before starting to read data. The default value is 0. The value range is [0, Buffer.length - 8]."
+        }
+      ],
+      "return_description": "Return a unsigned, little-endian 64-bit integer",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1.Incorrect parameter types."
+        },
+        {
+          "code": "10200001",
+          "description": "The value of \"offset\" is out of range. It must be >= 0 and <= buf.length - 8. Received value is: [offset]"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "readDoubleBE",
+      "返回值": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Reads a 64-bit, big-endian, double-precision floating-point number from this Buffer instance at the specified offset.",
+      "注释信息": [
+        "@param { number } [offset] - Number of bytes to skip before starting to read data. The default value is 0. The value range is [0, Buffer.length - 8].",
+        "@returns { number } Return a 64-bit, big-endian double",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1.Incorrect parameter types.",
+        "@throws { BusinessError } 10200001 - The value of \"offset\" is out of range. It must be >= 0 and <= buf.length - 8. Received value is: [offset]",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Buffer",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "number } [offset] - Number of bytes to skip before starting to read data. The default value is 0. The value range is [0, Buffer.length - 8]."
+        }
+      ],
+      "return_description": "Return a 64-bit, big-endian double",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1.Incorrect parameter types."
+        },
+        {
+          "code": "10200001",
+          "description": "The value of \"offset\" is out of range. It must be >= 0 and <= buf.length - 8. Received value is: [offset]"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "readDoubleLE",
+      "返回值": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Reads a 64-bit, little-endian, double-precision floating-point number from this Buffer instance at the specified offset.",
+      "注释信息": [
+        "@param { number } [offset] - Number of bytes to skip before starting to read data. The default value is 0. The value range is [0, Buffer.length - 8].",
+        "@returns { number } Return a 64-bit, little-endian double",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1.Incorrect parameter types.",
+        "@throws { BusinessError } 10200001 - The value of \"offset\" is out of range. It must be >= 0 and <= buf.length - 8. Received value is: [offset]",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Buffer",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "number } [offset] - Number of bytes to skip before starting to read data. The default value is 0. The value range is [0, Buffer.length - 8]."
+        }
+      ],
+      "return_description": "Return a 64-bit, little-endian double",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1.Incorrect parameter types."
+        },
+        {
+          "code": "10200001",
+          "description": "The value of \"offset\" is out of range. It must be >= 0 and <= buf.length - 8. Received value is: [offset]"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "readFloatBE",
+      "返回值": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Reads a 32-bit, big-endian, single-precision floating-point number from this Buffer instance at the specified offset.",
+      "注释信息": [
+        "@param { number } [offset] - Number of bytes to skip before starting to read data. The default value is 0. The value range is [0, Buffer.length - 4].",
+        "@returns { number } Return a 32-bit, big-endian float",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1.Incorrect parameter types.",
+        "@throws { BusinessError } 10200001 - The value of \"offset\" is out of range. It must be >= 0 and <= buf.length - 4. Received value is: [offset]",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Buffer",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "number } [offset] - Number of bytes to skip before starting to read data. The default value is 0. The value range is [0, Buffer.length - 4]."
+        }
+      ],
+      "return_description": "Return a 32-bit, big-endian float",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1.Incorrect parameter types."
+        },
+        {
+          "code": "10200001",
+          "description": "The value of \"offset\" is out of range. It must be >= 0 and <= buf.length - 4. Received value is: [offset]"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "readFloatLE",
+      "返回值": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Reads a 32-bit, little-endian, single-precision floating-point number from this Buffer instance at the specified offset.",
+      "注释信息": [
+        "@param { number } [offset] - Number of bytes to skip before starting to read data. The default value is 0. The value range is [0, Buffer.length - 4].",
+        "@returns { number } Return a 32-bit, little-endian float",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1.Incorrect parameter types.",
+        "@throws { BusinessError } 10200001 - The value of \"offset\" is out of range. It must be >= 0 and <= buf.length - 4. Received value is: [offset]",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Buffer",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "number } [offset] - Number of bytes to skip before starting to read data. The default value is 0. The value range is [0, Buffer.length - 4]."
+        }
+      ],
+      "return_description": "Return a 32-bit, little-endian float",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1.Incorrect parameter types."
+        },
+        {
+          "code": "10200001",
+          "description": "The value of \"offset\" is out of range. It must be >= 0 and <= buf.length - 4. Received value is: [offset]"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "readInt8",
+      "返回值": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Reads an 8-bit signed integer from this Buffer instance at the specified offset.",
+      "注释信息": [
+        "@param { number } [offset] - Number of bytes to skip before starting to read data. The default value is 0. The value range is [0, Buffer.length - 1].",
+        "@returns { number } Return a signed 8-bit integer",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1.Incorrect parameter types.",
+        "@throws { BusinessError } 10200001 - The value of \"offset\" is out of range. It must be >= 0 and <= buf.length - 1. Received value is: [offset]",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Buffer",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "number } [offset] - Number of bytes to skip before starting to read data. The default value is 0. The value range is [0, Buffer.length - 1]."
+        }
+      ],
+      "return_description": "Return a signed 8-bit integer",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1.Incorrect parameter types."
+        },
+        {
+          "code": "10200001",
+          "description": "The value of \"offset\" is out of range. It must be >= 0 and <= buf.length - 1. Received value is: [offset]"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "readInt16BE",
+      "返回值": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Reads a 16-bit, big-endian, signed integer from this Buffer instance at the specified offset.",
+      "注释信息": [
+        "@param { number } [offset] - Number of bytes to skip before starting to read data. The default value is 0. The value range is [0, Buffer.length - 2].",
+        "@returns { number } Return a signed, big-endian 16-bit integer",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1.Incorrect parameter types.",
+        "@throws { BusinessError } 10200001 - The value of \"offset\" is out of range. It must be >= 0 and <= buf.length - 2. Received value is: [offset]",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Buffer",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "number } [offset] - Number of bytes to skip before starting to read data. The default value is 0. The value range is [0, Buffer.length - 2]."
+        }
+      ],
+      "return_description": "Return a signed, big-endian 16-bit integer",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1.Incorrect parameter types."
+        },
+        {
+          "code": "10200001",
+          "description": "The value of \"offset\" is out of range. It must be >= 0 and <= buf.length - 2. Received value is: [offset]"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "readInt16LE",
+      "返回值": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Reads a 16-bit, little-endian, signed integer from this Buffer instance at the specified offset.",
+      "注释信息": [
+        "@param { number } [offset] - Number of bytes to skip before starting to read data. The default value is 0. The value range is [0, Buffer.length - 2].",
+        "@returns { number } Return a signed, little-endian 16-bit integer",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1.Incorrect parameter types.",
+        "@throws { BusinessError } 10200001 - The value of \"offset\" is out of range. It must be >= 0 and <= buf.length - 2. Received value is: [offset]",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Buffer",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "number } [offset] - Number of bytes to skip before starting to read data. The default value is 0. The value range is [0, Buffer.length - 2]."
+        }
+      ],
+      "return_description": "Return a signed, little-endian 16-bit integer",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1.Incorrect parameter types."
+        },
+        {
+          "code": "10200001",
+          "description": "The value of \"offset\" is out of range. It must be >= 0 and <= buf.length - 2. Received value is: [offset]"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "readInt32BE",
+      "返回值": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Reads a 32-bit, big-endian, signed integer from this Buffer instance at the specified offset.",
+      "注释信息": [
+        "@param { number } [offset] - Number of bytes to skip before starting to read data. The default value is 0. The value range is [0, Buffer.length - 4].",
+        "@returns { number } Return a signed, big-endian 32-bit integer",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1.Incorrect parameter types.",
+        "@throws { BusinessError } 10200001 - The value of \"offset\" is out of range. It must be >= 0 and <= buf.length - 4. Received value is: [offset]",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Buffer",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "number } [offset] - Number of bytes to skip before starting to read data. The default value is 0. The value range is [0, Buffer.length - 4]."
+        }
+      ],
+      "return_description": "Return a signed, big-endian 32-bit integer",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1.Incorrect parameter types."
+        },
+        {
+          "code": "10200001",
+          "description": "The value of \"offset\" is out of range. It must be >= 0 and <= buf.length - 4. Received value is: [offset]"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "readInt32LE",
+      "返回值": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Reads a 32-bit, little-endian, signed integer from this Buffer instance at the specified offset.",
+      "注释信息": [
+        "@param { number } [offset] - Number of bytes to skip before starting to read data. The default value is 0. The value range is [0, Buffer.length - 4].",
+        "@returns { number } Return a signed, little-endian 32-bit integer",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1.Incorrect parameter types.",
+        "@throws { BusinessError } 10200001 - The value of \"offset\" is out of range. It must be >= 0 and <= buf.length - 4. Received value is: [offset]",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Buffer",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "number } [offset] - Number of bytes to skip before starting to read data. The default value is 0. The value range is [0, Buffer.length - 4]."
+        }
+      ],
+      "return_description": "Return a signed, little-endian 32-bit integer",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1.Incorrect parameter types."
+        },
+        {
+          "code": "10200001",
+          "description": "The value of \"offset\" is out of range. It must be >= 0 and <= buf.length - 4. Received value is: [offset]"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "readIntBE",
+      "返回值": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Reads the specified number of bytes from this Buffer instance at the specified offset, and interprets the result as a big-endian, two's complement signed value that supports up to 48 bits of precision. The default value is 0. The value range is [0, Buffer.length - byteLength]. 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types.",
+      "注释信息": [
+        "@param { number } offset - Number of bytes to skip before starting to read data.",
+        "@param { number } byteLength - Number of bytes to read. The value range is [1, 6].",
+        "@returns { number }",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 10200001 - The value of \"[param]\" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param]",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Buffer",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "offset",
+          "类型": "number",
+          "必填": true,
+          "说明": "Number of bytes to skip before starting to read data."
+        },
+        {
+          "名称": "byteLength",
+          "类型": "number",
+          "必填": true,
+          "说明": "Number of bytes to read. The value range is [1, 6]."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "10200001",
+          "description": "The value of \"[param]\" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param]"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "readIntLE",
+      "返回值": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Reads the specified number of bytes from this Buffer instance at the specified offset and interprets the result as a little-endian, two's complement signed value that supports up to 48 bits of precision. The default value is 0. The value range is [0, Buffer.length - byteLength]. 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types.",
+      "注释信息": [
+        "@param { number } offset - Number of bytes to skip before starting to read data.",
+        "@param { number } byteLength - Number of bytes to read. The value range is [1, 6].",
+        "@returns { number }",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 10200001 - The value of \"[param]\" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param]",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Buffer",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "offset",
+          "类型": "number",
+          "必填": true,
+          "说明": "Number of bytes to skip before starting to read data."
+        },
+        {
+          "名称": "byteLength",
+          "类型": "number",
+          "必填": true,
+          "说明": "Number of bytes to read. The value range is [1, 6]."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "10200001",
+          "description": "The value of \"[param]\" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param]"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "readUInt8",
+      "返回值": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Reads an 8-bit unsigned integer from this Buffer instance at the specified offset.",
+      "注释信息": [
+        "@param { number } [offset] - Number of bytes to skip before starting to read data. The default value is 0. The value range is [0, Buffer.length - 1].",
+        "@returns { number } Reads an unsigned 8-bit integer",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1.Incorrect parameter types.",
+        "@throws { BusinessError } 10200001 - The value of \"offset\" is out of range. It must be >= 0 and <= buf.length - 1. Received value is: [offset]",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Buffer",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "number } [offset] - Number of bytes to skip before starting to read data. The default value is 0. The value range is [0, Buffer.length - 1]."
+        }
+      ],
+      "return_description": "Reads an unsigned 8-bit integer",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1.Incorrect parameter types."
+        },
+        {
+          "code": "10200001",
+          "description": "The value of \"offset\" is out of range. It must be >= 0 and <= buf.length - 1. Received value is: [offset]"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "readUInt16BE",
+      "返回值": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Reads a 16-bit, big-endian, unsigned integer from this Buffer instance at the specified offset.",
+      "注释信息": [
+        "@param { number } [offset] - Number of bytes to skip before starting to read data. The default value is 0. The value range is [0, Buffer.length - 2].",
+        "@returns { number } Reads an unsigned, big-endian 16-bit integer",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1.Incorrect parameter types.",
+        "@throws { BusinessError } 10200001 - The value of \"offset\" is out of range. It must be >= 0 and <= buf.length - 2. Received value is: [offset]",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Buffer",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "number } [offset] - Number of bytes to skip before starting to read data. The default value is 0. The value range is [0, Buffer.length - 2]."
+        }
+      ],
+      "return_description": "Reads an unsigned, big-endian 16-bit integer",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1.Incorrect parameter types."
+        },
+        {
+          "code": "10200001",
+          "description": "The value of \"offset\" is out of range. It must be >= 0 and <= buf.length - 2. Received value is: [offset]"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "readUInt16LE",
+      "返回值": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Reads a 16-bit, little-endian, unsigned integer from this Buffer instance at the specified offset.",
+      "注释信息": [
+        "@param { number } [offset] - Number of bytes to skip before starting to read data. The default value is 0. The value range is [0, Buffer.length - 2].",
+        "@returns { number } Reads an unsigned, little-endian 16-bit integer",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1.Incorrect parameter types.",
+        "@throws { BusinessError } 10200001 - The value of \"offset\" is out of range. It must be >= 0 and <= buf.length - 2. Received value is: [offset]",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Buffer",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "number } [offset] - Number of bytes to skip before starting to read data. The default value is 0. The value range is [0, Buffer.length - 2]."
+        }
+      ],
+      "return_description": "Reads an unsigned, little-endian 16-bit integer",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1.Incorrect parameter types."
+        },
+        {
+          "code": "10200001",
+          "description": "The value of \"offset\" is out of range. It must be >= 0 and <= buf.length - 2. Received value is: [offset]"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "readUInt32BE",
+      "返回值": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Reads a 32-bit, big-endian, unsigned integer from this Buffer instance at the specified offset.",
+      "注释信息": [
+        "@param { number } [offset] - Number of bytes to skip before starting to read data. The default value is 0. The value range is [0, Buffer.length - 4].",
+        "@returns { number } Reads an unsigned, big-endian 32-bit integer",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1.Incorrect parameter types.",
+        "@throws { BusinessError } 10200001 - The value of \"offset\" is out of range. It must be >= 0 and <= buf.length - 4. Received value is: [offset]",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Buffer",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "number } [offset] - Number of bytes to skip before starting to read data. The default value is 0. The value range is [0, Buffer.length - 4]."
+        }
+      ],
+      "return_description": "Reads an unsigned, big-endian 32-bit integer",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1.Incorrect parameter types."
+        },
+        {
+          "code": "10200001",
+          "description": "The value of \"offset\" is out of range. It must be >= 0 and <= buf.length - 4. Received value is: [offset]"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "readUInt32LE",
+      "返回值": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Reads a 32-bit, little-endian, unsigned integer from this Buffer instance at the specified offset.",
+      "注释信息": [
+        "@param { number } [offset] - Number of bytes to skip before starting to read data. The default value is 0. The value range is [0, Buffer.length - 4].",
+        "@returns { number } Reads an unsigned, little-endian 32-bit integer",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1.Incorrect parameter types.",
+        "@throws { BusinessError } 10200001 - The value of \"offset\" is out of range. It must be >= 0 and <= buf.length - 4. Received value is: [offset]",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Buffer",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "number } [offset] - Number of bytes to skip before starting to read data. The default value is 0. The value range is [0, Buffer.length - 4]."
+        }
+      ],
+      "return_description": "Reads an unsigned, little-endian 32-bit integer",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1.Incorrect parameter types."
+        },
+        {
+          "code": "10200001",
+          "description": "The value of \"offset\" is out of range. It must be >= 0 and <= buf.length - 4. Received value is: [offset]"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "readUIntBE",
+      "返回值": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Reads the specified number of bytes from this Buffer instance at the specified offset, and interprets the result as an unsigned, big-endian integer that supports up to 48 bits of precision. The default value is 0. The value range is [0, Buffer.length - byteLength]. 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types.",
+      "注释信息": [
+        "@param { number } offset - Number of bytes to skip before starting to read data.",
+        "@param { number } byteLength - Number of bytes to read. The value range is [1, 6].",
+        "@returns { number }",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 10200001 - The value of \"[param]\" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param]",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Buffer",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "offset",
+          "类型": "number",
+          "必填": true,
+          "说明": "Number of bytes to skip before starting to read data."
+        },
+        {
+          "名称": "byteLength",
+          "类型": "number",
+          "必填": true,
+          "说明": "Number of bytes to read. The value range is [1, 6]."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "10200001",
+          "description": "The value of \"[param]\" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param]"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "readUIntLE",
+      "返回值": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Reads the specified number of bytes from this Buffer instance at the specified offset, and interprets the result as an unsigned, little-endian integer that supports up to 48 bits of precision. The default value is 0. The value range is [0, Buffer.length - byteLength]. 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types.",
+      "注释信息": [
+        "@param { number } offset - Number of bytes to skip before starting to read data.",
+        "@param { number } byteLength - Number of bytes to read. The value range is [1, 6].",
+        "@returns { number }",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 10200001 - The value of \"[param]\" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param]",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Buffer",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "offset",
+          "类型": "number",
+          "必填": true,
+          "说明": "Number of bytes to skip before starting to read data."
+        },
+        {
+          "名称": "byteLength",
+          "类型": "number",
+          "必填": true,
+          "说明": "Number of bytes to read. The value range is [1, 6]."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "10200001",
+          "description": "The value of \"[param]\" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param]"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "subarray",
+      "返回值": "Buffer",
+      "所属模块": "未知模块",
+      "功能描述": "Truncates this Buffer instance from the specified position to create a new Buffer instance.",
+      "注释信息": [
+        "@param { number } [start] - Offset to the start position in this Buffer instance where data is truncated. The default value is 0.",
+        "@param { number } [end] - Offset to the end position in this Buffer instance (not inclusive). The default value is the length of this Buffer instance.",
+        "@returns { Buffer } Returns a new Buffer that references the same memory as the original",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Buffer",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "number } [end] - Offset to the end position in this Buffer instance (not inclusive). The default value is the length of this Buffer instance."
+        }
+      ],
+      "return_description": "Returns a new Buffer that references the same memory as the original",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "swap16",
+      "返回值": "Buffer",
+      "所属模块": "未知模块",
+      "功能描述": "Interprets this Buffer instance as an array of unsigned 16-bit integers and swaps the byte order in place.",
+      "注释信息": [
+        "@returns { Buffer } A reference to buf",
+        "@throws { BusinessError } 10200009 - The buffer size must be a multiple of 16-bits",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Buffer",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "A reference to buf",
+      "error_codes": [
+        {
+          "code": "10200009",
+          "description": "The buffer size must be a multiple of 16-bits"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "swap32",
+      "返回值": "Buffer",
+      "所属模块": "未知模块",
+      "功能描述": "Interprets this Buffer instance as an array of unsigned 32-bit integers and swaps the byte order in place.",
+      "注释信息": [
+        "@returns { Buffer } A reference to buf",
+        "@throws { BusinessError } 10200009 - The buffer size must be a multiple of 32-bits",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Buffer",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "A reference to buf",
+      "error_codes": [
+        {
+          "code": "10200009",
+          "description": "The buffer size must be a multiple of 32-bits"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "swap64",
+      "返回值": "Buffer",
+      "所属模块": "未知模块",
+      "功能描述": "Interprets this Buffer instance as an array of unsigned 64-bit integers and swaps the byte order in place.",
+      "注释信息": [
+        "@returns { Buffer } A reference to buf",
+        "@throws { BusinessError } 10200009 - The buffer size must be a multiple of 64-bits",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Buffer",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "A reference to buf",
+      "error_codes": [
+        {
+          "code": "10200009",
+          "description": "The buffer size must be a multiple of 64-bits"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "toJSON",
+      "返回值": "Object",
+      "所属模块": "未知模块",
+      "功能描述": "Converts this Buffer instance into a JSON object.",
+      "注释信息": [
+        "@returns { Object } Returns a JSON",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Buffer",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "Returns a JSON",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "toString",
+      "返回值": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Converts the data at the specified position in this Buffer instance into a string in the specified encoding format.",
+      "注释信息": [
+        "@param { string } [encoding] - Encoding format (valid only when value is a string). The default value is 'utf8'.",
+        "@param { number } [start] - Offset to the start position of the data to convert. The default value is 0.",
+        "@param { number } [end] - Offset to the end position of the data to convert. The default value is the length of this Buffer instance.",
+        "@returns { string }",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1.Incorrect parameter types.",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Buffer",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "number } [end] - Offset to the end position of the data to convert. The default value is the length of this Buffer instance."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1.Incorrect parameter types."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "write",
+      "返回值": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Writes a string of the specified length to this Buffer instance at the specified position in the given encoding format. 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types.",
+      "注释信息": [
+        "@param { string } str - String to write.",
+        "@param { number } [offset] - Number of bytes to skip before starting to write data. The default value is 0.",
+        "@param { number } [length] - Maximum number of bytes to write. The default value is Buffer.length minus offset.",
+        "@param { string } [encoding] - Encoding format of the string. The default value is 'utf8'.",
+        "@returns { number } Number of bytes written.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 10200001 - The value of \"[offset/length]\" is out of range. It must be >= 0 and <= buf.length. Received value is: [offset/length]",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Buffer",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "str",
+          "类型": "string",
+          "必填": true,
+          "说明": "String to write."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "string } [encoding] - Encoding format of the string. The default value is 'utf8'."
+        }
+      ],
+      "return_description": "Number of bytes written.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "10200001",
+          "description": "The value of \"[offset/length]\" is out of range. It must be >= 0 and <= buf.length. Received value is: [offset/length]"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "writeBigInt64BE",
+      "返回值": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Writes a 64-bit, big-endian, signed big integer to this Buffer instance at the specified offset. 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types; 3.Parameter verification failed.",
+      "注释信息": [
+        "@param { bigint } value - Data to write.",
+        "@param { number } [offset] - Number of bytes to skip before starting to write data. The default value is 0. The value range is [0, Buffer.length - 8].",
+        "@returns { number } offset plus the number of bytes written",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 10200001 - The value of \"[param]\" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param]",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Buffer",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "value",
+          "类型": "bigint",
+          "必填": true,
+          "说明": "Data to write."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "number } [offset] - Number of bytes to skip before starting to write data. The default value is 0. The value range is [0, Buffer.length - 8]."
+        }
+      ],
+      "return_description": "offset plus the number of bytes written",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "10200001",
+          "description": "The value of \"[param]\" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param]"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "writeBigInt64LE",
+      "返回值": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Writes a 64-bit, little-endian, signed big integer to this Buffer instance at the specified offset. 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types; 3.Parameter verification failed.",
+      "注释信息": [
+        "@param { bigint } value - Data to write.",
+        "@param { number } [offset] - Number of bytes to skip before starting to write data. The default value is 0. The value range is [0, Buffer.length - 8].",
+        "@returns { number } offset plus the number of bytes written",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 10200001 - The value of \"[param]\" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param]",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Buffer",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "value",
+          "类型": "bigint",
+          "必填": true,
+          "说明": "Data to write."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "number } [offset] - Number of bytes to skip before starting to write data. The default value is 0. The value range is [0, Buffer.length - 8]."
+        }
+      ],
+      "return_description": "offset plus the number of bytes written",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "10200001",
+          "description": "The value of \"[param]\" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param]"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "writeBigUInt64BE",
+      "返回值": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Writes a 64-bit, big-endian, unsigned big integer to this Buffer instance at the specified offset. 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types; 3.Parameter verification failed.",
+      "注释信息": [
+        "@param { bigint } value - Data to write.",
+        "@param { number } [offset] - Number of bytes to skip before starting to write data. The default value is 0. The value range is [0, Buffer.length - 8].",
+        "@returns { number } offset plus the number of bytes written",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 10200001 - The value of \"[param]\" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param]",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Buffer",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "value",
+          "类型": "bigint",
+          "必填": true,
+          "说明": "Data to write."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "number } [offset] - Number of bytes to skip before starting to write data. The default value is 0. The value range is [0, Buffer.length - 8]."
+        }
+      ],
+      "return_description": "offset plus the number of bytes written",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "10200001",
+          "description": "The value of \"[param]\" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param]"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "writeBigUInt64LE",
+      "返回值": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Writes a 64-bit, little-endian, unsigned big integer to this Buffer instance at the specified offset. 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types; 3.Parameter verification failed.",
+      "注释信息": [
+        "@param { bigint } value - Data to write.",
+        "@param { number } [offset] - Number of bytes to skip before starting to write data. The default value is 0. The value range is [0, Buffer.length - 8].",
+        "@returns { number } offset plus the number of bytes written",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 10200001 - The value of \"[param]\" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param]",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Buffer",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "value",
+          "类型": "bigint",
+          "必填": true,
+          "说明": "Data to write."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "number } [offset] - Number of bytes to skip before starting to write data. The default value is 0. The value range is [0, Buffer.length - 8]."
+        }
+      ],
+      "return_description": "offset plus the number of bytes written",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "10200001",
+          "description": "The value of \"[param]\" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param]"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "writeDoubleBE",
+      "返回值": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Writes a 64-bit, big-endian, double-precision floating-point number to this Buffer instance at the specified offset. 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types.",
+      "注释信息": [
+        "@param { number } value - Data to write.",
+        "@param { number } [offset] - Number of bytes to skip before starting to write data. The default value is 0. The value range is [0, Buffer.length - 8].",
+        "@returns { number } offset plus the number of bytes written",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 10200001 - The value of \"offset\" is out of range. It must be >= 0 and <= buf.length - 8. Received value is: [offset]",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Buffer",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "value",
+          "类型": "number",
+          "必填": true,
+          "说明": "Data to write."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "number } [offset] - Number of bytes to skip before starting to write data. The default value is 0. The value range is [0, Buffer.length - 8]."
+        }
+      ],
+      "return_description": "offset plus the number of bytes written",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "10200001",
+          "description": "The value of \"offset\" is out of range. It must be >= 0 and <= buf.length - 8. Received value is: [offset]"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "writeDoubleLE",
+      "返回值": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Writes a 64-bit, little-endian, double-precision floating-point number to this Buffer instance at the specified offset. 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types.",
+      "注释信息": [
+        "@param { number } value - Data to write.",
+        "@param { number } [offset] - Number of bytes to skip before starting to write data. The default value is 0. The value range is [0, Buffer.length - 8].",
+        "@returns { number } offset plus the number of bytes written",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 10200001 - The value of \"offset\" is out of range. It must be >= 0 and <= buf.length - 8. Received value is: [offset]",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Buffer",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "value",
+          "类型": "number",
+          "必填": true,
+          "说明": "Data to write."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "number } [offset] - Number of bytes to skip before starting to write data. The default value is 0. The value range is [0, Buffer.length - 8]."
+        }
+      ],
+      "return_description": "offset plus the number of bytes written",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "10200001",
+          "description": "The value of \"offset\" is out of range. It must be >= 0 and <= buf.length - 8. Received value is: [offset]"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "writeFloatBE",
+      "返回值": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Writes a 32-bit, big-endian, single-precision floating-point number to this Buffer instance at the specified offset. 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types.",
+      "注释信息": [
+        "@param { number } value - Data to write.",
+        "@param { number } [offset] - Number of bytes to skip before starting to write data. The default value is 0. The value range is [0, Buffer.length - 4].",
+        "@returns { number } offset plus the number of bytes written",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 10200001 - The value of \"offset\" is out of range. It must be >= 0 and <= buf.length - 4. Received value is: [offset]",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Buffer",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "value",
+          "类型": "number",
+          "必填": true,
+          "说明": "Data to write."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "number } [offset] - Number of bytes to skip before starting to write data. The default value is 0. The value range is [0, Buffer.length - 4]."
+        }
+      ],
+      "return_description": "offset plus the number of bytes written",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "10200001",
+          "description": "The value of \"offset\" is out of range. It must be >= 0 and <= buf.length - 4. Received value is: [offset]"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "writeFloatLE",
+      "返回值": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Writes a 32-bit, little-endian, single-precision floating-point number to this Buffer instance at the specified offset. 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types.",
+      "注释信息": [
+        "@param { number } value - Data to write.",
+        "@param { number } [offset] - Number of bytes to skip before starting to write data. The default value is 0. The value range is [0, Buffer.length - 4].",
+        "@returns { number } offset plus the number of bytes written",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 10200001 - The value of \"offset\" is out of range. It must be >= 0 and <= buf.length - 4. Received value is: [offset]",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Buffer",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "value",
+          "类型": "number",
+          "必填": true,
+          "说明": "Data to write."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "number } [offset] - Number of bytes to skip before starting to write data. The default value is 0. The value range is [0, Buffer.length - 4]."
+        }
+      ],
+      "return_description": "offset plus the number of bytes written",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "10200001",
+          "description": "The value of \"offset\" is out of range. It must be >= 0 and <= buf.length - 4. Received value is: [offset]"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "writeInt8",
+      "返回值": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Writes an 8-bit signed integer to this Buffer instance at the specified offset. 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types; 3.Parameter verification failed.",
+      "注释信息": [
+        "@param { number } value - Data to write.",
+        "@param { number } [offset] - Number of bytes to skip before starting to write data. The default value is 0. The value range is [0, Buffer.length - 1].",
+        "@returns { number } offset plus the number of bytes written",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 10200001 - The value of \"[param]\" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param]",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Buffer",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "value",
+          "类型": "number",
+          "必填": true,
+          "说明": "Data to write."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "number } [offset] - Number of bytes to skip before starting to write data. The default value is 0. The value range is [0, Buffer.length - 1]."
+        }
+      ],
+      "return_description": "offset plus the number of bytes written",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "10200001",
+          "description": "The value of \"[param]\" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param]"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "writeInt16BE",
+      "返回值": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Writes a 16-bit, big-endian, signed integer to this Buffer instance at the specified offset. 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types; 3.Parameter verification failed.",
+      "注释信息": [
+        "@param { number } value - Data to write.",
+        "@param { number } [offset] - Number of bytes to skip before starting to write data. The default value is 0. The value range is [0, Buffer.length - 2].",
+        "@returns { number } offset plus the number of bytes written",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 10200001 - The value of \"[param]\" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param]",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Buffer",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "value",
+          "类型": "number",
+          "必填": true,
+          "说明": "Data to write."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "number } [offset] - Number of bytes to skip before starting to write data. The default value is 0. The value range is [0, Buffer.length - 2]."
+        }
+      ],
+      "return_description": "offset plus the number of bytes written",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "10200001",
+          "description": "The value of \"[param]\" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param]"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "writeInt16LE",
+      "返回值": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Writes a 16-bit, little-endian, signed integer to this Buffer instance at the specified offset. 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types; 3.Parameter verification failed.",
+      "注释信息": [
+        "@param { number } value - Data to write.",
+        "@param { number } [offset] - Number of bytes to skip before starting to write data. The default value is 0. The value range is [0, Buffer.length - 2].",
+        "@returns { number } offset plus the number of bytes written",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 10200001 - The value of \"[param]\" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param]",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Buffer",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "value",
+          "类型": "number",
+          "必填": true,
+          "说明": "Data to write."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "number } [offset] - Number of bytes to skip before starting to write data. The default value is 0. The value range is [0, Buffer.length - 2]."
+        }
+      ],
+      "return_description": "offset plus the number of bytes written",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "10200001",
+          "description": "The value of \"[param]\" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param]"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "writeInt32BE",
+      "返回值": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Writes a 32-bit, big-endian, signed integer to this Buffer instance at the specified offset. 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types; 3.Parameter verification failed.",
+      "注释信息": [
+        "@param { number } value - Data to write.",
+        "@param { number } [offset] - Number of bytes to skip before starting to write data. The default value is 0. The value range is [0, Buffer.length - 4].",
+        "@returns { number } offset plus the number of bytes written",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 10200001 - The value of \"[param]\" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param]",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Buffer",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "value",
+          "类型": "number",
+          "必填": true,
+          "说明": "Data to write."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "number } [offset] - Number of bytes to skip before starting to write data. The default value is 0. The value range is [0, Buffer.length - 4]."
+        }
+      ],
+      "return_description": "offset plus the number of bytes written",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "10200001",
+          "description": "The value of \"[param]\" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param]"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "writeInt32LE",
+      "返回值": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Writes a 32-bit, little-endian, signed integer to this Buffer instance at the specified offset. 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types; 3.Parameter verification failed.",
+      "注释信息": [
+        "@param { number } value - Data to write.",
+        "@param { number } [offset] - Number of bytes to skip before starting to write data. The default value is 0. The value range is [0, Buffer.length - 4].",
+        "@returns { number } offset plus the number of bytes written",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 10200001 - The value of \"[param]\" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param]",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Buffer",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "value",
+          "类型": "number",
+          "必填": true,
+          "说明": "Data to write."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "number } [offset] - Number of bytes to skip before starting to write data. The default value is 0. The value range is [0, Buffer.length - 4]."
+        }
+      ],
+      "return_description": "offset plus the number of bytes written",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "10200001",
+          "description": "The value of \"[param]\" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param]"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "writeIntBE",
+      "返回值": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Writes a big-endian signed value of the specified length to this Buffer instance at the specified offset. The default value is 0. The value range is [0, Buffer.length - byteLength]. 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types.",
+      "注释信息": [
+        "@param { number } value - Data to write.",
+        "@param { number } offset - Number of bytes to skip before starting to write data.",
+        "@param { number } byteLength - Number of bytes to write.",
+        "@returns { number } offset plus the number of bytes written",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 10200001 - The value of \"[param]\" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param]",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Buffer",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "value",
+          "类型": "number",
+          "必填": true,
+          "说明": "Data to write."
+        },
+        {
+          "名称": "offset",
+          "类型": "number",
+          "必填": true,
+          "说明": "Number of bytes to skip before starting to write data."
+        },
+        {
+          "名称": "byteLength",
+          "类型": "number",
+          "必填": true,
+          "说明": "Number of bytes to write."
+        }
+      ],
+      "return_description": "offset plus the number of bytes written",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "10200001",
+          "description": "The value of \"[param]\" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param]"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "writeIntLE",
+      "返回值": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Writes a little-endian signed value of the specified length to this Buffer instance at the specified offset. The default value is 0. The value range is [0, Buffer.length - byteLength]. 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types.",
+      "注释信息": [
+        "@param { number } value - Data to write.",
+        "@param { number } offset - Number of bytes to skip before starting to write data.",
+        "@param { number } byteLength - Number of bytes to write.",
+        "@returns { number } offset plus the number of bytes written",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 10200001 - The value of \"[param]\" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param]",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Buffer",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "value",
+          "类型": "number",
+          "必填": true,
+          "说明": "Data to write."
+        },
+        {
+          "名称": "offset",
+          "类型": "number",
+          "必填": true,
+          "说明": "Number of bytes to skip before starting to write data."
+        },
+        {
+          "名称": "byteLength",
+          "类型": "number",
+          "必填": true,
+          "说明": "Number of bytes to write."
+        }
+      ],
+      "return_description": "offset plus the number of bytes written",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "10200001",
+          "description": "The value of \"[param]\" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param]"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "writeUInt8",
+      "返回值": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Writes an 8-bit unsigned integer to this Buffer instance at the specified offset. 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types; 3.Parameter verification failed.",
+      "注释信息": [
+        "@param { number } value - Data to write.",
+        "@param { number } [offset] - Number of bytes to skip before starting to write data. The default value is 0. The value range is [0, Buffer.length - 1].",
+        "@returns { number } offset plus the number of bytes written",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 10200001 - The value of \"[param]\" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param]",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Buffer",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "value",
+          "类型": "number",
+          "必填": true,
+          "说明": "Data to write."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "number } [offset] - Number of bytes to skip before starting to write data. The default value is 0. The value range is [0, Buffer.length - 1]."
+        }
+      ],
+      "return_description": "offset plus the number of bytes written",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "10200001",
+          "description": "The value of \"[param]\" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param]"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "writeUInt16BE",
+      "返回值": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Writes a 16-bit, big-endian, unsigned integer to this Buffer instance at the specified offset. 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types; 3.Parameter verification failed.",
+      "注释信息": [
+        "@param { number } value - \tData to write.",
+        "@param { number } [offset] - Number of bytes to skip before starting to write data. The default value is 0. The value range is [0, Buffer.length - 2].",
+        "@returns { number } offset plus the number of bytes written",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 10200001 - The value of \"[param]\" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param]",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Buffer",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "value",
+          "类型": "number",
+          "必填": true,
+          "说明": "Data to write."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "number } [offset] - Number of bytes to skip before starting to write data. The default value is 0. The value range is [0, Buffer.length - 2]."
+        }
+      ],
+      "return_description": "offset plus the number of bytes written",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "10200001",
+          "description": "The value of \"[param]\" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param]"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "writeUInt16LE",
+      "返回值": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Writes a 16-bit, little-endian, unsigned integer to this Buffer instance at the specified offset. 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types; 3.Parameter verification failed.",
+      "注释信息": [
+        "@param { number } value - Data to write.",
+        "@param { number } [offset] - Number of bytes to skip before starting to write data. The default value is 0. The value range is [0, Buffer.length - 2].",
+        "@returns { number } offset plus the number of bytes written",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 10200001 - The value of \"[param]\" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param]",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Buffer",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "value",
+          "类型": "number",
+          "必填": true,
+          "说明": "Data to write."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "number } [offset] - Number of bytes to skip before starting to write data. The default value is 0. The value range is [0, Buffer.length - 2]."
+        }
+      ],
+      "return_description": "offset plus the number of bytes written",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "10200001",
+          "description": "The value of \"[param]\" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param]"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "writeUInt32BE",
+      "返回值": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Writes a 32-bit, big-endian, unsigned integer to this Buffer instance at the specified offset. 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types; 3.Parameter verification failed.",
+      "注释信息": [
+        "@param { number } value - Data to write.",
+        "@param { number } [offset] - Number of bytes to skip before starting to write data. The default value is 0. The value range is [0, Buffer.length - 4].",
+        "@returns { number } offset plus the number of bytes written",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 10200001 - The value of \"[param]\" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param]",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Buffer",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "value",
+          "类型": "number",
+          "必填": true,
+          "说明": "Data to write."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "number } [offset] - Number of bytes to skip before starting to write data. The default value is 0. The value range is [0, Buffer.length - 4]."
+        }
+      ],
+      "return_description": "offset plus the number of bytes written",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "10200001",
+          "description": "The value of \"[param]\" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param]"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "writeUInt32LE",
+      "返回值": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Writes a 32-bit, little-endian, unsigned integer to this Buffer instance at the specified offset. 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types; 3.Parameter verification failed.",
+      "注释信息": [
+        "@param { number } value - Data to write.",
+        "@param { number } [offset] - Number of bytes to skip before starting to write data. The default value is 0. The value range is [0, Buffer.length - 4].",
+        "@returns { number } offset plus the number of bytes written",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 10200001 - The value of \"[param]\" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param]",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Buffer",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "value",
+          "类型": "number",
+          "必填": true,
+          "说明": "Data to write."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "number } [offset] - Number of bytes to skip before starting to write data. The default value is 0. The value range is [0, Buffer.length - 4]."
+        }
+      ],
+      "return_description": "offset plus the number of bytes written",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "10200001",
+          "description": "The value of \"[param]\" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param]"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "writeUIntBE",
+      "返回值": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Writes an unsigned big-endian value of the specified length to this Buffer instance at the specified offset. The default value is 0. The value range is [0, Buffer.length - byteLength]. 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types.",
+      "注释信息": [
+        "@param { number } value - Data to write.",
+        "@param { number } offset - Number of bytes to skip before starting to write data.",
+        "@param { number } byteLength - Number of bytes to write.",
+        "@returns { number } offset plus the number of bytes written",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 10200001 - The value of \"[param]\" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param]",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Buffer",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "value",
+          "类型": "number",
+          "必填": true,
+          "说明": "Data to write."
+        },
+        {
+          "名称": "offset",
+          "类型": "number",
+          "必填": true,
+          "说明": "Number of bytes to skip before starting to write data."
+        },
+        {
+          "名称": "byteLength",
+          "类型": "number",
+          "必填": true,
+          "说明": "Number of bytes to write."
+        }
+      ],
+      "return_description": "offset plus the number of bytes written",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "10200001",
+          "description": "The value of \"[param]\" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param]"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "writeUIntLE",
+      "返回值": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Writes an unsigned little-endian value of the specified length to this Buffer instance at the specified offset. The default value is 0. The value range is [0, Buffer.length - byteLength]. 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types.",
+      "注释信息": [
+        "@param { number } value - Data to write.",
+        "@param { number } offset - Number of bytes to skip before starting to write data.",
+        "@param { number } byteLength - Number of bytes to write.",
+        "@returns { number } offset plus the number of bytes written",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 10200001 - The value of \"[param]\" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param]",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Buffer",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "value",
+          "类型": "number",
+          "必填": true,
+          "说明": "Data to write."
+        },
+        {
+          "名称": "offset",
+          "类型": "number",
+          "必填": true,
+          "说明": "Number of bytes to skip before starting to write data."
+        },
+        {
+          "名称": "byteLength",
+          "类型": "number",
+          "必填": true,
+          "说明": "Number of bytes to write."
+        }
+      ],
+      "return_description": "offset plus the number of bytes written",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "10200001",
+          "description": "The value of \"[param]\" is out of range. It must be >= [left range] and <= [right range]. Received value is: [param]"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "class",
+      "名称": "Blob",
+      "所属模块": "未知模块",
+      "功能描述": "Process data as blob type",
+      "注释信息": [
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "buffer",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "constructor",
+      "返回值": "Blob",
+      "所属模块": "未知模块",
+      "功能描述": "Creates a new Blob object containing a concatenation of the given sources. <TypedArray>, <DataView>, or <Blob> objects, or any mix of such objects, that will be stored within the Blob endings:  One of either 'transparent' or 'native'. type: The Blob content-type 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types.",
+      "注释信息": [
+        "@param { string[] | ArrayBuffer[] | TypedArray[] | DataView[] | Blob[] } sources - sources sources An array of string, <ArrayBuffer>,",
+        "@param { Object } [options] - options options {endings: string, type: string}",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Blob",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "sources",
+          "类型": "string[] | ArrayBuffer[] | TypedArray[] | DataView[] | Blob[]",
+          "必填": true,
+          "说明": "sources sources An array of string, <ArrayBuffer>,"
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "Object } [options] - options options {endings: string, type: string}"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "所属模块": "未知模块",
+      "功能描述": "Total size of the Blob instance, in bytes.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Blob",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "所属模块": "未知模块",
+      "功能描述": "Type of the data in the Blob instance.",
+      "注释信息": [
+        "@type { string }",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Blob",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "arrayBuffer",
+      "返回值": "Promise<ArrayBuffer>",
+      "所属模块": "未知模块",
+      "功能描述": "Puts the Blob data into an ArrayBuffer instance. This API uses a promise to return the result.",
+      "注释信息": [
+        "@returns { Promise<ArrayBuffer> }",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Blob",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "slice",
+      "返回值": "Blob",
+      "所属模块": "未知模块",
+      "功能描述": "Creates a Blob instance by copying specified data from this Blob instance.",
+      "注释信息": [
+        "@param { number } [start] - Offset to the start position of the data to copy. The default value is 0.",
+        "@param { number } [end] - Offset to the end position of the data to copy. The default value is the data length in the original Blob instance.",
+        "@param { string } [type] - Type of the data in the new Blob instance. The default value is ''.",
+        "@returns { Blob }",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Blob",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "string } [type] - Type of the data in the new Blob instance. The default value is ''."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "text",
+      "返回值": "Promise<string>",
+      "所属模块": "未知模块",
+      "功能描述": "Returns text in UTF-8 format. This API uses a promise to return the result.",
+      "注释信息": [
+        "@returns { Promise<string> }",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Blob",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    }
+  ]
+}

@@ -1,0 +1,389 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.AbilityKit",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "namespace",
+      "名称": "abilityAccessCtrl",
+      "所属模块": "@kit.AbilityKit",
+      "功能描述": "",
+      "注释信息": [
+        "@namespace abilityAccessCtrl",
+        "@syscap SystemCapability.Security.AccessToken",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "@kit.AbilityKit",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Security.AccessToken",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "createAtManager",
+      "返回值": "AtManager",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the AtManager instance.",
+      "注释信息": [
+        "@returns { AtManager } returns the instance of the AtManager.",
+        "@syscap SystemCapability.Security.AccessToken",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "abilityAccessCtrl",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Security.AccessToken",
+      "parameters": [],
+      "return_description": "returns the instance of the AtManager.",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "interface",
+      "名称": "AtManager",
+      "所属模块": "未知模块",
+      "功能描述": "Provides methods for managing access_token.",
+      "注释信息": [
+        "@interface AtManager",
+        "@syscap SystemCapability.Security.AccessToken",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "abilityAccessCtrl",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Security.AccessToken",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "verifyAccessToken",
+      "返回值": "Promise<GrantStatus>",
+      "所属模块": "未知模块",
+      "功能描述": "Checks whether a specified application has been granted the given permission.",
+      "注释信息": [
+        "@param { number } tokenID - Token ID of the application.",
+        "@param { Permissions } permissionName - Name of the permission to be verified. The Permissions type supports only valid permission names.",
+        "@returns { Promise<GrantStatus> } Returns permission verify result.",
+        "@syscap SystemCapability.Security.AccessToken",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "AtManager",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Security.AccessToken",
+      "parameters": [
+        {
+          "名称": "tokenID",
+          "类型": "number",
+          "必填": true,
+          "说明": "Token ID of the application."
+        },
+        {
+          "名称": "permissionName",
+          "类型": "Permissions",
+          "必填": true,
+          "说明": "Name of the permission to be verified. The Permissions type supports only valid permission names."
+        }
+      ],
+      "return_description": "Returns permission verify result.",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "verifyAccessToken",
+      "返回值": "Promise<GrantStatus>",
+      "所属模块": "未知模块",
+      "功能描述": "Checks whether a specified application has been granted the given permission.",
+      "注释信息": [
+        "@param { number } tokenID - Token ID of the application.",
+        "@param { string } permissionName - Name of the permission to be verified.",
+        "@returns { Promise<GrantStatus> } Returns permission verify result.",
+        "@syscap SystemCapability.Security.AccessToken",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.abilityAccessCtrl.AtManager#checkAccessToken"
+      ],
+      "层级": 2,
+      "上级": "AtManager",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Security.AccessToken",
+      "parameters": [
+        {
+          "名称": "tokenID",
+          "类型": "number",
+          "必填": true,
+          "说明": "Token ID of the application."
+        },
+        {
+          "名称": "permissionName",
+          "类型": "string",
+          "必填": true,
+          "说明": "Name of the permission to be verified."
+        }
+      ],
+      "return_description": "Returns permission verify result.",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "verifyAccessTokenSync",
+      "返回值": "GrantStatus",
+      "所属模块": "未知模块",
+      "功能描述": "Checks whether a specified application has been granted the given permission synchronously.",
+      "注释信息": [
+        "@param { number } tokenID - Token ID of the application.",
+        "@param { Permissions } permissionName - Name of the permission to be verified.",
+        "@returns { GrantStatus } Returns permission verify result.",
+        "@throws { BusinessError } 401 - The parameter check failed.",
+        "@throws { BusinessError } 12100001 - The parameter is invalid. The tokenID is 0, or the string size of permissionName is larger than 256.",
+        "@syscap SystemCapability.Security.AccessToken",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "AtManager",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Security.AccessToken",
+      "parameters": [
+        {
+          "名称": "tokenID",
+          "类型": "number",
+          "必填": true,
+          "说明": "Token ID of the application."
+        },
+        {
+          "名称": "permissionName",
+          "类型": "Permissions",
+          "必填": true,
+          "说明": "Name of the permission to be verified."
+        }
+      ],
+      "return_description": "Returns permission verify result.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "The parameter check failed."
+        },
+        {
+          "code": "12100001",
+          "description": "The parameter is invalid. The tokenID is 0, or the string size of permissionName is larger than 256."
+        }
+      ],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "checkAccessToken",
+      "返回值": "Promise<GrantStatus>",
+      "所属模块": "未知模块",
+      "功能描述": "Checks whether a specified application has been granted the given permission. On the cross-platform, this function can be used to check the permission grant status for the current application only.",
+      "注释信息": [
+        "@param { number } tokenID - Token ID of the application.",
+        "@param { Permissions } permissionName - Name of the permission to be verified.",
+        "@returns { Promise<GrantStatus> } Returns permission verify result.",
+        "@throws { BusinessError } 401 - The parameter check failed.",
+        "@throws { BusinessError } 12100001 - The parameter is invalid. The tokenID is 0, or the string size of permissionName is larger than 256.",
+        "@syscap SystemCapability.Security.AccessToken",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "AtManager",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Security.AccessToken",
+      "parameters": [
+        {
+          "名称": "tokenID",
+          "类型": "number",
+          "必填": true,
+          "说明": "Token ID of the application."
+        },
+        {
+          "名称": "permissionName",
+          "类型": "Permissions",
+          "必填": true,
+          "说明": "Name of the permission to be verified."
+        }
+      ],
+      "return_description": "Returns permission verify result.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "The parameter check failed."
+        },
+        {
+          "code": "12100001",
+          "description": "The parameter is invalid. The tokenID is 0, or the string size of permissionName is larger than 256."
+        }
+      ],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "checkAccessTokenSync",
+      "返回值": "GrantStatus",
+      "所属模块": "未知模块",
+      "功能描述": "Checks whether a specified application has been granted the given permission. On the cross-platform, this function can be used to check the permission grant status for the current application only.",
+      "注释信息": [
+        "@param { number } tokenID - Token ID of the application.",
+        "@param { Permissions } permissionName - Name of the permission to be verified.",
+        "@returns { GrantStatus } Returns permission verify result.",
+        "@throws { BusinessError } 401 - The parameter check failed.",
+        "@throws { BusinessError } 12100001 - The parameter is invalid. The tokenID is 0, or the string size of permissionName is larger than 256.",
+        "@syscap SystemCapability.Security.AccessToken",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "AtManager",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Security.AccessToken",
+      "parameters": [
+        {
+          "名称": "tokenID",
+          "类型": "number",
+          "必填": true,
+          "说明": "Token ID of the application."
+        },
+        {
+          "名称": "permissionName",
+          "类型": "Permissions",
+          "必填": true,
+          "说明": "Name of the permission to be verified."
+        }
+      ],
+      "return_description": "Returns permission verify result.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "The parameter check failed."
+        },
+        {
+          "code": "12100001",
+          "description": "The parameter is invalid. The tokenID is 0, or the string size of permissionName is larger than 256."
+        }
+      ],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "requestPermissionsFromUser",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Requests certain permissions from the user.",
+      "注释信息": [
+        "@param { Context } context - The context that initiates the permission request.",
+        "@param { Array<Permissions> } permissionList - Indicates the list of permissions to be requested. This parameter cannot be null or empty.",
+        "@param { AsyncCallback<PermissionRequestResult> } requestCallback Callback for the result from requesting permissions.",
+        "@throws { BusinessError } 401 - The parameter check failed.",
+        "@throws { BusinessError } 12100001 - The parameter is invalid. The context is invalid when it does not belong to the application itself.",
+        "@syscap SystemCapability.Security.AccessToken",
+        "@StageModelOnly",
+        "@crossplatform",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "AtManager",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Security.AccessToken",
+      "parameters": [
+        {
+          "名称": "context",
+          "类型": "Context",
+          "必填": true,
+          "说明": "The context that initiates the permission request."
+        },
+        {
+          "名称": "permissionList",
+          "类型": "Array<Permissions>",
+          "必填": true,
+          "说明": "Indicates the list of permissions to be requested. This parameter cannot be null or empty."
+        },
+        {
+          "名称": "requestCallback",
+          "类型": "AsyncCallback<PermissionRequestResult>",
+          "必填": true,
+          "说明": "Callback for the result from requesting permissions."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "The parameter check failed."
+        },
+        {
+          "code": "12100001",
+          "description": "The parameter is invalid. The context is invalid when it does not belong to the application itself."
+        }
+      ],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "type_alias",
+      "名称": "PermissionRequestResult",
+      "所属模块": "@kit.AbilityKit",
+      "功能描述": "PermissionRequestResult interface.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.AccessToken",
+        "@StageModelOnly",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "@kit.AbilityKit",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Security.AccessToken",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "type_alias",
+      "名称": "Context",
+      "所属模块": "@kit.AbilityKit",
+      "功能描述": "Context interface.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.AccessToken",
+        "@StageModelOnly",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "@kit.AbilityKit",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Security.AccessToken",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    }
+  ]
+}

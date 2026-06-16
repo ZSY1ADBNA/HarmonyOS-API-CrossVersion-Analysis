@@ -1,0 +1,606 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.ConnectivityKit",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "namespace",
+      "名称": "partnerAgent",
+      "所属模块": "@kit.ConnectivityKit",
+      "功能描述": "Provides APIs for managing partner agents.",
+      "注释信息": [
+        "@namespace partnerAgent",
+        "@syscap SystemCapability.Communication.FusionConnectivity.Core",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 1,
+      "上级": "@kit.ConnectivityKit",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Communication.FusionConnectivity.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "isPartnerAgentSupported",
+      "返回值": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Checks whether the current device supports the partner agent feature.",
+      "注释信息": [
+        "@returns { boolean } Check result for the support of the partner agent feature.",
+        "@syscap SystemCapability.Communication.FusionConnectivity.Core",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 1,
+      "上级": "partnerAgent",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Communication.FusionConnectivity.Core",
+      "parameters": [],
+      "return_description": "Check result for the support of the partner agent feature.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "bindDevice",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Bind the partner device. After successfully binding the device, if the device meets the discovery requirements, the {@link PartnerAgentExtensionAbility} of the application will be launched. - If the {@link DeviceCapability.supportBR} in the capability variable is set to true, the application's ability will be launched when the device is connected via Bluetooth. - If the {@link DeviceCapability.supportBLEAdv} in the capability variable is set to true, the application's ability will be launched when the device is detected via Bluetooth scanning. Note: The device must be paired first.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BLUETOOTH",
+        "@param { PartnerDeviceAddress } deviceAddress - The address of partner device.",
+        "@param { DeviceCapability } deviceCapability - The capability of partner device.",
+        "@param { BusinessCapability } businessCapability - The business capability of application.",
+        "@param { string } partnerAgentExtensionAbilityName - The name of PartnerAgentExtensionAbility.",
+        "@returns { Promise<void> } Promise used to return the result.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 34900003 - The device is not paired.",
+        "@throws { BusinessError } 34900004 - The device has already been bound to the PartnerAgentExtensionAbility.",
+        "@throws { BusinessError } 34900005 - Bluetooth disabled.",
+        "@throws { BusinessError } 34900099 - Internal error.",
+        "@syscap SystemCapability.Communication.FusionConnectivity.Core",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 1,
+      "上级": "partnerAgent",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Communication.FusionConnectivity.Core",
+      "parameters": [
+        {
+          "名称": "deviceAddress",
+          "类型": "PartnerDeviceAddress",
+          "必填": true,
+          "说明": "The address of partner device."
+        },
+        {
+          "名称": "deviceCapability",
+          "类型": "DeviceCapability",
+          "必填": true,
+          "说明": "The capability of partner device."
+        },
+        {
+          "名称": "businessCapability",
+          "类型": "BusinessCapability",
+          "必填": true,
+          "说明": "The business capability of application."
+        },
+        {
+          "名称": "partnerAgentExtensionAbilityName",
+          "类型": "string",
+          "必填": true,
+          "说明": "The name of PartnerAgentExtensionAbility."
+        }
+      ],
+      "return_description": "Promise used to return the result.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "34900003",
+          "description": "The device is not paired."
+        },
+        {
+          "code": "34900004",
+          "description": "The device has already been bound to the PartnerAgentExtensionAbility."
+        },
+        {
+          "code": "34900005",
+          "description": "Bluetooth disabled."
+        },
+        {
+          "code": "34900099",
+          "description": "Internal error."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "unbindDevice",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Unbinds a partner device.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BLUETOOTH",
+        "@param { PartnerDeviceAddress } deviceAddress - The address of partner device.",
+        "@returns { Promise<void> } Promise used to return the result.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 34900001 - The device is not bound.",
+        "@throws { BusinessError } 34900099 - Internal error.",
+        "@syscap SystemCapability.Communication.FusionConnectivity.Core",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 1,
+      "上级": "partnerAgent",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Communication.FusionConnectivity.Core",
+      "parameters": [
+        {
+          "名称": "deviceAddress",
+          "类型": "PartnerDeviceAddress",
+          "必填": true,
+          "说明": "The address of partner device."
+        }
+      ],
+      "return_description": "Promise used to return the result.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "34900001",
+          "description": "The device is not bound."
+        },
+        {
+          "code": "34900099",
+          "description": "Internal error."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "isDeviceBound",
+      "返回值": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Checks whether a device is bound to this application.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BLUETOOTH",
+        "@param { PartnerDeviceAddress } deviceAddress - The address of partner device.",
+        "@returns { boolean } Returns whether the device is bound.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 34900099 - Internal error.",
+        "@syscap SystemCapability.Communication.FusionConnectivity.Core",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 1,
+      "上级": "partnerAgent",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Communication.FusionConnectivity.Core",
+      "parameters": [
+        {
+          "名称": "deviceAddress",
+          "类型": "PartnerDeviceAddress",
+          "必填": true,
+          "说明": "The address of partner device."
+        }
+      ],
+      "return_description": "Returns whether the device is bound.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "34900099",
+          "description": "Internal error."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getBoundDevices",
+      "返回值": "PartnerDeviceAddress[]",
+      "所属模块": "未知模块",
+      "功能描述": "Gets the list of addresses of the bound partner device for this application.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BLUETOOTH",
+        "@returns { PartnerDeviceAddress[] } Returns the list of addresses of partner device.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 34900099 - Internal error.",
+        "@syscap SystemCapability.Communication.FusionConnectivity.Core",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 1,
+      "上级": "partnerAgent",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Communication.FusionConnectivity.Core",
+      "parameters": [],
+      "return_description": "Returns the list of addresses of partner device.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "34900099",
+          "description": "Internal error."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "isDeviceControlEnabled",
+      "返回值": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Checks whether device control is enabled.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BLUETOOTH",
+        "@param { PartnerDeviceAddress } deviceAddress - The address of partner device.",
+        "@returns { boolean } Returns whether the device control is enabled.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 34900099 - Internal error.",
+        "@syscap SystemCapability.Communication.FusionConnectivity.Core",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 1,
+      "上级": "partnerAgent",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Communication.FusionConnectivity.Core",
+      "parameters": [
+        {
+          "名称": "deviceAddress",
+          "类型": "PartnerDeviceAddress",
+          "必填": true,
+          "说明": "The address of partner device."
+        }
+      ],
+      "return_description": "Returns whether the device control is enabled.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "34900099",
+          "description": "Internal error."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "DeviceCapability",
+      "所属模块": "未知模块",
+      "功能描述": "Describes the capability of a partner device.",
+      "注释信息": [
+        "@typedef DeviceCapability",
+        "@syscap SystemCapability.Communication.FusionConnectivity.Core",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "partnerAgent",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Communication.FusionConnectivity.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "supportBR",
+      "属性类型": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Whether the partner device supports the Bluetooth Basic Rate (BR) capability.",
+      "注释信息": [
+        "@type { ?boolean }",
+        "@syscap SystemCapability.Communication.FusionConnectivity.Core",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "DeviceCapability",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Communication.FusionConnectivity.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "supportBleAdvertiser",
+      "属性类型": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Whether the partner device supports the Bluetooth Low Energy (BLE) advertiser capability.",
+      "注释信息": [
+        "@type { ?boolean }",
+        "@syscap SystemCapability.Communication.FusionConnectivity.Core",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "DeviceCapability",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Communication.FusionConnectivity.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "BusinessCapability",
+      "所属模块": "未知模块",
+      "功能描述": "Describes the business capabilities of the application.",
+      "注释信息": [
+        "@typedef BusinessCapability",
+        "@syscap SystemCapability.Communication.FusionConnectivity.Core",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "partnerAgent",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Communication.FusionConnectivity.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "supportMediaControl",
+      "属性类型": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates whether the application supports media control capability.",
+      "注释信息": [
+        "@type { ?boolean }",
+        "@syscap SystemCapability.Communication.FusionConnectivity.Core",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "BusinessCapability",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Communication.FusionConnectivity.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "supportTelephonyControl",
+      "属性类型": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates whether the application supports telephony control capability.",
+      "注释信息": [
+        "@type { ?boolean }",
+        "@syscap SystemCapability.Communication.FusionConnectivity.Core",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "BusinessCapability",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Communication.FusionConnectivity.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "PartnerDeviceAddress",
+      "所属模块": "未知模块",
+      "功能描述": "Describes the partner device address.",
+      "注释信息": [
+        "@typedef PartnerDeviceAddress",
+        "@syscap SystemCapability.Communication.FusionConnectivity.Core",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "partnerAgent",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Communication.FusionConnectivity.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "bluetoothAddress",
+      "属性类型": "common.BluetoothAddress",
+      "所属模块": "未知模块",
+      "功能描述": "Bluetooth address of the partner device.",
+      "注释信息": [
+        "@type { ?common.BluetoothAddress }",
+        "@syscap SystemCapability.Communication.FusionConnectivity.Core",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "PartnerDeviceAddress",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Communication.FusionConnectivity.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "PartnerAgentExtensionAbilityDestroyReason",
+      "所属模块": "未知模块",
+      "功能描述": "The enum of reasons for destroying partner agent extension ability.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.Communication.FusionConnectivity.Core",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "partnerAgent",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Communication.FusionConnectivity.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "UNKNOWN_REASON",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "Unknown reason.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.FusionConnectivity.Core",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "PartnerAgentExtensionAbilityDestroyReason",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Communication.FusionConnectivity.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "USER_CLOSED_ABILITY",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "The user actively disables this ability feature.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.FusionConnectivity.Core",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "PartnerAgentExtensionAbilityDestroyReason",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Communication.FusionConnectivity.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "DEVICE_UNPAIRED",
+      "值": "2",
+      "所属模块": "未知模块",
+      "功能描述": "The device is unpaired.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.FusionConnectivity.Core",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "PartnerAgentExtensionAbilityDestroyReason",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Communication.FusionConnectivity.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "DEVICE_LOST",
+      "值": "3",
+      "所属模块": "未知模块",
+      "功能描述": "The device is lost.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.FusionConnectivity.Core",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "PartnerAgentExtensionAbilityDestroyReason",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Communication.FusionConnectivity.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "BLUETOOTH_DISABLED",
+      "值": "4",
+      "所属模块": "未知模块",
+      "功能描述": "Bluetooth is disabled.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.FusionConnectivity.Core",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "PartnerAgentExtensionAbilityDestroyReason",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Communication.FusionConnectivity.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    }
+  ]
+}

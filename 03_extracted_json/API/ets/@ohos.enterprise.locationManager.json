@@ -1,0 +1,225 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.MDMKit",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "namespace",
+      "名称": "locationManager",
+      "所属模块": "@kit.MDMKit",
+      "功能描述": "This module provides the capability to manage the location of the enterprise devices.",
+      "注释信息": [
+        "@namespace locationManager",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "@kit.MDMKit",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "LocationPolicy",
+      "所属模块": "未知模块",
+      "功能描述": "The location policy.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "locationManager",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "DEFAULT_LOCATION_SERVICE",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "Default location service.",
+      "注释信息": [
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "LocationPolicy",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "DISALLOW_LOCATION_SERVICE",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Disallows open location service.",
+      "注释信息": [
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "LocationPolicy",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "FORCE_OPEN_LOCATION_SERVICE",
+      "值": "2",
+      "所属模块": "未知模块",
+      "功能描述": "Force open the location service.",
+      "注释信息": [
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "LocationPolicy",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "setLocationPolicy",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Sets the policy of location service. This function can be called by a super administrator. The admin must have the corresponding permission. 2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.ENTERPRISE_MANAGE_LOCATION",
+        "@param { Want } admin - admin indicates the enterprise admin extension ability information.",
+        "@param { LocationPolicy } policy - the policy of location service.",
+        "@throws { BusinessError } 9200001 - The application is not an administrator application of the device.",
+        "@throws { BusinessError } 9200002 - The administrator application does not have permission to manage the device.",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission required to call the API.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "locationManager",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [
+        {
+          "名称": "admin",
+          "类型": "Want",
+          "必填": true,
+          "说明": "admin indicates the enterprise admin extension ability information."
+        },
+        {
+          "名称": "policy",
+          "类型": "LocationPolicy",
+          "必填": true,
+          "说明": "the policy of location service."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "9200001",
+          "description": "The application is not an administrator application of the device."
+        },
+        {
+          "code": "9200002",
+          "description": "The administrator application does not have permission to manage the device."
+        },
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission required to call the API."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getLocationPolicy",
+      "返回值": "LocationPolicy",
+      "所属模块": "未知模块",
+      "功能描述": "Gets device location service policy. This function can be called by a super administrator. If the admin is not empty, it must have the corresponding permission. 2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.ENTERPRISE_MANAGE_LOCATION",
+        "@param { Want } admin - admin indicates the enterprise admin extension ability information.",
+        "@returns { LocationPolicy } the policy of location service.",
+        "@throws { BusinessError } 9200001 - The application is not an administrator application of the device.",
+        "@throws { BusinessError } 9200002 - The administrator application does not have permission to manage the device.",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission required to call the API.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "locationManager",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [
+        {
+          "名称": "admin",
+          "类型": "Want",
+          "必填": true,
+          "说明": "admin indicates the enterprise admin extension ability information."
+        }
+      ],
+      "return_description": "the policy of location service.",
+      "error_codes": [
+        {
+          "code": "9200001",
+          "description": "The application is not an administrator application of the device."
+        },
+        {
+          "code": "9200002",
+          "description": "The administrator application does not have permission to manage the device."
+        },
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission required to call the API."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        }
+      ],
+      "版本": "API"
+    }
+  ]
+}

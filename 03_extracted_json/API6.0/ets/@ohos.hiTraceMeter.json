@@ -1,0 +1,171 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.PerformanceAnalysisKit",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "namespace",
+      "名称": "hiTraceMeter",
+      "所属模块": "@kit.PerformanceAnalysisKit",
+      "功能描述": "Provides interfaces to trace a task for performance measure, the logs can be capture by the hitrace cmdline on the device. <p>This interfaces trace the start, end, and value changes of key processes that last for at least 3 ms. <p>Example: Track the beginning of a context: <pre>{@code hiTraceMeter.startAsyncTrace(hiTraceMeter.HiTraceOutputLevel.COMMERCIAL, \"checkName\", 111, \"test\", \"key=value\"); }</pre> Track the end of a context: <pre>{@code hiTraceMeter.finishAsyncTrace(hiTraceMeter.HiTraceOutputLevel.COMMERCIAL, \"checkName\", 111); }</pre> To trace the number of layers, which is 3: <pre>{@code hiTraceMeter.traceByValue(hiTraceMeter.HiTraceOutputLevel.COMMERCIAL, \"curLayer\", 3); }</pre> <p>Each {@code startTrace} matches one {@code finishTrace}, and they must have the same name and taskId. <p>Each {@code startSyncTrace} matches one {@code finishSyncTrace}, and they must have the same level and name. <p>Each {@code startAsyncTrace} matches one {@code finishAsyncTrace}, and they must have the same level, name and taskId.",
+      "注释信息": [
+        "@namespace hiTraceMeter",
+        "@syscap SystemCapability.HiviewDFX.HiTrace",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20",
+        "@arkts 1.1&1.2"
+      ],
+      "层级": 1,
+      "上级": "@kit.PerformanceAnalysisKit",
+      "since_version": "20",
+      "system_capability": "SystemCapability.HiviewDFX.HiTrace",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "enum",
+      "名称": "HiTraceOutputLevel",
+      "所属模块": "未知模块",
+      "功能描述": "Enumerates the HiTrace output levels. The output level threshold system parameter determines the minimum output trace.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.HiviewDFX.HiTrace",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20",
+        "@arkts 1.1&1.2"
+      ],
+      "层级": 2,
+      "上级": "hiTraceMeter",
+      "since_version": "20",
+      "system_capability": "SystemCapability.HiviewDFX.HiTrace",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "DEBUG",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "Ouput level only for debug usage.",
+      "注释信息": [
+        "@syscap SystemCapability.HiviewDFX.HiTrace",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20",
+        "@arkts 1.1&1.2"
+      ],
+      "层级": 2,
+      "上级": "HiTraceOutputLevel",
+      "since_version": "20",
+      "system_capability": "SystemCapability.HiviewDFX.HiTrace",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "INFO",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Output level for log version usage.",
+      "注释信息": [
+        "@syscap SystemCapability.HiviewDFX.HiTrace",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20",
+        "@arkts 1.1&1.2"
+      ],
+      "层级": 2,
+      "上级": "HiTraceOutputLevel",
+      "since_version": "20",
+      "system_capability": "SystemCapability.HiviewDFX.HiTrace",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CRITICAL",
+      "值": "2",
+      "所属模块": "未知模块",
+      "功能描述": "Output level for log version usage, with higher priority than INFO.",
+      "注释信息": [
+        "@syscap SystemCapability.HiviewDFX.HiTrace",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20",
+        "@arkts 1.1&1.2"
+      ],
+      "层级": 2,
+      "上级": "HiTraceOutputLevel",
+      "since_version": "20",
+      "system_capability": "SystemCapability.HiviewDFX.HiTrace",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMERCIAL",
+      "值": "3",
+      "所属模块": "未知模块",
+      "功能描述": "Output level for nolog version usage.",
+      "注释信息": [
+        "@syscap SystemCapability.HiviewDFX.HiTrace",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20",
+        "@arkts 1.1&1.2"
+      ],
+      "层级": 2,
+      "上级": "HiTraceOutputLevel",
+      "since_version": "20",
+      "system_capability": "SystemCapability.HiviewDFX.HiTrace",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "MAX",
+      "值": "COMMERCIAL",
+      "所属模块": "未知模块",
+      "功能描述": "Output level range limit.",
+      "注释信息": [
+        "@syscap SystemCapability.HiviewDFX.HiTrace",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20",
+        "@arkts 1.1&1.2"
+      ],
+      "层级": 2,
+      "上级": "HiTraceOutputLevel",
+      "since_version": "20",
+      "system_capability": "SystemCapability.HiviewDFX.HiTrace",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    }
+  ]
+}

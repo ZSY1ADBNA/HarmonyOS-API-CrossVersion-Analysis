@@ -1,0 +1,1249 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.ConnectivityKit",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "namespace",
+      "名称": "a2dp",
+      "所属模块": "@kit.ConnectivityKit",
+      "功能描述": "Provides methods to accessing bluetooth audio related capabilities.",
+      "注释信息": [
+        "@namespace a2dp",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@crossplatform",
+        "@since 13"
+      ],
+      "层级": 1,
+      "上级": "@kit.ConnectivityKit",
+      "since_version": "13",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "type_alias",
+      "名称": "BaseProfile",
+      "所属模块": "未知模块",
+      "功能描述": "Base interface of profile.",
+      "注释信息": [
+        "@typedef { baseProfile.BaseProfile } BaseProfile",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "a2dp",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "createA2dpSrcProfile",
+      "返回值": "A2dpSourceProfile",
+      "所属模块": "未知模块",
+      "功能描述": "create the instance of a2dp profile. <br>2. Incorrect parameter types. 3. Parameter verification failed.",
+      "注释信息": [
+        "@returns { A2dpSourceProfile } Returns the instance of profile.",
+        "@throws { BusinessError } 401 - Invalid parameter.Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@crossplatform",
+        "@since 13"
+      ],
+      "层级": 1,
+      "上级": "a2dp",
+      "since_version": "13",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "Returns the instance of profile.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Invalid parameter.Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "A2dpSourceProfile",
+      "父类": "BaseProfile",
+      "所属模块": "未知模块",
+      "功能描述": "Manager a2dp source profile.",
+      "注释信息": [
+        "@extends BaseProfile",
+        "@typedef A2dpSourceProfile",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@crossplatform",
+        "@since 13"
+      ],
+      "层级": 2,
+      "上级": "a2dp",
+      "since_version": "13",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getPlayingState",
+      "返回值": "PlayingState",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the playing state of device. <br>2. Incorrect parameter types. 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BLUETOOTH",
+        "@param { string } deviceId - Indicates device ID. For example, \"11:22:33:AA:BB:FF\".",
+        "@returns { PlayingState } Returns the playing state.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 2900001 - Service stopped.",
+        "@throws { BusinessError } 2900003 - Bluetooth disabled.",
+        "@throws { BusinessError } 2900004 - Profile not supported.",
+        "@throws { BusinessError } 2900099 - Operation failed.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "A2dpSourceProfile",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "deviceId",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates device ID. For example, \"11:22:33:AA:BB:FF\"."
+        }
+      ],
+      "return_description": "Returns the playing state.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "2900001",
+          "description": "Service stopped."
+        },
+        {
+          "code": "2900003",
+          "description": "Bluetooth disabled."
+        },
+        {
+          "code": "2900004",
+          "description": "Profile not supported."
+        },
+        {
+          "code": "2900099",
+          "description": "Operation failed."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "CodecInfo",
+      "所属模块": "未知模块",
+      "功能描述": "Describes the codec information.",
+      "注释信息": [
+        "@typedef CodecInfo",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "a2dp",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "codecType",
+      "属性类型": "CodecType",
+      "所属模块": "未知模块",
+      "功能描述": "codec type",
+      "注释信息": [
+        "@type { CodecType }",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "CodecInfo",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "codecBitsPerSample",
+      "属性类型": "CodecBitsPerSample",
+      "所属模块": "未知模块",
+      "功能描述": "codec bits per sample.",
+      "注释信息": [
+        "@type { CodecBitsPerSample }",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "CodecInfo",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "codecChannelMode",
+      "属性类型": "CodecChannelMode",
+      "所属模块": "未知模块",
+      "功能描述": "codec channel mode.",
+      "注释信息": [
+        "@type { CodecChannelMode }",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "CodecInfo",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "codecSampleRate",
+      "属性类型": "CodecSampleRate",
+      "所属模块": "未知模块",
+      "功能描述": "codec sample rate.",
+      "注释信息": [
+        "@type { CodecSampleRate }",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "CodecInfo",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "codecBitRate",
+      "属性类型": "CodecBitRate",
+      "所属模块": "未知模块",
+      "功能描述": "codec bit rate.",
+      "注释信息": [
+        "@type { ?CodecBitRate }",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 19"
+      ],
+      "层级": 2,
+      "上级": "CodecInfo",
+      "since_version": "19",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "codecFrameLength",
+      "属性类型": "CodecFrameLength",
+      "所属模块": "未知模块",
+      "功能描述": "codec frame length.",
+      "注释信息": [
+        "@type { ?CodecFrameLength }",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 19"
+      ],
+      "层级": 2,
+      "上级": "CodecInfo",
+      "since_version": "19",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "CodecInfoList",
+      "所属模块": "未知模块",
+      "功能描述": "Describes the codec information.",
+      "注释信息": [
+        "@typedef CodecInfoList",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 19"
+      ],
+      "层级": 2,
+      "上级": "a2dp",
+      "since_version": "19",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "codecType",
+      "属性类型": "CodecType",
+      "所属模块": "未知模块",
+      "功能描述": "codec type",
+      "注释信息": [
+        "@type { CodecType }",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 19"
+      ],
+      "层级": 2,
+      "上级": "CodecInfoList",
+      "since_version": "19",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "codecBitsPerSampleArray",
+      "属性类型": "CodecBitsPerSample[]",
+      "所属模块": "未知模块",
+      "功能描述": "codec bits per sample list.",
+      "注释信息": [
+        "@type { CodecBitsPerSample[] }",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 19"
+      ],
+      "层级": 2,
+      "上级": "CodecInfoList",
+      "since_version": "19",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "codecChannelModeArray",
+      "属性类型": "CodecChannelMode[]",
+      "所属模块": "未知模块",
+      "功能描述": "codec channel mode list.",
+      "注释信息": [
+        "@type { CodecChannelMode[] }",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 19"
+      ],
+      "层级": 2,
+      "上级": "CodecInfoList",
+      "since_version": "19",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "codecSampleRateArray",
+      "属性类型": "CodecSampleRate[]",
+      "所属模块": "未知模块",
+      "功能描述": "codec sample rate list.",
+      "注释信息": [
+        "@type { CodecSampleRate[] }",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 19"
+      ],
+      "层级": 2,
+      "上级": "CodecInfoList",
+      "since_version": "19",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "codecBitRateArray",
+      "属性类型": "CodecBitRate[]",
+      "所属模块": "未知模块",
+      "功能描述": "codec bit rate list.",
+      "注释信息": [
+        "@type { CodecBitRate[] }",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 19"
+      ],
+      "层级": 2,
+      "上级": "CodecInfoList",
+      "since_version": "19",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "codecFrameLengthArray",
+      "属性类型": "CodecFrameLength[]",
+      "所属模块": "未知模块",
+      "功能描述": "codec frame length list.",
+      "注释信息": [
+        "@type { CodecFrameLength[] }",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 19"
+      ],
+      "层级": 2,
+      "上级": "CodecInfoList",
+      "since_version": "19",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "PlayingState",
+      "所属模块": "未知模块",
+      "功能描述": "The enum of a2dp playing state.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "a2dp",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "STATE_NOT_PLAYING",
+      "所属模块": "未知模块",
+      "功能描述": "Not playing.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "PlayingState",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "STATE_PLAYING",
+      "所属模块": "未知模块",
+      "功能描述": "Playing.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "PlayingState",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "CodecType",
+      "所属模块": "未知模块",
+      "功能描述": "Describes the codec type.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "a2dp",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CODEC_TYPE_INVALID",
+      "值": "-1",
+      "所属模块": "未知模块",
+      "功能描述": "invalid codec type.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "CodecType",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CODEC_TYPE_SBC",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "SBC - Sub-band coding.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "CodecType",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CODEC_TYPE_AAC",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "AAC -Advanced Audio Coding.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "CodecType",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CODEC_TYPE_L2HC",
+      "值": "2",
+      "所属模块": "未知模块",
+      "功能描述": "L2HC.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "CodecType",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CODEC_TYPE_L2HCST",
+      "值": "3",
+      "所属模块": "未知模块",
+      "功能描述": "L2HCST.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 13"
+      ],
+      "层级": 2,
+      "上级": "CodecType",
+      "since_version": "13",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CODEC_TYPE_LDAC",
+      "值": "4",
+      "所属模块": "未知模块",
+      "功能描述": "LDAC.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 13"
+      ],
+      "层级": 2,
+      "上级": "CodecType",
+      "since_version": "13",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "CodecChannelMode",
+      "所属模块": "未知模块",
+      "功能描述": "Describes the codec channel mode.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "a2dp",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CODEC_CHANNEL_MODE_NONE",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "Codec channel mode none.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "CodecChannelMode",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CODEC_CHANNEL_MODE_MONO",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Codec channel mode MONO.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "CodecChannelMode",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CODEC_CHANNEL_MODE_STEREO",
+      "值": "2",
+      "所属模块": "未知模块",
+      "功能描述": "Codec channel mode STEREO.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "CodecChannelMode",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "CodecBitsPerSample",
+      "所属模块": "未知模块",
+      "功能描述": "Describes the codec bits per sample.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "a2dp",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CODEC_BITS_PER_SAMPLE_NONE",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "Codec bits per sample none.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "CodecBitsPerSample",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CODEC_BITS_PER_SAMPLE_16",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Codec 16 bits per sample.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "CodecBitsPerSample",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CODEC_BITS_PER_SAMPLE_24",
+      "值": "2",
+      "所属模块": "未知模块",
+      "功能描述": "Codec 24 bits per sample.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "CodecBitsPerSample",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CODEC_BITS_PER_SAMPLE_32",
+      "值": "3",
+      "所属模块": "未知模块",
+      "功能描述": "Codec 32 bits per sample.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "CodecBitsPerSample",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "CodecSampleRate",
+      "所属模块": "未知模块",
+      "功能描述": "Describes the codec sample rate.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "a2dp",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CODEC_SAMPLE_RATE_NONE",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "Codec sample rate none.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "CodecSampleRate",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CODEC_SAMPLE_RATE_44100",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Codec sample rate 44.1k.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "CodecSampleRate",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CODEC_SAMPLE_RATE_48000",
+      "值": "2",
+      "所属模块": "未知模块",
+      "功能描述": "Codec sample rate 48k.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "CodecSampleRate",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CODEC_SAMPLE_RATE_88200",
+      "值": "3",
+      "所属模块": "未知模块",
+      "功能描述": "Codec sample rate 88.2k.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "CodecSampleRate",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CODEC_SAMPLE_RATE_96000",
+      "值": "4",
+      "所属模块": "未知模块",
+      "功能描述": "Codec sample rate 96k.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "CodecSampleRate",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CODEC_SAMPLE_RATE_176400",
+      "值": "5",
+      "所属模块": "未知模块",
+      "功能描述": "Codec sample rate 176.4k.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "CodecSampleRate",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CODEC_SAMPLE_RATE_192000",
+      "值": "6",
+      "所属模块": "未知模块",
+      "功能描述": "Codec sample rate 192k.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "CodecSampleRate",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "CodecBitRate",
+      "所属模块": "未知模块",
+      "功能描述": "Describes the codec bit rate.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 19"
+      ],
+      "层级": 2,
+      "上级": "a2dp",
+      "since_version": "19",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CODEC_BIT_RATE_96000",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "Codec bit rate 96k.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 19"
+      ],
+      "层级": 2,
+      "上级": "CodecBitRate",
+      "since_version": "19",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CODEC_BIT_RATE_128000",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Codec bit rate 128k.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 19"
+      ],
+      "层级": 2,
+      "上级": "CodecBitRate",
+      "since_version": "19",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CODEC_BIT_RATE_192000",
+      "值": "2",
+      "所属模块": "未知模块",
+      "功能描述": "Codec bit rate 192k.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 19"
+      ],
+      "层级": 2,
+      "上级": "CodecBitRate",
+      "since_version": "19",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CODEC_BIT_RATE_256000",
+      "值": "3",
+      "所属模块": "未知模块",
+      "功能描述": "Codec bit rate 256k.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 19"
+      ],
+      "层级": 2,
+      "上级": "CodecBitRate",
+      "since_version": "19",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CODEC_BIT_RATE_320000",
+      "值": "4",
+      "所属模块": "未知模块",
+      "功能描述": "Codec bit rate 320k.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 19"
+      ],
+      "层级": 2,
+      "上级": "CodecBitRate",
+      "since_version": "19",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CODEC_BIT_RATE_480000",
+      "值": "5",
+      "所属模块": "未知模块",
+      "功能描述": "Codec bit rate 480k.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 19"
+      ],
+      "层级": 2,
+      "上级": "CodecBitRate",
+      "since_version": "19",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CODEC_BIT_RATE_640000",
+      "值": "6",
+      "所属模块": "未知模块",
+      "功能描述": "Codec bit rate 640k.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 19"
+      ],
+      "层级": 2,
+      "上级": "CodecBitRate",
+      "since_version": "19",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CODEC_BIT_RATE_960000",
+      "值": "7",
+      "所属模块": "未知模块",
+      "功能描述": "Codec bit rate 960k.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 19"
+      ],
+      "层级": 2,
+      "上级": "CodecBitRate",
+      "since_version": "19",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CODEC_BIT_RATE_ABR",
+      "值": "8",
+      "所属模块": "未知模块",
+      "功能描述": "Codec bit rate adaptive bitrate streaming.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 19"
+      ],
+      "层级": 2,
+      "上级": "CodecBitRate",
+      "since_version": "19",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CODEC_BIT_RATE_1500000",
+      "值": "9",
+      "所属模块": "未知模块",
+      "功能描述": "Codec bit rate 1.5M.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 21"
+      ],
+      "层级": 2,
+      "上级": "CodecBitRate",
+      "since_version": "21",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CODEC_BIT_RATE_2300000",
+      "值": "10",
+      "所属模块": "未知模块",
+      "功能描述": "Codec bit rate 2.3M.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 21"
+      ],
+      "层级": 2,
+      "上级": "CodecBitRate",
+      "since_version": "21",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "CodecFrameLength",
+      "所属模块": "未知模块",
+      "功能描述": "Describes the codec frame length.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 19"
+      ],
+      "层级": 2,
+      "上级": "a2dp",
+      "since_version": "19",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CODEC_FRAME_LENGTH_5MS",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "Codec frame length 5ms.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 19"
+      ],
+      "层级": 2,
+      "上级": "CodecFrameLength",
+      "since_version": "19",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CODEC_FRAME_LENGTH_10MS",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Codec frame length 10ms.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 19"
+      ],
+      "层级": 2,
+      "上级": "CodecFrameLength",
+      "since_version": "19",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    }
+  ]
+}

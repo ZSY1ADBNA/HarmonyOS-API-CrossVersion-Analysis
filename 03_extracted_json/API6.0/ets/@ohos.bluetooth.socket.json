@@ -1,0 +1,854 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.ConnectivityKit",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "namespace",
+      "名称": "socket",
+      "所属模块": "@kit.ConnectivityKit",
+      "功能描述": "Provides methods to operate or manage bluetooth socket connection.",
+      "注释信息": [
+        "@namespace socket",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "@kit.ConnectivityKit",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "sppListen",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Creates a Bluetooth server listening socket. <br>2. Incorrect parameter types. 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BLUETOOTH",
+        "@param { string } name - Indicates the service name.",
+        "@param { SppOptions } options - Indicates the listen parameters.",
+        "@param { AsyncCallback<number> } callback - Callback used to return a server socket ID.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 2900001 - Service stopped.",
+        "@throws { BusinessError } 2900003 - Bluetooth disabled.",
+        "@throws { BusinessError } 2900004 - Profile not supported.",
+        "@throws { BusinessError } 2900099 - Operation failed.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "socket",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "name",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates the service name."
+        },
+        {
+          "名称": "options",
+          "类型": "SppOptions",
+          "必填": true,
+          "说明": "Indicates the listen parameters."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<number>",
+          "必填": true,
+          "说明": "Callback used to return a server socket ID."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "2900001",
+          "description": "Service stopped."
+        },
+        {
+          "code": "2900003",
+          "description": "Bluetooth disabled."
+        },
+        {
+          "code": "2900004",
+          "description": "Profile not supported."
+        },
+        {
+          "code": "2900099",
+          "description": "Operation failed."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getL2capPsm",
+      "返回值": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Get l2cap socket psm.",
+      "注释信息": [
+        "@param { number } serverSocket - Indicates the server socket ID, returned by {@link sppListen}.",
+        "@returns { number } Returns the l2cap socket psm",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "socket",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "serverSocket",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the server socket ID, returned by {@link sppListen}."
+        }
+      ],
+      "return_description": "Returns the l2cap socket psm",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "sppAccept",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Waits for a remote device to connect. <br>2. Incorrect parameter types. 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { number } serverSocket - Indicates the server socket ID, returned by {@link sppListen}.",
+        "@param { AsyncCallback<number> } callback - Callback used to return a client socket ID.",
+        "@throws { BusinessError } 401 - Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 2900001 - Service stopped.",
+        "@throws { BusinessError } 2900003 - Bluetooth disabled.",
+        "@throws { BusinessError } 2900004 - Profile not supported.",
+        "@throws { BusinessError } 2900099 - Operation failed.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "socket",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "serverSocket",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the server socket ID, returned by {@link sppListen}."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<number>",
+          "必填": true,
+          "说明": "Callback used to return a client socket ID."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "2900001",
+          "description": "Service stopped."
+        },
+        {
+          "code": "2900003",
+          "description": "Bluetooth disabled."
+        },
+        {
+          "code": "2900004",
+          "description": "Profile not supported."
+        },
+        {
+          "code": "2900099",
+          "description": "Operation failed."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "sppConnect",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Connects to a remote device over the socket. <br>2. Incorrect parameter types. 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BLUETOOTH",
+        "@param { string } deviceId - Indicates device ID. For example, \"11:22:33:AA:BB:FF\".",
+        "@param { SppOptions } options - Indicates the connect parameters {@link SppOptions}.",
+        "@param { AsyncCallback<number> } callback - Callback used to return a client socket ID.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 2900001 - Service stopped.",
+        "@throws { BusinessError } 2900003 - Bluetooth disabled.",
+        "@throws { BusinessError } 2900004 - Profile not supported.",
+        "@throws { BusinessError } 2900099 - Operation failed.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "socket",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "deviceId",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates device ID. For example, \"11:22:33:AA:BB:FF\"."
+        },
+        {
+          "名称": "options",
+          "类型": "SppOptions",
+          "必填": true,
+          "说明": "Indicates the connect parameters {@link SppOptions}."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<number>",
+          "必填": true,
+          "说明": "Callback used to return a client socket ID."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "2900001",
+          "description": "Service stopped."
+        },
+        {
+          "code": "2900003",
+          "description": "Bluetooth disabled."
+        },
+        {
+          "code": "2900004",
+          "description": "Profile not supported."
+        },
+        {
+          "code": "2900099",
+          "description": "Operation failed."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getDeviceId",
+      "返回值": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Obtain the device id in the client socket. 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { number } clientSocket - Indicates client socket.",
+        "@returns { string } Returns the connected device id",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 17"
+      ],
+      "层级": 1,
+      "上级": "socket",
+      "since_version": "17",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "clientSocket",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates client socket."
+        }
+      ],
+      "return_description": "Returns the connected device id",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "sppCloseServerSocket",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Disables an spp server socket and releases related resources. <br>2. Incorrect parameter types.",
+      "注释信息": [
+        "@param { number } socket - Indicates the server socket ID, returned by {@link sppListen}.",
+        "@throws { BusinessError } 401 - Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 2900001 - Service stopped.",
+        "@throws { BusinessError } 2900099 - Operation failed.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "socket",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "socket",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the server socket ID, returned by {@link sppListen}."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "2900001",
+          "description": "Service stopped."
+        },
+        {
+          "code": "2900099",
+          "description": "Operation failed."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "sppCloseClientSocket",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Disables an spp client socket and releases related resources. <br>2. Incorrect parameter types.",
+      "注释信息": [
+        "@param { number } socket - Indicates the client socket ID, returned by {@link sppAccept} or {@link sppConnect}.",
+        "@throws { BusinessError } 401 - Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 2900001 - Service stopped.",
+        "@throws { BusinessError } 2900099 - Operation failed.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "socket",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "socket",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the client socket ID, returned by {@link sppAccept} or {@link sppConnect}."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "2900001",
+          "description": "Service stopped."
+        },
+        {
+          "code": "2900099",
+          "description": "Operation failed."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "sppWrite",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Write data through the socket. <br>2. Incorrect parameter types.",
+      "注释信息": [
+        "@param { number } clientSocket - Indicates the client socket ID, returned by {@link sppAccept} or {@link sppConnect}.",
+        "@param { ArrayBuffer } data - Indicates the data to write.",
+        "@throws { BusinessError } 401 - Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 2901054 - IO error.",
+        "@throws { BusinessError } 2900099 - Operation failed.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "socket",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "clientSocket",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the client socket ID, returned by {@link sppAccept} or {@link sppConnect}."
+        },
+        {
+          "名称": "data",
+          "类型": "ArrayBuffer",
+          "必填": true,
+          "说明": "Indicates the data to write."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "2901054",
+          "description": "IO error."
+        },
+        {
+          "code": "2900099",
+          "description": "Operation failed."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Subscribe the event reported when data is read from the socket. <br>2. Incorrect parameter types.",
+      "注释信息": [
+        "@param { 'sppRead' } type - Type of the spp read event to listen for.",
+        "@param { number } clientSocket - Client socket ID, which is obtained by sppAccept or sppConnect.",
+        "@param { Callback<ArrayBuffer> } callback - Callback used to listen for the spp read event.",
+        "@throws { BusinessError } 401 - Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 2901054 - IO error.",
+        "@throws { BusinessError } 2900099 - Operation failed.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "socket",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'sppRead'",
+          "必填": true,
+          "说明": "Type of the spp read event to listen for."
+        },
+        {
+          "名称": "clientSocket",
+          "类型": "number",
+          "必填": true,
+          "说明": "Client socket ID, which is obtained by sppAccept or sppConnect."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<ArrayBuffer>",
+          "必填": true,
+          "说明": "Callback used to listen for the spp read event."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "2901054",
+          "description": "IO error."
+        },
+        {
+          "code": "2900099",
+          "description": "Operation failed."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unsubscribe the event reported when data is read from the socket. <br>2. Incorrect parameter types.",
+      "注释信息": [
+        "@param { 'sppRead' } type - Type of the spp read event to listen for.",
+        "@param { number } clientSocket - Client socket ID, which is obtained by sppAccept or sppConnect.",
+        "@param { Callback<ArrayBuffer> } callback - Callback used to listen for the spp read event.",
+        "@throws { BusinessError } 401 - Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "socket",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'sppRead'",
+          "必填": true,
+          "说明": "Type of the spp read event to listen for."
+        },
+        {
+          "名称": "clientSocket",
+          "类型": "number",
+          "必填": true,
+          "说明": "Client socket ID, which is obtained by sppAccept or sppConnect."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<ArrayBuffer>",
+          "必填": true,
+          "说明": "Callback used to listen for the spp read event."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Invalid parameter. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "sppWriteAsync",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Asynchronous interface for writing data to the socket.",
+      "注释信息": [
+        "@param { number } clientSocket - Indicates the client socket ID, returned by {@link sppAccept} or {@link sppConnect}.",
+        "@param { ArrayBuffer } data - Indicates the data to write.",
+        "@returns { Promise<void> } Returns the promise object.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 2901054 - IO error.",
+        "@throws { BusinessError } 2900099 - Operation failed.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 18"
+      ],
+      "层级": 1,
+      "上级": "socket",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "clientSocket",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the client socket ID, returned by {@link sppAccept} or {@link sppConnect}."
+        },
+        {
+          "名称": "data",
+          "类型": "ArrayBuffer",
+          "必填": true,
+          "说明": "Indicates the data to write."
+        }
+      ],
+      "return_description": "Returns the promise object.",
+      "error_codes": [
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "2901054",
+          "description": "IO error."
+        },
+        {
+          "code": "2900099",
+          "description": "Operation failed."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "sppReadAsync",
+      "返回值": "Promise<ArrayBuffer>",
+      "所属模块": "未知模块",
+      "功能描述": "Asynchronous interface for reading data from the socket.",
+      "注释信息": [
+        "@param { number } clientSocket - Indicates the client socket ID, returned by {@link sppAccept} or {@link sppConnect}.",
+        "@returns { Promise<ArrayBuffer> } Returns the promise object, used to get the spp read data.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 2901054 - IO error.",
+        "@throws { BusinessError } 2900099 - Operation failed.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 18"
+      ],
+      "层级": 1,
+      "上级": "socket",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "clientSocket",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the client socket ID, returned by {@link sppAccept} or {@link sppConnect}."
+        }
+      ],
+      "return_description": "Returns the promise object, used to get the spp read data.",
+      "error_codes": [
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "2901054",
+          "description": "IO error."
+        },
+        {
+          "code": "2900099",
+          "description": "Operation failed."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "interface",
+      "名称": "SppOptions",
+      "所属模块": "未知模块",
+      "功能描述": "Describes the spp parameters.",
+      "注释信息": [
+        "@typedef SppOptions",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "socket",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "property",
+      "名称": "uuid",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the UUID in the SDP record.",
+      "注释信息": [
+        "@type { string }",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "SppOptions",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "property",
+      "名称": "secure",
+      "属性类型": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates secure channel or not",
+      "注释信息": [
+        "@type { boolean }",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "SppOptions",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "property",
+      "名称": "type",
+      "属性类型": "SppType",
+      "所属模块": "未知模块",
+      "功能描述": "Spp link type",
+      "注释信息": [
+        "@type { SppType }",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "SppOptions",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "property",
+      "名称": "psm",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "l2cap protocol service multiplexer",
+      "注释信息": [
+        "@type { ?number }",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "SppOptions",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "enum",
+      "名称": "SppType",
+      "所属模块": "未知模块",
+      "功能描述": "The enum of SPP type.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "socket",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "SPP_RFCOMM",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "RFCOMM",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "SppType",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "SPP_L2CAP",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "L2CAP of the BR type",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "SppType",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "SPP_L2CAP_BLE",
+      "值": "2",
+      "所属模块": "未知模块",
+      "功能描述": "L2CAP of the BLE type",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "SppType",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    }
+  ]
+}

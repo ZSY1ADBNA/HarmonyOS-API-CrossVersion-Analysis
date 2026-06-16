@@ -1,0 +1,433 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.MDMKit",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "namespace",
+      "名称": "accountManager",
+      "所属模块": "@kit.MDMKit",
+      "功能描述": "This module provides the capability to manage the accounts of the enterprise devices.",
+      "注释信息": [
+        "@namespace accountManager",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "@kit.MDMKit",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "DomainAccountPolicy",
+      "所属模块": "未知模块",
+      "功能描述": "The policy of domain account",
+      "注释信息": [
+        "@interface DomainAccountPolicy",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 19"
+      ],
+      "层级": 2,
+      "上级": "accountManager",
+      "since_version": "19",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "authenticationValidityPeriod",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "The validity period of authentication.",
+      "注释信息": [
+        "@type { ?number }",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 19"
+      ],
+      "层级": 2,
+      "上级": "DomainAccountPolicy",
+      "since_version": "19",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "passwordValidityPeriod",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "The validity period of password.",
+      "注释信息": [
+        "@type { ?number }",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 19"
+      ],
+      "层级": 2,
+      "上级": "DomainAccountPolicy",
+      "since_version": "19",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "passwordExpirationNotification",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "The password expiration notification.",
+      "注释信息": [
+        "@type { ?number }",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 19"
+      ],
+      "层级": 2,
+      "上级": "DomainAccountPolicy",
+      "since_version": "19",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "disallowOsAccountAddition",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Disallows the account or all accounts to add an OS account. This function can be called by a super administrator. The admin must have the corresponding permission. 2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.ENTERPRISE_SET_ACCOUNT_POLICY",
+        "@param { Want } admin - admin indicates the enterprise admin extension ability information.",
+        "@param { boolean } disallow - true if the specific account or all accounts are not allowed to add an OS account.",
+        "@param { number } [accountId] - indicates the account ID. It cannot be the ID of an account that does not exist.",
+        "@throws { BusinessError } 9200001 - The application is not an administrator application of the device.",
+        "@throws { BusinessError } 9200002 - The administrator application does not have permission to manage the device.",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission required to call the API.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "accountManager",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [
+        {
+          "名称": "admin",
+          "类型": "Want",
+          "必填": true,
+          "说明": "admin indicates the enterprise admin extension ability information."
+        },
+        {
+          "名称": "disallow",
+          "类型": "boolean",
+          "必填": true,
+          "说明": "true if the specific account or all accounts are not allowed to add an OS account."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "number } [accountId] - indicates the account ID. It cannot be the ID of an account that does not exist."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "9200001",
+          "description": "The application is not an administrator application of the device."
+        },
+        {
+          "code": "9200002",
+          "description": "The administrator application does not have permission to manage the device."
+        },
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission required to call the API."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "isOsAccountAdditionDisallowed",
+      "返回值": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Queries whether the account or all accounts is disallowed to add an OS account. This function can be called by a super administrator. If the admin is not empty, it must have the corresponding permission. 2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.ENTERPRISE_SET_ACCOUNT_POLICY",
+        "@param { Want } admin - admin indicates the enterprise admin extension ability information.",
+        "@param { number } [accountId] - indicates the account ID. It cannot be the ID of an account that does not exist.",
+        "@returns { boolean } true if the specific account or all accounts are not allowed to add an OS account.",
+        "@throws { BusinessError } 9200001 - The application is not an administrator application of the device.",
+        "@throws { BusinessError } 9200002 - The administrator application does not have permission to manage the device.",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission required to call the API.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "accountManager",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [
+        {
+          "名称": "admin",
+          "类型": "Want",
+          "必填": true,
+          "说明": "admin indicates the enterprise admin extension ability information."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "number } [accountId] - indicates the account ID. It cannot be the ID of an account that does not exist."
+        }
+      ],
+      "return_description": "true if the specific account or all accounts are not allowed to add an OS account.",
+      "error_codes": [
+        {
+          "code": "9200001",
+          "description": "The application is not an administrator application of the device."
+        },
+        {
+          "code": "9200002",
+          "description": "The administrator application does not have permission to manage the device."
+        },
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission required to call the API."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "addOsAccountAsync",
+      "返回值": "Promise<osAccount.OsAccountInfo>",
+      "所属模块": "未知模块",
+      "功能描述": "Adds an OS account using the name and account type. This function can be called by a super administrator. The admin must have the corresponding permission. 2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.ENTERPRISE_SET_ACCOUNT_POLICY",
+        "@param { Want } admin - admin indicates the enterprise admin extension ability information.",
+        "@param { string } name - the OS account name. It cannot be empty.",
+        "@param { osAccount.OsAccountType } type - the OS account type. It can only be one of correct types.",
+        "@returns { Promise<osAccount.OsAccountInfo> } information about the OS account added.",
+        "@throws { BusinessError } 9200001 - The application is not an administrator application of the device.",
+        "@throws { BusinessError } 9200002 - The administrator application does not have permission to manage the device.",
+        "@throws { BusinessError } 9201003 - Failed to add an OS account.",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission required to call the API.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "accountManager",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [
+        {
+          "名称": "admin",
+          "类型": "Want",
+          "必填": true,
+          "说明": "admin indicates the enterprise admin extension ability information."
+        },
+        {
+          "名称": "name",
+          "类型": "string",
+          "必填": true,
+          "说明": "the OS account name. It cannot be empty."
+        },
+        {
+          "名称": "type",
+          "类型": "osAccount.OsAccountType",
+          "必填": true,
+          "说明": "the OS account type. It can only be one of correct types."
+        }
+      ],
+      "return_description": "information about the OS account added.",
+      "error_codes": [
+        {
+          "code": "9200001",
+          "description": "The application is not an administrator application of the device."
+        },
+        {
+          "code": "9200002",
+          "description": "The administrator application does not have permission to manage the device."
+        },
+        {
+          "code": "9201003",
+          "description": "Failed to add an OS account."
+        },
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission required to call the API."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "setDomainAccountPolicy",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Sets domain account policy. This function can be called by a super administrator. The admin must have the corresponding permission.",
+      "注释信息": [
+        "@permission ohos.permission.ENTERPRISE_SET_ACCOUNT_POLICY",
+        "@param { Want } admin - admin indicates the enterprise admin extension ability information.",
+        "@param { osAccount.DomainAccountInfo } domainAccountInfo - the infomation of domain account.",
+        "@param { DomainAccountPolicy } policy - policy indicates the domain account policy.",
+        "@throws { BusinessError } 9200001 - The application is not an administrator application of the device.",
+        "@throws { BusinessError } 9200002 - The administrator application does not have permission to manage the device.",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission required to call the API.",
+        "@throws { BusinessError } 801 - Capability not supported. Failed to call the API due to limited device capabilities.",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 19"
+      ],
+      "层级": 1,
+      "上级": "accountManager",
+      "since_version": "19",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [
+        {
+          "名称": "admin",
+          "类型": "Want",
+          "必填": true,
+          "说明": "admin indicates the enterprise admin extension ability information."
+        },
+        {
+          "名称": "domainAccountInfo",
+          "类型": "osAccount.DomainAccountInfo",
+          "必填": true,
+          "说明": "the infomation of domain account."
+        },
+        {
+          "名称": "policy",
+          "类型": "DomainAccountPolicy",
+          "必填": true,
+          "说明": "policy indicates the domain account policy."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "9200001",
+          "description": "The application is not an administrator application of the device."
+        },
+        {
+          "code": "9200002",
+          "description": "The administrator application does not have permission to manage the device."
+        },
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission required to call the API."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported. Failed to call the API due to limited device capabilities."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getDomainAccountPolicy",
+      "返回值": "DomainAccountPolicy",
+      "所属模块": "未知模块",
+      "功能描述": "Gets domain account policy. This function can be called by a super administrator. The admin must have the corresponding permission.",
+      "注释信息": [
+        "@permission ohos.permission.ENTERPRISE_SET_ACCOUNT_POLICY",
+        "@param { Want } admin - admin indicates the enterprise admin extension ability information.",
+        "@param { osAccount.DomainAccountInfo } domainAccountInfo - the infomation of domain account.",
+        "@returns { DomainAccountPolicy } the domain account policy.",
+        "@throws { BusinessError } 9200001 - The application is not an administrator application of the device.",
+        "@throws { BusinessError } 9200002 - The administrator application does not have permission to manage the device.",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission required to call the API.",
+        "@throws { BusinessError } 801 - Capability not supported. Failed to call the API due to limited device capabilities.",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 19"
+      ],
+      "层级": 1,
+      "上级": "accountManager",
+      "since_version": "19",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [
+        {
+          "名称": "admin",
+          "类型": "Want",
+          "必填": true,
+          "说明": "admin indicates the enterprise admin extension ability information."
+        },
+        {
+          "名称": "domainAccountInfo",
+          "类型": "osAccount.DomainAccountInfo",
+          "必填": true,
+          "说明": "the infomation of domain account."
+        }
+      ],
+      "return_description": "the domain account policy.",
+      "error_codes": [
+        {
+          "code": "9200001",
+          "description": "The application is not an administrator application of the device."
+        },
+        {
+          "code": "9200002",
+          "description": "The administrator application does not have permission to manage the device."
+        },
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission required to call the API."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported. Failed to call the API due to limited device capabilities."
+        }
+      ],
+      "版本": "API"
+    }
+  ]
+}

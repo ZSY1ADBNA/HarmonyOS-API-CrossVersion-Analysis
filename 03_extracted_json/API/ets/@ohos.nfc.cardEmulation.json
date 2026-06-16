@@ -1,0 +1,714 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.ConnectivityKit",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "namespace",
+      "名称": "cardEmulation",
+      "所属模块": "@kit.ConnectivityKit",
+      "功能描述": "Provides methods to operate or manage NFC card emulation.",
+      "注释信息": [
+        "@namespace cardEmulation",
+        "@syscap SystemCapability.Communication.NFC.CardEmulation",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "@kit.ConnectivityKit",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Communication.NFC.CardEmulation",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "FeatureType",
+      "所属模块": "未知模块",
+      "功能描述": "Defines the capability type.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.Communication.NFC.CardEmulation",
+        "@since 6",
+        "@deprecated since 9",
+        "@useinstead ohos.nfc.cardEmulation/cardEmulation#hasHceCapability"
+      ],
+      "层级": 2,
+      "上级": "cardEmulation",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Communication.NFC.CardEmulation",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "HCE",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "This constant is used to check whether HCE card emulation is supported.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.NFC.CardEmulation",
+        "@since 6",
+        "@deprecated since 9",
+        "@useinstead ohos.nfc.cardEmulation/cardEmulation#hasHceCapability"
+      ],
+      "层级": 2,
+      "上级": "FeatureType",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Communication.NFC.CardEmulation",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "UICC",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "This constant is used to check whether SIM card emulation is supported.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.NFC.CardEmulation",
+        "@since 6",
+        "@deprecated since 9",
+        "@useinstead ohos.nfc.cardEmulation/cardEmulation#hasHceCapability"
+      ],
+      "层级": 2,
+      "上级": "FeatureType",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Communication.NFC.CardEmulation",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "ESE",
+      "值": "2",
+      "所属模块": "未知模块",
+      "功能描述": "This constant is used to check whether eSE card emulation is supported.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.NFC.CardEmulation",
+        "@since 6",
+        "@deprecated since 9",
+        "@useinstead ohos.nfc.cardEmulation/cardEmulation#hasHceCapability"
+      ],
+      "层级": 2,
+      "上级": "FeatureType",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Communication.NFC.CardEmulation",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "CardType",
+      "所属模块": "未知模块",
+      "功能描述": "Define the card emulation type, payment or other.",
+      "注释信息": [
+        "@enum { string }",
+        "@syscap SystemCapability.Communication.NFC.CardEmulation",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "cardEmulation",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Communication.NFC.CardEmulation",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "PAYMENT",
+      "值": "'payment'",
+      "所属模块": "未知模块",
+      "功能描述": "Payment type of card emulation",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.NFC.CardEmulation",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "CardType",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Communication.NFC.CardEmulation",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "OTHER",
+      "值": "'other'",
+      "所属模块": "未知模块",
+      "功能描述": "Other type of card emulation",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.NFC.CardEmulation",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "CardType",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Communication.NFC.CardEmulation",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "isSupported",
+      "返回值": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Checks whether a specified type of card emulation is supported. <p>This method is used to check Whether the host or secure element supports card emulation.",
+      "注释信息": [
+        "@param { number } feature Indicates the card emulation type, {@code HCE}, {@code UICC}, or {@code ESE}.",
+        "@returns { boolean } Returns true if the specified type of card emulation is supported; returns false otherwise.",
+        "@syscap SystemCapability.Communication.NFC.CardEmulation",
+        "@since 6",
+        "@deprecated since 9",
+        "@useinstead ohos.nfc.cardEmulation/cardEmulation#hasHceCapability"
+      ],
+      "层级": 1,
+      "上级": "cardEmulation",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Communication.NFC.CardEmulation",
+      "parameters": [
+        {
+          "名称": "feature",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the card emulation type, {@code HCE}, {@code UICC}, or {@code ESE}."
+        }
+      ],
+      "return_description": "Returns true if the specified type of card emulation is supported; returns false otherwise.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "hasHceCapability",
+      "返回值": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Checks whether Host Card Emulation(HCE) capability is supported.",
+      "注释信息": [
+        "@permission ohos.permission.NFC_CARD_EMULATION",
+        "@returns { boolean } Returns true if HCE is supported, otherwise false.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@syscap SystemCapability.Communication.NFC.CardEmulation",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "cardEmulation",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Communication.NFC.CardEmulation",
+      "parameters": [],
+      "return_description": "Returns true if HCE is supported, otherwise false.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "isDefaultService",
+      "返回值": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Checks whether a service is default for given type. <br> 1. Mandatory parameters are left unspecified. <br> 2. Incorrect parameters types. <br> 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.NFC_CARD_EMULATION",
+        "@param { ElementName } elementName - The element name of the service ability",
+        "@param { CardType } type - The type to query, payment or other.",
+        "@returns { boolean } Returns true if the service is default, otherwise false.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - The parameter check failed. Possible causes:",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@syscap SystemCapability.Communication.NFC.CardEmulation",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "cardEmulation",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Communication.NFC.CardEmulation",
+      "parameters": [
+        {
+          "名称": "elementName",
+          "类型": "ElementName",
+          "必填": true,
+          "说明": "The element name of the service ability"
+        },
+        {
+          "名称": "type",
+          "类型": "CardType",
+          "必填": true,
+          "说明": "The type to query, payment or other."
+        }
+      ],
+      "return_description": "Returns true if the service is default, otherwise false.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "The parameter check failed. Possible causes:"
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "class",
+      "名称": "HceService",
+      "所属模块": "未知模块",
+      "功能描述": "A class for NFC host application. <p>The NFC host application use this class, then Nfc service can access the application installation information and connect to services of the application.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.NFC.CardEmulation",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "cardEmulation",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Communication.NFC.CardEmulation",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "startHCE",
+      "返回值": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "start HCE",
+      "注释信息": [
+        "@permission ohos.permission.NFC_CARD_EMULATION",
+        "@param { string[] } aidList - The aid list to be registered by this service",
+        "@returns { boolean } Returns true if HCE is enabled or has been enabled; returns false otherwise.",
+        "@syscap SystemCapability.Communication.NFC.CardEmulation",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.nfc.cardEmulation/cardEmulation.HceService#start"
+      ],
+      "层级": 2,
+      "上级": "HceService",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Communication.NFC.CardEmulation",
+      "parameters": [
+        {
+          "名称": "aidList",
+          "类型": "string[]",
+          "必填": true,
+          "说明": "The aid list to be registered by this service"
+        }
+      ],
+      "return_description": "Returns true if HCE is enabled or has been enabled; returns false otherwise.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "start",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Starts the HCE, register more aids and allows this application to be preferred while in foreground. <br> 1. Mandatory parameters are left unspecified. <br> 2. Incorrect parameters types. <br> 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.NFC_CARD_EMULATION",
+        "@param { ElementName } elementName - The element name of the service ability",
+        "@param { string[] } aidList - The aid list to be registered by this service, allowed to be empty.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - The parameter check failed. Possible causes:",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 3100301 - Card emulation running state is abnormal in service.",
+        "@syscap SystemCapability.Communication.NFC.CardEmulation",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "HceService",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Communication.NFC.CardEmulation",
+      "parameters": [
+        {
+          "名称": "elementName",
+          "类型": "ElementName",
+          "必填": true,
+          "说明": "The element name of the service ability"
+        },
+        {
+          "名称": "aidList",
+          "类型": "string[]",
+          "必填": true,
+          "说明": "The aid list to be registered by this service, allowed to be empty."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "The parameter check failed. Possible causes:"
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "3100301",
+          "description": "Card emulation running state is abnormal in service."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "stopHCE",
+      "返回值": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "stop HCE",
+      "注释信息": [
+        "@permission ohos.permission.NFC_CARD_EMULATION",
+        "@returns { boolean } Returns true if HCE is disabled or has been disabled; returns false otherwise.",
+        "@syscap SystemCapability.Communication.NFC.CardEmulation",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.nfc.cardEmulation/cardEmulation.HceService#stop"
+      ],
+      "层级": 2,
+      "上级": "HceService",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Communication.NFC.CardEmulation",
+      "parameters": [],
+      "return_description": "Returns true if HCE is disabled or has been disabled; returns false otherwise.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "stop",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Stops the HCE, and unset the preferred service while in foreground. <br> 1. Mandatory parameters are left unspecified. <br> 2. Incorrect parameters types. <br> 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.NFC_CARD_EMULATION",
+        "@param { ElementName } elementName - The element name of the service ability",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - The parameter check failed. Possible causes:",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 3100301 - Card emulation running state is abnormal in service.",
+        "@syscap SystemCapability.Communication.NFC.CardEmulation",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "HceService",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Communication.NFC.CardEmulation",
+      "parameters": [
+        {
+          "名称": "elementName",
+          "类型": "ElementName",
+          "必填": true,
+          "说明": "The element name of the service ability"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "The parameter check failed. Possible causes:"
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "3100301",
+          "description": "Card emulation running state is abnormal in service."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "register HCE event to receive the APDU data.",
+      "注释信息": [
+        "@permission ohos.permission.NFC_CARD_EMULATION",
+        "@param { 'hceCmd' } type The type to register.",
+        "@param { AsyncCallback<number[]> } callback Callback used to listen to HCE data that local device received.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Invalid parameter.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@syscap SystemCapability.Communication.NFC.CardEmulation",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "HceService",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Communication.NFC.CardEmulation",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'hceCmd'",
+          "必填": true,
+          "说明": "The type to register."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<number[]>",
+          "必填": true,
+          "说明": "Callback used to listen to HCE data that local device received."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Invalid parameter."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unsubscribe the event to receive the APDU data.",
+      "注释信息": [
+        "@permission ohos.permission.NFC_CARD_EMULATION",
+        "@param { 'hceCmd' } type - The type to unregister event.",
+        "@param { AsyncCallback<number[]> } callback - The callback used to listen for the event.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@syscap SystemCapability.Communication.NFC.CardEmulation",
+        "@atomicservice",
+        "@since 18"
+      ],
+      "层级": 2,
+      "上级": "HceService",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Communication.NFC.CardEmulation",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'hceCmd'",
+          "必填": true,
+          "说明": "The type to unregister event."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<number[]>",
+          "必填": true,
+          "说明": "The callback used to listen for the event."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "sendResponse",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Sends a response APDU to the remote device. <p>This method is used by a host application when swiping card.",
+      "注释信息": [
+        "@permission ohos.permission.NFC_CARD_EMULATION",
+        "@param { number[] } responseApdu Indicates the response, which is a byte array.",
+        "@syscap SystemCapability.Communication.NFC.CardEmulation",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.nfc.cardEmulation/cardEmulation.HceService#transmit"
+      ],
+      "层级": 2,
+      "上级": "HceService",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Communication.NFC.CardEmulation",
+      "parameters": [
+        {
+          "名称": "responseApdu",
+          "类型": "number[]",
+          "必填": true,
+          "说明": "Indicates the response, which is a byte array."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "transmit",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Sends a response APDU to the remote device. <br> 1. Mandatory parameters are left unspecified. <br> 2. Incorrect parameters types. <br> 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.NFC_CARD_EMULATION",
+        "@param { number[] } response Indicates the response to send, which is a byte array.",
+        "@returns { Promise<void> } The void",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - The parameter check failed. Possible causes:",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 3100301 - Card emulation running state is abnormal in service.",
+        "@syscap SystemCapability.Communication.NFC.CardEmulation",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "HceService",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Communication.NFC.CardEmulation",
+      "parameters": [
+        {
+          "名称": "response",
+          "类型": "number[]",
+          "必填": true,
+          "说明": "Indicates the response to send, which is a byte array."
+        }
+      ],
+      "return_description": "The void",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "The parameter check failed. Possible causes:"
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "3100301",
+          "description": "Card emulation running state is abnormal in service."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "transmit",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Sends a response APDU to the remote device. <br> 1. Mandatory parameters are left unspecified. <br> 2. Incorrect parameters types. <br> 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.NFC_CARD_EMULATION",
+        "@param { number[] } response Indicates the response to send, which is a byte array.",
+        "@param { AsyncCallback<void> } callback The callback",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - The parameter check failed. Possible causes:",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 3100301 - Card emulation running state is abnormal in service.",
+        "@syscap SystemCapability.Communication.NFC.CardEmulation",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "HceService",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Communication.NFC.CardEmulation",
+      "parameters": [
+        {
+          "名称": "response",
+          "类型": "number[]",
+          "必填": true,
+          "说明": "Indicates the response to send, which is a byte array."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "The callback"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "The parameter check failed. Possible causes:"
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "3100301",
+          "description": "Card emulation running state is abnormal in service."
+        }
+      ],
+      "版本": "API"
+    }
+  ]
+}

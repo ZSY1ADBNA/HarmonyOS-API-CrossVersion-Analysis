@@ -1,0 +1,574 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.MDMKit",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "namespace",
+      "名称": "browser",
+      "所属模块": "@kit.MDMKit",
+      "功能描述": "This module provides the capability to manage the browser policies of the enterprise devices.",
+      "注释信息": [
+        "@namespace browser",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "@kit.MDMKit",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "method",
+      "名称": "setPolicies",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Allow the administrator to set the browser policies. This function can be called by a super administrator. The admin must have the corresponding permission. can be converted into browser policies. 2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.ENTERPRISE_SET_BROWSER_POLICY",
+        "@param { Want } admin - admin indicates the enterprise admin extension ability information.",
+        "@param { string } appId - id of the bundle that need to set policies. It cannot be empty.",
+        "@param { string } policies - browser policies that need to set. It must be a correct JSON character string that",
+        "@param { AsyncCallback<void> } callback - the callback of setPolicies.",
+        "@throws { BusinessError } 9200001 - The application is not an administrator application of the device.",
+        "@throws { BusinessError } 9200002 - The administrator application does not have permission to manage the device.",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission required to call the API.",
+        "@throws { BusinessError } 202 - Permission verification failed. A non-system application calls a system API.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@systemapi",
+        "@StageModelOnly",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "browser",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [
+        {
+          "名称": "admin",
+          "类型": "Want",
+          "必填": true,
+          "说明": "admin indicates the enterprise admin extension ability information."
+        },
+        {
+          "名称": "appId",
+          "类型": "string",
+          "必填": true,
+          "说明": "id of the bundle that need to set policies. It cannot be empty."
+        },
+        {
+          "名称": "policies",
+          "类型": "string",
+          "必填": true,
+          "说明": "browser policies that need to set. It must be a correct JSON character string that"
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "the callback of setPolicies."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "9200001",
+          "description": "The application is not an administrator application of the device."
+        },
+        {
+          "code": "9200002",
+          "description": "The administrator application does not have permission to manage the device."
+        },
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission required to call the API."
+        },
+        {
+          "code": "202",
+          "description": "Permission verification failed. A non-system application calls a system API."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        }
+      ],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "method",
+      "名称": "setPolicies",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Allow the administrator to set the browser policies. This function can be called by a super administrator. The admin must have the corresponding permission. can be converted into browser policies. 2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.ENTERPRISE_SET_BROWSER_POLICY",
+        "@param { Want } admin - admin indicates the enterprise admin extension ability information.",
+        "@param { string } appId - id of the bundle that need to set policies. It cannot be empty.",
+        "@param { string } policies - browser policies that need to set. It must be a correct JSON character string that",
+        "@returns { Promise<void> } the promise returned by the setPolicies.",
+        "@throws { BusinessError } 9200001 - The application is not an administrator application of the device.",
+        "@throws { BusinessError } 9200002 - The administrator application does not have permission to manage the device.",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission required to call the API.",
+        "@throws { BusinessError } 202 - Permission verification failed. A non-system application calls a system API.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@systemapi",
+        "@StageModelOnly",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "browser",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [
+        {
+          "名称": "admin",
+          "类型": "Want",
+          "必填": true,
+          "说明": "admin indicates the enterprise admin extension ability information."
+        },
+        {
+          "名称": "appId",
+          "类型": "string",
+          "必填": true,
+          "说明": "id of the bundle that need to set policies. It cannot be empty."
+        },
+        {
+          "名称": "policies",
+          "类型": "string",
+          "必填": true,
+          "说明": "browser policies that need to set. It must be a correct JSON character string that"
+        }
+      ],
+      "return_description": "the promise returned by the setPolicies.",
+      "error_codes": [
+        {
+          "code": "9200001",
+          "description": "The application is not an administrator application of the device."
+        },
+        {
+          "code": "9200002",
+          "description": "The administrator application does not have permission to manage the device."
+        },
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission required to call the API."
+        },
+        {
+          "code": "202",
+          "description": "Permission verification failed. A non-system application calls a system API."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        }
+      ],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "method",
+      "名称": "getPolicies",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Allow the administrator to get the browser policies. This function can be called by a super administrator. The admin must have the corresponding permission. 2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { Want } admin - admin indicates the enterprise admin extension ability information.",
+        "@param { string } appId - id of the bundle that need to set policies. It cannot be empty.",
+        "@param { AsyncCallback<string> } callback - the callback carries the browser policies returned by the getPolicies.",
+        "@throws { BusinessError } 9200001 - The application is not an administrator application of the device.",
+        "@throws { BusinessError } 202 - Permission verification failed. A non-system application calls a system API.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@systemapi",
+        "@StageModelOnly",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "browser",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [
+        {
+          "名称": "admin",
+          "类型": "Want",
+          "必填": true,
+          "说明": "admin indicates the enterprise admin extension ability information."
+        },
+        {
+          "名称": "appId",
+          "类型": "string",
+          "必填": true,
+          "说明": "id of the bundle that need to set policies. It cannot be empty."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<string>",
+          "必填": true,
+          "说明": "the callback carries the browser policies returned by the getPolicies."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "9200001",
+          "description": "The application is not an administrator application of the device."
+        },
+        {
+          "code": "202",
+          "description": "Permission verification failed. A non-system application calls a system API."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        }
+      ],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "method",
+      "名称": "getPolicies",
+      "返回值": "Promise<string>",
+      "所属模块": "未知模块",
+      "功能描述": "Allow the administrator to get the browser policies. This function can be called by a super administrator. The admin must have the corresponding permission. 2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { Want } admin - admin indicates the enterprise admin extension ability information.",
+        "@param { string } appId - id of the bundle that need to set policies. It cannot be empty.",
+        "@returns { Promise<string> } the promise carries the browser policies returned by the getPolicies.",
+        "@throws { BusinessError } 9200001 - The application is not an administrator application of the device.",
+        "@throws { BusinessError } 202 - Permission verification failed. A non-system application calls a system API.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@systemapi",
+        "@StageModelOnly",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "browser",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [
+        {
+          "名称": "admin",
+          "类型": "Want",
+          "必填": true,
+          "说明": "admin indicates the enterprise admin extension ability information."
+        },
+        {
+          "名称": "appId",
+          "类型": "string",
+          "必填": true,
+          "说明": "id of the bundle that need to set policies. It cannot be empty."
+        }
+      ],
+      "return_description": "the promise carries the browser policies returned by the getPolicies.",
+      "error_codes": [
+        {
+          "code": "9200001",
+          "description": "The application is not an administrator application of the device."
+        },
+        {
+          "code": "202",
+          "description": "Permission verification failed. A non-system application calls a system API."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        }
+      ],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "method",
+      "名称": "setPolicySync",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Sets the browser policy. This function can be called by a super administrator. The admin must have the corresponding permission. correct JSON character string that can be converted into browser policies. 2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.ENTERPRISE_SET_BROWSER_POLICY",
+        "@param { Want } admin - admin indicates the enterprise admin extension ability information.",
+        "@param { string } appId - appId indicates the id of the bundle that need to set policy. It cannot be empty.",
+        "@param { string } policyName - policyName indicates the browser policy name that need to set.",
+        "@param { string } policyValue - policyValue indicates the browser policy value that need to set. It must be a",
+        "@throws { BusinessError } 9200001 - The application is not an administrator application of the device.",
+        "@throws { BusinessError } 9200002 - The administrator application does not have permission to manage the device.",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission required to call the API.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "browser",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [
+        {
+          "名称": "admin",
+          "类型": "Want",
+          "必填": true,
+          "说明": "admin indicates the enterprise admin extension ability information."
+        },
+        {
+          "名称": "appId",
+          "类型": "string",
+          "必填": true,
+          "说明": "appId indicates the id of the bundle that need to set policy. It cannot be empty."
+        },
+        {
+          "名称": "policyName",
+          "类型": "string",
+          "必填": true,
+          "说明": "policyName indicates the browser policy name that need to set."
+        },
+        {
+          "名称": "policyValue",
+          "类型": "string",
+          "必填": true,
+          "说明": "policyValue indicates the browser policy value that need to set. It must be a"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "9200001",
+          "description": "The application is not an administrator application of the device."
+        },
+        {
+          "code": "9200002",
+          "description": "The administrator application does not have permission to manage the device."
+        },
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission required to call the API."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        }
+      ],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "method",
+      "名称": "getPoliciesSync",
+      "返回值": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Gets the browser policies. This function can be called by a super administrator. The admin must have the corresponding permission. 2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { Want } admin - admin indicates the enterprise admin extension ability information.",
+        "@param { string } appId - id of the bundle that need to get policies. It cannot be empty.",
+        "@returns { string } the browser policies returned by the getPolicies.",
+        "@throws { BusinessError } 9200001 - The application is not an administrator application of the device.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "browser",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [
+        {
+          "名称": "admin",
+          "类型": "Want",
+          "必填": true,
+          "说明": "admin indicates the enterprise admin extension ability information."
+        },
+        {
+          "名称": "appId",
+          "类型": "string",
+          "必填": true,
+          "说明": "id of the bundle that need to get policies. It cannot be empty."
+        }
+      ],
+      "return_description": "the browser policies returned by the getPolicies.",
+      "error_codes": [
+        {
+          "code": "9200001",
+          "description": "The application is not an administrator application of the device."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        }
+      ],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "method",
+      "名称": "setManagedBrowserPolicy",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Sets the managed browser policy. The admin must have the corresponding permission. correct JSON character string that can be converted into browser policies. 2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.ENTERPRISE_SET_BROWSER_POLICY",
+        "@param { Want } admin - admin indicates the enterprise admin extension ability information.",
+        "@param { string } bundleName - bundleName indicates the bundle name of the browser.",
+        "@param { string } policyName - policyName indicates the browser policy name that need to set.",
+        "@param { string } policyValue - policyValue indicates the browser policy value that need to set. It must be a",
+        "@throws { BusinessError } 9200001 - The application is not an administrator application of the device.",
+        "@throws { BusinessError } 9200002 - The administrator application does not have permission to manage the device.",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission required to call the API.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 15"
+      ],
+      "层级": 1,
+      "上级": "browser",
+      "since_version": "15",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [
+        {
+          "名称": "admin",
+          "类型": "Want",
+          "必填": true,
+          "说明": "admin indicates the enterprise admin extension ability information."
+        },
+        {
+          "名称": "bundleName",
+          "类型": "string",
+          "必填": true,
+          "说明": "bundleName indicates the bundle name of the browser."
+        },
+        {
+          "名称": "policyName",
+          "类型": "string",
+          "必填": true,
+          "说明": "policyName indicates the browser policy name that need to set."
+        },
+        {
+          "名称": "policyValue",
+          "类型": "string",
+          "必填": true,
+          "说明": "policyValue indicates the browser policy value that need to set. It must be a"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "9200001",
+          "description": "The application is not an administrator application of the device."
+        },
+        {
+          "code": "9200002",
+          "description": "The administrator application does not have permission to manage the device."
+        },
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission required to call the API."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        }
+      ],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "method",
+      "名称": "getManagedBrowserPolicy",
+      "返回值": "ArrayBuffer",
+      "所属模块": "未知模块",
+      "功能描述": "Gets the managed browser policy. The admin must have the corresponding permission. 2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { Want } admin - admin indicates the enterprise admin extension ability information.",
+        "@param { string } bundleName - bundleName indicates the bundle name of the browser.",
+        "@returns { ArrayBuffer } the browser policy returned by the getManagedBrowserPolicy.",
+        "@throws { BusinessError } 9200001 - The application is not an administrator application of the device.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 15"
+      ],
+      "层级": 1,
+      "上级": "browser",
+      "since_version": "15",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [
+        {
+          "名称": "admin",
+          "类型": "Want",
+          "必填": true,
+          "说明": "admin indicates the enterprise admin extension ability information."
+        },
+        {
+          "名称": "bundleName",
+          "类型": "string",
+          "必填": true,
+          "说明": "bundleName indicates the bundle name of the browser."
+        }
+      ],
+      "return_description": "the browser policy returned by the getManagedBrowserPolicy.",
+      "error_codes": [
+        {
+          "code": "9200001",
+          "description": "The application is not an administrator application of the device."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        }
+      ],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "method",
+      "名称": "getSelfManagedBrowserPolicyVersion",
+      "返回值": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Gets the version of managed browser policy.",
+      "注释信息": [
+        "@returns { string } return the version of managed browser policy.",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 15"
+      ],
+      "层级": 1,
+      "上级": "browser",
+      "since_version": "15",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [],
+      "return_description": "return the version of managed browser policy.",
+      "error_codes": [],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "method",
+      "名称": "getSelfManagedBrowserPolicy",
+      "返回值": "ArrayBuffer",
+      "所属模块": "未知模块",
+      "功能描述": "Gets the managed browser policy.",
+      "注释信息": [
+        "@returns { ArrayBuffer } return the managed browser policy.",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 15"
+      ],
+      "层级": 1,
+      "上级": "browser",
+      "since_version": "15",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [],
+      "return_description": "return the managed browser policy.",
+      "error_codes": [],
+      "版本": "API5.1"
+    }
+  ]
+}

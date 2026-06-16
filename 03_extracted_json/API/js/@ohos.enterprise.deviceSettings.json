@@ -1,0 +1,274 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.MDMKit",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "namespace",
+      "名称": "deviceSettings",
+      "所属模块": "@kit.MDMKit",
+      "功能描述": "This module provides the capability to manage the device settings of the enterprise devices.",
+      "注释信息": [
+        "@namespace deviceSettings",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "@kit.MDMKit",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "setValue",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Sets the device settings value. This function can be called by a super administrator. The admin must have the corresponding permission. including screenOff, powerPolicy, dateTime, eyeComfort, defaultInputMethod. screenOff means the device screen off time, powerPolicy means the device power policy and dateTime means the device system time. When the power policy is set, only timeout scenario is available now. When the screen off time is set, the minimum value is 15000. It is recommended that the time is consistent with the optional screen-off time of the device. The application does not have the permission required to call the API. 2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.ENTERPRISE_MANAGE_SETTINGS",
+        "@param { Want } admin - admin indicates the enterprise admin extension ability information.",
+        "@param { string } item - item indicates the device properties that need to be set,",
+        "@param { string } value - device settings policy.",
+        "@throws { BusinessError } 9200001 - The application is not an administrator application of the device.",
+        "@throws { BusinessError } 9200002 - The administrator application does not have permission to manage the device.",
+        "@throws { BusinessError } 201 - Permission verification failed.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 1,
+      "上级": "deviceSettings",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [
+        {
+          "名称": "admin",
+          "类型": "Want",
+          "必填": true,
+          "说明": "admin indicates the enterprise admin extension ability information."
+        },
+        {
+          "名称": "item",
+          "类型": "string",
+          "必填": true,
+          "说明": "item indicates the device properties that need to be set,"
+        },
+        {
+          "名称": "value",
+          "类型": "string",
+          "必填": true,
+          "说明": "device settings policy."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "9200001",
+          "description": "The application is not an administrator application of the device."
+        },
+        {
+          "code": "9200002",
+          "description": "The administrator application does not have permission to manage the device."
+        },
+        {
+          "code": "201",
+          "description": "Permission verification failed."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getValue",
+      "返回值": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Gets the device settings value. This function can be called by a super administrator. The admin must have the corresponding permission. including screenOff, powerPolicy, eyeComfort. screenOff means the device screen off time, powerPolicy means the device power policy. The application does not have the permission required to call the API. 2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.ENTERPRISE_MANAGE_SETTINGS",
+        "@param { Want } admin - admin indicates the enterprise admin extension ability information.",
+        "@param { string } item - item indicates the device properties that need to be get,",
+        "@returns { string } device settings policy.",
+        "@throws { BusinessError } 9200001 - The application is not an administrator application of the device.",
+        "@throws { BusinessError } 9200002 - The administrator application does not have permission to manage the device.",
+        "@throws { BusinessError } 201 - Permission verification failed.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 1,
+      "上级": "deviceSettings",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [
+        {
+          "名称": "admin",
+          "类型": "Want",
+          "必填": true,
+          "说明": "admin indicates the enterprise admin extension ability information."
+        },
+        {
+          "名称": "item",
+          "类型": "string",
+          "必填": true,
+          "说明": "item indicates the device properties that need to be get,"
+        }
+      ],
+      "return_description": "device settings policy.",
+      "error_codes": [
+        {
+          "code": "9200001",
+          "description": "The application is not an administrator application of the device."
+        },
+        {
+          "code": "9200002",
+          "description": "The administrator application does not have permission to manage the device."
+        },
+        {
+          "code": "201",
+          "description": "Permission verification failed."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "setHomeWallpaper",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Sets home wallpaper. This function can be called by a super administrator. The admin must have the corresponding permission.",
+      "注释信息": [
+        "@permission ohos.permission.ENTERPRISE_SET_WALLPAPER",
+        "@param { Want } admin - admin indicates the enterprise admin extension ability information.",
+        "@param { number } fd - the descriptor of home wallpaper file.",
+        "@returns { Promise<void> } the promise returned by the setHomeWallpaper.",
+        "@throws { BusinessError } 9200001 - The application is not an administrator application of the device.",
+        "@throws { BusinessError } 9200002 - The administrator application does not have permission to manage the device.",
+        "@throws { BusinessError } 9200012 - Parameter verification failed.",
+        "@throws { BusinessError } 201 - Permission verification failed.The application does not have the permission required to call the API.",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "deviceSettings",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [
+        {
+          "名称": "admin",
+          "类型": "Want",
+          "必填": true,
+          "说明": "admin indicates the enterprise admin extension ability information."
+        },
+        {
+          "名称": "fd",
+          "类型": "number",
+          "必填": true,
+          "说明": "the descriptor of home wallpaper file."
+        }
+      ],
+      "return_description": "the promise returned by the setHomeWallpaper.",
+      "error_codes": [
+        {
+          "code": "9200001",
+          "description": "The application is not an administrator application of the device."
+        },
+        {
+          "code": "9200002",
+          "description": "The administrator application does not have permission to manage the device."
+        },
+        {
+          "code": "9200012",
+          "description": "Parameter verification failed."
+        },
+        {
+          "code": "201",
+          "description": "Permission verification failed.The application does not have the permission required to call the API."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "setUnlockWallpaper",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Sets unlock wallpaper. This function can be called by a super administrator. The admin must have the corresponding permission.",
+      "注释信息": [
+        "@permission ohos.permission.ENTERPRISE_SET_WALLPAPER",
+        "@param { Want } admin - admin indicates the enterprise admin extension ability information.",
+        "@param { number } fd - the descriptor of unlock wallpaper file.",
+        "@returns { Promise<void> } the promise returned by the setUnlockWallpaper.",
+        "@throws { BusinessError } 9200001 - The application is not an administrator application of the device.",
+        "@throws { BusinessError } 9200002 - The administrator application does not have permission to manage the device.",
+        "@throws { BusinessError } 9200012 - Parameter verification failed.",
+        "@throws { BusinessError } 201 - Permission verification failed.The application does not have the permission required to call the API.",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "deviceSettings",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [
+        {
+          "名称": "admin",
+          "类型": "Want",
+          "必填": true,
+          "说明": "admin indicates the enterprise admin extension ability information."
+        },
+        {
+          "名称": "fd",
+          "类型": "number",
+          "必填": true,
+          "说明": "the descriptor of unlock wallpaper file."
+        }
+      ],
+      "return_description": "the promise returned by the setUnlockWallpaper.",
+      "error_codes": [
+        {
+          "code": "9200001",
+          "description": "The application is not an administrator application of the device."
+        },
+        {
+          "code": "9200002",
+          "description": "The administrator application does not have permission to manage the device."
+        },
+        {
+          "code": "9200012",
+          "description": "Parameter verification failed."
+        },
+        {
+          "code": "201",
+          "description": "Permission verification failed.The application does not have the permission required to call the API."
+        }
+      ],
+      "版本": "API"
+    }
+  ]
+}

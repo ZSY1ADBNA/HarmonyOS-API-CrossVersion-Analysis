@@ -1,0 +1,1053 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.MechanicKit",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "namespace",
+      "名称": "mechanicManager",
+      "所属模块": "@kit.MechanicKit",
+      "功能描述": "Provides capabilities for controlling and interacting with mechanical devices connected to this device. The capabilities cover connection management, control, and monitoring.",
+      "注释信息": [
+        "@namespace mechanicManager",
+        "@syscap SystemCapability.Mechanic.Core",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "@kit.MechanicKit",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Mechanic.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Subscribes to device attachment state change events.",
+      "注释信息": [
+        "@param { 'attachStateChange' } type Event type.",
+        "@param { Callback<AttachStateChangeInfo> } callback Callback used to return the state change.",
+        "@throws { BusinessError } 33300001 - Service exception.",
+        "@syscap SystemCapability.Mechanic.Core",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "mechanicManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Mechanic.Core",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'attachStateChange'",
+          "必填": true,
+          "说明": "Event type."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<AttachStateChangeInfo>",
+          "必填": true,
+          "说明": "Callback used to return the state change."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "33300001",
+          "description": "Service exception."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unsubscribes from device attachment state change events.",
+      "注释信息": [
+        "@param { 'attachStateChange' } type Event type.",
+        "@param { Callback<AttachStateChangeInfo> } [callback] Callback used to return the state change.",
+        "@throws { BusinessError } 33300001 - Service exception.",
+        "@syscap SystemCapability.Mechanic.Core",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "mechanicManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Mechanic.Core",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'attachStateChange'",
+          "必填": true,
+          "说明": "Event type."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "Callback<AttachStateChangeInfo> } [callback] Callback used to return the state change."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "33300001",
+          "description": "Service exception."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getAttachedMechDevices",
+      "返回值": "MechInfo[]",
+      "所属模块": "未知模块",
+      "功能描述": "Obtain the list of connected mechanical devices.",
+      "注释信息": [
+        "@returns { MechInfo[] } List of connected mechanical devices.",
+        "@throws { BusinessError } 33300001 - Service exception.",
+        "@syscap SystemCapability.Mechanic.Core",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "mechanicManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Mechanic.Core",
+      "parameters": [],
+      "return_description": "List of connected mechanical devices.",
+      "error_codes": [
+        {
+          "code": "33300001",
+          "description": "Service exception."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "setUserOperation",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Sets a user operation.",
+      "注释信息": [
+        "@permission ohos.permission.CONNECT_MECHANIC_HARDWARE",
+        "@param { Operation } operation Operation type.",
+        "@param { string } mac MAC address.",
+        "@param { string } params Operation parameters.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Not system application.",
+        "@throws { BusinessError } 33300001 - Service exception.",
+        "@syscap SystemCapability.Mechanic.Core",
+        "@systemapi",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "mechanicManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Mechanic.Core",
+      "parameters": [
+        {
+          "名称": "operation",
+          "类型": "Operation",
+          "必填": true,
+          "说明": "Operation type."
+        },
+        {
+          "名称": "mac",
+          "类型": "string",
+          "必填": true,
+          "说明": "MAC address."
+        },
+        {
+          "名称": "params",
+          "类型": "string",
+          "必填": true,
+          "说明": "Operation parameters."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Not system application."
+        },
+        {
+          "code": "33300001",
+          "description": "Service exception."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "setCameraTrackingEnabled",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Enables or disables camera tracking.",
+      "注释信息": [
+        "@param { boolean } isEnabled Whether to enable camera tracking.",
+        "@throws { BusinessError } 33300001 - Service exception.",
+        "@throws { BusinessError } 33300002 - Device not connected.",
+        "@throws { BusinessError } 33300003 - Feature not supported.",
+        "@syscap SystemCapability.Mechanic.Core",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "mechanicManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Mechanic.Core",
+      "parameters": [
+        {
+          "名称": "isEnabled",
+          "类型": "boolean",
+          "必填": true,
+          "说明": "Whether to enable camera tracking."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "33300001",
+          "description": "Service exception."
+        },
+        {
+          "code": "33300002",
+          "description": "Device not connected."
+        },
+        {
+          "code": "33300003",
+          "description": "Feature not supported."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getCameraTrackingEnabled",
+      "返回值": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Checks whether camera tracking is enabled for this mechanical device. the opposite.",
+      "注释信息": [
+        "@returns { boolean } Enabled status. The value true means that camera tracking is enabled, and false means",
+        "@throws { BusinessError } 33300001 - Service exception.",
+        "@throws { BusinessError } 33300002 - Device not connected.",
+        "@syscap SystemCapability.Mechanic.Core",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "mechanicManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Mechanic.Core",
+      "parameters": [],
+      "return_description": "Enabled status. The value true means that camera tracking is enabled, and false means",
+      "error_codes": [
+        {
+          "code": "33300001",
+          "description": "Service exception."
+        },
+        {
+          "code": "33300002",
+          "description": "Device not connected."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Subscribes to tracking events.",
+      "注释信息": [
+        "@param { 'trackingStateChange' } type Event type.",
+        "@param { Callback<TrackingEventInfo> } callback Callback used to return the tracking event information.",
+        "@throws { BusinessError } 33300001 - Service exception.",
+        "@syscap SystemCapability.Mechanic.Core",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "mechanicManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Mechanic.Core",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'trackingStateChange'",
+          "必填": true,
+          "说明": "Event type."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<TrackingEventInfo>",
+          "必填": true,
+          "说明": "Callback used to return the tracking event information."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "33300001",
+          "description": "Service exception."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unsubscribes from tracking events.",
+      "注释信息": [
+        "@param { 'trackingStateChange' } type Event type.",
+        "@param { Callback<TrackingEventInfo> } [callback] Callback used to return the tracking event information.",
+        "@throws { BusinessError } 33300001 - Service exception.",
+        "@syscap SystemCapability.Mechanic.Core",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "mechanicManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Mechanic.Core",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'trackingStateChange'",
+          "必填": true,
+          "说明": "Event type."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "Callback<TrackingEventInfo> } [callback] Callback used to return the tracking event information."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "33300001",
+          "description": "Service exception."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "setCameraTrackingLayout",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Sets the camera tracking layout for this mechanical device.",
+      "注释信息": [
+        "@param { CameraTrackingLayout } trackingLayout Camera tracking layout.",
+        "@throws { BusinessError } 202 - Not system application.",
+        "@throws { BusinessError } 33300001 - Service exception.",
+        "@throws { BusinessError } 33300002 - Device not connected.",
+        "@throws { BusinessError } 33300003 - Feature not supported.",
+        "@syscap SystemCapability.Mechanic.Core",
+        "@systemapi",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "mechanicManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Mechanic.Core",
+      "parameters": [
+        {
+          "名称": "trackingLayout",
+          "类型": "CameraTrackingLayout",
+          "必填": true,
+          "说明": "Camera tracking layout."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "202",
+          "description": "Not system application."
+        },
+        {
+          "code": "33300001",
+          "description": "Service exception."
+        },
+        {
+          "code": "33300002",
+          "description": "Device not connected."
+        },
+        {
+          "code": "33300003",
+          "description": "Feature not supported."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getCameraTrackingLayout",
+      "返回值": "CameraTrackingLayout",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the camera tracking layout of this mechanical device.",
+      "注释信息": [
+        "@returns { CameraTrackingLayout } Camera tracking layout obtained.",
+        "@throws { BusinessError } 33300001 - Service exception.",
+        "@throws { BusinessError } 33300002 - Device not connected.",
+        "@syscap SystemCapability.Mechanic.Core",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "mechanicManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Mechanic.Core",
+      "parameters": [],
+      "return_description": "Camera tracking layout obtained.",
+      "error_codes": [
+        {
+          "code": "33300001",
+          "description": "Service exception."
+        },
+        {
+          "code": "33300002",
+          "description": "Device not connected."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "rotate",
+      "返回值": "Promise<Result>",
+      "所属模块": "未知模块",
+      "功能描述": "Rotates a mechanical device to the relative angles.",
+      "注释信息": [
+        "@param { number } mechId ID of the mechanical device.",
+        "@param { RotationAngles } angles Relative angles.",
+        "@param { number } duration Rotation duration. Unit: millisecond.",
+        "@returns { Promise<Result> } Promise that return the execution result.",
+        "@throws { BusinessError } 202 - Not system application.",
+        "@throws { BusinessError } 33300001 - Service exception.",
+        "@throws { BusinessError } 33300002 - Device not connected.",
+        "@syscap SystemCapability.Mechanic.Core",
+        "@systemapi",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "mechanicManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Mechanic.Core",
+      "parameters": [
+        {
+          "名称": "mechId",
+          "类型": "number",
+          "必填": true,
+          "说明": "ID of the mechanical device."
+        },
+        {
+          "名称": "angles",
+          "类型": "RotationAngles",
+          "必填": true,
+          "说明": "Relative angles."
+        },
+        {
+          "名称": "duration",
+          "类型": "number",
+          "必填": true,
+          "说明": "Rotation duration. Unit: millisecond."
+        }
+      ],
+      "return_description": "Promise that return the execution result.",
+      "error_codes": [
+        {
+          "code": "202",
+          "description": "Not system application."
+        },
+        {
+          "code": "33300001",
+          "description": "Service exception."
+        },
+        {
+          "code": "33300002",
+          "description": "Device not connected."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "rotateToEulerAngles",
+      "返回值": "Promise<Result>",
+      "所属模块": "未知模块",
+      "功能描述": "Rotates a mechanical device to the absolute angles.",
+      "注释信息": [
+        "@param { number } mechId ID of the mechanical device.",
+        "@param { EulerAngles } angles Absolute angles.",
+        "@param { number } duration Rotation duration. Unit: millisecond.",
+        "@returns { Promise<Result> } Promise that return the execution result.",
+        "@throws { BusinessError } 202 - Not system application.",
+        "@throws { BusinessError } 33300001 - Service exception.",
+        "@throws { BusinessError } 33300002 - Device not connected.",
+        "@syscap SystemCapability.Mechanic.Core",
+        "@systemapi",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "mechanicManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Mechanic.Core",
+      "parameters": [
+        {
+          "名称": "mechId",
+          "类型": "number",
+          "必填": true,
+          "说明": "ID of the mechanical device."
+        },
+        {
+          "名称": "angles",
+          "类型": "EulerAngles",
+          "必填": true,
+          "说明": "Absolute angles."
+        },
+        {
+          "名称": "duration",
+          "类型": "number",
+          "必填": true,
+          "说明": "Rotation duration. Unit: millisecond."
+        }
+      ],
+      "return_description": "Promise that return the execution result.",
+      "error_codes": [
+        {
+          "code": "202",
+          "description": "Not system application."
+        },
+        {
+          "code": "33300001",
+          "description": "Service exception."
+        },
+        {
+          "code": "33300002",
+          "description": "Device not connected."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getMaxRotationTime",
+      "返回值": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the maximum continuous rotation duration of a mechanical device.",
+      "注释信息": [
+        "@param { number } mechId ID of the mechanical device.",
+        "@returns { number } Maximum rotation duration. Unit: millisecond.",
+        "@throws { BusinessError } 202 - Not system application.",
+        "@throws { BusinessError } 33300001 - Service exception.",
+        "@throws { BusinessError } 33300002 - Device not connected.",
+        "@syscap SystemCapability.Mechanic.Core",
+        "@systemapi",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "mechanicManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Mechanic.Core",
+      "parameters": [
+        {
+          "名称": "mechId",
+          "类型": "number",
+          "必填": true,
+          "说明": "ID of the mechanical device."
+        }
+      ],
+      "return_description": "Maximum rotation duration. Unit: millisecond.",
+      "error_codes": [
+        {
+          "code": "202",
+          "description": "Not system application."
+        },
+        {
+          "code": "33300001",
+          "description": "Service exception."
+        },
+        {
+          "code": "33300002",
+          "description": "Device not connected."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getMaxRotationSpeed",
+      "返回值": "RotationSpeed",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the maximum rotation speed of a mechanical device.",
+      "注释信息": [
+        "@param { number } mechId ID of the mechanical device.",
+        "@returns { RotationSpeed } Maximum speed. Only the absolute value of the speed is returned.",
+        "@throws { BusinessError } 202 - Not system application.",
+        "@throws { BusinessError } 33300001 - Service exception.",
+        "@throws { BusinessError } 33300002 - Device not connected.",
+        "@syscap SystemCapability.Mechanic.Core",
+        "@systemapi",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "mechanicManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Mechanic.Core",
+      "parameters": [
+        {
+          "名称": "mechId",
+          "类型": "number",
+          "必填": true,
+          "说明": "ID of the mechanical device."
+        }
+      ],
+      "return_description": "Maximum speed. Only the absolute value of the speed is returned.",
+      "error_codes": [
+        {
+          "code": "202",
+          "description": "Not system application."
+        },
+        {
+          "code": "33300001",
+          "description": "Service exception."
+        },
+        {
+          "code": "33300002",
+          "description": "Device not connected."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "rotateBySpeed",
+      "返回值": "Promise<Result>",
+      "所属模块": "未知模块",
+      "功能描述": "Rotates a mechanical device at the specified speed.",
+      "注释信息": [
+        "@param { number } mechId ID of the mechanical device.",
+        "@param { RotationSpeed } speed Rotation speed.",
+        "@param { number } duration Rotation duration. Unit: millisecond.",
+        "@returns { Promise<Result> } Promise that return the execution result.",
+        "@throws { BusinessError } 202 - Not system application.",
+        "@throws { BusinessError } 33300001 - Service exception.",
+        "@throws { BusinessError } 33300002 - Device not connected.",
+        "@syscap SystemCapability.Mechanic.Core",
+        "@systemapi",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "mechanicManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Mechanic.Core",
+      "parameters": [
+        {
+          "名称": "mechId",
+          "类型": "number",
+          "必填": true,
+          "说明": "ID of the mechanical device."
+        },
+        {
+          "名称": "speed",
+          "类型": "RotationSpeed",
+          "必填": true,
+          "说明": "Rotation speed."
+        },
+        {
+          "名称": "duration",
+          "类型": "number",
+          "必填": true,
+          "说明": "Rotation duration. Unit: millisecond."
+        }
+      ],
+      "return_description": "Promise that return the execution result.",
+      "error_codes": [
+        {
+          "code": "202",
+          "description": "Not system application."
+        },
+        {
+          "code": "33300001",
+          "description": "Service exception."
+        },
+        {
+          "code": "33300002",
+          "description": "Device not connected."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "stopMoving",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Stops a mechanical device from moving.",
+      "注释信息": [
+        "@param { number } mechId ID of the mechanical device.",
+        "@returns { Promise<void> } Promise that returns no value.",
+        "@throws { BusinessError } 202 - Not system application.",
+        "@throws { BusinessError } 33300001 - Service exception.",
+        "@throws { BusinessError } 33300002 - Device not connected.",
+        "@syscap SystemCapability.Mechanic.Core",
+        "@systemapi",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "mechanicManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Mechanic.Core",
+      "parameters": [
+        {
+          "名称": "mechId",
+          "类型": "number",
+          "必填": true,
+          "说明": "ID of the mechanical device."
+        }
+      ],
+      "return_description": "Promise that returns no value.",
+      "error_codes": [
+        {
+          "code": "202",
+          "description": "Not system application."
+        },
+        {
+          "code": "33300001",
+          "description": "Service exception."
+        },
+        {
+          "code": "33300002",
+          "description": "Device not connected."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getCurrentAngles",
+      "返回值": "EulerAngles",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the current angles of a mechanical device.",
+      "注释信息": [
+        "@param { number } mechId ID of the mechanical device.",
+        "@returns { EulerAngles } Rotation angles.",
+        "@throws { BusinessError } 202 - Not system application.",
+        "@throws { BusinessError } 33300001 - Service exception.",
+        "@throws { BusinessError } 33300002 - Device not connected.",
+        "@syscap SystemCapability.Mechanic.Core",
+        "@systemapi",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "mechanicManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Mechanic.Core",
+      "parameters": [
+        {
+          "名称": "mechId",
+          "类型": "number",
+          "必填": true,
+          "说明": "ID of the mechanical device."
+        }
+      ],
+      "return_description": "Rotation angles.",
+      "error_codes": [
+        {
+          "code": "202",
+          "description": "Not system application."
+        },
+        {
+          "code": "33300001",
+          "description": "Service exception."
+        },
+        {
+          "code": "33300002",
+          "description": "Device not connected."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getRotationLimits",
+      "返回值": "RotationLimits",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the maximum rotation angles relative to the reference point for the specified mechanical device.",
+      "注释信息": [
+        "@param { number } mechId ID of the mechanical device.",
+        "@returns { RotationLimits } Maximum rotation angles.",
+        "@throws { BusinessError } 202 - Not system application.",
+        "@throws { BusinessError } 33300001 - Service exception.",
+        "@throws { BusinessError } 33300002 - Device not connected.",
+        "@syscap SystemCapability.Mechanic.Core",
+        "@systemapi",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "mechanicManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Mechanic.Core",
+      "parameters": [
+        {
+          "名称": "mechId",
+          "类型": "number",
+          "必填": true,
+          "说明": "ID of the mechanical device."
+        }
+      ],
+      "return_description": "Maximum rotation angles.",
+      "error_codes": [
+        {
+          "code": "202",
+          "description": "Not system application."
+        },
+        {
+          "code": "33300001",
+          "description": "Service exception."
+        },
+        {
+          "code": "33300002",
+          "description": "Device not connected."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getRotationAxesStatus",
+      "返回值": "RotationAxesStatus",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the status of the rotation axes.",
+      "注释信息": [
+        "@param { number } mechId ID of the mechanical device.",
+        "@returns { RotationAxesStatus } Rotation axis status.",
+        "@throws { BusinessError } 202 - Not system application.",
+        "@throws { BusinessError } 33300001 - Service exception.",
+        "@throws { BusinessError } 33300002 - Device not connected.",
+        "@syscap SystemCapability.Mechanic.Core",
+        "@systemapi",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "mechanicManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Mechanic.Core",
+      "parameters": [
+        {
+          "名称": "mechId",
+          "类型": "number",
+          "必填": true,
+          "说明": "ID of the mechanical device."
+        }
+      ],
+      "return_description": "Rotation axis status.",
+      "error_codes": [
+        {
+          "code": "202",
+          "description": "Not system application."
+        },
+        {
+          "code": "33300001",
+          "description": "Service exception."
+        },
+        {
+          "code": "33300002",
+          "description": "Device not connected."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Register a listener for axis state changes. The status of the rotation axis changes dynamically, which needs to be monitored.",
+      "注释信息": [
+        "@param { 'rotationAxesStatusChange' } type - Event type.",
+        "@param { Callback<RotationAxesStateChangeInfo> } callback - Rotate axis state changes callback.",
+        "@throws { BusinessError } 202 - Not system application.",
+        "@throws { BusinessError } 33300001 - Service exception.",
+        "@syscap SystemCapability.Mechanic.Core",
+        "@systemapi",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "mechanicManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Mechanic.Core",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'rotationAxesStatusChange'",
+          "必填": true,
+          "说明": "Event type."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<RotationAxesStateChangeInfo>",
+          "必填": true,
+          "说明": "Rotate axis state changes callback."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "202",
+          "description": "Not system application."
+        },
+        {
+          "code": "33300001",
+          "description": "Service exception."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unregister a listener for axis state changes.",
+      "注释信息": [
+        "@param { 'rotationAxesStatusChange' } type - Event type.",
+        "@param { Callback<RotationAxesStateChangeInfo> } [callback] - Rotate axis state changes callback.",
+        "@throws { BusinessError } 202 - Not system application.",
+        "@throws { BusinessError } 33300001 - Service exception.",
+        "@syscap SystemCapability.Mechanic.Core",
+        "@systemapi",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "mechanicManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Mechanic.Core",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'rotationAxesStatusChange'",
+          "必填": true,
+          "说明": "Event type."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "Callback<RotationAxesStateChangeInfo> } [callback] - Rotate axis state changes callback."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "202",
+          "description": "Not system application."
+        },
+        {
+          "code": "33300001",
+          "description": "Service exception."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "interface",
+      "名称": "MechInfo",
+      "所属模块": "未知模块",
+      "功能描述": "Mechanical device information.",
+      "注释信息": [
+        "@typedef MechInfo",
+        "@syscap SystemCapability.Mechanic.Core",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "mechanicManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Mechanic.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "property",
+      "名称": "mechId",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "ID of the mechanical device.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.Mechanic.Core",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "MechInfo",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Mechanic.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "property",
+      "名称": "mechDeviceType",
+      "属性类型": "MechDeviceType",
+      "所属模块": "未知模块",
+      "功能描述": "Type of the mechanical device.",
+      "注释信息": [
+        "@type { MechDeviceType }",
+        "@syscap SystemCapability.Mechanic.Core",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "MechInfo",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Mechanic.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "property",
+      "名称": "mechName",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Name of the mechanical device.",
+      "注释信息": [
+        "@type { string }",
+        "@syscap SystemCapability.Mechanic.Core",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "MechInfo",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Mechanic.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    }
+  ]
+}

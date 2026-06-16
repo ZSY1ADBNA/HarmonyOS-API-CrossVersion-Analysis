@@ -1,0 +1,4116 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.BasicServicesKit",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "namespace",
+      "名称": "commonEventManager",
+      "所属模块": "@kit.BasicServicesKit",
+      "功能描述": "The CommonEventManager module provides common event capabilities, including the capabilities to publish, subscribe to, and unsubscribe from common events.",
+      "注释信息": [
+        "@namespace commonEventManager",
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "@kit.BasicServicesKit",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "publish",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Publishes a common event. This API uses an asynchronous callback to return the result.",
+      "注释信息": [
+        "@param { string } event - Name of the common event to publish. For details, see System Common Events.",
+        "@param { AsyncCallback<void> } callback - Callback to execute after the event is published.",
+        "@throws { BusinessError } 1500003 - The common event sending frequency too high.",
+        "@throws { BusinessError } 1500007 - Failed to send the message to the common event service.",
+        "@throws { BusinessError } 1500008 - Failed to initialize the common event service.",
+        "@throws { BusinessError } 1500009 - Failed to obtain system parameters.",
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "commonEventManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [
+        {
+          "名称": "event",
+          "类型": "string",
+          "必填": true,
+          "说明": "Name of the common event to publish. For details, see System Common Events."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "Callback to execute after the event is published."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "1500003",
+          "description": "The common event sending frequency too high."
+        },
+        {
+          "code": "1500007",
+          "description": "Failed to send the message to the common event service."
+        },
+        {
+          "code": "1500008",
+          "description": "Failed to initialize the common event service."
+        },
+        {
+          "code": "1500009",
+          "description": "Failed to obtain system parameters."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "publish",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Publishes a common event. This API uses an asynchronous callback to return the result.",
+      "注释信息": [
+        "@param { string } event - Name of the common event to publish. For details, see System Common Events.",
+        "@param { CommonEventPublishData } options - Attributes of the common event to publish.",
+        "@param { AsyncCallback<void> } callback - Callback used to return the result.",
+        "@throws { BusinessError } 1500003 - The common event sending frequency too high.",
+        "@throws { BusinessError } 1500007 - Failed to send the message to the common event service.",
+        "@throws { BusinessError } 1500008 - Failed to initialize the common event service.",
+        "@throws { BusinessError } 1500009 - Failed to obtain system parameters.",
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "commonEventManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [
+        {
+          "名称": "event",
+          "类型": "string",
+          "必填": true,
+          "说明": "Name of the common event to publish. For details, see System Common Events."
+        },
+        {
+          "名称": "options",
+          "类型": "CommonEventPublishData",
+          "必填": true,
+          "说明": "Attributes of the common event to publish."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "Callback used to return the result."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "1500003",
+          "description": "The common event sending frequency too high."
+        },
+        {
+          "code": "1500007",
+          "description": "Failed to send the message to the common event service."
+        },
+        {
+          "code": "1500008",
+          "description": "Failed to initialize the common event service."
+        },
+        {
+          "code": "1500009",
+          "description": "Failed to obtain system parameters."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "createSubscriber",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Creates a subscriber. This API uses an asynchronous callback to return the result. <br>2. Incorrect parameter types. 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { CommonEventSubscribeInfo } subscribeInfo - Subscriber information.",
+        "@param { AsyncCallback<CommonEventSubscriber> } callback - Callback used to return the result.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "commonEventManager",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [
+        {
+          "名称": "subscribeInfo",
+          "类型": "CommonEventSubscribeInfo",
+          "必填": true,
+          "说明": "Subscriber information."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<CommonEventSubscriber>",
+          "必填": true,
+          "说明": "Callback used to return the result."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "createSubscriber",
+      "返回值": "Promise<CommonEventSubscriber>",
+      "所属模块": "未知模块",
+      "功能描述": "Creates a subscriber. This API uses a promise to return the result. <br>2. Incorrect parameter types. 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { CommonEventSubscribeInfo } subscribeInfo - Subscriber information.",
+        "@returns { Promise<CommonEventSubscriber> } Promise used to return the result.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "commonEventManager",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [
+        {
+          "名称": "subscribeInfo",
+          "类型": "CommonEventSubscribeInfo",
+          "必填": true,
+          "说明": "Subscriber information."
+        }
+      ],
+      "return_description": "Promise used to return the result.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "createSubscriberSync",
+      "返回值": "CommonEventSubscriber",
+      "所属模块": "未知模块",
+      "功能描述": "Creates a subscriber. The API returns the result synchronously. <br>2. Incorrect parameter types. 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { CommonEventSubscribeInfo } subscribeInfo - Subscriber information.",
+        "@returns { CommonEventSubscriber } Promise used to return the subscriber object.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "commonEventManager",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [
+        {
+          "名称": "subscribeInfo",
+          "类型": "CommonEventSubscribeInfo",
+          "必填": true,
+          "说明": "Subscriber information."
+        }
+      ],
+      "return_description": "Promise used to return the subscriber object.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "subscribe",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Subscribes to a common event. This API uses an asynchronous callback to return the result.",
+      "注释信息": [
+        "@param { CommonEventSubscriber } subscriber - Subscriber object.",
+        "@param { AsyncCallback<CommonEventData> } callback - Callback used to return the result.",
+        "@throws { BusinessError } 801 - capability not supported",
+        "@throws { BusinessError } 1500007 - Failed to send the message to the common event service.",
+        "@throws { BusinessError } 1500008 - Failed to initialize the common event service.",
+        "@throws { BusinessError } 1500010 - The count of subscriber exceed system specification.",
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "commonEventManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [
+        {
+          "名称": "subscriber",
+          "类型": "CommonEventSubscriber",
+          "必填": true,
+          "说明": "Subscriber object."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<CommonEventData>",
+          "必填": true,
+          "说明": "Callback used to return the result."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "801",
+          "description": "capability not supported"
+        },
+        {
+          "code": "1500007",
+          "description": "Failed to send the message to the common event service."
+        },
+        {
+          "code": "1500008",
+          "description": "Failed to initialize the common event service."
+        },
+        {
+          "code": "1500010",
+          "description": "The count of subscriber exceed system specification."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "subscribeToEvent",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Subscribes to a common event, and returns the result by promise that resolves with a success or <br> rejects with a failure code.",
+      "注释信息": [
+        "@param { CommonEventSubscriber } subscriber - Indicate the subscriber of the common event.",
+        "@param { Callback<CommonEventData> } callback - The callback function used to receive the CommonEventData object.",
+        "@returns { Promise<void> } A promise that indicates whether the subscription was successful.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 1500007 - Failed to send the message to the common event service.",
+        "@throws { BusinessError } 1500008 - Failed to initialize the common event service.",
+        "@throws { BusinessError } 1500010 - The count of subscriber exceed system specification.",
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "commonEventManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [
+        {
+          "名称": "subscriber",
+          "类型": "CommonEventSubscriber",
+          "必填": true,
+          "说明": "Indicate the subscriber of the common event."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<CommonEventData>",
+          "必填": true,
+          "说明": "The callback function used to receive the CommonEventData object."
+        }
+      ],
+      "return_description": "A promise that indicates whether the subscription was successful.",
+      "error_codes": [
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "1500007",
+          "description": "Failed to send the message to the common event service."
+        },
+        {
+          "code": "1500008",
+          "description": "Failed to initialize the common event service."
+        },
+        {
+          "code": "1500010",
+          "description": "The count of subscriber exceed system specification."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "unsubscribe",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unsubscribes from a common event. This API uses an asynchronous callback to return the result. <br>2. Incorrect parameter types. 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { CommonEventSubscriber } subscriber - Subscriber object.",
+        "@param { AsyncCallback<void> } [callback] - Callback used to return the result.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 801 - capability not supported",
+        "@throws { BusinessError } 1500007 - Failed to send the message to the common event service.",
+        "@throws { BusinessError } 1500008 - Failed to initialize the common event service.",
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "commonEventManager",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [
+        {
+          "名称": "subscriber",
+          "类型": "CommonEventSubscriber",
+          "必填": true,
+          "说明": "Subscriber object."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "AsyncCallback<void> } [callback] - Callback used to return the result."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "801",
+          "description": "capability not supported"
+        },
+        {
+          "code": "1500007",
+          "description": "Failed to send the message to the common event service."
+        },
+        {
+          "code": "1500008",
+          "description": "Failed to initialize the common event service."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "Support",
+      "所属模块": "未知模块",
+      "功能描述": "The event type that the commonEvent supported.",
+      "注释信息": [
+        "@enum { string }",
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "commonEventManager",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_BOOT_COMPLETED",
+      "值": "'usual.event.BOOT_COMPLETED'",
+      "所属模块": "未知模块",
+      "功能描述": "This commonEvent means when the device is booted or system upgrade completed, and only be sent by system. This API can be called only by system applications.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_LOCKED_BOOT_COMPLETED",
+      "值": "'usual.event.LOCKED_BOOT_COMPLETED'",
+      "所属模块": "未知模块",
+      "功能描述": "This commonEvent means when the device finnish booting, but still in the locked state.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_SHUTDOWN",
+      "值": "'usual.event.SHUTDOWN'",
+      "所属模块": "未知模块",
+      "功能描述": "This commonEvent means when the device is shutting down, note: turn off, not sleeping.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_BATTERY_CHANGED",
+      "值": "'usual.event.BATTERY_CHANGED'",
+      "所属模块": "未知模块",
+      "功能描述": "This commonEvent means when the charging state, level and so on about the battery.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_BATTERY_LOW",
+      "值": "'usual.event.BATTERY_LOW'",
+      "所属模块": "未知模块",
+      "功能描述": "This commonEvent means when the device in low battery state..",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_BATTERY_OKAY",
+      "值": "'usual.event.BATTERY_OKAY'",
+      "所属模块": "未知模块",
+      "功能描述": "This commonEvent means when the battery level is an ok state.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_POWER_CONNECTED",
+      "值": "'usual.event.POWER_CONNECTED'",
+      "所属模块": "未知模块",
+      "功能描述": "This commonEvent means when the other power is connected to the device.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_POWER_DISCONNECTED",
+      "值": "'usual.event.POWER_DISCONNECTED'",
+      "所属模块": "未知模块",
+      "功能描述": "This commonEvent means when the other power is removed from the device.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_SCREEN_OFF",
+      "值": "'usual.event.SCREEN_OFF'",
+      "所属模块": "未知模块",
+      "功能描述": "This commonEvent means when the screen is turned off.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_SCREEN_ON",
+      "值": "'usual.event.SCREEN_ON'",
+      "所属模块": "未知模块",
+      "功能描述": "This commonEvent means when the device is awakened and interactive.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_THERMAL_LEVEL_CHANGED",
+      "值": "'usual.event.THERMAL_LEVEL_CHANGED'",
+      "所属模块": "未知模块",
+      "功能描述": "This commonEvent means when the thermal state level change",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_ENTER_FORCE_SLEEP",
+      "值": "'usual.event.ENTER_FORCE_SLEEP'",
+      "所属模块": "未知模块",
+      "功能描述": "This commonEvent means when the device is about to enter the force sleep mode",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_EXIT_FORCE_SLEEP",
+      "值": "'usual.event.EXIT_FORCE_SLEEP'",
+      "所属模块": "未知模块",
+      "功能描述": "This commonEvent means when the device exits the force sleep mode",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_ENTER_HIBERNATE",
+      "值": "'usual.event.ENTER_HIBERNATE'",
+      "所属模块": "未知模块",
+      "功能描述": "This commonEvent means when the device is about to enter the hibernate mode",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "15",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_EXIT_HIBERNATE",
+      "值": "'usual.event.EXIT_HIBERNATE'",
+      "所属模块": "未知模块",
+      "功能描述": "This commonEvent means when the device exits the hibernate mode",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "15",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_USER_PRESENT",
+      "值": "'usual.event.USER_PRESENT'",
+      "所属模块": "未知模块",
+      "功能描述": "This commonEvent means when the user is present after the device is awakened.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9",
+        "@deprecated since 10"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_TIME_TICK",
+      "值": "'usual.event.TIME_TICK'",
+      "所属模块": "未知模块",
+      "功能描述": "This commonEvent means when the current time is changed.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_TIME_CHANGED",
+      "值": "'usual.event.TIME_CHANGED'",
+      "所属模块": "未知模块",
+      "功能描述": "This commonEvent means when the time is set.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_DATE_CHANGED",
+      "值": "'usual.event.DATE_CHANGED'",
+      "所属模块": "未知模块",
+      "功能描述": "This commonEvent means when the current date is changed.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_TIMEZONE_CHANGED",
+      "值": "'usual.event.TIMEZONE_CHANGED'",
+      "所属模块": "未知模块",
+      "功能描述": "This commonEvent means when the time zone is changed.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_CLOSE_SYSTEM_DIALOGS",
+      "值": "'usual.event.CLOSE_SYSTEM_DIALOGS'",
+      "所属模块": "未知模块",
+      "功能描述": "This commonEvent means when the dialog to dismiss.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_PACKAGE_ADDED",
+      "值": "'usual.event.PACKAGE_ADDED'",
+      "所属模块": "未知模块",
+      "功能描述": "This commonEvent means when a new application package is installed on the device.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_PACKAGE_REPLACED",
+      "值": "'usual.event.PACKAGE_REPLACED'",
+      "所属模块": "未知模块",
+      "功能描述": "This commonEvent means when a new version application package is installed on the device and replace the old version.the data contains the name of the package.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_MY_PACKAGE_REPLACED",
+      "值": "'usual.event.MY_PACKAGE_REPLACED'",
+      "所属模块": "未知模块",
+      "功能描述": "This commonEvent means when a new version application package is installed on the device and replace the old version, it does not contain additional data and only be sent to the replaced application.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_PACKAGE_REMOVED",
+      "值": "'usual.event.PACKAGE_REMOVED'",
+      "所属模块": "未知模块",
+      "功能描述": "This commonEvent means when an existing application package is removed from the device.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_BUNDLE_REMOVED",
+      "值": "'usual.event.BUNDLE_REMOVED'",
+      "所属模块": "未知模块",
+      "功能描述": "This commonEvent means when an existing application package is removed from the device.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_PACKAGE_FULLY_REMOVED",
+      "值": "'usual.event.PACKAGE_FULLY_REMOVED'",
+      "所属模块": "未知模块",
+      "功能描述": "This commonEvent means when an existing application package is completely removed from the device.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_PACKAGE_CHANGED",
+      "值": "'usual.event.PACKAGE_CHANGED'",
+      "所属模块": "未知模块",
+      "功能描述": "This commonEvent means when an existing application package has been changed.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_PACKAGE_RESTARTED",
+      "值": "'usual.event.PACKAGE_RESTARTED'",
+      "所属模块": "未知模块",
+      "功能描述": "This commonEvent means the user has restarted a package, and all of its processes have been killed.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_PACKAGE_DATA_CLEARED",
+      "值": "'usual.event.PACKAGE_DATA_CLEARED'",
+      "所属模块": "未知模块",
+      "功能描述": "This commonEvent means the user has cleared the package data.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_PACKAGE_CACHE_CLEARED",
+      "值": "'usual.event.PACKAGE_CACHE_CLEARED'",
+      "所属模块": "未知模块",
+      "功能描述": "This commonEvent means the user has cleared the package cache.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_PACKAGES_SUSPENDED",
+      "值": "'usual.event.PACKAGES_SUSPENDED'",
+      "所属模块": "未知模块",
+      "功能描述": "This commonEvent means the packages have been suspended.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_PACKAGES_UNSUSPENDED",
+      "值": "'usual.event.PACKAGES_UNSUSPENDED'",
+      "所属模块": "未知模块",
+      "功能描述": "This commonEvent means the packages have been un-suspended.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_MY_PACKAGE_SUSPENDED",
+      "值": "'usual.event.MY_PACKAGE_SUSPENDED'",
+      "所属模块": "未知模块",
+      "功能描述": "This commonEvent Sent to a package that has been suspended by the system.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_MY_PACKAGE_UNSUSPENDED",
+      "值": "'usual.event.MY_PACKAGE_UNSUSPENDED'",
+      "所属模块": "未知模块",
+      "功能描述": "Sent to a package that has been un-suspended.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_UID_REMOVED",
+      "值": "'usual.event.UID_REMOVED'",
+      "所属模块": "未知模块",
+      "功能描述": "A user id has been removed from the system.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_PACKAGE_FIRST_LAUNCH",
+      "值": "'usual.event.PACKAGE_FIRST_LAUNCH'",
+      "所属模块": "未知模块",
+      "功能描述": "The application is first launched after installed.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_PACKAGE_NEEDS_VERIFICATION",
+      "值": "'usual.event.PACKAGE_NEEDS_VERIFICATION'",
+      "所属模块": "未知模块",
+      "功能描述": "Sent by system package verifier when a package need to be verified.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_PACKAGE_VERIFIED",
+      "值": "'usual.event.PACKAGE_VERIFIED'",
+      "所属模块": "未知模块",
+      "功能描述": "Sent by system package verifier when a package is verified.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_EXTERNAL_APPLICATIONS_AVAILABLE",
+      "值": "'usual.event.EXTERNAL_APPLICATIONS_AVAILABLE'",
+      "所属模块": "未知模块",
+      "功能描述": "Resources for a set of packages (which were previously unavailable) are currently available since the media on which they exist is available.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_EXTERNAL_APPLICATIONS_UNAVAILABLE",
+      "值": "'usual.event.EXTERNAL_APPLICATIONS_UNAVAILABLE'",
+      "所属模块": "未知模块",
+      "功能描述": "Resources for a set of packages are currently unavailable since the media on which they exist is unavailable.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_CONFIGURATION_CHANGED",
+      "值": "'usual.event.CONFIGURATION_CHANGED'",
+      "所属模块": "未知模块",
+      "功能描述": "The device configuration such as orientation,locale have been changed.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_LOCALE_CHANGED",
+      "值": "'usual.event.LOCALE_CHANGED'",
+      "所属模块": "未知模块",
+      "功能描述": "The current device's locale has changed.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_MANAGE_PACKAGE_STORAGE",
+      "值": "'usual.event.MANAGE_PACKAGE_STORAGE'",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates low memory condition notification acknowledged by user and package management should be started.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_DRIVE_MODE",
+      "值": "'common.event.DRIVE_MODE'",
+      "所属模块": "未知模块",
+      "功能描述": "Send by the smart function when the system in drive mode.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_HOME_MODE",
+      "值": "'common.event.HOME_MODE'",
+      "所属模块": "未知模块",
+      "功能描述": "Send by the smart function when the system in home mode.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_OFFICE_MODE",
+      "值": "'common.event.OFFICE_MODE'",
+      "所属模块": "未知模块",
+      "功能描述": "Send by the smart function when the system in office mode.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_USER_STARTED",
+      "值": "'usual.event.USER_STARTED'",
+      "所属模块": "未知模块",
+      "功能描述": "Remind new user of preparing to start.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_USER_BACKGROUND",
+      "值": "'usual.event.USER_BACKGROUND'",
+      "所属模块": "未知模块",
+      "功能描述": "Remind previous user of that the service has been the background.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_USER_FOREGROUND",
+      "值": "'usual.event.USER_FOREGROUND'",
+      "所属模块": "未知模块",
+      "功能描述": "Remind new user of that the service has been the foreground.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_USER_SWITCHED",
+      "值": "'usual.event.USER_SWITCHED'",
+      "所属模块": "未知模块",
+      "功能描述": "Remind new user of that the service has been switched to new user. This API can be called only by system applications.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_USER_STARTING",
+      "值": "'usual.event.USER_STARTING'",
+      "所属模块": "未知模块",
+      "功能描述": "Remind new user of that the service has been starting. This API can be called only by system applications.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_USER_UNLOCKED",
+      "值": "'usual.event.USER_UNLOCKED'",
+      "所属模块": "未知模块",
+      "功能描述": "Remind new user of that the service has been unlocked.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_USER_STOPPING",
+      "值": "'usual.event.USER_STOPPING'",
+      "所属模块": "未知模块",
+      "功能描述": "Remind new user of that the service has been stopping. This API can be called only by system applications.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_USER_STOPPED",
+      "值": "'usual.event.USER_STOPPED'",
+      "所属模块": "未知模块",
+      "功能描述": "Remind new user of that the service has stopped.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_DISTRIBUTED_ACCOUNT_LOGIN",
+      "值": "'common.event.DISTRIBUTED_ACCOUNT_LOGIN'",
+      "所属模块": "未知模块",
+      "功能描述": "Distributed account login successfully.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_DISTRIBUTED_ACCOUNT_LOGOUT",
+      "值": "'common.event.DISTRIBUTED_ACCOUNT_LOGOUT'",
+      "所属模块": "未知模块",
+      "功能描述": "Distributed account logout successfully.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_DISTRIBUTED_ACCOUNT_TOKEN_INVALID",
+      "值": "'common.event.DISTRIBUTED_ACCOUNT_TOKEN_INVALID'",
+      "所属模块": "未知模块",
+      "功能描述": "Distributed account is invalid.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_DISTRIBUTED_ACCOUNT_LOGOFF",
+      "值": "'common.event.DISTRIBUTED_ACCOUNT_LOGOFF'",
+      "所属模块": "未知模块",
+      "功能描述": "Distributed account logs off.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_WIFI_POWER_STATE",
+      "值": "'usual.event.wifi.POWER_STATE'",
+      "所属模块": "未知模块",
+      "功能描述": "WIFI state.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_WIFI_SCAN_FINISHED",
+      "值": "'usual.event.wifi.SCAN_FINISHED'",
+      "所属模块": "未知模块",
+      "功能描述": "WIFI scan results.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_WIFI_RSSI_VALUE",
+      "值": "'usual.event.wifi.RSSI_VALUE'",
+      "所属模块": "未知模块",
+      "功能描述": "WIFI RSSI change.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_WIFI_CONN_STATE",
+      "值": "'usual.event.wifi.CONN_STATE'",
+      "所属模块": "未知模块",
+      "功能描述": "WIFI connect state.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_WIFI_HOTSPOT_STATE",
+      "值": "'usual.event.wifi.HOTSPOT_STATE'",
+      "所属模块": "未知模块",
+      "功能描述": "WIFI hotspot state.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_WIFI_AP_STA_JOIN",
+      "值": "'usual.event.wifi.WIFI_HS_STA_JOIN'",
+      "所属模块": "未知模块",
+      "功能描述": "WIFI ap sta join.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_WIFI_AP_STA_LEAVE",
+      "值": "'usual.event.wifi.WIFI_HS_STA_LEAVE'",
+      "所属模块": "未知模块",
+      "功能描述": "WIFI ap sta join.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_WIFI_MPLINK_STATE_CHANGE",
+      "值": "'usual.event.wifi.mplink.STATE_CHANGE'",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates Wi-Fi MpLink state notification acknowledged by binding or unbinding MpLink.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_WIFI_P2P_CONN_STATE",
+      "值": "'usual.event.wifi.p2p.CONN_STATE_CHANGE'",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates Wi-Fi P2P connection state notification acknowledged by connecting or disconnected P2P.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_WIFI_P2P_STATE_CHANGED",
+      "值": "'usual.event.wifi.p2p.STATE_CHANGE'",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the Wi-Fi P2P state change.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_WIFI_P2P_PEERS_STATE_CHANGED",
+      "值": "'usual.event.wifi.p2p.DEVICES_CHANGE'",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the Wi-Fi P2P peers state change.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_WIFI_P2P_PEERS_DISCOVERY_STATE_CHANGED",
+      "值": "'usual.event.wifi.p2p.PEER_DISCOVERY_STATE_CHANGE'",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the Wi-Fi P2P discovery state change.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_WIFI_P2P_CURRENT_DEVICE_STATE_CHANGED",
+      "值": "'usual.event.wifi.p2p.CURRENT_DEVICE_CHANGE'",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the Wi-Fi P2P current device state change.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_WIFI_P2P_GROUP_STATE_CHANGED",
+      "值": "'usual.event.wifi.p2p.GROUP_STATE_CHANGED'",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the Wi-Fi P2P group info is changed.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_BLUETOOTH_HANDSFREE_AG_CONNECT_STATE_UPDATE",
+      "值": "'usual.event.bluetooth.handsfree.ag.CONNECT_STATE_UPDATE'",
+      "所属模块": "未知模块",
+      "功能描述": "Bluetooth.handsfree.ag.connect.state.update.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9",
+        "@deprecated since 20",
+        "@useinstead commonEventManager.Support#COMMON_EVENT_BLUETOOTH_HANDSFREE_AG_CONNECT_STATE_CHANGE"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_BLUETOOTH_HANDSFREE_AG_CURRENT_DEVICE_UPDATE",
+      "值": "'usual.event.bluetooth.handsfree.ag.CURRENT_DEVICE_UPDATE'",
+      "所属模块": "未知模块",
+      "功能描述": "Bluetooth.handsfree.ag.current.device.update.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9",
+        "@deprecated since 20"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_BLUETOOTH_HANDSFREE_AG_AUDIO_STATE_UPDATE",
+      "值": "'usual.event.bluetooth.handsfree.ag.AUDIO_STATE_UPDATE'",
+      "所属模块": "未知模块",
+      "功能描述": "Bluetooth.handsfree.ag.audio.state.update.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9",
+        "@deprecated since 20"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_BLUETOOTH_A2DPSOURCE_CONNECT_STATE_UPDATE",
+      "值": "'usual.event.bluetooth.a2dpsource.CONNECT_STATE_UPDATE'",
+      "所属模块": "未知模块",
+      "功能描述": "Bluetooth.a2dpsource.connect.state.update.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9",
+        "@deprecated since 20",
+        "@useinstead commonEventManager.Support#COMMON_EVENT_BLUETOOTH_A2DPSOURCE_CONNECT_STATE_CHANGE"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_BLUETOOTH_A2DPSOURCE_CURRENT_DEVICE_UPDATE",
+      "值": "'usual.event.bluetooth.a2dpsource.CURRENT_DEVICE_UPDATE'",
+      "所属模块": "未知模块",
+      "功能描述": "Bluetooth.a2dpsource.current.device.update.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9",
+        "@deprecated since 20"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_BLUETOOTH_A2DPSOURCE_PLAYING_STATE_UPDATE",
+      "值": "'usual.event.bluetooth.a2dpsource.PLAYING_STATE_UPDATE'",
+      "所属模块": "未知模块",
+      "功能描述": "Bluetooth.a2dpsource.playing.state.update.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9",
+        "@deprecated since 20"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_BLUETOOTH_A2DPSOURCE_AVRCP_CONNECT_STATE_UPDATE",
+      "值": "'usual.event.bluetooth.a2dpsource.AVRCP_CONNECT_STATE_UPDATE'",
+      "所属模块": "未知模块",
+      "功能描述": "Bluetooth.a2dpsource.avrcp.connect.state.update.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9",
+        "@deprecated since 20",
+        "@useinstead commonEventManager.Support#COMMON_EVENT_BLUETOOTH_A2DPSOURCE_AVRCP_CONNECT_STATE_CHANGE"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_BLUETOOTH_A2DPSOURCE_CODEC_VALUE_UPDATE",
+      "值": "'usual.event.bluetooth.a2dpsource.CODEC_VALUE_UPDATE'",
+      "所属模块": "未知模块",
+      "功能描述": "Bluetooth.a2dpsource.codec.value.update.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9",
+        "@deprecated since 20",
+        "@useinstead commonEventManager.Support#COMMON_EVENT_BLUETOOTH_A2DPSOURCE_CODEC_VALUE_CHANGE"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_BLUETOOTH_REMOTEDEVICE_DISCOVERED",
+      "值": "'usual.event.bluetooth.remotedevice.DISCOVERED'",
+      "所属模块": "未知模块",
+      "功能描述": "Bluetooth.remotedevice.discovered.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9",
+        "@deprecated since 20"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_BLUETOOTH_REMOTEDEVICE_CLASS_VALUE_UPDATE",
+      "值": "'usual.event.bluetooth.remotedevice.CLASS_VALUE_UPDATE'",
+      "所属模块": "未知模块",
+      "功能描述": "Bluetooth.remotedevice.class.value.update.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9",
+        "@deprecated since 20"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_BLUETOOTH_REMOTEDEVICE_ACL_CONNECTED",
+      "值": "'usual.event.bluetooth.remotedevice.ACL_CONNECTED'",
+      "所属模块": "未知模块",
+      "功能描述": "Bluetooth.remotedevice.acl.connected.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9",
+        "@deprecated since 20",
+        "@useinstead commonEventManager.Support#COMMON_EVENT_BLUETOOTH_REMOTEDEVICE_ACL_STATE_CHANGE"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_BLUETOOTH_REMOTEDEVICE_ACL_DISCONNECTED",
+      "值": "'usual.event.bluetooth.remotedevice.ACL_DISCONNECTED'",
+      "所属模块": "未知模块",
+      "功能描述": "Bluetooth.remotedevice.acl.disconnected.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9",
+        "@deprecated since 20",
+        "@useinstead commonEventManager.Support#COMMON_EVENT_BLUETOOTH_REMOTEDEVICE_ACL_STATE_CHANGE"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_BLUETOOTH_REMOTEDEVICE_NAME_UPDATE",
+      "值": "'usual.event.bluetooth.remotedevice.NAME_UPDATE'",
+      "所属模块": "未知模块",
+      "功能描述": "Bluetooth.remotedevice.name.update.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9",
+        "@deprecated since 20"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_BLUETOOTH_REMOTEDEVICE_PAIR_STATE",
+      "值": "'usual.event.bluetooth.remotedevice.PAIR_STATE'",
+      "所属模块": "未知模块",
+      "功能描述": "Bluetooth.remotedevice.pair.state.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9",
+        "@deprecated since 20",
+        "@useinstead commonEventManager.Support#COMMON_EVENT_BLUETOOTH_REMOTEDEVICE_PAIR_STATE_CHANGE"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_BLUETOOTH_REMOTEDEVICE_BATTERY_VALUE_UPDATE",
+      "值": "'usual.event.bluetooth.remotedevice.BATTERY_VALUE_UPDATE'",
+      "所属模块": "未知模块",
+      "功能描述": "Bluetooth.remotedevice.battery.value.update.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9",
+        "@deprecated since 20"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_BLUETOOTH_REMOTEDEVICE_SDP_RESULT",
+      "值": "'usual.event.bluetooth.remotedevice.SDP_RESULT'",
+      "所属模块": "未知模块",
+      "功能描述": "Bluetooth.remotedevice.sdp.result.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9",
+        "@deprecated since 20"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_BLUETOOTH_REMOTEDEVICE_UUID_VALUE",
+      "值": "'usual.event.bluetooth.remotedevice.UUID_VALUE'",
+      "所属模块": "未知模块",
+      "功能描述": "Bluetooth.remotedevice.uuid.value.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9",
+        "@deprecated since 20"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_BLUETOOTH_REMOTEDEVICE_PAIRING_REQ",
+      "值": "'usual.event.bluetooth.remotedevice.PAIRING_REQ'",
+      "所属模块": "未知模块",
+      "功能描述": "Bluetooth.remotedevice.pairing.req.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9",
+        "@deprecated since 20"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_BLUETOOTH_REMOTEDEVICE_PAIRING_CANCEL",
+      "值": "'usual.event.bluetooth.remotedevice.PAIRING_CANCEL'",
+      "所属模块": "未知模块",
+      "功能描述": "Bluetooth.remotedevice.pairing.cancel.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9",
+        "@deprecated since 20"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_BLUETOOTH_REMOTEDEVICE_CONNECT_REQ",
+      "值": "'usual.event.bluetooth.remotedevice.CONNECT_REQ'",
+      "所属模块": "未知模块",
+      "功能描述": "Bluetooth.remotedevice.connect.req.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9",
+        "@deprecated since 20"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_BLUETOOTH_REMOTEDEVICE_CONNECT_REPLY",
+      "值": "'usual.event.bluetooth.remotedevice.CONNECT_REPLY'",
+      "所属模块": "未知模块",
+      "功能描述": "Bluetooth.remotedevice.connect.reply.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9",
+        "@deprecated since 20"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_BLUETOOTH_REMOTEDEVICE_CONNECT_CANCEL",
+      "值": "'usual.event.bluetooth.remotedevice.CONNECT_CANCEL'",
+      "所属模块": "未知模块",
+      "功能描述": "Bluetooth.remotedevice.connect.cancel.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9",
+        "@deprecated since 20"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_BLUETOOTH_HANDSFREEUNIT_CONNECT_STATE_UPDATE",
+      "值": "'usual.event.bluetooth.handsfreeunit.CONNECT_STATE_UPDATE'",
+      "所属模块": "未知模块",
+      "功能描述": "Bluetooth.handsfreeunit.connect.state.update.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9",
+        "@deprecated since 20"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_BLUETOOTH_HANDSFREEUNIT_AUDIO_STATE_UPDATE",
+      "值": "'usual.event.bluetooth.handsfreeunit.AUDIO_STATE_UPDATE'",
+      "所属模块": "未知模块",
+      "功能描述": "Bluetooth.handsfreeunit.audio.state.update.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9",
+        "@deprecated since 20"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_BLUETOOTH_HANDSFREEUNIT_AG_COMMON_EVENT",
+      "值": "'usual.event.bluetooth.handsfreeunit.AG_COMMON_EVENT'",
+      "所属模块": "未知模块",
+      "功能描述": "Bluetooth.handsfreeunit.ag.common.event.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9",
+        "@deprecated since 20"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_BLUETOOTH_HANDSFREEUNIT_AG_CALL_STATE_UPDATE",
+      "值": "'usual.event.bluetooth.handsfreeunit.AG_CALL_STATE_UPDATE'",
+      "所属模块": "未知模块",
+      "功能描述": "Bluetooth.handsfreeunit.ag.call.state.update.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9",
+        "@deprecated since 20"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_BLUETOOTH_HOST_STATE_UPDATE",
+      "值": "'usual.event.bluetooth.host.STATE_UPDATE'",
+      "所属模块": "未知模块",
+      "功能描述": "Bluetooth.host.state.update.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9",
+        "@deprecated since 20"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_BLUETOOTH_HOST_REQ_DISCOVERABLE",
+      "值": "'usual.event.bluetooth.host.REQ_DISCOVERABLE'",
+      "所属模块": "未知模块",
+      "功能描述": "Bluetooth.host.req.discoverable.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9",
+        "@deprecated since 20"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_BLUETOOTH_HOST_REQ_ENABLE",
+      "值": "'usual.event.bluetooth.host.REQ_ENABLE'",
+      "所属模块": "未知模块",
+      "功能描述": "Bluetooth.host.req.enable.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9",
+        "@deprecated since 20"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_BLUETOOTH_HOST_REQ_DISABLE",
+      "值": "'usual.event.bluetooth.host.REQ_DISABLE'",
+      "所属模块": "未知模块",
+      "功能描述": "Bluetooth.host.req.disable.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9",
+        "@deprecated since 20"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_BLUETOOTH_HOST_SCAN_MODE_UPDATE",
+      "值": "'usual.event.bluetooth.host.SCAN_MODE_UPDATE'",
+      "所属模块": "未知模块",
+      "功能描述": "Bluetooth.host.scan.mode.update.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9",
+        "@deprecated since 20"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_BLUETOOTH_HOST_SCAN_MODE_CHANGE",
+      "值": "'usual.event.bluetooth.host.SCAN_MODE_CHANGE'",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the action of a common event that bluetooth scan mode change. To subscribe to this protected common event, your application must have the ohos.permission.ACCESS_BLUETOOTH",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_BLUETOOTH_HOST_DISCOVERY_STARTED",
+      "值": "'usual.event.bluetooth.host.DISCOVERY_STARTED'",
+      "所属模块": "未知模块",
+      "功能描述": "Bluetooth.host.discovery.stated.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9",
+        "@deprecated since 20"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_BLUETOOTH_HOST_DISCOVERY_FINISHED",
+      "值": "'usual.event.bluetooth.host.DISCOVERY_FINISHED'",
+      "所属模块": "未知模块",
+      "功能描述": "Bluetooth.host.discovery.finished.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9",
+        "@deprecated since 20"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_BLUETOOTH_HOST_NAME_UPDATE",
+      "值": "'usual.event.bluetooth.host.NAME_UPDATE'",
+      "所属模块": "未知模块",
+      "功能描述": "Bluetooth.host.name.update.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9",
+        "@deprecated since 20"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_BLUETOOTH_A2DPSINK_CONNECT_STATE_UPDATE",
+      "值": "'usual.event.bluetooth.a2dpsink.CONNECT_STATE_UPDATE'",
+      "所属模块": "未知模块",
+      "功能描述": "Bluetooth.a2dp.connect.state.update.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9",
+        "@deprecated since 20"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_BLUETOOTH_A2DPSINK_PLAYING_STATE_UPDATE",
+      "值": "'usual.event.bluetooth.a2dpsink.PLAYING_STATE_UPDATE'",
+      "所属模块": "未知模块",
+      "功能描述": "Bluetooth.a2dp.playing.state.update.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9",
+        "@deprecated since 20"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_BLUETOOTH_A2DPSINK_AUDIO_STATE_UPDATE",
+      "值": "'usual.event.bluetooth.a2dpsink.AUDIO_STATE_UPDATE'",
+      "所属模块": "未知模块",
+      "功能描述": "Bluetooth.a2dp.audio.state.update.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9",
+        "@deprecated since 20"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_NFC_ACTION_ADAPTER_STATE_CHANGED",
+      "值": "'usual.event.nfc.action.ADAPTER_STATE_CHANGED'",
+      "所属模块": "未知模块",
+      "功能描述": "Nfc state change.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_NFC_ACTION_RF_FIELD_ON_DETECTED",
+      "值": "'usual.event.nfc.action.RF_FIELD_ON_DETECTED'",
+      "所属模块": "未知模块",
+      "功能描述": "Nfc field on detected.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_NFC_ACTION_RF_FIELD_OFF_DETECTED",
+      "值": "'usual.event.nfc.action.RF_FIELD_OFF_DETECTED'",
+      "所属模块": "未知模块",
+      "功能描述": "Nfc field off detected.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_DISCHARGING",
+      "值": "'usual.event.DISCHARGING'",
+      "所属模块": "未知模块",
+      "功能描述": "Sent when stop charging battery.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_CHARGING",
+      "值": "'usual.event.CHARGING'",
+      "所属模块": "未知模块",
+      "功能描述": "Sent when start charging battery.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_DEVICE_IDLE_MODE_CHANGED",
+      "值": "'usual.event.DEVICE_IDLE_MODE_CHANGED'",
+      "所属模块": "未知模块",
+      "功能描述": "Sent when device's idle mode changed",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_CHARGE_IDLE_MODE_CHANGED",
+      "值": "'usual.event.CHARGE_IDLE_MODE_CHANGED'",
+      "所属模块": "未知模块",
+      "功能描述": "Sent when device's charge idle mode changed.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_POWER_SAVE_MODE_CHANGED",
+      "值": "'usual.event.POWER_SAVE_MODE_CHANGED'",
+      "所属模块": "未知模块",
+      "功能描述": "Sent when device's power save mode changed",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_USER_ADDED",
+      "值": "'usual.event.USER_ADDED'",
+      "所属模块": "未知模块",
+      "功能描述": "User added. This API can be called only by system applications.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_USER_REMOVED",
+      "值": "'usual.event.USER_REMOVED'",
+      "所属模块": "未知模块",
+      "功能描述": "User removed. This API can be called only by system applications.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_ABILITY_ADDED",
+      "值": "'common.event.ABILITY_ADDED'",
+      "所属模块": "未知模块",
+      "功能描述": "Sent when ability is added.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_ABILITY_REMOVED",
+      "值": "'common.event.ABILITY_REMOVED'",
+      "所属模块": "未知模块",
+      "功能描述": "Sent when ability is removed.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_ABILITY_UPDATED",
+      "值": "'common.event.ABILITY_UPDATED'",
+      "所属模块": "未知模块",
+      "功能描述": "Sent when ability is updated.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_LOCATION_MODE_STATE_CHANGED",
+      "值": "'usual.event.location.MODE_STATE_CHANGED'",
+      "所属模块": "未知模块",
+      "功能描述": "Gps mode state changed.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_IVI_SLEEP",
+      "值": "'common.event.IVI_SLEEP'",
+      "所属模块": "未知模块",
+      "功能描述": "The ivi is about to go into sleep state when the ivi is turned off power. This is a protected common event that can only be sent by system.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_IVI_PAUSE",
+      "值": "'common.event.IVI_PAUSE'",
+      "所属模块": "未知模块",
+      "功能描述": "The ivi is slept and notify the app stop playing. This is a protected common event that can only be sent by system.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_IVI_STANDBY",
+      "值": "'common.event.IVI_STANDBY'",
+      "所属模块": "未知模块",
+      "功能描述": "The ivi is standby and notify the app stop playing. This is a protected common event that can only be sent by system.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_IVI_LASTMODE_SAVE",
+      "值": "'common.event.IVI_LASTMODE_SAVE'",
+      "所属模块": "未知模块",
+      "功能描述": "The app stop playing and save state. This is a protected common event that can only be sent by system.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_IVI_VOLTAGE_ABNORMAL",
+      "值": "'common.event.IVI_VOLTAGE_ABNORMAL'",
+      "所属模块": "未知模块",
+      "功能描述": "The ivi is voltage abnormal. This is a protected common event that can only be sent by system.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_IVI_HIGH_TEMPERATURE",
+      "值": "'common.event.IVI_HIGH_TEMPERATURE'",
+      "所属模块": "未知模块",
+      "功能描述": "The ivi temperature is too high. This is a protected common event that can only be sent by system.this common event will be delete later, please use COMMON_EVENT_IVI_TEMPERATURE_ABNORMAL.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_IVI_EXTREME_TEMPERATURE",
+      "值": "'common.event.IVI_EXTREME_TEMPERATURE'",
+      "所属模块": "未知模块",
+      "功能描述": "The ivi temperature is extreme high. This is a protected common event that can only be sent by system.this common event will be delete later, please use COMMON_EVENT_IVI_TEMPERATURE_ABNORMAL.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_IVI_TEMPERATURE_ABNORMAL",
+      "值": "'common.event.IVI_TEMPERATURE_ABNORMAL'",
+      "所属模块": "未知模块",
+      "功能描述": "The ivi temperature is abnormal. This is a protected common event that can only be sent by system.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_IVI_VOLTAGE_RECOVERY",
+      "值": "'common.event.IVI_VOLTAGE_RECOVERY'",
+      "所属模块": "未知模块",
+      "功能描述": "The ivi voltage is recovery. This is a protected common event that can only be sent by system.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_IVI_TEMPERATURE_RECOVERY",
+      "值": "'common.event.IVI_TEMPERATURE_RECOVERY'",
+      "所属模块": "未知模块",
+      "功能描述": "The ivi temperature is recovery. This is a protected common event that can only be sent by system.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_IVI_ACTIVE",
+      "值": "'common.event.IVI_ACTIVE'",
+      "所属模块": "未知模块",
+      "功能描述": "The battery service is active. This is a protected common event that can only be sent by system.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_USB_STATE",
+      "值": "'usual.event.hardware.usb.action.USB_STATE'",
+      "所属模块": "未知模块",
+      "功能描述": "The usb state change events. This is a protected common event that can only be sent by system.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_USB_PORT_CHANGED",
+      "值": "'usual.event.hardware.usb.action.USB_PORT_CHANGED'",
+      "所属模块": "未知模块",
+      "功能描述": "The usb port changed. This is a protected common event that can only be sent by system.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_USB_DEVICE_ATTACHED",
+      "值": "'usual.event.hardware.usb.action.USB_DEVICE_ATTACHED'",
+      "所属模块": "未知模块",
+      "功能描述": "The usb device attached. This is a protected common event that can only be sent by system.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_USB_DEVICE_DETACHED",
+      "值": "'usual.event.hardware.usb.action.USB_DEVICE_DETACHED'",
+      "所属模块": "未知模块",
+      "功能描述": "The usb device detached. This is a protected common event that can only be sent by system.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_USB_ACCESSORY_ATTACHED",
+      "值": "'usual.event.hardware.usb.action.USB_ACCESSORY_ATTACHED'",
+      "所属模块": "未知模块",
+      "功能描述": "The usb accessory attached. This is a protected common event that can only be sent by system.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_USB_ACCESSORY_DETACHED",
+      "值": "'usual.event.hardware.usb.action.USB_ACCESSORY_DETACHED'",
+      "所属模块": "未知模块",
+      "功能描述": "The usb accessory detached. This is a protected common event that can only be sent by system.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_DISK_REMOVED",
+      "值": "'usual.event.data.DISK_REMOVED'",
+      "所属模块": "未知模块",
+      "功能描述": "The external storage was removed. This is a protected common event that can only be sent by system.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_DISK_UNMOUNTED",
+      "值": "'usual.event.data.DISK_UNMOUNTED'",
+      "所属模块": "未知模块",
+      "功能描述": "The external storage was unmounted. This is a protected common event that can only be sent by system.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_DISK_MOUNTED",
+      "值": "'usual.event.data.DISK_MOUNTED'",
+      "所属模块": "未知模块",
+      "功能描述": "The external storage was mounted. This is a protected common event that can only be sent by system.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_DISK_BAD_REMOVAL",
+      "值": "'usual.event.data.DISK_BAD_REMOVAL'",
+      "所属模块": "未知模块",
+      "功能描述": "The external storage was bad removal. This is a protected common event that can only be sent by system.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_DISK_UNMOUNTABLE",
+      "值": "'usual.event.data.DISK_UNMOUNTABLE'",
+      "所属模块": "未知模块",
+      "功能描述": "The external storage was unmountable. This is a protected common event that can only be sent by system.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_DISK_EJECT",
+      "值": "'usual.event.data.DISK_EJECT'",
+      "所属模块": "未知模块",
+      "功能描述": "The external storage was eject. This is a protected common event that can only be sent by system.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_VOLUME_REMOVED",
+      "值": "'usual.event.data.VOLUME_REMOVED'",
+      "所属模块": "未知模块",
+      "功能描述": "The external storage was removed. This is a protected common event that can only be sent by system. This API can be called only by system applications.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_VOLUME_UNMOUNTED",
+      "值": "'usual.event.data.VOLUME_UNMOUNTED'",
+      "所属模块": "未知模块",
+      "功能描述": "The external storage was unmounted. This is a protected common event that can only be sent by system. This API can be called only by system applications.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_VOLUME_MOUNTED",
+      "值": "'usual.event.data.VOLUME_MOUNTED'",
+      "所属模块": "未知模块",
+      "功能描述": "The external storage was mounted. This is a protected common event that can only be sent by system. This API can be called only by system applications.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_VOLUME_BAD_REMOVAL",
+      "值": "'usual.event.data.VOLUME_BAD_REMOVAL'",
+      "所属模块": "未知模块",
+      "功能描述": "The external storage was bad removal. This is a protected common event that can only be sent by system. This API can be called only by system applications.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_VOLUME_EJECT",
+      "值": "'usual.event.data.VOLUME_EJECT'",
+      "所属模块": "未知模块",
+      "功能描述": "The external storage was eject. This is a protected common event that can only be sent by system. This API can be called only by system applications.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_VISIBLE_ACCOUNTS_UPDATED",
+      "值": "'usual.event.data.VISIBLE_ACCOUNTS_UPDATED'",
+      "所属模块": "未知模块",
+      "功能描述": "The visible of account was updated. This is a protected common event that can only be sent by system.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_ACCOUNT_DELETED",
+      "值": "'usual.event.data.ACCOUNT_DELETED'",
+      "所属模块": "未知模块",
+      "功能描述": "Account was deleted. This is a protected common event that can only be sent by system. This API can be called only by system applications.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_FOUNDATION_READY",
+      "值": "'common.event.FOUNDATION_READY'",
+      "所属模块": "未知模块",
+      "功能描述": "Foundation was ready. This is a protected common event that can only be sent by system.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_AIRPLANE_MODE_CHANGED",
+      "值": "'usual.event.AIRPLANE_MODE'",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the common event Action indicating that the airplane mode status of the device changes. Users can register this event to listen to the change of the airplane mode status of the device.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_SPLIT_SCREEN",
+      "值": "'common.event.SPLIT_SCREEN'",
+      "所属模块": "未知模块",
+      "功能描述": "sent by the window manager service when the window mode is split.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_SLOT_CHANGE",
+      "值": "'usual.event.SLOT_CHANGE'",
+      "所属模块": "未知模块",
+      "功能描述": "The notification slot has been updated. This is a protected common event that can only be sent by system. This API can be called only by system applications.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_SPN_INFO_CHANGED",
+      "值": "'usual.event.SPN_INFO_CHANGED'",
+      "所属模块": "未知模块",
+      "功能描述": "Indicate the action of a common event that the spn display information has been updated. This common event can be triggered only by system.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_QUICK_FIX_APPLY_RESULT",
+      "值": "'usual.event.QUICK_FIX_APPLY_RESULT'",
+      "所属模块": "未知模块",
+      "功能描述": "Indicate the result of quick fix apply. This common event can be triggered only by system.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_QUICK_FIX_REVOKE_RESULT",
+      "值": "'usual.event.QUICK_FIX_REVOKE_RESULT'",
+      "所属模块": "未知模块",
+      "功能描述": "Indicate the result of quick fix revoke. This common event can be triggered only by system.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_USER_INFO_UPDATED",
+      "值": "'usual.event.USER_INFO_UPDATED'",
+      "所属模块": "未知模块",
+      "功能描述": "Indicate the action of a common event that the user information has been updated. This common event can be triggered only by system.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_HTTP_PROXY_CHANGE",
+      "值": "'usual.event.HTTP_PROXY_CHANGE'",
+      "所属模块": "未知模块",
+      "功能描述": "Indicate http proxy has been changed. This is a protected common event that can only be sent by system.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_SIM_STATE_CHANGED",
+      "值": "'usual.event.SIM_STATE_CHANGED'",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the action of a common event that the phone SIM card state has changed. This is a protected common event that can only be sent by system.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_CALL_STATE_CHANGED",
+      "值": "'usual.event.CALL_STATE_CHANGED'",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the action of a common event that the call state has been changed. To subscribe to this protected common event, your application must have the ohos.permission.GET_TELEPHONY_STATE permission. This is a protected common event that can only be sent by system.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_NETWORK_STATE_CHANGED",
+      "值": "'usual.event.NETWORK_STATE_CHANGED'",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the action of a common event that the network state has been changed. This is a protected common event that can only be sent by system.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_SIGNAL_INFO_CHANGED",
+      "值": "'usual.event.SIGNAL_INFO_CHANGED'",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the action of a common event that the signal info has been changed. This is a protected common event that can only be sent by system.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_SCREEN_UNLOCKED",
+      "值": "'usual.event.SCREEN_UNLOCKED'",
+      "所属模块": "未知模块",
+      "功能描述": "This commonEvent means when the screen is unlocked.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_SCREEN_LOCKED",
+      "值": "'usual.event.SCREEN_LOCKED'",
+      "所属模块": "未知模块",
+      "功能描述": "This commonEvent means when the screen is locked.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_CONNECTIVITY_CHANGE",
+      "值": "'usual.event.CONNECTIVITY_CHANGE'",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the action of a common event that the network connectivity changed. This is a protected common event that can only be sent by system.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_BLUETOOTH_HANDSFREE_AG_CONNECT_STATE_CHANGE",
+      "值": "'usual.event.bluetooth.handsfree.ag.CONNECT_STATE_CHANGE'",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the action of a common event that bluetooth handsfree ag connection state change. To subscribe to this protected common event, your application must have the ohos.permission.ACCESS_BLUETOOTH",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_MINORSMODE_ON",
+      "值": "'usual.event.MINORSMODE_ON'",
+      "所属模块": "未知模块",
+      "功能描述": "This common event means that minors mode is enabled. This is a protected common event that can only be sent by system.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_MINORSMODE_OFF",
+      "值": "'usual.event.MINORSMODE_OFF'",
+      "所属模块": "未知模块",
+      "功能描述": "This common event means that minors mode is disabled. This is a protected common event that can only be sent by system.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_DATA_SHARE_READY",
+      "值": "'usual.event.DATA_SHARE_READY'",
+      "所属模块": "未知模块",
+      "功能描述": "This common event means that datashare is ready. This is a protected common event that can only be sent by system.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_BLUETOOTH_A2DPSOURCE_CONNECT_STATE_CHANGE",
+      "值": "'usual.event.bluetooth.a2dpsource.CONNECT_STATE_CHANGE'",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the action of a common event that bluetooth a2dp source connection state change. To subscribe to this protected common event, your application must have the ohos.permission.ACCESS_BLUETOOTH",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_BLUETOOTH_A2DPSOURCE_AVRCP_CONNECT_STATE_CHANGE",
+      "值": "'usual.event.bluetooth.a2dpsource.AVRCP_CONNECT_STATE_CHANGE'",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the action of a common event that bluetooth avrcp connection state change. To subscribe to this protected common event, your application must have the ohos.permission.ACCESS_BLUETOOTH",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_BLUETOOTH_A2DPSOURCE_CODEC_VALUE_CHANGE",
+      "值": "'usual.event.bluetooth.a2dpsource.CODEC_VALUE_CHANGE'",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the action of a common event that bluetooth codec change. To subscribe to this protected common event, your application must have the ohos.permission.ACCESS_BLUETOOTH",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_BLUETOOTH_REMOTEDEVICE_ACL_STATE_CHANGE",
+      "值": "'usual.event.bluetooth.remotedevice.ACL_STATE_CHANGE'",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the action of a common event that bluetooth remote device acl state change. To subscribe to this protected common event, your application must have the ohos.permission.ACCESS_BLUETOOTH",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_BLUETOOTH_REMOTEDEVICE_PAIR_STATE_CHANGE",
+      "值": "'usual.event.bluetooth.remotedevice.PAIR_STATE_CHANGE'",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the action of a common event that bluetooth pair state change. To subscribe to this protected common event, your application must have the ohos.permission.ACCESS_BLUETOOTH",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_MANAGED_BROWSER_POLICY_CHANGED",
+      "值": "'usual.event.MANAGED_BROWSER_POLICY_CHANGED'",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the managed browser policy is changed. This is a protected common event that can only be sent by system.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "15",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_KIOSK_MODE_ON",
+      "值": "'usual.event.KIOSK_MODE_ON'",
+      "所属模块": "未知模块",
+      "功能描述": "This common event means that Kiosk mode is on. This is a protected common event that can only be sent by system.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_KIOSK_MODE_OFF",
+      "值": "'usual.event.KIOSK_MODE_OFF'",
+      "所属模块": "未知模块",
+      "功能描述": "This common event means that Kiosk mode is off. This is a protected common event that can only be sent by system.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_TABLET_MODE_CHANGED",
+      "值": "'usual.event.TABLET_MODE_CHANGED'",
+      "所属模块": "未知模块",
+      "功能描述": "This common event means that the open and closed state of the stand associated with the tablet mode has changed. This is a protected common event that can only be sent by system.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COMMON_EVENT_LID_STATE_CHANGED",
+      "值": "'usual.event.LID_STATE_CHANGED'",
+      "所属模块": "未知模块",
+      "功能描述": "This common event means that the state (open or closed) of the laptop lid has changed. This is a protected common event that can only be sent by system.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "Support",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "type_alias",
+      "名称": "CommonEventData",
+      "所属模块": "未知模块",
+      "功能描述": "Describes the data of the common event",
+      "注释信息": [
+        "@typedef { _CommonEventData } CommonEventData",
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "commonEventManager",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "type_alias",
+      "名称": "CommonEventSubscriber",
+      "所属模块": "未知模块",
+      "功能描述": "Describes the subscriber of common event",
+      "注释信息": [
+        "@typedef { _CommonEventSubscriber } CommonEventSubscriber",
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "commonEventManager",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "type_alias",
+      "名称": "CommonEventSubscribeInfo",
+      "所属模块": "未知模块",
+      "功能描述": "Describes the information of the subscriber",
+      "注释信息": [
+        "@typedef { _CommonEventSubscribeInfo } CommonEventSubscribeInfo",
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "commonEventManager",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "type_alias",
+      "名称": "CommonEventPublishData",
+      "所属模块": "未知模块",
+      "功能描述": "Describes the information of the subscriber",
+      "注释信息": [
+        "@typedef { _CommonEventPublishData } CommonEventPublishData",
+        "@syscap SystemCapability.Notification.CommonEvent",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "commonEventManager",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Notification.CommonEvent",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    }
+  ]
+}

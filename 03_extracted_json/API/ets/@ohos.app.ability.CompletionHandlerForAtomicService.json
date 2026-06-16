@@ -1,0 +1,193 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.AbilityKit",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "FailureCode",
+      "所属模块": "@kit.AbilityKit",
+      "功能描述": "Specific failure codes indicating failure to open atomicservice.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@stagemodelonly",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "@kit.AbilityKit",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "FAILURE_CODE_SYSTEM_MALFUNCTION",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates fail to open atomicservice due to the system error, such as redirect dialog crash, alloc memory failed.",
+      "注释信息": [
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@stagemodelonly",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "FailureCode",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "FAILURE_CODE_USER_CANCEL",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the user cancelled the redirection.",
+      "注释信息": [
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@stagemodelonly",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "FailureCode",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "FAILURE_CODE_USER_REFUSE",
+      "值": "2",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the user refused the redirection.",
+      "注释信息": [
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@stagemodelonly",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "FailureCode",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "class",
+      "名称": "CompletionHandlerForAtomicService",
+      "所属模块": "@kit.AbilityKit",
+      "功能描述": "CompletionHandlerForAtomicService is a handler to handle the completion events of openAtomicService.",
+      "注释信息": [
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@stagemodelonly",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "@kit.AbilityKit",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "onAtomicServiceRequestSuccess",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Notify the success result of openAtomicService.",
+      "注释信息": [
+        "@param { string } appId - Globally unique identifier of an atomicservice, which is allocated by the cloud.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@stagemodelonly",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "CompletionHandlerForAtomicService",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "appId",
+          "类型": "string",
+          "必填": true,
+          "说明": "Globally unique identifier of an atomicservice, which is allocated by the cloud."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "onAtomicServiceRequestFailure",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Notify the failure result of openAtomicService.",
+      "注释信息": [
+        "@param { string } appId - Globally unique identifier of an atomicservice, which is allocated by the cloud.",
+        "@param { FailureCode } failureCode - Indicates the failure code for open atomic service.",
+        "@param { string } failureMessage - Indicates the detail failure message for open atomic service.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@stagemodelonly",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "CompletionHandlerForAtomicService",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "appId",
+          "类型": "string",
+          "必填": true,
+          "说明": "Globally unique identifier of an atomicservice, which is allocated by the cloud."
+        },
+        {
+          "名称": "failureCode",
+          "类型": "FailureCode",
+          "必填": true,
+          "说明": "Indicates the failure code for open atomic service."
+        },
+        {
+          "名称": "failureMessage",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates the detail failure message for open atomic service."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    }
+  ]
+}

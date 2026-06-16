@@ -1,0 +1,348 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.ArkUI",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "namespace",
+      "名称": "screenshot",
+      "所属模块": "@kit.ArkUI",
+      "功能描述": "Declares the screenshot APIs.",
+      "注释信息": [
+        "@namespace screenshot",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "@kit.ArkUI",
+      "since_version": "12",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "capture",
+      "返回值": "Promise<image.PixelMap>",
+      "所属模块": "未知模块",
+      "功能描述": "Takes a capture and return as a PixelMap object. The application does not have the permission required to call the API. 1.Incorrect parameter types. 2.Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.CUSTOM_SCREEN_CAPTURE or ohos.permission.CUSTOM_SCREEN_RECORDING",
+        "@param { CaptureOption } [options] which consist of CaptureOption.",
+        "@returns { Promise<image.PixelMap> } Promise used to return a PixelMap object.",
+        "@throws { BusinessError } 201 - Permission verification failed.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 801 - Capability not supported on this device.",
+        "@throws { BusinessError } 1400003 - This display manager service works abnormally.",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 1,
+      "上级": "screenshot",
+      "since_version": "22",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "CaptureOption } [options] which consist of CaptureOption."
+        }
+      ],
+      "return_description": "Promise used to return a PixelMap object.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission verification failed."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported on this device."
+        },
+        {
+          "code": "1400003",
+          "description": "This display manager service works abnormally."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "pick",
+      "返回值": "Promise<PickInfo>",
+      "所属模块": "未知模块",
+      "功能描述": "Takes a screenshot and picks it as a PickInfo object.",
+      "注释信息": [
+        "@returns { Promise<PickInfo> } Promise used to return a PickInfo object.",
+        "@throws { BusinessError } 801 - Capability not supported on this device.",
+        "@throws { BusinessError } 1400003 - This display manager service works abnormally.",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "screenshot",
+      "since_version": "12",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [],
+      "return_description": "Promise used to return a PickInfo object.",
+      "error_codes": [
+        {
+          "code": "801",
+          "description": "Capability not supported on this device."
+        },
+        {
+          "code": "1400003",
+          "description": "This display manager service works abnormally."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "PickInfo",
+      "所属模块": "未知模块",
+      "功能描述": "Describes the region of the screen to pick info.",
+      "注释信息": [
+        "@interface PickInfo",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "screenshot",
+      "since_version": "12",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "pickRect",
+      "属性类型": "Rect",
+      "所属模块": "未知模块",
+      "功能描述": "the region of the screen to capture.",
+      "注释信息": [
+        "@type { Rect }",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "PickInfo",
+      "since_version": "12",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "pixelMap",
+      "属性类型": "image.PixelMap",
+      "所属模块": "未知模块",
+      "功能描述": "the region of the screen to capture pixelMap.",
+      "注释信息": [
+        "@type { image.PixelMap }",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "PickInfo",
+      "since_version": "12",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "Rect",
+      "所属模块": "未知模块",
+      "功能描述": "Describes the region of the screen to capture.",
+      "注释信息": [
+        "@interface Rect",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "screenshot",
+      "since_version": "12",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "left",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "The X-axis coordinate of the upper left vertex of the rectangle.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "Rect",
+      "since_version": "12",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "top",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "The Y-axis coordinate of the upper left vertex of the rectangle.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "Rect",
+      "since_version": "12",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "width",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Width of the rectangle.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "Rect",
+      "since_version": "12",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "height",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Height of the rectangle.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "Rect",
+      "since_version": "12",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "CaptureOption",
+      "所属模块": "未知模块",
+      "功能描述": "Describes capture options.",
+      "注释信息": [
+        "@interface CaptureOption",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "screenshot",
+      "since_version": "14",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "displayId",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "ID of the screen to be captured.",
+      "注释信息": [
+        "@type { ?number }",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "CaptureOption",
+      "since_version": "14",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "blackWindowIds",
+      "属性类型": "Array<number>",
+      "所属模块": "未知模块",
+      "功能描述": "List of window ids excluded in the screenshot.",
+      "注释信息": [
+        "@type { ?Array<number> }",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@atomicservice",
+        "@since 21"
+      ],
+      "层级": 2,
+      "上级": "CaptureOption",
+      "since_version": "21",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    }
+  ]
+}

@@ -1,0 +1,3733 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.AbilityKit",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "namespace",
+      "名称": "bundleManager",
+      "所属模块": "@kit.AbilityKit",
+      "功能描述": "This module is used to obtain package information of various applications installed on the current device.",
+      "注释信息": [
+        "@namespace bundleManager",
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "@kit.AbilityKit",
+      "since_version": "12",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "BundleFlag",
+      "所属模块": "未知模块",
+      "功能描述": "Used to query the enumeration value of bundleInfo. Multiple values can be passed in the form. Multiple value input, such as GET_BUNDLE_INFO_DEFAULT | GET_BUNDLE_INFO_WITH_APPLICATION.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "bundleManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "GET_BUNDLE_INFO_DEFAULT",
+      "值": "0x00000000",
+      "所属模块": "未知模块",
+      "功能描述": "Used to obtain the default bundleInfo. The obtained bundleInfo does not contain information of signatureInfo, applicationInfo, hapModuleInfo, ability, extensionAbility and permission.",
+      "注释信息": [
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "BundleFlag",
+      "since_version": "20",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "GET_BUNDLE_INFO_WITH_APPLICATION",
+      "值": "0x00000001",
+      "所属模块": "未知模块",
+      "功能描述": "Used to obtain the bundleInfo containing applicationInfo. The obtained bundleInfo does not contain the information of signatureInfo, hapModuleInfo, ability, extensionAbility and permission.",
+      "注释信息": [
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "BundleFlag",
+      "since_version": "20",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "GET_BUNDLE_INFO_WITH_HAP_MODULE",
+      "值": "0x00000002",
+      "所属模块": "未知模块",
+      "功能描述": "Used to obtain the bundleInfo containing hapModuleInfo. The obtained bundleInfo does not contain the information of signatureInfo, applicationInfo, ability, extensionAbility and permission.",
+      "注释信息": [
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "BundleFlag",
+      "since_version": "20",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "GET_BUNDLE_INFO_WITH_ABILITY",
+      "值": "0x00000004",
+      "所属模块": "未知模块",
+      "功能描述": "Used to obtain the bundleInfo containing ability. The obtained bundleInfo does not contain the information of signatureInfo, applicationInfo, extensionAbility and permission. It can't be used alone, it needs to be used with GET_BUNDLE_INFO_WITH_HAP_MODULE. such as GET_BUNDLE_INFO_WITH_ABILITY | GET_BUNDLE_INFO_WITH_HAP_MODULE.",
+      "注释信息": [
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "BundleFlag",
+      "since_version": "20",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "GET_BUNDLE_INFO_WITH_EXTENSION_ABILITY",
+      "值": "0x00000008",
+      "所属模块": "未知模块",
+      "功能描述": "Used to obtain the bundleInfo containing extensionAbility. The obtained bundleInfo does not contain the information of signatureInfo, applicationInfo, ability and permission. It can't be used alone, it needs to be used with GET_BUNDLE_INFO_WITH_HAP_MODULE, such as GET_BUNDLE_INFO_WITH_EXTENSION_ABILITY | GET_BUNDLE_INFO_WITH_HAP_MODULE.",
+      "注释信息": [
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "BundleFlag",
+      "since_version": "11",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "GET_BUNDLE_INFO_WITH_REQUESTED_PERMISSION",
+      "值": "0x00000010",
+      "所属模块": "未知模块",
+      "功能描述": "Used to obtain the bundleInfo containing permission. The obtained bundleInfo does not contain the information of signatureInfo, applicationInfo, hapModuleInfo, extensionAbility and ability.",
+      "注释信息": [
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "BundleFlag",
+      "since_version": "20",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "GET_BUNDLE_INFO_WITH_METADATA",
+      "值": "0x00000020",
+      "所属模块": "未知模块",
+      "功能描述": "Used to obtain the metadata contained in applicationInfo, moduleInfo and abilityInfo. It can't be used alone, it needs to be used with GET_BUNDLE_INFO_WITH_APPLICATION, GET_BUNDLE_INFO_WITH_HAP_MODULE, GET_BUNDLE_INFO_WITH_ABILITY, GET_BUNDLE_INFO_WITH_EXTENSION_ABILITY, such as GET_BUNDLE_INFO_WITH_APPLICATION | GET_BUNDLE_INFO_WITH_METADATA or GET_BUNDLE_INFO_WITH_HAP_MODULE | GET_BUNDLE_INFO_WITH_ABILITY | GET_BUNDLE_INFO_WITH_METADATA or GET_BUNDLE_INFO_WITH_HAP_MODULE | GET_BUNDLE_INFO_WITH_EXTENSION_ABILITY | GET_BUNDLE_INFO_WITH_METADATA.",
+      "注释信息": [
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "BundleFlag",
+      "since_version": "20",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "GET_BUNDLE_INFO_WITH_DISABLE",
+      "值": "0x00000040",
+      "所属模块": "未知模块",
+      "功能描述": "Used to obtain the default bundleInfo containing disabled application and ability. The obtained bundleInfo does not contain information of signatureInfo, applicationInfo, hapModuleInfo, ability, extensionAbility and permission.",
+      "注释信息": [
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "BundleFlag",
+      "since_version": "20",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "GET_BUNDLE_INFO_WITH_SIGNATURE_INFO",
+      "值": "0x00000080",
+      "所属模块": "未知模块",
+      "功能描述": "Used to obtain the bundleInfo containing signatureInfo. The obtained bundleInfo does not contain the information of applicationInfo, hapModuleInfo, extensionAbility, ability and permission.",
+      "注释信息": [
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "BundleFlag",
+      "since_version": "20",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "GET_BUNDLE_INFO_WITH_MENU",
+      "值": "0x00000100",
+      "所属模块": "未知模块",
+      "功能描述": "Used to obtain the bundleInfo containing menu configuration in hapModuleInfo. The obtained bundleInfo does not contain the information of applicationInfo, extensionAbility, ability and permission. It can't be used alone, it needs to be used with GET_BUNDLE_INFO_WITH_HAP_MODULE, such as GET_BUNDLE_INFO_WITH_MENU | GET_BUNDLE_INFO_WITH_HAP_MODULE",
+      "注释信息": [
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "BundleFlag",
+      "since_version": "11",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "GET_BUNDLE_INFO_WITH_ROUTER_MAP",
+      "值": "0x00000200",
+      "所属模块": "未知模块",
+      "功能描述": "Used to obtain the bundleInfo containing router map configuration in hapModuleInfo. The obtained bundleInfo does not contain the information of applicationInfo, extensionAbility, ability and permission. It can't be used alone, it needs to be used with GET_BUNDLE_INFO_WITH_HAP_MODULE, such as GET_BUNDLE_INFO_WITH_ROUTER_MAP | GET_BUNDLE_INFO_WITH_HAP_MODULE",
+      "注释信息": [
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "BundleFlag",
+      "since_version": "12",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "GET_BUNDLE_INFO_WITH_SKILL",
+      "值": "0x00000800",
+      "所属模块": "未知模块",
+      "功能描述": "Used to obtain the skillInfo contained in abilityInfo and extensionInfo. It can't be used alone, it needs to be used with GET_BUNDLE_INFO_WITH_HAP_MODULE, GET_BUNDLE_INFO_WITH_ABILITY, GET_BUNDLE_INFO_WITH_EXTENSION_ABILITY, such as GET_BUNDLE_INFO_WITH_SKILL | GET_BUNDLE_INFO_WITH_HAP_MODULE | GET_BUNDLE_INFO_WITH_ABILITY or GET_BUNDLE_INFO_WITH_SKILL | GET_BUNDLE_INFO_WITH_HAP_MODULE | GET_BUNDLE_INFO_WITH_EXTENSION_ABILITY",
+      "注释信息": [
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "BundleFlag",
+      "since_version": "12",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "GET_BUNDLE_INFO_WITH_ENTRY_MODULE",
+      "值": "0x00010000",
+      "所属模块": "未知模块",
+      "功能描述": "Used to obtain the bundleInfo containing hapModuleInfo of entry. The obtained bundleInfo does not contain the information of signatureInfo, applicationInfo, ability, extensionAbility and permission.",
+      "注释信息": [
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@atomicservice",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "BundleFlag",
+      "since_version": "23",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "AbilityFlag",
+      "所属模块": "未知模块",
+      "功能描述": "Used to query the enumeration value of abilityInfo. Multiple values can be passed in the form.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "bundleManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "GET_ABILITY_INFO_DEFAULT",
+      "值": "0x00000000",
+      "所属模块": "未知模块",
+      "功能描述": "Used to obtain the default abilityInfo. The obtained abilityInfo does not contain the information of permission, metadata and disabled abilityInfo.",
+      "注释信息": [
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "AbilityFlag",
+      "since_version": "20",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "GET_ABILITY_INFO_WITH_PERMISSION",
+      "值": "0x00000001",
+      "所属模块": "未知模块",
+      "功能描述": "Used to obtain the abilityInfo containing permission.",
+      "注释信息": [
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "AbilityFlag",
+      "since_version": "20",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "GET_ABILITY_INFO_WITH_APPLICATION",
+      "值": "0x00000002",
+      "所属模块": "未知模块",
+      "功能描述": "Used to obtain the abilityInfo containing applicationInfo.",
+      "注释信息": [
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "AbilityFlag",
+      "since_version": "20",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "GET_ABILITY_INFO_WITH_METADATA",
+      "值": "0x00000004",
+      "所属模块": "未知模块",
+      "功能描述": "Used to obtain the abilityInfo containing metadata.",
+      "注释信息": [
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "AbilityFlag",
+      "since_version": "20",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "GET_ABILITY_INFO_WITH_DISABLE",
+      "值": "0x00000008",
+      "所属模块": "未知模块",
+      "功能描述": "Used to obtain the abilityInfo containing disabled abilityInfo.",
+      "注释信息": [
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "AbilityFlag",
+      "since_version": "20",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "GET_ABILITY_INFO_ONLY_SYSTEM_APP",
+      "值": "0x00000010",
+      "所属模块": "未知模块",
+      "功能描述": "Used to obtain the abilityInfo only for system app.",
+      "注释信息": [
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "AbilityFlag",
+      "since_version": "20",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "GET_ABILITY_INFO_WITH_APP_LINKING",
+      "值": "0x00000040",
+      "所属模块": "未知模块",
+      "功能描述": "Used to obtain the abilityInfo with domain verification.",
+      "注释信息": [
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "AbilityFlag",
+      "since_version": "20",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "GET_ABILITY_INFO_WITH_SKILL",
+      "值": "0x00000080",
+      "所属模块": "未知模块",
+      "功能描述": "Used to obtain the abilityInfo with Skill",
+      "注释信息": [
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "AbilityFlag",
+      "since_version": "20",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "ExtensionAbilityType",
+      "所属模块": "未知模块",
+      "功能描述": "This enumeration value is used to identify various types of extension ability",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "bundleManager",
+      "since_version": "11",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "FORM",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates extension info with type of form",
+      "注释信息": [
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "ExtensionAbilityType",
+      "since_version": "11",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "WORK_SCHEDULER",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates extension info with type of work schedule",
+      "注释信息": [
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "ExtensionAbilityType",
+      "since_version": "9",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "INPUT_METHOD",
+      "值": "2",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates extension info with type of input method",
+      "注释信息": [
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "ExtensionAbilityType",
+      "since_version": "9",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "SERVICE",
+      "值": "3",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates extension info with type of service",
+      "注释信息": [
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "ExtensionAbilityType",
+      "since_version": "9",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "ACCESSIBILITY",
+      "值": "4",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates extension info with type of accessibility",
+      "注释信息": [
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "ExtensionAbilityType",
+      "since_version": "9",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "DATA_SHARE",
+      "值": "5",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates extension info with type of dataShare",
+      "注释信息": [
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "ExtensionAbilityType",
+      "since_version": "9",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "FILE_SHARE",
+      "值": "6",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates extension info with type of filesShare",
+      "注释信息": [
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "ExtensionAbilityType",
+      "since_version": "9",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "STATIC_SUBSCRIBER",
+      "值": "7",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates extension info with type of staticSubscriber",
+      "注释信息": [
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "ExtensionAbilityType",
+      "since_version": "9",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "WALLPAPER",
+      "值": "8",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates extension info with type of wallpaper",
+      "注释信息": [
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "ExtensionAbilityType",
+      "since_version": "9",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "BACKUP",
+      "值": "9",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates extension info with type of backup",
+      "注释信息": [
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "ExtensionAbilityType",
+      "since_version": "9",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "WINDOW",
+      "值": "10",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates extension info with type of window",
+      "注释信息": [
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "ExtensionAbilityType",
+      "since_version": "9",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "ENTERPRISE_ADMIN",
+      "值": "11",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates extension info with type of enterprise admin",
+      "注释信息": [
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "ExtensionAbilityType",
+      "since_version": "9",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "THUMBNAIL",
+      "值": "13",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates extension info with type of thumbnail",
+      "注释信息": [
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "ExtensionAbilityType",
+      "since_version": "9",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "PREVIEW",
+      "值": "14",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates extension info with type of preview",
+      "注释信息": [
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "ExtensionAbilityType",
+      "since_version": "9",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "PRINT",
+      "值": "15",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates extension info with type of print",
+      "注释信息": [
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "ExtensionAbilityType",
+      "since_version": "10",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "SHARE",
+      "值": "16",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates extension info with type of share",
+      "注释信息": [
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "ExtensionAbilityType",
+      "since_version": "10",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "PUSH",
+      "值": "17",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates extension info with type of push",
+      "注释信息": [
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "ExtensionAbilityType",
+      "since_version": "10",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "DRIVER",
+      "值": "18",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates extension info with type of driver",
+      "注释信息": [
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "ExtensionAbilityType",
+      "since_version": "10",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "ACTION",
+      "值": "19",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates extension info with type of action",
+      "注释信息": [
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "ExtensionAbilityType",
+      "since_version": "10",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "ADS_SERVICE",
+      "值": "20",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates extension info with type of ads service",
+      "注释信息": [
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "ExtensionAbilityType",
+      "since_version": "11",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "EMBEDDED_UI",
+      "值": "21",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates extension info with type of embedded UI",
+      "注释信息": [
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "ExtensionAbilityType",
+      "since_version": "12",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "INSIGHT_INTENT_UI",
+      "值": "22",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates extension info with type of insight intent UI",
+      "注释信息": [
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "ExtensionAbilityType",
+      "since_version": "12",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "FENCE",
+      "值": "24",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates extension info with type of FENCE",
+      "注释信息": [
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@since 18"
+      ],
+      "层级": 2,
+      "上级": "ExtensionAbilityType",
+      "since_version": "18",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CALLER_INFO_QUERY",
+      "值": "25",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates extension info with type of CALLER_INFO_QUERY",
+      "注释信息": [
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@since 19"
+      ],
+      "层级": 2,
+      "上级": "ExtensionAbilityType",
+      "since_version": "19",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "ASSET_ACCELERATION",
+      "值": "26",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates extension info with type of asset acceleration",
+      "注释信息": [
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@since 18"
+      ],
+      "层级": 2,
+      "上级": "ExtensionAbilityType",
+      "since_version": "18",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "FORM_EDIT",
+      "值": "27",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates extension info with type of form edit",
+      "注释信息": [
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@since 18"
+      ],
+      "层级": 2,
+      "上级": "ExtensionAbilityType",
+      "since_version": "18",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "DISTRIBUTED",
+      "值": "28",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates extension info with type of distributed",
+      "注释信息": [
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "ExtensionAbilityType",
+      "since_version": "20",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "LIVE_FORM",
+      "值": "30",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates extension info with type of the live form",
+      "注释信息": [
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "ExtensionAbilityType",
+      "since_version": "20",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "APP_SERVICE",
+      "值": "29",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates extension info with type of app service",
+      "注释信息": [
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "ExtensionAbilityType",
+      "since_version": "20",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "WEB_NATIVE_MESSAGING",
+      "值": "32",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates extension info with type of the web native messaging",
+      "注释信息": [
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@since 21"
+      ],
+      "层级": 2,
+      "上级": "ExtensionAbilityType",
+      "since_version": "21",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "FAULT_LOG",
+      "值": "33",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates extension info with type of the faultLog",
+      "注释信息": [
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@since 21"
+      ],
+      "层级": 2,
+      "上级": "ExtensionAbilityType",
+      "since_version": "21",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "NOTIFICATION_SUBSCRIBER",
+      "值": "34",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates extension info with type of the notification subscriber",
+      "注释信息": [
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "ExtensionAbilityType",
+      "since_version": "22",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CRYPTO",
+      "值": "35",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates extension info with type of the crypto",
+      "注释信息": [
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "ExtensionAbilityType",
+      "since_version": "22",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "PARTNER_AGENT",
+      "值": "36",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates extension info with type of the partner agent",
+      "注释信息": [
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "ExtensionAbilityType",
+      "since_version": "23",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "UNSPECIFIED",
+      "值": "255",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates extension info with type of unspecified",
+      "注释信息": [
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "ExtensionAbilityType",
+      "since_version": "9",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "PermissionGrantState",
+      "所属模块": "未知模块",
+      "功能描述": "PermissionGrantState",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "bundleManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "PERMISSION_DENIED",
+      "值": "-1",
+      "所属模块": "未知模块",
+      "功能描述": "PERMISSION_DENIED",
+      "注释信息": [
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "PermissionGrantState",
+      "since_version": "20",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "PERMISSION_GRANTED",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "PERMISSION_GRANTED",
+      "注释信息": [
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "PermissionGrantState",
+      "since_version": "20",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "SupportWindowMode",
+      "所属模块": "未知模块",
+      "功能描述": "Support window mode",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "bundleManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "FULL_SCREEN",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates supported window mode of full screen mode",
+      "注释信息": [
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "SupportWindowMode",
+      "since_version": "20",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "SPLIT",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates supported window mode of split mode",
+      "注释信息": [
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "SupportWindowMode",
+      "since_version": "20",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "FLOATING",
+      "值": "2",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates supported window mode of floating mode",
+      "注释信息": [
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "SupportWindowMode",
+      "since_version": "20",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "LaunchType",
+      "所属模块": "未知模块",
+      "功能描述": "Launch type",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "bundleManager",
+      "since_version": "11",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "SINGLETON",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the ability has only one instance",
+      "注释信息": [
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "LaunchType",
+      "since_version": "11",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "MULTITON",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the ability can have multiple instances",
+      "注释信息": [
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "LaunchType",
+      "since_version": "11",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "SPECIFIED",
+      "值": "2",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the ability can have specified instances",
+      "注释信息": [
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "LaunchType",
+      "since_version": "20",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "AbilityType",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates ability type",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@FAModelOnly",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "bundleManager",
+      "since_version": "9",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "PAGE",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the ability has a UI",
+      "注释信息": [
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@FAModelOnly",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "AbilityType",
+      "since_version": "9",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "SERVICE",
+      "值": "2",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the ability does not have a UI",
+      "注释信息": [
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@FAModelOnly",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "AbilityType",
+      "since_version": "9",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "DATA",
+      "值": "3",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the ability is used to provide data access services",
+      "注释信息": [
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@FAModelOnly",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "AbilityType",
+      "since_version": "9",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "DisplayOrientation",
+      "所属模块": "未知模块",
+      "功能描述": "Display orientation",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "bundleManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "UNSPECIFIED",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the system automatically determines the display orientation",
+      "注释信息": [
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "DisplayOrientation",
+      "since_version": "20",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "LANDSCAPE",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the landscape orientation",
+      "注释信息": [
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "DisplayOrientation",
+      "since_version": "20",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "PORTRAIT",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the portrait orientation",
+      "注释信息": [
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "DisplayOrientation",
+      "since_version": "20",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "FOLLOW_RECENT",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the page ability orientation is the same as that of the nearest ability in the stack",
+      "注释信息": [
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "DisplayOrientation",
+      "since_version": "20",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "LANDSCAPE_INVERTED",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the inverted landscape orientation",
+      "注释信息": [
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "DisplayOrientation",
+      "since_version": "20",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "PORTRAIT_INVERTED",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the inverted portrait orientation",
+      "注释信息": [
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "DisplayOrientation",
+      "since_version": "20",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "AUTO_ROTATION",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the orientation can be auto-rotated",
+      "注释信息": [
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "DisplayOrientation",
+      "since_version": "20",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "AUTO_ROTATION_LANDSCAPE",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the landscape orientation rotated with sensor",
+      "注释信息": [
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "DisplayOrientation",
+      "since_version": "20",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "AUTO_ROTATION_PORTRAIT",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the portrait orientation rotated with sensor",
+      "注释信息": [
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "DisplayOrientation",
+      "since_version": "20",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "AUTO_ROTATION_RESTRICTED",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the sensor restricted mode",
+      "注释信息": [
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "DisplayOrientation",
+      "since_version": "20",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "AUTO_ROTATION_LANDSCAPE_RESTRICTED",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the sensor landscape restricted mode",
+      "注释信息": [
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "DisplayOrientation",
+      "since_version": "20",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "AUTO_ROTATION_PORTRAIT_RESTRICTED",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the sensor portrait restricted mode",
+      "注释信息": [
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "DisplayOrientation",
+      "since_version": "20",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "LOCKED",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the locked orientation mode",
+      "注释信息": [
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "DisplayOrientation",
+      "since_version": "20",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "AUTO_ROTATION_UNSPECIFIED",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the system automatically determines the sensor restricted mode",
+      "注释信息": [
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "DisplayOrientation",
+      "since_version": "12",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "FOLLOW_DESKTOP",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the orientation follow the desktop rotate mode",
+      "注释信息": [
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "DisplayOrientation",
+      "since_version": "12",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "ModuleType",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates module type",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "bundleManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "ENTRY",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates entry type",
+      "注释信息": [
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "ModuleType",
+      "since_version": "20",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "FEATURE",
+      "值": "2",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates feature type",
+      "注释信息": [
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "ModuleType",
+      "since_version": "20",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "SHARED",
+      "值": "3",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates shared type",
+      "注释信息": [
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "ModuleType",
+      "since_version": "20",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "BundleType",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates bundle type",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "bundleManager",
+      "since_version": "11",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "APP",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates app",
+      "注释信息": [
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "BundleType",
+      "since_version": "11",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "ATOMIC_SERVICE",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates atomic service",
+      "注释信息": [
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "BundleType",
+      "since_version": "11",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "CompatiblePolicy",
+      "所属模块": "未知模块",
+      "功能描述": "Shared bundle compatible policy",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "bundleManager",
+      "since_version": "11",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "BACKWARD_COMPATIBILITY",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the app is a shared bundle and the shared bundle type is backward compatibility",
+      "注释信息": [
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "CompatiblePolicy",
+      "since_version": "11",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "MultiAppModeType",
+      "所属模块": "未知模块",
+      "功能描述": "This enumeration value is used to identify the multi app mode type.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "bundleManager",
+      "since_version": "12",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "UNSPECIFIED",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates multi app mode with type of unspecified",
+      "注释信息": [
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "MultiAppModeType",
+      "since_version": "12",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "MULTI_INSTANCE",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates multi app mode with type of multiInstance",
+      "注释信息": [
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "MultiAppModeType",
+      "since_version": "12",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "APP_CLONE",
+      "值": "2",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates multi app mode with type of appClone",
+      "注释信息": [
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "MultiAppModeType",
+      "since_version": "12",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getBundleInfoForSelf",
+      "返回值": "Promise<BundleInfo>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains own bundleInfo.",
+      "注释信息": [
+        "@param { number } bundleFlags {@link BundleFlag} - Indicates the flag used to specify information contained in the BundleInfo objects that will be returned.",
+        "@returns { Promise<BundleInfo> } The result of getting the bundle info.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.",
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "bundleManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [
+        {
+          "名称": "bundleFlags",
+          "类型": "number",
+          "必填": true,
+          "说明": "{@link BundleFlag} - Indicates the flag used to specify information contained in the BundleInfo objects that will be returned."
+        }
+      ],
+      "return_description": "The result of getting the bundle info.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getBundleInfoForSelf",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains own bundleInfo.",
+      "注释信息": [
+        "@param { number } bundleFlags {@link BundleFlag} - Indicates the flag used to specify information contained in the BundleInfo objects that will be returned.",
+        "@param { AsyncCallback<BundleInfo> } callback - The callback of getting bundle info result.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.",
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "bundleManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [
+        {
+          "名称": "bundleFlags",
+          "类型": "number",
+          "必填": true,
+          "说明": "{@link BundleFlag} - Indicates the flag used to specify information contained in the BundleInfo objects that will be returned."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<BundleInfo>",
+          "必填": true,
+          "说明": "The callback of getting bundle info result."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getBundleInfoForSelfSync",
+      "返回值": "BundleInfo",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains own bundleInfo.",
+      "注释信息": [
+        "@param { number } bundleFlags {@link BundleFlag} - Indicates the flag used to specify information contained in the BundleInfo objects that will be returned.",
+        "@returns { BundleInfo } The result of getting the bundle info.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.",
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "bundleManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [
+        {
+          "名称": "bundleFlags",
+          "类型": "number",
+          "必填": true,
+          "说明": "{@link BundleFlag} - Indicates the flag used to specify information contained in the BundleInfo objects that will be returned."
+        }
+      ],
+      "return_description": "The result of getting the bundle info.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getBundleInfo",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains bundleInfo based on bundleName, bundleFlags. The application requires to be a system application when requesting the permission of ohos.permission.GET_BUNDLE_INFO.",
+      "注释信息": [
+        "@permission ohos.permission.GET_BUNDLE_INFO_PRIVILEGED or ohos.permission.GET_BUNDLE_INFO",
+        "@param { string } bundleName - Indicates the application bundle name to be queried.",
+        "@param { number } bundleFlags {@link BundleFlag} - Indicates the flag used to specify information contained in the BundleInfo objects that will be returned.",
+        "@param { AsyncCallback<BundleInfo> } callback - The callback of getting bundle info result.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.",
+        "@throws { BusinessError } 17700001 - The specified bundleName is not found.",
+        "@throws { BusinessError } 17700026 - The specified bundle is disabled.",
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@since 14"
+      ],
+      "层级": 1,
+      "上级": "bundleManager",
+      "since_version": "14",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [
+        {
+          "名称": "bundleName",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates the application bundle name to be queried."
+        },
+        {
+          "名称": "bundleFlags",
+          "类型": "number",
+          "必填": true,
+          "说明": "{@link BundleFlag} - Indicates the flag used to specify information contained in the BundleInfo objects that will be returned."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<BundleInfo>",
+          "必填": true,
+          "说明": "The callback of getting bundle info result."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types."
+        },
+        {
+          "code": "17700001",
+          "description": "The specified bundleName is not found."
+        },
+        {
+          "code": "17700026",
+          "description": "The specified bundle is disabled."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getBundleInfo",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains bundleInfo based on bundleName, bundleFlags and userId. The application requires to be a system application when requesting the permission of ohos.permission.GET_BUNDLE_INFO.",
+      "注释信息": [
+        "@permission ohos.permission.GET_BUNDLE_INFO_PRIVILEGED or ohos.permission.GET_BUNDLE_INFO",
+        "@param { string } bundleName - Indicates the application bundle name to be queried.",
+        "@param { number } bundleFlags {@link BundleFlag} - Indicates the flag used to specify information contained in the BundleInfo objects that will be returned.",
+        "@param { number } userId - Indicates the user ID or do not pass user ID.",
+        "@param { AsyncCallback<BundleInfo> } callback - The callback of getting bundle info result.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.",
+        "@throws { BusinessError } 17700001 - The specified bundleName is not found.",
+        "@throws { BusinessError } 17700004 - The specified user ID is not found.",
+        "@throws { BusinessError } 17700026 - The specified bundle is disabled.",
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@since 14"
+      ],
+      "层级": 1,
+      "上级": "bundleManager",
+      "since_version": "14",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [
+        {
+          "名称": "bundleName",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates the application bundle name to be queried."
+        },
+        {
+          "名称": "bundleFlags",
+          "类型": "number",
+          "必填": true,
+          "说明": "{@link BundleFlag} - Indicates the flag used to specify information contained in the BundleInfo objects that will be returned."
+        },
+        {
+          "名称": "userId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the user ID or do not pass user ID."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<BundleInfo>",
+          "必填": true,
+          "说明": "The callback of getting bundle info result."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types."
+        },
+        {
+          "code": "17700001",
+          "description": "The specified bundleName is not found."
+        },
+        {
+          "code": "17700004",
+          "description": "The specified user ID is not found."
+        },
+        {
+          "code": "17700026",
+          "description": "The specified bundle is disabled."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getBundleInfo",
+      "返回值": "Promise<BundleInfo>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains bundleInfo based on bundleName, bundleFlags and userId. The application requires to be a system application when requesting the permission of ohos.permission.GET_BUNDLE_INFO.",
+      "注释信息": [
+        "@permission ohos.permission.GET_BUNDLE_INFO_PRIVILEGED or ohos.permission.GET_BUNDLE_INFO",
+        "@param { string } bundleName - Indicates the application bundle name to be queried.",
+        "@param { number } bundleFlags {@link BundleFlag} - Indicates the flag used to specify information contained in the BundleInfo objects that will be returned.",
+        "@param { number } userId - Indicates the user ID or do not pass user ID.",
+        "@returns { Promise<BundleInfo> } The result of getting the bundle info.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.",
+        "@throws { BusinessError } 17700001 - The specified bundleName is not found.",
+        "@throws { BusinessError } 17700004 - The specified user ID is not found.",
+        "@throws { BusinessError } 17700026 - The specified bundle is disabled.",
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@since 14"
+      ],
+      "层级": 1,
+      "上级": "bundleManager",
+      "since_version": "14",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [
+        {
+          "名称": "bundleName",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates the application bundle name to be queried."
+        },
+        {
+          "名称": "bundleFlags",
+          "类型": "number",
+          "必填": true,
+          "说明": "{@link BundleFlag} - Indicates the flag used to specify information contained in the BundleInfo objects that will be returned."
+        },
+        {
+          "名称": "userId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the user ID or do not pass user ID."
+        }
+      ],
+      "return_description": "The result of getting the bundle info.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types."
+        },
+        {
+          "code": "17700001",
+          "description": "The specified bundleName is not found."
+        },
+        {
+          "code": "17700004",
+          "description": "The specified user ID is not found."
+        },
+        {
+          "code": "17700026",
+          "description": "The specified bundle is disabled."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getAbilityInfo",
+      "返回值": "Promise<Array<AbilityInfo>>",
+      "所属模块": "未知模块",
+      "功能描述": "Get AbilityInfo by the given uri.",
+      "注释信息": [
+        "@permission ohos.permission.GET_ABILITY_INFO",
+        "@param { string } uri - Indicates the uri used for matching ability. The value is the same as that of the uris field under skills in the module.json5 file.",
+        "@param { number } abilityFlags {@link AbilityFlag} - Indicates the flag used to specify information contained in the AbilityInfo objects that will be returned.",
+        "@returns { Promise<Array<AbilityInfo>> } Returns a list of AbilityInfo objects.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 17700003 - The ability is not found.",
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "bundleManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [
+        {
+          "名称": "uri",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates the uri used for matching ability. The value is the same as that of the uris field under skills in the module.json5 file."
+        },
+        {
+          "名称": "abilityFlags",
+          "类型": "number",
+          "必填": true,
+          "说明": "{@link AbilityFlag} - Indicates the flag used to specify information contained in the AbilityInfo objects that will be returned."
+        }
+      ],
+      "return_description": "Returns a list of AbilityInfo objects.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "17700003",
+          "description": "The ability is not found."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getBundleNameByUid",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains bundle name by the given uid. The application requires to be a system application when requesting the permission of ohos.permission.GET_BUNDLE_INFO.",
+      "注释信息": [
+        "@permission ohos.permission.GET_BUNDLE_INFO_PRIVILEGED or ohos.permission.GET_BUNDLE_INFO",
+        "@param { number } uid - Indicates the UID of an application.",
+        "@param { AsyncCallback<string> } callback - The callback of getting bundle name.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.",
+        "@throws { BusinessError } 17700021 - The uid is not found.",
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@since 14"
+      ],
+      "层级": 1,
+      "上级": "bundleManager",
+      "since_version": "14",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [
+        {
+          "名称": "uid",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the UID of an application."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<string>",
+          "必填": true,
+          "说明": "The callback of getting bundle name."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types."
+        },
+        {
+          "code": "17700021",
+          "description": "The uid is not found."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getBundleNameByUid",
+      "返回值": "Promise<string>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains bundle name by the given uid. The application requires to be a system application when requesting the permission of ohos.permission.GET_BUNDLE_INFO.",
+      "注释信息": [
+        "@permission ohos.permission.GET_BUNDLE_INFO_PRIVILEGED or ohos.permission.GET_BUNDLE_INFO",
+        "@param { number } uid - Indicates the UID of an application.",
+        "@returns { Promise<string> } Returns the bundle name.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.",
+        "@throws { BusinessError } 17700021 - The uid is not found.",
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@since 14"
+      ],
+      "层级": 1,
+      "上级": "bundleManager",
+      "since_version": "14",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [
+        {
+          "名称": "uid",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the UID of an application."
+        }
+      ],
+      "return_description": "Returns the bundle name.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types."
+        },
+        {
+          "code": "17700021",
+          "description": "The uid is not found."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getBundleNameByUidSync",
+      "返回值": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains bundle name by the given uid. The application requires to be a system application when requesting the permission of ohos.permission.GET_BUNDLE_INFO.",
+      "注释信息": [
+        "@permission ohos.permission.GET_BUNDLE_INFO_PRIVILEGED or ohos.permission.GET_BUNDLE_INFO",
+        "@param { number } uid - Indicates the UID of an application.",
+        "@returns { string } Returns the bundle name.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.",
+        "@throws { BusinessError } 17700021 - The uid is not found.",
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@since 14"
+      ],
+      "层级": 1,
+      "上级": "bundleManager",
+      "since_version": "14",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [
+        {
+          "名称": "uid",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the UID of an application."
+        }
+      ],
+      "return_description": "Returns the bundle name.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types."
+        },
+        {
+          "code": "17700021",
+          "description": "The uid is not found."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "cleanBundleCacheFilesForSelf",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Clears cache data of the current application.",
+      "注释信息": [
+        "@returns { Promise<void> } Clean bundle cache files result.",
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@atomicservice",
+        "@since 21"
+      ],
+      "层级": 1,
+      "上级": "bundleManager",
+      "since_version": "21",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "Clean bundle cache files result.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getLaunchWant",
+      "返回值": "Want",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the Want for starting the main ability of own application. The main ability of an application is the ability that has the #ACTION_HOME and #ENTITY_HOME Want filters set in the application's <b>config.json</b> or <b>module.json</b> file.",
+      "注释信息": [
+        "@returns { Want } the Want for starting the application's main ability.",
+        "@throws { BusinessError } 17700072 - The launch want is not found.",
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@atomicservice",
+        "@since 13"
+      ],
+      "层级": 1,
+      "上级": "bundleManager",
+      "since_version": "13",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "the Want for starting the application's main ability.",
+      "error_codes": [
+        {
+          "code": "17700072",
+          "description": "The launch want is not found."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getProfileByAbility",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the profile designated by metadata name, abilityName and moduleName from the current application.",
+      "注释信息": [
+        "@param { string } moduleName - Indicates the moduleName of the application.",
+        "@param { string } abilityName - Indicates the abilityName of the application.",
+        "@param { string } metadataName - Indicates the name of metadata in ability.",
+        "@param { AsyncCallback<Array<string>> } callback - The callback of returning string in json-format of the corresponding config file.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.",
+        "@throws { BusinessError } 17700002 - The specified moduleName is not existed.",
+        "@throws { BusinessError } 17700003 - The specified abilityName is not existed.",
+        "@throws { BusinessError } 17700024 - Failed to get the profile because there is no profile in the HAP.",
+        "@throws { BusinessError } 17700029 - The specified ability is disabled.",
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "bundleManager",
+      "since_version": "11",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [
+        {
+          "名称": "moduleName",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates the moduleName of the application."
+        },
+        {
+          "名称": "abilityName",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates the abilityName of the application."
+        },
+        {
+          "名称": "metadataName",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates the name of metadata in ability."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<Array<string>>",
+          "必填": true,
+          "说明": "The callback of returning string in json-format of the corresponding config file."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types."
+        },
+        {
+          "code": "17700002",
+          "description": "The specified moduleName is not existed."
+        },
+        {
+          "code": "17700003",
+          "description": "The specified abilityName is not existed."
+        },
+        {
+          "code": "17700024",
+          "description": "Failed to get the profile because there is no profile in the HAP."
+        },
+        {
+          "code": "17700029",
+          "description": "The specified ability is disabled."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getProfileByAbility",
+      "返回值": "Promise<Array<string>>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the profile designated by metadata name, abilityName and moduleName from the current application.",
+      "注释信息": [
+        "@param { string } moduleName - Indicates the moduleName of the application.",
+        "@param { string } abilityName - Indicates the abilityName of the application.",
+        "@param { string } metadataName - Indicates the name of metadata in ability.",
+        "@returns { Promise<Array<string>> } Returns string in json-format of the corresponding config file.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.",
+        "@throws { BusinessError } 17700002 - The specified moduleName is not existed.",
+        "@throws { BusinessError } 17700003 - The specified abilityName is not existed.",
+        "@throws { BusinessError } 17700024 - Failed to get the profile because there is no profile in the HAP.",
+        "@throws { BusinessError } 17700029 - The specified ability is disabled.",
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "bundleManager",
+      "since_version": "11",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [
+        {
+          "名称": "moduleName",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates the moduleName of the application."
+        },
+        {
+          "名称": "abilityName",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates the abilityName of the application."
+        },
+        {
+          "名称": "metadataName",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates the name of metadata in ability."
+        }
+      ],
+      "return_description": "Returns string in json-format of the corresponding config file.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types."
+        },
+        {
+          "code": "17700002",
+          "description": "The specified moduleName is not existed."
+        },
+        {
+          "code": "17700003",
+          "description": "The specified abilityName is not existed."
+        },
+        {
+          "code": "17700024",
+          "description": "Failed to get the profile because there is no profile in the HAP."
+        },
+        {
+          "code": "17700029",
+          "description": "The specified ability is disabled."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getProfileByAbilitySync",
+      "返回值": "Array<string>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the profile designated by metadata name, abilityName and moduleName from the current application.",
+      "注释信息": [
+        "@param { string } moduleName - Indicates the moduleName of the application.",
+        "@param { string } abilityName - Indicates the abilityName of the application.",
+        "@param { string } metadataName - Indicates the name of metadata in ability.",
+        "@returns { Array<string> } Returns string in json-format of the corresponding config file.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.",
+        "@throws { BusinessError } 17700002 - The specified moduleName is not existed.",
+        "@throws { BusinessError } 17700003 - The specified abilityName is not existed.",
+        "@throws { BusinessError } 17700024 - Failed to get the profile because there is no profile in the HAP.",
+        "@throws { BusinessError } 17700029 - The specified ability is disabled.",
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "bundleManager",
+      "since_version": "11",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [
+        {
+          "名称": "moduleName",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates the moduleName of the application."
+        },
+        {
+          "名称": "abilityName",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates the abilityName of the application."
+        },
+        {
+          "名称": "metadataName",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates the name of metadata in ability."
+        }
+      ],
+      "return_description": "Returns string in json-format of the corresponding config file.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types."
+        },
+        {
+          "code": "17700002",
+          "description": "The specified moduleName is not existed."
+        },
+        {
+          "code": "17700003",
+          "description": "The specified abilityName is not existed."
+        },
+        {
+          "code": "17700024",
+          "description": "Failed to get the profile because there is no profile in the HAP."
+        },
+        {
+          "code": "17700029",
+          "description": "The specified ability is disabled."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getProfileByExtensionAbility",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the profile designated by metadata name, extensionAbilityName and moduleName from the current application.",
+      "注释信息": [
+        "@param { string } moduleName - Indicates the moduleName of the application.",
+        "@param { string } extensionAbilityName - Indicates the extensionAbilityName of the application.",
+        "@param { string } metadataName - Indicates the name of metadata in ability.",
+        "@param { AsyncCallback<Array<string>> } callback - The callback of returning string in json-format of the corresponding config file.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.",
+        "@throws { BusinessError } 17700002 - The specified moduleName is not existed.",
+        "@throws { BusinessError } 17700003 - The specified extensionAbilityName not existed.",
+        "@throws { BusinessError } 17700024 - Failed to get the profile because there is no profile in the HAP.",
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "bundleManager",
+      "since_version": "11",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [
+        {
+          "名称": "moduleName",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates the moduleName of the application."
+        },
+        {
+          "名称": "extensionAbilityName",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates the extensionAbilityName of the application."
+        },
+        {
+          "名称": "metadataName",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates the name of metadata in ability."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<Array<string>>",
+          "必填": true,
+          "说明": "The callback of returning string in json-format of the corresponding config file."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types."
+        },
+        {
+          "code": "17700002",
+          "description": "The specified moduleName is not existed."
+        },
+        {
+          "code": "17700003",
+          "description": "The specified extensionAbilityName not existed."
+        },
+        {
+          "code": "17700024",
+          "description": "Failed to get the profile because there is no profile in the HAP."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getProfileByExtensionAbility",
+      "返回值": "Promise<Array<string>>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the profile designated by metadata name, extensionAbilityName and moduleName from the current application.",
+      "注释信息": [
+        "@param { string } moduleName - Indicates the moduleName of the application.",
+        "@param { string } extensionAbilityName - Indicates the extensionAbilityName of the application.",
+        "@param { string } metadataName - Indicates the name of metadata in ability.",
+        "@returns { Promise<Array<string>> } Returns string in json-format of the corresponding config file.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.",
+        "@throws { BusinessError } 17700002 - The specified moduleName is not existed.",
+        "@throws { BusinessError } 17700003 - The specified extensionAbilityName not existed.",
+        "@throws { BusinessError } 17700024 - Failed to get the profile because there is no profile in the HAP.",
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "bundleManager",
+      "since_version": "11",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [
+        {
+          "名称": "moduleName",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates the moduleName of the application."
+        },
+        {
+          "名称": "extensionAbilityName",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates the extensionAbilityName of the application."
+        },
+        {
+          "名称": "metadataName",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates the name of metadata in ability."
+        }
+      ],
+      "return_description": "Returns string in json-format of the corresponding config file.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types."
+        },
+        {
+          "code": "17700002",
+          "description": "The specified moduleName is not existed."
+        },
+        {
+          "code": "17700003",
+          "description": "The specified extensionAbilityName not existed."
+        },
+        {
+          "code": "17700024",
+          "description": "Failed to get the profile because there is no profile in the HAP."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getProfileByExtensionAbilitySync",
+      "返回值": "Array<string>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the profile designated by metadata name, extensionAbilityName and moduleName from the current application.",
+      "注释信息": [
+        "@param { string } moduleName - Indicates the moduleName of the application.",
+        "@param { string } extensionAbilityName - Indicates the extensionAbilityName of the application.",
+        "@param { string } metadataName - Indicates the name of metadata in ability.",
+        "@returns { Array<string> } Returns string in json-format of the corresponding config file.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.",
+        "@throws { BusinessError } 17700002 - The specified moduleName is not existed.",
+        "@throws { BusinessError } 17700003 - The specified extensionAbilityName not existed.",
+        "@throws { BusinessError } 17700024 - Failed to get the profile because there is no profile in the HAP.",
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "bundleManager",
+      "since_version": "11",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [
+        {
+          "名称": "moduleName",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates the moduleName of the application."
+        },
+        {
+          "名称": "extensionAbilityName",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates the extensionAbilityName of the application."
+        },
+        {
+          "名称": "metadataName",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates the name of metadata in ability."
+        }
+      ],
+      "return_description": "Returns string in json-format of the corresponding config file.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types."
+        },
+        {
+          "code": "17700002",
+          "description": "The specified moduleName is not existed."
+        },
+        {
+          "code": "17700003",
+          "description": "The specified extensionAbilityName not existed."
+        },
+        {
+          "code": "17700024",
+          "description": "Failed to get the profile because there is no profile in the HAP."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getBundleInfoSync",
+      "返回值": "BundleInfo",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains bundleInfo based on bundleName, bundleFlags and userId. The application requires to be a system application when requesting the permission of ohos.permission.GET_BUNDLE_INFO.",
+      "注释信息": [
+        "@permission ohos.permission.GET_BUNDLE_INFO_PRIVILEGED or ohos.permission.GET_BUNDLE_INFO",
+        "@param { string } bundleName - Indicates the application bundle name to be queried.",
+        "@param { number } bundleFlags {@link BundleFlag} - Indicates the flag used to specify information contained in the BundleInfo object that will be returned.",
+        "@param { number } userId - Indicates the user ID or do not pass user ID.",
+        "@returns { BundleInfo } - Returns the BundleInfo object.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.",
+        "@throws { BusinessError } 17700001 - The specified bundleName is not found.",
+        "@throws { BusinessError } 17700004 - The specified user ID is not found.",
+        "@throws { BusinessError } 17700026 - The specified bundle is disabled.",
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@since 14"
+      ],
+      "层级": 1,
+      "上级": "bundleManager",
+      "since_version": "14",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [
+        {
+          "名称": "bundleName",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates the application bundle name to be queried."
+        },
+        {
+          "名称": "bundleFlags",
+          "类型": "number",
+          "必填": true,
+          "说明": "{@link BundleFlag} - Indicates the flag used to specify information contained in the BundleInfo object that will be returned."
+        },
+        {
+          "名称": "userId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the user ID or do not pass user ID."
+        }
+      ],
+      "return_description": "- Returns the BundleInfo object.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types."
+        },
+        {
+          "code": "17700001",
+          "description": "The specified bundleName is not found."
+        },
+        {
+          "code": "17700004",
+          "description": "The specified user ID is not found."
+        },
+        {
+          "code": "17700026",
+          "description": "The specified bundle is disabled."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getBundleInfoSync",
+      "返回值": "BundleInfo",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains bundleInfo based on bundleName, bundleFlags. The application requires to be a system application when requesting the permission of ohos.permission.GET_BUNDLE_INFO.",
+      "注释信息": [
+        "@permission ohos.permission.GET_BUNDLE_INFO_PRIVILEGED or ohos.permission.GET_BUNDLE_INFO",
+        "@param { string } bundleName - Indicates the application bundle name to be queried.",
+        "@param { number } bundleFlags {@link BundleFlag} - Indicates the flag used to specify information contained in the BundleInfo object that will be returned.",
+        "@returns { BundleInfo } - Returns the BundleInfo object.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.",
+        "@throws { BusinessError } 17700001 - The specified bundleName is not found.",
+        "@throws { BusinessError } 17700026 - The specified bundle is disabled.",
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@since 14"
+      ],
+      "层级": 1,
+      "上级": "bundleManager",
+      "since_version": "14",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [
+        {
+          "名称": "bundleName",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates the application bundle name to be queried."
+        },
+        {
+          "名称": "bundleFlags",
+          "类型": "number",
+          "必填": true,
+          "说明": "{@link BundleFlag} - Indicates the flag used to specify information contained in the BundleInfo object that will be returned."
+        }
+      ],
+      "return_description": "- Returns the BundleInfo object.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types."
+        },
+        {
+          "code": "17700001",
+          "description": "The specified bundleName is not found."
+        },
+        {
+          "code": "17700026",
+          "description": "The specified bundle is disabled."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "canOpenLink",
+      "返回值": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Check whether the link can be opened.",
+      "注释信息": [
+        "@param { string } link - Indicates the link to be opened.",
+        "@returns { boolean } Returns true if the link can be opened; returns false otherwise.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.",
+        "@throws { BusinessError } 17700055 - The specified link is invalid.",
+        "@throws { BusinessError } 17700056 - The scheme of the specified link is not in the querySchemes.",
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "bundleManager",
+      "since_version": "12",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [
+        {
+          "名称": "link",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates the link to be opened."
+        }
+      ],
+      "return_description": "Returns true if the link can be opened; returns false otherwise.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types."
+        },
+        {
+          "code": "17700055",
+          "description": "The specified link is invalid."
+        },
+        {
+          "code": "17700056",
+          "description": "The scheme of the specified link is not in the querySchemes."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getSignatureInfo",
+      "返回值": "SignatureInfo",
+      "所属模块": "未知模块",
+      "功能描述": "Get the SignatureInfo of the application through UID.",
+      "注释信息": [
+        "@permission ohos.permission.GET_SIGNATURE_INFO",
+        "@param { number } uid - Indicates the UID of an application.",
+        "@returns { SignatureInfo } The result of getting the signature info.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 17700021 - The uid is not found.",
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@since 18"
+      ],
+      "层级": 1,
+      "上级": "bundleManager",
+      "since_version": "18",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [
+        {
+          "名称": "uid",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the UID of an application."
+        }
+      ],
+      "return_description": "The result of getting the signature info.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "17700021",
+          "description": "The uid is not found."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getAppCloneIdentity",
+      "返回值": "Promise<AppCloneIdentity>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains AppCloneIdentity contains bundleName and appIndex by the given uid. The application requires to be a system application when requesting the permission of ohos.permission.GET_BUNDLE_INFO.",
+      "注释信息": [
+        "@permission ohos.permission.GET_BUNDLE_INFO_PRIVILEGED or ohos.permission.GET_BUNDLE_INFO",
+        "@param { number } uid - Indicates the UID of an application.",
+        "@returns { Promise<AppCloneIdentity> } Returns the clone Identity contains bundleName and appIndex.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types.",
+        "@throws { BusinessError } 17700021 - The uid is not found.",
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@since 14"
+      ],
+      "层级": 1,
+      "上级": "bundleManager",
+      "since_version": "14",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [
+        {
+          "名称": "uid",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the UID of an application."
+        }
+      ],
+      "return_description": "Returns the clone Identity contains bundleName and appIndex.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types."
+        },
+        {
+          "code": "17700021",
+          "description": "The uid is not found."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getPluginBundlePathForSelf",
+      "返回值": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Get the bundle path of the specified plugin.",
+      "注释信息": [
+        "@param { string } pluginBundleName - Indicates the plugin bundle name.",
+        "@returns { string } Returns the bundle path of specified plugin.",
+        "@throws { BusinessError } 17700001 - The specified bundleName is not found.",
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@since 22"
+      ],
+      "层级": 1,
+      "上级": "bundleManager",
+      "since_version": "22",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [
+        {
+          "名称": "pluginBundleName",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates the plugin bundle name."
+        }
+      ],
+      "return_description": "Returns the bundle path of specified plugin.",
+      "error_codes": [
+        {
+          "code": "17700001",
+          "description": "The specified bundleName is not found."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "type_alias",
+      "名称": "ApplicationInfo",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains configuration information about an application.",
+      "注释信息": [
+        "@typedef { _ApplicationInfo }",
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "bundleManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "type_alias",
+      "名称": "ModuleMetadata",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the metadata information about a module.",
+      "注释信息": [
+        "@typedef { _ModuleMetadata }",
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "bundleManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "type_alias",
+      "名称": "Metadata",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the Metadata.",
+      "注释信息": [
+        "@typedef { _Metadata }",
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "bundleManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "type_alias",
+      "名称": "BundleInfo",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains configuration information about a bundle.",
+      "注释信息": [
+        "@typedef { _BundleInfo.BundleInfo }",
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "bundleManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "type_alias",
+      "名称": "UsedScene",
+      "所属模块": "未知模块",
+      "功能描述": "The scene which is used.",
+      "注释信息": [
+        "@typedef { _BundleInfo.UsedScene }",
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "bundleManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "type_alias",
+      "名称": "ReqPermissionDetail",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the required permissions details defined in file config.json.",
+      "注释信息": [
+        "@typedef { _BundleInfo.ReqPermissionDetail }",
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "bundleManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "type_alias",
+      "名称": "SignatureInfo",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the SignatureInfo.",
+      "注释信息": [
+        "@typedef { _BundleInfo.SignatureInfo }",
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "bundleManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "type_alias",
+      "名称": "AppCloneIdentity",
+      "所属模块": "未知模块",
+      "功能描述": "AppCloneIdentity Contain BundleName and appIndex.",
+      "注释信息": [
+        "@typedef { _BundleInfo.AppCloneIdentity }",
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@since 15"
+      ],
+      "层级": 1,
+      "上级": "bundleManager",
+      "since_version": "15",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "type_alias",
+      "名称": "HapModuleInfo",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains configuration information about a module.",
+      "注释信息": [
+        "@typedef { _HapModuleInfo.HapModuleInfo }",
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "bundleManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "type_alias",
+      "名称": "PreloadItem",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains preload information about a module.",
+      "注释信息": [
+        "@typedef { _HapModuleInfo.PreloadItem }",
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "bundleManager",
+      "since_version": "11",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "type_alias",
+      "名称": "Dependency",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains dependency information about a module.",
+      "注释信息": [
+        "@typedef { _HapModuleInfo.Dependency }",
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "bundleManager",
+      "since_version": "11",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "type_alias",
+      "名称": "RouterItem",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the router item about a module.",
+      "注释信息": [
+        "@typedef { _HapModuleInfo.RouterItem}",
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "bundleManager",
+      "since_version": "12",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "type_alias",
+      "名称": "DataItem",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the data item within router item.",
+      "注释信息": [
+        "@typedef { _HapModuleInfo.DataItem }",
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "bundleManager",
+      "since_version": "12",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "type_alias",
+      "名称": "AbilityInfo",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains configuration information about an ability.",
+      "注释信息": [
+        "@typedef { _AbilityInfo.AbilityInfo }",
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "bundleManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "type_alias",
+      "名称": "WindowSize",
+      "所属模块": "未知模块",
+      "功能描述": "Contains basic Ability information. Indicates the window size.",
+      "注释信息": [
+        "@typedef { _AbilityInfo.WindowSize }",
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "bundleManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "type_alias",
+      "名称": "ExtensionAbilityInfo",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains extension information about a bundle.",
+      "注释信息": [
+        "@typedef { _ExtensionAbilityInfo.ExtensionAbilityInfo }",
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "bundleManager",
+      "since_version": "11",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "type_alias",
+      "名称": "ElementName",
+      "所属模块": "未知模块",
+      "功能描述": "Contains basic Ability information, which uniquely identifies an ability.",
+      "注释信息": [
+        "@typedef { _ElementName }",
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "bundleManager",
+      "since_version": "11",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "type_alias",
+      "名称": "Skill",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains configuration information about an skill",
+      "注释信息": [
+        "@typedef { _Skill.Skill }",
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "bundleManager",
+      "since_version": "12",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "type_alias",
+      "名称": "SkillUrl",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains configuration information about an skillUri",
+      "注释信息": [
+        "@typedef { _Skill.SkillUri }",
+        "@syscap SystemCapability.BundleManager.BundleFramework.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "bundleManager",
+      "since_version": "12",
+      "system_capability": "SystemCapability.BundleManager.BundleFramework.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    }
+  ]
+}

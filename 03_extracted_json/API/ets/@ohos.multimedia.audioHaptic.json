@@ -1,0 +1,949 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.AudioKit",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "namespace",
+      "名称": "audioHaptic",
+      "所属模块": "@kit.AudioKit",
+      "功能描述": "Provides audio haptic collaborative play interfaces.",
+      "注释信息": [
+        "@namespace audioHaptic",
+        "@syscap SystemCapability.Multimedia.AudioHaptic.Core",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "@kit.AudioKit",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Multimedia.AudioHaptic.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getAudioHapticManager",
+      "返回值": "AudioHapticManager",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains an {@link AudioHapticManager} instance. This object is singleton in one process.",
+      "注释信息": [
+        "@returns { AudioHapticManager } AudioHapticManager instance.",
+        "@syscap SystemCapability.Multimedia.AudioHaptic.Core",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "audioHaptic",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Multimedia.AudioHaptic.Core",
+      "parameters": [],
+      "return_description": "AudioHapticManager instance.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "AudioLatencyMode",
+      "所属模块": "未知模块",
+      "功能描述": "Audio Latency mode.",
+      "注释信息": [
+        "@enum {number}",
+        "@syscap SystemCapability.Multimedia.AudioHaptic.Core",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "audioHaptic",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Multimedia.AudioHaptic.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "AUDIO_LATENCY_MODE_NORMAL",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "Normal audio mode.",
+      "注释信息": [
+        "@syscap SystemCapability.Multimedia.AudioHaptic.Core",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "AudioLatencyMode",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Multimedia.AudioHaptic.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "AUDIO_LATENCY_MODE_FAST",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Low latency mode. This mode should be used when duration of the audio source is short. If duration of the audio source is long, it may be truncated. This behavior is the same with sound pool.",
+      "注释信息": [
+        "@syscap SystemCapability.Multimedia.AudioHaptic.Core",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "AudioLatencyMode",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Multimedia.AudioHaptic.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "AudioHapticPlayerOptions",
+      "所属模块": "未知模块",
+      "功能描述": "Audio haptic player options object.",
+      "注释信息": [
+        "@typedef AudioHapticPlayerOptions",
+        "@syscap SystemCapability.Multimedia.AudioHaptic.Core",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "audioHaptic",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Multimedia.AudioHaptic.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "muteAudio",
+      "属性类型": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Mute audio.",
+      "注释信息": [
+        "@type {?boolean}",
+        "@syscap SystemCapability.Multimedia.AudioHaptic.Core",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "AudioHapticPlayerOptions",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Multimedia.AudioHaptic.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "muteHaptics",
+      "属性类型": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Mute haptics.",
+      "注释信息": [
+        "@type {?boolean}",
+        "@syscap SystemCapability.Multimedia.AudioHaptic.Core",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "AudioHapticPlayerOptions",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Multimedia.AudioHaptic.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "AudioHapticManager",
+      "所属模块": "未知模块",
+      "功能描述": "Audio haptic manager object.",
+      "注释信息": [
+        "@typedef AudioHapticManager",
+        "@syscap SystemCapability.Multimedia.AudioHaptic.Core",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "audioHaptic",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Multimedia.AudioHaptic.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "registerSource",
+      "返回值": "Promise<number>",
+      "所属模块": "未知模块",
+      "功能描述": "Register audio and haptic file into manager. Audio and haptic works are paired while playing. After registering source, it will returns the source id. This method uses a promise to return the source id. <p><strong>NOTE</strong>: The maximum number one application can register is 128, exceeding this limit will lead to registration failure. </p> is negative, you should check if sources registered exceeded the limit. 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types.",
+      "注释信息": [
+        "@param { string } audioUri - Audio file uri.",
+        "@param { string } hapticUri - Haptic file uri.",
+        "@returns { Promise<number> } Promise used to return the source id. Source id is non-negative in normal case, if it",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@syscap SystemCapability.Multimedia.AudioHaptic.Core",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "AudioHapticManager",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Multimedia.AudioHaptic.Core",
+      "parameters": [
+        {
+          "名称": "audioUri",
+          "类型": "string",
+          "必填": true,
+          "说明": "Audio file uri."
+        },
+        {
+          "名称": "hapticUri",
+          "类型": "string",
+          "必填": true,
+          "说明": "Haptic file uri."
+        }
+      ],
+      "return_description": "Promise used to return the source id. Source id is non-negative in normal case, if it",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "unregisterSource",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Unregister source. This method uses a promise to return the result. <p><strong>NOTE</strong>: Application should unregister the source once it is out of use to avoid exceeding th resource limit. </p> 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types.",
+      "注释信息": [
+        "@param { number } id source id.",
+        "@returns { Promise<void> } Promise used to return the result.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@syscap SystemCapability.Multimedia.AudioHaptic.Core",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "AudioHapticManager",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Multimedia.AudioHaptic.Core",
+      "parameters": [
+        {
+          "名称": "id",
+          "类型": "number",
+          "必填": true,
+          "说明": "source id."
+        }
+      ],
+      "return_description": "Promise used to return the result.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "setAudioLatencyMode",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Set the audio latency mode of one source. 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types.",
+      "注释信息": [
+        "@param { number } id - Source id.",
+        "@param { AudioLatencyMode } latencyMode - Audio latency mode.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 5400102 - Operation not allowed.",
+        "@syscap SystemCapability.Multimedia.AudioHaptic.Core",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "AudioHapticManager",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Multimedia.AudioHaptic.Core",
+      "parameters": [
+        {
+          "名称": "id",
+          "类型": "number",
+          "必填": true,
+          "说明": "Source id."
+        },
+        {
+          "名称": "latencyMode",
+          "类型": "AudioLatencyMode",
+          "必填": true,
+          "说明": "Audio latency mode."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "5400102",
+          "description": "Operation not allowed."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "setStreamUsage",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Set the stream usage of one source. 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types; 3.Parameter verification failed.",
+      "注释信息": [
+        "@param { number } id - Source id.",
+        "@param { audio.StreamUsage } usage - Stream usage.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 5400102 - Operation not allowed.",
+        "@syscap SystemCapability.Multimedia.AudioHaptic.Core",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "AudioHapticManager",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Multimedia.AudioHaptic.Core",
+      "parameters": [
+        {
+          "名称": "id",
+          "类型": "number",
+          "必填": true,
+          "说明": "Source id."
+        },
+        {
+          "名称": "usage",
+          "类型": "audio.StreamUsage",
+          "必填": true,
+          "说明": "Stream usage."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "5400102",
+          "description": "Operation not allowed."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "createPlayer",
+      "返回值": "Promise<AudioHapticPlayer>",
+      "所属模块": "未知模块",
+      "功能描述": "Create an audio haptic player. This method uses a promise to return the result. If haptics is needed, caller should have the permission of ohos.permission.VIBRATE. 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types.",
+      "注释信息": [
+        "@permission ohos.permission.VIBRATE",
+        "@param { number } id - Source id.",
+        "@param { AudioHapticPlayerOptions } options - Options when creating audio haptic player.",
+        "@returns { Promise<AudioHapticPlayer> } Promise used to return the result.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 5400102 - Operation not allowed.",
+        "@throws { BusinessError } 5400103 - I/O error.",
+        "@throws { BusinessError } 5400106 - Unsupport format.",
+        "@syscap SystemCapability.Multimedia.AudioHaptic.Core",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "AudioHapticManager",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Multimedia.AudioHaptic.Core",
+      "parameters": [
+        {
+          "名称": "id",
+          "类型": "number",
+          "必填": true,
+          "说明": "Source id."
+        },
+        {
+          "名称": "options",
+          "类型": "AudioHapticPlayerOptions",
+          "必填": true,
+          "说明": "Options when creating audio haptic player."
+        }
+      ],
+      "return_description": "Promise used to return the result.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "5400102",
+          "description": "Operation not allowed."
+        },
+        {
+          "code": "5400103",
+          "description": "I/O error."
+        },
+        {
+          "code": "5400106",
+          "description": "Unsupport format."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "registerSourceFromFd",
+      "返回值": "Promise<number>",
+      "所属模块": "未知模块",
+      "功能描述": "Register audio and haptic file represented by fd into manager. Audio and haptic works are paired while playing. After registering source, it will returns the source id. This method uses a promise to return the source id. <p><strong>NOTE</strong>: The maximum number one application can register is 128, exceeding this limit will lead to registration failure. </p> is negative, you should check if sources registered exceeded the limit.",
+      "注释信息": [
+        "@param { AudioHapticFileDescriptor } audioFd : The file descriptor of audio source from file system.",
+        "@param { AudioHapticFileDescriptor } hapticFd : The file descriptor of haptic source from file system.",
+        "@returns { Promise<number> } Promise used to return the source id. Source id is non-negative in normal case, if it",
+        "@syscap SystemCapability.Multimedia.AudioHaptic.Core",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "AudioHapticManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Multimedia.AudioHaptic.Core",
+      "parameters": [
+        {
+          "名称": "audioFd",
+          "类型": "AudioHapticFileDescriptor",
+          "必填": true,
+          "说明": ": The file descriptor of audio source from file system."
+        },
+        {
+          "名称": "hapticFd",
+          "类型": "AudioHapticFileDescriptor",
+          "必填": true,
+          "说明": ": The file descriptor of haptic source from file system."
+        }
+      ],
+      "return_description": "Promise used to return the source id. Source id is non-negative in normal case, if it",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "AudioHapticType",
+      "所属模块": "未知模块",
+      "功能描述": "Type of audio haptic.",
+      "注释信息": [
+        "@enum {number}",
+        "@syscap SystemCapability.Multimedia.AudioHaptic.Core",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "audioHaptic",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Multimedia.AudioHaptic.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "AUDIO_HAPTIC_TYPE_AUDIO",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "Audio.",
+      "注释信息": [
+        "@syscap SystemCapability.Multimedia.AudioHaptic.Core",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "AudioHapticType",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Multimedia.AudioHaptic.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "AUDIO_HAPTIC_TYPE_HAPTIC",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Haptic.",
+      "注释信息": [
+        "@syscap SystemCapability.Multimedia.AudioHaptic.Core",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "AudioHapticType",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Multimedia.AudioHaptic.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "AudioHapticFileDescriptor",
+      "所属模块": "未知模块",
+      "功能描述": "Describes audio haptic file descriptor. Caller needs to ensure the fd is valid and the offset and length are correct.",
+      "注释信息": [
+        "@typedef AudioHapticFileDescriptor",
+        "@syscap SystemCapability.Multimedia.AudioHaptic.Core",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "audioHaptic",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Multimedia.AudioHaptic.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "fd",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "The file descriptor of the source.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.Multimedia.AudioHaptic.Core",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "AudioHapticFileDescriptor",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Multimedia.AudioHaptic.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "length",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "The length in bytes of the data to be read. By default, the length is the rest of bytes in the file from the offset.",
+      "注释信息": [
+        "@type { ?number }",
+        "@syscap SystemCapability.Multimedia.AudioHaptic.Core",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "AudioHapticFileDescriptor",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Multimedia.AudioHaptic.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "offset",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "The offset into the file where the data to be read. By default, the offset is 0.",
+      "注释信息": [
+        "@type { ?number }",
+        "@syscap SystemCapability.Multimedia.AudioHaptic.Core",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "AudioHapticFileDescriptor",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Multimedia.AudioHaptic.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "AudioHapticPlayer",
+      "所属模块": "未知模块",
+      "功能描述": "Audio haptic player object.",
+      "注释信息": [
+        "@typedef AudioHapticPlayer",
+        "@syscap SystemCapability.Multimedia.AudioHaptic.Core",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "audioHaptic",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Multimedia.AudioHaptic.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "isMuted",
+      "返回值": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Is muted for one AudioHapticType 1.Mandatory parameters are left unspecified; 2.Parameter verification failed.",
+      "注释信息": [
+        "@param { AudioHapticType } type - Indicates the type to query.",
+        "@returns { boolean } - Is muted.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@syscap SystemCapability.Multimedia.AudioHaptic.Core",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "AudioHapticPlayer",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Multimedia.AudioHaptic.Core",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "AudioHapticType",
+          "必填": true,
+          "说明": "Indicates the type to query."
+        }
+      ],
+      "return_description": "- Is muted.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "start",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Start this player. This method uses a promise to return the result.",
+      "注释信息": [
+        "@returns { Promise<void> } Promise used to return the result.",
+        "@throws { BusinessError } 5400102 - Operate not permit.",
+        "@throws { BusinessError } 5400103 - IO error.",
+        "@throws { BusinessError } 5400105 - Service died.",
+        "@syscap SystemCapability.Multimedia.AudioHaptic.Core",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "AudioHapticPlayer",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Multimedia.AudioHaptic.Core",
+      "parameters": [],
+      "return_description": "Promise used to return the result.",
+      "error_codes": [
+        {
+          "code": "5400102",
+          "description": "Operate not permit."
+        },
+        {
+          "code": "5400103",
+          "description": "IO error."
+        },
+        {
+          "code": "5400105",
+          "description": "Service died."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "stop",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Stop this player. This method uses a promise to return the result.",
+      "注释信息": [
+        "@returns { Promise<void> } Promise used to return the result.",
+        "@throws { BusinessError } 5400102 - Operate not permit.",
+        "@throws { BusinessError } 5400105 - Service died.",
+        "@syscap SystemCapability.Multimedia.AudioHaptic.Core",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "AudioHapticPlayer",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Multimedia.AudioHaptic.Core",
+      "parameters": [],
+      "return_description": "Promise used to return the result.",
+      "error_codes": [
+        {
+          "code": "5400102",
+          "description": "Operate not permit."
+        },
+        {
+          "code": "5400105",
+          "description": "Service died."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "release",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Release this player. This method uses a promise to return the result.",
+      "注释信息": [
+        "@returns { Promise<void> } Promise used to return the result.",
+        "@throws { BusinessError } 5400105 - Service died.",
+        "@syscap SystemCapability.Multimedia.AudioHaptic.Core",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "AudioHapticPlayer",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Multimedia.AudioHaptic.Core",
+      "parameters": [],
+      "return_description": "Promise used to return the result.",
+      "error_codes": [
+        {
+          "code": "5400105",
+          "description": "Service died."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Subscribes end of stream event.",
+      "注释信息": [
+        "@param { 'endOfStream' } type - Type of the playback event to listen for.",
+        "@param { Callback<void> } callback - Callback used to listen for the playback end of stream.",
+        "@syscap SystemCapability.Multimedia.AudioHaptic.Core",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "AudioHapticPlayer",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Multimedia.AudioHaptic.Core",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'endOfStream'",
+          "必填": true,
+          "说明": "Type of the playback event to listen for."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<void>",
+          "必填": true,
+          "说明": "Callback used to listen for the playback end of stream."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unsubscribes end of stream event.",
+      "注释信息": [
+        "@param { 'endOfStream' } type - Type of the playback event to listen for.",
+        "@param { Callback<void> } [callback] - Callback used to listen for the playback end of stream.",
+        "@syscap SystemCapability.Multimedia.AudioHaptic.Core",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "AudioHapticPlayer",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Multimedia.AudioHaptic.Core",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'endOfStream'",
+          "必填": true,
+          "说明": "Type of the playback event to listen for."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "Callback<void> } [callback] - Callback used to listen for the playback end of stream."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Subscribes audio interrupt event.",
+      "注释信息": [
+        "@param { 'audioInterrupt' } type - Type of the playback event to listen for.",
+        "@param { Callback<audio.InterruptEvent> } callback - Callback used to listen for audio interrupt info.",
+        "@syscap SystemCapability.Multimedia.AudioHaptic.Core",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "AudioHapticPlayer",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Multimedia.AudioHaptic.Core",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'audioInterrupt'",
+          "必填": true,
+          "说明": "Type of the playback event to listen for."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<audio.InterruptEvent>",
+          "必填": true,
+          "说明": "Callback used to listen for audio interrupt info."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unsubscribes audio interrupt event.",
+      "注释信息": [
+        "@param { 'audioInterrupt' } type - Type of the playback event to listen for.",
+        "@param { Callback<audio.InterruptEvent> } callback - Callback used to listen for audio interrupt info.",
+        "@syscap SystemCapability.Multimedia.AudioHaptic.Core",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "AudioHapticPlayer",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Multimedia.AudioHaptic.Core",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'audioInterrupt'",
+          "必填": true,
+          "说明": "Type of the playback event to listen for."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<audio.InterruptEvent>",
+          "必填": true,
+          "说明": "Callback used to listen for audio interrupt info."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "setVolume",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Set audio volume for this player. This method uses a promise to return the result. This function should be called before player release. The value ranges from 0.00 to 1.00. 1.00 indicates the maximum volume (100%).",
+      "注释信息": [
+        "@param { number } volume - Target audio volume.",
+        "@returns { Promise<void> } Promise used to return the result.",
+        "@throws { BusinessError } 5400102 - Operate not permit in current state.",
+        "@throws { BusinessError } 5400105 - Service died.",
+        "@throws { BusinessError } 5400108 - Parameter out of range.",
+        "@syscap SystemCapability.Multimedia.AudioHaptic.Core",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "AudioHapticPlayer",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Multimedia.AudioHaptic.Core",
+      "parameters": [
+        {
+          "名称": "volume",
+          "类型": "number",
+          "必填": true,
+          "说明": "Target audio volume."
+        }
+      ],
+      "return_description": "Promise used to return the result.",
+      "error_codes": [
+        {
+          "code": "5400102",
+          "description": "Operate not permit in current state."
+        },
+        {
+          "code": "5400105",
+          "description": "Service died."
+        },
+        {
+          "code": "5400108",
+          "description": "Parameter out of range."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "setLoop",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Set the playback to be looping. This method uses a promise to return the result. This function should be called before player release.",
+      "注释信息": [
+        "@param { boolean } loop - Whether to loop or not, value true means loop.",
+        "@returns { Promise<void> } Promise used to return the result.",
+        "@throws { BusinessError } 5400102 - Operate not permit in current state.",
+        "@syscap SystemCapability.Multimedia.AudioHaptic.Core",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "AudioHapticPlayer",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Multimedia.AudioHaptic.Core",
+      "parameters": [
+        {
+          "名称": "loop",
+          "类型": "boolean",
+          "必填": true,
+          "说明": "Whether to loop or not, value true means loop."
+        }
+      ],
+      "return_description": "Promise used to return the result.",
+      "error_codes": [
+        {
+          "code": "5400102",
+          "description": "Operate not permit in current state."
+        }
+      ],
+      "版本": "API"
+    }
+  ]
+}

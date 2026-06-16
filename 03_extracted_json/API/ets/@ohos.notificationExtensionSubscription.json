@@ -1,0 +1,398 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.NotificationKit",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "namespace",
+      "名称": "notificationExtensionSubscription",
+      "所属模块": "@kit.NotificationKit",
+      "功能描述": "Manages notifications extension subscription.",
+      "注释信息": [
+        "@namespace notificationExtensionSubscription",
+        "@syscap SystemCapability.Notification.Notification",
+        "@since 22"
+      ],
+      "层级": 1,
+      "上级": "@kit.NotificationKit",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Notification.Notification",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "openSubscriptionSettings",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Opens the notification extension subscription settings page of the application, which is displayed in semi-modal mode and can be used to set the notification enabling and notification mode. This API uses a promise to return the result.",
+      "注释信息": [
+        "@permission ohos.permission.SUBSCRIBE_NOTIFICATION",
+        "@param { UIAbilityContext } context - Ability context bound to the notification settings page.",
+        "@returns { Promise<void> } The promise returned by the function.",
+        "@throws { BusinessError } 201 - Permission denied or current device not supported.",
+        "@throws { BusinessError } 1600001 - Internal error.",
+        "@throws { BusinessError } 1600018 - The notification settings window is already displayed.",
+        "@throws { BusinessError } 1600023 - The application does not implement the NotificationSubscriberExtensionAbility.",
+        "@syscap SystemCapability.Notification.Notification",
+        "@since 22"
+      ],
+      "层级": 1,
+      "上级": "notificationExtensionSubscription",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Notification.Notification",
+      "parameters": [
+        {
+          "名称": "context",
+          "类型": "UIAbilityContext",
+          "必填": true,
+          "说明": "Ability context bound to the notification settings page."
+        }
+      ],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied or current device not supported."
+        },
+        {
+          "code": "1600001",
+          "description": "Internal error."
+        },
+        {
+          "code": "1600018",
+          "description": "The notification settings window is already displayed."
+        },
+        {
+          "code": "1600023",
+          "description": "The application does not implement the NotificationSubscriberExtensionAbility."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "subscribe",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Subscribe the notification extension when the bluetooth addr is connected.",
+      "注释信息": [
+        "@permission ohos.permission.SUBSCRIBE_NOTIFICATION",
+        "@param { NotificationExtensionSubscriptionInfo[] } info - The info to be subscribe.",
+        "@returns { Promise<void> } The promise returned by the function.",
+        "@throws { BusinessError } 201 - Permission denied or current device not supported.",
+        "@throws { BusinessError } 1600001 - Internal error.",
+        "@throws { BusinessError } 1600003 - Failed to connect to the service.",
+        "@throws { BusinessError } 1600023 - The application does not implement the NotificationSubscriberExtensionAbility.",
+        "@syscap SystemCapability.Notification.Notification",
+        "@since 22"
+      ],
+      "层级": 1,
+      "上级": "notificationExtensionSubscription",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Notification.Notification",
+      "parameters": [
+        {
+          "名称": "info",
+          "类型": "NotificationExtensionSubscriptionInfo[]",
+          "必填": true,
+          "说明": "The info to be subscribe."
+        }
+      ],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied or current device not supported."
+        },
+        {
+          "code": "1600001",
+          "description": "Internal error."
+        },
+        {
+          "code": "1600003",
+          "description": "Failed to connect to the service."
+        },
+        {
+          "code": "1600023",
+          "description": "The application does not implement the NotificationSubscriberExtensionAbility."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "unsubscribe",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Unsubscribe the notification extension.",
+      "注释信息": [
+        "@permission ohos.permission.SUBSCRIBE_NOTIFICATION",
+        "@returns { Promise<void> } The promise returned by the function.",
+        "@throws { BusinessError } 201 - Permission denied or current device not supported.",
+        "@throws { BusinessError } 1600001 - Internal error.",
+        "@throws { BusinessError } 1600003 - Failed to connect to the service.",
+        "@syscap SystemCapability.Notification.Notification",
+        "@since 22"
+      ],
+      "层级": 1,
+      "上级": "notificationExtensionSubscription",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Notification.Notification",
+      "parameters": [],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied or current device not supported."
+        },
+        {
+          "code": "1600001",
+          "description": "Internal error."
+        },
+        {
+          "code": "1600003",
+          "description": "Failed to connect to the service."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getSubscribeInfo",
+      "返回值": "Promise<NotificationExtensionSubscriptionInfo[]>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the subscribe info.",
+      "注释信息": [
+        "@permission ohos.permission.SUBSCRIBE_NOTIFICATION",
+        "@returns { Promise<NotificationExtensionSubscriptionInfo[]> } The promise returned by the function.",
+        "@throws { BusinessError } 201 - Permission denied or current device not supported.",
+        "@throws { BusinessError } 1600001 - Internal error.",
+        "@throws { BusinessError } 1600003 - Failed to connect to the service.",
+        "@syscap SystemCapability.Notification.Notification",
+        "@since 22"
+      ],
+      "层级": 1,
+      "上级": "notificationExtensionSubscription",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Notification.Notification",
+      "parameters": [],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied or current device not supported."
+        },
+        {
+          "code": "1600001",
+          "description": "Internal error."
+        },
+        {
+          "code": "1600003",
+          "description": "Failed to connect to the service."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "isUserGranted",
+      "返回值": "Promise<boolean>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains whether the notification extension subscription is granted by user.",
+      "注释信息": [
+        "@permission ohos.permission.SUBSCRIBE_NOTIFICATION",
+        "@returns { Promise<boolean> } The promise returned by the function.",
+        "@throws { BusinessError } 201 - Permission denied or current device not supported.",
+        "@throws { BusinessError } 1600001 - Internal error.",
+        "@throws { BusinessError } 1600003 - Failed to connect to the service.",
+        "@syscap SystemCapability.Notification.Notification",
+        "@since 22"
+      ],
+      "层级": 1,
+      "上级": "notificationExtensionSubscription",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Notification.Notification",
+      "parameters": [],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied or current device not supported."
+        },
+        {
+          "code": "1600001",
+          "description": "Internal error."
+        },
+        {
+          "code": "1600003",
+          "description": "Failed to connect to the service."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getUserGrantedEnabledBundles",
+      "返回值": "Promise<GrantedBundleInfo[]>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the list of grantedBundleInfo that have been granted by the user.",
+      "注释信息": [
+        "@permission ohos.permission.SUBSCRIBE_NOTIFICATION",
+        "@returns { Promise<GrantedBundleInfo[]> } Return the list of bundleInfo which is enabled.",
+        "@throws { BusinessError } 201 - Permission denied or current device not supported.",
+        "@throws { BusinessError } 1600001 - Internal error.",
+        "@throws { BusinessError } 1600003 - Failed to connect to the service.",
+        "@syscap SystemCapability.Notification.Notification",
+        "@since 22"
+      ],
+      "层级": 1,
+      "上级": "notificationExtensionSubscription",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Notification.Notification",
+      "parameters": [],
+      "return_description": "Return the list of bundleInfo which is enabled.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied or current device not supported."
+        },
+        {
+          "code": "1600001",
+          "description": "Internal error."
+        },
+        {
+          "code": "1600003",
+          "description": "Failed to connect to the service."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "SubscribeType",
+      "所属模块": "未知模块",
+      "功能描述": "Enum for notification extension subscribe type.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.Notification.Notification",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "notificationExtensionSubscription",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Notification.Notification",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "BLUETOOTH",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "Subscribe notification extension by bluetooth.",
+      "注释信息": [
+        "@syscap SystemCapability.Notification.Notification",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "SubscribeType",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Notification.Notification",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "type_alias",
+      "名称": "BundleOption",
+      "所属模块": "未知模块",
+      "功能描述": "Describes a bundleOption.",
+      "注释信息": [
+        "@typedef { _BundleOption } BundleOption",
+        "@syscap SystemCapability.Notification.Notification",
+        "@since 22"
+      ],
+      "层级": 1,
+      "上级": "notificationExtensionSubscription",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Notification.Notification",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "type_alias",
+      "名称": "GrantedBundleInfo",
+      "所属模块": "未知模块",
+      "功能描述": "Describes a grantedBundleInfo.",
+      "注释信息": [
+        "@typedef { _GrantedBundleInfo } GrantedBundleInfo",
+        "@syscap SystemCapability.Notification.Notification",
+        "@since 22"
+      ],
+      "层级": 1,
+      "上级": "notificationExtensionSubscription",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Notification.Notification",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "type_alias",
+      "名称": "NotificationExtensionSubscriptionInfo",
+      "所属模块": "未知模块",
+      "功能描述": "the notification extension subscription info.",
+      "注释信息": [
+        "@typedef { _NotificationExtensionSubscriptionInfo } NotificationExtensionSubscriptionInfo",
+        "@syscap SystemCapability.Notification.Notification",
+        "@since 22"
+      ],
+      "层级": 1,
+      "上级": "notificationExtensionSubscription",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Notification.Notification",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "type_alias",
+      "名称": "NotificationInfo",
+      "所属模块": "未知模块",
+      "功能描述": "Describes the notification info.",
+      "注释信息": [
+        "@typedef { _NotificationInfo } NotificationInfo",
+        "@syscap SystemCapability.Notification.Notification",
+        "@since 22"
+      ],
+      "层级": 1,
+      "上级": "notificationExtensionSubscription",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Notification.Notification",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    }
+  ]
+}

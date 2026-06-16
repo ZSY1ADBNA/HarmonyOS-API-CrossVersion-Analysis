@@ -1,0 +1,508 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.AbilityKit",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "namespace",
+      "名称": "autoStartupManager",
+      "所属模块": "@kit.AbilityKit",
+      "功能描述": "The class of auto startup manager.",
+      "注释信息": [
+        "@namespace autoStartupManager",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@systemapi",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "@kit.AbilityKit",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Register the listener that watches for all applications auto startup state. \"ohos.permission.MANAGE_APP_BOOT\". <br>2. Incorrect parameters types.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_APP_BOOT",
+        "@param { 'systemAutoStartup' } type - Indicates the type of event.",
+        "@param { AutoStartupCallback } callback - Auto startup callback.",
+        "@throws { BusinessError } 201 - Permission denied, interface caller does not have permission",
+        "@throws { BusinessError } 202 - Permission denied, non-system app called system api.",
+        "@throws { BusinessError } 401 - The parameter check failed. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 16000050 - Internal error.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@systemapi",
+        "@StageModelOnly",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "autoStartupManager",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'systemAutoStartup'",
+          "必填": true,
+          "说明": "Indicates the type of event."
+        },
+        {
+          "名称": "callback",
+          "类型": "AutoStartupCallback",
+          "必填": true,
+          "说明": "Auto startup callback."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied, interface caller does not have permission"
+        },
+        {
+          "code": "202",
+          "description": "Permission denied, non-system app called system api."
+        },
+        {
+          "code": "401",
+          "description": "The parameter check failed. Possible causes: 1. Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "16000050",
+          "description": "Internal error."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unregister listener that watches for all applications auto startup state. \"ohos.permission.MANAGE_APP_BOOT\". <br>2. Incorrect parameters types.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_APP_BOOT",
+        "@param { 'systemAutoStartup' } type - Indicates the type of event.",
+        "@param { AutoStartupCallback } [callback] - Auto startup callback.",
+        "@throws { BusinessError } 201 - Permission denied, interface caller does not have permission",
+        "@throws { BusinessError } 202 - Permission denied, non-system app called system api.",
+        "@throws { BusinessError } 401 - The parameter check failed. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 16000050 - Internal error.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@systemapi",
+        "@StageModelOnly",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "autoStartupManager",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'systemAutoStartup'",
+          "必填": true,
+          "说明": "Indicates the type of event."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "AutoStartupCallback } [callback] - Auto startup callback."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied, interface caller does not have permission"
+        },
+        {
+          "code": "202",
+          "description": "Permission denied, non-system app called system api."
+        },
+        {
+          "code": "401",
+          "description": "The parameter check failed. Possible causes: 1. Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "16000050",
+          "description": "Internal error."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "setApplicationAutoStartup",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Set application auto startup state. \"ohos.permission.MANAGE_APP_BOOT\". <br>2. Incorrect parameters types.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_APP_BOOT",
+        "@param { AutoStartupInfo } info - The application info.",
+        "@param { AsyncCallback<void> } callback - The callback of setApplicationAutoStartup.",
+        "@throws { BusinessError } 201 - Permission denied, interface caller does not have permission",
+        "@throws { BusinessError } 202 - Permission denied, non-system app called system api.",
+        "@throws { BusinessError } 401 - The parameter check failed. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 16000004 - Failed to start the invisible ability.",
+        "@throws { BusinessError } 16000013 - The application is controlled by EDM.",
+        "@throws { BusinessError } 16000050 - Internal error.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@systemapi",
+        "@StageModelOnly",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "autoStartupManager",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "info",
+          "类型": "AutoStartupInfo",
+          "必填": true,
+          "说明": "The application info."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "The callback of setApplicationAutoStartup."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied, interface caller does not have permission"
+        },
+        {
+          "code": "202",
+          "description": "Permission denied, non-system app called system api."
+        },
+        {
+          "code": "401",
+          "description": "The parameter check failed. Possible causes: 1. Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "16000004",
+          "description": "Failed to start the invisible ability."
+        },
+        {
+          "code": "16000013",
+          "description": "The application is controlled by EDM."
+        },
+        {
+          "code": "16000050",
+          "description": "Internal error."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "setApplicationAutoStartup",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Set application auto startup state. \"ohos.permission.MANAGE_APP_BOOT\". <br>2. Incorrect parameters types.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_APP_BOOT",
+        "@param { AutoStartupInfo } info - The application info.",
+        "@returns { Promise<void> } The promise returned by the function.",
+        "@throws { BusinessError } 201 - Permission denied, interface caller does not have permission",
+        "@throws { BusinessError } 202 - Permission denied, non-system app called system api.",
+        "@throws { BusinessError } 401 - The parameter check failed. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 16000004 - Failed to start the invisible ability.",
+        "@throws { BusinessError } 16000013 - The application is controlled by EDM.",
+        "@throws { BusinessError } 16000050 - Internal error.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@systemapi",
+        "@StageModelOnly",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "autoStartupManager",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "info",
+          "类型": "AutoStartupInfo",
+          "必填": true,
+          "说明": "The application info."
+        }
+      ],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied, interface caller does not have permission"
+        },
+        {
+          "code": "202",
+          "description": "Permission denied, non-system app called system api."
+        },
+        {
+          "code": "401",
+          "description": "The parameter check failed. Possible causes: 1. Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "16000004",
+          "description": "Failed to start the invisible ability."
+        },
+        {
+          "code": "16000013",
+          "description": "The application is controlled by EDM."
+        },
+        {
+          "code": "16000050",
+          "description": "Internal error."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "cancelApplicationAutoStartup",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Cancel application auto startup state. \"ohos.permission.MANAGE_APP_BOOT\". <br>2. Incorrect parameters types.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_APP_BOOT",
+        "@param { AutoStartupInfo } info - The application info.",
+        "@param { AsyncCallback<void> } callback - The callback of cancelApplicationAutoStartup.",
+        "@throws { BusinessError } 201 - Permission denied, interface caller does not have permission",
+        "@throws { BusinessError } 202 - Permission denied, non-system app called system api.",
+        "@throws { BusinessError } 401 - The parameter check failed. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 16000004 - Failed to start the invisible ability.",
+        "@throws { BusinessError } 16000013 - The application is controlled by EDM.",
+        "@throws { BusinessError } 16000050 - Internal error.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@systemapi",
+        "@StageModelOnly",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "autoStartupManager",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "info",
+          "类型": "AutoStartupInfo",
+          "必填": true,
+          "说明": "The application info."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "The callback of cancelApplicationAutoStartup."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied, interface caller does not have permission"
+        },
+        {
+          "code": "202",
+          "description": "Permission denied, non-system app called system api."
+        },
+        {
+          "code": "401",
+          "description": "The parameter check failed. Possible causes: 1. Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "16000004",
+          "description": "Failed to start the invisible ability."
+        },
+        {
+          "code": "16000013",
+          "description": "The application is controlled by EDM."
+        },
+        {
+          "code": "16000050",
+          "description": "Internal error."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "cancelApplicationAutoStartup",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Cancel application auto startup state. \"ohos.permission.MANAGE_APP_BOOT\". <br>2. Incorrect parameters types.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_APP_BOOT",
+        "@param { AutoStartupInfo } info - The application info.",
+        "@returns { Promise<void> } The promise returned by the function.",
+        "@throws { BusinessError } 201 - Permission denied, interface caller does not have permission",
+        "@throws { BusinessError } 202 - Permission denied, non-system app called system api.",
+        "@throws { BusinessError } 401 - The parameter check failed. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 16000004 - Failed to start the invisible ability.",
+        "@throws { BusinessError } 16000013 - The application is controlled by EDM.",
+        "@throws { BusinessError } 16000050 - Internal error.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@systemapi",
+        "@StageModelOnly",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "autoStartupManager",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "info",
+          "类型": "AutoStartupInfo",
+          "必填": true,
+          "说明": "The application info."
+        }
+      ],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied, interface caller does not have permission"
+        },
+        {
+          "code": "202",
+          "description": "Permission denied, non-system app called system api."
+        },
+        {
+          "code": "401",
+          "description": "The parameter check failed. Possible causes: 1. Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "16000004",
+          "description": "Failed to start the invisible ability."
+        },
+        {
+          "code": "16000013",
+          "description": "The application is controlled by EDM."
+        },
+        {
+          "code": "16000050",
+          "description": "Internal error."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "queryAllAutoStartupApplications",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Query the current auto startup status of all applications. AutoStartupInfo. \"ohos.permission.MANAGE_APP_BOOT\". <br>2. Incorrect parameters types.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_APP_BOOT",
+        "@param { AsyncCallback<Array<AutoStartupInfo>> } callback - The callback is used to return the array of",
+        "@throws { BusinessError } 201 - Permission denied, interface caller does not have permission",
+        "@throws { BusinessError } 202 - Permission denied, non-system app called system api.",
+        "@throws { BusinessError } 401 - The parameter check failed. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 16000050 - Internal error.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@systemapi",
+        "@StageModelOnly",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "autoStartupManager",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<Array<AutoStartupInfo>>",
+          "必填": true,
+          "说明": "The callback is used to return the array of"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied, interface caller does not have permission"
+        },
+        {
+          "code": "202",
+          "description": "Permission denied, non-system app called system api."
+        },
+        {
+          "code": "401",
+          "description": "The parameter check failed. Possible causes: 1. Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "16000050",
+          "description": "Internal error."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "queryAllAutoStartupApplications",
+      "返回值": "Promise<Array<AutoStartupInfo>>",
+      "所属模块": "未知模块",
+      "功能描述": "Query the current auto startup status of all applications. \"ohos.permission.MANAGE_APP_BOOT\". <br>2. Incorrect parameters types.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_APP_BOOT",
+        "@returns { Promise<Array<AutoStartupInfo>> } The promise returned by the function.",
+        "@throws { BusinessError } 201 - Permission denied, interface caller does not have permission",
+        "@throws { BusinessError } 202 - Permission denied, non-system app called system api.",
+        "@throws { BusinessError } 401 - The parameter check failed. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 16000050 - Internal error.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@systemapi",
+        "@StageModelOnly",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "autoStartupManager",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied, interface caller does not have permission"
+        },
+        {
+          "code": "202",
+          "description": "Permission denied, non-system app called system api."
+        },
+        {
+          "code": "401",
+          "description": "The parameter check failed. Possible causes: 1. Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "16000050",
+          "description": "Internal error."
+        }
+      ],
+      "版本": "API5.0"
+    }
+  ]
+}

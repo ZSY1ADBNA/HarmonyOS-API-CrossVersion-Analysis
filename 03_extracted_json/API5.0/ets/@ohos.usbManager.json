@@ -1,0 +1,380 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.BasicServicesKit",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "namespace",
+      "名称": "usbManager",
+      "所属模块": "@kit.BasicServicesKit",
+      "功能描述": "This module provides the capability of manage USB device.",
+      "注释信息": [
+        "@namespace usbManager",
+        "@syscap SystemCapability.USB.USBManager",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "@kit.BasicServicesKit",
+      "since_version": "9",
+      "system_capability": "SystemCapability.USB.USBManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getDevices",
+      "返回值": "Array<Readonly<USBDevice>>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the USB device list.",
+      "注释信息": [
+        "@returns { Array<Readonly<USBDevice>> } USB device list.",
+        "@syscap SystemCapability.USB.USBManager",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "usbManager",
+      "since_version": "9",
+      "system_capability": "SystemCapability.USB.USBManager",
+      "parameters": [],
+      "return_description": "USB device list.",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "connectDevice",
+      "返回值": "Readonly<USBDevicePipe>",
+      "所属模块": "未知模块",
+      "功能描述": "Connects to the USB device based on the device information returned by getDevices(). <br>1.Mandatory parameters are left unspecified. <br>2.Incorrect parameter types.",
+      "注释信息": [
+        "@param { USBDevice } device - USB device on the device list returned by getDevices(). It cannot be empty.",
+        "@returns { Readonly<USBDevicePipe> } object for data transfer.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 14400001 - Permission denied. Call requestRight to get the permission first.",
+        "@syscap SystemCapability.USB.USBManager",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "usbManager",
+      "since_version": "9",
+      "system_capability": "SystemCapability.USB.USBManager",
+      "parameters": [
+        {
+          "名称": "device",
+          "类型": "USBDevice",
+          "必填": true,
+          "说明": "USB device on the device list returned by getDevices(). It cannot be empty."
+        }
+      ],
+      "return_description": "object for data transfer.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "14400001",
+          "description": "Permission denied. Call requestRight to get the permission first."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "hasRight",
+      "返回值": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Checks whether the application has the permission to access the device. <br>1.Mandatory parameters are left unspecified. <br>2.Incorrect parameter types.",
+      "注释信息": [
+        "@param { string } deviceName - device name defined by USBDevice.name. It cannot be empty.",
+        "@returns { boolean } indicates if the user has the permission to access the device.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@syscap SystemCapability.USB.USBManager",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "usbManager",
+      "since_version": "9",
+      "system_capability": "SystemCapability.USB.USBManager",
+      "parameters": [
+        {
+          "名称": "deviceName",
+          "类型": "string",
+          "必填": true,
+          "说明": "device name defined by USBDevice.name. It cannot be empty."
+        }
+      ],
+      "return_description": "indicates if the user has the permission to access the device.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "requestRight",
+      "返回值": "Promise<boolean>",
+      "所属模块": "未知模块",
+      "功能描述": "Requests the permission for a given application to access the USB device. The system application has access to the device by default, and there is no need to call this interface to apply. <br>1.Mandatory parameters are left unspecified. <br>2.Incorrect parameter types.",
+      "注释信息": [
+        "@param { string } deviceName - device name defined by USBDevice.name. It cannot be empty.",
+        "@returns { Promise<boolean> } indicates if the device access permissions are granted.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@syscap SystemCapability.USB.USBManager",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "usbManager",
+      "since_version": "9",
+      "system_capability": "SystemCapability.USB.USBManager",
+      "parameters": [
+        {
+          "名称": "deviceName",
+          "类型": "string",
+          "必填": true,
+          "说明": "device name defined by USBDevice.name. It cannot be empty."
+        }
+      ],
+      "return_description": "indicates if the device access permissions are granted.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "removeRight",
+      "返回值": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Remove the permission for a given application to access the USB device. The system application has access to the device by default, and calling this interface will not have any impact. <br>1.Mandatory parameters are left unspecified. <br>2.Incorrect parameter types.",
+      "注释信息": [
+        "@param { string } deviceName - device name defined by USBDevice.name. It cannot be empty.",
+        "@returns { boolean } indicates if the device access permissions are removed.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@syscap SystemCapability.USB.USBManager",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "usbManager",
+      "since_version": "9",
+      "system_capability": "SystemCapability.USB.USBManager",
+      "parameters": [
+        {
+          "名称": "deviceName",
+          "类型": "string",
+          "必填": true,
+          "说明": "device name defined by USBDevice.name. It cannot be empty."
+        }
+      ],
+      "return_description": "indicates if the device access permissions are removed.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "addRight",
+      "返回值": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Add device access permission. The system application has access to the device by default, and calling this interface will not have any impact. <br>1.Mandatory parameters are left unspecified. <br>2.Incorrect parameter types.",
+      "注释信息": [
+        "@param { string } bundleName - refers to application that require access permissions. It cannot be empty.",
+        "@param { string } deviceName - device name defined by USBDevice.name. It cannot be empty.",
+        "@returns { boolean } value to indicate whether the permission is granted.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@syscap SystemCapability.USB.USBManager",
+        "@systemapi",
+        "@since 9",
+        "@deprecated since 12",
+        "@useinstead ohos.usbManager/usbManager#addDeviceAccessRight"
+      ],
+      "层级": 1,
+      "上级": "usbManager",
+      "since_version": "9",
+      "system_capability": "SystemCapability.USB.USBManager",
+      "parameters": [
+        {
+          "名称": "bundleName",
+          "类型": "string",
+          "必填": true,
+          "说明": "refers to application that require access permissions. It cannot be empty."
+        },
+        {
+          "名称": "deviceName",
+          "类型": "string",
+          "必填": true,
+          "说明": "device name defined by USBDevice.name. It cannot be empty."
+        }
+      ],
+      "return_description": "value to indicate whether the permission is granted.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "usbFunctionsFromString",
+      "返回值": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Converts the string descriptor of a given USB function list to a numeric mask combination. <br>1.Mandatory parameters are left unspecified. <br>2.Incorrect parameter types.",
+      "注释信息": [
+        "@param { string } funcs - descriptor of the supported function list. It cannot be empty.",
+        "@returns { number } the numeric mask combination of the function list.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@syscap SystemCapability.USB.USBManager",
+        "@systemapi",
+        "@since 9",
+        "@deprecated since 12",
+        "@useinstead ohos.usbManager/usbManager#getFunctionsFromString"
+      ],
+      "层级": 1,
+      "上级": "usbManager",
+      "since_version": "9",
+      "system_capability": "SystemCapability.USB.USBManager",
+      "parameters": [
+        {
+          "名称": "funcs",
+          "类型": "string",
+          "必填": true,
+          "说明": "descriptor of the supported function list. It cannot be empty."
+        }
+      ],
+      "return_description": "the numeric mask combination of the function list.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "usbFunctionsToString",
+      "返回值": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Converts the numeric mask combination of a given USB function list to a string descriptor. <br>1.Mandatory parameters are left unspecified. <br>2.Incorrect parameter types.",
+      "注释信息": [
+        "@param { FunctionType } funcs - numeric mask combination of the function list. The type of funcs must be number. It cannot be empty.",
+        "@returns { string } - descriptor of the supported function list.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@syscap SystemCapability.USB.USBManager",
+        "@systemapi",
+        "@since 9",
+        "@deprecated since 12",
+        "@useinstead ohos.usbManager/usbManager#getStringFromFunctions"
+      ],
+      "层级": 1,
+      "上级": "usbManager",
+      "since_version": "9",
+      "system_capability": "SystemCapability.USB.USBManager",
+      "parameters": [
+        {
+          "名称": "funcs",
+          "类型": "FunctionType",
+          "必填": true,
+          "说明": "numeric mask combination of the function list. The type of funcs must be number. It cannot be empty."
+        }
+      ],
+      "return_description": "- descriptor of the supported function list.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "setCurrentFunctions",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Sets the current USB function list in Device mode. <br>1.Mandatory parameters are left unspecified. <br>2.Incorrect parameter types.",
+      "注释信息": [
+        "@param { FunctionType } funcs - numeric mask combination of the supported function list. It cannot be empty.",
+        "@returns { Promise<void> } the promise returned by the function.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 14400002 - Permission denied. The HDC is disabled by the system.",
+        "@syscap SystemCapability.USB.USBManager",
+        "@systemapi",
+        "@since 9",
+        "@deprecated since 12",
+        "@useinstead ohos.usbManager/usbManager#setDeviceFunctions"
+      ],
+      "层级": 1,
+      "上级": "usbManager",
+      "since_version": "9",
+      "system_capability": "SystemCapability.USB.USBManager",
+      "parameters": [
+        {
+          "名称": "funcs",
+          "类型": "FunctionType",
+          "必填": true,
+          "说明": "numeric mask combination of the supported function list. It cannot be empty."
+        }
+      ],
+      "return_description": "the promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "14400002",
+          "description": "Permission denied. The HDC is disabled by the system."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getCurrentFunctions",
+      "返回值": "FunctionType",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the numeric mask combination for the current USB function list in Device mode.",
+      "注释信息": [
+        "@returns { FunctionType } the numeric mask combination for the current USB function list in FunctionType.",
+        "@syscap SystemCapability.USB.USBManager",
+        "@systemapi",
+        "@since 9",
+        "@deprecated since 12",
+        "@useinstead ohos.usbManager/usbManager#getDeviceFunctions"
+      ],
+      "层级": 1,
+      "上级": "usbManager",
+      "since_version": "9",
+      "system_capability": "SystemCapability.USB.USBManager",
+      "parameters": [],
+      "return_description": "the numeric mask combination for the current USB function list in FunctionType.",
+      "error_codes": [],
+      "版本": "API5.0"
+    }
+  ]
+}

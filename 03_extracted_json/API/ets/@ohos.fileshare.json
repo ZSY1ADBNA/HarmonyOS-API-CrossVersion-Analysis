@@ -1,0 +1,763 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.CoreFileKit",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "namespace",
+      "名称": "fileShare",
+      "所属模块": "@kit.CoreFileKit",
+      "功能描述": "Provides fileshare APIS",
+      "注释信息": [
+        "@namespace fileShare",
+        "@syscap SystemCapability.FileManagement.AppFileService",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "@kit.CoreFileKit",
+      "since_version": "9",
+      "system_capability": "SystemCapability.FileManagement.AppFileService",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "OperationMode",
+      "所属模块": "未知模块",
+      "功能描述": "Enumerates the uri operate mode types.",
+      "注释信息": [
+        "@enum { number } OperationMode",
+        "@syscap SystemCapability.FileManagement.AppFileService.FolderAuthorization",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "fileShare",
+      "since_version": "11",
+      "system_capability": "SystemCapability.FileManagement.AppFileService.FolderAuthorization",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "READ_MODE",
+      "值": "0b1",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates read permissions.",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.AppFileService.FolderAuthorization",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "OperationMode",
+      "since_version": "11",
+      "system_capability": "SystemCapability.FileManagement.AppFileService.FolderAuthorization",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "WRITE_MODE",
+      "值": "0b10",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates write permissions.",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.AppFileService.FolderAuthorization",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "OperationMode",
+      "since_version": "11",
+      "system_capability": "SystemCapability.FileManagement.AppFileService.FolderAuthorization",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CREATE_MODE",
+      "值": "0b100",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates creating permissions.",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.AppFileService.FolderAuthorization",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "OperationMode",
+      "since_version": "20",
+      "system_capability": "SystemCapability.FileManagement.AppFileService.FolderAuthorization",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "DELETE_MODE",
+      "值": "0b1000",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates deleting permissions.",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.AppFileService.FolderAuthorization",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "OperationMode",
+      "since_version": "20",
+      "system_capability": "SystemCapability.FileManagement.AppFileService.FolderAuthorization",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "RENAME_MODE",
+      "值": "0b10000",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates renaming permissions.",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.AppFileService.FolderAuthorization",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "OperationMode",
+      "since_version": "20",
+      "system_capability": "SystemCapability.FileManagement.AppFileService.FolderAuthorization",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "PolicyErrorCode",
+      "所属模块": "未知模块",
+      "功能描述": "Enumerates the error code of the permission policy for the URI operation.",
+      "注释信息": [
+        "@enum { number } PolicyErrorCode",
+        "@syscap SystemCapability.FileManagement.AppFileService.FolderAuthorization",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "fileShare",
+      "since_version": "11",
+      "system_capability": "SystemCapability.FileManagement.AppFileService.FolderAuthorization",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "PERSISTENCE_FORBIDDEN",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the policy is not allowed to be persisted.",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.AppFileService.FolderAuthorization",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "PolicyErrorCode",
+      "since_version": "11",
+      "system_capability": "SystemCapability.FileManagement.AppFileService.FolderAuthorization",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "INVALID_MODE",
+      "值": "2",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the mode of this policy is invalid.",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.AppFileService.FolderAuthorization",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "PolicyErrorCode",
+      "since_version": "11",
+      "system_capability": "SystemCapability.FileManagement.AppFileService.FolderAuthorization",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "INVALID_PATH",
+      "值": "3",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the path of this policy is invalid.",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.AppFileService.FolderAuthorization",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "PolicyErrorCode",
+      "since_version": "11",
+      "system_capability": "SystemCapability.FileManagement.AppFileService.FolderAuthorization",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "PERMISSION_NOT_PERSISTED",
+      "值": "4",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the permission is not persistent.",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.AppFileService.FolderAuthorization",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "PolicyErrorCode",
+      "since_version": "12",
+      "system_capability": "SystemCapability.FileManagement.AppFileService.FolderAuthorization",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "PolicyErrorResult",
+      "所属模块": "未知模块",
+      "功能描述": "Failed policy result on URI.",
+      "注释信息": [
+        "@interface { object }",
+        "@syscap SystemCapability.FileManagement.AppFileService.FolderAuthorization",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "fileShare",
+      "since_version": "11",
+      "system_capability": "SystemCapability.FileManagement.AppFileService.FolderAuthorization",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "uri",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the failed uri of the policy information.",
+      "注释信息": [
+        "@type { string }",
+        "@syscap SystemCapability.FileManagement.AppFileService.FolderAuthorization",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "PolicyErrorResult",
+      "since_version": "11",
+      "system_capability": "SystemCapability.FileManagement.AppFileService.FolderAuthorization",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "code",
+      "属性类型": "PolicyErrorCode",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the error code of the failure in the policy information.",
+      "注释信息": [
+        "@type { PolicyErrorCode }",
+        "@syscap SystemCapability.FileManagement.AppFileService.FolderAuthorization",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "PolicyErrorResult",
+      "since_version": "11",
+      "system_capability": "SystemCapability.FileManagement.AppFileService.FolderAuthorization",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "message",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the reason of the failure in the policy information.",
+      "注释信息": [
+        "@type { string }",
+        "@syscap SystemCapability.FileManagement.AppFileService.FolderAuthorization",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "PolicyErrorResult",
+      "since_version": "11",
+      "system_capability": "SystemCapability.FileManagement.AppFileService.FolderAuthorization",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "PolicyInfo",
+      "所属模块": "未知模块",
+      "功能描述": "Policy information to manager permissions on a URI.",
+      "注释信息": [
+        "@interface PolicyInfo",
+        "@syscap SystemCapability.FileManagement.AppFileService.FolderAuthorization",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "fileShare",
+      "since_version": "11",
+      "system_capability": "SystemCapability.FileManagement.AppFileService.FolderAuthorization",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "uri",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the uri of the policy information.",
+      "注释信息": [
+        "@type { string }",
+        "@syscap SystemCapability.FileManagement.AppFileService.FolderAuthorization",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "PolicyInfo",
+      "since_version": "11",
+      "system_capability": "SystemCapability.FileManagement.AppFileService.FolderAuthorization",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "operationMode",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the mode of operation for the URI, example { OperationMode.READ_MODE } or { OperationMode.READ_MODE | OperationMode.WRITE_MODE }",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.FileManagement.AppFileService.FolderAuthorization",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "PolicyInfo",
+      "since_version": "11",
+      "system_capability": "SystemCapability.FileManagement.AppFileService.FolderAuthorization",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "PathPolicyInfo",
+      "所属模块": "未知模块",
+      "功能描述": "Policy information to manager permissions on a path.",
+      "注释信息": [
+        "@interface PathPolicyInfo",
+        "@syscap SystemCapability.FileManagement.AppFileService.FolderAuthorization",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "fileShare",
+      "since_version": "15",
+      "system_capability": "SystemCapability.FileManagement.AppFileService.FolderAuthorization",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "path",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the path of the policy information.",
+      "注释信息": [
+        "@type { string }",
+        "@syscap SystemCapability.FileManagement.AppFileService.FolderAuthorization",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "PathPolicyInfo",
+      "since_version": "15",
+      "system_capability": "SystemCapability.FileManagement.AppFileService.FolderAuthorization",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "operationMode",
+      "属性类型": "OperationMode",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the mode of operation for the path.",
+      "注释信息": [
+        "@type { OperationMode }",
+        "@syscap SystemCapability.FileManagement.AppFileService.FolderAuthorization",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "PathPolicyInfo",
+      "since_version": "15",
+      "system_capability": "SystemCapability.FileManagement.AppFileService.FolderAuthorization",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "PolicyType",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the policy type of the path.",
+      "注释信息": [
+        "@enum { number } policyType",
+        "@syscap SystemCapability.FileManagement.AppFileService.FolderAuthorization",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "fileShare",
+      "since_version": "15",
+      "system_capability": "SystemCapability.FileManagement.AppFileService.FolderAuthorization",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "TEMPORARY_TYPE",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the policy is temporary.",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.AppFileService.FolderAuthorization",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "PolicyType",
+      "since_version": "15",
+      "system_capability": "SystemCapability.FileManagement.AppFileService.FolderAuthorization",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "PERSISTENT_TYPE",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the policy is persistent.",
+      "注释信息": [
+        "@syscap SystemCapability.FileManagement.AppFileService.FolderAuthorization",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "PolicyType",
+      "since_version": "15",
+      "system_capability": "SystemCapability.FileManagement.AppFileService.FolderAuthorization",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "persistPermission",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Set persistence permissions for the URI <br>2.Incorrect parameter types.",
+      "注释信息": [
+        "@permission ohos.permission.FILE_ACCESS_PERSIST",
+        "@param { Array<PolicyInfo> } policies - Policy information to grant permission on URIs.",
+        "@returns { Promise<void> } the promise returned by the function.",
+        "@throws { BusinessError } 201 - Permission verification failed, usually the result returned by VerifyAccessToken.",
+        "@throws { BusinessError } 401 - Parameter error.Possible causes:1.Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 13900001 - Operation not permitted.",
+        "@throws { BusinessError } 13900042 - Out of memory",
+        "@syscap SystemCapability.FileManagement.AppFileService.FolderAuthorization",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "fileShare",
+      "since_version": "11",
+      "system_capability": "SystemCapability.FileManagement.AppFileService.FolderAuthorization",
+      "parameters": [
+        {
+          "名称": "policies",
+          "类型": "Array<PolicyInfo>",
+          "必填": true,
+          "说明": "Policy information to grant permission on URIs."
+        }
+      ],
+      "return_description": "the promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission verification failed, usually the result returned by VerifyAccessToken."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error.Possible causes:1.Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "13900001",
+          "description": "Operation not permitted."
+        },
+        {
+          "code": "13900042",
+          "description": "Out of memory"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "revokePermission",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Revoke persistence permissions for the URI <br>2.Incorrect parameter types.",
+      "注释信息": [
+        "@permission ohos.permission.FILE_ACCESS_PERSIST",
+        "@param { Array<PolicyInfo> } policies - Policy information to grant permission on URIs.",
+        "@returns { Promise<void> } the promise returned by the function.",
+        "@throws { BusinessError } 201 - Permission verification failed, usually the result returned by VerifyAccessToken.",
+        "@throws { BusinessError } 401 - Parameter error.Possible causes:1.Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 13900001 - Operation not permitted.",
+        "@throws { BusinessError } 13900042 - Out of memory",
+        "@syscap SystemCapability.FileManagement.AppFileService.FolderAuthorization",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "fileShare",
+      "since_version": "11",
+      "system_capability": "SystemCapability.FileManagement.AppFileService.FolderAuthorization",
+      "parameters": [
+        {
+          "名称": "policies",
+          "类型": "Array<PolicyInfo>",
+          "必填": true,
+          "说明": "Policy information to grant permission on URIs."
+        }
+      ],
+      "return_description": "the promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission verification failed, usually the result returned by VerifyAccessToken."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error.Possible causes:1.Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "13900001",
+          "description": "Operation not permitted."
+        },
+        {
+          "code": "13900042",
+          "description": "Out of memory"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "activatePermission",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Enable the URI that have been permanently authorized <br>2.Incorrect parameter types.",
+      "注释信息": [
+        "@permission ohos.permission.FILE_ACCESS_PERSIST",
+        "@param { Array<PolicyInfo> } policies - Policy information to grant permission on URIs.",
+        "@returns { Promise<void> } the promise returned by the function.",
+        "@throws { BusinessError } 201 - Permission verification failed, usually the result returned by VerifyAccessToken.",
+        "@throws { BusinessError } 401 - Parameter error.Possible causes:1.Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 13900001 - Operation not permitted.",
+        "@throws { BusinessError } 13900042 - Out of memory",
+        "@syscap SystemCapability.FileManagement.AppFileService.FolderAuthorization",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "fileShare",
+      "since_version": "11",
+      "system_capability": "SystemCapability.FileManagement.AppFileService.FolderAuthorization",
+      "parameters": [
+        {
+          "名称": "policies",
+          "类型": "Array<PolicyInfo>",
+          "必填": true,
+          "说明": "Policy information to grant permission on URIs."
+        }
+      ],
+      "return_description": "the promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission verification failed, usually the result returned by VerifyAccessToken."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error.Possible causes:1.Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "13900001",
+          "description": "Operation not permitted."
+        },
+        {
+          "code": "13900042",
+          "description": "Out of memory"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "deactivatePermission",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Stop the authorized URI that has been enabled <br>2.Incorrect parameter types.",
+      "注释信息": [
+        "@permission ohos.permission.FILE_ACCESS_PERSIST",
+        "@param { Array<PolicyInfo> } policies - Policy information to grant permission on URIs.",
+        "@returns { Promise<void> } the promise returned by the function.",
+        "@throws { BusinessError } 201 - Permission verification failed, usually the result returned by VerifyAccessToken.",
+        "@throws { BusinessError } 401 - Parameter error.Possible causes:1.Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 13900001 - Operation not permitted.",
+        "@throws { BusinessError } 13900042 - Out of memory",
+        "@syscap SystemCapability.FileManagement.AppFileService.FolderAuthorization",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "fileShare",
+      "since_version": "11",
+      "system_capability": "SystemCapability.FileManagement.AppFileService.FolderAuthorization",
+      "parameters": [
+        {
+          "名称": "policies",
+          "类型": "Array<PolicyInfo>",
+          "必填": true,
+          "说明": "Policy information to grant permission on URIs."
+        }
+      ],
+      "return_description": "the promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission verification failed, usually the result returned by VerifyAccessToken."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error.Possible causes:1.Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "13900001",
+          "description": "Operation not permitted."
+        },
+        {
+          "code": "13900042",
+          "description": "Out of memory"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "checkPersistentPermission",
+      "返回值": "Promise<Array<boolean>>",
+      "所属模块": "未知模块",
+      "功能描述": "Check persistent permissions for the URI. <br>2.Incorrect parameter types.",
+      "注释信息": [
+        "@param { Array<PolicyInfo> } policies - Policy information to grant permission on URIs.",
+        "@returns { Promise<Array<boolean>> } Returns the persistent state of uri permissions.",
+        "@throws { BusinessError } 401 - Parameter error.Possible causes:1.Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 13900042 - Out of memory",
+        "@syscap SystemCapability.FileManagement.AppFileService.FolderAuthorization",
+        "@since 17"
+      ],
+      "层级": 1,
+      "上级": "fileShare",
+      "since_version": "17",
+      "system_capability": "SystemCapability.FileManagement.AppFileService.FolderAuthorization",
+      "parameters": [
+        {
+          "名称": "policies",
+          "类型": "Array<PolicyInfo>",
+          "必填": true,
+          "说明": "Policy information to grant permission on URIs."
+        }
+      ],
+      "return_description": "Returns the persistent state of uri permissions.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error.Possible causes:1.Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "13900042",
+          "description": "Out of memory"
+        }
+      ],
+      "版本": "API"
+    }
+  ]
+}

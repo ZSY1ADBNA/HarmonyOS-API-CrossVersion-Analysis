@@ -1,0 +1,895 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.ArkUI",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "namespace",
+      "名称": "curves",
+      "所属模块": "@kit.ArkUI",
+      "功能描述": "Contains interpolator functions such as initialization, third-order Bezier curves, and spring curves.",
+      "注释信息": [
+        "@namespace curves",
+        "@syscap SystemCapability.ArkUI.ArkUI.Full",
+        "@crossplatform",
+        "@form",
+        "@atomicservice",
+        "@since 20",
+        "@arkts 1.1&1.2"
+      ],
+      "层级": 1,
+      "上级": "@kit.ArkUI",
+      "since_version": "20",
+      "system_capability": "SystemCapability.ArkUI.ArkUI.Full",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "enum",
+      "名称": "Curve",
+      "所属模块": "未知模块",
+      "功能描述": "enum Curve.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.ArkUI.ArkUI.Full",
+        "@crossplatform",
+        "@form",
+        "@atomicservice",
+        "@since 20",
+        "@arkts 1.1&1.2"
+      ],
+      "层级": 2,
+      "上级": "curves",
+      "since_version": "20",
+      "system_capability": "SystemCapability.ArkUI.ArkUI.Full",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "Linear",
+      "所属模块": "未知模块",
+      "功能描述": "Linear. Indicates that the animation has the same velocity from start to finish.",
+      "注释信息": [
+        "@syscap SystemCapability.ArkUI.ArkUI.Full",
+        "@crossplatform",
+        "@form",
+        "@atomicservice",
+        "@since 20",
+        "@arkts 1.1&1.2"
+      ],
+      "层级": 2,
+      "上级": "Curve",
+      "since_version": "20",
+      "system_capability": "SystemCapability.ArkUI.ArkUI.Full",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "Ease",
+      "所属模块": "未知模块",
+      "功能描述": "Ease. Indicates that the animation starts at a low speed, then speeds up, and slows down before the end, CubicBezier(0.25, 0.1, 0.25, 1.0).",
+      "注释信息": [
+        "@syscap SystemCapability.ArkUI.ArkUI.Full",
+        "@crossplatform",
+        "@form",
+        "@atomicservice",
+        "@since 20",
+        "@arkts 1.1&1.2"
+      ],
+      "层级": 2,
+      "上级": "Curve",
+      "since_version": "20",
+      "system_capability": "SystemCapability.ArkUI.ArkUI.Full",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "EaseIn",
+      "所属模块": "未知模块",
+      "功能描述": "EaseIn. Indicates that the animation starts at a low speed, Cubic Bezier (0.42, 0.0, 1.0, 1.0).",
+      "注释信息": [
+        "@syscap SystemCapability.ArkUI.ArkUI.Full",
+        "@crossplatform",
+        "@form",
+        "@atomicservice",
+        "@since 20",
+        "@arkts 1.1&1.2"
+      ],
+      "层级": 2,
+      "上级": "Curve",
+      "since_version": "20",
+      "system_capability": "SystemCapability.ArkUI.ArkUI.Full",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "EaseOut",
+      "所属模块": "未知模块",
+      "功能描述": "EaseOut. Indicates that the animation ends at low speed, CubicBezier (0.0, 0.0, 0.58, 1.0).",
+      "注释信息": [
+        "@syscap SystemCapability.ArkUI.ArkUI.Full",
+        "@crossplatform",
+        "@form",
+        "@atomicservice",
+        "@since 20",
+        "@arkts 1.1&1.2"
+      ],
+      "层级": 2,
+      "上级": "Curve",
+      "since_version": "20",
+      "system_capability": "SystemCapability.ArkUI.ArkUI.Full",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "EaseInOut",
+      "所属模块": "未知模块",
+      "功能描述": "EaseInOut. Indicates that the animation starts and ends at low speed, CubicBezier (0.42, 0.0, 0.58, 1.0).",
+      "注释信息": [
+        "@syscap SystemCapability.ArkUI.ArkUI.Full",
+        "@crossplatform",
+        "@form",
+        "@atomicservice",
+        "@since 20",
+        "@arkts 1.1&1.2"
+      ],
+      "层级": 2,
+      "上级": "Curve",
+      "since_version": "20",
+      "system_capability": "SystemCapability.ArkUI.ArkUI.Full",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "FastOutSlowIn",
+      "所属模块": "未知模块",
+      "功能描述": "FastOutSlowIn. Standard curve, cubic-bezier (0.4, 0.0, 0.2, 1.0).",
+      "注释信息": [
+        "@syscap SystemCapability.ArkUI.ArkUI.Full",
+        "@crossplatform",
+        "@form",
+        "@atomicservice",
+        "@since 20",
+        "@arkts 1.1&1.2"
+      ],
+      "层级": 2,
+      "上级": "Curve",
+      "since_version": "20",
+      "system_capability": "SystemCapability.ArkUI.ArkUI.Full",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "LinearOutSlowIn",
+      "所属模块": "未知模块",
+      "功能描述": "LinearOutSlowIn. Deceleration curve, cubic-bezier (0.0, 0.0, 0.2, 1.0).",
+      "注释信息": [
+        "@syscap SystemCapability.ArkUI.ArkUI.Full",
+        "@crossplatform",
+        "@form",
+        "@atomicservice",
+        "@since 20",
+        "@arkts 1.1&1.2"
+      ],
+      "层级": 2,
+      "上级": "Curve",
+      "since_version": "20",
+      "system_capability": "SystemCapability.ArkUI.ArkUI.Full",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "FastOutLinearIn",
+      "所属模块": "未知模块",
+      "功能描述": "FastOutLinearIn. Acceleration curve, cubic-bezier (0.4, 0.0, 1.0, 1.0).",
+      "注释信息": [
+        "@syscap SystemCapability.ArkUI.ArkUI.Full",
+        "@crossplatform",
+        "@form",
+        "@atomicservice",
+        "@since 20",
+        "@arkts 1.1&1.2"
+      ],
+      "层级": 2,
+      "上级": "Curve",
+      "since_version": "20",
+      "system_capability": "SystemCapability.ArkUI.ArkUI.Full",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "ExtremeDeceleration",
+      "所属模块": "未知模块",
+      "功能描述": "ExtremeDeceleration. Abrupt curve, cubic-bezier (0.0, 0.0, 0.0, 1.0).",
+      "注释信息": [
+        "@syscap SystemCapability.ArkUI.ArkUI.Full",
+        "@crossplatform",
+        "@form",
+        "@atomicservice",
+        "@since 20",
+        "@arkts 1.1&1.2"
+      ],
+      "层级": 2,
+      "上级": "Curve",
+      "since_version": "20",
+      "system_capability": "SystemCapability.ArkUI.ArkUI.Full",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "Sharp",
+      "所属模块": "未知模块",
+      "功能描述": "Sharp. Sharp curves, cubic-bezier (0.33, 0.0, 0.67, 1.0).",
+      "注释信息": [
+        "@syscap SystemCapability.ArkUI.ArkUI.Full",
+        "@crossplatform",
+        "@form",
+        "@atomicservice",
+        "@since 20",
+        "@arkts 1.1&1.2"
+      ],
+      "层级": 2,
+      "上级": "Curve",
+      "since_version": "20",
+      "system_capability": "SystemCapability.ArkUI.ArkUI.Full",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "Rhythm",
+      "所属模块": "未知模块",
+      "功能描述": "Rhythm. Rhythmic curve, cubic-bezier (0.7, 0.0, 0.2, 1.0).",
+      "注释信息": [
+        "@syscap SystemCapability.ArkUI.ArkUI.Full",
+        "@crossplatform",
+        "@form",
+        "@atomicservice",
+        "@since 20",
+        "@arkts 1.1&1.2"
+      ],
+      "层级": 2,
+      "上级": "Curve",
+      "since_version": "20",
+      "system_capability": "SystemCapability.ArkUI.ArkUI.Full",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "Smooth",
+      "所属模块": "未知模块",
+      "功能描述": "Smooth. Smooth curves, cubic-bezier (0.4, 0.0, 0.4, 1.0).",
+      "注释信息": [
+        "@syscap SystemCapability.ArkUI.ArkUI.Full",
+        "@crossplatform",
+        "@form",
+        "@atomicservice",
+        "@since 20",
+        "@arkts 1.1&1.2"
+      ],
+      "层级": 2,
+      "上级": "Curve",
+      "since_version": "20",
+      "system_capability": "SystemCapability.ArkUI.ArkUI.Full",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "Friction",
+      "所属模块": "未知模块",
+      "功能描述": "Friction. Damping curves, CubicBezier (0.2, 0.0, 0.2, 1.0).",
+      "注释信息": [
+        "@syscap SystemCapability.ArkUI.ArkUI.Full",
+        "@crossplatform",
+        "@form",
+        "@atomicservice",
+        "@since 20",
+        "@arkts 1.1&1.2"
+      ],
+      "层级": 2,
+      "上级": "Curve",
+      "since_version": "20",
+      "system_capability": "SystemCapability.ArkUI.ArkUI.Full",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "interface",
+      "名称": "ICurve",
+      "所属模块": "未知模块",
+      "功能描述": "Interface for curve object.",
+      "注释信息": [
+        "@interface ICurve",
+        "@syscap SystemCapability.ArkUI.ArkUI.Full",
+        "@crossplatform",
+        "@form",
+        "@atomicservice",
+        "@since 20",
+        "@arkts 1.1&1.2"
+      ],
+      "层级": 2,
+      "上级": "curves",
+      "since_version": "20",
+      "system_capability": "SystemCapability.ArkUI.ArkUI.Full",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "interpolate",
+      "返回值": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Get curve value by fraction. Note: If the value is less than 0, it will be processed as 0. If the value is greater than 1, 1 is used.",
+      "注释信息": [
+        "@param { number } fraction -Indicates the current normalized time parameter. Value range: [0, 1].",
+        "@returns { number }",
+        "@syscap SystemCapability.ArkUI.ArkUI.Full",
+        "@crossplatform",
+        "@form",
+        "@atomicservice",
+        "@since 20",
+        "@arkts 1.1&1.2"
+      ],
+      "层级": 2,
+      "上级": "ICurve",
+      "since_version": "20",
+      "system_capability": "SystemCapability.ArkUI.ArkUI.Full",
+      "parameters": [
+        {
+          "名称": "fraction",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the current normalized time parameter. Value range: [0, 1]."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "initCurve",
+      "返回值": "ICurve",
+      "所属模块": "未知模块",
+      "功能描述": "Implements initialization for the interpolation curve, which is used to create an interpolation curve based on the input parameter.",
+      "注释信息": [
+        "@param { Curve } [curve] - Curve type.<br>Default value: **Curve.Linear**.",
+        "@returns { ICurve }",
+        "@syscap SystemCapability.ArkUI.ArkUI.Full",
+        "@crossplatform",
+        "@atomicservice",
+        "@since arkts {'1.1':'11','1.2':'20'}",
+        "@arkts 1.1&1.2"
+      ],
+      "层级": 1,
+      "上级": "curves",
+      "since_version": "arkts {'1.1':'11','1.2':'20'}",
+      "system_capability": "SystemCapability.ArkUI.ArkUI.Full",
+      "parameters": [
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "Curve } [curve] - Curve type.<br>Default value: **Curve.Linear**."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "init",
+      "返回值": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Initializes the interpolator curve when called.",
+      "注释信息": [
+        "@param { Curve } [curve]",
+        "@returns { string }",
+        "@syscap SystemCapability.ArkUI.ArkUI.Full",
+        "@since 7",
+        "@deprecated since 9",
+        "@useinstead initCurve"
+      ],
+      "层级": 1,
+      "上级": "curves",
+      "since_version": "7",
+      "system_capability": "SystemCapability.ArkUI.ArkUI.Full",
+      "parameters": [
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "Curve } [curve]"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "stepsCurve",
+      "返回值": "ICurve",
+      "所属模块": "未知模块",
+      "功能描述": "Creates a step curve. <p>**NOTE**: <br>A value less than 1 evaluates to the value **1**. </p> *true**: Jumping occurs when the interpolation ends. false**: Jumping occurs when the interpolation starts.",
+      "注释信息": [
+        "@param { number } count - Number of steps. The value must be a positive integer.<br>Value range: [1, +∞).",
+        "@param { boolean } end -Whether jumping occurs when the interpolation ends.",
+        "@returns { ICurve } Interpolation curve.",
+        "@syscap SystemCapability.ArkUI.ArkUI.Full",
+        "@crossplatform",
+        "@atomicservice",
+        "@since arkts {'1.1':'11','1.2':'20'}",
+        "@arkts 1.1&1.2"
+      ],
+      "层级": 1,
+      "上级": "curves",
+      "since_version": "arkts {'1.1':'11','1.2':'20'}",
+      "system_capability": "SystemCapability.ArkUI.ArkUI.Full",
+      "parameters": [
+        {
+          "名称": "count",
+          "类型": "number",
+          "必填": true,
+          "说明": "Number of steps. The value must be a positive integer.<br>Value range: [1, +∞)."
+        },
+        {
+          "名称": "end",
+          "类型": "boolean",
+          "必填": true,
+          "说明": "Whether jumping occurs when the interpolation ends."
+        }
+      ],
+      "return_description": "Interpolation curve.",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "customCurve",
+      "返回值": "ICurve",
+      "所属模块": "未知模块",
+      "功能描述": "Creates a custom curve. when the animation starts. Value range: [0, 1]The return value is the y value of the curve. Value range: [0, 1]. <p>**NOTE**: <br>If fraction is 0, the return value 0 corresponds to the animation start point; any other return value means <br>that the animation jumps at the start point.If fraction is 1, the return value 1 corresponds to the animation <br>end point; any other return value means that the end value of the animation is not the value of the state <br>variable, which will result in an effect of transition from that end value to the value of the state variable. </p>",
+      "注释信息": [
+        "@param { function } interpolate - Custom interpolation callback.fraction: input x value for interpolation.",
+        "@returns { ICurve } Interpolation curve.",
+        "@syscap SystemCapability.ArkUI.ArkUI.Full",
+        "@crossplatform",
+        "@atomicservice",
+        "@since arkts {'1.1':'11','1.2':'20'}",
+        "@arkts 1.1&1.2"
+      ],
+      "层级": 1,
+      "上级": "curves",
+      "since_version": "arkts {'1.1':'11','1.2':'20'}",
+      "system_capability": "SystemCapability.ArkUI.ArkUI.Full",
+      "parameters": [
+        {
+          "名称": "interpolate",
+          "类型": "function",
+          "必填": true,
+          "说明": "Custom interpolation callback.fraction: input x value for interpolation."
+        }
+      ],
+      "return_description": "Interpolation curve.",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "steps",
+      "返回值": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Constructs a step curve when called.",
+      "注释信息": [
+        "@param { number } count",
+        "@param { boolean } end",
+        "@returns { string }",
+        "@syscap SystemCapability.ArkUI.ArkUI.Full",
+        "@since 7",
+        "@deprecated since 9",
+        "@useinstead stepsCurve"
+      ],
+      "层级": 1,
+      "上级": "curves",
+      "since_version": "7",
+      "system_capability": "SystemCapability.ArkUI.ArkUI.Full",
+      "parameters": [
+        {
+          "名称": "count",
+          "类型": "number",
+          "必填": true,
+          "说明": ""
+        },
+        {
+          "名称": "end",
+          "类型": "boolean",
+          "必填": true,
+          "说明": ""
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "cubicBezierCurve",
+      "返回值": "ICurve",
+      "所属模块": "未知模块",
+      "功能描述": "Creates a cubic Bezier curve. The curve values must be between 0 and 1. <p>**NOTE**: <br>A value less than 0 is handed as **0**. A value greater than 1 is handed as **1**. </p> <p>**NOTE**: <br>A value less than 0 is handed as **0**. A value greater than 1 is handed as **1**. </p>",
+      "注释信息": [
+        "@param { number } x1 - X coordinate of the first point on the Bezier curve.<br>Value range: [0, 1].",
+        "@param { number } y1 - Y coordinate of the first point on the Bezier curve.<br>Value range: (-∞, +∞).",
+        "@param { number } x2 - X coordinate of the second point on the Bezier curve.<br>Value range: [0, 1].",
+        "@param { number } y2 - Y coordinate of the second point on the Bezier curve.<br>Value range: (-∞, +∞).",
+        "@returns { ICurve } Interpolation curve.",
+        "@syscap SystemCapability.ArkUI.ArkUI.Full",
+        "@crossplatform",
+        "@atomicservice",
+        "@since arkts {'1.1':'11','1.2':'20'}",
+        "@arkts 1.1&1.2"
+      ],
+      "层级": 1,
+      "上级": "curves",
+      "since_version": "arkts {'1.1':'11','1.2':'20'}",
+      "system_capability": "SystemCapability.ArkUI.ArkUI.Full",
+      "parameters": [
+        {
+          "名称": "x1",
+          "类型": "number",
+          "必填": true,
+          "说明": "X coordinate of the first point on the Bezier curve.<br>Value range: [0, 1]."
+        },
+        {
+          "名称": "y1",
+          "类型": "number",
+          "必填": true,
+          "说明": "Y coordinate of the first point on the Bezier curve.<br>Value range: (-∞, +∞)."
+        },
+        {
+          "名称": "x2",
+          "类型": "number",
+          "必填": true,
+          "说明": "X coordinate of the second point on the Bezier curve.<br>Value range: [0, 1]."
+        },
+        {
+          "名称": "y2",
+          "类型": "number",
+          "必填": true,
+          "说明": "Y coordinate of the second point on the Bezier curve.<br>Value range: (-∞, +∞)."
+        }
+      ],
+      "return_description": "Interpolation curve.",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "cubicBezier",
+      "返回值": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Creates a cubic Bezier curve. The curve value must range from 0 to 1. This API is deprecated since API version 9. You are advised to use cubicBezierCurve instead. Note: If the value is less than 0, 0 is used. If the value is greater than 1, 1 is used. Note: If the value is less than 0, 0 is used. If the value is greater than 1, 1 is used.",
+      "注释信息": [
+        "@param { number } x1 -Value range [0, 1].",
+        "@param { number } y1 -Value range (-∞, +∞).",
+        "@param { number } x2 -Value range [0, 1].",
+        "@param { number } y2 -Value range (-∞, +∞).",
+        "@returns { string }",
+        "@syscap SystemCapability.ArkUI.ArkUI.Full",
+        "@since 7",
+        "@deprecated since 9",
+        "@useinstead cubicBezierCurve"
+      ],
+      "层级": 1,
+      "上级": "curves",
+      "since_version": "7",
+      "system_capability": "SystemCapability.ArkUI.ArkUI.Full",
+      "parameters": [
+        {
+          "名称": "x1",
+          "类型": "number",
+          "必填": true,
+          "说明": "Value range [0, 1]."
+        },
+        {
+          "名称": "y1",
+          "类型": "number",
+          "必填": true,
+          "说明": "Value range (-∞, +∞)."
+        },
+        {
+          "名称": "x2",
+          "类型": "number",
+          "必填": true,
+          "说明": "Value range [0, 1]."
+        },
+        {
+          "名称": "y2",
+          "类型": "number",
+          "必填": true,
+          "说明": "Value range (-∞, +∞)."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "springCurve",
+      "返回值": "ICurve",
+      "所属模块": "未知模块",
+      "功能描述": "Creates a spring curve. The curve shape is subject to the spring parameters, and the animation duration is subject to the **duration** parameter in **animation** and **animateTo**. designed to help ensure the smooth transition from the previous motion state. The velocity is the normalized velocity, and its value is equal to the actual velocity at the beginning of the animation divided by the animation attribute change value.Value range: (-∞, +∞). the greater the amplitude of the oscillation, and the slower the speed of restoring to the equilibrium position. Value range: (0, +∞). <p>**NOTE**: <br>If this parameter is set to a value less than or equal to 0, the value 1 is used. </p> applied. In an elastic system, the greater the stiffness, the stronger the ability to resist deformation, and the faster the speed of restoring to the equilibrium position.Value range: (0, +∞). <p>**NOTE**: <br>If this parameter is set to a value less than or equal to 0, the value 1 is used. </p> after being disturbed. The larger the damping, the smaller the number of oscillations of elastic motion, and the smaller the oscillation amplitude.Value range: (0, +∞). <p>**NOTE**: <br>If this parameter is set to a value less than or equal to 0, the value 1 is used. </p>",
+      "注释信息": [
+        "@param { number } velocity - Initial velocity. It is applied by external factors to the spring animation,",
+        "@param { number } mass - Mass, which influences the inertia in the spring system. The greater the mass,",
+        "@param { number } stiffness - Stiffness.It is the degree to which an object deforms by resisting the force",
+        "@param { number } damping -Damping. It is used to describe the oscillation and attenuation of the system",
+        "@returns { ICurve } Interpolation curve.",
+        "@syscap SystemCapability.ArkUI.ArkUI.Full",
+        "@crossplatform",
+        "@atomicservice",
+        "@since arkts {'1.1':'11','1.2':'20'}",
+        "@arkts 1.1&1.2"
+      ],
+      "层级": 1,
+      "上级": "curves",
+      "since_version": "arkts {'1.1':'11','1.2':'20'}",
+      "system_capability": "SystemCapability.ArkUI.ArkUI.Full",
+      "parameters": [
+        {
+          "名称": "velocity",
+          "类型": "number",
+          "必填": true,
+          "说明": "Initial velocity. It is applied by external factors to the spring animation,"
+        },
+        {
+          "名称": "mass",
+          "类型": "number",
+          "必填": true,
+          "说明": "Mass, which influences the inertia in the spring system. The greater the mass,"
+        },
+        {
+          "名称": "stiffness",
+          "类型": "number",
+          "必填": true,
+          "说明": "Stiffness.It is the degree to which an object deforms by resisting the force"
+        },
+        {
+          "名称": "damping",
+          "类型": "number",
+          "必填": true,
+          "说明": "Damping. It is used to describe the oscillation and attenuation of the system"
+        }
+      ],
+      "return_description": "Interpolation curve.",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "spring",
+      "返回值": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Constructs a spring curve when called. purpose is to ensure a smooth transition of the object from the previous state of motion to the elastic dynamics. system. The greater the mass, the greater the amplitude of the oscillation.",
+      "注释信息": [
+        "@param { number } velocity -Initial velocity. An influence parameter of external factors on elastic dynamics,",
+        "@param { number } mass -Quality. The force object of the elastic system will have an inertial effect on elastic",
+        "@param { number } stiffness -The degree to which an object is deformed by resisting the applied force.",
+        "@param { number } damping -Pure number, Used to describe oscillation and decay of a system after being disturbed.",
+        "@returns { string }",
+        "@syscap SystemCapability.ArkUI.ArkUI.Full",
+        "@since 7",
+        "@deprecated since 9",
+        "@useinstead springCurve"
+      ],
+      "层级": 1,
+      "上级": "curves",
+      "since_version": "7",
+      "system_capability": "SystemCapability.ArkUI.ArkUI.Full",
+      "parameters": [
+        {
+          "名称": "velocity",
+          "类型": "number",
+          "必填": true,
+          "说明": "Initial velocity. An influence parameter of external factors on elastic dynamics,"
+        },
+        {
+          "名称": "mass",
+          "类型": "number",
+          "必填": true,
+          "说明": "Quality. The force object of the elastic system will have an inertial effect on elastic"
+        },
+        {
+          "名称": "stiffness",
+          "类型": "number",
+          "必填": true,
+          "说明": "The degree to which an object is deformed by resisting the applied force."
+        },
+        {
+          "名称": "damping",
+          "类型": "number",
+          "必填": true,
+          "说明": "Pure number, Used to describe oscillation and decay of a system after being disturbed."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "springMotion",
+      "返回值": "ICurve",
+      "所属模块": "未知模块",
+      "功能描述": "Creates a spring animation curve. If multiple spring animations are applied to the same attribute of an object, each animation replaces their predecessor and inherits the velocity. <br>Default value: **0.55**.<br>Unit: second<br>Value range: (0, +∞). <p>**NOTE**: <br>If this parameter is set to a value less than or equal to 0, the default value **0.55** is used. </p> *0**: undamped. In this case, the spring oscillates forever.<br>> 0 and < 1: underdamped. In this case, the spring overshoots the equilibrium position.<br>**1**: critically damped. 1: overdamped. In this case, the spring approaches equilibrium gradually.<br>Default value: **0.825**. Unit: second. Value range: [0, +∞). <p>**NOTE**: <br>A value less than 0 evaluates to the default value **0.825**. </p> When animations overlap, the **response** values of these animations will transit smoothly over this duratio if they are different.<br>Default value: **0**<br>Unit: second<br>Value range: [0, +∞). <p>**NOTE** <br>A value less than 0 evaluates to the default value **0**. <br>The spring animation curve is physics-based. Its duration depends on the **springMotion** parameters and the previous velocity, rather than the **duration** parameter in animation, animateTo, or pageTransition. The time cannot be normalized. Therefore, the interpolation cannot be obtained using the **interpolate** function of the curve. </p>",
+      "注释信息": [
+        "@param { number } [response] Duration of one complete oscillation.",
+        "@param { number } [dampingFraction] Damping coefficient.",
+        "@param { number } [overlapDuration]  Duration for animations to overlap, in seconds.",
+        "@returns { ICurve }",
+        "@syscap SystemCapability.ArkUI.ArkUI.Full",
+        "@crossplatform",
+        "@atomicservice",
+        "@since arkts {'1.1':'11','1.2':'20'}",
+        "@arkts 1.1&1.2"
+      ],
+      "层级": 1,
+      "上级": "curves",
+      "since_version": "arkts {'1.1':'11','1.2':'20'}",
+      "system_capability": "SystemCapability.ArkUI.ArkUI.Full",
+      "parameters": [
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "number } [overlapDuration]  Duration for animations to overlap, in seconds."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "responsiveSpringMotion",
+      "返回值": "ICurve",
+      "所属模块": "未知模块",
+      "功能描述": "Creates a responsive spring animation curve. It is a special case of [springMotion](#curvesspringmotion9), with the only difference in the default values. It can be used together with **springMotion**. Unit: second<br>Value range: (0, +∞). <p>**NOTE**: <br>If this parameter is set to a value less than or equal to 0, the default value **0.15** is used. </p> Unit: second<br>Value range: [0, +∞). <p>**NOTE** <br>A value less than 0 evaluates to the default value **0.86**. </p> Unit: second<br>Value range: [0, +∞). <p>**NOTE**: <br>A value less than 0 evaluates to the default value **0.25**. <br>To apply custom settings for a spring animation, you are advised to use **springMotion**. <br>When using **responsiveSpringMotion**, you are advised to retain the default settings. <br>The duration of the responsive spring animation depends on the **responsiveSpringMotion** parameters and the previous velocity, rather than the duration parameter in animation, animateTo, or pageTransition. <br>In addition, the interpolation cannot be obtained using the **interpolate** function of the curve. </p>",
+      "注释信息": [
+        "@param { number } [response] See **response** in **springMotion**.<br>Default value: **0.15**.",
+        "@param { number } [dampingFraction] See **dampingFraction** in **springMotion**.<br>Default value: **0.86**.",
+        "@param { number } [overlapDuration] See **overlapDuration** in **springMotion**.<br>Default value: **0.25**.",
+        "@returns { ICurve }",
+        "@syscap SystemCapability.ArkUI.ArkUI.Full",
+        "@crossplatform",
+        "@atomicservice",
+        "@since arkts {'1.1':'11','1.2':'20'}",
+        "@arkts 1.1&1.2"
+      ],
+      "层级": 1,
+      "上级": "curves",
+      "since_version": "arkts {'1.1':'11','1.2':'20'}",
+      "system_capability": "SystemCapability.ArkUI.ArkUI.Full",
+      "parameters": [
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "number } [overlapDuration] See **overlapDuration** in **springMotion**.<br>Default value: **0.25**."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "interpolatingSpring",
+      "返回值": "ICurve",
+      "所属模块": "未知模块",
+      "功能描述": "Creates an interpolating spring curve animated from 0 to 1. The actual animation value is calculated based on the curve. The animation duration is subject to the curve parameters, rather than the **duration** parameter in **animation** or **animateTo**. designed to help ensure the smooth transition from the previous motion state. The velocity is the normalized velocity, and its value is equal to the actual velocity at the beginning of the animation divided by the animation attribute change value.<br>Value range: (-∞, +∞). the greater the amplitude of the oscillation, and the slower the speed of restoring to the equilibrium position. <br>Value range: (0, +∞). <p>**NOTE**: <br>If this parameter is set to a value less than or equal to 0, the value **1** is used. </p> the force applied. In an elastic system, the greater the stiffness, the stronger the ability to resist deformation, and the faster the speed of restoring to the equilibrium position.<br>Value range: (0, +∞). <p>**NOTE**: <br>If this parameter is set to a value less than or equal to 0, the value **1** is used. </p> after being disturbed. The larger the damping, the smaller the number of oscillations of elastic motion, and the smaller the oscillation amplitude.<br>Value range: (0, +∞)<br> <p>**NOTE**: <br>If this parameter is set to a value less than or equal to 0, the value **1** is used. </p>",
+      "注释信息": [
+        "@param { number } velocity - Initial velocity. It is applied by external factors to the spring animation,",
+        "@param { number } mass - Mass, which influences the inertia in the spring system. The greater the mass,",
+        "@param { number } stiffness - Stiffness. It is the degree to which an object deforms by resisting",
+        "@param { number } damping - Damping. It is used to describe the oscillation and attenuation of the system",
+        "@returns { ICurve }",
+        "@syscap SystemCapability.ArkUI.ArkUI.Full",
+        "@crossplatform",
+        "@atomicservice",
+        "@since arkts {'1.1':'11','1.2':'20'}",
+        "@arkts 1.1&1.2"
+      ],
+      "层级": 1,
+      "上级": "curves",
+      "since_version": "arkts {'1.1':'11','1.2':'20'}",
+      "system_capability": "SystemCapability.ArkUI.ArkUI.Full",
+      "parameters": [
+        {
+          "名称": "velocity",
+          "类型": "number",
+          "必填": true,
+          "说明": "Initial velocity. It is applied by external factors to the spring animation,"
+        },
+        {
+          "名称": "mass",
+          "类型": "number",
+          "必填": true,
+          "说明": "Mass, which influences the inertia in the spring system. The greater the mass,"
+        },
+        {
+          "名称": "stiffness",
+          "类型": "number",
+          "必填": true,
+          "说明": "Stiffness. It is the degree to which an object deforms by resisting"
+        },
+        {
+          "名称": "damping",
+          "类型": "number",
+          "必填": true,
+          "说明": "Damping. It is used to describe the oscillation and attenuation of the system"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    }
+  ]
+}

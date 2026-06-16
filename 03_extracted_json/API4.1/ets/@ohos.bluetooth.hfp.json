@@ -1,0 +1,245 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.ConnectivityKit",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "namespace",
+      "名称": "hfp",
+      "所属模块": "@kit.ConnectivityKit",
+      "功能描述": "Provides methods to accessing bluetooth call-related capabilities.",
+      "注释信息": [
+        "@namespace hfp",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "@kit.ConnectivityKit",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "type_alias",
+      "名称": "BaseProfile",
+      "所属模块": "未知模块",
+      "功能描述": "Base interface of profile.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "hfp",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "createHfpAgProfile",
+      "返回值": "HandsFreeAudioGatewayProfile",
+      "所属模块": "未知模块",
+      "功能描述": "create the instance of hfp profile.",
+      "注释信息": [
+        "@returns { HandsFreeAudioGatewayProfile } Returns the instance of profile.",
+        "@throws { BusinessError } 401 - Invalid parameter.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "hfp",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "Returns the instance of profile.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Invalid parameter."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        }
+      ],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "interface",
+      "名称": "HandsFreeAudioGatewayProfile",
+      "父类": "BaseProfile",
+      "所属模块": "未知模块",
+      "功能描述": "Manager hfp source profile.",
+      "注释信息": [
+        "@typedef HandsFreeAudioGatewayProfile",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "hfp",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "connect",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Initiate an HFP connection to a remote device.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BLUETOOTH",
+        "@param { string } deviceId - Indicates device ID. For example, \"11:22:33:AA:BB:FF\".",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications are not allowed to use system APIs.",
+        "@throws { BusinessError } 401 - Invalid parameter.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 2900001 - Service stopped.",
+        "@throws { BusinessError } 2900003 - Bluetooth switch is off.",
+        "@throws { BusinessError } 2900004 - Profile is not supported.",
+        "@throws { BusinessError } 2900099 - Operation failed.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "HandsFreeAudioGatewayProfile",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "deviceId",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates device ID. For example, \"11:22:33:AA:BB:FF\"."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications are not allowed to use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Invalid parameter."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "2900001",
+          "description": "Service stopped."
+        },
+        {
+          "code": "2900003",
+          "description": "Bluetooth switch is off."
+        },
+        {
+          "code": "2900004",
+          "description": "Profile is not supported."
+        },
+        {
+          "code": "2900099",
+          "description": "Operation failed."
+        }
+      ],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "disconnect",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Disconnect the HFP connection with the remote device.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_BLUETOOTH",
+        "@param { string } deviceId - Indicates device ID. For example, \"11:22:33:AA:BB:FF\".",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications are not allowed to use system APIs.",
+        "@throws { BusinessError } 401 - Invalid parameter.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 2900001 - Service stopped.",
+        "@throws { BusinessError } 2900003 - Bluetooth switch is off.",
+        "@throws { BusinessError } 2900004 - Profile is not supported.",
+        "@throws { BusinessError } 2900099 - Operation failed.",
+        "@syscap SystemCapability.Communication.Bluetooth.Core",
+        "@systemapi",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "HandsFreeAudioGatewayProfile",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.Bluetooth.Core",
+      "parameters": [
+        {
+          "名称": "deviceId",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates device ID. For example, \"11:22:33:AA:BB:FF\"."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications are not allowed to use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Invalid parameter."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "2900001",
+          "description": "Service stopped."
+        },
+        {
+          "code": "2900003",
+          "description": "Bluetooth switch is off."
+        },
+        {
+          "code": "2900004",
+          "description": "Profile is not supported."
+        },
+        {
+          "code": "2900099",
+          "description": "Operation failed."
+        }
+      ],
+      "版本": "API4.1"
+    }
+  ]
+}

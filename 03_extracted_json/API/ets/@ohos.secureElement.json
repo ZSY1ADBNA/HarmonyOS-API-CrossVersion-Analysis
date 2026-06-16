@@ -1,0 +1,1459 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.ConnectivityKit",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "namespace",
+      "名称": "omapi",
+      "所属模块": "@kit.ConnectivityKit",
+      "功能描述": "Provides APIs for mobile applications to access different SEs in mobile devices, such as SIMs or embedded SEs. See \"Open Mobile API Specification\".",
+      "注释信息": [
+        "@namespace omapi",
+        "@syscap SystemCapability.Communication.SecureElement",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "@kit.ConnectivityKit",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.SecureElement",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "newSEService",
+      "返回值": "SEService",
+      "所属模块": "未知模块",
+      "功能描述": "Establish a new connection that can be used to connect to all the SEs available in the system. The connection process can be quite long, so it happens in an asynchronous way. It is usable only if the specified callback is called or if isConnected() returns true. <br> 1. Mandatory parameters are left unspecified. <br> 2. Incorrect parameters types. <br> 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { 'serviceState' } type nfc serviceState",
+        "@param { Callback<ServiceState> } callback - The callback to return the service.",
+        "@returns { SEService } The new SEService instance.",
+        "@throws { BusinessError } 401 - The parameter check failed. Possible causes:",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@syscap SystemCapability.Communication.SecureElement",
+        "@since 10",
+        "@deprecated since 12",
+        "@useinstead omapi#createService"
+      ],
+      "层级": 1,
+      "上级": "omapi",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.SecureElement",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'serviceState'",
+          "必填": true,
+          "说明": "nfc serviceState"
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<ServiceState>",
+          "必填": true,
+          "说明": "The callback to return the service."
+        }
+      ],
+      "return_description": "The new SEService instance.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "The parameter check failed. Possible causes:"
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "createService",
+      "返回值": "Promise<SEService>",
+      "所属模块": "未知模块",
+      "功能描述": "Establish a new connection that can be used to connect to all the SEs available in the system. The connection process can be quite long, so it happens in an asynchronous way. It is usable only if isConnected() returns true.",
+      "注释信息": [
+        "@returns { Promise<SEService> } Returns the created SEService instance.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@syscap SystemCapability.Communication.SecureElement",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "omapi",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Communication.SecureElement",
+      "parameters": [],
+      "return_description": "Returns the created SEService instance.",
+      "error_codes": [
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Register the service state changed event.",
+      "注释信息": [
+        "@param { 'stateChanged' } type - The type to register.",
+        "@param { Callback<ServiceState> } callback - The callback used to listen for the state change event.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@syscap SystemCapability.Communication.SecureElement",
+        "@since 18"
+      ],
+      "层级": 1,
+      "上级": "omapi",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Communication.SecureElement",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'stateChanged'",
+          "必填": true,
+          "说明": "The type to register."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<ServiceState>",
+          "必填": true,
+          "说明": "The callback used to listen for the state change event."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unsubscribe the service state changed event.",
+      "注释信息": [
+        "@param { 'stateChanged' } type - The type to register.",
+        "@param { Callback<ServiceState> } callback - The callback used to listen for the state change event.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@syscap SystemCapability.Communication.SecureElement",
+        "@since 18"
+      ],
+      "层级": 1,
+      "上级": "omapi",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Communication.SecureElement",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'stateChanged'",
+          "必填": true,
+          "说明": "The type to register."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<ServiceState>",
+          "必填": true,
+          "说明": "The callback used to listen for the state change event."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "SEService",
+      "所属模块": "未知模块",
+      "功能描述": "SEService realizes the communication to available SEs on the device.",
+      "注释信息": [
+        "@typedef SEService",
+        "@syscap SystemCapability.Communication.SecureElement",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "omapi",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.SecureElement",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getReaders",
+      "返回值": "Reader[]",
+      "所属模块": "未知模块",
+      "功能描述": "Returns the list of available SE readers. There must be no duplicated objects in the returned list. All available readers SHALL be listed even if no card is inserted.",
+      "注释信息": [
+        "@returns { Reader[] } The list of available SE readers.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@syscap SystemCapability.Communication.SecureElement",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "SEService",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.SecureElement",
+      "parameters": [],
+      "return_description": "The list of available SE readers.",
+      "error_codes": [
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "isConnected",
+      "返回值": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Checks whether or not the service is connected.",
+      "注释信息": [
+        "@returns { boolean } True if the service is connected.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@syscap SystemCapability.Communication.SecureElement",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "SEService",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.SecureElement",
+      "parameters": [],
+      "return_description": "True if the service is connected.",
+      "error_codes": [
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "shutdown",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Releases all SE resources allocated by this SEService. As a result isConnected() will return false.",
+      "注释信息": [
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@syscap SystemCapability.Communication.SecureElement",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "SEService",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.SecureElement",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getVersion",
+      "返回值": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Returns the version of the Open Mobile API Specification this implementation is based on.",
+      "注释信息": [
+        "@returns { string } The Open Mobile API version (e.g. “3.3” for Open Mobile API Specification version 3.3).",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@syscap SystemCapability.Communication.SecureElement",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "SEService",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.SecureElement",
+      "parameters": [],
+      "return_description": "The Open Mobile API version (e.g. “3.3” for Open Mobile API Specification version 3.3).",
+      "error_codes": [
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "Reader",
+      "所属模块": "未知模块",
+      "功能描述": "Reader represents the SE readers supported by this device.",
+      "注释信息": [
+        "@typedef Reader",
+        "@syscap SystemCapability.Communication.SecureElement",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "omapi",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.SecureElement",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getName",
+      "返回值": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Returns the name of this reader. If this reader is a SIM reader, then its name must be \"SIM[slot]\". If the reader is an embedded SE reader, then its name must be \"eSE[slot]\".",
+      "注释信息": [
+        "@returns { string } The reader name, as a String.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@syscap SystemCapability.Communication.SecureElement",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "Reader",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.SecureElement",
+      "parameters": [],
+      "return_description": "The reader name, as a String.",
+      "error_codes": [
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "isSecureElementPresent",
+      "返回值": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Checks if a SE is present in this reader.",
+      "注释信息": [
+        "@returns { boolean } True if the SE is present, false otherwise.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 3300101 - IllegalStateError, service state exception.",
+        "@syscap SystemCapability.Communication.SecureElement",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "Reader",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.SecureElement",
+      "parameters": [],
+      "return_description": "True if the SE is present, false otherwise.",
+      "error_codes": [
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "3300101",
+          "description": "IllegalStateError, service state exception."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "openSession",
+      "返回值": "Session",
+      "所属模块": "未知模块",
+      "功能描述": "Connects to a SE in this reader. This method prepares (initializes) the SE for communication before the session object is returned. There might be multiple sessions opened at the same time on the same reader.",
+      "注释信息": [
+        "@returns { Session } A Session object to be used to create channels.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 3300101 - IllegalStateError, service state exception.",
+        "@throws { BusinessError } 3300104 - IOError, there is a communication problem to the reader or the SE.",
+        "@syscap SystemCapability.Communication.SecureElement",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "Reader",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.SecureElement",
+      "parameters": [],
+      "return_description": "A Session object to be used to create channels.",
+      "error_codes": [
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "3300101",
+          "description": "IllegalStateError, service state exception."
+        },
+        {
+          "code": "3300104",
+          "description": "IOError, there is a communication problem to the reader or the SE."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "closeSessions",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Close all the sessions opened on this reader. All the channels opened by all these sessions will be closed.",
+      "注释信息": [
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 3300101 - IllegalStateError, service state exception.",
+        "@syscap SystemCapability.Communication.SecureElement",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "Reader",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.SecureElement",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "3300101",
+          "description": "IllegalStateError, service state exception."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "Session",
+      "所属模块": "未知模块",
+      "功能描述": "Session represent a connection session to one of the SEs available on the device. These objects can be used to get a communication channel with an applet in the SE. This channel can be the basic channel or a logical channel.",
+      "注释信息": [
+        "@typedef Session",
+        "@syscap SystemCapability.Communication.SecureElement",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "omapi",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.SecureElement",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getReader",
+      "返回值": "Reader",
+      "所属模块": "未知模块",
+      "功能描述": "Get the reader that provides this session.",
+      "注释信息": [
+        "@returns { Reader } The Reader object.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@syscap SystemCapability.Communication.SecureElement",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "Session",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.SecureElement",
+      "parameters": [],
+      "return_description": "The Reader object.",
+      "error_codes": [
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getATR",
+      "返回值": "number[]",
+      "所属模块": "未知模块",
+      "功能描述": "Get the ATR of this SE. A empty array SHALL be returned if the ATR for this SE is not available.",
+      "注释信息": [
+        "@returns { number[] } The ATR as a number array or empty array.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 3300101 - IllegalStateError, service state exception.",
+        "@syscap SystemCapability.Communication.SecureElement",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "Session",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.SecureElement",
+      "parameters": [],
+      "return_description": "The ATR as a number array or empty array.",
+      "error_codes": [
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "3300101",
+          "description": "IllegalStateError, service state exception."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "close",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Close the connection with the SE. This will close any channels opened by this application with this SE.",
+      "注释信息": [
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 3300101 - IllegalStateError, service state exception.",
+        "@syscap SystemCapability.Communication.SecureElement",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "Session",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.SecureElement",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "3300101",
+          "description": "IllegalStateError, service state exception."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "isClosed",
+      "返回值": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Check if this session is closed.",
+      "注释信息": [
+        "@returns { boolean } True if the session is closed, false otherwise.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@syscap SystemCapability.Communication.SecureElement",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "Session",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.SecureElement",
+      "parameters": [],
+      "return_description": "True if the session is closed, false otherwise.",
+      "error_codes": [
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "closeChannels",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Close any channels opened on this session.",
+      "注释信息": [
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 3300101 - IllegalStateError, service state exception.",
+        "@syscap SystemCapability.Communication.SecureElement",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "Session",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.SecureElement",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "3300101",
+          "description": "IllegalStateError, service state exception."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "openBasicChannel",
+      "返回值": "Promise<Channel>",
+      "所属模块": "未知模块",
+      "功能描述": "This method is provided to ease the development of mobile applications and for backward compatibility with existing applications. This method is equivalent to openBasicChannel(aid, P2=0x00). or Null if no applet is to be selected. <br> 1. Mandatory parameters are left unspecified. <br> 2. Incorrect parameters types. <br> 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { number[] } aid - The AID of the applet to be selected on this channel, as a byte array,",
+        "@returns { Promise<Channel> } An instance of channel if available. Null if the SE is unable to provide.",
+        "@throws { BusinessError } 401 - The parameter check failed. Possible causes:",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 3300101 - IllegalStateError, an attempt is made to use an SE session that has been closed.",
+        "@throws { BusinessError } 3300102 - NoSuchElementError, the AID on the SE is not available or cannot be selected.",
+        "@throws { BusinessError } 3300103 - SecurityError, the calling application cannot be granted access to this AID or the default applet on this session.",
+        "@throws { BusinessError } 3300104 - IOError, there is a communication problem to the reader or the SE.",
+        "@syscap SystemCapability.Communication.SecureElement",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "Session",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.SecureElement",
+      "parameters": [
+        {
+          "名称": "aid",
+          "类型": "number[]",
+          "必填": true,
+          "说明": "The AID of the applet to be selected on this channel, as a byte array,"
+        }
+      ],
+      "return_description": "An instance of channel if available. Null if the SE is unable to provide.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "The parameter check failed. Possible causes:"
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "3300101",
+          "description": "IllegalStateError, an attempt is made to use an SE session that has been closed."
+        },
+        {
+          "code": "3300102",
+          "description": "NoSuchElementError, the AID on the SE is not available or cannot be selected."
+        },
+        {
+          "code": "3300103",
+          "description": "SecurityError, the calling application cannot be granted access to this AID or the default applet on this session."
+        },
+        {
+          "code": "3300104",
+          "description": "IOError, there is a communication problem to the reader or the SE."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "openBasicChannel",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "This method is provided to ease the development of mobile applications and for backward compatibility with existing applications. This method is equivalent to openBasicChannel(aid, P2=0x00). or Null if no applet is to be selected. <br> 1. Mandatory parameters are left unspecified. <br> 2. Incorrect parameters types. <br> 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { number[] } aid - The AID of the applet to be selected on this channel, as a byte array,",
+        "@param { AsyncCallback<Channel> } callback - The callback to return the Channel object. Null if the SE is unable to provide.",
+        "@throws { BusinessError } 401 - The parameter check failed. Possible causes:",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 3300101 - IllegalStateError, an attempt is made to use an SE session that has been closed.",
+        "@throws { BusinessError } 3300102 - NoSuchElementError, the AID on the SE is not available or cannot be selected.",
+        "@throws { BusinessError } 3300103 - SecurityError, the calling application cannot be granted access to this AID or the default applet on this session.",
+        "@throws { BusinessError } 3300104 - IOError, there is a communication problem to the reader or the SE.",
+        "@syscap SystemCapability.Communication.SecureElement",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "Session",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.SecureElement",
+      "parameters": [
+        {
+          "名称": "aid",
+          "类型": "number[]",
+          "必填": true,
+          "说明": "The AID of the applet to be selected on this channel, as a byte array,"
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<Channel>",
+          "必填": true,
+          "说明": "The callback to return the Channel object. Null if the SE is unable to provide."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "The parameter check failed. Possible causes:"
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "3300101",
+          "description": "IllegalStateError, an attempt is made to use an SE session that has been closed."
+        },
+        {
+          "code": "3300102",
+          "description": "NoSuchElementError, the AID on the SE is not available or cannot be selected."
+        },
+        {
+          "code": "3300103",
+          "description": "SecurityError, the calling application cannot be granted access to this AID or the default applet on this session."
+        },
+        {
+          "code": "3300104",
+          "description": "IOError, there is a communication problem to the reader or the SE."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "openBasicChannel",
+      "返回值": "Promise<Channel>",
+      "所属模块": "未知模块",
+      "功能描述": "Get access to the basic channel, as defined in [ISO 7816-4] (the one that has number 0). The obtained object is an instance of the channel class. Once this channel has been opened by a device application, it is considered as ‘locked’ by this device application, and other calls to this method SHALL return Null, until the channel is closed. Some SE plug-ins, such as those handling UICC, may prevent the use of the Basic Channel. In these cases, a Null value SHALL be returned. P2 is normally 0x00. The device SHOULD allow any value for P2 and SHALL allow the following values: 0x00, 0x04, 0x08, 0x0C (as defined in [ISO 7816-4]). or Null if no applet is to be selected. <br> 1. Mandatory parameters are left unspecified. <br> 2. Incorrect parameters types. <br> 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { number[] } aid - The AID of the applet to be selected on this channel, as a byte array,",
+        "@param { number } p2 - The P2 parameter of the SELECT APDU executed on this channel.",
+        "@returns { Promise<Channel> } An instance of channel if available. Null if the SE is unable to provide.",
+        "@throws { BusinessError } 401 - The parameter check failed. Possible causes:",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 3300101 - IllegalStateError, an attempt is made to use an SE session that has been closed.",
+        "@throws { BusinessError } 3300102 - NoSuchElementError, the AID on the SE is not available or cannot be selected.",
+        "@throws { BusinessError } 3300103 - SecurityError, the calling application cannot be granted access to this AID or the default applet on this session.",
+        "@throws { BusinessError } 3300104 - IOError, there is a communication problem to the reader or the SE.",
+        "@syscap SystemCapability.Communication.SecureElement",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "Session",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.SecureElement",
+      "parameters": [
+        {
+          "名称": "aid",
+          "类型": "number[]",
+          "必填": true,
+          "说明": "The AID of the applet to be selected on this channel, as a byte array,"
+        },
+        {
+          "名称": "p2",
+          "类型": "number",
+          "必填": true,
+          "说明": "The P2 parameter of the SELECT APDU executed on this channel."
+        }
+      ],
+      "return_description": "An instance of channel if available. Null if the SE is unable to provide.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "The parameter check failed. Possible causes:"
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "3300101",
+          "description": "IllegalStateError, an attempt is made to use an SE session that has been closed."
+        },
+        {
+          "code": "3300102",
+          "description": "NoSuchElementError, the AID on the SE is not available or cannot be selected."
+        },
+        {
+          "code": "3300103",
+          "description": "SecurityError, the calling application cannot be granted access to this AID or the default applet on this session."
+        },
+        {
+          "code": "3300104",
+          "description": "IOError, there is a communication problem to the reader or the SE."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "openBasicChannel",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Get access to the basic channel, as defined in [ISO 7816-4] (the one that has number 0). The obtained object is an instance of the channel class. Once this channel has been opened by a device application, it is considered as ‘locked’ by this device application, and other calls to this method SHALL return Null, until the channel is closed. Some SE plug-ins, such as those handling UICC, may prevent the use of the Basic Channel. In these cases, a Null value SHALL be returned. P2 is normally 0x00. The device SHOULD allow any value for P2 and SHALL allow the following values: 0x00, 0x04, 0x08, 0x0C (as defined in [ISO 7816-4]). or Null if no applet is to be selected. <br> 1. Mandatory parameters are left unspecified. <br> 2. Incorrect parameters types. <br> 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { number[] } aid - The AID of the applet to be selected on this channel, as a byte array,",
+        "@param { number } p2 - The P2 parameter of the SELECT APDU executed on this channel.",
+        "@param { AsyncCallback<Channel> } callback - The callback to return the Channel object. Null if the SE is unable to provide.",
+        "@throws { BusinessError } 401 - The parameter check failed. Possible causes:",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 3300101 - IllegalStateError, an attempt is made to use an SE session that has been closed.",
+        "@throws { BusinessError } 3300102 - NoSuchElementError, the AID on the SE is not available or cannot be selected.",
+        "@throws { BusinessError } 3300103 - SecurityError, the calling application cannot be granted access to this AID or the default applet on this session.",
+        "@throws { BusinessError } 3300104 - IOError, there is a communication problem to the reader or the SE.",
+        "@syscap SystemCapability.Communication.SecureElement",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "Session",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.SecureElement",
+      "parameters": [
+        {
+          "名称": "aid",
+          "类型": "number[]",
+          "必填": true,
+          "说明": "The AID of the applet to be selected on this channel, as a byte array,"
+        },
+        {
+          "名称": "p2",
+          "类型": "number",
+          "必填": true,
+          "说明": "The P2 parameter of the SELECT APDU executed on this channel."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<Channel>",
+          "必填": true,
+          "说明": "The callback to return the Channel object. Null if the SE is unable to provide."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "The parameter check failed. Possible causes:"
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "3300101",
+          "description": "IllegalStateError, an attempt is made to use an SE session that has been closed."
+        },
+        {
+          "code": "3300102",
+          "description": "NoSuchElementError, the AID on the SE is not available or cannot be selected."
+        },
+        {
+          "code": "3300103",
+          "description": "SecurityError, the calling application cannot be granted access to this AID or the default applet on this session."
+        },
+        {
+          "code": "3300104",
+          "description": "IOError, there is a communication problem to the reader or the SE."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "openLogicalChannel",
+      "返回值": "Promise<Channel>",
+      "所属模块": "未知模块",
+      "功能描述": "This method is provided to ease the development of mobile applications and for backward compatibility with existing applications. This method is equivalent to openLogicalChannel(aid, P2=0x00). A new logical channel or is unable to retrieve Access Control rules due to the lack of an available logical channel. <br> 1. Mandatory parameters are left unspecified. <br> 2. Incorrect parameters types. <br> 3. Parameter verification failed. a logical channel is already open to a non-multi-selectable applet.",
+      "注释信息": [
+        "@param { number[] } aid - The AID of the applet to be selected on this channel, as a byte array.",
+        "@returns {  Promise<Channel> } An instance of channel if available. Null if the SE is unable to provide.",
+        "@throws { BusinessError } 401 - The parameter check failed. Possible causes:",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 3300101 - IllegalStateError, an attempt is made to use an SE session that has been closed.",
+        "@throws { BusinessError } 3300102 - NoSuchElementError, the AID on the SE is not available or cannot be selected or",
+        "@throws { BusinessError } 3300103 - SecurityError, the calling application cannot be granted access to this AID or the default applet on this session.",
+        "@throws { BusinessError } 3300104 - IOError, there is a communication problem to the reader or the SE.",
+        "@syscap SystemCapability.Communication.SecureElement",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "Session",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.SecureElement",
+      "parameters": [
+        {
+          "名称": "aid",
+          "类型": "number[]",
+          "必填": true,
+          "说明": "The AID of the applet to be selected on this channel, as a byte array."
+        }
+      ],
+      "return_description": "An instance of channel if available. Null if the SE is unable to provide.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "The parameter check failed. Possible causes:"
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "3300101",
+          "description": "IllegalStateError, an attempt is made to use an SE session that has been closed."
+        },
+        {
+          "code": "3300102",
+          "description": "NoSuchElementError, the AID on the SE is not available or cannot be selected or"
+        },
+        {
+          "code": "3300103",
+          "description": "SecurityError, the calling application cannot be granted access to this AID or the default applet on this session."
+        },
+        {
+          "code": "3300104",
+          "description": "IOError, there is a communication problem to the reader or the SE."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "openLogicalChannel",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "This method is provided to ease the development of mobile applications and for backward compatibility with existing applications. This method is equivalent to openLogicalChannel(aid, P2=0x00). A new logical channel or is unable to retrieve Access Control rules due to the lack of an available logical channel. <br> 1. Mandatory parameters are left unspecified. <br> 2. Incorrect parameters types. <br> 3. Parameter verification failed. a logical channel is already open to a non-multi-selectable applet.",
+      "注释信息": [
+        "@param { number[] } aid - The AID of the applet to be selected on this channel, as a byte array.",
+        "@param { AsyncCallback<Channel> } callback - The callback to return the Channel object. Null if the SE is unable to provide.",
+        "@throws { BusinessError } 401 - The parameter check failed. Possible causes:",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 3300101 - IllegalStateError, an attempt is made to use an SE session that has been closed.",
+        "@throws { BusinessError } 3300102 - NoSuchElementError, the AID on the SE is not available or cannot be selected or",
+        "@throws { BusinessError } 3300103 - SecurityError, the calling application cannot be granted access to this AID or the default applet on this session.",
+        "@throws { BusinessError } 3300104 - IOError, there is a communication problem to the reader or the SE.",
+        "@syscap SystemCapability.Communication.SecureElement",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "Session",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.SecureElement",
+      "parameters": [
+        {
+          "名称": "aid",
+          "类型": "number[]",
+          "必填": true,
+          "说明": "The AID of the applet to be selected on this channel, as a byte array."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<Channel>",
+          "必填": true,
+          "说明": "The callback to return the Channel object. Null if the SE is unable to provide."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "The parameter check failed. Possible causes:"
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "3300101",
+          "description": "IllegalStateError, an attempt is made to use an SE session that has been closed."
+        },
+        {
+          "code": "3300102",
+          "description": "NoSuchElementError, the AID on the SE is not available or cannot be selected or"
+        },
+        {
+          "code": "3300103",
+          "description": "SecurityError, the calling application cannot be granted access to this AID or the default applet on this session."
+        },
+        {
+          "code": "3300104",
+          "description": "IOError, there is a communication problem to the reader or the SE."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "openLogicalChannel",
+      "返回值": "Promise<Channel>",
+      "所属模块": "未知模块",
+      "功能描述": "Open a logical channel with the SE, selecting the applet represented by the given AID (when the AID is not Null and the length of the AID is not 0). If the length of the AID is 0, the method will select the Issuer Security Domain of the SE by sending a SELECT command with 0 length AID as defined in [GPCS]. If the AID is Null, the method SHALL only send a MANAGE CHANNEL Open and SHALL NOT send a SELECT command. In this case, the default applet associated to the logical channel will be selected by default. P2 is normally 0x00. The device SHOULD allow any value for P2 and SHALL allow the following values: 0x00, 0x04, 0x08, 0x0C (as defined in [ISO 7816-4]). A new logical channel or is unable to retrieve Access Control rules due to the lack of an available logical channel. <br> 1. Mandatory parameters are left unspecified. <br> 2. Incorrect parameters types. <br> 3. Parameter verification failed. a logical channel is already open to a non-multi-selectable applet.",
+      "注释信息": [
+        "@param { number[] } aid - The AID of the applet to be selected on this channel, as a byte array.",
+        "@param { number } p2 - The P2 parameter of the SELECT APDU executed on this channel.",
+        "@returns { Promise<Channel> } An instance of channel if available. Null if the SE is unable to provide.",
+        "@throws { BusinessError } 401 - The parameter check failed. Possible causes:",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 3300101 - IllegalStateError, an attempt is made to use an SE session that has been closed.",
+        "@throws { BusinessError } 3300102 - NoSuchElementError, the AID on the SE is not available or cannot be selected or",
+        "@throws { BusinessError } 3300103 - SecurityError, the calling application cannot be granted access to this AID or the default applet on this session.",
+        "@throws { BusinessError } 3300104 - IOError, there is a communication problem to the reader or the SE.",
+        "@syscap SystemCapability.Communication.SecureElement",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "Session",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.SecureElement",
+      "parameters": [
+        {
+          "名称": "aid",
+          "类型": "number[]",
+          "必填": true,
+          "说明": "The AID of the applet to be selected on this channel, as a byte array."
+        },
+        {
+          "名称": "p2",
+          "类型": "number",
+          "必填": true,
+          "说明": "The P2 parameter of the SELECT APDU executed on this channel."
+        }
+      ],
+      "return_description": "An instance of channel if available. Null if the SE is unable to provide.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "The parameter check failed. Possible causes:"
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "3300101",
+          "description": "IllegalStateError, an attempt is made to use an SE session that has been closed."
+        },
+        {
+          "code": "3300102",
+          "description": "NoSuchElementError, the AID on the SE is not available or cannot be selected or"
+        },
+        {
+          "code": "3300103",
+          "description": "SecurityError, the calling application cannot be granted access to this AID or the default applet on this session."
+        },
+        {
+          "code": "3300104",
+          "description": "IOError, there is a communication problem to the reader or the SE."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "openLogicalChannel",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Open a logical channel with the SE, selecting the applet represented by the given AID (when the AID is not Null and the length of the AID is not 0). If the length of the AID is 0, the method will select the Issuer Security Domain of the SE by sending a SELECT command with 0 length AID as defined in [GPCS]. If the AID is Null, the method SHALL only send a MANAGE CHANNEL Open and SHALL NOT send a SELECT command. In this case, the default applet associated to the logical channel will be selected by default. P2 is normally 0x00. The device SHOULD allow any value for P2 and SHALL allow the following values: 0x00, 0x04, 0x08, 0x0C (as defined in [ISO 7816-4]). <br> 1. Mandatory parameters are left unspecified. <br> 2. Incorrect parameters types. <br> 3. Parameter verification failed. a logical channel is already open to a non-multi-selectable applet.",
+      "注释信息": [
+        "@param { number[] } aid - The AID of the applet to be selected on this channel, as a byte array.",
+        "@param { number } p2 - The P2 parameter of the SELECT APDU executed on this channel.",
+        "@param { AsyncCallback<Channel> } callback - The callback to return the instance of channel. Null if the SE is unable to provide.",
+        "@throws { BusinessError } 401 - The parameter check failed. Possible causes:",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 3300101 - IllegalStateError, an attempt is made to use an SE session that has been closed.",
+        "@throws { BusinessError } 3300102 - NoSuchElementError, the AID on the SE is not available or cannot be selected or",
+        "@throws { BusinessError } 3300103 - SecurityError, the calling application cannot be granted access to this AID or the default applet on this session.",
+        "@throws { BusinessError } 3300104 - IOError, there is a communication problem to the reader or the SE.",
+        "@syscap SystemCapability.Communication.SecureElement",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "Session",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.SecureElement",
+      "parameters": [
+        {
+          "名称": "aid",
+          "类型": "number[]",
+          "必填": true,
+          "说明": "The AID of the applet to be selected on this channel, as a byte array."
+        },
+        {
+          "名称": "p2",
+          "类型": "number",
+          "必填": true,
+          "说明": "The P2 parameter of the SELECT APDU executed on this channel."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<Channel>",
+          "必填": true,
+          "说明": "The callback to return the instance of channel. Null if the SE is unable to provide."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "The parameter check failed. Possible causes:"
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "3300101",
+          "description": "IllegalStateError, an attempt is made to use an SE session that has been closed."
+        },
+        {
+          "code": "3300102",
+          "description": "NoSuchElementError, the AID on the SE is not available or cannot be selected or"
+        },
+        {
+          "code": "3300103",
+          "description": "SecurityError, the calling application cannot be granted access to this AID or the default applet on this session."
+        },
+        {
+          "code": "3300104",
+          "description": "IOError, there is a communication problem to the reader or the SE."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "Channel",
+      "所属模块": "未知模块",
+      "功能描述": "Channel represents an [ISO 7816-4] channel opened to a SE. It can be either a logical channel or the basic channel.",
+      "注释信息": [
+        "@typedef Channel",
+        "@syscap SystemCapability.Communication.SecureElement",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "omapi",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.SecureElement",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getSession",
+      "返回值": "Session",
+      "所属模块": "未知模块",
+      "功能描述": "Get the session that has opened this channel.",
+      "注释信息": [
+        "@returns { Session } The Session object this channel is bound to.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@syscap SystemCapability.Communication.SecureElement",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "Channel",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.SecureElement",
+      "parameters": [],
+      "return_description": "The Session object this channel is bound to.",
+      "error_codes": [
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "close",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Closes this channel to the SE. If the method is called when the channel is already closed, this method SHALL be ignored.",
+      "注释信息": [
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@syscap SystemCapability.Communication.SecureElement",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "Channel",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.SecureElement",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "isBasicChannel",
+      "返回值": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Checks whether this channel is the basic channel.",
+      "注释信息": [
+        "@returns { boolean } True if this channel is a basic channel, false otherwise.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@syscap SystemCapability.Communication.SecureElement",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "Channel",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.SecureElement",
+      "parameters": [],
+      "return_description": "True if this channel is a basic channel, false otherwise.",
+      "error_codes": [
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "isClosed",
+      "返回值": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Checks if this channel is closed.",
+      "注释信息": [
+        "@returns { boolean } True if the channel is closed, false otherwise.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@syscap SystemCapability.Communication.SecureElement",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "Channel",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.SecureElement",
+      "parameters": [],
+      "return_description": "True if the channel is closed, false otherwise.",
+      "error_codes": [
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getSelectResponse",
+      "返回值": "number[]",
+      "所属模块": "未知模块",
+      "功能描述": "Returns the data as received from the application select command, including the status word received at applet selection.",
+      "注释信息": [
+        "@returns { number[] } The data as returned by the application select command inclusive of the status word.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@syscap SystemCapability.Communication.SecureElement",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "Channel",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.SecureElement",
+      "parameters": [],
+      "return_description": "The data as returned by the application select command inclusive of the status word.",
+      "error_codes": [
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "transmit",
+      "返回值": "Promise<number[]>",
+      "所属模块": "未知模块",
+      "功能描述": "Transmit an APDU command (as per ISO/IEC 7816) to the SE. <br> 1. Mandatory parameters are left unspecified. <br> 2. Incorrect parameters types. <br> 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { number[] } command - The APDU command to be transmitted, as a byte array.",
+        "@returns { Promise<number[]> } The response received, as a byte array.",
+        "@throws { BusinessError } 401 - The parameter check failed. Possible causes:",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 3300101 - IllegalStateError, an attempt is made to use an SE session or channel that has been closed.",
+        "@throws { BusinessError } 3300103 - SecurityError, the command is filtered by the security policy.",
+        "@throws { BusinessError } 3300104 - IOError, there is a communication problem to the reader or the SE.",
+        "@syscap SystemCapability.Communication.SecureElement",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "Channel",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.SecureElement",
+      "parameters": [
+        {
+          "名称": "command",
+          "类型": "number[]",
+          "必填": true,
+          "说明": "The APDU command to be transmitted, as a byte array."
+        }
+      ],
+      "return_description": "The response received, as a byte array.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "The parameter check failed. Possible causes:"
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "3300101",
+          "description": "IllegalStateError, an attempt is made to use an SE session or channel that has been closed."
+        },
+        {
+          "code": "3300103",
+          "description": "SecurityError, the command is filtered by the security policy."
+        },
+        {
+          "code": "3300104",
+          "description": "IOError, there is a communication problem to the reader or the SE."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "transmit",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Transmit an APDU command (as per ISO/IEC 7816) to the SE. <br> 1. Mandatory parameters are left unspecified. <br> 2. Incorrect parameters types. <br> 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { number[] } command - The APDU command to be transmitted, as a byte array.",
+        "@param { AsyncCallback<number[]> } callback - The callback to return the response received, as a byte array.",
+        "@throws { BusinessError } 401 - The parameter check failed. Possible causes:",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 3300101 - IllegalStateError, an attempt is made to use an SE session or channel that has been closed.",
+        "@throws { BusinessError } 3300103 - SecurityError, the command is filtered by the security policy.",
+        "@throws { BusinessError } 3300104 - IOError, there is a communication problem to the reader or the SE.",
+        "@syscap SystemCapability.Communication.SecureElement",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "Channel",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.SecureElement",
+      "parameters": [
+        {
+          "名称": "command",
+          "类型": "number[]",
+          "必填": true,
+          "说明": "The APDU command to be transmitted, as a byte array."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<number[]>",
+          "必填": true,
+          "说明": "The callback to return the response received, as a byte array."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "The parameter check failed. Possible causes:"
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "3300101",
+          "description": "IllegalStateError, an attempt is made to use an SE session or channel that has been closed."
+        },
+        {
+          "code": "3300103",
+          "description": "SecurityError, the command is filtered by the security policy."
+        },
+        {
+          "code": "3300104",
+          "description": "IOError, there is a communication problem to the reader or the SE."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "ServiceState",
+      "所属模块": "未知模块",
+      "功能描述": "Secure Element service state definition.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.Communication.SecureElement",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "omapi",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.SecureElement",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "DISCONNECTED",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "Service is disconnected.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.SecureElement",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "ServiceState",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.SecureElement",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CONNECTED",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Service is connected.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.SecureElement",
+        "@since 10"
+      ],
+      "层级": 2,
+      "上级": "ServiceState",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Communication.SecureElement",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    }
+  ]
+}

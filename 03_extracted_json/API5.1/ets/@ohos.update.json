@@ -1,0 +1,376 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.BasicServicesKit",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "namespace",
+      "名称": "update",
+      "所属模块": "@kit.BasicServicesKit",
+      "功能描述": "A static class to do update for device.",
+      "注释信息": [
+        "@namespace update",
+        "@syscap SystemCapability.Update.UpdateService",
+        "@systemapi hide for inner use.",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "@kit.BasicServicesKit",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Update.UpdateService",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "method",
+      "名称": "getOnlineUpdater",
+      "返回值": "Updater",
+      "所属模块": "未知模块",
+      "功能描述": "Get online update handler for the calling device.",
+      "注释信息": [
+        "@param { UpgradeInfo } upgradeInfo - Indicates client app and business type.",
+        "@returns { Updater } online update handler to perform online update.",
+        "@throws { BusinessError } 202 - Permission verification failed. A non-system application calls a system API.",
+        "@syscap SystemCapability.Update.UpdateService",
+        "@systemapi hide for inner use.",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "update",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Update.UpdateService",
+      "parameters": [
+        {
+          "名称": "upgradeInfo",
+          "类型": "UpgradeInfo",
+          "必填": true,
+          "说明": "Indicates client app and business type."
+        }
+      ],
+      "return_description": "online update handler to perform online update.",
+      "error_codes": [
+        {
+          "code": "202",
+          "description": "Permission verification failed. A non-system application calls a system API."
+        }
+      ],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "method",
+      "名称": "getRestorer",
+      "返回值": "Restorer",
+      "所属模块": "未知模块",
+      "功能描述": "Get restore handler.",
+      "注释信息": [
+        "@returns { Restorer } restore handler to perform factory reset.",
+        "@throws { BusinessError } 202 - Permission verification failed. A non-system application calls a system API.",
+        "@syscap SystemCapability.Update.UpdateService",
+        "@systemapi hide for inner use.",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "update",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Update.UpdateService",
+      "parameters": [],
+      "return_description": "restore handler to perform factory reset.",
+      "error_codes": [
+        {
+          "code": "202",
+          "description": "Permission verification failed. A non-system application calls a system API."
+        }
+      ],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "method",
+      "名称": "getLocalUpdater",
+      "返回值": "LocalUpdater",
+      "所属模块": "未知模块",
+      "功能描述": "Get local update handler.",
+      "注释信息": [
+        "@returns { LocalUpdater } local update handler to perform local update.",
+        "@throws { BusinessError } 202 - Permission verification failed. A non-system application calls a system API.",
+        "@syscap SystemCapability.Update.UpdateService",
+        "@systemapi hide for inner use.",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "update",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Update.UpdateService",
+      "parameters": [],
+      "return_description": "local update handler to perform local update.",
+      "error_codes": [
+        {
+          "code": "202",
+          "description": "Permission verification failed. A non-system application calls a system API."
+        }
+      ],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "interface",
+      "名称": "Updater",
+      "所属模块": "未知模块",
+      "功能描述": "A static class to do online update.",
+      "注释信息": [
+        "@interface Updater",
+        "@syscap SystemCapability.Update.UpdateService",
+        "@systemapi hide for inner use.",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "update",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Update.UpdateService",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "method",
+      "名称": "checkNewVersion",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Check new version.",
+      "注释信息": [
+        "@permission ohos.permission.UPDATE_SYSTEM",
+        "@param { AsyncCallback<CheckResult> } callback - Callback used to return the result.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Permission verification failed. A non-system application calls a system API.",
+        "@throws { BusinessError } 11500104 - IPC error.",
+        "@syscap SystemCapability.Update.UpdateService",
+        "@systemapi hide for inner use.",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Updater",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Update.UpdateService",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<CheckResult>",
+          "必填": true,
+          "说明": "Callback used to return the result."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Permission verification failed. A non-system application calls a system API."
+        },
+        {
+          "code": "11500104",
+          "description": "IPC error."
+        }
+      ],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "method",
+      "名称": "checkNewVersion",
+      "返回值": "Promise<CheckResult>",
+      "所属模块": "未知模块",
+      "功能描述": "Check new version.",
+      "注释信息": [
+        "@permission ohos.permission.UPDATE_SYSTEM",
+        "@returns { Promise<CheckResult> } Promise used to return the result.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Permission verification failed. A non-system application calls a system API.",
+        "@throws { BusinessError } 11500104 - IPC error.",
+        "@syscap SystemCapability.Update.UpdateService",
+        "@systemapi hide for inner use.",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Updater",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Update.UpdateService",
+      "parameters": [],
+      "return_description": "Promise used to return the result.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Permission verification failed. A non-system application calls a system API."
+        },
+        {
+          "code": "11500104",
+          "description": "IPC error."
+        }
+      ],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "method",
+      "名称": "getNewVersionInfo",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Get new version.",
+      "注释信息": [
+        "@permission ohos.permission.UPDATE_SYSTEM",
+        "@param { AsyncCallback<NewVersionInfo> } callback - Callback used to return the result.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Permission verification failed. A non-system application calls a system API.",
+        "@throws { BusinessError } 11500104 - IPC error.",
+        "@syscap SystemCapability.Update.UpdateService",
+        "@systemapi hide for inner use.",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Updater",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Update.UpdateService",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<NewVersionInfo>",
+          "必填": true,
+          "说明": "Callback used to return the result."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Permission verification failed. A non-system application calls a system API."
+        },
+        {
+          "code": "11500104",
+          "description": "IPC error."
+        }
+      ],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "method",
+      "名称": "getNewVersionInfo",
+      "返回值": "Promise<NewVersionInfo>",
+      "所属模块": "未知模块",
+      "功能描述": "Get new version.",
+      "注释信息": [
+        "@permission ohos.permission.UPDATE_SYSTEM",
+        "@returns { Promise<NewVersionInfo> } Promise used to return the result.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Permission verification failed. A non-system application calls a system API.",
+        "@throws { BusinessError } 11500104 - IPC error.",
+        "@syscap SystemCapability.Update.UpdateService",
+        "@systemapi hide for inner use.",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Updater",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Update.UpdateService",
+      "parameters": [],
+      "return_description": "Promise used to return the result.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Permission verification failed. A non-system application calls a system API."
+        },
+        {
+          "code": "11500104",
+          "description": "IPC error."
+        }
+      ],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "method",
+      "名称": "getNewVersionDescription",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Get new version description.",
+      "注释信息": [
+        "@permission ohos.permission.UPDATE_SYSTEM",
+        "@param { VersionDigestInfo } versionDigestInfo - Version digest information.",
+        "@param { DescriptionOptions } descriptionOptions - Options of the description file.",
+        "@param { AsyncCallback<Array<ComponentDescription>> } callback - Callback used to return the result.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Permission verification failed. A non-system application calls a system API.",
+        "@throws { BusinessError } 401 - Parameter verification failed.",
+        "@throws { BusinessError } 11500104 - IPC error.",
+        "@syscap SystemCapability.Update.UpdateService",
+        "@systemapi hide for inner use.",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "Updater",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Update.UpdateService",
+      "parameters": [
+        {
+          "名称": "versionDigestInfo",
+          "类型": "VersionDigestInfo",
+          "必填": true,
+          "说明": "Version digest information."
+        },
+        {
+          "名称": "descriptionOptions",
+          "类型": "DescriptionOptions",
+          "必填": true,
+          "说明": "Options of the description file."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<Array<ComponentDescription>>",
+          "必填": true,
+          "说明": "Callback used to return the result."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Permission verification failed. A non-system application calls a system API."
+        },
+        {
+          "code": "401",
+          "description": "Parameter verification failed."
+        },
+        {
+          "code": "11500104",
+          "description": "IPC error."
+        }
+      ],
+      "版本": "API5.1"
+    }
+  ]
+}

@@ -1,0 +1,913 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.NotificationKit",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "NotificationRequest",
+      "所属模块": "@kit.NotificationKit",
+      "功能描述": "Defines a NotificationRequest instance.",
+      "注释信息": [
+        "@typedef NotificationRequest",
+        "@syscap SystemCapability.Notification.Notification",
+        "@crossplatform",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "@kit.NotificationKit",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Notification.Notification",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "content",
+      "属性类型": "NotificationContent",
+      "所属模块": "未知模块",
+      "功能描述": "Notification content.",
+      "注释信息": [
+        "@type { NotificationContent }",
+        "@syscap SystemCapability.Notification.Notification",
+        "@crossplatform",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "NotificationRequest",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Notification.Notification",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "id",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Notification ID. The default value is 0. If the same notification ID exists, the notification content is updated.",
+      "注释信息": [
+        "@type { ?number }",
+        "@syscap SystemCapability.Notification.Notification",
+        "@crossplatform",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "NotificationRequest",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Notification.Notification",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "priorityNotificationType",
+      "属性类型": "notificationManager.PriorityNotificationType",
+      "所属模块": "未知模块",
+      "功能描述": "Notification priority type, which is used to determine whether the notification needs to be prioritized.",
+      "注释信息": [
+        "@type { ?notificationManager.PriorityNotificationType }",
+        "@syscap SystemCapability.Notification.Notification",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 1,
+      "上级": "NotificationRequest",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Notification.Notification",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "appMessageId",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Unique ID carried in a notification sent by an app, which is used for notification deduplication. If an app publishes notifications with the same appMessageId locally or on the cloud, the device displays only one message. Repeated notifications received later will be silenced and deduplicated, and will not be displayed or notified. The deduplication flag is valid only within 24 hours after the notification is published. After 24 hours or the device is restarted, the deduplication flag becomes invalid.",
+      "注释信息": [
+        "@type { ?string }",
+        "@syscap SystemCapability.Notification.Notification",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "NotificationRequest",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Notification.Notification",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "slotType",
+      "属性类型": "notification.SlotType",
+      "所属模块": "未知模块",
+      "功能描述": "Notification slot type.",
+      "注释信息": [
+        "@type { ?notification.SlotType }",
+        "@syscap SystemCapability.Notification.Notification",
+        "@since 7",
+        "@deprecated since 11",
+        "@useinstead NotificationRequest#notificationSlotType"
+      ],
+      "层级": 1,
+      "上级": "NotificationRequest",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Notification.Notification",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "notificationSlotType",
+      "属性类型": "notificationManager.SlotType",
+      "所属模块": "未知模块",
+      "功能描述": "Notification slot type. The default value is OTHER_TYPES.",
+      "注释信息": [
+        "@type { ?notificationManager.SlotType }",
+        "@syscap SystemCapability.Notification.Notification",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "NotificationRequest",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Notification.Notification",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "isOngoing",
+      "属性类型": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Whether the notification is an ongoing notification.",
+      "注释信息": [
+        "@type { ?boolean }",
+        "@syscap SystemCapability.Notification.Notification",
+        "@crossplatform",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "NotificationRequest",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Notification.Notification",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "isUnremovable",
+      "属性类型": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Whether the notification can be removed.",
+      "注释信息": [
+        "@type { ?boolean }",
+        "@syscap SystemCapability.Notification.Notification",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "NotificationRequest",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Notification.Notification",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "updateOnly",
+      "属性类型": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Whether to update notifications only. - true: If a notification with the same ID exists, the notification is updated; otherwise, the notification fails to update and no notification is created. - false (default): If a notification with the same ID exists, the notification is updated; otherwise, a notification is created.",
+      "注释信息": [
+        "@type { ?boolean }",
+        "@syscap SystemCapability.Notification.Notification",
+        "@since 18"
+      ],
+      "层级": 1,
+      "上级": "NotificationRequest",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Notification.Notification",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "deliveryTime",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Time when the notification is sent. This API is automatically generated by the system. Data format: timestamp, in milliseconds.",
+      "注释信息": [
+        "@type { ?number }",
+        "@syscap SystemCapability.Notification.Notification",
+        "@crossplatform",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "NotificationRequest",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Notification.Notification",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "tapDismissed",
+      "属性类型": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Whether the notification is automatically cleared. This parameter is valid only when the notification carries wantAgent or actionButtons. - true (default): The current notification is automatically cleared after the notification or button is tapped. - false: The current notification is retained after the notification or button is tapped.",
+      "注释信息": [
+        "@type { ?boolean }",
+        "@syscap SystemCapability.Notification.Notification",
+        "@crossplatform",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "NotificationRequest",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Notification.Notification",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "autoDeletedTime",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Time when the notification is automatically cleared. Data format: timestamp, in milliseconds. For example, if a notification is to be cleared after being displayed for 3 seconds (3000 ms), you can set new Date().getTime() + 3000 to meet this requirement.",
+      "注释信息": [
+        "@type { ?number }",
+        "@syscap SystemCapability.Notification.Notification",
+        "@crossplatform",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "NotificationRequest",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Notification.Notification",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "wantAgent",
+      "属性类型": "WantAgent",
+      "所属模块": "未知模块",
+      "功能描述": "WantAgent instance to which the notification will be redirected after being clicked.",
+      "注释信息": [
+        "@type { ?WantAgent }",
+        "@syscap SystemCapability.Notification.Notification",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "NotificationRequest",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Notification.Notification",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "所属模块": "未知模块",
+      "功能描述": "Expand parameters to provide customized services for applications.",
+      "注释信息": [
+        "@type { ?object }",
+        "@syscap SystemCapability.Notification.Notification",
+        "@since 7"
+      ],
+      "层级": 2,
+      "上级": "NotificationRequest",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Notification.Notification",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "color",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Background color of the notification.",
+      "注释信息": [
+        "@type { ?number }",
+        "@syscap SystemCapability.Notification.Notification",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "NotificationRequest",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Notification.Notification",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "colorEnabled",
+      "属性类型": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Whether the notification background color can be enabled.",
+      "注释信息": [
+        "@type { ?boolean }",
+        "@syscap SystemCapability.Notification.Notification",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "NotificationRequest",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Notification.Notification",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "isAlertOnce",
+      "属性类型": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Whether to send a notification only once when the notification is published or updated. - true: A notification is sent only when the notification is published for the first time. For subsequent update, the notification mode is changed to LEVEL_MIN. - false (default): A notification is sent based on the configured notification mode.",
+      "注释信息": [
+        "@type { ?boolean }",
+        "@syscap SystemCapability.Notification.Notification",
+        "@crossplatform",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "NotificationRequest",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Notification.Notification",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "isStopwatch",
+      "属性类型": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Whether to display the stopwatch.",
+      "注释信息": [
+        "@type { ?boolean }",
+        "@syscap SystemCapability.Notification.Notification",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "NotificationRequest",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Notification.Notification",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "isCountDown",
+      "属性类型": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Whether to display the countdown time.",
+      "注释信息": [
+        "@type { ?boolean }",
+        "@syscap SystemCapability.Notification.Notification",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "NotificationRequest",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Notification.Notification",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "isFloatingIcon",
+      "属性类型": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Whether the notification is displayed as a floating icon in the status bar.",
+      "注释信息": [
+        "@type { ?boolean }",
+        "@syscap SystemCapability.Notification.Notification",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "NotificationRequest",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Notification.Notification",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "label",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Notification label. The label field can be used independently, or used together with ID as a notification identifier. ID is preferentially used. If the label is not empty when a notification is published, you need to specify the label when updating or deleting the notification.",
+      "注释信息": [
+        "@type { ?string }",
+        "@syscap SystemCapability.Notification.Notification",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "NotificationRequest",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Notification.Notification",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "badgeIconStyle",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Notification badge type.",
+      "注释信息": [
+        "@type { ?number }",
+        "@syscap SystemCapability.Notification.Notification",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "NotificationRequest",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Notification.Notification",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "showDeliveryTime",
+      "属性类型": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Whether to display the time when the notification is delivered.",
+      "注释信息": [
+        "@type { ?boolean }",
+        "@syscap SystemCapability.Notification.Notification",
+        "@crossplatform",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "NotificationRequest",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Notification.Notification",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "actionButtons",
+      "属性类型": "Array<NotificationActionButton>",
+      "所属模块": "未知模块",
+      "功能描述": "Notification button. A notification can contain a maximum of two buttons by default.",
+      "注释信息": [
+        "@type { ?Array<NotificationActionButton> }",
+        "@syscap SystemCapability.Notification.Notification",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "NotificationRequest",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Notification.Notification",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "smallIcon",
+      "属性类型": "image.PixelMap",
+      "所属模块": "未知模块",
+      "功能描述": "Small notification icon. Optional field. The total number of the icon pixel bytes cannot exceed 192 KB (which is obtained through getPixelBytesNumber. The recommended icon size is 128 px × 128 px.",
+      "注释信息": [
+        "@type { ?image.PixelMap }",
+        "@syscap SystemCapability.Notification.Notification",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "NotificationRequest",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Notification.Notification",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "largeIcon",
+      "属性类型": "image.PixelMap",
+      "所属模块": "未知模块",
+      "功能描述": "Large notification icon. Optional field. The total number of the icon pixel bytes cannot exceed 192 KB (which is obtained through getPixelBytesNumber. The recommended icon size is 128 px × 128 px.",
+      "注释信息": [
+        "@type { ?image.PixelMap }",
+        "@syscap SystemCapability.Notification.Notification",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "NotificationRequest",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Notification.Notification",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "overlayIcon",
+      "属性类型": "image.PixelMap",
+      "所属模块": "未知模块",
+      "功能描述": "Overlay notification icon.",
+      "注释信息": [
+        "@type { ?image.PixelMap }",
+        "@syscap SystemCapability.Notification.Notification",
+        "@since 23"
+      ],
+      "层级": 1,
+      "上级": "NotificationRequest",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Notification.Notification",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "groupName",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Notification group name. This parameter is left blank by default.",
+      "注释信息": [
+        "@type { ?string }",
+        "@syscap SystemCapability.Notification.Notification",
+        "@crossplatform",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "NotificationRequest",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Notification.Notification",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "creatorBundleName",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Name of the bundle that creates the notification.",
+      "注释信息": [
+        "@type { ?string }",
+        "@readonly",
+        "@syscap SystemCapability.Notification.Notification",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "NotificationRequest",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Notification.Notification",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "creatorUid",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "UID used for creating the notification.",
+      "注释信息": [
+        "@type { ?number }",
+        "@readonly",
+        "@syscap SystemCapability.Notification.Notification",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "NotificationRequest",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Notification.Notification",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "creatorPid",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "PID used for creating the notification.",
+      "注释信息": [
+        "@type { ?number }",
+        "@readonly",
+        "@syscap SystemCapability.Notification.Notification",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "NotificationRequest",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Notification.Notification",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "creatorUserId",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "ID of the user who creates the notification.",
+      "注释信息": [
+        "@type { ?number }",
+        "@readonly",
+        "@syscap SystemCapability.Notification.Notification",
+        "@since 8"
+      ],
+      "层级": 1,
+      "上级": "NotificationRequest",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Notification.Notification",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "sound",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Name of the custom ringtone file for application notifications.",
+      "注释信息": [
+        "@type { ?string }",
+        "@syscap SystemCapability.Notification.Notification",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "NotificationRequest",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Notification.Notification",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "hashCode",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Unique ID of the notification.",
+      "注释信息": [
+        "@type { ?string }",
+        "@readonly",
+        "@syscap SystemCapability.Notification.Notification",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "NotificationRequest",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Notification.Notification",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "template",
+      "属性类型": "NotificationTemplate",
+      "所属模块": "未知模块",
+      "功能描述": "Notification template.",
+      "注释信息": [
+        "@type { ?NotificationTemplate }",
+        "@syscap SystemCapability.Notification.Notification",
+        "@since 8"
+      ],
+      "层级": 1,
+      "上级": "NotificationRequest",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Notification.Notification",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "distributedOption",
+      "属性类型": "DistributedOptions",
+      "所属模块": "未知模块",
+      "功能描述": "Distributed notification options. Not supported currently.",
+      "注释信息": [
+        "@type { ?DistributedOptions }",
+        "@syscap SystemCapability.Notification.Notification",
+        "@since 8"
+      ],
+      "层级": 1,
+      "上级": "NotificationRequest",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Notification.Notification",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "notificationFlags",
+      "属性类型": "NotificationFlags",
+      "所属模块": "未知模块",
+      "功能描述": "Notification flags.",
+      "注释信息": [
+        "@type { ?NotificationFlags }",
+        "@syscap SystemCapability.Notification.Notification",
+        "@FaAndStageModel",
+        "@since 23"
+      ],
+      "层级": 1,
+      "上级": "NotificationRequest",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Notification.Notification",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "removalWantAgent",
+      "属性类型": "WantAgent",
+      "所属模块": "未知模块",
+      "功能描述": "WantAgent instance to which the notification will be redirected when it is removed. Currently, redirection to UIAbility is not supported. Only common events can be published (that is, actionType is set to 4).",
+      "注释信息": [
+        "@type { ?WantAgent }",
+        "@syscap SystemCapability.Notification.Notification",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "NotificationRequest",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.Notification",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "badgeNumber",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Number of notifications displayed on the application icon. If the badgeNumber is set to 0, badges are cleared; if the value is greater than 99, 99+ is displayed on the badge.",
+      "注释信息": [
+        "@type { ?number }",
+        "@syscap SystemCapability.Notification.Notification",
+        "@crossplatform",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "NotificationRequest",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Notification.Notification",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "DistributedOptions",
+      "所属模块": "@kit.NotificationKit",
+      "功能描述": "Describes distributed notification options.",
+      "注释信息": [
+        "@typedef DistributedOptions",
+        "@syscap SystemCapability.Notification.Notification",
+        "@since 8"
+      ],
+      "层级": 1,
+      "上级": "@kit.NotificationKit",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Notification.Notification",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "isDistributed",
+      "属性类型": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Whether the notification is a distributed notification.",
+      "注释信息": [
+        "@type { ?boolean }",
+        "@default true",
+        "@syscap SystemCapability.Notification.Notification",
+        "@since 8"
+      ],
+      "层级": 1,
+      "上级": "DistributedOptions",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Notification.Notification",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "supportDisplayDevices",
+      "属性类型": "Array<string>",
+      "所属模块": "未知模块",
+      "功能描述": "List of the devices to which the notification can be synchronized.",
+      "注释信息": [
+        "@type { ?Array<string> }",
+        "@syscap SystemCapability.Notification.Notification",
+        "@since 8"
+      ],
+      "层级": 1,
+      "上级": "DistributedOptions",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Notification.Notification",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "supportOperateDevices",
+      "属性类型": "Array<string>",
+      "所属模块": "未知模块",
+      "功能描述": "List of the devices on which the notification can be opened.",
+      "注释信息": [
+        "@type { ?Array<string> }",
+        "@syscap SystemCapability.Notification.Notification",
+        "@since 8"
+      ],
+      "层级": 1,
+      "上级": "DistributedOptions",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Notification.Notification",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    }
+  ]
+}

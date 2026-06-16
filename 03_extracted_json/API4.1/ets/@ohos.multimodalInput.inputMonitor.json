@@ -1,0 +1,979 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.InputKit",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "namespace",
+      "名称": "inputMonitor",
+      "所属模块": "@kit.InputKit",
+      "功能描述": "Global input event listener System API, available only to system processes",
+      "注释信息": [
+        "@namespace inputMonitor",
+        "@permission ohos.permission.INPUT_MONITORING",
+        "@syscap SystemCapability.MultimodalInput.Input.InputMonitor",
+        "@systemapi hide for inner use",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "@kit.InputKit",
+      "since_version": "7",
+      "system_capability": "SystemCapability.MultimodalInput.Input.InputMonitor",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "interface",
+      "名称": "TouchEventReceiver",
+      "所属模块": "未知模块",
+      "功能描述": "Callback used to receive touch input events. If **true** is returned, the touch input is consumed, and the system performs the closing operation.",
+      "注释信息": [
+        "@interface TouchEventReceiver",
+        "@permission ohos.permission.INPUT_MONITORING",
+        "@syscap SystemCapability.MultimodalInput.Input.InputMonitor",
+        "@systemapi hide for inner use",
+        "@since 7"
+      ],
+      "层级": 2,
+      "上级": "inputMonitor",
+      "since_version": "7",
+      "system_capability": "SystemCapability.MultimodalInput.Input.InputMonitor",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "call_signature",
+      "签名": "(touchEvent: TouchEvent): Boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Callback used to receive touch input events.",
+      "注释信息": [
+        "@param { TouchEvent } touchEvent - the reported touch event.",
+        "@returns { Boolean } Returns true indicates the touch input is consumed, the value false indicates opposite.",
+        "@syscap SystemCapability.MultimodalInput.Input.InputMonitor",
+        "@systemapi hide for inner use",
+        "@since 7"
+      ],
+      "层级": 2,
+      "上级": "TouchEventReceiver",
+      "since_version": "7",
+      "system_capability": "SystemCapability.MultimodalInput.Input.InputMonitor",
+      "parameters": [],
+      "return_description": "Returns true indicates the touch input is consumed, the value false indicates opposite.",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Listens for touch input events.",
+      "注释信息": [
+        "@permission ohos.permission.INPUT_MONITORING",
+        "@param { 'touch' } type - Event type, which is **touch**.",
+        "@param { TouchEventReceiver } receiver - Callback used to receive the reported data.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@syscap SystemCapability.MultimodalInput.Input.InputMonitor",
+        "@systemapi hide for inner use",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "inputMonitor",
+      "since_version": "7",
+      "system_capability": "SystemCapability.MultimodalInput.Input.InputMonitor",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'touch'",
+          "必填": true,
+          "说明": "Event type, which is **touch**."
+        },
+        {
+          "名称": "receiver",
+          "类型": "TouchEventReceiver",
+          "必填": true,
+          "说明": "Callback used to receive the reported data."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "201",
+          "description": "Permission denied."
+        }
+      ],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Listens for mouse input events.",
+      "注释信息": [
+        "@permission ohos.permission.INPUT_MONITORING",
+        "@param { 'mouse' } type - Event type, which is **mouse**.",
+        "@param { Callback<MouseEvent> } receiver - Callback used to receive the reported data.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@syscap SystemCapability.MultimodalInput.Input.InputMonitor",
+        "@systemapi hide for inner use",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "inputMonitor",
+      "since_version": "9",
+      "system_capability": "SystemCapability.MultimodalInput.Input.InputMonitor",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'mouse'",
+          "必填": true,
+          "说明": "Event type, which is **mouse**."
+        },
+        {
+          "名称": "receiver",
+          "类型": "Callback<MouseEvent>",
+          "必填": true,
+          "说明": "Callback used to receive the reported data."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "201",
+          "description": "Permission denied."
+        }
+      ],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Listens for mouse input events when the mouse arrow is within the specified rectangular area.",
+      "注释信息": [
+        "@permission ohos.permission.INPUT_MONITORING",
+        "@param { 'mouse' } type - Event type, which is **mouse**.",
+        "@param { display.Rect[] } rect - A specified rectangular area that can trigger a callback, with a maximum of two.",
+        "@param { Callback<MouseEvent> } receiver - Callback used to receive the reported data.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - SystemAPI permit error.",
+        "@syscap SystemCapability.MultimodalInput.Input.InputMonitor",
+        "@systemapi hide for inner use",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "inputMonitor",
+      "since_version": "11",
+      "system_capability": "SystemCapability.MultimodalInput.Input.InputMonitor",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'mouse'",
+          "必填": true,
+          "说明": "Event type, which is **mouse**."
+        },
+        {
+          "名称": "rect",
+          "类型": "display.Rect[]",
+          "必填": true,
+          "说明": "A specified rectangular area that can trigger a callback, with a maximum of two."
+        },
+        {
+          "名称": "receiver",
+          "类型": "Callback<MouseEvent>",
+          "必填": true,
+          "说明": "Callback used to receive the reported data."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "SystemAPI permit error."
+        }
+      ],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Cancel listening for touch input events.",
+      "注释信息": [
+        "@permission ohos.permission.INPUT_MONITORING",
+        "@param { 'touch' } type - Event type, which is **touch**.",
+        "@param { TouchEventReceiver } receiver - Callback used to receive the reported data.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@syscap SystemCapability.MultimodalInput.Input.InputMonitor",
+        "@systemapi hide for inner use",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "inputMonitor",
+      "since_version": "7",
+      "system_capability": "SystemCapability.MultimodalInput.Input.InputMonitor",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'touch'",
+          "必填": true,
+          "说明": "Event type, which is **touch**."
+        },
+        {
+          "名称": "receiver",
+          "类型": "TouchEventReceiver",
+          "必填": true,
+          "说明": "Callback used to receive the reported data."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "201",
+          "description": "Permission denied."
+        }
+      ],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Cancel listening for mouse input events.",
+      "注释信息": [
+        "@permission ohos.permission.INPUT_MONITORING",
+        "@param { 'mouse' } type - Event type, which is **mouse**.",
+        "@param { Callback<MouseEvent> } receiver - Callback used to receive the reported data.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@syscap SystemCapability.MultimodalInput.Input.InputMonitor",
+        "@systemapi hide for inner use",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "inputMonitor",
+      "since_version": "9",
+      "system_capability": "SystemCapability.MultimodalInput.Input.InputMonitor",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'mouse'",
+          "必填": true,
+          "说明": "Event type, which is **mouse**."
+        },
+        {
+          "名称": "receiver",
+          "类型": "Callback<MouseEvent>",
+          "必填": true,
+          "说明": "Callback used to receive the reported data."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "201",
+          "description": "Permission denied."
+        }
+      ],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Listens for touchPad pinch events.",
+      "注释信息": [
+        "@permission ohos.permission.INPUT_MONITORING",
+        "@param { 'pinch' } type - Event type, which is **pinch**.",
+        "@param { Callback<Pinch> } receiver - Callback used to receive the reported data.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - SystemAPI permit error.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@syscap SystemCapability.MultimodalInput.Input.InputMonitor",
+        "@systemapi hide for inner use",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "inputMonitor",
+      "since_version": "10",
+      "system_capability": "SystemCapability.MultimodalInput.Input.InputMonitor",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'pinch'",
+          "必填": true,
+          "说明": "Event type, which is **pinch**."
+        },
+        {
+          "名称": "receiver",
+          "类型": "Callback<Pinch>",
+          "必填": true,
+          "说明": "Callback used to receive the reported data."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "SystemAPI permit error."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error."
+        }
+      ],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Cancel listening for touchPad pinch events.",
+      "注释信息": [
+        "@permission ohos.permission.INPUT_MONITORING",
+        "@param { 'pinch' } type - Event type, which is **pinch**.",
+        "@param { Callback<Pinch> } receiver - Callback used to receive the reported data.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - SystemAPI permit error.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@syscap SystemCapability.MultimodalInput.Input.InputMonitor",
+        "@systemapi hide for inner use",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "inputMonitor",
+      "since_version": "10",
+      "system_capability": "SystemCapability.MultimodalInput.Input.InputMonitor",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'pinch'",
+          "必填": true,
+          "说明": "Event type, which is **pinch**."
+        },
+        {
+          "名称": "receiver",
+          "类型": "Callback<Pinch>",
+          "必填": true,
+          "说明": "Callback used to receive the reported data."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "SystemAPI permit error."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error."
+        }
+      ],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Listens for touchPad fingers pinch events.",
+      "注释信息": [
+        "@permission ohos.permission.INPUT_MONITORING",
+        "@param { 'pinch' } type - Event type, which is **pinch**.",
+        "@param { number } fingers - the number of fingers.",
+        "@param { Callback<Pinch> } receiver - Callback used to receive the reported data.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - SystemAPI permit error.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@syscap SystemCapability.MultimodalInput.Input.InputMonitor",
+        "@systemapi hide for inner use",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "inputMonitor",
+      "since_version": "11",
+      "system_capability": "SystemCapability.MultimodalInput.Input.InputMonitor",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'pinch'",
+          "必填": true,
+          "说明": "Event type, which is **pinch**."
+        },
+        {
+          "名称": "fingers",
+          "类型": "number",
+          "必填": true,
+          "说明": "the number of fingers."
+        },
+        {
+          "名称": "receiver",
+          "类型": "Callback<Pinch>",
+          "必填": true,
+          "说明": "Callback used to receive the reported data."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "SystemAPI permit error."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error."
+        }
+      ],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Cancel listening for touchPad fingers pinch events.",
+      "注释信息": [
+        "@permission ohos.permission.INPUT_MONITORING",
+        "@param { 'pinch' } type - Event type, which is **pinch**.",
+        "@param { number } fingers - the number of fingers.",
+        "@param { Callback<Pinch> } receiver - Callback used to receive the reported data.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - SystemAPI permit error.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@syscap SystemCapability.MultimodalInput.Input.InputMonitor",
+        "@systemapi hide for inner use",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "inputMonitor",
+      "since_version": "11",
+      "system_capability": "SystemCapability.MultimodalInput.Input.InputMonitor",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'pinch'",
+          "必填": true,
+          "说明": "Event type, which is **pinch**."
+        },
+        {
+          "名称": "fingers",
+          "类型": "number",
+          "必填": true,
+          "说明": "the number of fingers."
+        },
+        {
+          "名称": "receiver",
+          "类型": "Callback<Pinch>",
+          "必填": true,
+          "说明": "Callback used to receive the reported data."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "SystemAPI permit error."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error."
+        }
+      ],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Listens for touchPad fingers rotate events.",
+      "注释信息": [
+        "@permission ohos.permission.INPUT_MONITORING",
+        "@param { 'rotate' } type - Event type, which is **rotate**.",
+        "@param { number } fingers - the number of fingers.",
+        "@param { Callback<Rotate> } receiver - Callback used to receive the reported data.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - SystemAPI permit error.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@syscap SystemCapability.MultimodalInput.Input.InputMonitor",
+        "@systemapi hide for inner use",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "inputMonitor",
+      "since_version": "11",
+      "system_capability": "SystemCapability.MultimodalInput.Input.InputMonitor",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'rotate'",
+          "必填": true,
+          "说明": "Event type, which is **rotate**."
+        },
+        {
+          "名称": "fingers",
+          "类型": "number",
+          "必填": true,
+          "说明": "the number of fingers."
+        },
+        {
+          "名称": "receiver",
+          "类型": "Callback<Rotate>",
+          "必填": true,
+          "说明": "Callback used to receive the reported data."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "SystemAPI permit error."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error."
+        }
+      ],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Cancel listening for touchPad fingers rotate events.",
+      "注释信息": [
+        "@permission ohos.permission.INPUT_MONITORING",
+        "@param { 'rotate' } type - Event type, which is **rotate**.",
+        "@param { number } fingers - the number of fingers.",
+        "@param { Callback<Rotate> } receiver - Callback used to receive the reported data.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - SystemAPI permit error.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@syscap SystemCapability.MultimodalInput.Input.InputMonitor",
+        "@systemapi hide for inner use",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "inputMonitor",
+      "since_version": "11",
+      "system_capability": "SystemCapability.MultimodalInput.Input.InputMonitor",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'rotate'",
+          "必填": true,
+          "说明": "Event type, which is **rotate**."
+        },
+        {
+          "名称": "fingers",
+          "类型": "number",
+          "必填": true,
+          "说明": "the number of fingers."
+        },
+        {
+          "名称": "receiver",
+          "类型": "Callback<Rotate>",
+          "必填": true,
+          "说明": "Callback used to receive the reported data."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "SystemAPI permit error."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error."
+        }
+      ],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Listens for touchPad three fingers swipe events.",
+      "注释信息": [
+        "@permission ohos.permission.INPUT_MONITORING",
+        "@param { 'threeFingersSwipe' } type - Event type, which is **threeFingersSwipe**.",
+        "@param { Callback<ThreeFingersSwipe> } receiver - Callback used to receive the reported data.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - SystemAPI permit error.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@syscap SystemCapability.MultimodalInput.Input.InputMonitor",
+        "@systemapi hide for inner use",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "inputMonitor",
+      "since_version": "10",
+      "system_capability": "SystemCapability.MultimodalInput.Input.InputMonitor",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'threeFingersSwipe'",
+          "必填": true,
+          "说明": "Event type, which is **threeFingersSwipe**."
+        },
+        {
+          "名称": "receiver",
+          "类型": "Callback<ThreeFingersSwipe>",
+          "必填": true,
+          "说明": "Callback used to receive the reported data."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "SystemAPI permit error."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error."
+        }
+      ],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Cancel listening touchPad three fingers swipe events.",
+      "注释信息": [
+        "@permission ohos.permission.INPUT_MONITORING",
+        "@param { 'threeFingersSwipe' } type - Event type, which is **threeFingersSwipe**.",
+        "@param { Callback<ThreeFingersSwipe> } receiver - Callback used to receive the reported data.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - SystemAPI permit error.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@syscap SystemCapability.MultimodalInput.Input.InputMonitor",
+        "@systemapi hide for inner use",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "inputMonitor",
+      "since_version": "10",
+      "system_capability": "SystemCapability.MultimodalInput.Input.InputMonitor",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'threeFingersSwipe'",
+          "必填": true,
+          "说明": "Event type, which is **threeFingersSwipe**."
+        },
+        {
+          "名称": "receiver",
+          "类型": "Callback<ThreeFingersSwipe>",
+          "必填": true,
+          "说明": "Callback used to receive the reported data."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "SystemAPI permit error."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error."
+        }
+      ],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Listens for touchPad four fingers swipe events.",
+      "注释信息": [
+        "@permission ohos.permission.INPUT_MONITORING",
+        "@param { 'fourFingersSwipe' } type - Event type, which is **fourFingersSwipe**..",
+        "@param { Callback<FourFingersSwipe> } receiver - Callback used to receive the reported data.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - SystemAPI permit error.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@syscap SystemCapability.MultimodalInput.Input.InputMonitor",
+        "@systemapi hide for inner use",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "inputMonitor",
+      "since_version": "10",
+      "system_capability": "SystemCapability.MultimodalInput.Input.InputMonitor",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'fourFingersSwipe'",
+          "必填": true,
+          "说明": "Event type, which is **fourFingersSwipe**.."
+        },
+        {
+          "名称": "receiver",
+          "类型": "Callback<FourFingersSwipe>",
+          "必填": true,
+          "说明": "Callback used to receive the reported data."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "SystemAPI permit error."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error."
+        }
+      ],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Cancel listening touchPad four finger swipe events.",
+      "注释信息": [
+        "@permission ohos.permission.INPUT_MONITORING",
+        "@param { 'fourFingersSwipe' } type - Event type, which is **fourFingersSwipe**.",
+        "@param { Callback<FourFingersSwipe> } receiver - Callback used to receive the reported data.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - SystemAPI permit error.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@syscap SystemCapability.MultimodalInput.Input.InputMonitor",
+        "@systemapi hide for inner use",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "inputMonitor",
+      "since_version": "10",
+      "system_capability": "SystemCapability.MultimodalInput.Input.InputMonitor",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'fourFingersSwipe'",
+          "必填": true,
+          "说明": "Event type, which is **fourFingersSwipe**."
+        },
+        {
+          "名称": "receiver",
+          "类型": "Callback<FourFingersSwipe>",
+          "必填": true,
+          "说明": "Callback used to receive the reported data."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "SystemAPI permit error."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error."
+        }
+      ],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Listens for touchPad three fingers tap events.",
+      "注释信息": [
+        "@permission ohos.permission.INPUT_MONITORING",
+        "@param { 'threeFingersTap' } type - Event type, which is **threeFingersTap**.",
+        "@param { Callback<ThreeFingersTap> } receiver - Callback used to receive the reported data.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - SystemAPI permit error.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@syscap SystemCapability.MultimodalInput.Input.InputMonitor",
+        "@systemapi hide for inner use",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "inputMonitor",
+      "since_version": "11",
+      "system_capability": "SystemCapability.MultimodalInput.Input.InputMonitor",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'threeFingersTap'",
+          "必填": true,
+          "说明": "Event type, which is **threeFingersTap**."
+        },
+        {
+          "名称": "receiver",
+          "类型": "Callback<ThreeFingersTap>",
+          "必填": true,
+          "说明": "Callback used to receive the reported data."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "SystemAPI permit error."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error."
+        }
+      ],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Cancel listening touchPad three fingers tap events.",
+      "注释信息": [
+        "@permission ohos.permission.INPUT_MONITORING",
+        "@param { 'threeFingersTap' } type - Event type, which is **threeFingersTap**.",
+        "@param { Callback<ThreeFingersTap> } receiver - Callback used to receive the reported data.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - SystemAPI permit error.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@syscap SystemCapability.MultimodalInput.Input.InputMonitor",
+        "@systemapi hide for inner use",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "inputMonitor",
+      "since_version": "11",
+      "system_capability": "SystemCapability.MultimodalInput.Input.InputMonitor",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'threeFingersTap'",
+          "必填": true,
+          "说明": "Event type, which is **threeFingersTap**."
+        },
+        {
+          "名称": "receiver",
+          "类型": "Callback<ThreeFingersTap>",
+          "必填": true,
+          "说明": "Callback used to receive the reported data."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "SystemAPI permit error."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error."
+        }
+      ],
+      "版本": "API4.1"
+    }
+  ]
+}

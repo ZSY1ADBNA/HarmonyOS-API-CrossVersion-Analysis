@@ -1,0 +1,351 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.BasicServicesKit",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "namespace",
+      "名称": "power",
+      "所属模块": "@kit.BasicServicesKit",
+      "功能描述": "Provides interfaces to manage power.",
+      "注释信息": [
+        "@namespace power",
+        "@syscap SystemCapability.PowerManager.PowerManager.Core",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "@kit.BasicServicesKit",
+      "since_version": "7",
+      "system_capability": "SystemCapability.PowerManager.PowerManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "rebootDevice",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Restarts the system. <p>This method requires the ohos.permission.REBOOT permission. after the restart. If the parameter is not specified, the system enters the normal mode after the restart.",
+      "注释信息": [
+        "@permission ohos.permission.REBOOT",
+        "@param { string } reason Indicates the restart reason. For example, \"updater\" indicates entering the updater mode",
+        "@syscap SystemCapability.PowerManager.PowerManager.Core",
+        "@since 7",
+        "@deprecated since 9",
+        "@useinstead power#reboot"
+      ],
+      "层级": 1,
+      "上级": "power",
+      "since_version": "7",
+      "system_capability": "SystemCapability.PowerManager.PowerManager.Core",
+      "parameters": [
+        {
+          "名称": "reason",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates the restart reason. For example, \"updater\" indicates entering the updater mode"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "isScreenOn",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Checks whether the screen of a device is on or off.",
+      "注释信息": [
+        "@param { AsyncCallback<boolean> } callback Returns true if the screen is on; returns false otherwise.",
+        "@syscap SystemCapability.PowerManager.PowerManager.Core",
+        "@since 7",
+        "@deprecated since 9",
+        "@useinstead power#isActive"
+      ],
+      "层级": 1,
+      "上级": "power",
+      "since_version": "7",
+      "system_capability": "SystemCapability.PowerManager.PowerManager.Core",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<boolean>",
+          "必填": true,
+          "说明": "Returns true if the screen is on; returns false otherwise."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "isScreenOn",
+      "返回值": "Promise<boolean>",
+      "所属模块": "未知模块",
+      "功能描述": "Checks whether the screen of a device is on or off.",
+      "注释信息": [
+        "@returns { Promise<boolean> } Returns true if the screen is on; returns false otherwise.",
+        "@syscap SystemCapability.PowerManager.PowerManager.Core",
+        "@since 7",
+        "@deprecated since 9",
+        "@useinstead power#isActive"
+      ],
+      "层级": 1,
+      "上级": "power",
+      "since_version": "7",
+      "system_capability": "SystemCapability.PowerManager.PowerManager.Core",
+      "parameters": [],
+      "return_description": "Returns true if the screen is on; returns false otherwise.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "isActive",
+      "返回值": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Checks whether the device is active. <p> The screen will be on if device is active, screen will be off otherwise.",
+      "注释信息": [
+        "@returns { boolean } Returns true if the device is active; returns false otherwise.",
+        "@syscap SystemCapability.PowerManager.PowerManager.Core",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "power",
+      "since_version": "9",
+      "system_capability": "SystemCapability.PowerManager.PowerManager.Core",
+      "parameters": [],
+      "return_description": "Returns true if the device is active; returns false otherwise.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getPowerMode",
+      "返回值": "DevicePowerMode",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the power mode of the current device. For details, see {@link DevicePowerMode}.",
+      "注释信息": [
+        "@returns { DevicePowerMode } The power mode {@link DevicePowerMode} of current device .",
+        "@syscap SystemCapability.PowerManager.PowerManager.Core",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "power",
+      "since_version": "9",
+      "system_capability": "SystemCapability.PowerManager.PowerManager.Core",
+      "parameters": [],
+      "return_description": "The power mode {@link DevicePowerMode} of current device .",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "isStandby",
+      "返回值": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Returns true if the device is currently in idle mode.",
+      "注释信息": [
+        "@returns { boolean } Returns true if the device is in idle mode; returns false otherwise.",
+        "@throws { BusinessError } 4900101 - Failed to connect to the service.",
+        "@syscap SystemCapability.PowerManager.PowerManager.Core",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "power",
+      "since_version": "10",
+      "system_capability": "SystemCapability.PowerManager.PowerManager.Core",
+      "parameters": [],
+      "return_description": "Returns true if the device is in idle mode; returns false otherwise.",
+      "error_codes": [
+        {
+          "code": "4900101",
+          "description": "Failed to connect to the service."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "DevicePowerMode",
+      "所属模块": "未知模块",
+      "功能描述": "Power mode of a device.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.PowerManager.PowerManager.Core",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "power",
+      "since_version": "9",
+      "system_capability": "SystemCapability.PowerManager.PowerManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "MODE_NORMAL",
+      "值": "600",
+      "所属模块": "未知模块",
+      "功能描述": "Normal power mode",
+      "注释信息": [
+        "@syscap SystemCapability.PowerManager.PowerManager.Core",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "DevicePowerMode",
+      "since_version": "9",
+      "system_capability": "SystemCapability.PowerManager.PowerManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "MODE_POWER_SAVE",
+      "所属模块": "未知模块",
+      "功能描述": "Power save mode",
+      "注释信息": [
+        "@syscap SystemCapability.PowerManager.PowerManager.Core",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "DevicePowerMode",
+      "since_version": "9",
+      "system_capability": "SystemCapability.PowerManager.PowerManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "MODE_PERFORMANCE",
+      "所属模块": "未知模块",
+      "功能描述": "Performance power mode",
+      "注释信息": [
+        "@syscap SystemCapability.PowerManager.PowerManager.Core",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "DevicePowerMode",
+      "since_version": "9",
+      "system_capability": "SystemCapability.PowerManager.PowerManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "MODE_EXTREME_POWER_SAVE",
+      "所属模块": "未知模块",
+      "功能描述": "Extreme power save mode",
+      "注释信息": [
+        "@syscap SystemCapability.PowerManager.PowerManager.Core",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "DevicePowerMode",
+      "since_version": "9",
+      "system_capability": "SystemCapability.PowerManager.PowerManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "MODE_CUSTOM_POWER_SAVE",
+      "值": "650",
+      "所属模块": "未知模块",
+      "功能描述": "Custom power save mode.",
+      "注释信息": [
+        "@syscap SystemCapability.PowerManager.PowerManager.Core",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "DevicePowerMode",
+      "since_version": "20",
+      "system_capability": "SystemCapability.PowerManager.PowerManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "PowerKeyFilteringStrategy",
+      "所属模块": "未知模块",
+      "功能描述": "Power key filtering strategy.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.PowerManager.PowerManager.Core",
+        "@since 21"
+      ],
+      "层级": 2,
+      "上级": "power",
+      "since_version": "21",
+      "system_capability": "SystemCapability.PowerManager.PowerManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "DISABLE_LONG_PRESS_FILTERING",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "Disable the filtering of power key long-press event. The power service typically subscribes to the power key long-press event whose duration is configurable. And this is the default strategy of handling the power key long-press event.",
+      "注释信息": [
+        "@syscap SystemCapability.PowerManager.PowerManager.Core",
+        "@since 21"
+      ],
+      "层级": 2,
+      "上级": "PowerKeyFilteringStrategy",
+      "since_version": "21",
+      "system_capability": "SystemCapability.PowerManager.PowerManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "LONG_PRESS_FILTERING_ONCE",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Filter the ongoing power key long-press event only once. The next power key long-press event is not filtered by default.",
+      "注释信息": [
+        "@syscap SystemCapability.PowerManager.PowerManager.Core",
+        "@since 21"
+      ],
+      "层级": 2,
+      "上级": "PowerKeyFilteringStrategy",
+      "since_version": "21",
+      "system_capability": "SystemCapability.PowerManager.PowerManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    }
+  ]
+}

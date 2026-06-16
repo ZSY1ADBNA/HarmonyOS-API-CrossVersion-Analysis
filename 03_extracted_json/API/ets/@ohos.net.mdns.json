@@ -1,0 +1,1203 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.NetworkKit",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "namespace",
+      "名称": "mdns",
+      "所属模块": "@kit.NetworkKit",
+      "功能描述": "Provides interfaces to discover DNS based services on a local network over Multicast DNS.",
+      "注释信息": [
+        "@namespace mdns",
+        "@syscap SystemCapability.Communication.NetManager.MDNS",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "@kit.NetworkKit",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Communication.NetManager.MDNS",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "type_alias",
+      "名称": "NetAddress",
+      "所属模块": "未知模块",
+      "功能描述": "Get a network address.",
+      "注释信息": [
+        "@typedef { connection.NetAddress }",
+        "@syscap SystemCapability.Communication.NetManager.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "mdns",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Communication.NetManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "addLocalService",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Adds an mDNS service.",
+      "注释信息": [
+        "@param { Context } context - Indicates the context of application or capability.",
+        "@param { LocalServiceInfo } serviceInfo - Information about the mDNS service. {@link LocalServiceInfo}",
+        "@param { AsyncCallback<LocalServiceInfo> } callback - the callback of addLocalService.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 2100002 - Failed to connect to the service.",
+        "@throws { BusinessError } 2100003 - System internal error.",
+        "@throws { BusinessError } 2204003 - Callback duplicated.",
+        "@throws { BusinessError } 2204008 - Failed to delete the service instance.",
+        "@throws { BusinessError } 2204010 - Failed to send the message.",
+        "@syscap SystemCapability.Communication.NetManager.MDNS",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "mdns",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Communication.NetManager.MDNS",
+      "parameters": [
+        {
+          "名称": "context",
+          "类型": "Context",
+          "必填": true,
+          "说明": "Indicates the context of application or capability."
+        },
+        {
+          "名称": "serviceInfo",
+          "类型": "LocalServiceInfo",
+          "必填": true,
+          "说明": "Information about the mDNS service. {@link LocalServiceInfo}"
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<LocalServiceInfo>",
+          "必填": true,
+          "说明": "the callback of addLocalService."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "2100002",
+          "description": "Failed to connect to the service."
+        },
+        {
+          "code": "2100003",
+          "description": "System internal error."
+        },
+        {
+          "code": "2204003",
+          "description": "Callback duplicated."
+        },
+        {
+          "code": "2204008",
+          "description": "Failed to delete the service instance."
+        },
+        {
+          "code": "2204010",
+          "description": "Failed to send the message."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "addLocalService",
+      "返回值": "Promise<LocalServiceInfo>",
+      "所属模块": "未知模块",
+      "功能描述": "Adds an mDNS service.",
+      "注释信息": [
+        "@param { Context } context - Indicates the context of application or capability.",
+        "@param { LocalServiceInfo } serviceInfo - Information about the mDNS service. {@link LocalServiceInfo}",
+        "@returns { Promise<LocalServiceInfo> } The promise returned by the function.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 2100002 - Failed to connect to the service.",
+        "@throws { BusinessError } 2100003 - System internal error.",
+        "@throws { BusinessError } 2204003 - Callback duplicated.",
+        "@throws { BusinessError } 2204008 - Failed to delete the service instance.",
+        "@throws { BusinessError } 2204010 - Failed to send the message.",
+        "@syscap SystemCapability.Communication.NetManager.MDNS",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "mdns",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Communication.NetManager.MDNS",
+      "parameters": [
+        {
+          "名称": "context",
+          "类型": "Context",
+          "必填": true,
+          "说明": "Indicates the context of application or capability."
+        },
+        {
+          "名称": "serviceInfo",
+          "类型": "LocalServiceInfo",
+          "必填": true,
+          "说明": "Information about the mDNS service. {@link LocalServiceInfo}"
+        }
+      ],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "2100002",
+          "description": "Failed to connect to the service."
+        },
+        {
+          "code": "2100003",
+          "description": "System internal error."
+        },
+        {
+          "code": "2204003",
+          "description": "Callback duplicated."
+        },
+        {
+          "code": "2204008",
+          "description": "Failed to delete the service instance."
+        },
+        {
+          "code": "2204010",
+          "description": "Failed to send the message."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "removeLocalService",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Removes an mDNS service.",
+      "注释信息": [
+        "@param { Context } context - Indicates the context of application or capability.",
+        "@param { LocalServiceInfo } serviceInfo - Information about the mDNS service. {@link LocalServiceInfo}",
+        "@param { AsyncCallback<LocalServiceInfo> } callback - the callback of removeLocalService.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 2100002 - Failed to connect to the service.",
+        "@throws { BusinessError } 2100003 - System internal error.",
+        "@throws { BusinessError } 2204002 - Callback not found.",
+        "@throws { BusinessError } 2204008 - Failed to delete the service instance.",
+        "@throws { BusinessError } 2204010 - Failed to send the message.",
+        "@syscap SystemCapability.Communication.NetManager.MDNS",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "mdns",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Communication.NetManager.MDNS",
+      "parameters": [
+        {
+          "名称": "context",
+          "类型": "Context",
+          "必填": true,
+          "说明": "Indicates the context of application or capability."
+        },
+        {
+          "名称": "serviceInfo",
+          "类型": "LocalServiceInfo",
+          "必填": true,
+          "说明": "Information about the mDNS service. {@link LocalServiceInfo}"
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<LocalServiceInfo>",
+          "必填": true,
+          "说明": "the callback of removeLocalService."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "2100002",
+          "description": "Failed to connect to the service."
+        },
+        {
+          "code": "2100003",
+          "description": "System internal error."
+        },
+        {
+          "code": "2204002",
+          "description": "Callback not found."
+        },
+        {
+          "code": "2204008",
+          "description": "Failed to delete the service instance."
+        },
+        {
+          "code": "2204010",
+          "description": "Failed to send the message."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "removeLocalService",
+      "返回值": "Promise<LocalServiceInfo>",
+      "所属模块": "未知模块",
+      "功能描述": "Removes an mDNS service.",
+      "注释信息": [
+        "@param { Context } context - Indicates the context of application or capability.",
+        "@param { LocalServiceInfo } serviceInfo - Information about the mDNS service. {@link LocalServiceInfo}",
+        "@returns { Promise<LocalServiceInfo> } The promise returned by the function.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 2100002 - Failed to connect to the service.",
+        "@throws { BusinessError } 2100003 - System internal error.",
+        "@throws { BusinessError } 2204002 - Callback not found.",
+        "@throws { BusinessError } 2204008 - Failed to delete the service instance.",
+        "@throws { BusinessError } 2204010 - Failed to send the message.",
+        "@syscap SystemCapability.Communication.NetManager.MDNS",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "mdns",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Communication.NetManager.MDNS",
+      "parameters": [
+        {
+          "名称": "context",
+          "类型": "Context",
+          "必填": true,
+          "说明": "Indicates the context of application or capability."
+        },
+        {
+          "名称": "serviceInfo",
+          "类型": "LocalServiceInfo",
+          "必填": true,
+          "说明": "Information about the mDNS service. {@link LocalServiceInfo}"
+        }
+      ],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "2100002",
+          "description": "Failed to connect to the service."
+        },
+        {
+          "code": "2100003",
+          "description": "System internal error."
+        },
+        {
+          "code": "2204002",
+          "description": "Callback not found."
+        },
+        {
+          "code": "2204008",
+          "description": "Failed to delete the service instance."
+        },
+        {
+          "code": "2204010",
+          "description": "Failed to send the message."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "createDiscoveryService",
+      "返回值": "DiscoveryService",
+      "所属模块": "未知模块",
+      "功能描述": "Create an mDNS based discovery service with context and serviceType.",
+      "注释信息": [
+        "@param { Context } context - Indicates the context of application or capability.",
+        "@param { string } serviceType - The service type being discovered.",
+        "@returns { DiscoveryService } the DiscoveryService of the createDiscoveryService.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@syscap SystemCapability.Communication.NetManager.MDNS",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "mdns",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Communication.NetManager.MDNS",
+      "parameters": [
+        {
+          "名称": "context",
+          "类型": "Context",
+          "必填": true,
+          "说明": "Indicates the context of application or capability."
+        },
+        {
+          "名称": "serviceType",
+          "类型": "string",
+          "必填": true,
+          "说明": "The service type being discovered."
+        }
+      ],
+      "return_description": "the DiscoveryService of the createDiscoveryService.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "resolveLocalService",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Resolves an mDNS service.",
+      "注释信息": [
+        "@param { Context } context - Indicates the context of application or capability.",
+        "@param { LocalServiceInfo } serviceInfo - Information about the mDNS service. {@link LocalServiceInfo}",
+        "@param { AsyncCallback<LocalServiceInfo> } callback - the callback of resolveLocalService.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 2100002 - Failed to connect to the service.",
+        "@throws { BusinessError } 2100003 - System internal error.",
+        "@throws { BusinessError } 2204003 - Callback duplicated.",
+        "@throws { BusinessError } 2204006 - Request timeout.",
+        "@throws { BusinessError } 2204010 - Failed to send the message.",
+        "@syscap SystemCapability.Communication.NetManager.MDNS",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "mdns",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Communication.NetManager.MDNS",
+      "parameters": [
+        {
+          "名称": "context",
+          "类型": "Context",
+          "必填": true,
+          "说明": "Indicates the context of application or capability."
+        },
+        {
+          "名称": "serviceInfo",
+          "类型": "LocalServiceInfo",
+          "必填": true,
+          "说明": "Information about the mDNS service. {@link LocalServiceInfo}"
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<LocalServiceInfo>",
+          "必填": true,
+          "说明": "the callback of resolveLocalService."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "2100002",
+          "description": "Failed to connect to the service."
+        },
+        {
+          "code": "2100003",
+          "description": "System internal error."
+        },
+        {
+          "code": "2204003",
+          "description": "Callback duplicated."
+        },
+        {
+          "code": "2204006",
+          "description": "Request timeout."
+        },
+        {
+          "code": "2204010",
+          "description": "Failed to send the message."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "resolveLocalService",
+      "返回值": "Promise<LocalServiceInfo>",
+      "所属模块": "未知模块",
+      "功能描述": "Resolves an mDNS service.",
+      "注释信息": [
+        "@param { Context } context - Indicates the context of application or capability.",
+        "@param { LocalServiceInfo } serviceInfo - Information about the mDNS service. {@link LocalServiceInfo}",
+        "@returns { Promise<LocalServiceInfo> } The promise returned by the function.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 2100002 - Failed to connect to the service.",
+        "@throws { BusinessError } 2100003 - System internal error.",
+        "@throws { BusinessError } 2204003 - Callback duplicated.",
+        "@throws { BusinessError } 2204006 - Request timeout.",
+        "@throws { BusinessError } 2204010 - Failed to send the message.",
+        "@syscap SystemCapability.Communication.NetManager.MDNS",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "mdns",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Communication.NetManager.MDNS",
+      "parameters": [
+        {
+          "名称": "context",
+          "类型": "Context",
+          "必填": true,
+          "说明": "Indicates the context of application or capability."
+        },
+        {
+          "名称": "serviceInfo",
+          "类型": "LocalServiceInfo",
+          "必填": true,
+          "说明": "Information about the mDNS service. {@link LocalServiceInfo}"
+        }
+      ],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "2100002",
+          "description": "Failed to connect to the service."
+        },
+        {
+          "code": "2100003",
+          "description": "System internal error."
+        },
+        {
+          "code": "2204003",
+          "description": "Callback duplicated."
+        },
+        {
+          "code": "2204006",
+          "description": "Request timeout."
+        },
+        {
+          "code": "2204010",
+          "description": "Failed to send the message."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "DiscoveryService",
+      "所属模块": "未知模块",
+      "功能描述": "Defines a DiscoveryService object for discovering mDNS services of the specified type.",
+      "注释信息": [
+        "@interface DiscoveryService",
+        "@syscap SystemCapability.Communication.NetManager.MDNS",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "mdns",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Communication.NetManager.MDNS",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Enables listening for discoveryStart events of mDNS services.",
+      "注释信息": [
+        "@param { 'discoveryStart' } type - Indicates Event name.",
+        "@param { Callback<DiscoveryEventInfo> } callback - the callback used to return the result.",
+        "@syscap SystemCapability.Communication.NetManager.MDNS",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "DiscoveryService",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Communication.NetManager.MDNS",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'discoveryStart'",
+          "必填": true,
+          "说明": "Indicates Event name."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<DiscoveryEventInfo>",
+          "必填": true,
+          "说明": "the callback used to return the result."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Cancels listening for discoveryStart events of mDNS services.",
+      "注释信息": [
+        "@param { 'discoveryStart' } type - Indicates Event name.",
+        "@param { Callback<DiscoveryEventInfo> } callback - the callback used to return the result.",
+        "@syscap SystemCapability.Communication.NetManager.MDNS",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "DiscoveryService",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Communication.NetManager.MDNS",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'discoveryStart'",
+          "必填": true,
+          "说明": "Indicates Event name."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<DiscoveryEventInfo>",
+          "必填": true,
+          "说明": "the callback used to return the result."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Enables listening for discoveryStop events of mDNS services.",
+      "注释信息": [
+        "@param { 'discoveryStop' } type - Indicates Event name.",
+        "@param { Callback<DiscoveryEventInfo> } callback - the callback used to return the result.",
+        "@syscap SystemCapability.Communication.NetManager.MDNS",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "DiscoveryService",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Communication.NetManager.MDNS",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'discoveryStop'",
+          "必填": true,
+          "说明": "Indicates Event name."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<DiscoveryEventInfo>",
+          "必填": true,
+          "说明": "the callback used to return the result."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Cancels listening for discoveryStop events of mDNS services.",
+      "注释信息": [
+        "@param { 'discoveryStop' } type - Indicates Event name.",
+        "@param { Callback<DiscoveryEventInfo> } callback - the callback used to return the result.",
+        "@syscap SystemCapability.Communication.NetManager.MDNS",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "DiscoveryService",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Communication.NetManager.MDNS",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'discoveryStop'",
+          "必填": true,
+          "说明": "Indicates Event name."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<DiscoveryEventInfo>",
+          "必填": true,
+          "说明": "the callback used to return the result."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Enables listening for serviceFound events of mDNS services.",
+      "注释信息": [
+        "@param { 'serviceFound' } type - Indicates Event name.",
+        "@param { Callback<LocalServiceInfo> } callback - the callback used to return the result.",
+        "@syscap SystemCapability.Communication.NetManager.MDNS",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "DiscoveryService",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Communication.NetManager.MDNS",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'serviceFound'",
+          "必填": true,
+          "说明": "Indicates Event name."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<LocalServiceInfo>",
+          "必填": true,
+          "说明": "the callback used to return the result."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Cancels listening for serviceFound events of mDNS services.",
+      "注释信息": [
+        "@param { 'serviceFound' } type - Indicates Event name.",
+        "@param { Callback<LocalServiceInfo> } callback - the callback used to return the result.",
+        "@syscap SystemCapability.Communication.NetManager.MDNS",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "DiscoveryService",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Communication.NetManager.MDNS",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'serviceFound'",
+          "必填": true,
+          "说明": "Indicates Event name."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<LocalServiceInfo>",
+          "必填": true,
+          "说明": "the callback used to return the result."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Enables listening for serviceLost events of mDNS services.",
+      "注释信息": [
+        "@param { 'serviceLost' } type - Indicates Event name.",
+        "@param { Callback<LocalServiceInfo> } callback - the callback used to return the result.",
+        "@syscap SystemCapability.Communication.NetManager.MDNS",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "DiscoveryService",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Communication.NetManager.MDNS",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'serviceLost'",
+          "必填": true,
+          "说明": "Indicates Event name."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<LocalServiceInfo>",
+          "必填": true,
+          "说明": "the callback used to return the result."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Cancels listening for serviceLost events of mDNS services.",
+      "注释信息": [
+        "@param { 'serviceLost' } type - Indicates Event name.",
+        "@param { Callback<LocalServiceInfo> } callback - the callback used to return the result.",
+        "@syscap SystemCapability.Communication.NetManager.MDNS",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "DiscoveryService",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Communication.NetManager.MDNS",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'serviceLost'",
+          "必填": true,
+          "说明": "Indicates Event name."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<LocalServiceInfo>",
+          "必填": true,
+          "说明": "the callback used to return the result."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "startSearchingMDNS",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Starts searching for mDNS services on the LAN.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.NetManager.MDNS",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "DiscoveryService",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Communication.NetManager.MDNS",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "stopSearchingMDNS",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Stops searching for mDNS services on the LAN.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.NetManager.MDNS",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "DiscoveryService",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Communication.NetManager.MDNS",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "LocalServiceInfo",
+      "所属模块": "未知模块",
+      "功能描述": "Defines the mDNS service information.",
+      "注释信息": [
+        "@interface LocalServiceInfo",
+        "@syscap SystemCapability.Communication.NetManager.MDNS",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "mdns",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Communication.NetManager.MDNS",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "serviceType",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Service type. Use an underscore (_) as the prefix, for example, _http._tcp.",
+      "注释信息": [
+        "@type {string}",
+        "@syscap SystemCapability.Communication.NetManager.MDNS",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "LocalServiceInfo",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Communication.NetManager.MDNS",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "serviceName",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Service name.",
+      "注释信息": [
+        "@type {string}",
+        "@syscap SystemCapability.Communication.NetManager.MDNS",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "LocalServiceInfo",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Communication.NetManager.MDNS",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "port",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Port number.",
+      "注释信息": [
+        "@type {?number}",
+        "@syscap SystemCapability.Communication.NetManager.MDNS",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "LocalServiceInfo",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Communication.NetManager.MDNS",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "host",
+      "属性类型": "NetAddress",
+      "所属模块": "未知模块",
+      "功能描述": "IP address of the host.",
+      "注释信息": [
+        "@type {?NetAddress}",
+        "@syscap SystemCapability.Communication.NetManager.MDNS",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "LocalServiceInfo",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Communication.NetManager.MDNS",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "serviceAttribute",
+      "属性类型": "Array<ServiceAttribute>",
+      "所属模块": "未知模块",
+      "功能描述": "DNS-SD TXT record pairs.",
+      "注释信息": [
+        "@type {?Array<ServiceAttribute>}",
+        "@syscap SystemCapability.Communication.NetManager.MDNS",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "LocalServiceInfo",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Communication.NetManager.MDNS",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "ServiceAttribute",
+      "所属模块": "未知模块",
+      "功能描述": "Defines the mDNS service attribute information.",
+      "注释信息": [
+        "@interface ServiceAttribute",
+        "@syscap SystemCapability.Communication.NetManager.MDNS",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "mdns",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Communication.NetManager.MDNS",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "key",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "TXT record key.",
+      "注释信息": [
+        "@type {string}",
+        "@syscap SystemCapability.Communication.NetManager.MDNS",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "ServiceAttribute",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Communication.NetManager.MDNS",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "value",
+      "属性类型": "Array<number>",
+      "所属模块": "未知模块",
+      "功能描述": "TXT record value.",
+      "注释信息": [
+        "@type {Array<number>}",
+        "@syscap SystemCapability.Communication.NetManager.MDNS",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "ServiceAttribute",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Communication.NetManager.MDNS",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "DiscoveryEventInfo",
+      "所属模块": "未知模块",
+      "功能描述": "Defines the discovery events information of mDNS services.",
+      "注释信息": [
+        "@interface DiscoveryEventInfo",
+        "@syscap SystemCapability.Communication.NetManager.MDNS",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "mdns",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Communication.NetManager.MDNS",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "serviceInfo",
+      "属性类型": "LocalServiceInfo",
+      "所属模块": "未知模块",
+      "功能描述": "Information about the mDNS service.",
+      "注释信息": [
+        "@type {LocalServiceInfo}",
+        "@syscap SystemCapability.Communication.NetManager.MDNS",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "DiscoveryEventInfo",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Communication.NetManager.MDNS",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "errorCode",
+      "属性类型": "MdnsError",
+      "所属模块": "未知模块",
+      "功能描述": "The mDNS error information.",
+      "注释信息": [
+        "@type {?MdnsError}",
+        "@syscap SystemCapability.Communication.NetManager.MDNS",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "DiscoveryEventInfo",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Communication.NetManager.MDNS",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "MdnsError",
+      "所属模块": "未知模块",
+      "功能描述": "Defines the mDNS error information.",
+      "注释信息": [
+        "@enum {number}",
+        "@syscap SystemCapability.Communication.NetManager.MDNS",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "mdns",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Communication.NetManager.MDNS",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "INTERNAL_ERROR",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the operation failed due to internal error.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.NetManager.MDNS",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "MdnsError",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Communication.NetManager.MDNS",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "ALREADY_ACTIVE",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the operation failed because it is already active.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.NetManager.MDNS",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "MdnsError",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Communication.NetManager.MDNS",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "MAX_LIMIT",
+      "值": "2",
+      "所属模块": "未知模块",
+      "功能描述": "<p>Indicates that the operation failed because the maximum outstanding requests from the applications have reached.</p>",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.NetManager.MDNS",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "MdnsError",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Communication.NetManager.MDNS",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "所属模块": "@kit.NetworkKit",
+      "功能描述": "",
+      "注释信息": [
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "@kit.NetworkKit",
+      "since_version": "10",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    }
+  ]
+}

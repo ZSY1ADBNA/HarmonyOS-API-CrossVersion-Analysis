@@ -1,0 +1,1664 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.NetworkKit",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "namespace",
+      "名称": "sharing",
+      "所属模块": "@kit.NetworkKit",
+      "功能描述": "Provides network sharing related interfaces.",
+      "注释信息": [
+        "@namespace sharing",
+        "@syscap SystemCapability.Communication.NetManager.NetSharing",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "@kit.NetworkKit",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Communication.NetManager.NetSharing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "type_alias",
+      "名称": "NetHandle",
+      "所属模块": "未知模块",
+      "功能描述": "Get the handle of the data network.",
+      "注释信息": [
+        "@typedef { connection.NetHandle }",
+        "@syscap SystemCapability.Communication.NetManager.Core",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "sharing",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Communication.NetManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "isSharingSupported",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Checks whether this device allows for network sharing. returns {@code false} otherwise.",
+      "注释信息": [
+        "@permission ohos.permission.CONNECTIVITY_INTERNAL",
+        "@param { AsyncCallback<boolean> } callback - Returns {@code true} indicating network sharing is supported;",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 2200002 - Failed to connect to the service.",
+        "@throws { BusinessError } 2200003 - System internal error.",
+        "@throws { BusinessError } 2202011 - Cannot get network sharing configuration.",
+        "@syscap SystemCapability.Communication.NetManager.NetSharing",
+        "@systemapi Hide this for inner system use.",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "sharing",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Communication.NetManager.NetSharing",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<boolean>",
+          "必填": true,
+          "说明": "Returns {@code true} indicating network sharing is supported;"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "2200002",
+          "description": "Failed to connect to the service."
+        },
+        {
+          "code": "2200003",
+          "description": "System internal error."
+        },
+        {
+          "code": "2202011",
+          "description": "Cannot get network sharing configuration."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "isSharingSupported",
+      "返回值": "Promise<boolean>",
+      "所属模块": "未知模块",
+      "功能描述": "Checks whether this device allows for network sharing.",
+      "注释信息": [
+        "@permission ohos.permission.CONNECTIVITY_INTERNAL",
+        "@returns { Promise<boolean> } The promise returned by the function.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 2200002 - Failed to connect to the service.",
+        "@throws { BusinessError } 2200003 - System internal error.",
+        "@throws { BusinessError } 2202011 - Cannot get network sharing configuration.",
+        "@syscap SystemCapability.Communication.NetManager.NetSharing",
+        "@systemapi Hide this for inner system use.",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "sharing",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Communication.NetManager.NetSharing",
+      "parameters": [],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "2200002",
+          "description": "Failed to connect to the service."
+        },
+        {
+          "code": "2200003",
+          "description": "System internal error."
+        },
+        {
+          "code": "2202011",
+          "description": "Cannot get network sharing configuration."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "isSharing",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Return the global network sharing state. returns {@code false} otherwise.",
+      "注释信息": [
+        "@permission ohos.permission.CONNECTIVITY_INTERNAL",
+        "@param { AsyncCallback<boolean> } callback - Returns {@code true} indicating network sharing is running;",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 2200002 - Failed to connect to the service.",
+        "@throws { BusinessError } 2200003 - System internal error.",
+        "@throws { BusinessError } 2202011 - Cannot get network sharing configuration.",
+        "@syscap SystemCapability.Communication.NetManager.NetSharing",
+        "@systemapi Hide this for inner system use.",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "sharing",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Communication.NetManager.NetSharing",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<boolean>",
+          "必填": true,
+          "说明": "Returns {@code true} indicating network sharing is running;"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "2200002",
+          "description": "Failed to connect to the service."
+        },
+        {
+          "code": "2200003",
+          "description": "System internal error."
+        },
+        {
+          "code": "2202011",
+          "description": "Cannot get network sharing configuration."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "isSharing",
+      "返回值": "Promise<boolean>",
+      "所属模块": "未知模块",
+      "功能描述": "Return the global network sharing state.",
+      "注释信息": [
+        "@permission ohos.permission.CONNECTIVITY_INTERNAL",
+        "@returns { Promise<boolean> } The promise returned by the function.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 2200002 - Failed to connect to the service.",
+        "@throws { BusinessError } 2200003 - System internal error.",
+        "@throws { BusinessError } 2202011 - Cannot get network sharing configuration.",
+        "@syscap SystemCapability.Communication.NetManager.NetSharing",
+        "@systemapi Hide this for inner system use.",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "sharing",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Communication.NetManager.NetSharing",
+      "parameters": [],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "2200002",
+          "description": "Failed to connect to the service."
+        },
+        {
+          "code": "2200003",
+          "description": "System internal error."
+        },
+        {
+          "code": "2202011",
+          "description": "Cannot get network sharing configuration."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "startSharing",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Start network sharing for given type.",
+      "注释信息": [
+        "@permission ohos.permission.CONNECTIVITY_INTERNAL",
+        "@param { SharingIfaceType } type - Enumeration of shareable interface types.",
+        "@param { AsyncCallback<void> } callback - the callback of startSharing.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 2200001 - Invalid parameter value.",
+        "@throws { BusinessError } 2200002 - Failed to connect to the service.",
+        "@throws { BusinessError } 2200003 - System internal error.",
+        "@throws { BusinessError } 2202004 - Try to share an unavailable iface.",
+        "@throws { BusinessError } 2202005 - WiFi sharing failed.",
+        "@throws { BusinessError } 2202006 - Bluetooth sharing failed.",
+        "@throws { BusinessError } 2202009 - Failed to enable forwarding for network sharing.",
+        "@throws { BusinessError } 2202011 - Cannot get network sharing configuration.",
+        "@syscap SystemCapability.Communication.NetManager.NetSharing",
+        "@systemapi Hide this for inner system use.",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "sharing",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Communication.NetManager.NetSharing",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "SharingIfaceType",
+          "必填": true,
+          "说明": "Enumeration of shareable interface types."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "the callback of startSharing."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "2200001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "2200002",
+          "description": "Failed to connect to the service."
+        },
+        {
+          "code": "2200003",
+          "description": "System internal error."
+        },
+        {
+          "code": "2202004",
+          "description": "Try to share an unavailable iface."
+        },
+        {
+          "code": "2202005",
+          "description": "WiFi sharing failed."
+        },
+        {
+          "code": "2202006",
+          "description": "Bluetooth sharing failed."
+        },
+        {
+          "code": "2202009",
+          "description": "Failed to enable forwarding for network sharing."
+        },
+        {
+          "code": "2202011",
+          "description": "Cannot get network sharing configuration."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "startSharing",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Start network sharing for given type.",
+      "注释信息": [
+        "@permission ohos.permission.CONNECTIVITY_INTERNAL",
+        "@param { SharingIfaceType } type - Enumeration of shareable interface types.",
+        "@returns { Promise<void> } The promise returned by the function.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 2200001 - Invalid parameter value.",
+        "@throws { BusinessError } 2200002 - Failed to connect to the service.",
+        "@throws { BusinessError } 2200003 - System internal error.",
+        "@throws { BusinessError } 2202004 - Try to share an unavailable iface.",
+        "@throws { BusinessError } 2202005 - WiFi sharing failed.",
+        "@throws { BusinessError } 2202006 - Bluetooth sharing failed.",
+        "@throws { BusinessError } 2202009 - Failed to enable forwarding for network sharing.",
+        "@throws { BusinessError } 2202011 - Cannot get network sharing configuration.",
+        "@syscap SystemCapability.Communication.NetManager.NetSharing",
+        "@systemapi Hide this for inner system use.",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "sharing",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Communication.NetManager.NetSharing",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "SharingIfaceType",
+          "必填": true,
+          "说明": "Enumeration of shareable interface types."
+        }
+      ],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "2200001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "2200002",
+          "description": "Failed to connect to the service."
+        },
+        {
+          "code": "2200003",
+          "description": "System internal error."
+        },
+        {
+          "code": "2202004",
+          "description": "Try to share an unavailable iface."
+        },
+        {
+          "code": "2202005",
+          "description": "WiFi sharing failed."
+        },
+        {
+          "code": "2202006",
+          "description": "Bluetooth sharing failed."
+        },
+        {
+          "code": "2202009",
+          "description": "Failed to enable forwarding for network sharing."
+        },
+        {
+          "code": "2202011",
+          "description": "Cannot get network sharing configuration."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "stopSharing",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Stop network sharing for given type.",
+      "注释信息": [
+        "@permission ohos.permission.CONNECTIVITY_INTERNAL",
+        "@param { SharingIfaceType } type - Enumeration of shareable interface types.",
+        "@param { AsyncCallback<void> } callback - the callback of startSharing.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 2200001 - Invalid parameter value.",
+        "@throws { BusinessError } 2200002 - Failed to connect to the service.",
+        "@throws { BusinessError } 2200003 - System internal error.",
+        "@throws { BusinessError } 2202004 - Try to share an unavailable iface.",
+        "@throws { BusinessError } 2202005 - WiFi sharing failed.",
+        "@throws { BusinessError } 2202006 - Bluetooth sharing failed.",
+        "@throws { BusinessError } 2202011 - Cannot get network sharing configuration.",
+        "@syscap SystemCapability.Communication.NetManager.NetSharing",
+        "@systemapi Hide this for inner system use.",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "sharing",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Communication.NetManager.NetSharing",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "SharingIfaceType",
+          "必填": true,
+          "说明": "Enumeration of shareable interface types."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "the callback of startSharing."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "2200001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "2200002",
+          "description": "Failed to connect to the service."
+        },
+        {
+          "code": "2200003",
+          "description": "System internal error."
+        },
+        {
+          "code": "2202004",
+          "description": "Try to share an unavailable iface."
+        },
+        {
+          "code": "2202005",
+          "description": "WiFi sharing failed."
+        },
+        {
+          "code": "2202006",
+          "description": "Bluetooth sharing failed."
+        },
+        {
+          "code": "2202011",
+          "description": "Cannot get network sharing configuration."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "stopSharing",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Stop network sharing for given type.",
+      "注释信息": [
+        "@permission ohos.permission.CONNECTIVITY_INTERNAL",
+        "@param { SharingIfaceType } type - Enumeration of shareable interface types.",
+        "@returns { Promise<void> } The promise returned by the function.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 2200001 - Invalid parameter value.",
+        "@throws { BusinessError } 2200002 - Failed to connect to the service.",
+        "@throws { BusinessError } 2200003 - System internal error.",
+        "@throws { BusinessError } 2202004 - Try to share an unavailable iface.",
+        "@throws { BusinessError } 2202005 - WiFi sharing failed.",
+        "@throws { BusinessError } 2202006 - Bluetooth sharing failed.",
+        "@throws { BusinessError } 2202011 - Cannot get network sharing configuration.",
+        "@syscap SystemCapability.Communication.NetManager.NetSharing",
+        "@systemapi Hide this for inner system use.",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "sharing",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Communication.NetManager.NetSharing",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "SharingIfaceType",
+          "必填": true,
+          "说明": "Enumeration of shareable interface types."
+        }
+      ],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "2200001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "2200002",
+          "description": "Failed to connect to the service."
+        },
+        {
+          "code": "2200003",
+          "description": "System internal error."
+        },
+        {
+          "code": "2202004",
+          "description": "Try to share an unavailable iface."
+        },
+        {
+          "code": "2202005",
+          "description": "WiFi sharing failed."
+        },
+        {
+          "code": "2202006",
+          "description": "Bluetooth sharing failed."
+        },
+        {
+          "code": "2202011",
+          "description": "Cannot get network sharing configuration."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getStatsRxBytes",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the number of downlink data bytes of the sharing network interfaces.",
+      "注释信息": [
+        "@permission ohos.permission.CONNECTIVITY_INTERNAL",
+        "@param { AsyncCallback<number> } callback - Returns the number of downlink data bytes of the sharing network interfaces.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 2200002 - Failed to connect to the service.",
+        "@throws { BusinessError } 2200003 - System internal error.",
+        "@syscap SystemCapability.Communication.NetManager.NetSharing",
+        "@systemapi Hide this for inner system use.",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "sharing",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Communication.NetManager.NetSharing",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<number>",
+          "必填": true,
+          "说明": "Returns the number of downlink data bytes of the sharing network interfaces."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "2200002",
+          "description": "Failed to connect to the service."
+        },
+        {
+          "code": "2200003",
+          "description": "System internal error."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getStatsRxBytes",
+      "返回值": "Promise<number>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the number of downlink data bytes of the sharing network interfaces.",
+      "注释信息": [
+        "@permission ohos.permission.CONNECTIVITY_INTERNAL",
+        "@returns { Promise<number> } The promise returned by the function.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 2200002 - Failed to connect to the service.",
+        "@throws { BusinessError } 2200003 - System internal error.",
+        "@syscap SystemCapability.Communication.NetManager.NetSharing",
+        "@systemapi Hide this for inner system use.",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "sharing",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Communication.NetManager.NetSharing",
+      "parameters": [],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "2200002",
+          "description": "Failed to connect to the service."
+        },
+        {
+          "code": "2200003",
+          "description": "System internal error."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getStatsTxBytes",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the number of uplink data bytes of the sharing network interfaces.",
+      "注释信息": [
+        "@permission ohos.permission.CONNECTIVITY_INTERNAL",
+        "@param { AsyncCallback<number> } callback - Returns the number of uplink data bytes of the sharing network interfaces.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 2200002 - Failed to connect to the service.",
+        "@throws { BusinessError } 2200003 - System internal error.",
+        "@syscap SystemCapability.Communication.NetManager.NetSharing",
+        "@systemapi Hide this for inner system use.",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "sharing",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Communication.NetManager.NetSharing",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<number>",
+          "必填": true,
+          "说明": "Returns the number of uplink data bytes of the sharing network interfaces."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "2200002",
+          "description": "Failed to connect to the service."
+        },
+        {
+          "code": "2200003",
+          "description": "System internal error."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getStatsTxBytes",
+      "返回值": "Promise<number>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the number of uplink data bytes of the sharing network interfaces.",
+      "注释信息": [
+        "@permission ohos.permission.CONNECTIVITY_INTERNAL",
+        "@returns { Promise<number> } The promise returned by the function.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 2200002 - Failed to connect to the service.",
+        "@throws { BusinessError } 2200003 - System internal error.",
+        "@syscap SystemCapability.Communication.NetManager.NetSharing",
+        "@systemapi Hide this for inner system use.",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "sharing",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Communication.NetManager.NetSharing",
+      "parameters": [],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "2200002",
+          "description": "Failed to connect to the service."
+        },
+        {
+          "code": "2200003",
+          "description": "System internal error."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getStatsTotalBytes",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the number of total data bytes of the sharing network interfaces.",
+      "注释信息": [
+        "@permission ohos.permission.CONNECTIVITY_INTERNAL",
+        "@param { AsyncCallback<number> } callback - Returns the number of total data bytes of the sharing network interfaces.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 2200002 - Failed to connect to the service.",
+        "@throws { BusinessError } 2200003 - System internal error.",
+        "@syscap SystemCapability.Communication.NetManager.NetSharing",
+        "@systemapi Hide this for inner system use.",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "sharing",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Communication.NetManager.NetSharing",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<number>",
+          "必填": true,
+          "说明": "Returns the number of total data bytes of the sharing network interfaces."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "2200002",
+          "description": "Failed to connect to the service."
+        },
+        {
+          "code": "2200003",
+          "description": "System internal error."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getStatsTotalBytes",
+      "返回值": "Promise<number>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the number of total data bytes of the sharing network interfaces.",
+      "注释信息": [
+        "@permission ohos.permission.CONNECTIVITY_INTERNAL",
+        "@returns { Promise<number> } The promise returned by the function.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 2200002 - Failed to connect to the service.",
+        "@throws { BusinessError } 2200003 - System internal error.",
+        "@syscap SystemCapability.Communication.NetManager.NetSharing",
+        "@systemapi Hide this for inner system use.",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "sharing",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Communication.NetManager.NetSharing",
+      "parameters": [],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "2200002",
+          "description": "Failed to connect to the service."
+        },
+        {
+          "code": "2200003",
+          "description": "System internal error."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getSharingIfaces",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the names of interfaces in each sharing state.",
+      "注释信息": [
+        "@permission ohos.permission.CONNECTIVITY_INTERNAL",
+        "@param { SharingIfaceState } state - Is the network sharing state.",
+        "@param { AsyncCallback<Array<string>> } callback - Returns an array of interface names that meet this status.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 2200001 - Invalid parameter value.",
+        "@throws { BusinessError } 2200002 - Failed to connect to the service.",
+        "@throws { BusinessError } 2200003 - System internal error.",
+        "@syscap SystemCapability.Communication.NetManager.NetSharing",
+        "@systemapi Hide this for inner system use.",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "sharing",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Communication.NetManager.NetSharing",
+      "parameters": [
+        {
+          "名称": "state",
+          "类型": "SharingIfaceState",
+          "必填": true,
+          "说明": "Is the network sharing state."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<Array<string>>",
+          "必填": true,
+          "说明": "Returns an array of interface names that meet this status."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "2200001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "2200002",
+          "description": "Failed to connect to the service."
+        },
+        {
+          "code": "2200003",
+          "description": "System internal error."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getSharingIfaces",
+      "返回值": "Promise<Array<string>>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the names of interfaces in each sharing state.",
+      "注释信息": [
+        "@permission ohos.permission.CONNECTIVITY_INTERNAL",
+        "@param { SharingIfaceState } state - Is the network sharing state.",
+        "@returns { Promise<Array<string>> } The promise returned by the function.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 2200001 - Invalid parameter value.",
+        "@throws { BusinessError } 2200002 - Failed to connect to the service.",
+        "@throws { BusinessError } 2200003 - System internal error.",
+        "@syscap SystemCapability.Communication.NetManager.NetSharing",
+        "@systemapi Hide this for inner system use.",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "sharing",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Communication.NetManager.NetSharing",
+      "parameters": [
+        {
+          "名称": "state",
+          "类型": "SharingIfaceState",
+          "必填": true,
+          "说明": "Is the network sharing state."
+        }
+      ],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "2200001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "2200002",
+          "description": "Failed to connect to the service."
+        },
+        {
+          "code": "2200003",
+          "description": "System internal error."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getSharingState",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the network sharing state for given type.",
+      "注释信息": [
+        "@permission ohos.permission.CONNECTIVITY_INTERNAL",
+        "@param { SharingIfaceType } type - Is the enumeration of shareable interface types.",
+        "@param { AsyncCallback<SharingIfaceState> } callback - the callback of getSharingState. {@code SharingIfaceState}.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 2200001 - Invalid parameter value.",
+        "@throws { BusinessError } 2200002 - Failed to connect to the service.",
+        "@throws { BusinessError } 2200003 - System internal error.",
+        "@syscap SystemCapability.Communication.NetManager.NetSharing",
+        "@systemapi Hide this for inner system use.",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "sharing",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Communication.NetManager.NetSharing",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "SharingIfaceType",
+          "必填": true,
+          "说明": "Is the enumeration of shareable interface types."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<SharingIfaceState>",
+          "必填": true,
+          "说明": "the callback of getSharingState. {@code SharingIfaceState}."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "2200001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "2200002",
+          "description": "Failed to connect to the service."
+        },
+        {
+          "code": "2200003",
+          "description": "System internal error."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getSharingState",
+      "返回值": "Promise<SharingIfaceState>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the network sharing state for given type.",
+      "注释信息": [
+        "@permission ohos.permission.CONNECTIVITY_INTERNAL",
+        "@param { SharingIfaceType } type - Is the enumeration of shareable interface types.",
+        "@returns { Promise<SharingIfaceState> } The promise returned by the function.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 2200001 - Invalid parameter value.",
+        "@throws { BusinessError } 2200002 - Failed to connect to the service.",
+        "@throws { BusinessError } 2200003 - System internal error.",
+        "@syscap SystemCapability.Communication.NetManager.NetSharing",
+        "@systemapi Hide this for inner system use.",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "sharing",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Communication.NetManager.NetSharing",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "SharingIfaceType",
+          "必填": true,
+          "说明": "Is the enumeration of shareable interface types."
+        }
+      ],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "2200001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "2200002",
+          "description": "Failed to connect to the service."
+        },
+        {
+          "code": "2200003",
+          "description": "System internal error."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getSharableRegexes",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Get a list regular expression that defines any interface that can support network sharing.",
+      "注释信息": [
+        "@permission ohos.permission.CONNECTIVITY_INTERNAL",
+        "@param { SharingIfaceType } type - Is the enumeration of shareable interface types.",
+        "@param { AsyncCallback<Array<string>> } callback - the callback of getSharableRegexes.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 2200001 - Invalid parameter value.",
+        "@throws { BusinessError } 2200002 - Failed to connect to the service.",
+        "@throws { BusinessError } 2200003 - System internal error.",
+        "@syscap SystemCapability.Communication.NetManager.NetSharing",
+        "@systemapi Hide this for inner system use.",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "sharing",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Communication.NetManager.NetSharing",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "SharingIfaceType",
+          "必填": true,
+          "说明": "Is the enumeration of shareable interface types."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<Array<string>>",
+          "必填": true,
+          "说明": "the callback of getSharableRegexes."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "2200001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "2200002",
+          "description": "Failed to connect to the service."
+        },
+        {
+          "code": "2200003",
+          "description": "System internal error."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getSharableRegexes",
+      "返回值": "Promise<Array<string>>",
+      "所属模块": "未知模块",
+      "功能描述": "Get a list regular expression that defines any interface that can support network sharing.",
+      "注释信息": [
+        "@permission ohos.permission.CONNECTIVITY_INTERNAL",
+        "@param { SharingIfaceType } type - Is the enumeration of shareable interface types.",
+        "@returns { Promise<Array<string>> } The promise returned by the function.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@throws { BusinessError } 2200001 - Invalid parameter value.",
+        "@throws { BusinessError } 2200002 - Failed to connect to the service.",
+        "@throws { BusinessError } 2200003 - System internal error.",
+        "@syscap SystemCapability.Communication.NetManager.NetSharing",
+        "@systemapi Hide this for inner system use.",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "sharing",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Communication.NetManager.NetSharing",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "SharingIfaceType",
+          "必填": true,
+          "说明": "Is the enumeration of shareable interface types."
+        }
+      ],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error."
+        },
+        {
+          "code": "2200001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "2200002",
+          "description": "Failed to connect to the service."
+        },
+        {
+          "code": "2200003",
+          "description": "System internal error."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Register a callback for the global network sharing state change.",
+      "注释信息": [
+        "@permission ohos.permission.CONNECTIVITY_INTERNAL",
+        "@param { 'sharingStateChange' } type - Indicates Event name.",
+        "@param { Callback<boolean> } callback - the callback function that returns the status.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@syscap SystemCapability.Communication.NetManager.NetSharing",
+        "@systemapi Hide this for inner system use.",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "sharing",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Communication.NetManager.NetSharing",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'sharingStateChange'",
+          "必填": true,
+          "说明": "Indicates Event name."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<boolean>",
+          "必填": true,
+          "说明": "the callback function that returns the status."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unregister a callback for the global network sharing state change.",
+      "注释信息": [
+        "@permission ohos.permission.CONNECTIVITY_INTERNAL",
+        "@param { 'sharingStateChange' } type Indicates Event name.",
+        "@param { Callback<boolean> } callback - the callback function that returns the status.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@syscap SystemCapability.Communication.NetManager.NetSharing",
+        "@systemapi Hide this for inner system use.",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "sharing",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Communication.NetManager.NetSharing",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'sharingStateChange'",
+          "必填": true,
+          "说明": "Indicates Event name."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<boolean>",
+          "必填": true,
+          "说明": "the callback function that returns the status."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "interface",
+      "名称": null,
+      "所属模块": "未知模块",
+      "功能描述": "Register a callback for the interface network sharing state change.",
+      "注释信息": [
+        "@permission ohos.permission.CONNECTIVITY_INTERNAL",
+        "@param { 'interfaceSharingStateChange' } type - Indicates Event name.",
+        "@param { Callback<InterfaceSharingStateInfo> } callback - the callback function that returns the message.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@syscap SystemCapability.Communication.NetManager.NetSharing",
+        "@systemapi Hide this for inner system use.",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "sharing",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Communication.NetManager.NetSharing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "interface",
+      "名称": null,
+      "所属模块": "未知模块",
+      "功能描述": "Unregister a callback for the interface network sharing state change.",
+      "注释信息": [
+        "@permission ohos.permission.CONNECTIVITY_INTERNAL",
+        "@param { 'interfaceSharingStateChange' } type - Indicates Event name.",
+        "@param { Callback<InterfaceSharingStateInfo> } callback - the callback function that returns the message.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@syscap SystemCapability.Communication.NetManager.NetSharing",
+        "@systemapi Hide this for inner system use.",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "sharing",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Communication.NetManager.NetSharing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Register a callback for the sharing upstream network change.",
+      "注释信息": [
+        "@permission ohos.permission.CONNECTIVITY_INTERNAL",
+        "@param { 'sharingUpstreamChange' } type - Indicates Event name.",
+        "@param { Callback<NetHandle> } callback - the callback function that returns the network handle.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@syscap SystemCapability.Communication.NetManager.NetSharing",
+        "@systemapi Hide this for inner system use.",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "sharing",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Communication.NetManager.NetSharing",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'sharingUpstreamChange'",
+          "必填": true,
+          "说明": "Indicates Event name."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<NetHandle>",
+          "必填": true,
+          "说明": "the callback function that returns the network handle."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unregister a callback for the sharing upstream network change.",
+      "注释信息": [
+        "@permission ohos.permission.CONNECTIVITY_INTERNAL",
+        "@param { 'sharingUpstreamChange' } type - Indicates Event name.",
+        "@param { Callback<NetHandle> } callback - the callback function that returns the network handle.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@syscap SystemCapability.Communication.NetManager.NetSharing",
+        "@systemapi Hide this for inner system use.",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "sharing",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Communication.NetManager.NetSharing",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'sharingUpstreamChange'",
+          "必填": true,
+          "说明": "Indicates Event name."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<NetHandle>",
+          "必填": true,
+          "说明": "the callback function that returns the network handle."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum",
+      "名称": "SharingIfaceState",
+      "所属模块": "未知模块",
+      "功能描述": "Enumerates the network sharing states of an NIC.",
+      "注释信息": [
+        "@enum {number}",
+        "@syscap SystemCapability.Communication.NetManager.NetSharing",
+        "@systemapi Hide this for inner system use.",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "sharing",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Communication.NetManager.NetSharing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "SHARING_NIC_SERVING",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the names of the NICs that are serving as network sharing.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.NetManager.NetSharing",
+        "@systemapi Hide this for inner system use.",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "SharingIfaceState",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Communication.NetManager.NetSharing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "SHARING_NIC_CAN_SERVER",
+      "值": "2",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the names of the NICs that can serve as network sharing.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.NetManager.NetSharing",
+        "@systemapi Hide this for inner system use.",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "SharingIfaceState",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Communication.NetManager.NetSharing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "SHARING_NIC_ERROR",
+      "值": "3",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the names of the NICs that serving error.",
+      "注释信息": [
+        "@syscap SystemCapability.Communication.NetManager.NetSharing",
+        "@systemapi Hide this for inner system use.",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "SharingIfaceState",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Communication.NetManager.NetSharing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    }
+  ]
+}

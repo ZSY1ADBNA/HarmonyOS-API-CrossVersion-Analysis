@@ -1,0 +1,4413 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.TelephonyKit",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "namespace",
+      "名称": "radio",
+      "所属模块": "@kit.TelephonyKit",
+      "功能描述": "Provides interfaces for applications to obtain the network state, cell information, signal information, and device ID of the wireless cellular network (WCN), and provides a callback registration mechanism to listen for changes of the network, cell, and signal status of the WCN.",
+      "注释信息": [
+        "@namespace radio",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 6"
+      ],
+      "层级": 1,
+      "上级": "@kit.TelephonyKit",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getRadioTech",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains radio access technology (RAT) of the registered network. The system returns RAT of the packet service (PS) and circuit service (CS) domain. ranging from 0 to the maximum card slot index number supported by the device. the RAT of PS domain and CS domain of registered network. The values of RAT are as follows: <ul> <li>{@code RadioTechnology#RADIO_TECHNOLOGY_UNKNOWN} <li>{@code RadioTechnology#RADIO_TECHNOLOGY_GSM} <li>{@code RadioTechnology#RADIO_TECHNOLOGY_1XRTT} <li>{@code RadioTechnology#RADIO_TECHNOLOGY_WCDMA} <li>{@code RadioTechnology#RADIO_TECHNOLOGY_HSPA} <li>{@code RadioTechnology#RADIO_TECHNOLOGY_HSPAP} <li>{@code RadioTechnology#RADIO_TECHNOLOGY_TD_SCDMA} <li>{@code RadioTechnology#RADIO_TECHNOLOGY_EVDO} <li>{@code RadioTechnology#RADIO_TECHNOLOGY_EHRPD} <li>{@code RadioTechnology#RADIO_TECHNOLOGY_LTE} <li>{@code RadioTechnology#RADIO_TECHNOLOGY_LTE_CA} <li>{@code RadioTechnology#RADIO_TECHNOLOGY_IWLAN} <li>{@code RadioTechnology#RADIO_TECHNOLOGY_NR} </ul> 2. Incorrect parameter types.",
+      "注释信息": [
+        "@permission ohos.permission.GET_NETWORK_INFO",
+        "@param { number } slotId - Indicates the card slot index number,",
+        "@param { AsyncCallback<NetworkRadioTech> } callback - Returns",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Service connection failed.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error.",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "radio",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [
+        {
+          "名称": "slotId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the card slot index number,"
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<NetworkRadioTech>",
+          "必填": true,
+          "说明": "Returns"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Service connection failed."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getRadioTech",
+      "返回值": "Promise<NetworkRadioTech>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains radio access technology (RAT) of the registered network. The system returns RAT of the packet service (PS) and circuit service (CS) domain. ranging from 0 to the maximum card slot index number supported by the device. The values of RAT are as follows: <ul> <li>{@code RadioTechnology#RADIO_TECHNOLOGY_UNKNOWN} <li>{@code RadioTechnology#RADIO_TECHNOLOGY_GSM} <li>{@code RadioTechnology#RADIO_TECHNOLOGY_1XRTT} <li>{@code RadioTechnology#RADIO_TECHNOLOGY_WCDMA} <li>{@code RadioTechnology#RADIO_TECHNOLOGY_HSPA} <li>{@code RadioTechnology#RADIO_TECHNOLOGY_HSPAP} <li>{@code RadioTechnology#RADIO_TECHNOLOGY_TD_SCDMA} <li>{@code RadioTechnology#RADIO_TECHNOLOGY_EVDO} <li>{@code RadioTechnology#RADIO_TECHNOLOGY_EHRPD} <li>{@code RadioTechnology#RADIO_TECHNOLOGY_LTE} <li>{@code RadioTechnology#RADIO_TECHNOLOGY_LTE_CA} <li>{@code RadioTechnology#RADIO_TECHNOLOGY_IWLAN} <li>{@code RadioTechnology#RADIO_TECHNOLOGY_NR} </ul> 2. Incorrect parameter types.",
+      "注释信息": [
+        "@permission ohos.permission.GET_NETWORK_INFO",
+        "@param { number } slotId - Indicates the card slot index number,",
+        "@returns { Promise<NetworkRadioTech> } Returns the RAT of PS domain and CS domain of registered network.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Service connection failed.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error.",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "radio",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [
+        {
+          "名称": "slotId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the card slot index number,"
+        }
+      ],
+      "return_description": "Returns the RAT of PS domain and CS domain of registered network.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Service connection failed."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getNetworkState",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the network state of the registered network. ranging from 0 to the maximum card slot index number supported by the device. 2. Incorrect parameter types.",
+      "注释信息": [
+        "@permission ohos.permission.GET_NETWORK_INFO",
+        "@param { number } slotId - Indicates the card slot index number,",
+        "@param { AsyncCallback<NetworkState> } callback - Indicates the callback for getting network registration state.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Service connection failed.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error.",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 6"
+      ],
+      "层级": 1,
+      "上级": "radio",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [
+        {
+          "名称": "slotId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the card slot index number,"
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<NetworkState>",
+          "必填": true,
+          "说明": "Indicates the callback for getting network registration state."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Service connection failed."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getNetworkState",
+      "返回值": "Promise<NetworkState>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the network state of the registered network. ranging from 0 to the maximum card slot index number supported by the device. 2. Incorrect parameter types.",
+      "注释信息": [
+        "@permission ohos.permission.GET_NETWORK_INFO",
+        "@param { number } slotId - Indicates the card slot index number,",
+        "@returns { Promise<NetworkState> } Returns the NetworkState object.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Service connection failed.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error.",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 6"
+      ],
+      "层级": 1,
+      "上级": "radio",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [
+        {
+          "名称": "slotId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the card slot index number,"
+        }
+      ],
+      "return_description": "Returns the NetworkState object.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Service connection failed."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getNetworkState",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the network state of the registered network. 2. Incorrect parameter types.",
+      "注释信息": [
+        "@permission ohos.permission.GET_NETWORK_INFO",
+        "@param { AsyncCallback<NetworkState> } callback - Indicates the callback for getting network registration state.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Service connection failed.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error.",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 6"
+      ],
+      "层级": 1,
+      "上级": "radio",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<NetworkState>",
+          "必填": true,
+          "说明": "Indicates the callback for getting network registration state."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Service connection failed."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "sendUpdateCellLocationRequest",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Actively requests to update location information. index number supported by the device. 2. Incorrect parameter types.",
+      "注释信息": [
+        "@permission ohos.permission.LOCATION and ohos.permission.APPROXIMATELY_LOCATION",
+        "@param { number } slotId - Indicates the card slot index number, ranging from 0 to the maximum card slot",
+        "@param { AsyncCallback<void> } callback - The callback of sendUpdateCellLocationRequest.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Service connection failed.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error.",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@systemapi Hide this for inner system use.",
+        "@since 8"
+      ],
+      "层级": 1,
+      "上级": "radio",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [
+        {
+          "名称": "slotId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the card slot index number, ranging from 0 to the maximum card slot"
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "The callback of sendUpdateCellLocationRequest."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Service connection failed."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "sendUpdateCellLocationRequest",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Actively requests to update location information. index number supported by the device. 2. Incorrect parameter types.",
+      "注释信息": [
+        "@permission ohos.permission.LOCATION and ohos.permission.APPROXIMATELY_LOCATION",
+        "@param { number } slotId - Indicates the card slot index number, ranging from 0 to the maximum card slot",
+        "@returns { Promise<void> } The promise returned by the sendUpdateCellLocationRequest.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Service connection failed.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error.",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@systemapi Hide this for inner system use.",
+        "@since 8"
+      ],
+      "层级": 1,
+      "上级": "radio",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [
+        {
+          "名称": "slotId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the card slot index number, ranging from 0 to the maximum card slot"
+        }
+      ],
+      "return_description": "The promise returned by the sendUpdateCellLocationRequest.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Service connection failed."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "sendUpdateCellLocationRequest",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Actively requests to update location information. 2. Incorrect parameter types.",
+      "注释信息": [
+        "@permission ohos.permission.LOCATION and ohos.permission.APPROXIMATELY_LOCATION",
+        "@param { AsyncCallback<void> } callback - The callback of sendUpdateCellLocationRequest.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Service connection failed.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error.",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@systemapi Hide this for inner system use.",
+        "@since 8"
+      ],
+      "层级": 1,
+      "上级": "radio",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "The callback of sendUpdateCellLocationRequest."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Service connection failed."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getCellInformation",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Get the current cell information. index number supported by the device. 2. Incorrect parameter types.",
+      "注释信息": [
+        "@permission ohos.permission.LOCATION and ohos.permission.APPROXIMATELY_LOCATION",
+        "@param { number } slotId - Indicates the card slot index number, ranging from 0 to the maximum card slot",
+        "@param { AsyncCallback<Array<CellInformation>> } callback - Indicates the callback for getting cell information.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Service connection failed.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error.",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@systemapi Hide this for inner system use.",
+        "@since 8"
+      ],
+      "层级": 1,
+      "上级": "radio",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [
+        {
+          "名称": "slotId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the card slot index number, ranging from 0 to the maximum card slot"
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<Array<CellInformation>>",
+          "必填": true,
+          "说明": "Indicates the callback for getting cell information."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Service connection failed."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getCellInformation",
+      "返回值": "Promise<Array<CellInformation>>",
+      "所属模块": "未知模块",
+      "功能描述": "Get the current cell information. index number supported by the device. 2. Incorrect parameter types.",
+      "注释信息": [
+        "@permission ohos.permission.LOCATION and ohos.permission.APPROXIMATELY_LOCATION",
+        "@param { number } slotId - Indicates the card slot index number, ranging from 0 to the maximum card slot",
+        "@returns { Promise<Array<CellInformation>> } Returns the current cell information.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Service connection failed.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error.",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@systemapi Hide this for inner system use.",
+        "@since 8"
+      ],
+      "层级": 1,
+      "上级": "radio",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [
+        {
+          "名称": "slotId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the card slot index number, ranging from 0 to the maximum card slot"
+        }
+      ],
+      "return_description": "Returns the current cell information.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Service connection failed."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getCellInformation",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Get the current cell information. 2. Incorrect parameter types.",
+      "注释信息": [
+        "@permission ohos.permission.LOCATION and ohos.permission.APPROXIMATELY_LOCATION",
+        "@param { AsyncCallback<Array<CellInformation>> } callback - Indicates the callback for getting cell information.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Service connection failed.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error.",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@systemapi Hide this for inner system use.",
+        "@since 8"
+      ],
+      "层级": 1,
+      "上级": "radio",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<Array<CellInformation>>",
+          "必填": true,
+          "说明": "Indicates the callback for getting cell information."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Service connection failed."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getNetworkSelectionMode",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the network search mode of the SIM card in a specified slot. index number supported by the device. the network search mode of the SIM card. Available values are as follows: <ul> <li>{@link NetworkSelectionMode#NETWORK_SELECTION_UNKNOWN} <li>{@link NetworkSelectionMode#NETWORK_SELECTION_AUTOMATIC} <li>{@link NetworkSelectionMode#NETWORK_SELECTION_MANUAL} <ul> 2. Incorrect parameter types.",
+      "注释信息": [
+        "@param { number } slotId - Indicates the card slot index number, ranging from 0 to the maximum card slot",
+        "@param { AsyncCallback<NetworkSelectionMode> } callback - Indicates the callback for getting",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Service connection failed.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error.",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 6"
+      ],
+      "层级": 1,
+      "上级": "radio",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [
+        {
+          "名称": "slotId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the card slot index number, ranging from 0 to the maximum card slot"
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<NetworkSelectionMode>",
+          "必填": true,
+          "说明": "Indicates the callback for getting"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Service connection failed."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getNetworkSelectionMode",
+      "返回值": "Promise<NetworkSelectionMode>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the network search mode of the SIM card in a specified slot. index number supported by the device. Available values are as follows: <ul> <li>{@link NetworkSelectionMode#NETWORK_SELECTION_UNKNOWN} <li>{@link NetworkSelectionMode#NETWORK_SELECTION_AUTOMATIC} <li>{@link NetworkSelectionMode#NETWORK_SELECTION_MANUAL} <ul> 2. Incorrect parameter types.",
+      "注释信息": [
+        "@param { number } slotId - Indicates the card slot index number, ranging from 0 to the maximum card slot",
+        "@returns { Promise<NetworkSelectionMode> } Returns the network search mode of the SIM card.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Service connection failed.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error.",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 6"
+      ],
+      "层级": 1,
+      "上级": "radio",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [
+        {
+          "名称": "slotId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the card slot index number, ranging from 0 to the maximum card slot"
+        }
+      ],
+      "return_description": "Returns the network search mode of the SIM card.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Service connection failed."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "setNetworkSelectionMode",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Set the current network selection mode. 2. Incorrect parameter types.",
+      "注释信息": [
+        "@permission ohos.permission.SET_TELEPHONY_STATE",
+        "@param { NetworkSelectionModeOptions } options Indicates the network selection mode option.",
+        "@param { AsyncCallback<void> } callback - The callback of setNetworkSelectionMode.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Service connection failed.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error.",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@systemapi Hide this for inner system use.",
+        "@since 6"
+      ],
+      "层级": 1,
+      "上级": "radio",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [
+        {
+          "名称": "options",
+          "类型": "NetworkSelectionModeOptions",
+          "必填": true,
+          "说明": "Indicates the network selection mode option."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "The callback of setNetworkSelectionMode."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Service connection failed."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "setNetworkSelectionMode",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Set the current network selection mode. 2. Incorrect parameter types.",
+      "注释信息": [
+        "@permission ohos.permission.SET_TELEPHONY_STATE",
+        "@param { NetworkSelectionModeOptions } options Indicates the network selection mode option.",
+        "@returns { Promise<void> } The promise returned by the setNetworkSelectionMode.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Service connection failed.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error.",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@systemapi Hide this for inner system use.",
+        "@since 6"
+      ],
+      "层级": 1,
+      "上级": "radio",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [
+        {
+          "名称": "options",
+          "类型": "NetworkSelectionModeOptions",
+          "必填": true,
+          "说明": "Indicates the network selection mode option."
+        }
+      ],
+      "return_description": "The promise returned by the setNetworkSelectionMode.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Service connection failed."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getNetworkSearchInformation",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Get network search information. index number supported by the device. the search results of the network. 2. Incorrect parameter types.",
+      "注释信息": [
+        "@permission ohos.permission.GET_TELEPHONY_STATE",
+        "@param { number } slotId - Indicates the card slot index number, ranging from 0 to the maximum card slot",
+        "@param { AsyncCallback<NetworkSearchResult> } callback - Indicates the callback for getting",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Service connection failed.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error.",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@systemapi Hide this for inner system use.",
+        "@since 6"
+      ],
+      "层级": 1,
+      "上级": "radio",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [
+        {
+          "名称": "slotId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the card slot index number, ranging from 0 to the maximum card slot"
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<NetworkSearchResult>",
+          "必填": true,
+          "说明": "Indicates the callback for getting"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Service connection failed."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getNetworkSearchInformation",
+      "返回值": "Promise<NetworkSearchResult>",
+      "所属模块": "未知模块",
+      "功能描述": "Get network search information. index number supported by the device. 2. Incorrect parameter types.",
+      "注释信息": [
+        "@permission ohos.permission.GET_TELEPHONY_STATE",
+        "@param { number } slotId - Indicates the card slot index number, ranging from 0 to the maximum card slot",
+        "@returns { Promise<NetworkSearchResult> } Returns the search results of the network.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Service connection failed.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error.",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@systemapi Hide this for inner system use.",
+        "@since 6"
+      ],
+      "层级": 1,
+      "上级": "radio",
+      "since_version": "6",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [
+        {
+          "名称": "slotId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the card slot index number, ranging from 0 to the maximum card slot"
+        }
+      ],
+      "return_description": "Returns the search results of the network.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Service connection failed."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getISOCountryCodeForNetwork",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the ISO-defined country code of the country where the registered network is deployed. ranging from 0 to the maximum card slot index number supported by the device. defined in ISO 3166-2; returns an empty string if the device is not registered with any network. 2. Incorrect parameter types.",
+      "注释信息": [
+        "@param { number } slotId - Indicates the card slot index number,",
+        "@param { AsyncCallback<string> } callback - Indicates the callback for getting the country code",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Service connection failed.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error.",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "radio",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [
+        {
+          "名称": "slotId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the card slot index number,"
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<string>",
+          "必填": true,
+          "说明": "Indicates the callback for getting the country code"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Service connection failed."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getISOCountryCodeForNetwork",
+      "返回值": "Promise<string>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the ISO-defined country code of the country where the registered network is deployed. ranging from 0 to the maximum card slot index number supported by the device. Returns an empty string if the device is not registered with any network. 2. Incorrect parameter types.",
+      "注释信息": [
+        "@param { number } slotId - Indicates the card slot index number,",
+        "@returns { Promise<string> } Returns the country code defined in ISO 3166-2.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Service connection failed.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error.",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "radio",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [
+        {
+          "名称": "slotId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the card slot index number,"
+        }
+      ],
+      "return_description": "Returns the country code defined in ISO 3166-2.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Service connection failed."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getISOCountryCodeForNetworkSync",
+      "返回值": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the ISO-defined country code of the country where the registered network is deployed. ranging from 0 to the maximum card slots supported by the device. Returns an empty string if the device is not registered with any network.",
+      "注释信息": [
+        "@param { number } slotId - Indicates the card slot index number,",
+        "@returns { string } Returns the country code defined in ISO 3166-2.",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "radio",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [
+        {
+          "名称": "slotId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the card slot index number,"
+        }
+      ],
+      "return_description": "Returns the country code defined in ISO 3166-2.",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getNrOptionMode",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Get the option mode of NR. index number supported by the device. 2. Incorrect parameter types.",
+      "注释信息": [
+        "@param { number } slotId - Indicates the card slot index number, ranging from 0 to the maximum card slot",
+        "@param { AsyncCallback<NrOptionMode> } callback - Indicates the callback for getting the selection mode of NR.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Service connection failed.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error.",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@systemapi Hide this for inner system use.",
+        "@since 8",
+        "@deprecated since 10",
+        "@useinstead telephony.radio#getNROptionMode"
+      ],
+      "层级": 1,
+      "上级": "radio",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [
+        {
+          "名称": "slotId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the card slot index number, ranging from 0 to the maximum card slot"
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<NrOptionMode>",
+          "必填": true,
+          "说明": "Indicates the callback for getting the selection mode of NR."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Service connection failed."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getNrOptionMode",
+      "返回值": "Promise<NrOptionMode>",
+      "所属模块": "未知模块",
+      "功能描述": "Get the option mode of NR. index number supported by the device. 2. Incorrect parameter types.",
+      "注释信息": [
+        "@param { number } slotId - Indicates the card slot index number, ranging from 0 to the maximum card slot",
+        "@returns { Promise<NrOptionMode> } Returns the selection mode of NR.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Service connection failed.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error.",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@systemapi Hide this for inner system use.",
+        "@since 8",
+        "@deprecated since 10",
+        "@useinstead telephony.radio#getNROptionMode"
+      ],
+      "层级": 1,
+      "上级": "radio",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [
+        {
+          "名称": "slotId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the card slot index number, ranging from 0 to the maximum card slot"
+        }
+      ],
+      "return_description": "Returns the selection mode of NR.",
+      "error_codes": [
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Service connection failed."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getNrOptionMode",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Get the option mode of NR. 2. Incorrect parameter types.",
+      "注释信息": [
+        "@param { AsyncCallback<NrOptionMode> } callback - Indicates the callback for getting the selection mode of NR.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Service connection failed.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error.",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@systemapi Hide this for inner system use.",
+        "@since 8",
+        "@deprecated since 10",
+        "@useinstead telephony.radio#getNROptionMode"
+      ],
+      "层级": 1,
+      "上级": "radio",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<NrOptionMode>",
+          "必填": true,
+          "说明": "Indicates the callback for getting the selection mode of NR."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Service connection failed."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getIMEI",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the IMEI of a specified card slot of the device. index number supported by the device. Returns an empty string if the IMEI does not exist. 2. Incorrect parameter types.",
+      "注释信息": [
+        "@permission ohos.permission.GET_TELEPHONY_STATE",
+        "@param { number } slotId - Indicates the card slot index number, ranging from 0 to the maximum card slot",
+        "@param { AsyncCallback<string> } callback - Indicates the callback for getting the IMEI.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Service connection failed.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error.",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@systemapi Hide this for inner system use.",
+        "@since 8"
+      ],
+      "层级": 1,
+      "上级": "radio",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [
+        {
+          "名称": "slotId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the card slot index number, ranging from 0 to the maximum card slot"
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<string>",
+          "必填": true,
+          "说明": "Indicates the callback for getting the IMEI."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Service connection failed."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getIMEI",
+      "返回值": "Promise<string>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the IMEI of a specified card slot of the device. index number supported by the device. 2. Incorrect parameter types.",
+      "注释信息": [
+        "@permission ohos.permission.GET_TELEPHONY_STATE",
+        "@param { number } slotId - Indicates the card slot index number, ranging from 0 to the maximum card slot",
+        "@returns { Promise<string> } Returns the IMEI. Returns an empty string if the IMEI does not exist.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Service connection failed.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error.",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@systemapi Hide this for inner system use.",
+        "@since 8"
+      ],
+      "层级": 1,
+      "上级": "radio",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [
+        {
+          "名称": "slotId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the card slot index number, ranging from 0 to the maximum card slot"
+        }
+      ],
+      "return_description": "Returns the IMEI. Returns an empty string if the IMEI does not exist.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Service connection failed."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getIMEI",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the IMEI of a specified card slot of the device. Returns an empty string if the IMEI does not exist. 2. Incorrect parameter types.",
+      "注释信息": [
+        "@permission ohos.permission.GET_TELEPHONY_STATE",
+        "@param { AsyncCallback<string> } callback - Indicates the callback for getting the IMEI.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Service connection failed.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error.",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@systemapi Hide this for inner system use.",
+        "@since 8"
+      ],
+      "层级": 1,
+      "上级": "radio",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<string>",
+          "必填": true,
+          "说明": "Indicates the callback for getting the IMEI."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Service connection failed."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getMEID",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the MEID of a specified card slot of the device. index number supported by the device. Returns an empty string if the MEID does not exist. 2. Incorrect parameter types.",
+      "注释信息": [
+        "@permission ohos.permission.GET_TELEPHONY_STATE",
+        "@param { number } slotId - Indicates the card slot index number, ranging from 0 to the maximum card slot",
+        "@param { AsyncCallback<string> } callback - Indicates the callback for getting the MEID.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Service connection failed.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error.",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@systemapi Hide this for inner system use.",
+        "@since 8"
+      ],
+      "层级": 1,
+      "上级": "radio",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [
+        {
+          "名称": "slotId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the card slot index number, ranging from 0 to the maximum card slot"
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<string>",
+          "必填": true,
+          "说明": "Indicates the callback for getting the MEID."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Service connection failed."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getMEID",
+      "返回值": "Promise<string>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the MEID of a specified card slot of the device. index number supported by the device. 2. Incorrect parameter types.",
+      "注释信息": [
+        "@permission ohos.permission.GET_TELEPHONY_STATE",
+        "@param { number } slotId - Indicates the card slot index number, ranging from 0 to the maximum card slot",
+        "@returns { Promise<string> } Returns the MEID. Returns an empty string if the MEID does not exist.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Service connection failed.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error.",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@systemapi Hide this for inner system use.",
+        "@since 8"
+      ],
+      "层级": 1,
+      "上级": "radio",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [
+        {
+          "名称": "slotId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the card slot index number, ranging from 0 to the maximum card slot"
+        }
+      ],
+      "return_description": "Returns the MEID. Returns an empty string if the MEID does not exist.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Service connection failed."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getMEID",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the MEID of a specified card slot of the device. Returns an empty string if the MEID does not exist. 2. Incorrect parameter types.",
+      "注释信息": [
+        "@permission ohos.permission.GET_TELEPHONY_STATE",
+        "@param { AsyncCallback<string> } callback - Indicates the callback for getting the MEID.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Service connection failed.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error.",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@systemapi Hide this for inner system use.",
+        "@since 8"
+      ],
+      "层级": 1,
+      "上级": "radio",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<string>",
+          "必填": true,
+          "说明": "Indicates the callback for getting the MEID."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Service connection failed."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getUniqueDeviceId",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the unique device ID of a specified card slot of the device. If the device is registered with a 3GPP-compliant network, the international mobile equipment identity (IMEI) is returned. If the device is registered with a 3GPP2-compliant network, the mobile equipment identifier (MEID) is returned. index number supported by the device. Returns an empty string if the unique device ID does not exist. 2. Incorrect parameter types.",
+      "注释信息": [
+        "@permission ohos.permission.GET_TELEPHONY_STATE",
+        "@param { number } slotId - Indicates the card slot index number, ranging from 0 to the maximum card slot",
+        "@param { AsyncCallback<string> } callback - Indicates the callback for getting the unique device ID.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Service connection failed.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error.",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@systemapi Hide this for inner system use.",
+        "@since 8"
+      ],
+      "层级": 1,
+      "上级": "radio",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [
+        {
+          "名称": "slotId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the card slot index number, ranging from 0 to the maximum card slot"
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<string>",
+          "必填": true,
+          "说明": "Indicates the callback for getting the unique device ID."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Service connection failed."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getUniqueDeviceId",
+      "返回值": "Promise<string>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the unique device ID of a specified card slot of the device. If the device is registered with a 3GPP-compliant network, the international mobile equipment identity (IMEI) is returned. If the device is registered with a 3GPP2-compliant network, the mobile equipment identifier (MEID) is returned. index number supported by the device. Returns an empty string if the unique device ID does not exist. 2. Incorrect parameter types.",
+      "注释信息": [
+        "@permission ohos.permission.GET_TELEPHONY_STATE",
+        "@param { number } slotId - Indicates the card slot index number, ranging from 0 to the maximum card slot",
+        "@returns { Promise<string> } Returns the unique device ID.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Service connection failed.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error.",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@systemapi Hide this for inner system use.",
+        "@since 8"
+      ],
+      "层级": 1,
+      "上级": "radio",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [
+        {
+          "名称": "slotId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the card slot index number, ranging from 0 to the maximum card slot"
+        }
+      ],
+      "return_description": "Returns the unique device ID.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Service connection failed."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getUniqueDeviceId",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the unique device ID of a specified card slot of the device. If the device is registered with a 3GPP-compliant network, the international mobile equipment identity (IMEI) is returned. If the device is registered with a 3GPP2-compliant network, the mobile equipment identifier (MEID) is returned. Returns an empty string if the unique device ID does not exist. 2. Incorrect parameter types.",
+      "注释信息": [
+        "@permission ohos.permission.GET_TELEPHONY_STATE",
+        "@param { AsyncCallback<string> } callback - Indicates the callback for getting the unique device ID.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Service connection failed.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error.",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@systemapi Hide this for inner system use.",
+        "@since 8"
+      ],
+      "层级": 1,
+      "上级": "radio",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<string>",
+          "必填": true,
+          "说明": "Indicates the callback for getting the unique device ID."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Service connection failed."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getPrimarySlotId",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the index number of the card slot where the primary card is located if multiple SIM cards are inserted. The primary card is the SIM card inserted in the card slot that uses data services by default. the primary card slot. 2. Incorrect parameter types.",
+      "注释信息": [
+        "@param { AsyncCallback<number> } callback - Indicates the callback for getting the index number of",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Service connection failed.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error.",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "radio",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<number>",
+          "必填": true,
+          "说明": "Indicates the callback for getting the index number of"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Service connection failed."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getPrimarySlotId",
+      "返回值": "Promise<number>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the index number of the card slot where the primary card is located if multiple SIM cards are inserted. The primary card is the SIM card inserted in the card slot that uses data services by default.",
+      "注释信息": [
+        "@returns { Promise<number> } Returns the index number of the primary card slot.",
+        "@throws { BusinessError } 8300002 - Service connection failed.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error.",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "radio",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [],
+      "return_description": "Returns the index number of the primary card slot.",
+      "error_codes": [
+        {
+          "code": "8300002",
+          "description": "Service connection failed."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "setPrimarySlotId",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Set the index number of the main SIM card slot. index number supported by the device. 2. Incorrect parameter types.",
+      "注释信息": [
+        "@permission ohos.permission.SET_TELEPHONY_STATE",
+        "@param { number } slotId - Indicates the card slot index number, ranging from 0 to the maximum card slot",
+        "@param { AsyncCallback<void> } callback - The callback of setPrimarySlotId.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Service connection failed.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300004 - No SIM card found.",
+        "@throws { BusinessError } 8300999 - Unknown error.",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@systemapi Hide this for inner system use.",
+        "@since 8"
+      ],
+      "层级": 1,
+      "上级": "radio",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [
+        {
+          "名称": "slotId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the card slot index number, ranging from 0 to the maximum card slot"
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "The callback of setPrimarySlotId."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Service connection failed."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300004",
+          "description": "No SIM card found."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "setPrimarySlotId",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Set the index number of the main SIM card slot. index number supported by the device. 2. Incorrect parameter types.",
+      "注释信息": [
+        "@permission ohos.permission.SET_TELEPHONY_STATE",
+        "@param { number } slotId - Indicates the card slot index number, ranging from 0 to the maximum card slot",
+        "@returns { Promise<void> } The promise returned by the setPrimarySlotId.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Service connection failed.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300004 - No SIM card found.",
+        "@throws { BusinessError } 8300999 - Unknown error.",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@systemapi Hide this for inner system use.",
+        "@since 8"
+      ],
+      "层级": 1,
+      "上级": "radio",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [
+        {
+          "名称": "slotId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the card slot index number, ranging from 0 to the maximum card slot"
+        }
+      ],
+      "return_description": "The promise returned by the setPrimarySlotId.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Service connection failed."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300004",
+          "description": "No SIM card found."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getSignalInformation",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the list of signal strength information of the registered network corresponding to a specified SIM card. index number supported by the device. the instance list of the child classes derived from {@link SignalInformation}. 2. Incorrect parameter types.",
+      "注释信息": [
+        "@param { number } slotId - Indicates the card slot index number, ranging from 0 to the maximum card slot",
+        "@param { AsyncCallback<Array<SignalInformation>> } callback - Indicates the callback for getting",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Service connection failed.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error.",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "radio",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [
+        {
+          "名称": "slotId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the card slot index number, ranging from 0 to the maximum card slot"
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<Array<SignalInformation>>",
+          "必填": true,
+          "说明": "Indicates the callback for getting"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Service connection failed."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getSignalInformation",
+      "返回值": "Promise<Array<SignalInformation>>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the list of signal strength information of the registered network corresponding to a specified SIM card. index number supported by the device. the child classes derived from {@link SignalInformation}. 2. Incorrect parameter types.",
+      "注释信息": [
+        "@param { number } slotId - Indicates the card slot index number, ranging from 0 to the maximum card slot",
+        "@returns { Promise<Array<SignalInformation>> } Returns the callback for getting the instance list of",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Service connection failed.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error.",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "radio",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [
+        {
+          "名称": "slotId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the card slot index number, ranging from 0 to the maximum card slot"
+        }
+      ],
+      "return_description": "Returns the callback for getting the instance list of",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Service connection failed."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getSignalInformationSync",
+      "返回值": "Array<SignalInformation>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the list of signal strength information of the registered network corresponding to a specified SIM card. card slots supported by the device. the child classes derived from {@link SignalInformation}.",
+      "注释信息": [
+        "@param { number } slotId - Indicates the card slot index number, ranging from 0 to the maximum",
+        "@returns { Array<SignalInformation> } Returns the callback for getting the instance list of",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "radio",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [
+        {
+          "名称": "slotId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the card slot index number, ranging from 0 to the maximum"
+        }
+      ],
+      "return_description": "Returns the callback for getting the instance list of",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "isNrSupported",
+      "返回值": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Checks whether the device supports 5G New Radio (NR).",
+      "注释信息": [
+        "@returns { boolean } Returns {@code true} if the device supports 5G NR; returns {@code false} otherwise.",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 7",
+        "@deprecated since 9",
+        "@useinstead telephony.radio#isNRSupported"
+      ],
+      "层级": 1,
+      "上级": "radio",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [],
+      "return_description": "Returns {@code true} if the device supports 5G NR; returns {@code false} otherwise.",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "isNrSupported",
+      "返回值": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Checks whether the device supports 5G New Radio (NR) by according card slot. index number supported by the device.",
+      "注释信息": [
+        "@param { number } slotId - Indicates the card slot index number, ranging from 0 to the maximum card slot",
+        "@returns { boolean } Returns {@code true} if the device supports 5G NR; returns {@code false} otherwise.",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead telephony.radio#isNRSupported"
+      ],
+      "层级": 1,
+      "上级": "radio",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [
+        {
+          "名称": "slotId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the card slot index number, ranging from 0 to the maximum card slot"
+        }
+      ],
+      "return_description": "Returns {@code true} if the device supports 5G NR; returns {@code false} otherwise.",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "isNRSupported",
+      "返回值": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Checks whether the device supports 5G New Radio (NR).",
+      "注释信息": [
+        "@returns { boolean } Returns {@code true} if the device supports 5G NR; returns {@code false} otherwise.",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "radio",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [],
+      "return_description": "Returns {@code true} if the device supports 5G NR; returns {@code false} otherwise.",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "isNRSupported",
+      "返回值": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Checks whether the device supports 5G New Radio (NR) by according card slot. index number supported by the device.",
+      "注释信息": [
+        "@param { number } slotId - Indicates the card slot index number, ranging from 0 to the maximum card slot",
+        "@returns { boolean } Returns {@code true} if the device supports 5G NR; returns {@code false} otherwise.",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "radio",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [
+        {
+          "名称": "slotId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the card slot index number, ranging from 0 to the maximum card slot"
+        }
+      ],
+      "return_description": "Returns {@code true} if the device supports 5G NR; returns {@code false} otherwise.",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "isRadioOn",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Checks whether the radio service is enabled. ranging from 0 to the maximum card slot index number supported by the device. Returns {@code false} otherwise. 2. Incorrect parameter types.",
+      "注释信息": [
+        "@permission ohos.permission.GET_NETWORK_INFO",
+        "@param { number } slotId - Indicates the card slot index number,",
+        "@param { AsyncCallback<boolean> } callback - Returns {@code true} If the radio service is enabled.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Service connection failed.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error.",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "radio",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [
+        {
+          "名称": "slotId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the card slot index number,"
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<boolean>",
+          "必填": true,
+          "说明": "Returns {@code true} If the radio service is enabled."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Service connection failed."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "isRadioOn",
+      "返回值": "Promise<boolean>",
+      "所属模块": "未知模块",
+      "功能描述": "Checks whether the radio service is enabled. ranging from 0 to the maximum card slot index number supported by the device. 2. Incorrect parameter types.",
+      "注释信息": [
+        "@permission ohos.permission.GET_NETWORK_INFO",
+        "@param { number } slotId - Indicates the card slot index number,",
+        "@returns { Promise<boolean> } Returns {@code true} If the radio service is enabled; returns {@code false} otherwise.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Service connection failed.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error.",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "radio",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [
+        {
+          "名称": "slotId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the card slot index number,"
+        }
+      ],
+      "return_description": "Returns {@code true} If the radio service is enabled; returns {@code false} otherwise.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Service connection failed."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "isRadioOn",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Checks whether the radio service is enabled. Returns {@code false} otherwise. 2. Incorrect parameter types.",
+      "注释信息": [
+        "@permission ohos.permission.GET_NETWORK_INFO",
+        "@param { AsyncCallback<boolean> } callback - Returns {@code true} If the radio service is enabled.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Service connection failed.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error.",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "radio",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<boolean>",
+          "必填": true,
+          "说明": "Returns {@code true} If the radio service is enabled."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Service connection failed."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "turnOnRadio",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Turn on the radio service. ranging from 0 to the maximum card slot index number supported by the device. 2. Incorrect parameter types.",
+      "注释信息": [
+        "@permission ohos.permission.SET_TELEPHONY_STATE",
+        "@param { number } slotId - Indicates the card slot index number,",
+        "@param { AsyncCallback<void> } callback - The callback of turnOnRadio.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Service connection failed.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error.",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@systemapi Hide this for inner system use.",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "radio",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [
+        {
+          "名称": "slotId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the card slot index number,"
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "The callback of turnOnRadio."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Service connection failed."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "turnOnRadio",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Turn on the radio service. ranging from 0 to the maximum card slot index number supported by the device. 2. Incorrect parameter types.",
+      "注释信息": [
+        "@permission ohos.permission.SET_TELEPHONY_STATE",
+        "@param { number } slotId - Indicates the card slot index number,",
+        "@returns { Promise<void> } The promise returned by the turnOnRadio.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Service connection failed.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error.",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@systemapi Hide this for inner system use.",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "radio",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [
+        {
+          "名称": "slotId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the card slot index number,"
+        }
+      ],
+      "return_description": "The promise returned by the turnOnRadio.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Service connection failed."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "turnOnRadio",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Turn on the radio service. 2. Incorrect parameter types.",
+      "注释信息": [
+        "@permission ohos.permission.SET_TELEPHONY_STATE",
+        "@param { AsyncCallback<void> } callback - The callback of turnOnRadio.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Service connection failed.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error.",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@systemapi Hide this for inner system use.",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "radio",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "The callback of turnOnRadio."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Service connection failed."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "turnOffRadio",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Turn off the radio service. ranging from 0 to the maximum card slot index number supported by the device. 2. Incorrect parameter types.",
+      "注释信息": [
+        "@permission ohos.permission.SET_TELEPHONY_STATE",
+        "@param { number } slotId - Indicates the card slot index number,",
+        "@param { AsyncCallback<void> } callback - The callback of turnOffRadio.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Service connection failed.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error.",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@systemapi Hide this for inner system use.",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "radio",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [
+        {
+          "名称": "slotId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the card slot index number,"
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "The callback of turnOffRadio."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Service connection failed."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "turnOffRadio",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Turn off the radio service. ranging from 0 to the maximum card slot index number supported by the device. 2. Incorrect parameter types.",
+      "注释信息": [
+        "@permission ohos.permission.SET_TELEPHONY_STATE",
+        "@param { number } slotId - Indicates the card slot index number,",
+        "@returns { Promise<void> } The promise returned by the turnOffRadio.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Service connection failed.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error.",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@systemapi Hide this for inner system use.",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "radio",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [
+        {
+          "名称": "slotId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the card slot index number,"
+        }
+      ],
+      "return_description": "The promise returned by the turnOffRadio.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Service connection failed."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "turnOffRadio",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Turn off the radio service. 2. Incorrect parameter types.",
+      "注释信息": [
+        "@permission ohos.permission.SET_TELEPHONY_STATE",
+        "@param { AsyncCallback<void> } callback - The callback of turnOffRadio.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Service connection failed.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error.",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@systemapi Hide this for inner system use.",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "radio",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "The callback of turnOffRadio."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Service connection failed."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getOperatorName",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Get the operator name of the specified SIM card slot. ranging from 0 to the maximum card slot index number supported by the device. 2. Incorrect parameter types.",
+      "注释信息": [
+        "@param { number } slotId - Indicates the card slot index number,",
+        "@param { AsyncCallback<string> } callback - Indicates the callback for getting the operator name.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Service connection failed.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error.",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "radio",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [
+        {
+          "名称": "slotId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the card slot index number,"
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<string>",
+          "必填": true,
+          "说明": "Indicates the callback for getting the operator name."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Service connection failed."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getOperatorName",
+      "返回值": "Promise<string>",
+      "所属模块": "未知模块",
+      "功能描述": "Get the operator name of the specified SIM card slot. ranging from 0 to the maximum card slot index number supported by the device. 2. Incorrect parameter types.",
+      "注释信息": [
+        "@param { number } slotId - Indicates the card slot index number,",
+        "@returns { Promise<string> } Returns the operator name.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Service connection failed.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error.",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 7"
+      ],
+      "层级": 1,
+      "上级": "radio",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [
+        {
+          "名称": "slotId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the card slot index number,"
+        }
+      ],
+      "return_description": "Returns the operator name.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Service connection failed."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getOperatorNameSync",
+      "返回值": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Get the operator name of the specified SIM card slot. ranging from 0 to the maximum card slot index number supported by the device.",
+      "注释信息": [
+        "@param { number } slotId - Indicates the card slot index number,",
+        "@returns { string } Returns the operator name.",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "radio",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [
+        {
+          "名称": "slotId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the card slot index number,"
+        }
+      ],
+      "return_description": "Returns the operator name.",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "setPreferredNetwork",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Set the preferred network for the specified SIM card slot. ranging from 0 to the maximum card slot index number supported by the device. 2. Incorrect parameter types.",
+      "注释信息": [
+        "@permission ohos.permission.SET_TELEPHONY_STATE",
+        "@param { number } slotId - Indicates the card slot index number,",
+        "@param { PreferredNetworkMode } networkMode - Indicates that you want to set the preferred network mode.",
+        "@param { AsyncCallback<void> } callback - The callback of setPreferredNetwork.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Service connection failed.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error.",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@systemapi Hide this for inner system use.",
+        "@since 8"
+      ],
+      "层级": 1,
+      "上级": "radio",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [
+        {
+          "名称": "slotId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the card slot index number,"
+        },
+        {
+          "名称": "networkMode",
+          "类型": "PreferredNetworkMode",
+          "必填": true,
+          "说明": "Indicates that you want to set the preferred network mode."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "The callback of setPreferredNetwork."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Service connection failed."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "setPreferredNetwork",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Set the preferred network for the specified SIM card slot. ranging from 0 to the maximum card slot index number supported by the device. 2. Incorrect parameter types.",
+      "注释信息": [
+        "@permission ohos.permission.SET_TELEPHONY_STATE",
+        "@param { number } slotId - Indicates the card slot index number,",
+        "@param { PreferredNetworkMode } networkMode - Indicates that you want to set the preferred network mode.",
+        "@returns { Promise<void> } The promise returned by the setPreferredNetwork.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Service connection failed.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error.",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@systemapi Hide this for inner system use.",
+        "@since 8"
+      ],
+      "层级": 1,
+      "上级": "radio",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [
+        {
+          "名称": "slotId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the card slot index number,"
+        },
+        {
+          "名称": "networkMode",
+          "类型": "PreferredNetworkMode",
+          "必填": true,
+          "说明": "Indicates that you want to set the preferred network mode."
+        }
+      ],
+      "return_description": "The promise returned by the setPreferredNetwork.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Service connection failed."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getPreferredNetwork",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Get the preferred network for the specified SIM card slot. ranging from 0 to the maximum card slot index number supported by the device. the preferred network mode to obtain. 2. Incorrect parameter types.",
+      "注释信息": [
+        "@permission ohos.permission.GET_TELEPHONY_STATE",
+        "@param { number } slotId - Indicates the card slot index number,",
+        "@param { AsyncCallback<PreferredNetworkMode> } callback - Indicates the callback for getting",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Service connection failed.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error.",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@systemapi Hide this for inner system use.",
+        "@since 8"
+      ],
+      "层级": 1,
+      "上级": "radio",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [
+        {
+          "名称": "slotId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the card slot index number,"
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<PreferredNetworkMode>",
+          "必填": true,
+          "说明": "Indicates the callback for getting"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Service connection failed."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getPreferredNetwork",
+      "返回值": "Promise<PreferredNetworkMode>",
+      "所属模块": "未知模块",
+      "功能描述": "Get the preferred network for the specified SIM card slot. ranging from 0 to the maximum card slot index number supported by the device. 2. Incorrect parameter types.",
+      "注释信息": [
+        "@permission ohos.permission.GET_TELEPHONY_STATE",
+        "@param { number } slotId - Indicates the card slot index number,",
+        "@returns { Promise<PreferredNetworkMode> } Returns the callback for getting the preferred network mode to obtain.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Service connection failed.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error.",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@systemapi Hide this for inner system use.",
+        "@since 8"
+      ],
+      "层级": 1,
+      "上级": "radio",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [
+        {
+          "名称": "slotId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the card slot index number,"
+        }
+      ],
+      "return_description": "Returns the callback for getting the preferred network mode to obtain.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Service connection failed."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getImsRegInfo",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Get the IMS registration state info of specified IMS service type. ranging from 0 to the maximum card slot index number supported by the device.",
+      "注释信息": [
+        "@permission ohos.permission.GET_TELEPHONY_STATE",
+        "@param { number } slotId - Indicates the card slot index number,",
+        "@param { ImsServiceType } imsType - Indicates the ims service type of the {@link ImsServiceType}.",
+        "@param { AsyncCallback<ImsRegInfo> } callback - Indicates an instance of the {@link ImsRegInfo} class.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Service connection failed.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error.",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@systemapi Hide this for inner system use.",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "radio",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [
+        {
+          "名称": "slotId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the card slot index number,"
+        },
+        {
+          "名称": "imsType",
+          "类型": "ImsServiceType",
+          "必填": true,
+          "说明": "Indicates the ims service type of the {@link ImsServiceType}."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<ImsRegInfo>",
+          "必填": true,
+          "说明": "Indicates an instance of the {@link ImsRegInfo} class."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Service connection failed."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getImsRegInfo",
+      "返回值": "Promise<ImsRegInfo>",
+      "所属模块": "未知模块",
+      "功能描述": "Get the IMS registration state info of specified IMS service type. ranging from 0 to the maximum card slot index number supported by the device.",
+      "注释信息": [
+        "@permission ohos.permission.GET_TELEPHONY_STATE",
+        "@param { number } slotId - Indicates the card slot index number,",
+        "@param { ImsServiceType } imsType - Indicates the ims service type of the {@link ImsServiceType}.",
+        "@returns { Promise<ImsRegInfo> } Returns an instance of the {@link ImsRegInfo} class.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Service connection failed.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error.",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@systemapi Hide this for inner system use.",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "radio",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [
+        {
+          "名称": "slotId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the card slot index number,"
+        },
+        {
+          "名称": "imsType",
+          "类型": "ImsServiceType",
+          "必填": true,
+          "说明": "Indicates the ims service type of the {@link ImsServiceType}."
+        }
+      ],
+      "return_description": "Returns an instance of the {@link ImsRegInfo} class.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Service connection failed."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Called when the IMS registration state of specified IMS service type corresponding to a monitored {@code slotId} updates. ranging from 0 to the maximum card slot index number supported by the device. the {@link ImsRegInfo} class.",
+      "注释信息": [
+        "@permission ohos.permission.GET_TELEPHONY_STATE",
+        "@param { 'imsRegStateChange' } type - Event type. Indicates the imsRegStateChange event to be subscribed to.",
+        "@param { number } slotId - Indicates the card slot index number,",
+        "@param { ImsServiceType } imsType - Indicates the ims service type of the {@link ImsServiceType}.",
+        "@param { Callback<ImsRegInfo> } callback - Indicates the callback for getting an instance of",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Service connection failed.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error.",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@systemapi Hide this for inner system use.",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "radio",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'imsRegStateChange'",
+          "必填": true,
+          "说明": "Event type. Indicates the imsRegStateChange event to be subscribed to."
+        },
+        {
+          "名称": "slotId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the card slot index number,"
+        },
+        {
+          "名称": "imsType",
+          "类型": "ImsServiceType",
+          "必填": true,
+          "说明": "Indicates the ims service type of the {@link ImsServiceType}."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<ImsRegInfo>",
+          "必填": true,
+          "说明": "Indicates the callback for getting an instance of"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Service connection failed."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unsubscribe from imsRegStateChange event. ranging from 0 to the maximum card slot index number supported by the device. an instance of the {@link ImsRegInfo} class.",
+      "注释信息": [
+        "@permission ohos.permission.GET_TELEPHONY_STATE",
+        "@param { 'imsRegStateChange' } type - Event type. Indicates the imsRegStateChange event to unsubscribe from.",
+        "@param { number } slotId - Indicates the card slot index number,",
+        "@param { ImsServiceType } imsType - Indicates the ims service type of the {@link ImsServiceType}.",
+        "@param { Callback<ImsRegInfo> } callback - Indicates the callback for getting",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Service connection failed.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error.",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@systemapi Hide this for inner system use.",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "radio",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'imsRegStateChange'",
+          "必填": true,
+          "说明": "Event type. Indicates the imsRegStateChange event to unsubscribe from."
+        },
+        {
+          "名称": "slotId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the card slot index number,"
+        },
+        {
+          "名称": "imsType",
+          "类型": "ImsServiceType",
+          "必填": true,
+          "说明": "Indicates the ims service type of the {@link ImsServiceType}."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<ImsRegInfo>",
+          "必填": true,
+          "说明": "Indicates the callback for getting"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Service connection failed."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getBasebandVersion",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Get the version of Baseband. supported by the device. 2. Incorrect parameter types.",
+      "注释信息": [
+        "@permission ohos.permission.GET_TELEPHONY_STATE",
+        "@param { number } slotId - Indicates the card slot index number, ranging from 0 to the maximum card slot index number",
+        "@param { AsyncCallback<string> } callback - Indicates the callback for getting the baseband version.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Service connection failed.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error.",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@systemapi Hide this for inner system use.",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "radio",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [
+        {
+          "名称": "slotId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the card slot index number, ranging from 0 to the maximum card slot index number"
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<string>",
+          "必填": true,
+          "说明": "Indicates the callback for getting the baseband version."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Service connection failed."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getBasebandVersion",
+      "返回值": "Promise<string>",
+      "所属模块": "未知模块",
+      "功能描述": "Get the version of Baseband. supported by the device. 2. Incorrect parameter types.",
+      "注释信息": [
+        "@permission ohos.permission.GET_TELEPHONY_STATE",
+        "@param { number } slotId - Indicates the card slot index number, ranging from 0 to the maximum card slot index number",
+        "@returns { Promise<string> } Returns the baseband version.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Service connection failed.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error.",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@systemapi Hide this for inner system use.",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "radio",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [
+        {
+          "名称": "slotId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the card slot index number, ranging from 0 to the maximum card slot index number"
+        }
+      ],
+      "return_description": "Returns the baseband version.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Service connection failed."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "setNROptionMode",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Set the NR option mode. number supported by the device. 2. Incorrect parameter types.",
+      "注释信息": [
+        "@permission ohos.permission.SET_TELEPHONY_STATE",
+        "@param { number } slotId - Indicates the card slot index number, ranging from 0 to the maximum card slot index",
+        "@param { NROptionMode } mode - Indicates the nr option mode to be set.",
+        "@param { AsyncCallback<void> } callback - Indicates the callback for getting the option result.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Service connection failed.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error.",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@systemapi Hide this for inner system use.",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "radio",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [
+        {
+          "名称": "slotId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the card slot index number, ranging from 0 to the maximum card slot index"
+        },
+        {
+          "名称": "mode",
+          "类型": "NROptionMode",
+          "必填": true,
+          "说明": "Indicates the nr option mode to be set."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "Indicates the callback for getting the option result."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Service connection failed."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "setNROptionMode",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Set the NR option mode. number supported by the device. 2. Incorrect parameter types.",
+      "注释信息": [
+        "@permission ohos.permission.SET_TELEPHONY_STATE",
+        "@param { number } slotId - Indicates the card slot index number, ranging from 0 to the maximum card slot index",
+        "@param { NROptionMode } mode - Indicates the nr option mode to be set.",
+        "@returns { Promise<void> } Returns option result.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Service connection failed.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error.",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@systemapi Hide this for inner system use.",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "radio",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [
+        {
+          "名称": "slotId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the card slot index number, ranging from 0 to the maximum card slot index"
+        },
+        {
+          "名称": "mode",
+          "类型": "NROptionMode",
+          "必填": true,
+          "说明": "Indicates the nr option mode to be set."
+        }
+      ],
+      "return_description": "Returns option result.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Service connection failed."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getNROptionMode",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Get the option mode of NR. index number supported by the device. 2. Incorrect parameter types.",
+      "注释信息": [
+        "@param { number } slotId - Indicates the card slot index number, ranging from 0 to the maximum card slot",
+        "@param { AsyncCallback<NROptionMode> } callback - Indicates the callback for getting the selection mode of NR.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Service connection failed.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error.",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@systemapi Hide this for inner system use.",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "radio",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [
+        {
+          "名称": "slotId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the card slot index number, ranging from 0 to the maximum card slot"
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<NROptionMode>",
+          "必填": true,
+          "说明": "Indicates the callback for getting the selection mode of NR."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Service connection failed."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getNROptionMode",
+      "返回值": "Promise<NROptionMode>",
+      "所属模块": "未知模块",
+      "功能描述": "Get the option mode of NR. index number supported by the device. 2. Incorrect parameter types.",
+      "注释信息": [
+        "@param { number } slotId - Indicates the card slot index number, ranging from 0 to the maximum card slot",
+        "@returns { Promise<NROptionMode> } Returns the selection mode of NR.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Service connection failed.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error.",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@systemapi Hide this for inner system use.",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "radio",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [
+        {
+          "名称": "slotId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the card slot index number, ranging from 0 to the maximum card slot"
+        }
+      ],
+      "return_description": "Returns the selection mode of NR.",
+      "error_codes": [
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Service connection failed."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "setNetworkCapability",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Set the type and state for the specified network capability. ranging from 0 to the maximum card slot index number supported by the device. 2. Incorrect parameter types.",
+      "注释信息": [
+        "@permission ohos.permission.SET_TELEPHONY_STATE",
+        "@param { number } slotId - Indicates the card slot index number,",
+        "@param { NetworkCapabilityType } type - Indicates the service type of the {@link NetworkCapabilityType}.",
+        "@param { NetworkCapabilityState } state - Indicates the service ability state of the {@link NetworkCapabilityState}.",
+        "@param { AsyncCallback<void> } callback - The callback of setNetworkCapability.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 8300001 - Invalid parameter value.",
+        "@throws { BusinessError } 8300002 - Service connection failed.",
+        "@throws { BusinessError } 8300003 - System internal error.",
+        "@throws { BusinessError } 8300999 - Unknown error.",
+        "@syscap SystemCapability.Telephony.CoreService",
+        "@systemapi Hide this for inner system use.",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "radio",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Telephony.CoreService",
+      "parameters": [
+        {
+          "名称": "slotId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the card slot index number,"
+        },
+        {
+          "名称": "type",
+          "类型": "NetworkCapabilityType",
+          "必填": true,
+          "说明": "Indicates the service type of the {@link NetworkCapabilityType}."
+        },
+        {
+          "名称": "state",
+          "类型": "NetworkCapabilityState",
+          "必填": true,
+          "说明": "Indicates the service ability state of the {@link NetworkCapabilityState}."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "The callback of setNetworkCapability."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "8300001",
+          "description": "Invalid parameter value."
+        },
+        {
+          "code": "8300002",
+          "description": "Service connection failed."
+        },
+        {
+          "code": "8300003",
+          "description": "System internal error."
+        },
+        {
+          "code": "8300999",
+          "description": "Unknown error."
+        }
+      ],
+      "版本": "API5.0"
+    }
+  ]
+}

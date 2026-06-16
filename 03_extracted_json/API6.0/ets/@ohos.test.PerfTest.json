@@ -1,0 +1,714 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.TestKit",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "enum",
+      "名称": "PerfMetric",
+      "所属模块": "@kit.TestKit",
+      "功能描述": "Enumerates the metric type of performance test.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.Test.PerfTest",
+        "@atomicservice",
+        "@since 20",
+        "@test"
+      ],
+      "层级": 1,
+      "上级": "@kit.TestKit",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Test.PerfTest",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "DURATION",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "Duration of the single execution, the unit is ms.",
+      "注释信息": [
+        "@syscap SystemCapability.Test.PerfTest",
+        "@atomicservice",
+        "@since 20",
+        "@test"
+      ],
+      "层级": 1,
+      "上级": "PerfMetric",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Test.PerfTest",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CPU_LOAD",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Process CPU load during a single execution, the unit is %.",
+      "注释信息": [
+        "@syscap SystemCapability.Test.PerfTest",
+        "@atomicservice",
+        "@since 20",
+        "@test"
+      ],
+      "层级": 1,
+      "上级": "PerfMetric",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Test.PerfTest",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CPU_USAGE",
+      "值": "2",
+      "所属模块": "未知模块",
+      "功能描述": "Process CPU usage during a single execution, the unit is %.",
+      "注释信息": [
+        "@syscap SystemCapability.Test.PerfTest",
+        "@atomicservice",
+        "@since 20",
+        "@test"
+      ],
+      "层级": 1,
+      "上级": "PerfMetric",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Test.PerfTest",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "MEMORY_RSS",
+      "值": "3",
+      "所属模块": "未知模块",
+      "功能描述": "Memory change before and after a single execution, including the shared library, the unit is KB.",
+      "注释信息": [
+        "@syscap SystemCapability.Test.PerfTest",
+        "@atomicservice",
+        "@since 20",
+        "@test"
+      ],
+      "层级": 1,
+      "上级": "PerfMetric",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Test.PerfTest",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "MEMORY_PSS",
+      "值": "4",
+      "所属模块": "未知模块",
+      "功能描述": "Memory change before and after a single execution, excluding shared libraries, the unit is KB.",
+      "注释信息": [
+        "@syscap SystemCapability.Test.PerfTest",
+        "@atomicservice",
+        "@since 20",
+        "@test"
+      ],
+      "层级": 1,
+      "上级": "PerfMetric",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Test.PerfTest",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "APP_START_RESPONSE_TIME",
+      "值": "5",
+      "所属模块": "未知模块",
+      "功能描述": "Application start response delay, the unit is ms. Marks: 1) Delay calculation is restricted by system dotting reporting. The start time is the time when the click event is reported, and the end time of the response delay is the time when the system responds to the first frame after the click. It is different from the end-to-end user-perceived delay. 2) Application start delay can be collected in the following scenarios: clicking the application icon on the desktop; clicking the application on the Multi-Task Center; clicking the application icon on the Dock; clicking the application icon on the application center. 3) This metric does not support the test of current application. 4) During the test, only the data of the first startup of the specified application can be collected.",
+      "注释信息": [
+        "@syscap SystemCapability.Test.PerfTest",
+        "@atomicservice",
+        "@since 20",
+        "@test"
+      ],
+      "层级": 1,
+      "上级": "PerfMetric",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Test.PerfTest",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "APP_START_COMPLETE_TIME",
+      "值": "6",
+      "所属模块": "未知模块",
+      "功能描述": "Application start completion delay, the unit is ms. Marks: 1) Delay calculation is restricted by system dotting reporting. The start time is the time when the click event is reported, and the end time of the completion delay is the time when the first frame is displayed after the application is started. It is different from the end-to-end user-perceived delay. 2) Application start delay can be collected in the following scenarios: clicking the application icon on the desktop; clicking the application on the Multi-Task Center; clicking the application icon on the Dock; clicking the application icon on the application center. 3) This metric does not support the test of current application. 4) During the test, only the data of the first start of specified application can be collected.",
+      "注释信息": [
+        "@syscap SystemCapability.Test.PerfTest",
+        "@atomicservice",
+        "@since 20",
+        "@test"
+      ],
+      "层级": 1,
+      "上级": "PerfMetric",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Test.PerfTest",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "PAGE_SWITCH_COMPLETE_TIME",
+      "值": "7",
+      "所属模块": "未知模块",
+      "功能描述": "Page switching completion delay, the unit is ms. Marks: 1) Delay calculation is restricted by system dotting and reporting. The start time is the time when the click event is reported, and the end time of the completion delay is the time when the first frame is displayed after page is switched. It is different from the end-to-end user-perceived delay. 2) Page switching delay can be collected in the page switchover scenario of the Router or Navigation component. 3) During the test, only the data of the first page switching in specified application can be collected.",
+      "注释信息": [
+        "@syscap SystemCapability.Test.PerfTest",
+        "@atomicservice",
+        "@since 20",
+        "@test"
+      ],
+      "层级": 1,
+      "上级": "PerfMetric",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Test.PerfTest",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "LIST_SWIPE_FPS",
+      "值": "8",
+      "所属模块": "未知模块",
+      "功能描述": "List sliding frame rate, the unit is fps. Mark: 1) List sliding frame rate: refers to the frequency at which the screen can be refreshed when the list is sliding. Only the sliding frame rate of the List, grid, scroll, and waterflow scroll components of ArKUI subsystems can be collected. 2) During the test, only the data of the first sliding of the component in specified application can be collected.",
+      "注释信息": [
+        "@syscap SystemCapability.Test.PerfTest",
+        "@atomicservice",
+        "@since 20",
+        "@test"
+      ],
+      "层级": 1,
+      "上级": "PerfMetric",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Test.PerfTest",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "interface",
+      "名称": "PerfTestStrategy",
+      "所属模块": "@kit.TestKit",
+      "功能描述": "Test task execution strategy, which is used to initialize the PerfTest object in {@link PerfTest.create}.",
+      "注释信息": [
+        "@typedef PerfTestStrategy",
+        "@syscap SystemCapability.Test.PerfTest",
+        "@atomicservice",
+        "@since 20",
+        "@test"
+      ],
+      "层级": 1,
+      "上级": "@kit.TestKit",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Test.PerfTest",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "property",
+      "名称": "metrics",
+      "属性类型": "Array<PerfMetric>",
+      "所属模块": "未知模块",
+      "功能描述": "List of performance metrics to be collected.",
+      "注释信息": [
+        "@type { Array<PerfMetric> }",
+        "@syscap SystemCapability.Test.PerfTest",
+        "@atomicservice",
+        "@since 20",
+        "@test"
+      ],
+      "层级": 1,
+      "上级": "PerfTestStrategy",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Test.PerfTest",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "property",
+      "名称": "actionCode",
+      "属性类型": "Callback<Callback<boolean>>",
+      "所属模块": "未知模块",
+      "功能描述": "Code segment for performance testing. The input parameter type of actionCode is {@link Callback<boolean>}. As actionCode can be defined as asynchronous function, developers need to invoke this callback function when the execution of actionCode is complete, to help PerfTest identify the time when the execution of the actionCode is complete. For example, the input parameter callback function of actionCode is defined as \"(finish: Callback<boolean>)\". When actionCode is executed completly, \"finish(true)\" should be invoked, the value true indicates actionCode is successfully executed. When an exception occurs, \"finish(false)\" should be invoked, the value false indicates actionCode is unsuccessfully executed.",
+      "注释信息": [
+        "@type { Callback<Callback<boolean>> }",
+        "@syscap SystemCapability.Test.PerfTest",
+        "@atomicservice",
+        "@since 20",
+        "@test"
+      ],
+      "层级": 1,
+      "上级": "PerfTestStrategy",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Test.PerfTest",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "property",
+      "名称": "resetCode",
+      "属性类型": "Callback<Callback<boolean>>",
+      "所属模块": "未知模块",
+      "功能描述": "Reset code segment after each test. It is executed after {@link actionCode}. Data collection is not performed during this execution. The input parameter type of resetCode is {@link Callback<boolean>}. As resetCode can be defined as asynchronous function, developers need to invoke this callback function when the execution of resetCode is complete, to help PerfTest identify the time when the execution of the resetCode is complete. For example, the input parameter callback function of resetCode is defined as \"(finish: Callback<boolean>)\". When resetCode is executed completly, \"finish(true)\" should be invoked, the value true indicates resetCode is successfully executed. When an exception occurs, \"finish(false)\" should be invoked, the value false indicates resetCode is unsuccessfully executed.",
+      "注释信息": [
+        "@type { ?Callback<Callback<boolean>> }",
+        "@syscap SystemCapability.Test.PerfTest",
+        "@atomicservice",
+        "@since 20",
+        "@test"
+      ],
+      "层级": 1,
+      "上级": "PerfTestStrategy",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Test.PerfTest",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "property",
+      "名称": "bundleName",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "The package name of the application to be tested. The default value is the package name of current application.",
+      "注释信息": [
+        "@type { ?string }",
+        "@syscap SystemCapability.Test.PerfTest",
+        "@atomicservice",
+        "@since 20",
+        "@test"
+      ],
+      "层级": 1,
+      "上级": "PerfTestStrategy",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Test.PerfTest",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "property",
+      "名称": "iterations",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Iterations of the test, default is 5.",
+      "注释信息": [
+        "@type { ?number }",
+        "@syscap SystemCapability.Test.PerfTest",
+        "@atomicservice",
+        "@since 20",
+        "@test"
+      ],
+      "层级": 1,
+      "上级": "PerfTestStrategy",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Test.PerfTest",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "property",
+      "名称": "timeout",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Timeout in millisecond for executing a single-time {@link actionCode} or {@link resetCode}, default is 10000.",
+      "注释信息": [
+        "@type { ?number }",
+        "@syscap SystemCapability.Test.PerfTest",
+        "@atomicservice",
+        "@since 20",
+        "@test"
+      ],
+      "层级": 1,
+      "上级": "PerfTestStrategy",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Test.PerfTest",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "interface",
+      "名称": "PerfMeasureResult",
+      "所属模块": "@kit.TestKit",
+      "功能描述": "Test results of specified performance metric.",
+      "注释信息": [
+        "@typedef PerfMeasureResult",
+        "@syscap SystemCapability.Test.PerfTest",
+        "@atomicservice",
+        "@since 20",
+        "@test"
+      ],
+      "层级": 1,
+      "上级": "@kit.TestKit",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Test.PerfTest",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "property",
+      "名称": "metric",
+      "属性类型": "PerfMetric",
+      "所属模块": "未知模块",
+      "功能描述": "The metric this result belongs to.",
+      "注释信息": [
+        "@type { PerfMetric }",
+        "@readonly",
+        "@syscap SystemCapability.Test.PerfTest",
+        "@atomicservice",
+        "@since 20",
+        "@test"
+      ],
+      "层级": 1,
+      "上级": "PerfMeasureResult",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Test.PerfTest",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "property",
+      "名称": "roundValues",
+      "属性类型": "Array<number>",
+      "所属模块": "未知模块",
+      "功能描述": "The round values of the specified metric in the test.",
+      "注释信息": [
+        "@type { Array<number> }",
+        "@readonly",
+        "@syscap SystemCapability.Test.PerfTest",
+        "@atomicservice",
+        "@since 20",
+        "@test"
+      ],
+      "层级": 1,
+      "上级": "PerfMeasureResult",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Test.PerfTest",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "property",
+      "名称": "maximum",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "The maximum of the specified metric in the test.",
+      "注释信息": [
+        "@type { number }",
+        "@readonly",
+        "@syscap SystemCapability.Test.PerfTest",
+        "@atomicservice",
+        "@since 20",
+        "@test"
+      ],
+      "层级": 1,
+      "上级": "PerfMeasureResult",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Test.PerfTest",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "property",
+      "名称": "minimum",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "The minimum of the specified metric in the test.",
+      "注释信息": [
+        "@type { number }",
+        "@readonly",
+        "@syscap SystemCapability.Test.PerfTest",
+        "@atomicservice",
+        "@since 20",
+        "@test"
+      ],
+      "层级": 1,
+      "上级": "PerfMeasureResult",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Test.PerfTest",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "property",
+      "名称": "average",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "The average of the specified metric in the test.",
+      "注释信息": [
+        "@type { number }",
+        "@readonly",
+        "@syscap SystemCapability.Test.PerfTest",
+        "@atomicservice",
+        "@since 20",
+        "@test"
+      ],
+      "层级": 1,
+      "上级": "PerfMeasureResult",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Test.PerfTest",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "class",
+      "名称": "PerfTest",
+      "所属模块": "@kit.TestKit",
+      "功能描述": "The unified facade of PerformanceTest framework, can be used to executing the performance test task.",
+      "注释信息": [
+        "@syscap SystemCapability.Test.PerfTest",
+        "@atomicservice",
+        "@since 20",
+        "@test"
+      ],
+      "层级": 1,
+      "上级": "@kit.TestKit",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Test.PerfTest",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "create",
+      "返回值": "PerfTest",
+      "所属模块": "未知模块",
+      "功能描述": "Create an {@link PerfTest} object.",
+      "注释信息": [
+        "@param { PerfTestStrategy } strategy - test task execution strategy.",
+        "@returns { PerfTest } the {@link PerfTest} object.",
+        "@throws { BusinessError } 32400001 - Initialization failed.",
+        "@throws { BusinessError } 32400002 - Internal error. Possible causes: 1. IPC connection failed. 2. The object does not exist.",
+        "@throws { BusinessError } 32400003 - Parameter verification failed.",
+        "@throws { BusinessError } 32400007 - The API does not support concurrent calls.",
+        "@static",
+        "@syscap SystemCapability.Test.PerfTest",
+        "@atomicservice",
+        "@since 20",
+        "@test"
+      ],
+      "层级": 1,
+      "上级": "PerfTest",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Test.PerfTest",
+      "parameters": [
+        {
+          "名称": "strategy",
+          "类型": "PerfTestStrategy",
+          "必填": true,
+          "说明": "test task execution strategy."
+        }
+      ],
+      "return_description": "the {@link PerfTest} object.",
+      "error_codes": [
+        {
+          "code": "32400001",
+          "description": "Initialization failed."
+        },
+        {
+          "code": "32400002",
+          "description": "Internal error. Possible causes: 1. IPC connection failed. 2. The object does not exist."
+        },
+        {
+          "code": "32400003",
+          "description": "Parameter verification failed."
+        },
+        {
+          "code": "32400007",
+          "description": "The API does not support concurrent calls."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "run",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Start the performance test.",
+      "注释信息": [
+        "@returns { Promise<void> }",
+        "@throws { BusinessError } 32400002 - Internal error. Possible causes: 1. IPC connection failed. 2. The object does not exist.",
+        "@throws { BusinessError } 32400004 - Failed to execute the callback. Possible causes: 1. An exception is thrown in the callback. 2. Callback execution timed out.",
+        "@throws { BusinessError } 32400005 - Failed to collect metric data.",
+        "@throws { BusinessError } 32400007 - The API does not support concurrent calls.",
+        "@syscap SystemCapability.Test.PerfTest",
+        "@atomicservice",
+        "@since 20",
+        "@test"
+      ],
+      "层级": 1,
+      "上级": "PerfTest",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Test.PerfTest",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "32400002",
+          "description": "Internal error. Possible causes: 1. IPC connection failed. 2. The object does not exist."
+        },
+        {
+          "code": "32400004",
+          "description": "Failed to execute the callback. Possible causes: 1. An exception is thrown in the callback. 2. Callback execution timed out."
+        },
+        {
+          "code": "32400005",
+          "description": "Failed to collect metric data."
+        },
+        {
+          "code": "32400007",
+          "description": "The API does not support concurrent calls."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "getMeasureResult",
+      "返回值": "PerfMeasureResult",
+      "所属模块": "未知模块",
+      "功能描述": "Get the test result of a specified performance metric. If no test result exist, -1 is returned for all results.",
+      "注释信息": [
+        "@param { PerfMetric } metric - performance metric for which the result will be get.",
+        "@returns { PerfMeasureResult } test results of specified performance metric.",
+        "@throws { BusinessError } 32400002 - Internal error. Possible causes: 1. IPC connection failed. 2. The object does not exist.",
+        "@throws { BusinessError } 32400003 - Parameter verification failed.",
+        "@throws { BusinessError } 32400006 - Failed to obtain the measurement result.",
+        "@throws { BusinessError } 32400007 - The API does not support concurrent calls.",
+        "@syscap SystemCapability.Test.PerfTest",
+        "@atomicservice",
+        "@since 20",
+        "@test"
+      ],
+      "层级": 1,
+      "上级": "PerfTest",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Test.PerfTest",
+      "parameters": [
+        {
+          "名称": "metric",
+          "类型": "PerfMetric",
+          "必填": true,
+          "说明": "performance metric for which the result will be get."
+        }
+      ],
+      "return_description": "test results of specified performance metric.",
+      "error_codes": [
+        {
+          "code": "32400002",
+          "description": "Internal error. Possible causes: 1. IPC connection failed. 2. The object does not exist."
+        },
+        {
+          "code": "32400003",
+          "description": "Parameter verification failed."
+        },
+        {
+          "code": "32400006",
+          "description": "Failed to obtain the measurement result."
+        },
+        {
+          "code": "32400007",
+          "description": "The API does not support concurrent calls."
+        }
+      ],
+      "版本": "API6.0"
+    },
+    {
+      "类型": "method",
+      "名称": "destroy",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Destroy the {@link PerfTest} object.",
+      "注释信息": [
+        "@throws { BusinessError } 32400002 - Internal error. Possible causes: 1. IPC connection failed. 2. The object does not exist.",
+        "@throws { BusinessError } 32400007 - The API does not support concurrent calls.",
+        "@syscap SystemCapability.Test.PerfTest",
+        "@atomicservice",
+        "@since 20",
+        "@test"
+      ],
+      "层级": 1,
+      "上级": "PerfTest",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Test.PerfTest",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "32400002",
+          "description": "Internal error. Possible causes: 1. IPC connection failed. 2. The object does not exist."
+        },
+        {
+          "code": "32400007",
+          "description": "The API does not support concurrent calls."
+        }
+      ],
+      "版本": "API6.0"
+    }
+  ]
+}

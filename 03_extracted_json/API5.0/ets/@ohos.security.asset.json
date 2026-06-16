@@ -1,0 +1,3380 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.AssetStoreKit",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "namespace",
+      "名称": "asset",
+      "所属模块": "@kit.AssetStoreKit",
+      "功能描述": "This module provides the capabilities for life cycle management of sensitive user data (Asset) such as passwords and tokens, including adding, removing, updating, and querying.",
+      "注释信息": [
+        "@namespace asset",
+        "@syscap SystemCapability.Security.Asset",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 1,
+      "上级": "@kit.AssetStoreKit",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Security.Asset",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "add",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Add an Asset. Permission ohos.permission.STORE_PERSISTENT_DATA is required when the Asset needs to be stored persistently by setting {@link Tag.IS_PERSISTENT} tag. 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { AssetMap } attributes - a map object containing attributes of the Asset to be added.",
+        "@returns { Promise<void> } the promise object returned by the function.",
+        "@throws { BusinessError } 201 - The caller doesn't have the permission.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 24000001 - The ASSET service is unavailable.",
+        "@throws { BusinessError } 24000003 - The asset already exists.",
+        "@throws { BusinessError } 24000005 - The screen lock status does not match.",
+        "@throws { BusinessError } 24000006 - Insufficient memory.",
+        "@throws { BusinessError } 24000007 - The asset is corrupted.",
+        "@throws { BusinessError } 24000008 - The database operation failed.",
+        "@throws { BusinessError } 24000009 - The cryptography operation failed.",
+        "@throws { BusinessError } 24000010 - IPC failed.",
+        "@throws { BusinessError } 24000011 - Calling the Bundle Manager service failed.",
+        "@throws { BusinessError } 24000012 - Calling the OS Account service failed.",
+        "@throws { BusinessError } 24000013 - Calling the Access Token service failed.",
+        "@throws { BusinessError } 24000014 - The file operation failed.",
+        "@throws { BusinessError } 24000015 - Getting the system time failed.",
+        "@syscap SystemCapability.Security.Asset",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 1,
+      "上级": "asset",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Security.Asset",
+      "parameters": [
+        {
+          "名称": "attributes",
+          "类型": "AssetMap",
+          "必填": true,
+          "说明": "a map object containing attributes of the Asset to be added."
+        }
+      ],
+      "return_description": "the promise object returned by the function.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "The caller doesn't have the permission."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "24000001",
+          "description": "The ASSET service is unavailable."
+        },
+        {
+          "code": "24000003",
+          "description": "The asset already exists."
+        },
+        {
+          "code": "24000005",
+          "description": "The screen lock status does not match."
+        },
+        {
+          "code": "24000006",
+          "description": "Insufficient memory."
+        },
+        {
+          "code": "24000007",
+          "description": "The asset is corrupted."
+        },
+        {
+          "code": "24000008",
+          "description": "The database operation failed."
+        },
+        {
+          "code": "24000009",
+          "description": "The cryptography operation failed."
+        },
+        {
+          "code": "24000010",
+          "description": "IPC failed."
+        },
+        {
+          "code": "24000011",
+          "description": "Calling the Bundle Manager service failed."
+        },
+        {
+          "code": "24000012",
+          "description": "Calling the OS Account service failed."
+        },
+        {
+          "code": "24000013",
+          "description": "Calling the Access Token service failed."
+        },
+        {
+          "code": "24000014",
+          "description": "The file operation failed."
+        },
+        {
+          "code": "24000015",
+          "description": "Getting the system time failed."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "addAsUser",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Add an Asset to a specific user space. Permission ohos.permission.STORE_PERSISTENT_DATA is required when the Asset needs to be stored persistently by setting {@link Tag.IS_PERSISTENT} tag. 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.INTERACT_ACROSS_LOCAL_ACCOUNTS",
+        "@param { number } userId - the user identifier to add an Asset. The user identifier cannot be lower than 100.",
+        "@param { AssetMap } attributes - a map object containing attributes of the Asset to be added.",
+        "@returns { Promise<void> } the promise object returned by the function.",
+        "@throws { BusinessError } 201 - The caller doesn't have the permission.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 24000001 - The ASSET service is unavailable.",
+        "@throws { BusinessError } 24000003 - The asset already exists.",
+        "@throws { BusinessError } 24000005 - The screen lock status does not match.",
+        "@throws { BusinessError } 24000006 - Insufficient memory.",
+        "@throws { BusinessError } 24000007 - The asset is corrupted.",
+        "@throws { BusinessError } 24000008 - The database operation failed.",
+        "@throws { BusinessError } 24000009 - The cryptography operation failed.",
+        "@throws { BusinessError } 24000010 - IPC failed.",
+        "@throws { BusinessError } 24000011 - Calling the Bundle Manager service failed.",
+        "@throws { BusinessError } 24000012 - Calling the OS Account service failed.",
+        "@throws { BusinessError } 24000013 - Calling the Access Token service failed.",
+        "@throws { BusinessError } 24000014 - The file operation failed.",
+        "@throws { BusinessError } 24000015 - Getting the system time failed.",
+        "@syscap SystemCapability.Security.Asset",
+        "@systemapi",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "asset",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Security.Asset",
+      "parameters": [
+        {
+          "名称": "userId",
+          "类型": "number",
+          "必填": true,
+          "说明": "the user identifier to add an Asset. The user identifier cannot be lower than 100."
+        },
+        {
+          "名称": "attributes",
+          "类型": "AssetMap",
+          "必填": true,
+          "说明": "a map object containing attributes of the Asset to be added."
+        }
+      ],
+      "return_description": "the promise object returned by the function.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "The caller doesn't have the permission."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "24000001",
+          "description": "The ASSET service is unavailable."
+        },
+        {
+          "code": "24000003",
+          "description": "The asset already exists."
+        },
+        {
+          "code": "24000005",
+          "description": "The screen lock status does not match."
+        },
+        {
+          "code": "24000006",
+          "description": "Insufficient memory."
+        },
+        {
+          "code": "24000007",
+          "description": "The asset is corrupted."
+        },
+        {
+          "code": "24000008",
+          "description": "The database operation failed."
+        },
+        {
+          "code": "24000009",
+          "description": "The cryptography operation failed."
+        },
+        {
+          "code": "24000010",
+          "description": "IPC failed."
+        },
+        {
+          "code": "24000011",
+          "description": "Calling the Bundle Manager service failed."
+        },
+        {
+          "code": "24000012",
+          "description": "Calling the OS Account service failed."
+        },
+        {
+          "code": "24000013",
+          "description": "Calling the Access Token service failed."
+        },
+        {
+          "code": "24000014",
+          "description": "The file operation failed."
+        },
+        {
+          "code": "24000015",
+          "description": "Getting the system time failed."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "addSync",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Add an Asset. Permission ohos.permission.STORE_PERSISTENT_DATA is required when the Asset needs to be stored persistently by setting {@link Tag.IS_PERSISTENT} tag. 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { AssetMap } attributes - a map object containing attributes of the Asset to be added.",
+        "@throws { BusinessError } 201 - The caller doesn't have the permission.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 24000001 - The ASSET service is unavailable.",
+        "@throws { BusinessError } 24000003 - The asset already exists.",
+        "@throws { BusinessError } 24000005 - The screen lock status does not match.",
+        "@throws { BusinessError } 24000006 - Insufficient memory.",
+        "@throws { BusinessError } 24000007 - The asset is corrupted.",
+        "@throws { BusinessError } 24000008 - The database operation failed.",
+        "@throws { BusinessError } 24000009 - The cryptography operation failed.",
+        "@throws { BusinessError } 24000010 - IPC failed.",
+        "@throws { BusinessError } 24000011 - Calling the Bundle Manager service failed.",
+        "@throws { BusinessError } 24000012 - Calling the OS Account service failed.",
+        "@throws { BusinessError } 24000013 - Calling the Access Token service failed.",
+        "@throws { BusinessError } 24000014 - The file operation failed.",
+        "@throws { BusinessError } 24000015 - Getting the system time failed.",
+        "@syscap SystemCapability.Security.Asset",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 1,
+      "上级": "asset",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Security.Asset",
+      "parameters": [
+        {
+          "名称": "attributes",
+          "类型": "AssetMap",
+          "必填": true,
+          "说明": "a map object containing attributes of the Asset to be added."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "The caller doesn't have the permission."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "24000001",
+          "description": "The ASSET service is unavailable."
+        },
+        {
+          "code": "24000003",
+          "description": "The asset already exists."
+        },
+        {
+          "code": "24000005",
+          "description": "The screen lock status does not match."
+        },
+        {
+          "code": "24000006",
+          "description": "Insufficient memory."
+        },
+        {
+          "code": "24000007",
+          "description": "The asset is corrupted."
+        },
+        {
+          "code": "24000008",
+          "description": "The database operation failed."
+        },
+        {
+          "code": "24000009",
+          "description": "The cryptography operation failed."
+        },
+        {
+          "code": "24000010",
+          "description": "IPC failed."
+        },
+        {
+          "code": "24000011",
+          "description": "Calling the Bundle Manager service failed."
+        },
+        {
+          "code": "24000012",
+          "description": "Calling the OS Account service failed."
+        },
+        {
+          "code": "24000013",
+          "description": "Calling the Access Token service failed."
+        },
+        {
+          "code": "24000014",
+          "description": "The file operation failed."
+        },
+        {
+          "code": "24000015",
+          "description": "Getting the system time failed."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "remove",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Remove one or more Assets that match a search query. 1. Incorrect parameter types. 2. Parameter verification failed.",
+      "注释信息": [
+        "@param { AssetMap } query - a map object containing attributes of the Asset to be removed.",
+        "@returns { Promise<void> } the promise object returned by the function.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 24000001 - The ASSET service is unavailable.",
+        "@throws { BusinessError } 24000002 - The asset is not found.",
+        "@throws { BusinessError } 24000006 - Insufficient memory.",
+        "@throws { BusinessError } 24000007 - The asset is corrupted.",
+        "@throws { BusinessError } 24000008 - The database operation failed.",
+        "@throws { BusinessError } 24000010 - IPC failed.",
+        "@throws { BusinessError } 24000011 - Calling the Bundle Manager service failed.",
+        "@throws { BusinessError } 24000012 - Calling the OS Account service failed.",
+        "@throws { BusinessError } 24000013 - Calling the Access Token service failed.",
+        "@throws { BusinessError } 24000015 - Getting the system time failed.",
+        "@syscap SystemCapability.Security.Asset",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 1,
+      "上级": "asset",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Security.Asset",
+      "parameters": [
+        {
+          "名称": "query",
+          "类型": "AssetMap",
+          "必填": true,
+          "说明": "a map object containing attributes of the Asset to be removed."
+        }
+      ],
+      "return_description": "the promise object returned by the function.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "24000001",
+          "description": "The ASSET service is unavailable."
+        },
+        {
+          "code": "24000002",
+          "description": "The asset is not found."
+        },
+        {
+          "code": "24000006",
+          "description": "Insufficient memory."
+        },
+        {
+          "code": "24000007",
+          "description": "The asset is corrupted."
+        },
+        {
+          "code": "24000008",
+          "description": "The database operation failed."
+        },
+        {
+          "code": "24000010",
+          "description": "IPC failed."
+        },
+        {
+          "code": "24000011",
+          "description": "Calling the Bundle Manager service failed."
+        },
+        {
+          "code": "24000012",
+          "description": "Calling the OS Account service failed."
+        },
+        {
+          "code": "24000013",
+          "description": "Calling the Access Token service failed."
+        },
+        {
+          "code": "24000015",
+          "description": "Getting the system time failed."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "removeAsUser",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Remove one or more Assets that match a search query from a specific user space. than 100. 1. Incorrect parameter types. 2. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.INTERACT_ACROSS_LOCAL_ACCOUNTS",
+        "@param { number } userId - the user identifier to remove one or more Assets. The user identifier cannot be lower",
+        "@param { AssetMap } query - a map object containing attributes of the Asset to be removed.",
+        "@returns { Promise<void> } the promise object returned by the function.",
+        "@throws { BusinessError } 201 - The caller doesn't have the permission.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 24000001 - The ASSET service is unavailable.",
+        "@throws { BusinessError } 24000002 - The asset is not found.",
+        "@throws { BusinessError } 24000006 - Insufficient memory.",
+        "@throws { BusinessError } 24000007 - The asset is corrupted.",
+        "@throws { BusinessError } 24000008 - The database operation failed.",
+        "@throws { BusinessError } 24000010 - IPC failed.",
+        "@throws { BusinessError } 24000011 - Calling the Bundle Manager service failed.",
+        "@throws { BusinessError } 24000012 - Calling the OS Account service failed.",
+        "@throws { BusinessError } 24000013 - Calling the Access Token service failed.",
+        "@throws { BusinessError } 24000015 - Getting the system time failed.",
+        "@syscap SystemCapability.Security.Asset",
+        "@systemapi",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "asset",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Security.Asset",
+      "parameters": [
+        {
+          "名称": "userId",
+          "类型": "number",
+          "必填": true,
+          "说明": "the user identifier to remove one or more Assets. The user identifier cannot be lower"
+        },
+        {
+          "名称": "query",
+          "类型": "AssetMap",
+          "必填": true,
+          "说明": "a map object containing attributes of the Asset to be removed."
+        }
+      ],
+      "return_description": "the promise object returned by the function.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "The caller doesn't have the permission."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "24000001",
+          "description": "The ASSET service is unavailable."
+        },
+        {
+          "code": "24000002",
+          "description": "The asset is not found."
+        },
+        {
+          "code": "24000006",
+          "description": "Insufficient memory."
+        },
+        {
+          "code": "24000007",
+          "description": "The asset is corrupted."
+        },
+        {
+          "code": "24000008",
+          "description": "The database operation failed."
+        },
+        {
+          "code": "24000010",
+          "description": "IPC failed."
+        },
+        {
+          "code": "24000011",
+          "description": "Calling the Bundle Manager service failed."
+        },
+        {
+          "code": "24000012",
+          "description": "Calling the OS Account service failed."
+        },
+        {
+          "code": "24000013",
+          "description": "Calling the Access Token service failed."
+        },
+        {
+          "code": "24000015",
+          "description": "Getting the system time failed."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "removeSync",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Remove one or more Assets that match a search query. 1. Incorrect parameter types. 2. Parameter verification failed.",
+      "注释信息": [
+        "@param { AssetMap } query - a map object containing attributes of the Asset to be removed.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 24000001 - The ASSET service is unavailable.",
+        "@throws { BusinessError } 24000002 - The asset is not found.",
+        "@throws { BusinessError } 24000006 - Insufficient memory.",
+        "@throws { BusinessError } 24000007 - The asset is corrupted.",
+        "@throws { BusinessError } 24000008 - The database operation failed.",
+        "@throws { BusinessError } 24000010 - IPC failed.",
+        "@throws { BusinessError } 24000011 - Calling the Bundle Manager service failed.",
+        "@throws { BusinessError } 24000012 - Calling the OS Account service failed.",
+        "@throws { BusinessError } 24000013 - Calling the Access Token service failed.",
+        "@throws { BusinessError } 24000015 - Getting the system time failed.",
+        "@syscap SystemCapability.Security.Asset",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 1,
+      "上级": "asset",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Security.Asset",
+      "parameters": [
+        {
+          "名称": "query",
+          "类型": "AssetMap",
+          "必填": true,
+          "说明": "a map object containing attributes of the Asset to be removed."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "24000001",
+          "description": "The ASSET service is unavailable."
+        },
+        {
+          "code": "24000002",
+          "description": "The asset is not found."
+        },
+        {
+          "code": "24000006",
+          "description": "Insufficient memory."
+        },
+        {
+          "code": "24000007",
+          "description": "The asset is corrupted."
+        },
+        {
+          "code": "24000008",
+          "description": "The database operation failed."
+        },
+        {
+          "code": "24000010",
+          "description": "IPC failed."
+        },
+        {
+          "code": "24000011",
+          "description": "Calling the Bundle Manager service failed."
+        },
+        {
+          "code": "24000012",
+          "description": "Calling the OS Account service failed."
+        },
+        {
+          "code": "24000013",
+          "description": "Calling the Access Token service failed."
+        },
+        {
+          "code": "24000015",
+          "description": "Getting the system time failed."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "update",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Update an Asset that matches a search query. 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { AssetMap } query - a map object containing attributes of the Asset to be updated.",
+        "@param { AssetMap } attributesToUpdate - a map object containing attributes with new values.",
+        "@returns { Promise<void> } the promise object returned by the function.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 24000001 - The ASSET service is unavailable.",
+        "@throws { BusinessError } 24000002 - The asset is not found.",
+        "@throws { BusinessError } 24000005 - The screen lock status does not match.",
+        "@throws { BusinessError } 24000006 - Insufficient memory.",
+        "@throws { BusinessError } 24000007 - The asset is corrupted.",
+        "@throws { BusinessError } 24000008 - The database operation failed.",
+        "@throws { BusinessError } 24000009 - The cryptography operation failed.",
+        "@throws { BusinessError } 24000010 - IPC failed.",
+        "@throws { BusinessError } 24000011 - Calling the Bundle Manager service failed.",
+        "@throws { BusinessError } 24000012 - Calling the OS Account service failed.",
+        "@throws { BusinessError } 24000013 - Calling the Access Token service failed.",
+        "@throws { BusinessError } 24000015 - Getting the system time failed.",
+        "@syscap SystemCapability.Security.Asset",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 1,
+      "上级": "asset",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Security.Asset",
+      "parameters": [
+        {
+          "名称": "query",
+          "类型": "AssetMap",
+          "必填": true,
+          "说明": "a map object containing attributes of the Asset to be updated."
+        },
+        {
+          "名称": "attributesToUpdate",
+          "类型": "AssetMap",
+          "必填": true,
+          "说明": "a map object containing attributes with new values."
+        }
+      ],
+      "return_description": "the promise object returned by the function.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "24000001",
+          "description": "The ASSET service is unavailable."
+        },
+        {
+          "code": "24000002",
+          "description": "The asset is not found."
+        },
+        {
+          "code": "24000005",
+          "description": "The screen lock status does not match."
+        },
+        {
+          "code": "24000006",
+          "description": "Insufficient memory."
+        },
+        {
+          "code": "24000007",
+          "description": "The asset is corrupted."
+        },
+        {
+          "code": "24000008",
+          "description": "The database operation failed."
+        },
+        {
+          "code": "24000009",
+          "description": "The cryptography operation failed."
+        },
+        {
+          "code": "24000010",
+          "description": "IPC failed."
+        },
+        {
+          "code": "24000011",
+          "description": "Calling the Bundle Manager service failed."
+        },
+        {
+          "code": "24000012",
+          "description": "Calling the OS Account service failed."
+        },
+        {
+          "code": "24000013",
+          "description": "Calling the Access Token service failed."
+        },
+        {
+          "code": "24000015",
+          "description": "Getting the system time failed."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "updateAsUser",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Update an Asset that matches a search query in a specific user space. 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.INTERACT_ACROSS_LOCAL_ACCOUNTS",
+        "@param { number } userId - the user identifier to update an Asset. The user identifier cannot be lower than 100.",
+        "@param { AssetMap } query - a map object containing attributes of the Asset to be updated.",
+        "@param { AssetMap } attributesToUpdate - a map object containing attributes with new values.",
+        "@returns { Promise<void> } the promise object returned by the function.",
+        "@throws { BusinessError } 201 - The caller doesn't have the permission.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 24000001 - The ASSET service is unavailable.",
+        "@throws { BusinessError } 24000002 - The asset is not found.",
+        "@throws { BusinessError } 24000005 - The screen lock status does not match.",
+        "@throws { BusinessError } 24000006 - Insufficient memory.",
+        "@throws { BusinessError } 24000007 - The asset is corrupted.",
+        "@throws { BusinessError } 24000008 - The database operation failed.",
+        "@throws { BusinessError } 24000009 - The cryptography operation failed.",
+        "@throws { BusinessError } 24000010 - IPC failed.",
+        "@throws { BusinessError } 24000011 - Calling the Bundle Manager service failed.",
+        "@throws { BusinessError } 24000012 - Calling the OS Account service failed.",
+        "@throws { BusinessError } 24000013 - Calling the Access Token service failed.",
+        "@throws { BusinessError } 24000015 - Getting the system time failed.",
+        "@syscap SystemCapability.Security.Asset",
+        "@systemapi",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "asset",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Security.Asset",
+      "parameters": [
+        {
+          "名称": "userId",
+          "类型": "number",
+          "必填": true,
+          "说明": "the user identifier to update an Asset. The user identifier cannot be lower than 100."
+        },
+        {
+          "名称": "query",
+          "类型": "AssetMap",
+          "必填": true,
+          "说明": "a map object containing attributes of the Asset to be updated."
+        },
+        {
+          "名称": "attributesToUpdate",
+          "类型": "AssetMap",
+          "必填": true,
+          "说明": "a map object containing attributes with new values."
+        }
+      ],
+      "return_description": "the promise object returned by the function.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "The caller doesn't have the permission."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "24000001",
+          "description": "The ASSET service is unavailable."
+        },
+        {
+          "code": "24000002",
+          "description": "The asset is not found."
+        },
+        {
+          "code": "24000005",
+          "description": "The screen lock status does not match."
+        },
+        {
+          "code": "24000006",
+          "description": "Insufficient memory."
+        },
+        {
+          "code": "24000007",
+          "description": "The asset is corrupted."
+        },
+        {
+          "code": "24000008",
+          "description": "The database operation failed."
+        },
+        {
+          "code": "24000009",
+          "description": "The cryptography operation failed."
+        },
+        {
+          "code": "24000010",
+          "description": "IPC failed."
+        },
+        {
+          "code": "24000011",
+          "description": "Calling the Bundle Manager service failed."
+        },
+        {
+          "code": "24000012",
+          "description": "Calling the OS Account service failed."
+        },
+        {
+          "code": "24000013",
+          "description": "Calling the Access Token service failed."
+        },
+        {
+          "code": "24000015",
+          "description": "Getting the system time failed."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "updateSync",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Update an Asset that matches a search query. 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { AssetMap } query - a map object containing attributes of the Asset to be updated.",
+        "@param { AssetMap } attributesToUpdate - a map object containing attributes with new values.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 24000001 - The ASSET service is unavailable.",
+        "@throws { BusinessError } 24000002 - The asset is not found.",
+        "@throws { BusinessError } 24000005 - The screen lock status does not match.",
+        "@throws { BusinessError } 24000006 - Insufficient memory.",
+        "@throws { BusinessError } 24000007 - The asset is corrupted.",
+        "@throws { BusinessError } 24000008 - The database operation failed.",
+        "@throws { BusinessError } 24000009 - The cryptography operation failed.",
+        "@throws { BusinessError } 24000010 - IPC failed.",
+        "@throws { BusinessError } 24000011 - Calling the Bundle Manager service failed.",
+        "@throws { BusinessError } 24000012 - Calling the OS Account service failed.",
+        "@throws { BusinessError } 24000013 - Calling the Access Token service failed.",
+        "@throws { BusinessError } 24000015 - Getting the system time failed.",
+        "@syscap SystemCapability.Security.Asset",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 1,
+      "上级": "asset",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Security.Asset",
+      "parameters": [
+        {
+          "名称": "query",
+          "类型": "AssetMap",
+          "必填": true,
+          "说明": "a map object containing attributes of the Asset to be updated."
+        },
+        {
+          "名称": "attributesToUpdate",
+          "类型": "AssetMap",
+          "必填": true,
+          "说明": "a map object containing attributes with new values."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "24000001",
+          "description": "The ASSET service is unavailable."
+        },
+        {
+          "code": "24000002",
+          "description": "The asset is not found."
+        },
+        {
+          "code": "24000005",
+          "description": "The screen lock status does not match."
+        },
+        {
+          "code": "24000006",
+          "description": "Insufficient memory."
+        },
+        {
+          "code": "24000007",
+          "description": "The asset is corrupted."
+        },
+        {
+          "code": "24000008",
+          "description": "The database operation failed."
+        },
+        {
+          "code": "24000009",
+          "description": "The cryptography operation failed."
+        },
+        {
+          "code": "24000010",
+          "description": "IPC failed."
+        },
+        {
+          "code": "24000011",
+          "description": "Calling the Bundle Manager service failed."
+        },
+        {
+          "code": "24000012",
+          "description": "Calling the OS Account service failed."
+        },
+        {
+          "code": "24000013",
+          "description": "Calling the Access Token service failed."
+        },
+        {
+          "code": "24000015",
+          "description": "Getting the system time failed."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "preQuery",
+      "返回值": "Promise<Uint8Array>",
+      "所属模块": "未知模块",
+      "功能描述": "Preprocessing (e.g. get challenge) for querying one or more Assets that require user authentication. 1. Incorrect parameter types. 2. Parameter verification failed.",
+      "注释信息": [
+        "@param { AssetMap } query - a map object containing attributes of the Asset to be queried.",
+        "@returns { Promise<Uint8Array> } the promise object returned by the function.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 24000001 - The ASSET service is unavailable.",
+        "@throws { BusinessError } 24000002 - The asset is not found.",
+        "@throws { BusinessError } 24000005 - The screen lock status does not match.",
+        "@throws { BusinessError } 24000006 - Insufficient memory.",
+        "@throws { BusinessError } 24000007 - The asset is corrupted.",
+        "@throws { BusinessError } 24000008 - The database operation failed.",
+        "@throws { BusinessError } 24000009 - The cryptography operation failed.",
+        "@throws { BusinessError } 24000010 - IPC failed.",
+        "@throws { BusinessError } 24000011 - Calling the Bundle Manager service failed.",
+        "@throws { BusinessError } 24000012 - Calling the OS Account service failed.",
+        "@throws { BusinessError } 24000013 - Calling the Access Token service failed.",
+        "@throws { BusinessError } 24000016 - The cache exceeds the limit.",
+        "@throws { BusinessError } 24000017 - The capability is not supported.",
+        "@syscap SystemCapability.Security.Asset",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 1,
+      "上级": "asset",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Security.Asset",
+      "parameters": [
+        {
+          "名称": "query",
+          "类型": "AssetMap",
+          "必填": true,
+          "说明": "a map object containing attributes of the Asset to be queried."
+        }
+      ],
+      "return_description": "the promise object returned by the function.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "24000001",
+          "description": "The ASSET service is unavailable."
+        },
+        {
+          "code": "24000002",
+          "description": "The asset is not found."
+        },
+        {
+          "code": "24000005",
+          "description": "The screen lock status does not match."
+        },
+        {
+          "code": "24000006",
+          "description": "Insufficient memory."
+        },
+        {
+          "code": "24000007",
+          "description": "The asset is corrupted."
+        },
+        {
+          "code": "24000008",
+          "description": "The database operation failed."
+        },
+        {
+          "code": "24000009",
+          "description": "The cryptography operation failed."
+        },
+        {
+          "code": "24000010",
+          "description": "IPC failed."
+        },
+        {
+          "code": "24000011",
+          "description": "Calling the Bundle Manager service failed."
+        },
+        {
+          "code": "24000012",
+          "description": "Calling the OS Account service failed."
+        },
+        {
+          "code": "24000013",
+          "description": "Calling the Access Token service failed."
+        },
+        {
+          "code": "24000016",
+          "description": "The cache exceeds the limit."
+        },
+        {
+          "code": "24000017",
+          "description": "The capability is not supported."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "preQueryAsUser",
+      "返回值": "Promise<Uint8Array>",
+      "所属模块": "未知模块",
+      "功能描述": "Preprocessing (e.g. get challenge) for querying one or more Assets that require user authentication in a specific user space. lower than 100. 1. Incorrect parameter types. 2. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.INTERACT_ACROSS_LOCAL_ACCOUNTS",
+        "@param { number } userId - the user identifier to pre-query one or more Assets. The user identifier cannot be",
+        "@param { AssetMap } query - a map object containing attributes of the Asset to be queried.",
+        "@returns { Promise<Uint8Array> } the promise object returned by the function.",
+        "@throws { BusinessError } 201 - The caller doesn't have the permission.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 24000001 - The ASSET service is unavailable.",
+        "@throws { BusinessError } 24000002 - The asset is not found.",
+        "@throws { BusinessError } 24000005 - The screen lock status does not match.",
+        "@throws { BusinessError } 24000006 - Insufficient memory.",
+        "@throws { BusinessError } 24000007 - The asset is corrupted.",
+        "@throws { BusinessError } 24000008 - The database operation failed.",
+        "@throws { BusinessError } 24000009 - The cryptography operation failed.",
+        "@throws { BusinessError } 24000010 - IPC failed.",
+        "@throws { BusinessError } 24000011 - Calling the Bundle Manager service failed.",
+        "@throws { BusinessError } 24000012 - Calling the OS Account service failed.",
+        "@throws { BusinessError } 24000013 - Calling the Access Token service failed.",
+        "@throws { BusinessError } 24000016 - The cache exceeds the limit.",
+        "@throws { BusinessError } 24000017 - The capability is not supported.",
+        "@syscap SystemCapability.Security.Asset",
+        "@systemapi",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "asset",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Security.Asset",
+      "parameters": [
+        {
+          "名称": "userId",
+          "类型": "number",
+          "必填": true,
+          "说明": "the user identifier to pre-query one or more Assets. The user identifier cannot be"
+        },
+        {
+          "名称": "query",
+          "类型": "AssetMap",
+          "必填": true,
+          "说明": "a map object containing attributes of the Asset to be queried."
+        }
+      ],
+      "return_description": "the promise object returned by the function.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "The caller doesn't have the permission."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "24000001",
+          "description": "The ASSET service is unavailable."
+        },
+        {
+          "code": "24000002",
+          "description": "The asset is not found."
+        },
+        {
+          "code": "24000005",
+          "description": "The screen lock status does not match."
+        },
+        {
+          "code": "24000006",
+          "description": "Insufficient memory."
+        },
+        {
+          "code": "24000007",
+          "description": "The asset is corrupted."
+        },
+        {
+          "code": "24000008",
+          "description": "The database operation failed."
+        },
+        {
+          "code": "24000009",
+          "description": "The cryptography operation failed."
+        },
+        {
+          "code": "24000010",
+          "description": "IPC failed."
+        },
+        {
+          "code": "24000011",
+          "description": "Calling the Bundle Manager service failed."
+        },
+        {
+          "code": "24000012",
+          "description": "Calling the OS Account service failed."
+        },
+        {
+          "code": "24000013",
+          "description": "Calling the Access Token service failed."
+        },
+        {
+          "code": "24000016",
+          "description": "The cache exceeds the limit."
+        },
+        {
+          "code": "24000017",
+          "description": "The capability is not supported."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "preQuerySync",
+      "返回值": "Uint8Array",
+      "所属模块": "未知模块",
+      "功能描述": "Preprocessing (e.g. get challenge) for querying one or more Assets that require user authentication. 1. Incorrect parameter types. 2. Parameter verification failed.",
+      "注释信息": [
+        "@param { AssetMap } query - a map object containing attributes of the Asset to be queried.",
+        "@returns { Uint8Array } the challenge value to be used when {@link querySync} is called.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 24000001 - The ASSET service is unavailable.",
+        "@throws { BusinessError } 24000002 - The asset is not found.",
+        "@throws { BusinessError } 24000005 - The screen lock status does not match.",
+        "@throws { BusinessError } 24000006 - Insufficient memory.",
+        "@throws { BusinessError } 24000007 - The asset is corrupted.",
+        "@throws { BusinessError } 24000008 - The database operation failed.",
+        "@throws { BusinessError } 24000009 - The cryptography operation failed.",
+        "@throws { BusinessError } 24000010 - IPC failed.",
+        "@throws { BusinessError } 24000011 - Calling the Bundle Manager service failed.",
+        "@throws { BusinessError } 24000012 - Calling the OS Account service failed.",
+        "@throws { BusinessError } 24000013 - Calling the Access Token service failed.",
+        "@throws { BusinessError } 24000016 - The cache exceeds the limit.",
+        "@throws { BusinessError } 24000017 - The capability is not supported.",
+        "@syscap SystemCapability.Security.Asset",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 1,
+      "上级": "asset",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Security.Asset",
+      "parameters": [
+        {
+          "名称": "query",
+          "类型": "AssetMap",
+          "必填": true,
+          "说明": "a map object containing attributes of the Asset to be queried."
+        }
+      ],
+      "return_description": "the challenge value to be used when {@link querySync} is called.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "24000001",
+          "description": "The ASSET service is unavailable."
+        },
+        {
+          "code": "24000002",
+          "description": "The asset is not found."
+        },
+        {
+          "code": "24000005",
+          "description": "The screen lock status does not match."
+        },
+        {
+          "code": "24000006",
+          "description": "Insufficient memory."
+        },
+        {
+          "code": "24000007",
+          "description": "The asset is corrupted."
+        },
+        {
+          "code": "24000008",
+          "description": "The database operation failed."
+        },
+        {
+          "code": "24000009",
+          "description": "The cryptography operation failed."
+        },
+        {
+          "code": "24000010",
+          "description": "IPC failed."
+        },
+        {
+          "code": "24000011",
+          "description": "Calling the Bundle Manager service failed."
+        },
+        {
+          "code": "24000012",
+          "description": "Calling the OS Account service failed."
+        },
+        {
+          "code": "24000013",
+          "description": "Calling the Access Token service failed."
+        },
+        {
+          "code": "24000016",
+          "description": "The cache exceeds the limit."
+        },
+        {
+          "code": "24000017",
+          "description": "The capability is not supported."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "query",
+      "返回值": "Promise<Array<AssetMap>>",
+      "所属模块": "未知模块",
+      "功能描述": "Query one or more Assets that match a search query. 1. Incorrect parameter types. 2. Parameter verification failed.",
+      "注释信息": [
+        "@param { AssetMap } query - a map object containing attributes of the Asset to be queried.",
+        "@returns { Promise<Array<AssetMap>> } the promise object returned by the function.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 24000001 - The ASSET service is unavailable.",
+        "@throws { BusinessError } 24000002 - The asset is not found.",
+        "@throws { BusinessError } 24000004 - Access denied.",
+        "@throws { BusinessError } 24000005 - The screen lock status does not match.",
+        "@throws { BusinessError } 24000006 - Insufficient memory.",
+        "@throws { BusinessError } 24000007 - The asset is corrupted.",
+        "@throws { BusinessError } 24000008 - The database operation failed.",
+        "@throws { BusinessError } 24000009 - The cryptography operation failed.",
+        "@throws { BusinessError } 24000010 - IPC failed.",
+        "@throws { BusinessError } 24000011 - Calling the Bundle Manager service failed.",
+        "@throws { BusinessError } 24000012 - Calling the OS Account service failed.",
+        "@throws { BusinessError } 24000013 - Calling the Access Token service failed.",
+        "@throws { BusinessError } 24000017 - The capability is not supported.",
+        "@syscap SystemCapability.Security.Asset",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 1,
+      "上级": "asset",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Security.Asset",
+      "parameters": [
+        {
+          "名称": "query",
+          "类型": "AssetMap",
+          "必填": true,
+          "说明": "a map object containing attributes of the Asset to be queried."
+        }
+      ],
+      "return_description": "the promise object returned by the function.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "24000001",
+          "description": "The ASSET service is unavailable."
+        },
+        {
+          "code": "24000002",
+          "description": "The asset is not found."
+        },
+        {
+          "code": "24000004",
+          "description": "Access denied."
+        },
+        {
+          "code": "24000005",
+          "description": "The screen lock status does not match."
+        },
+        {
+          "code": "24000006",
+          "description": "Insufficient memory."
+        },
+        {
+          "code": "24000007",
+          "description": "The asset is corrupted."
+        },
+        {
+          "code": "24000008",
+          "description": "The database operation failed."
+        },
+        {
+          "code": "24000009",
+          "description": "The cryptography operation failed."
+        },
+        {
+          "code": "24000010",
+          "description": "IPC failed."
+        },
+        {
+          "code": "24000011",
+          "description": "Calling the Bundle Manager service failed."
+        },
+        {
+          "code": "24000012",
+          "description": "Calling the OS Account service failed."
+        },
+        {
+          "code": "24000013",
+          "description": "Calling the Access Token service failed."
+        },
+        {
+          "code": "24000017",
+          "description": "The capability is not supported."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "queryAsUser",
+      "返回值": "Promise<Array<AssetMap>>",
+      "所属模块": "未知模块",
+      "功能描述": "Query one or more Assets that match a search query in a specific user space. than 100. 1. Incorrect parameter types. 2. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.INTERACT_ACROSS_LOCAL_ACCOUNTS",
+        "@param { number } userId - the user identifier to query one or more Assets. The user identifier cannot be lower",
+        "@param { AssetMap } query - a map object containing attributes of the Asset to be queried.",
+        "@returns { Promise<Array<AssetMap>> } the promise object returned by the function.",
+        "@throws { BusinessError } 201 - The caller doesn't have the permission.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 24000001 - The ASSET service is unavailable.",
+        "@throws { BusinessError } 24000002 - The asset is not found.",
+        "@throws { BusinessError } 24000004 - Access denied.",
+        "@throws { BusinessError } 24000005 - The screen lock status does not match.",
+        "@throws { BusinessError } 24000006 - Insufficient memory.",
+        "@throws { BusinessError } 24000007 - The asset is corrupted.",
+        "@throws { BusinessError } 24000008 - The database operation failed.",
+        "@throws { BusinessError } 24000009 - The cryptography operation failed.",
+        "@throws { BusinessError } 24000010 - IPC failed.",
+        "@throws { BusinessError } 24000011 - Calling the Bundle Manager service failed.",
+        "@throws { BusinessError } 24000012 - Calling the OS Account service failed.",
+        "@throws { BusinessError } 24000013 - Calling the Access Token service failed.",
+        "@throws { BusinessError } 24000017 - The capability is not supported.",
+        "@syscap SystemCapability.Security.Asset",
+        "@systemapi",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "asset",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Security.Asset",
+      "parameters": [
+        {
+          "名称": "userId",
+          "类型": "number",
+          "必填": true,
+          "说明": "the user identifier to query one or more Assets. The user identifier cannot be lower"
+        },
+        {
+          "名称": "query",
+          "类型": "AssetMap",
+          "必填": true,
+          "说明": "a map object containing attributes of the Asset to be queried."
+        }
+      ],
+      "return_description": "the promise object returned by the function.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "The caller doesn't have the permission."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "24000001",
+          "description": "The ASSET service is unavailable."
+        },
+        {
+          "code": "24000002",
+          "description": "The asset is not found."
+        },
+        {
+          "code": "24000004",
+          "description": "Access denied."
+        },
+        {
+          "code": "24000005",
+          "description": "The screen lock status does not match."
+        },
+        {
+          "code": "24000006",
+          "description": "Insufficient memory."
+        },
+        {
+          "code": "24000007",
+          "description": "The asset is corrupted."
+        },
+        {
+          "code": "24000008",
+          "description": "The database operation failed."
+        },
+        {
+          "code": "24000009",
+          "description": "The cryptography operation failed."
+        },
+        {
+          "code": "24000010",
+          "description": "IPC failed."
+        },
+        {
+          "code": "24000011",
+          "description": "Calling the Bundle Manager service failed."
+        },
+        {
+          "code": "24000012",
+          "description": "Calling the OS Account service failed."
+        },
+        {
+          "code": "24000013",
+          "description": "Calling the Access Token service failed."
+        },
+        {
+          "code": "24000017",
+          "description": "The capability is not supported."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "querySync",
+      "返回值": "Array<AssetMap>",
+      "所属模块": "未知模块",
+      "功能描述": "Query one or more Assets that match a search query. 1. Incorrect parameter types. 2. Parameter verification failed.",
+      "注释信息": [
+        "@param { AssetMap } query - a map object containing attributes of the Asset to be queried.",
+        "@returns { Array<AssetMap> } the query result.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 24000001 - The ASSET service is unavailable.",
+        "@throws { BusinessError } 24000002 - The asset is not found.",
+        "@throws { BusinessError } 24000004 - Access denied.",
+        "@throws { BusinessError } 24000005 - The screen lock status does not match.",
+        "@throws { BusinessError } 24000006 - Insufficient memory.",
+        "@throws { BusinessError } 24000007 - The asset is corrupted.",
+        "@throws { BusinessError } 24000008 - The database operation failed.",
+        "@throws { BusinessError } 24000009 - The cryptography operation failed.",
+        "@throws { BusinessError } 24000010 - IPC failed.",
+        "@throws { BusinessError } 24000011 - Calling the Bundle Manager service failed.",
+        "@throws { BusinessError } 24000012 - Calling the OS Account service failed.",
+        "@throws { BusinessError } 24000013 - Calling the Access Token service failed.",
+        "@throws { BusinessError } 24000017 - The capability is not supported.",
+        "@syscap SystemCapability.Security.Asset",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 1,
+      "上级": "asset",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Security.Asset",
+      "parameters": [
+        {
+          "名称": "query",
+          "类型": "AssetMap",
+          "必填": true,
+          "说明": "a map object containing attributes of the Asset to be queried."
+        }
+      ],
+      "return_description": "the query result.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "24000001",
+          "description": "The ASSET service is unavailable."
+        },
+        {
+          "code": "24000002",
+          "description": "The asset is not found."
+        },
+        {
+          "code": "24000004",
+          "description": "Access denied."
+        },
+        {
+          "code": "24000005",
+          "description": "The screen lock status does not match."
+        },
+        {
+          "code": "24000006",
+          "description": "Insufficient memory."
+        },
+        {
+          "code": "24000007",
+          "description": "The asset is corrupted."
+        },
+        {
+          "code": "24000008",
+          "description": "The database operation failed."
+        },
+        {
+          "code": "24000009",
+          "description": "The cryptography operation failed."
+        },
+        {
+          "code": "24000010",
+          "description": "IPC failed."
+        },
+        {
+          "code": "24000011",
+          "description": "Calling the Bundle Manager service failed."
+        },
+        {
+          "code": "24000012",
+          "description": "Calling the OS Account service failed."
+        },
+        {
+          "code": "24000013",
+          "description": "Calling the Access Token service failed."
+        },
+        {
+          "code": "24000017",
+          "description": "The capability is not supported."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "postQuery",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Post-processing (e.g. release cached resource) for querying multiple Assets that require user authentication. 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { AssetMap } handle - a map object containing the handle returned by {@link preQuery}.",
+        "@returns { Promise<void> } the promise object returned by the function.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 24000001 - The ASSET service is unavailable.",
+        "@throws { BusinessError } 24000006 - Insufficient memory.",
+        "@throws { BusinessError } 24000010 - IPC failed.",
+        "@throws { BusinessError } 24000011 - Calling the Bundle Manager service failed.",
+        "@throws { BusinessError } 24000012 - Calling the OS Account service failed.",
+        "@throws { BusinessError } 24000013 - Calling the Access Token service failed.",
+        "@syscap SystemCapability.Security.Asset",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 1,
+      "上级": "asset",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Security.Asset",
+      "parameters": [
+        {
+          "名称": "handle",
+          "类型": "AssetMap",
+          "必填": true,
+          "说明": "a map object containing the handle returned by {@link preQuery}."
+        }
+      ],
+      "return_description": "the promise object returned by the function.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "24000001",
+          "description": "The ASSET service is unavailable."
+        },
+        {
+          "code": "24000006",
+          "description": "Insufficient memory."
+        },
+        {
+          "code": "24000010",
+          "description": "IPC failed."
+        },
+        {
+          "code": "24000011",
+          "description": "Calling the Bundle Manager service failed."
+        },
+        {
+          "code": "24000012",
+          "description": "Calling the OS Account service failed."
+        },
+        {
+          "code": "24000013",
+          "description": "Calling the Access Token service failed."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "postQueryAsUser",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Post-processing (e.g. release cached resource) for querying multiple Assets that require user authentication in a specific user space. lower than 100. 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.INTERACT_ACROSS_LOCAL_ACCOUNTS",
+        "@param { number } userId - the user identifier to post-query one or more Assets. The user identifier cannot be",
+        "@param { AssetMap } handle - a map object containing the handle returned by {@link preQueryAsUser}.",
+        "@returns { Promise<void> } the promise object returned by the function.",
+        "@throws { BusinessError } 201 - The caller doesn't have the permission.",
+        "@throws { BusinessError } 202 - Non-system applications use system APIs.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 24000001 - The ASSET service is unavailable.",
+        "@throws { BusinessError } 24000006 - Insufficient memory.",
+        "@throws { BusinessError } 24000010 - IPC failed.",
+        "@throws { BusinessError } 24000011 - Calling the Bundle Manager service failed.",
+        "@throws { BusinessError } 24000012 - Calling the OS Account service failed.",
+        "@throws { BusinessError } 24000013 - Calling the Access Token service failed.",
+        "@syscap SystemCapability.Security.Asset",
+        "@systemapi",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "asset",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Security.Asset",
+      "parameters": [
+        {
+          "名称": "userId",
+          "类型": "number",
+          "必填": true,
+          "说明": "the user identifier to post-query one or more Assets. The user identifier cannot be"
+        },
+        {
+          "名称": "handle",
+          "类型": "AssetMap",
+          "必填": true,
+          "说明": "a map object containing the handle returned by {@link preQueryAsUser}."
+        }
+      ],
+      "return_description": "the promise object returned by the function.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "The caller doesn't have the permission."
+        },
+        {
+          "code": "202",
+          "description": "Non-system applications use system APIs."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "24000001",
+          "description": "The ASSET service is unavailable."
+        },
+        {
+          "code": "24000006",
+          "description": "Insufficient memory."
+        },
+        {
+          "code": "24000010",
+          "description": "IPC failed."
+        },
+        {
+          "code": "24000011",
+          "description": "Calling the Bundle Manager service failed."
+        },
+        {
+          "code": "24000012",
+          "description": "Calling the OS Account service failed."
+        },
+        {
+          "code": "24000013",
+          "description": "Calling the Access Token service failed."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "postQuerySync",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Post-processing (e.g. release cached resource) for querying multiple Assets that require user authentication. 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { AssetMap } handle - a map object containing the handle returned by {@link preQuerySync}.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 24000001 - The ASSET service is unavailable.",
+        "@throws { BusinessError } 24000006 - Insufficient memory.",
+        "@throws { BusinessError } 24000010 - IPC failed.",
+        "@throws { BusinessError } 24000011 - Calling the Bundle Manager service failed.",
+        "@throws { BusinessError } 24000012 - Calling the OS Account service failed.",
+        "@throws { BusinessError } 24000013 - Calling the Access Token service failed.",
+        "@syscap SystemCapability.Security.Asset",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 1,
+      "上级": "asset",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Security.Asset",
+      "parameters": [
+        {
+          "名称": "handle",
+          "类型": "AssetMap",
+          "必填": true,
+          "说明": "a map object containing the handle returned by {@link preQuerySync}."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "24000001",
+          "description": "The ASSET service is unavailable."
+        },
+        {
+          "code": "24000006",
+          "description": "Insufficient memory."
+        },
+        {
+          "code": "24000010",
+          "description": "IPC failed."
+        },
+        {
+          "code": "24000011",
+          "description": "Calling the Bundle Manager service failed."
+        },
+        {
+          "code": "24000012",
+          "description": "Calling the OS Account service failed."
+        },
+        {
+          "code": "24000013",
+          "description": "Calling the Access Token service failed."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "type_alias",
+      "名称": "AssetMap",
+      "所属模块": "未知模块",
+      "功能描述": "A Map type containing tag-value pairs that describe the attributes of an Asset.",
+      "注释信息": [
+        "@typedef { Map<Tag, Value> }",
+        "@syscap SystemCapability.Security.Asset",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 1,
+      "上级": "asset",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Security.Asset",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "type_alias",
+      "名称": "Value",
+      "所属模块": "未知模块",
+      "功能描述": "A type that indicates the secret or attribute value of an Asset tag.",
+      "注释信息": [
+        "@typedef { boolean | number | Uint8Array }",
+        "@syscap SystemCapability.Security.Asset",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 1,
+      "上级": "asset",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Security.Asset",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum",
+      "名称": "Accessibility",
+      "所属模块": "未知模块",
+      "功能描述": "An enum type indicates when the Asset is accessible.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.Security.Asset",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "asset",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Security.Asset",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "DEVICE_POWERED_ON",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "The secret value in the Asset can only be accessed after the device is powered on.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.Asset",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "Accessibility",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Security.Asset",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "DEVICE_FIRST_UNLOCKED",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "The secret value in the Asset can only be accessed after the device is first unlocked.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.Asset",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "Accessibility",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Security.Asset",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "DEVICE_UNLOCKED",
+      "值": "2",
+      "所属模块": "未知模块",
+      "功能描述": "The secret value in the Asset can only be accessed while the device is unlocked.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.Asset",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "Accessibility",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Security.Asset",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum",
+      "名称": "AuthType",
+      "所属模块": "未知模块",
+      "功能描述": "An enum type indicates the user authentication type for Asset access control.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.Security.Asset",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "asset",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Security.Asset",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "NONE",
+      "值": "0x00",
+      "所属模块": "未知模块",
+      "功能描述": "The access to an Asset doesn't require user authentication.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.Asset",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "AuthType",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Security.Asset",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "ANY",
+      "值": "0xFF",
+      "所属模块": "未知模块",
+      "功能描述": "The access to an Asset requires user authentication using either PIN/pattern/password or biometric traits.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.Asset",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "AuthType",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Security.Asset",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum",
+      "名称": "SyncType",
+      "所属模块": "未知模块",
+      "功能描述": "An enum type indicates the type of Asset synchronization.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.Security.Asset",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "asset",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Security.Asset",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "NEVER",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "An Asset with this attribute value is never allowed to be transferred out.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.Asset",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "SyncType",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Security.Asset",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "THIS_DEVICE",
+      "值": "1 << 0",
+      "所属模块": "未知模块",
+      "功能描述": "An Asset with this attribute value can only be restored to the device from which it was transferred out.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.Asset",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "SyncType",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Security.Asset",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "TRUSTED_DEVICE",
+      "值": "1 << 1",
+      "所属模块": "未知模块",
+      "功能描述": "An Asset with this attribute value can only be transferred out to a trusted device (user authorized).",
+      "注释信息": [
+        "@syscap SystemCapability.Security.Asset",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "SyncType",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Security.Asset",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "TRUSTED_ACCOUNT",
+      "值": "1 << 2",
+      "所属模块": "未知模块",
+      "功能描述": "An Asset with this attribute value can only be transferred out to devices logged in with trusted accounts.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.Asset",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "SyncType",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Security.Asset",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum",
+      "名称": "ConflictResolution",
+      "所属模块": "未知模块",
+      "功能描述": "An enum type indicates the strategy for conflict resolution when handling duplicated Asset alias.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.Security.Asset",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "asset",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Security.Asset",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "OVERWRITE",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "Directly overwrite an Asset with duplicated alias when a conflict is detected.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.Asset",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "ConflictResolution",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Security.Asset",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "THROW_ERROR",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Throw an error so that the caller can take measures when a conflict is detected.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.Asset",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "ConflictResolution",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Security.Asset",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum",
+      "名称": "ReturnType",
+      "所属模块": "未知模块",
+      "功能描述": "An enum type indicates the return type of the queried Asset.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.Security.Asset",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "asset",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Security.Asset",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "ALL",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "Specify that the return data should contain both secret value and attributes.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.Asset",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "ReturnType",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Security.Asset",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "ATTRIBUTES",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Specify that the return data contains only attributes.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.Asset",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "ReturnType",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Security.Asset",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum",
+      "名称": "OperationType",
+      "所属模块": "未知模块",
+      "功能描述": "An enum type indicates the additional action to be performed during operation.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.Security.Asset",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "asset",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Security.Asset",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "NEED_SYNC",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "Synchronization is required during operation.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.Asset",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "OperationType",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Security.Asset",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "NEED_LOGOUT",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Logout is required during operation.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.Asset",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "OperationType",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Security.Asset",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum",
+      "名称": "TagType",
+      "所属模块": "未知模块",
+      "功能描述": "An enum type containing the data type definitions for Asset attribute value.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.Security.Asset",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "asset",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Security.Asset",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "BOOL",
+      "值": "0x01 << 28",
+      "所属模块": "未知模块",
+      "功能描述": "The data type of Asset attribute value is bool.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.Asset",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "TagType",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Security.Asset",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "NUMBER",
+      "值": "0x02 << 28",
+      "所属模块": "未知模块",
+      "功能描述": "The data type of Asset attribute value is uint32.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.Asset",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "TagType",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Security.Asset",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "BYTES",
+      "值": "0x03 << 28",
+      "所属模块": "未知模块",
+      "功能描述": "The data type of Asset attribute value is byte array.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.Asset",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "TagType",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Security.Asset",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum",
+      "名称": "Tag",
+      "所属模块": "未知模块",
+      "功能描述": "An enum type containing the Asset attribute tags.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.Security.Asset",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "asset",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Security.Asset",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "SECRET",
+      "值": "TagType.BYTES | 0x01",
+      "所属模块": "未知模块",
+      "功能描述": "A tag whose value is a byte array indicating the sensitive user data such as passwords and tokens.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.Asset",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "Tag",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Security.Asset",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "ALIAS",
+      "值": "TagType.BYTES | 0x02",
+      "所属模块": "未知模块",
+      "功能描述": "A tag whose value is a byte array identifying an Asset.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.Asset",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "Tag",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Security.Asset",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "ACCESSIBILITY",
+      "值": "TagType.NUMBER | 0x03",
+      "所属模块": "未知模块",
+      "功能描述": "A tag whose value is a 32-bit unsigned integer indicating when the Asset can be accessed.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.Asset",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "Tag",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Security.Asset",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "REQUIRE_PASSWORD_SET",
+      "值": "TagType.BOOL | 0x04",
+      "所属模块": "未知模块",
+      "功能描述": "A tag whose value is a bool indicating whether a screen lock password is required for the device.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.Asset",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "Tag",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Security.Asset",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "AUTH_TYPE",
+      "值": "TagType.NUMBER | 0x05",
+      "所属模块": "未知模块",
+      "功能描述": "A tag whose value is a 32-bit unsigned integer indicating the user authentication type for Asset access control.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.Asset",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "Tag",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Security.Asset",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "AUTH_VALIDITY_PERIOD",
+      "值": "TagType.NUMBER | 0x06",
+      "所属模块": "未知模块",
+      "功能描述": "A tag whose value is a 32-bit unsigned integer indicating the validity period in seconds of user authentication.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.Asset",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "Tag",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Security.Asset",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "AUTH_CHALLENGE",
+      "值": "TagType.BYTES | 0x07",
+      "所属模块": "未知模块",
+      "功能描述": "A tag whose value is a byte array indicating the authentication challenge for anti-replay protection.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.Asset",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "Tag",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Security.Asset",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "AUTH_TOKEN",
+      "值": "TagType.BYTES | 0x08",
+      "所属模块": "未知模块",
+      "功能描述": "A tag whose value is a byte array indicating the authentication token after a user is verified.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.Asset",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "Tag",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Security.Asset",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "SYNC_TYPE",
+      "值": "TagType.NUMBER | 0x10",
+      "所属模块": "未知模块",
+      "功能描述": "A tag whose value is a 32-bit unsigned integer indicating the type of Asset synchronization.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.Asset",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "Tag",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Security.Asset",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "IS_PERSISTENT",
+      "值": "TagType.BOOL | 0x11",
+      "所属模块": "未知模块",
+      "功能描述": "A tag whose value is a bool indicating whether Asset is stored persistently.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.Asset",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Tag",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Security.Asset",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "DATA_LABEL_CRITICAL_1",
+      "值": "TagType.BYTES | 0x20",
+      "所属模块": "未知模块",
+      "功能描述": "A tag whose value is a byte array indicating the first user-defined Asset data label (not allow to update).",
+      "注释信息": [
+        "@syscap SystemCapability.Security.Asset",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "Tag",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Security.Asset",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "DATA_LABEL_CRITICAL_2",
+      "值": "TagType.BYTES | 0x21",
+      "所属模块": "未知模块",
+      "功能描述": "A tag whose value is a byte array indicating the second user-defined Asset data label (not allow to update).",
+      "注释信息": [
+        "@syscap SystemCapability.Security.Asset",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "Tag",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Security.Asset",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "DATA_LABEL_CRITICAL_3",
+      "值": "TagType.BYTES | 0x22",
+      "所属模块": "未知模块",
+      "功能描述": "A tag whose value is a byte array indicating the third user-defined Asset data label (not allow to update).",
+      "注释信息": [
+        "@syscap SystemCapability.Security.Asset",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "Tag",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Security.Asset",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "DATA_LABEL_CRITICAL_4",
+      "值": "TagType.BYTES | 0x23",
+      "所属模块": "未知模块",
+      "功能描述": "A tag whose value is a byte array indicating the fourth user-defined Asset data label (not allow to update).",
+      "注释信息": [
+        "@syscap SystemCapability.Security.Asset",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "Tag",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Security.Asset",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "DATA_LABEL_NORMAL_1",
+      "值": "TagType.BYTES | 0x30",
+      "所属模块": "未知模块",
+      "功能描述": "A tag whose value is a byte array indicating the first user-defined Asset data label (allow to update).",
+      "注释信息": [
+        "@syscap SystemCapability.Security.Asset",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "Tag",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Security.Asset",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "DATA_LABEL_NORMAL_2",
+      "值": "TagType.BYTES | 0x31",
+      "所属模块": "未知模块",
+      "功能描述": "A tag whose value is a byte array indicating the second user-defined Asset data label (allow to update).",
+      "注释信息": [
+        "@syscap SystemCapability.Security.Asset",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "Tag",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Security.Asset",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "DATA_LABEL_NORMAL_3",
+      "值": "TagType.BYTES | 0x32",
+      "所属模块": "未知模块",
+      "功能描述": "A tag whose value is a byte array indicating the third user-defined Asset data label (allow to update).",
+      "注释信息": [
+        "@syscap SystemCapability.Security.Asset",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "Tag",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Security.Asset",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "DATA_LABEL_NORMAL_4",
+      "值": "TagType.BYTES | 0x33",
+      "所属模块": "未知模块",
+      "功能描述": "A tag whose value is a byte array indicating the fourth user-defined Asset data label (allow to update).",
+      "注释信息": [
+        "@syscap SystemCapability.Security.Asset",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "Tag",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Security.Asset",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "DATA_LABEL_NORMAL_LOCAL_1",
+      "值": "TagType.BYTES | 0x34",
+      "所属模块": "未知模块",
+      "功能描述": "A local tag whose value is a byte array indicating the first user-defined Asset data label (allow to update). The information of a local tag will not be synchronized.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.Asset",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "Tag",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Security.Asset",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "DATA_LABEL_NORMAL_LOCAL_2",
+      "值": "TagType.BYTES | 0x35",
+      "所属模块": "未知模块",
+      "功能描述": "A local tag whose value is a byte array indicating the second user-defined Asset data label (allow to update). The information of a local tag will not be synchronized.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.Asset",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "Tag",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Security.Asset",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "DATA_LABEL_NORMAL_LOCAL_3",
+      "值": "TagType.BYTES | 0x36",
+      "所属模块": "未知模块",
+      "功能描述": "A local tag whose value is a byte array indicating the third user-defined Asset data label (allow to update). The information of a local tag will not be synchronized.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.Asset",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "Tag",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Security.Asset",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "DATA_LABEL_NORMAL_LOCAL_4",
+      "值": "TagType.BYTES | 0x37",
+      "所属模块": "未知模块",
+      "功能描述": "A local tag whose value is a byte array indicating the fourth user-defined Asset data label (allow to update). The information of a local tag will not be synchronized.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.Asset",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "Tag",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Security.Asset",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "RETURN_TYPE",
+      "值": "TagType.NUMBER | 0x40",
+      "所属模块": "未知模块",
+      "功能描述": "A tag whose value is a 32-bit unsigned integer indicating the return type of the queried Asset.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.Asset",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "Tag",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Security.Asset",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "RETURN_LIMIT",
+      "值": "TagType.NUMBER | 0x41",
+      "所属模块": "未知模块",
+      "功能描述": "A tag whose value is a 32-bit unsigned integer indicating the maximum number of returned Assets in one query.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.Asset",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "Tag",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Security.Asset",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "RETURN_OFFSET",
+      "值": "TagType.NUMBER | 0x42",
+      "所属模块": "未知模块",
+      "功能描述": "A tag whose value is a 32-bit unsigned integer indicating the offset of return data in batch query.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.Asset",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "Tag",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Security.Asset",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "RETURN_ORDERED_BY",
+      "值": "TagType.NUMBER | 0x43",
+      "所属模块": "未知模块",
+      "功能描述": "A tag whose value is a 32-bit unsigned integer indicating how the query results are sorted.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.Asset",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "Tag",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Security.Asset",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CONFLICT_RESOLUTION",
+      "值": "TagType.NUMBER | 0x44",
+      "所属模块": "未知模块",
+      "功能描述": "A tag whose value is a 32-bit unsigned integer indicating the strategy for resolving Asset conflicts.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.Asset",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "Tag",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Security.Asset",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "UPDATE_TIME",
+      "值": "TagType.BYTES | 0x45",
+      "所属模块": "未知模块",
+      "功能描述": "A tag whose value is a byte array indicating the update time of an Asset.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.Asset",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "Tag",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Security.Asset",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "OPERATION_TYPE",
+      "值": "TagType.NUMBER | 0x46",
+      "所属模块": "未知模块",
+      "功能描述": "A tag whose value is a 32-bit unsigned integer indicating the additional action to be performed during operation.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.Asset",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "Tag",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Security.Asset",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "REQUIRE_ATTR_ENCRYPTED",
+      "值": "TagType.BOOL | 0x47",
+      "所属模块": "未知模块",
+      "功能描述": "A tag whose value is a bool indicating whether the attributes of an asset are required to be encrypted.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.Asset",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "Tag",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Security.Asset",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum",
+      "名称": "ErrorCode",
+      "所属模块": "未知模块",
+      "功能描述": "An enum type containing the Asset error codes.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.Security.Asset",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "asset",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Security.Asset",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "PERMISSION_DENIED",
+      "值": "201",
+      "所属模块": "未知模块",
+      "功能描述": "The error code indicates that the caller doesn't have the permission.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.Asset",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "ErrorCode",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Security.Asset",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "NOT_SYSTEM_APPLICATION",
+      "值": "202",
+      "所属模块": "未知模块",
+      "功能描述": "The error code indicates that the caller is not a system application.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.Asset",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "ErrorCode",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Security.Asset",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "INVALID_ARGUMENT",
+      "值": "401",
+      "所属模块": "未知模块",
+      "功能描述": "The error code indicates that the argument is invalid.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.Asset",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "ErrorCode",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Security.Asset",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "SERVICE_UNAVAILABLE",
+      "值": "24000001",
+      "所属模块": "未知模块",
+      "功能描述": "The error code indicates that the ASSET service is unavailable.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.Asset",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "ErrorCode",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Security.Asset",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "NOT_FOUND",
+      "值": "24000002",
+      "所属模块": "未知模块",
+      "功能描述": "The error code indicates that the asset is not found.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.Asset",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "ErrorCode",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Security.Asset",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "DUPLICATED",
+      "值": "24000003",
+      "所属模块": "未知模块",
+      "功能描述": "The error code indicates that the asset already exists.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.Asset",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "ErrorCode",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Security.Asset",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "ACCESS_DENIED",
+      "值": "24000004",
+      "所属模块": "未知模块",
+      "功能描述": "The error code indicates that access to the asset is denied.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.Asset",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "ErrorCode",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Security.Asset",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "STATUS_MISMATCH",
+      "值": "24000005",
+      "所属模块": "未知模块",
+      "功能描述": "The error code indicates that the screen lock status does not match.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.Asset",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "ErrorCode",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Security.Asset",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "OUT_OF_MEMORY",
+      "值": "24000006",
+      "所属模块": "未知模块",
+      "功能描述": "The error code indicates insufficient memory.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.Asset",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "ErrorCode",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Security.Asset",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "DATA_CORRUPTED",
+      "值": "24000007",
+      "所属模块": "未知模块",
+      "功能描述": "The error code indicates that the asset is corrupted.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.Asset",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "ErrorCode",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Security.Asset",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "DATABASE_ERROR",
+      "值": "24000008",
+      "所属模块": "未知模块",
+      "功能描述": "The error code indicates that the database operation failed.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.Asset",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "ErrorCode",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Security.Asset",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CRYPTO_ERROR",
+      "值": "24000009",
+      "所属模块": "未知模块",
+      "功能描述": "The error code indicates that the cryptography operation failed.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.Asset",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "ErrorCode",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Security.Asset",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "IPC_ERROR",
+      "值": "24000010",
+      "所属模块": "未知模块",
+      "功能描述": "The error code indicates that the ipc failed.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.Asset",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "ErrorCode",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Security.Asset",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "BMS_ERROR",
+      "值": "24000011",
+      "所属模块": "未知模块",
+      "功能描述": "The error code indicates that calling the Bundle Manager service failed.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.Asset",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "ErrorCode",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Security.Asset",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "ACCOUNT_ERROR",
+      "值": "24000012",
+      "所属模块": "未知模块",
+      "功能描述": "The error code indicates that calling the OS Account service failed.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.Asset",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "ErrorCode",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Security.Asset",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "ACCESS_TOKEN_ERROR",
+      "值": "24000013",
+      "所属模块": "未知模块",
+      "功能描述": "The error code indicates that calling the Access Token service failed.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.Asset",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "ErrorCode",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Security.Asset",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "FILE_OPERATION_ERROR",
+      "值": "24000014",
+      "所属模块": "未知模块",
+      "功能描述": "The error code indicates that the file operation failed.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.Asset",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "ErrorCode",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Security.Asset",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "GET_SYSTEM_TIME_ERROR",
+      "值": "24000015",
+      "所属模块": "未知模块",
+      "功能描述": "The error code indicates that getting the system time failed.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.Asset",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "ErrorCode",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Security.Asset",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "LIMIT_EXCEEDED",
+      "值": "24000016",
+      "所属模块": "未知模块",
+      "功能描述": "The error code indicates that the cache exceeds the limit.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.Asset",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "ErrorCode",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Security.Asset",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "UNSUPPORTED",
+      "值": "24000017",
+      "所属模块": "未知模块",
+      "功能描述": "The error code indicates that the capability is not supported.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.Asset",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "ErrorCode",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Security.Asset",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    }
+  ]
+}

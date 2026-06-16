@@ -1,0 +1,1049 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.AbilityKit",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "class",
+      "名称": "ApplicationContext",
+      "父类": "Context",
+      "所属模块": "@kit.AbilityKit",
+      "功能描述": "The ApplicationContext module, inherited from Context, provides application-level context capabilities, including APIs for registering and unregistering the lifecycle of application components.",
+      "注释信息": [
+        "@extends Context",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@stagemodelonly",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "@kit.AbilityKit",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Registers a listener to monitor the ability lifecycle of the application. This API uses an asynchronous callback to return the result. <p>**NOTE**: <br>It can be called only by the main thread. </p> 2.Incorrect parameter types.",
+      "注释信息": [
+        "@param { 'abilityLifecycle' } type - Event type.",
+        "@param { AbilityLifecycleCallback } callback - Callback used to return the ID of the registered listener.",
+        "@returns { number } Returns the number code of the callback.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1.Mandatory parameters are left unspecified.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@stagemodelonly",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "ApplicationContext",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'abilityLifecycle'",
+          "必填": true,
+          "说明": "Event type."
+        },
+        {
+          "名称": "callback",
+          "类型": "AbilityLifecycleCallback",
+          "必填": true,
+          "说明": "Callback used to return the ID of the registered listener."
+        }
+      ],
+      "return_description": "Returns the number code of the callback.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1.Mandatory parameters are left unspecified."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unregisters the listener that monitors the ability lifecycle of the application. This API uses an asynchronous callback to return the result. <p>**NOTE**: <br>It can be called only by the main thread. </p> err is undefined. Otherwise, err is an error object. 2.Incorrect parameter types.",
+      "注释信息": [
+        "@param { 'abilityLifecycle' } type - Event type.",
+        "@param { number } callbackId - ID of the listener to unregister.",
+        "@param { AsyncCallback<void> } callback - Callback used to return the result. If the deregistration is successful,",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1.Mandatory parameters are left unspecified.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@stagemodelonly",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "ApplicationContext",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'abilityLifecycle'",
+          "必填": true,
+          "说明": "Event type."
+        },
+        {
+          "名称": "callbackId",
+          "类型": "number",
+          "必填": true,
+          "说明": "ID of the listener to unregister."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "Callback used to return the result. If the deregistration is successful,"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1.Mandatory parameters are left unspecified."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Unregisters the listener that monitors the ability lifecycle of the application. This API uses a promise to return the result. <p>**NOTE**: <br>It can be called only by the main thread. </p> 2.Incorrect parameter types.",
+      "注释信息": [
+        "@param { 'abilityLifecycle' } type - Event type.",
+        "@param { number } callbackId - ID of the listener to unregister.",
+        "@returns { Promise<void> } Promise that returns no value.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1.Mandatory parameters are left unspecified.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@stagemodelonly",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "ApplicationContext",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'abilityLifecycle'",
+          "必填": true,
+          "说明": "Event type."
+        },
+        {
+          "名称": "callbackId",
+          "类型": "number",
+          "必填": true,
+          "说明": "ID of the listener to unregister."
+        }
+      ],
+      "return_description": "Promise that returns no value.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1.Mandatory parameters are left unspecified."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Register environment callback.",
+      "注释信息": [
+        "@param { 'environment' } type - environment.",
+        "@param { EnvironmentCallback } callback - The environment callback.",
+        "@returns { number } Returns the number code of the callback.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@stagemodelonly",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "ApplicationContext",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'environment'",
+          "必填": true,
+          "说明": "environment."
+        },
+        {
+          "名称": "callback",
+          "类型": "EnvironmentCallback",
+          "必填": true,
+          "说明": "The environment callback."
+        }
+      ],
+      "return_description": "Returns the number code of the callback.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unregister environment callback.",
+      "注释信息": [
+        "@param { 'environment' } type - environment.",
+        "@param { number } callbackId - Indicates the number code of the callback.",
+        "@param { AsyncCallback<void> } callback - The callback of unregisterEnvironmentCallback.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@stagemodelonly",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "ApplicationContext",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'environment'",
+          "必填": true,
+          "说明": "environment."
+        },
+        {
+          "名称": "callbackId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the number code of the callback."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "The callback of unregisterEnvironmentCallback."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Unregister environment callback.",
+      "注释信息": [
+        "@param { 'environment' } type - environment.",
+        "@param { number } callbackId - Indicates the number code of the callback.",
+        "@returns { Promise<void> } The promise returned by the function.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@stagemodelonly",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "ApplicationContext",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'environment'",
+          "必填": true,
+          "说明": "environment."
+        },
+        {
+          "名称": "callbackId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the number code of the callback."
+        }
+      ],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Registers a listener for application foreground/background state changes. This API uses an asynchronous callback to return the result. <p>**NOTE**: <br>It can be called only by the main thread. </p> for switching from the background to the foreground and a callback for switching from the foreground to the background. 2.Incorrect parameter types.",
+      "注释信息": [
+        "@param { 'applicationStateChange' } type - Event type.",
+        "@param { ApplicationStateChangeCallback } callback - Callback used to return the result. You can define a callback",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1.Mandatory parameters are left unspecified.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@stagemodelonly",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 18"
+      ],
+      "层级": 1,
+      "上级": "ApplicationContext",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'applicationStateChange'",
+          "必填": true,
+          "说明": "Event type."
+        },
+        {
+          "名称": "callback",
+          "类型": "ApplicationStateChangeCallback",
+          "必填": true,
+          "说明": "Callback used to return the result. You can define a callback"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1.Mandatory parameters are left unspecified."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unregisters the listener for application foreground/background state changes. This API uses an asynchronous callback to return the result. <p>**NOTE**: <br>It can be called only by the main thread. <br>A listener must have been registered by calling <code>ApplicationContext.on('applicationStateChange')</code>. </p> callback defined by <code>ApplicationContext.on('applicationStateChange')</code> or empty. - If a defined callback is passed in, the listener for that callback is unregistered. - If no value is passed in, all the listeners for the corresponding event are unregistered. 2.Incorrect parameter types.",
+      "注释信息": [
+        "@param { 'applicationStateChange' } type - Event type.",
+        "@param { ApplicationStateChangeCallback } [callback] - Callback used to return the result.The value can be a",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1.Mandatory parameters are left unspecified.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@stagemodelonly",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 18"
+      ],
+      "层级": 1,
+      "上级": "ApplicationContext",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'applicationStateChange'",
+          "必填": true,
+          "说明": "Event type."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "ApplicationStateChangeCallback } [callback] - Callback used to return the result.The value can be a"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1.Mandatory parameters are left unspecified."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getRunningProcessInformation",
+      "返回值": "Promise<Array<ProcessInformation>>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains information about the running processes. This API uses a promise to return the result. information. You can perform error handling or custom processing in this callback. 2.Incorrect parameter types.",
+      "注释信息": [
+        "@returns { Promise<Array<ProcessInformation>> } Promise used to return the API call result and the process running",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1.Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 16000011 - The context does not exist.",
+        "@throws { BusinessError } 16000050 - Internal error.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@stagemodelonly",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "ApplicationContext",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [],
+      "return_description": "Promise used to return the API call result and the process running",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1.Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "16000011",
+          "description": "The context does not exist."
+        },
+        {
+          "code": "16000050",
+          "description": "Internal error."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getRunningProcessInformation",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains information about the running processes. This API uses an asynchronous callback to return the result. running processes. 2.Incorrect parameter types.",
+      "注释信息": [
+        "@param { AsyncCallback<Array<ProcessInformation>> } callback - Callback used to return the information about the",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1.Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 16000011 - The context does not exist.",
+        "@throws { BusinessError } 16000050 - Internal error.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@stagemodelonly",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "ApplicationContext",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<Array<ProcessInformation>>",
+          "必填": true,
+          "说明": "Callback used to return the information about the"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1.Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "16000011",
+          "description": "The context does not exist."
+        },
+        {
+          "code": "16000050",
+          "description": "Internal error."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "killAllProcesses",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Kills all processes of this application. The application will not go through the normal lifecycle when exiting. This API uses a promise to return the result. <p>**NOTE**: <br>It can be called only by the main thread. <br>This API is used to forcibly exit an application in abnormal scenarios. To exit an application properly, call terminateSelf(). </p> 2.Incorrect parameter types.",
+      "注释信息": [
+        "@returns { Promise<void> } The promise returned by the function.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1.Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 16000011 - The context does not exist.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@stagemodelonly",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "ApplicationContext",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1.Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "16000011",
+          "description": "The context does not exist."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "killAllProcesses",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Kills all processes of this application. The application will not go through the normal lifecycle when exiting. This API uses a promise to return the result. <p>**NOTE**: <br>It can be called only by the main thread. <br>This API is used to forcibly exit an application in abnormal scenarios. To exit an application properly, call terminateSelf(). </p> the page stack, and <code>false</code> means the opposite.",
+      "注释信息": [
+        "@param { boolean } clearPageStack - Whether to clear the page stack. The value <code>true</code> means to clear",
+        "@returns { Promise<void> } Promise that returns no value.",
+        "@throws { BusinessError } 401 - If the input parameter is not valid parameter.",
+        "@throws { BusinessError } 16000011 - The context does not exist.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@stagemodelonly",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 1,
+      "上级": "ApplicationContext",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "clearPageStack",
+          "类型": "boolean",
+          "必填": true,
+          "说明": "Whether to clear the page stack. The value <code>true</code> means to clear"
+        }
+      ],
+      "return_description": "Promise that returns no value.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "If the input parameter is not valid parameter."
+        },
+        {
+          "code": "16000011",
+          "description": "The context does not exist."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "killAllProcesses",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Kills all processes of this application. The application will not go through the normal lifecycle when exiting. This API uses an asynchronous callback to return the result. <p>**NOTE**: <br>It can be called only by the main thread. <br>This API is used to forcibly exit an application in abnormal scenarios. To exit an application properly, call terminateSelf(). </p> <code>err</code> is <code>undefined</code>. Otherwise, <code>err</code> is an error object. 2.Incorrect parameter types.",
+      "注释信息": [
+        "@param { AsyncCallback<void> } callback - Callback used to return the result. If all the processes are killed,",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1.Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 16000011 - The context does not exist.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@stagemodelonly",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "ApplicationContext",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "Callback used to return the result. If all the processes are killed,"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1.Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "16000011",
+          "description": "The context does not exist."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "setColorMode",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Sets the color mode for the application. <p>**NOTE**: <br>It can be called only by the main thread. </p> system theme mode (no setting). 2.Incorrect parameter types.",
+      "注释信息": [
+        "@param { ConfigurationConstant.ColorMode } colorMode - Target color mode, including dark mode, light mode, and",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1.Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 16000011 - The context does not exist.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@stagemodelonly",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 18"
+      ],
+      "层级": 1,
+      "上级": "ApplicationContext",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "colorMode",
+          "类型": "ConfigurationConstant.ColorMode",
+          "必填": true,
+          "说明": "Target color mode, including dark mode, light mode, and"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1.Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "16000011",
+          "description": "The context does not exist."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "setLanguage",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Sets the language for the application. <p>**NOTE**: <br>It can be called only by the main thread. </p> calling getSystemLanguages().",
+      "注释信息": [
+        "@param { string } language - Target language. The list of supported languages can be obtained by",
+        "@throws { BusinessError } 16000011 - The context does not exist.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@stagemodelonly",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 21"
+      ],
+      "层级": 1,
+      "上级": "ApplicationContext",
+      "since_version": "21",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "language",
+          "类型": "string",
+          "必填": true,
+          "说明": "Target language. The list of supported languages can be obtained by"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "16000011",
+          "description": "The context does not exist."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "clearUpApplicationData",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Clears up the application data and revokes the permissions that the application has requested from users. This API uses a promise to return the result. <p>**NOTE**: <br>It can be called only by the main thread. <br>This API stops the application process. After the application process is stopped, all subsequent callbacks will not be triggered. </p>",
+      "注释信息": [
+        "@returns { Promise<void> } Promise that returns no value.",
+        "@throws { BusinessError } 16000011 - The context does not exist.",
+        "@throws { BusinessError } 16000050 - Internal error.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@stagemodelonly",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "ApplicationContext",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [],
+      "return_description": "Promise that returns no value.",
+      "error_codes": [
+        {
+          "code": "16000011",
+          "description": "The context does not exist."
+        },
+        {
+          "code": "16000050",
+          "description": "Internal error."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "clearUpApplicationData",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Clears up the application data and revokes the permissions that the application has requested from users. This API uses an asynchronous callback to return the result. <p>**NOTE**: <br>It can be called only by the main thread. <br>This API stops the application process. After the application process is stopped, all subsequent callbacks will not be triggered. </p> up, <code>error</code> is <code>undefined</code>; otherwise, <code>error</code> is an error object. 2.Incorrect parameter types.",
+      "注释信息": [
+        "@param { AsyncCallback<void> } callback - Callback used to return the result. If the application data is cleared",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1.Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 16000011 - The context does not exist.",
+        "@throws { BusinessError } 16000050 - Internal error.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@stagemodelonly",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "ApplicationContext",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "Callback used to return the result. If the application data is cleared"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1.Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "16000011",
+          "description": "The context does not exist."
+        },
+        {
+          "code": "16000050",
+          "description": "Internal error."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "restartApp",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Restarts the application and starts the specified UIAbility. The onDestroy callback is not triggered during the restart. <p>**NOTE**: <br>It can be called only by the main thread, and the application to restart must be active. </p> name passed in. 2.Incorrect parameter types.",
+      "注释信息": [
+        "@param { Want } want - Want information about the UIAbility to start. No verification is performed on the bundle",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1.Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 16000050 - Internal error.",
+        "@throws { BusinessError } 16000053 - The ability is not on the top of the UI.",
+        "@throws { BusinessError } 16000063 - The target to restart does not belong to the current application or is not a UIAbility.",
+        "@throws { BusinessError } 16000064 - Restart too frequently. Try again at least 3s later.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@stagemodelonly",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "ApplicationContext",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "want",
+          "类型": "Want",
+          "必填": true,
+          "说明": "Want information about the UIAbility to start. No verification is performed on the bundle"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1.Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "16000050",
+          "description": "Internal error."
+        },
+        {
+          "code": "16000053",
+          "description": "The ability is not on the top of the UI."
+        },
+        {
+          "code": "16000063",
+          "description": "The target to restart does not belong to the current application or is not a UIAbility."
+        },
+        {
+          "code": "16000064",
+          "description": "Restart too frequently. Try again at least 3s later."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "setSupportedProcessCache",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Sets whether the application itself supports process cache, which enables quick startup after caching. <p>**NOTE**: <br>It can be called only by the main thread. <br>This API only sets the application to be ready for quick startup after caching. It does not mean that quick startup will be triggered. Other conditions must be considered to determine whether to trigger quick startup. <br>The process cache support status takes effect for a single application process instance. The setting does not affect other process instances. After a process instance is destroyed, the status is not retained and can be reset. <br>To support process cache, you must call this API, with <code>true</code> passed in, in the <code>onCreate()</code> lifecycle of all AbilityStages in the same process. </p> process cache is supported, and <code>false</code> means the opposite. 2.Incorrect parameter types.",
+      "注释信息": [
+        "@param { boolean } isSupported - Whether process cache is supported. The value <code>true</code> means that",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1.Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 16000011 - The context does not exist.",
+        "@throws { BusinessError } 16000050 - Internal error.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@stagemodelonly",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "ApplicationContext",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "isSupported",
+          "类型": "boolean",
+          "必填": true,
+          "说明": "Whether process cache is supported. The value <code>true</code> means that"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1.Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "16000011",
+          "description": "The context does not exist."
+        },
+        {
+          "code": "16000050",
+          "description": "Internal error."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "setFont",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Sets the font for this application. <p>**NOTE**: <br>This API can be called only by the main thread. </P>",
+      "注释信息": [
+        "@param { string } font - Font, which can be registered by calling UIContext.registerFont.",
+        "@throws { BusinessError } 16000011 - The context does not exist.",
+        "@throws { BusinessError } 16000050 - Internal error.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@stagemodelonly",
+        "@crossplatform",
+        "@since 21"
+      ],
+      "层级": 1,
+      "上级": "ApplicationContext",
+      "since_version": "21",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "font",
+          "类型": "string",
+          "必填": true,
+          "说明": "Font, which can be registered by calling UIContext.registerFont."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "16000011",
+          "description": "The context does not exist."
+        },
+        {
+          "code": "16000050",
+          "description": "Internal error."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getCurrentAppCloneIndex",
+      "返回值": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Get current app clone index.",
+      "注释信息": [
+        "@returns { number } Returns the app clone index for current app.",
+        "@throws { BusinessError } 16000011 - The context does not exist.",
+        "@throws { BusinessError } 16000071 - The MultiAppMode is not {@link App_CLONE}.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@stagemodelonly",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "ApplicationContext",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [],
+      "return_description": "Returns the app clone index for current app.",
+      "error_codes": [
+        {
+          "code": "16000011",
+          "description": "The context does not exist."
+        },
+        {
+          "code": "16000071",
+          "description": "The MultiAppMode is not {@link App_CLONE}."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "setFontSizeScale",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Sets the scale ratio for the font size of this application. <p>**NOTE**: <br>It can be called only by the main thread. </p> {@link fontSizeScale} is set to <code>followSystem</code> and the value set here exceeds the value of fontSizeMaxScale, the value of fontSizeMaxScale takes effect.",
+      "注释信息": [
+        "@param {number} fontSizeScale - Font scale ratio. The value is a non-negative number. When the application's",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@stagemodelonly",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 21"
+      ],
+      "层级": 1,
+      "上级": "ApplicationContext",
+      "since_version": "21",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "fontSizeScale",
+          "类型": "number",
+          "必填": true,
+          "说明": "Font scale ratio. The value is a non-negative number. When the application's"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getCurrentInstanceKey",
+      "返回值": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the unique instance ID of this application. <p>**NOTE**: <br>It can be called only by the main thread. <br>This API is valid only for 2-in-1 devices. </p>",
+      "注释信息": [
+        "@returns { string } Unique instance ID of the application.",
+        "@throws { BusinessError } 16000011 - The context does not exist.",
+        "@throws { BusinessError } 16000078 - The multi-instance is not supported.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@stagemodelonly",
+        "@since 14"
+      ],
+      "层级": 1,
+      "上级": "ApplicationContext",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [],
+      "return_description": "Unique instance ID of the application.",
+      "error_codes": [
+        {
+          "code": "16000011",
+          "description": "The context does not exist."
+        },
+        {
+          "code": "16000078",
+          "description": "The multi-instance is not supported."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getAllRunningInstanceKeys",
+      "返回值": "Promise<Array<string>>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the unique instance IDs of all multi-instances of this application. This API uses a promise to return the result. <p>**NOTE**: <br>It can be called only by the main thread. <br>This API is valid only for 2-in-1 devices. </p> application.",
+      "注释信息": [
+        "@returns { Promise<Array<string>> } Promise used to return the unique instance IDs of all multi-instances of the",
+        "@throws { BusinessError } 16000011 - The context does not exist.",
+        "@throws { BusinessError } 16000050 - Internal error.",
+        "@throws { BusinessError } 16000078 - The multi-instance is not supported.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@stagemodelonly",
+        "@since 14"
+      ],
+      "层级": 1,
+      "上级": "ApplicationContext",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [],
+      "return_description": "Promise used to return the unique instance IDs of all multi-instances of the",
+      "error_codes": [
+        {
+          "code": "16000011",
+          "description": "The context does not exist."
+        },
+        {
+          "code": "16000050",
+          "description": "Internal error."
+        },
+        {
+          "code": "16000078",
+          "description": "The multi-instance is not supported."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getAllWindowStages",
+      "返回值": "Promise<Array<window.WindowStage>>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains all windowstage of current process. <p>**NOTE**: <br>It can be called only by the main thread. </p>",
+      "注释信息": [
+        "@returns { Promise<Array<window.WindowStage>> } Promise used to return the windowStages of current process.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@stagemodelonly",
+        "@atomicservice",
+        "@since 23"
+      ],
+      "层级": 1,
+      "上级": "ApplicationContext",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [],
+      "return_description": "Promise used to return the windowStages of current process.",
+      "error_codes": [],
+      "版本": "API"
+    }
+  ]
+}

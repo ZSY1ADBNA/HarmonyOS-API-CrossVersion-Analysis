@@ -1,0 +1,972 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.AbilityKit",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "interface",
+      "名称": "OnReleaseCallback",
+      "所属模块": "@kit.AbilityKit",
+      "功能描述": "The prototype of the listener function interface registered by the Caller.",
+      "注释信息": [
+        "@typedef OnReleaseCallback",
+        "@syscap SystemCapability.Ability.AbilityRuntime.AbilityCore",
+        "@stagemodelonly",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "@kit.AbilityKit",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.AbilityCore",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "call_signature",
+      "签名": "(msg: string): void",
+      "所属模块": "未知模块",
+      "功能描述": "Defines the callback of OnRelease.",
+      "注释信息": [
+        "@param { string } msg - The notification event string listened to by the OnRelease.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.AbilityCore",
+        "@stagemodelonly",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "OnReleaseCallback",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.AbilityCore",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "interface",
+      "名称": "OnRemoteStateChangeCallback",
+      "所属模块": "@kit.AbilityKit",
+      "功能描述": "The prototype of the listener function interface registered by the Caller.",
+      "注释信息": [
+        "@typedef OnRemoteStateChangeCallback",
+        "@syscap SystemCapability.Ability.AbilityRuntime.AbilityCore",
+        "@stagemodelonly",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "@kit.AbilityKit",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.AbilityCore",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "call_signature",
+      "签名": "(msg: string): void",
+      "所属模块": "未知模块",
+      "功能描述": "Defines the callback of OnRemoteStateChange.",
+      "注释信息": [
+        "@param { string } msg - The notification event string listened to by the OnRemoteStateChange.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.AbilityCore",
+        "@stagemodelonly",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "OnRemoteStateChangeCallback",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.AbilityCore",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "interface",
+      "名称": "CalleeCallback",
+      "所属模块": "@kit.AbilityKit",
+      "功能描述": "The prototype of the message listener function interface registered by the Callee.",
+      "注释信息": [
+        "@typedef CalleeCallback",
+        "@syscap SystemCapability.Ability.AbilityRuntime.AbilityCore",
+        "@stagemodelonly",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "@kit.AbilityKit",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.AbilityCore",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "call_signature",
+      "签名": "(indata: rpc.MessageSequence): rpc.Parcelable",
+      "所属模块": "未知模块",
+      "功能描述": "Defines the callback of Callee.",
+      "注释信息": [
+        "@param { rpc.MessageSequence } indata - Notification indata to the callee.",
+        "@returns { rpc.Parcelable } Returns the callee's notification result indata.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.AbilityCore",
+        "@stagemodelonly",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "CalleeCallback",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.AbilityCore",
+      "parameters": [],
+      "return_description": "Returns the callee's notification result indata.",
+      "error_codes": [],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "interface",
+      "名称": "Caller",
+      "所属模块": "@kit.AbilityKit",
+      "功能描述": "The interface of a Caller.",
+      "注释信息": [
+        "@interface Caller",
+        "@syscap SystemCapability.Ability.AbilityRuntime.AbilityCore",
+        "@stagemodelonly",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "@kit.AbilityKit",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.AbilityCore",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "method",
+      "名称": "call",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Notify the server of Parcelable type data. 2. Incorrect parameter types.",
+      "注释信息": [
+        "@param { string } method - The notification event string listened to by the callee.",
+        "@param { rpc.Parcelable } data - Notification data to the callee.",
+        "@returns { Promise<void> } The promise returned by the function.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 16200001 - Caller released. The caller has been released.",
+        "@throws { BusinessError } 16200002 - The callee does not exist.",
+        "@throws { BusinessError } 16000050 - Internal error.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.AbilityCore",
+        "@stagemodelonly",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "Caller",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.AbilityCore",
+      "parameters": [
+        {
+          "名称": "method",
+          "类型": "string",
+          "必填": true,
+          "说明": "The notification event string listened to by the callee."
+        },
+        {
+          "名称": "data",
+          "类型": "rpc.Parcelable",
+          "必填": true,
+          "说明": "Notification data to the callee."
+        }
+      ],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "16200001",
+          "description": "Caller released. The caller has been released."
+        },
+        {
+          "code": "16200002",
+          "description": "The callee does not exist."
+        },
+        {
+          "code": "16000050",
+          "description": "Internal error."
+        }
+      ],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "method",
+      "名称": "callWithResult",
+      "返回值": "Promise<rpc.MessageSequence>",
+      "所属模块": "未知模块",
+      "功能描述": "Notify the server of Parcelable type data and return the notification result. 2. Incorrect parameter types.",
+      "注释信息": [
+        "@param { string } method - The notification event string listened to by the callee.",
+        "@param { rpc.Parcelable } data - Notification data to the callee.",
+        "@returns { Promise<rpc.MessageSequence> } Returns the callee's notification result data.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 16200001 - Caller released. The caller has been released.",
+        "@throws { BusinessError } 16200002 - The callee does not exist.",
+        "@throws { BusinessError } 16000050 - Internal error.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.AbilityCore",
+        "@stagemodelonly",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "Caller",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.AbilityCore",
+      "parameters": [
+        {
+          "名称": "method",
+          "类型": "string",
+          "必填": true,
+          "说明": "The notification event string listened to by the callee."
+        },
+        {
+          "名称": "data",
+          "类型": "rpc.Parcelable",
+          "必填": true,
+          "说明": "Notification data to the callee."
+        }
+      ],
+      "return_description": "Returns the callee's notification result data.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "16200001",
+          "description": "Caller released. The caller has been released."
+        },
+        {
+          "code": "16200002",
+          "description": "The callee does not exist."
+        },
+        {
+          "code": "16000050",
+          "description": "Internal error."
+        }
+      ],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "method",
+      "名称": "release",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Register the generic component server Stub (stub) disconnect listening notification.",
+      "注释信息": [
+        "@throws { BusinessError } 16200001 - Caller released. The caller has been released.",
+        "@throws { BusinessError } 16200002 - The callee does not exist.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.AbilityCore",
+        "@stagemodelonly",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "Caller",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.AbilityCore",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "16200001",
+          "description": "Caller released. The caller has been released."
+        },
+        {
+          "code": "16200002",
+          "description": "The callee does not exist."
+        }
+      ],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "method",
+      "名称": "onRelease",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Register death listener notification callback. 2. Incorrect parameter types.",
+      "注释信息": [
+        "@param { OnReleaseCallback } callback - Register a callback function for listening for notifications.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 16200001 - Caller released. The caller has been released.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.AbilityCore",
+        "@stagemodelonly",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "Caller",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.AbilityCore",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "OnReleaseCallback",
+          "必填": true,
+          "说明": "Register a callback function for listening for notifications."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "16200001",
+          "description": "Caller released. The caller has been released."
+        }
+      ],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "method",
+      "名称": "onRemoteStateChange",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Register state changed listener notification callback of remote ability. 2. Incorrect parameter types.",
+      "注释信息": [
+        "@param { OnRemoteStateChangeCallback } callback - Register a callback function for listening for notifications.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 16200001 - Caller released. The caller has been released.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.AbilityCore",
+        "@stagemodelonly",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "Caller",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.AbilityCore",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "OnRemoteStateChangeCallback",
+          "必填": true,
+          "说明": "Register a callback function for listening for notifications."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "16200001",
+          "description": "Caller released. The caller has been released."
+        }
+      ],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Register death listener notification callback. 2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { 'release' } type - release.",
+        "@param { OnReleaseCallback } callback - Register a callback function for listening for notifications.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 16200001 - Caller released. The caller has been released.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.AbilityCore",
+        "@stagemodelonly",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "Caller",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.AbilityCore",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'release'",
+          "必填": true,
+          "说明": "release."
+        },
+        {
+          "名称": "callback",
+          "类型": "OnReleaseCallback",
+          "必填": true,
+          "说明": "Register a callback function for listening for notifications."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "16200001",
+          "description": "Caller released. The caller has been released."
+        }
+      ],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unregister death listener notification callback. 2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { 'release' } type - release.",
+        "@param { OnReleaseCallback } callback - Unregister a callback function for listening for notifications.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@syscap SystemCapability.Ability.AbilityRuntime.AbilityCore",
+        "@stagemodelonly",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "Caller",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.AbilityCore",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'release'",
+          "必填": true,
+          "说明": "release."
+        },
+        {
+          "名称": "callback",
+          "类型": "OnReleaseCallback",
+          "必填": true,
+          "说明": "Unregister a callback function for listening for notifications."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        }
+      ],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unregister all death listener notification callback. 2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { 'release' } type - release.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@syscap SystemCapability.Ability.AbilityRuntime.AbilityCore",
+        "@stagemodelonly",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "Caller",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.AbilityCore",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'release'",
+          "必填": true,
+          "说明": "release."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        }
+      ],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "interface",
+      "名称": "Callee",
+      "所属模块": "@kit.AbilityKit",
+      "功能描述": "The interface of a Callee.",
+      "注释信息": [
+        "@interface Callee",
+        "@syscap SystemCapability.Ability.AbilityRuntime.AbilityCore",
+        "@stagemodelonly",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "@kit.AbilityKit",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.AbilityCore",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Register data listener callback. 2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { string } method - A string registered to listen for notification events.",
+        "@param { CalleeCallback } callback - Register a callback function that listens for notification events.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 16200004 - The method has been registered.",
+        "@throws { BusinessError } 16000050 - Internal error.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.AbilityCore",
+        "@stagemodelonly",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "Callee",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.AbilityCore",
+      "parameters": [
+        {
+          "名称": "method",
+          "类型": "string",
+          "必填": true,
+          "说明": "A string registered to listen for notification events."
+        },
+        {
+          "名称": "callback",
+          "类型": "CalleeCallback",
+          "必填": true,
+          "说明": "Register a callback function that listens for notification events."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "16200004",
+          "description": "The method has been registered."
+        },
+        {
+          "code": "16000050",
+          "description": "Internal error."
+        }
+      ],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unregister data listener callback. 2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { string } method - A string registered to listen for notification events.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 16200005 - The method has not been registered.",
+        "@throws { BusinessError } 16000050 - Internal error.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.AbilityCore",
+        "@stagemodelonly",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "Callee",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.AbilityCore",
+      "parameters": [
+        {
+          "名称": "method",
+          "类型": "string",
+          "必填": true,
+          "说明": "A string registered to listen for notification events."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "16200005",
+          "description": "The method has not been registered."
+        },
+        {
+          "code": "16000050",
+          "description": "Internal error."
+        }
+      ],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "class",
+      "名称": "UIAbility",
+      "父类": "Ability",
+      "所属模块": "@kit.AbilityKit",
+      "功能描述": "The class of a UI ability.",
+      "注释信息": [
+        "@extends Ability",
+        "@syscap SystemCapability.Ability.AbilityRuntime.AbilityCore",
+        "@stagemodelonly",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "@kit.AbilityKit",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.AbilityCore",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "property",
+      "名称": "context",
+      "属性类型": "UIAbilityContext",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates configuration information about an ability context.",
+      "注释信息": [
+        "@type { UIAbilityContext }",
+        "@syscap SystemCapability.Ability.AbilityRuntime.AbilityCore",
+        "@stagemodelonly",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "UIAbility",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.AbilityCore",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "property",
+      "名称": "launchWant",
+      "属性类型": "Want",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates ability launch want.",
+      "注释信息": [
+        "@type { Want }",
+        "@syscap SystemCapability.Ability.AbilityRuntime.AbilityCore",
+        "@stagemodelonly",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "UIAbility",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.AbilityCore",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "property",
+      "名称": "lastRequestWant",
+      "属性类型": "Want",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates ability last request want.",
+      "注释信息": [
+        "@type { Want }",
+        "@syscap SystemCapability.Ability.AbilityRuntime.AbilityCore",
+        "@stagemodelonly",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "UIAbility",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.AbilityCore",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "property",
+      "名称": "callee",
+      "属性类型": "Callee",
+      "所属模块": "未知模块",
+      "功能描述": "Call Service Stub Object.",
+      "注释信息": [
+        "@type { Callee }",
+        "@syscap SystemCapability.Ability.AbilityRuntime.AbilityCore",
+        "@stagemodelonly",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "UIAbility",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.AbilityCore",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "method",
+      "名称": "onCreate",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Called back when an ability is started for initialization.",
+      "注释信息": [
+        "@param { Want } want - Indicates the want info of the created ability.",
+        "@param { AbilityConstant.LaunchParam } launchParam - Indicates the launch param.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.AbilityCore",
+        "@stagemodelonly",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "UIAbility",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.AbilityCore",
+      "parameters": [
+        {
+          "名称": "want",
+          "类型": "Want",
+          "必填": true,
+          "说明": "Indicates the want info of the created ability."
+        },
+        {
+          "名称": "launchParam",
+          "类型": "AbilityConstant.LaunchParam",
+          "必填": true,
+          "说明": "Indicates the launch param."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "method",
+      "名称": "onWindowStageCreate",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Called back when an ability window stage is created.",
+      "注释信息": [
+        "@param { window.WindowStage } windowStage - Indicates the created WindowStage.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.AbilityCore",
+        "@stagemodelonly",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "UIAbility",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.AbilityCore",
+      "parameters": [
+        {
+          "名称": "windowStage",
+          "类型": "window.WindowStage",
+          "必填": true,
+          "说明": "Indicates the created WindowStage."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "method",
+      "名称": "onWindowStageWillDestroy",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Called back when an ability window stage will destroy.",
+      "注释信息": [
+        "@param { window.WindowStage } windowStage - Indicates the WindowStage that will be destroyed.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.AbilityCore",
+        "@stagemodelonly",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "UIAbility",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.AbilityCore",
+      "parameters": [
+        {
+          "名称": "windowStage",
+          "类型": "window.WindowStage",
+          "必填": true,
+          "说明": "Indicates the WindowStage that will be destroyed."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "method",
+      "名称": "onWindowStageDestroy",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Called back when an ability window stage is destroyed.",
+      "注释信息": [
+        "@syscap SystemCapability.Ability.AbilityRuntime.AbilityCore",
+        "@stagemodelonly",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "UIAbility",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.AbilityCore",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "method",
+      "名称": "onWindowStageRestore",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Called back when an ability window stage is restored.",
+      "注释信息": [
+        "@param { window.WindowStage } windowStage - window stage to restore",
+        "@syscap SystemCapability.Ability.AbilityRuntime.AbilityCore",
+        "@stagemodelonly",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "UIAbility",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.AbilityCore",
+      "parameters": [
+        {
+          "名称": "windowStage",
+          "类型": "window.WindowStage",
+          "必填": true,
+          "说明": "window stage to restore"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "method",
+      "名称": "onDestroy",
+      "返回值": "void | Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Called back before an ability is destroyed. After the onDestroy() lifecycle callback is executed, the application may exit. Consequently, the asynchronous function (for example, asynchronously writing data to the database) in onDestroy() may fail to be executed. You can use the asynchronous lifecycle to ensure that the subsequent lifecycle continues only after the asynchronous function in onDestroy() finishes the execution.",
+      "注释信息": [
+        "@returns { void | Promise<void> } the promise returned by the function.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.AbilityCore",
+        "@stagemodelonly",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "UIAbility",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.AbilityCore",
+      "parameters": [],
+      "return_description": "the promise returned by the function.",
+      "error_codes": [],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "method",
+      "名称": "onForeground",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Called back when the state of an ability changes to foreground.",
+      "注释信息": [
+        "@syscap SystemCapability.Ability.AbilityRuntime.AbilityCore",
+        "@stagemodelonly",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "UIAbility",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.AbilityCore",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "method",
+      "名称": "onBackground",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Called back when the state of an ability changes to background.",
+      "注释信息": [
+        "@syscap SystemCapability.Ability.AbilityRuntime.AbilityCore",
+        "@stagemodelonly",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "UIAbility",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.AbilityCore",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "method",
+      "名称": "onContinue",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Called back when an ability prepares to continue.",
+      "注释信息": [
+        "@param { Record<string, Object> } wantParam - Indicates the want parameter.",
+        "@returns { AbilityConstant.OnContinueResult | Promise<AbilityConstant.OnContinueResult> } Return the result of onContinue, support promise.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.AbilityCore",
+        "@stagemodelonly",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "UIAbility",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.AbilityCore",
+      "parameters": [
+        {
+          "名称": "wantParam",
+          "类型": "Record<string, Object>",
+          "必填": true,
+          "说明": "Indicates the want parameter."
+        }
+      ],
+      "return_description": "Return the result of onContinue, support promise.",
+      "error_codes": [],
+      "版本": "API5.1"
+    }
+  ]
+}

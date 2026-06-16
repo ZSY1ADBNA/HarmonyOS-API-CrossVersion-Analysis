@@ -1,0 +1,1274 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.AbilityKit",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "namespace",
+      "名称": "abilityAccessCtrl",
+      "所属模块": "@kit.AbilityKit",
+      "功能描述": "",
+      "注释信息": [
+        "@namespace abilityAccessCtrl",
+        "@syscap SystemCapability.Security.AccessToken",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "@kit.AbilityKit",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Security.AccessToken",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "createAtManager",
+      "返回值": "AtManager",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the AtManager instance.",
+      "注释信息": [
+        "@returns { AtManager } returns the instance of the AtManager.",
+        "@syscap SystemCapability.Security.AccessToken",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "abilityAccessCtrl",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Security.AccessToken",
+      "parameters": [],
+      "return_description": "returns the instance of the AtManager.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "AtManager",
+      "所属模块": "未知模块",
+      "功能描述": "Provides methods for managing access_token.",
+      "注释信息": [
+        "@interface AtManager",
+        "@syscap SystemCapability.Security.AccessToken",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "abilityAccessCtrl",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Security.AccessToken",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "verifyAccessToken",
+      "返回值": "Promise<GrantStatus>",
+      "所属模块": "未知模块",
+      "功能描述": "Checks whether a specified application has been granted the given permission.",
+      "注释信息": [
+        "@param { number } tokenID - Token ID of the application.",
+        "@param { Permissions } permissionName - Name of the permission to be verified. The Permissions type supports only valid permission names.",
+        "@returns { Promise<GrantStatus> } Returns permission verify result.",
+        "@syscap SystemCapability.Security.AccessToken",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "AtManager",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Security.AccessToken",
+      "parameters": [
+        {
+          "名称": "tokenID",
+          "类型": "number",
+          "必填": true,
+          "说明": "Token ID of the application."
+        },
+        {
+          "名称": "permissionName",
+          "类型": "Permissions",
+          "必填": true,
+          "说明": "Name of the permission to be verified. The Permissions type supports only valid permission names."
+        }
+      ],
+      "return_description": "Returns permission verify result.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "verifyAccessToken",
+      "返回值": "Promise<GrantStatus>",
+      "所属模块": "未知模块",
+      "功能描述": "Checks whether a specified application has been granted the given permission.",
+      "注释信息": [
+        "@param { number } tokenID - Token ID of the application.",
+        "@param { string } permissionName - Name of the permission to be verified.",
+        "@returns { Promise<GrantStatus> } Returns permission verify result.",
+        "@syscap SystemCapability.Security.AccessToken",
+        "@since 8",
+        "@deprecated since 9",
+        "@useinstead ohos.abilityAccessCtrl.AtManager#checkAccessToken"
+      ],
+      "层级": 2,
+      "上级": "AtManager",
+      "since_version": "8",
+      "system_capability": "SystemCapability.Security.AccessToken",
+      "parameters": [
+        {
+          "名称": "tokenID",
+          "类型": "number",
+          "必填": true,
+          "说明": "Token ID of the application."
+        },
+        {
+          "名称": "permissionName",
+          "类型": "string",
+          "必填": true,
+          "说明": "Name of the permission to be verified."
+        }
+      ],
+      "return_description": "Returns permission verify result.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "verifyAccessTokenSync",
+      "返回值": "GrantStatus",
+      "所属模块": "未知模块",
+      "功能描述": "Checks whether a specified application has been granted the given permission synchronously.",
+      "注释信息": [
+        "@param { number } tokenID - Token ID of the application.",
+        "@param { Permissions } permissionName - Name of the permission to be verified.",
+        "@returns { GrantStatus } Returns permission verify result.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types.",
+        "@throws { BusinessError } 12100001 - Invalid parameter. The tokenID is 0, or the permissionName exceeds 256 characters.",
+        "@syscap SystemCapability.Security.AccessToken",
+        "@since 9"
+      ],
+      "层级": 2,
+      "上级": "AtManager",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Security.AccessToken",
+      "parameters": [
+        {
+          "名称": "tokenID",
+          "类型": "number",
+          "必填": true,
+          "说明": "Token ID of the application."
+        },
+        {
+          "名称": "permissionName",
+          "类型": "Permissions",
+          "必填": true,
+          "说明": "Name of the permission to be verified."
+        }
+      ],
+      "return_description": "Returns permission verify result.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types."
+        },
+        {
+          "code": "12100001",
+          "description": "Invalid parameter. The tokenID is 0, or the permissionName exceeds 256 characters."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "checkAccessToken",
+      "返回值": "Promise<GrantStatus>",
+      "所属模块": "未知模块",
+      "功能描述": "Checks whether a specified application has been granted the given permission. On the cross-platform, this function can be used to check the permission grant status for the current application only.",
+      "注释信息": [
+        "@param { number } tokenID - Token ID of the application.",
+        "@param { Permissions } permissionName - Name of the permission to be verified.",
+        "@returns { Promise<GrantStatus> } Returns permission verify result.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types.",
+        "@throws { BusinessError } 12100001 - Invalid parameter. The tokenID is 0, or the permissionName exceeds 256 characters.",
+        "@syscap SystemCapability.Security.AccessToken",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "AtManager",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Security.AccessToken",
+      "parameters": [
+        {
+          "名称": "tokenID",
+          "类型": "number",
+          "必填": true,
+          "说明": "Token ID of the application."
+        },
+        {
+          "名称": "permissionName",
+          "类型": "Permissions",
+          "必填": true,
+          "说明": "Name of the permission to be verified."
+        }
+      ],
+      "return_description": "Returns permission verify result.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types."
+        },
+        {
+          "code": "12100001",
+          "description": "Invalid parameter. The tokenID is 0, or the permissionName exceeds 256 characters."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "checkAccessTokenSync",
+      "返回值": "GrantStatus",
+      "所属模块": "未知模块",
+      "功能描述": "Checks whether a specified application has been granted the given permission. On the cross-platform, this function can be used to check the permission grant status for the current application only.",
+      "注释信息": [
+        "@param { number } tokenID - Token ID of the application.",
+        "@param { Permissions } permissionName - Name of the permission to be verified.",
+        "@returns { GrantStatus } Returns permission verify result.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types.",
+        "@throws { BusinessError } 12100001 - Invalid parameter. The tokenID is 0, or the permissionName exceeds 256 characters.",
+        "@syscap SystemCapability.Security.AccessToken",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "AtManager",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Security.AccessToken",
+      "parameters": [
+        {
+          "名称": "tokenID",
+          "类型": "number",
+          "必填": true,
+          "说明": "Token ID of the application."
+        },
+        {
+          "名称": "permissionName",
+          "类型": "Permissions",
+          "必填": true,
+          "说明": "Name of the permission to be verified."
+        }
+      ],
+      "return_description": "Returns permission verify result.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types."
+        },
+        {
+          "code": "12100001",
+          "description": "Invalid parameter. The tokenID is 0, or the permissionName exceeds 256 characters."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "requestPermissionsFromUser",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Requests certain permissions from the user. <br> The context must belong to the Stage model and only supports UIAbilityContext and UIExtensionContext. This parameter cannot be null or empty. requesting permissions. unspecified; 2.Incorrect parameter types. does not belong to the application itself. or obtaining user operation results.",
+      "注释信息": [
+        "@param { Context } context - The context that initiates the permission request.",
+        "@param { Array<Permissions> } permissionList - Indicates the list of permissions to be requested.",
+        "@param { AsyncCallback<PermissionRequestResult> } requestCallback Callback for the result from",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1.Mandatory parameters are left",
+        "@throws { BusinessError } 12100001 - (Deprecated in 12) Invalid parameter. The context is invalid when it",
+        "@throws { BusinessError } 12100009 - Common inner error. An error occurs when creating the pop-up window",
+        "@syscap SystemCapability.Security.AccessToken",
+        "@stagemodelonly",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "AtManager",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Security.AccessToken",
+      "parameters": [
+        {
+          "名称": "context",
+          "类型": "Context",
+          "必填": true,
+          "说明": "The context that initiates the permission request."
+        },
+        {
+          "名称": "permissionList",
+          "类型": "Array<Permissions>",
+          "必填": true,
+          "说明": "Indicates the list of permissions to be requested."
+        },
+        {
+          "名称": "requestCallback",
+          "类型": "AsyncCallback<PermissionRequestResult>",
+          "必填": true,
+          "说明": "Callback for the result from"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1.Mandatory parameters are left"
+        },
+        {
+          "code": "12100001",
+          "description": "(Deprecated in 12) Invalid parameter. The context is invalid when it"
+        },
+        {
+          "code": "12100009",
+          "description": "Common inner error. An error occurs when creating the pop-up window"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "requestPermissionsFromUser",
+      "返回值": "Promise<PermissionRequestResult>",
+      "所属模块": "未知模块",
+      "功能描述": "Requests certain permissions from the user. <br> The context must belong to the Stage model and only supports UIAbilityContext and UIExtensionContext. This parameter cannot be null or empty. unspecified; 2.Incorrect parameter types. does not belong to the application itself. or obtaining user operation results.",
+      "注释信息": [
+        "@param { Context } context - The context that initiates the permission request.",
+        "@param { Array<Permissions> } permissionList - Indicates the list of permissions to be requested.",
+        "@returns { Promise<PermissionRequestResult> } Returns result of requesting permissions.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1.Mandatory parameters are left",
+        "@throws { BusinessError } 12100001 - (Deprecated in 12) Invalid parameter. The context is invalid when it",
+        "@throws { BusinessError } 12100009 - Common inner error. An error occurs when creating the pop-up window",
+        "@syscap SystemCapability.Security.AccessToken",
+        "@stagemodelonly",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "AtManager",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Security.AccessToken",
+      "parameters": [
+        {
+          "名称": "context",
+          "类型": "Context",
+          "必填": true,
+          "说明": "The context that initiates the permission request."
+        },
+        {
+          "名称": "permissionList",
+          "类型": "Array<Permissions>",
+          "必填": true,
+          "说明": "Indicates the list of permissions to be requested."
+        }
+      ],
+      "return_description": "Returns result of requesting permissions.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1.Mandatory parameters are left"
+        },
+        {
+          "code": "12100001",
+          "description": "(Deprecated in 12) Invalid parameter. The context is invalid when it"
+        },
+        {
+          "code": "12100009",
+          "description": "Common inner error. An error occurs when creating the pop-up window"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Subscribes to the permission changes of this application. listened on. The value in the list can be: <br> {@code empty} - Indicates that the application can be notified if any permission state changes. <br> {@code non-empty} - Indicates that the application can only be notified if the specified permission state changes. permissions. unspecified; 2.Incorrect parameter types. the size limit; 2. The permissionNames in the list are all invalid.",
+      "注释信息": [
+        "@param { 'selfPermissionStateChange' } type - Event type.",
+        "@param { Array<Permissions> } permissionList - A list of permissions that specify the permissions to be",
+        "@param { Callback<PermissionStateChangeInfo> } callback - Callback for the result from registering",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1.Mandatory parameters are left",
+        "@throws { BusinessError } 12100001 - Invalid parameter. Possible causes: 1. The permissionList exceeds",
+        "@throws { BusinessError } 12100004 - The API is used repeatedly with the same input.",
+        "@throws { BusinessError } 12100005 - The registration time has exceeded the limit.",
+        "@throws { BusinessError } 12100007 - The service is abnormal.",
+        "@syscap SystemCapability.Security.AccessToken",
+        "@atomicservice",
+        "@since 18"
+      ],
+      "层级": 2,
+      "上级": "AtManager",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Security.AccessToken",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'selfPermissionStateChange'",
+          "必填": true,
+          "说明": "Event type."
+        },
+        {
+          "名称": "permissionList",
+          "类型": "Array<Permissions>",
+          "必填": true,
+          "说明": "A list of permissions that specify the permissions to be"
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<PermissionStateChangeInfo>",
+          "必填": true,
+          "说明": "Callback for the result from registering"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1.Mandatory parameters are left"
+        },
+        {
+          "code": "12100001",
+          "description": "Invalid parameter. Possible causes: 1. The permissionList exceeds"
+        },
+        {
+          "code": "12100004",
+          "description": "The API is used repeatedly with the same input."
+        },
+        {
+          "code": "12100005",
+          "description": "The registration time has exceeded the limit."
+        },
+        {
+          "code": "12100007",
+          "description": "The service is abnormal."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unsubscribes from the permission changes of this application. listened on. It should correspond to the value registered by function of \"on\", whose type is \"selfPermissionStateChange\". permissions. unspecified; 2.Incorrect parameter types.",
+      "注释信息": [
+        "@param { 'selfPermissionStateChange' } type Event type.",
+        "@param { Array<Permissions> } permissionList A list of permissions that specify the permissions to be",
+        "@param { Callback<PermissionStateChangeInfo> } [callback] - Callback for the result from unregistering",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1.Mandatory parameters are left",
+        "@throws { BusinessError } 12100004 - The API is not used in pair with \"on\".",
+        "@throws { BusinessError } 12100007 - The service is abnormal.",
+        "@syscap SystemCapability.Security.AccessToken",
+        "@atomicservice",
+        "@since 18"
+      ],
+      "层级": 2,
+      "上级": "AtManager",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Security.AccessToken",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'selfPermissionStateChange'",
+          "必填": true,
+          "说明": "Event type."
+        },
+        {
+          "名称": "permissionList",
+          "类型": "Array<Permissions>",
+          "必填": true,
+          "说明": "A list of permissions that specify the permissions to be"
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "Callback<PermissionStateChangeInfo> } [callback] - Callback for the result from unregistering"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1.Mandatory parameters are left"
+        },
+        {
+          "code": "12100004",
+          "description": "The API is not used in pair with \"on\"."
+        },
+        {
+          "code": "12100007",
+          "description": "The service is abnormal."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "requestPermissionOnSetting",
+      "返回值": "Promise<Array<GrantStatus>>",
+      "所属模块": "未知模块",
+      "功能描述": "Requests certain permissions on setting from the user. <br> The context must belong to the Stage model and only supports UIAbilityContext and UIExtensionContext. parameter cannot be null or empty. because it does not belong to the application itself; 2. The permission list contains the permission that is not declared in the module.json file; 3. The permission list is invalid because the permissions in it do not belong to the same permission group; 4. The permission list contains one or more system_grant permissions. or obtaining user operation result. revoked by the user. from users via a pop-up window.",
+      "注释信息": [
+        "@param { Context } context - The context that initiates the permission request.",
+        "@param { Array<Permissions> } permissionList - Indicates the list of permission to be requested. This",
+        "@returns { Promise<Array<GrantStatus>> } Returns the list of status of the specified permission.",
+        "@throws { BusinessError } 12100001 - Invalid parameter. Possible causes: 1. The context is invalid",
+        "@throws { BusinessError } 12100009 - Common inner error. An error occurs when creating the pop-up window",
+        "@throws { BusinessError } 12100011 - All permissions in the permission list have been granted.",
+        "@throws { BusinessError } 12100012 - The permission list contains the permission that has not been",
+        "@throws { BusinessError } 12100014 - Unexpected permission. You cannot request this type of permission",
+        "@syscap SystemCapability.Security.AccessToken",
+        "@stagemodelonly",
+        "@atomicservice",
+        "@since 21"
+      ],
+      "层级": 2,
+      "上级": "AtManager",
+      "since_version": "21",
+      "system_capability": "SystemCapability.Security.AccessToken",
+      "parameters": [
+        {
+          "名称": "context",
+          "类型": "Context",
+          "必填": true,
+          "说明": "The context that initiates the permission request."
+        },
+        {
+          "名称": "permissionList",
+          "类型": "Array<Permissions>",
+          "必填": true,
+          "说明": "Indicates the list of permission to be requested. This"
+        }
+      ],
+      "return_description": "Returns the list of status of the specified permission.",
+      "error_codes": [
+        {
+          "code": "12100001",
+          "description": "Invalid parameter. Possible causes: 1. The context is invalid"
+        },
+        {
+          "code": "12100009",
+          "description": "Common inner error. An error occurs when creating the pop-up window"
+        },
+        {
+          "code": "12100011",
+          "description": "All permissions in the permission list have been granted."
+        },
+        {
+          "code": "12100012",
+          "description": "The permission list contains the permission that has not been"
+        },
+        {
+          "code": "12100014",
+          "description": "Unexpected permission. You cannot request this type of permission"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "requestGlobalSwitch",
+      "返回值": "Promise<boolean>",
+      "所属模块": "未知模块",
+      "功能描述": "Requests certain global switch status on setting from the user. <br> The context must belong to the Stage model and only supports UIAbilityContext and UIExtensionContext. null or empty. 2. Incorrect parameter types. it does not belong to the application itself; 2. The type of global switch is not support. or obtaining user operation result.",
+      "注释信息": [
+        "@param { Context } context - The context that initiates the permission request.",
+        "@param { SwitchType } type - Indicates the type of global switch to be requested. This parameter cannot be",
+        "@returns { Promise<boolean> } Returns the status of the specified global switch.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 12100001 - Invalid parameter. Possible causes: 1. The context is invalid because",
+        "@throws { BusinessError } 12100009 - Common inner error. An error occurs when creating the pop-up window",
+        "@throws { BusinessError } 12100013 - The specific global switch is already open.",
+        "@syscap SystemCapability.Security.AccessToken",
+        "@stagemodelonly",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "AtManager",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Security.AccessToken",
+      "parameters": [
+        {
+          "名称": "context",
+          "类型": "Context",
+          "必填": true,
+          "说明": "The context that initiates the permission request."
+        },
+        {
+          "名称": "type",
+          "类型": "SwitchType",
+          "必填": true,
+          "说明": "Indicates the type of global switch to be requested. This parameter cannot be"
+        }
+      ],
+      "return_description": "Returns the status of the specified global switch.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "12100001",
+          "description": "Invalid parameter. Possible causes: 1. The context is invalid because"
+        },
+        {
+          "code": "12100009",
+          "description": "Common inner error. An error occurs when creating the pop-up window"
+        },
+        {
+          "code": "12100013",
+          "description": "The specific global switch is already open."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getSelfPermissionStatus",
+      "返回值": "PermissionStatus",
+      "所属模块": "未知模块",
+      "功能描述": "Queries permission status of the application synchronously.",
+      "注释信息": [
+        "@param { Permissions } permissionName - Indicates the permission to be queried. This parameter cannot be null or empty.",
+        "@returns { PermissionStatus } Return permission status.",
+        "@throws { BusinessError } 12100001 - Invalid parameter. The permissionName is empty or exceeds 256 characters.",
+        "@throws { BusinessError } 12100007 - The service is abnormal.",
+        "@syscap SystemCapability.Security.AccessToken",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "AtManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Security.AccessToken",
+      "parameters": [
+        {
+          "名称": "permissionName",
+          "类型": "Permissions",
+          "必填": true,
+          "说明": "Indicates the permission to be queried. This parameter cannot be null or empty."
+        }
+      ],
+      "return_description": "Return permission status.",
+      "error_codes": [
+        {
+          "code": "12100001",
+          "description": "Invalid parameter. The permissionName is empty or exceeds 256 characters."
+        },
+        {
+          "code": "12100007",
+          "description": "The service is abnormal."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "openPermissionOnSetting",
+      "返回值": "Promise<SelectedResult>",
+      "所属模块": "未知模块",
+      "功能描述": "Prompts users to grant the required permissions on the Settings screen. <br> The context must belong to the Stage model and only supports UIAbilityContext and UIExtensionContext. because it does not belong to the application itself; 2. The permission is invalid or not declared in the module.json file. or obtaining user operation result. permission.",
+      "注释信息": [
+        "@param { Context } context The context that initiates the permission request.",
+        "@param { Permissions } permission Indicates permission to open on setting.",
+        "@returns { Promise<SelectedResult> } Returns result of user selection.",
+        "@throws { BusinessError } 12100001 - Invalid parameter. Possible causes: 1. The context is invalid",
+        "@throws { BusinessError } 12100009 - Common inner error. An error occurs when creating the pop-up window",
+        "@throws { BusinessError } 12100014 - Unexpected permission. The permission is not a manual_settings",
+        "@syscap SystemCapability.Security.AccessToken",
+        "@stagemodelonly",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "AtManager",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Security.AccessToken",
+      "parameters": [
+        {
+          "名称": "context",
+          "类型": "Context",
+          "必填": true,
+          "说明": "The context that initiates the permission request."
+        },
+        {
+          "名称": "permission",
+          "类型": "Permissions",
+          "必填": true,
+          "说明": "Indicates permission to open on setting."
+        }
+      ],
+      "return_description": "Returns result of user selection.",
+      "error_codes": [
+        {
+          "code": "12100001",
+          "description": "Invalid parameter. Possible causes: 1. The context is invalid"
+        },
+        {
+          "code": "12100009",
+          "description": "Common inner error. An error occurs when creating the pop-up window"
+        },
+        {
+          "code": "12100014",
+          "description": "Unexpected permission. The permission is not a manual_settings"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "GrantStatus",
+      "所属模块": "未知模块",
+      "功能描述": "GrantStatus.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.Security.AccessToken",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "abilityAccessCtrl",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Security.AccessToken",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "PERMISSION_DENIED",
+      "值": "-1",
+      "所属模块": "未知模块",
+      "功能描述": "access_token permission check fail",
+      "注释信息": [
+        "@syscap SystemCapability.Security.AccessToken",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "GrantStatus",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Security.AccessToken",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "PERMISSION_GRANTED",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "access_token permission check success",
+      "注释信息": [
+        "@syscap SystemCapability.Security.AccessToken",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "GrantStatus",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Security.AccessToken",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "PermissionStateChangeType",
+      "所属模块": "未知模块",
+      "功能描述": "Enum for permission state change type.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.Security.AccessToken",
+        "@atomicservice",
+        "@since 18"
+      ],
+      "层级": 2,
+      "上级": "abilityAccessCtrl",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Security.AccessToken",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "PERMISSION_REVOKED_OPER",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "A granted user_grant permission is revoked.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.AccessToken",
+        "@atomicservice",
+        "@since 18"
+      ],
+      "层级": 2,
+      "上级": "PermissionStateChangeType",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Security.AccessToken",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "PERMISSION_GRANTED_OPER",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "A user_grant permission is granted.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.AccessToken",
+        "@atomicservice",
+        "@since 18"
+      ],
+      "层级": 2,
+      "上级": "PermissionStateChangeType",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Security.AccessToken",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "PermissionStateChangeInfo",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the information of permission state change.",
+      "注释信息": [
+        "@interface PermissionStateChangeInfo",
+        "@syscap SystemCapability.Security.AccessToken",
+        "@atomicservice",
+        "@since 18",
+        "@name PermissionStateChangeInfo"
+      ],
+      "层级": 2,
+      "上级": "abilityAccessCtrl",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Security.AccessToken",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "change",
+      "属性类型": "PermissionStateChangeType",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the permission state change type.",
+      "注释信息": [
+        "@type { PermissionStateChangeType }",
+        "@syscap SystemCapability.Security.AccessToken",
+        "@atomicservice",
+        "@since 18"
+      ],
+      "层级": 2,
+      "上级": "PermissionStateChangeInfo",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Security.AccessToken",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "tokenID",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the application whose permission state has been changed.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.Security.AccessToken",
+        "@atomicservice",
+        "@since 18"
+      ],
+      "层级": 2,
+      "上级": "PermissionStateChangeInfo",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Security.AccessToken",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "permissionName",
+      "属性类型": "Permissions",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the permission whose state has been changed.",
+      "注释信息": [
+        "@type { Permissions }",
+        "@syscap SystemCapability.Security.AccessToken",
+        "@atomicservice",
+        "@since 18"
+      ],
+      "层级": 2,
+      "上级": "PermissionStateChangeInfo",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Security.AccessToken",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "PermissionStatus",
+      "所属模块": "未知模块",
+      "功能描述": "PermissionStatus.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.Security.AccessToken",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "abilityAccessCtrl",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Security.AccessToken",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "DENIED",
+      "值": "-1",
+      "所属模块": "未知模块",
+      "功能描述": "permission has been denied, only can change it in settings",
+      "注释信息": [
+        "@syscap SystemCapability.Security.AccessToken",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "PermissionStatus",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Security.AccessToken",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "GRANTED",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "permission has been granted",
+      "注释信息": [
+        "@syscap SystemCapability.Security.AccessToken",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "PermissionStatus",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Security.AccessToken",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "NOT_DETERMINED",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "permission is not determined",
+      "注释信息": [
+        "@syscap SystemCapability.Security.AccessToken",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "PermissionStatus",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Security.AccessToken",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "INVALID",
+      "值": "2",
+      "所属模块": "未知模块",
+      "功能描述": "permission is invalid",
+      "注释信息": [
+        "@syscap SystemCapability.Security.AccessToken",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "PermissionStatus",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Security.AccessToken",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "RESTRICTED",
+      "值": "3",
+      "所属模块": "未知模块",
+      "功能描述": "permission has been restricted",
+      "注释信息": [
+        "@syscap SystemCapability.Security.AccessToken",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "PermissionStatus",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Security.AccessToken",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "SwitchType",
+      "所属模块": "未知模块",
+      "功能描述": "SwitchType.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.Security.AccessToken",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "abilityAccessCtrl",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Security.AccessToken",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CAMERA",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "switch of camera",
+      "注释信息": [
+        "@syscap SystemCapability.Security.AccessToken",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "SwitchType",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Security.AccessToken",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "MICROPHONE",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "switch of microphone",
+      "注释信息": [
+        "@syscap SystemCapability.Security.AccessToken",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "SwitchType",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Security.AccessToken",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "LOCATION",
+      "值": "2",
+      "所属模块": "未知模块",
+      "功能描述": "switch of location",
+      "注释信息": [
+        "@syscap SystemCapability.Security.AccessToken",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "SwitchType",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Security.AccessToken",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "SelectedResult",
+      "所属模块": "未知模块",
+      "功能描述": "SelectedResult.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.Security.AccessToken",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "abilityAccessCtrl",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Security.AccessToken",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "REJECTED",
+      "值": "-1",
+      "所属模块": "未知模块",
+      "功能描述": "Rejected by user.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.AccessToken",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "SelectedResult",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Security.AccessToken",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "OPENED",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "Open the setting.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.AccessToken",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "SelectedResult",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Security.AccessToken",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "GRANTED",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Permission has been granted.",
+      "注释信息": [
+        "@syscap SystemCapability.Security.AccessToken",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "SelectedResult",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Security.AccessToken",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "type_alias",
+      "名称": "PermissionRequestResult",
+      "所属模块": "@kit.AbilityKit",
+      "功能描述": "PermissionRequestResult interface.",
+      "注释信息": [
+        "@typedef { _PermissionRequestResult }",
+        "@syscap SystemCapability.Security.AccessToken",
+        "@stagemodelonly",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "@kit.AbilityKit",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Security.AccessToken",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "type_alias",
+      "名称": "Context",
+      "所属模块": "@kit.AbilityKit",
+      "功能描述": "Context interface.",
+      "注释信息": [
+        "@typedef { _Context }",
+        "@syscap SystemCapability.Security.AccessToken",
+        "@stagemodelonly",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "@kit.AbilityKit",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Security.AccessToken",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    }
+  ]
+}

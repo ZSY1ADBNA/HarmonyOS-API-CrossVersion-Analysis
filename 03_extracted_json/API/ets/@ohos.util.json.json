@@ -1,0 +1,412 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.ArkTS",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "namespace",
+      "名称": "json",
+      "所属模块": "@kit.ArkTS",
+      "功能描述": "JSON is a syntax for serializing objects, arrays, numbers, strings, booleans, and null.",
+      "注释信息": [
+        "@namespace json",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "@kit.ArkTS",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "type_alias",
+      "名称": "Transformer",
+      "所属模块": "未知模块",
+      "功能描述": "The type of conversion result function.",
+      "注释信息": [
+        "@typedef { function } Transformer",
+        "@param { Object } this - The object to which the parsed key value pair belongs.",
+        "@param { string } key - Attribute name.",
+        "@param { Object } value - The value of the parsed key value pair.",
+        "@returns { Object | undefined | null } Return an Object, undefined or null value",
+        "@syscap SystemCapability.Utils.Lang",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "json",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "Return an Object, undefined or null value",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "parse",
+      "返回值": "Object | null",
+      "所属模块": "未知模块",
+      "功能描述": "Parses a JSON string into an ArkTS object or null. after parsing. The default value is undefined. The default value is undefined. 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types; 3.Parameter verification failed.",
+      "注释信息": [
+        "@param { string } text - Valid JSON string.",
+        "@param { Transformer } [reviver] - Conversion function. This parameter can be used to modify the value generated",
+        "@param {ParseOptions} options - Parsing options. This parameter is used to control the type of the parsing result.",
+        "@returns { Object | null } Return an Object, array, string, number, boolean, or null value corresponding to JSON text.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "json",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "text",
+          "类型": "string",
+          "必填": true,
+          "说明": "Valid JSON string."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "Transformer } [reviver] - Conversion function. This parameter can be used to modify the value generated"
+        },
+        {
+          "名称": "options",
+          "类型": "ParseOptions",
+          "必填": true,
+          "说明": "Parsing options. This parameter is used to control the type of the parsing result."
+        }
+      ],
+      "return_description": "Return an Object, array, string, number, boolean, or null value corresponding to JSON text.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "stringify",
+      "返回值": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Converts an ArkTS object or array into a JSON string. In the case of a container, linear containers are supported, but non-linear containers are not. non-linear containers are not. serialized to the final JSON string. If null is passed in, all keys of the object are serialized. The default value is undefined. JSON string for readability purposes. If a number is passed in, it indicates the number of space characters to be used as indentation. If a string is passed in, the string is inserted before the output JSON string. If null is passed in, no white space is used. The default value is an empty string. 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types; 3.Parameter verification failed.",
+      "注释信息": [
+        "@param { Object } value - ArkTS object or array. In the case of a container, linear containers are supported, but",
+        "@param { (number | string)[] | null } [replacer] - If an array is passed in, only the keys in the array are",
+        "@param { string | number } [space] - Indentation, white space, or line break characters inserted into the output",
+        "@returns { string } Return a JSON text.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "json",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "value",
+          "类型": "Object",
+          "必填": true,
+          "说明": "ArkTS object or array. In the case of a container, linear containers are supported, but"
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "string | number } [space] - Indentation, white space, or line break characters inserted into the output"
+        }
+      ],
+      "return_description": "Return a JSON text.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "stringify",
+      "返回值": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Converts an ArkTS object or array into a JSON string. In the case of a container, linear containers are supported, but non-linear containers are not. non-linear containers are not. processed by this function. The default value is undefined. JSON string for readability purposes. If a number is passed in, it indicates the number of space characters to be used as indentation. If a string is passed in, the string is inserted before the output JSON string. If null is passed in, no white space is used. The default value is an empty string. 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types; 3.Parameter verification failed.",
+      "注释信息": [
+        "@param { Object } value - ArkTS object or array. In the case of a container, linear containers are supported, but",
+        "@param { Transformer } [replacer] - During serialization, each key of the serialized value is converted and",
+        "@param { string | number } [space] - Indentation, white space, or line break characters inserted into the output",
+        "@returns { string } Return a JSON text.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "json",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "value",
+          "类型": "Object",
+          "必填": true,
+          "说明": "ArkTS object or array. In the case of a container, linear containers are supported, but"
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "string | number } [space] - Indentation, white space, or line break characters inserted into the output"
+        }
+      ],
+      "return_description": "Return a JSON text.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "has",
+      "返回值": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Checks whether an ArkTS object contains a key.",
+      "注释信息": [
+        "@param { object } obj - The object parsed from a JSON string.",
+        "@param { string } property - Determine whether the object contains the property.",
+        "@returns { boolean } Return true if the key is in the object, otherwise return false.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types.",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "json",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "obj",
+          "类型": "object",
+          "必填": true,
+          "说明": "The object parsed from a JSON string."
+        },
+        {
+          "名称": "property",
+          "类型": "string",
+          "必填": true,
+          "说明": "Determine whether the object contains the property."
+        }
+      ],
+      "return_description": "Return true if the key is in the object, otherwise return false.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "remove",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Removes a key from an ArkTS object.",
+      "注释信息": [
+        "@param { object } obj - The object parsed from a JSON string.",
+        "@param { string } property - The property to be removed.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types.",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "json",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [
+        {
+          "名称": "obj",
+          "类型": "object",
+          "必填": true,
+          "说明": "The object parsed from a JSON string."
+        },
+        {
+          "名称": "property",
+          "类型": "string",
+          "必填": true,
+          "说明": "The property to be removed."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1.Mandatory parameters are left unspecified; 2.Incorrect parameter types."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "BigIntMode",
+      "所属模块": "未知模块",
+      "功能描述": "Enum defining modes for handling bigint.",
+      "注释信息": [
+        "@enum { number } BigIntMode",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "json",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "DEFAULT",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "BigInt is not supported.",
+      "注释信息": [
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "BigIntMode",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "PARSE_AS_BIGINT",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Parse as BigInt when number less than -(2^53 – 1) or greater than (2^53 – 1).",
+      "注释信息": [
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "BigIntMode",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "ALWAYS_PARSE_AS_BIGINT",
+      "值": "2",
+      "所属模块": "未知模块",
+      "功能描述": "All numbers parse as BigInt.",
+      "注释信息": [
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "BigIntMode",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "ParseOptions",
+      "所属模块": "未知模块",
+      "功能描述": "Parse's options",
+      "注释信息": [
+        "@typedef ParseOptions",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "json",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "bigIntMode",
+      "属性类型": "BigIntMode",
+      "所属模块": "未知模块",
+      "功能描述": "Enum defining modes for handling bigint.",
+      "注释信息": [
+        "@type { BigIntMode }",
+        "@syscap SystemCapability.Utils.Lang",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "ParseOptions",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Utils.Lang",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    }
+  ]
+}

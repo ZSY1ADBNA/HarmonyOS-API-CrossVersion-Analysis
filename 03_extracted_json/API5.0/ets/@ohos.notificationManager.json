@@ -1,0 +1,602 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.NotificationKit",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "namespace",
+      "名称": "notificationManager",
+      "所属模块": "@kit.NotificationKit",
+      "功能描述": "Manages notifications. <p>Generally, only system applications have permissions on notification subscription and unsubscribe. You can specify the content of a notification to be published and the content is carried by {@link NotificationRequest}. A notification ID is unique in an application and must be specified when using {@link NotificationRequest} to carry the notification content. If a notification with this ID has been published and you need to use this ID to publish another notification, the original notification will be updated. In addition, the notification ID can be used to cancel a notification by calling the {@link #cancel(int)} method.",
+      "注释信息": [
+        "@namespace notificationManager",
+        "@syscap SystemCapability.Notification.Notification",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "@kit.NotificationKit",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Notification.Notification",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "publish",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Publishes a notification. <p>If a notification with the same ID has been published by the current application and has not been deleted, this method will update the notification. <br>2. Incorrect parameter types. 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { NotificationRequest } request - notification request",
+        "@param { AsyncCallback<void> } callback - The callback of publish.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 1600001 - Internal error.",
+        "@throws { BusinessError } 1600002 - Marshalling or unmarshalling error.",
+        "@throws { BusinessError } 1600003 - Failed to connect to the service.",
+        "@throws { BusinessError } 1600004 - Notification disabled.",
+        "@throws { BusinessError } 1600005 - Notification slot disabled.",
+        "@throws { BusinessError } 1600007 - The notification does not exist.",
+        "@throws { BusinessError } 1600009 - The notification sending frequency reaches the upper limit.",
+        "@throws { BusinessError } 1600012 - No memory space.",
+        "@throws { BusinessError } 1600014 - No permission.",
+        "@throws { BusinessError } 1600015 - The current notification status does not support duplicate configurations.",
+        "@throws { BusinessError } 1600016 - The notification version for this update is too low.",
+        "@throws { BusinessError } 2300007 - Network unreachable.",
+        "@syscap SystemCapability.Notification.Notification",
+        "@crossplatform",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "notificationManager",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Notification.Notification",
+      "parameters": [
+        {
+          "名称": "request",
+          "类型": "NotificationRequest",
+          "必填": true,
+          "说明": "notification request"
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "The callback of publish."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "1600001",
+          "description": "Internal error."
+        },
+        {
+          "code": "1600002",
+          "description": "Marshalling or unmarshalling error."
+        },
+        {
+          "code": "1600003",
+          "description": "Failed to connect to the service."
+        },
+        {
+          "code": "1600004",
+          "description": "Notification disabled."
+        },
+        {
+          "code": "1600005",
+          "description": "Notification slot disabled."
+        },
+        {
+          "code": "1600007",
+          "description": "The notification does not exist."
+        },
+        {
+          "code": "1600009",
+          "description": "The notification sending frequency reaches the upper limit."
+        },
+        {
+          "code": "1600012",
+          "description": "No memory space."
+        },
+        {
+          "code": "1600014",
+          "description": "No permission."
+        },
+        {
+          "code": "1600015",
+          "description": "The current notification status does not support duplicate configurations."
+        },
+        {
+          "code": "1600016",
+          "description": "The notification version for this update is too low."
+        },
+        {
+          "code": "2300007",
+          "description": "Network unreachable."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "publish",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Publishes a notification. <p>If a notification with the same ID has been published by the current application and has not been deleted, this method will update the notification. <br>2. Incorrect parameter types. 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { NotificationRequest } request - notification request",
+        "@returns { Promise<void> } The promise returned by the function.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 1600001 - Internal error.",
+        "@throws { BusinessError } 1600002 - Marshalling or unmarshalling error.",
+        "@throws { BusinessError } 1600003 - Failed to connect to the service.",
+        "@throws { BusinessError } 1600004 - Notification disabled.",
+        "@throws { BusinessError } 1600005 - Notification slot disabled.",
+        "@throws { BusinessError } 1600007 - The notification does not exist.",
+        "@throws { BusinessError } 1600009 - The notification sending frequency reaches the upper limit.",
+        "@throws { BusinessError } 1600012 - No memory space.",
+        "@throws { BusinessError } 1600014 - No permission.",
+        "@throws { BusinessError } 1600015 - The current notification status does not support duplicate configurations.",
+        "@throws { BusinessError } 1600016 - The notification version for this update is too low.",
+        "@throws { BusinessError } 2300007 - Network unreachable.",
+        "@syscap SystemCapability.Notification.Notification",
+        "@crossplatform",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "notificationManager",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Notification.Notification",
+      "parameters": [
+        {
+          "名称": "request",
+          "类型": "NotificationRequest",
+          "必填": true,
+          "说明": "notification request"
+        }
+      ],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "1600001",
+          "description": "Internal error."
+        },
+        {
+          "code": "1600002",
+          "description": "Marshalling or unmarshalling error."
+        },
+        {
+          "code": "1600003",
+          "description": "Failed to connect to the service."
+        },
+        {
+          "code": "1600004",
+          "description": "Notification disabled."
+        },
+        {
+          "code": "1600005",
+          "description": "Notification slot disabled."
+        },
+        {
+          "code": "1600007",
+          "description": "The notification does not exist."
+        },
+        {
+          "code": "1600009",
+          "description": "The notification sending frequency reaches the upper limit."
+        },
+        {
+          "code": "1600012",
+          "description": "No memory space."
+        },
+        {
+          "code": "1600014",
+          "description": "No permission."
+        },
+        {
+          "code": "1600015",
+          "description": "The current notification status does not support duplicate configurations."
+        },
+        {
+          "code": "1600016",
+          "description": "The notification version for this update is too low."
+        },
+        {
+          "code": "2300007",
+          "description": "Network unreachable."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "publish",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Publishes a notification to the specified user. <br>2. Incorrect parameter types. 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.NOTIFICATION_CONTROLLER",
+        "@param { NotificationRequest } request - a notification.",
+        "@param { number } userId - of subscriber receiving the notification.",
+        "@param { AsyncCallback<void> } callback - The callback of publish.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Not system application to call the interface.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 1600001 - Internal error.",
+        "@throws { BusinessError } 1600002 - Marshalling or unmarshalling error.",
+        "@throws { BusinessError } 1600003 - Failed to connect to the service.",
+        "@throws { BusinessError } 1600004 - Notification disabled.",
+        "@throws { BusinessError } 1600005 - Notification slot disabled.",
+        "@throws { BusinessError } 1600007 - The notification does not exist.",
+        "@throws { BusinessError } 1600008 - The user does not exist.",
+        "@throws { BusinessError } 1600009 - The notification sending frequency reaches the upper limit.",
+        "@throws { BusinessError } 1600012 - No memory space.",
+        "@throws { BusinessError } 1600014 - No permission.",
+        "@throws { BusinessError } 1600015 - The current notification status does not support duplicate configurations.",
+        "@throws { BusinessError } 1600016 - The notification version for this update is too low.",
+        "@throws { BusinessError } 2300007 - Network unreachable.",
+        "@syscap SystemCapability.Notification.Notification",
+        "@systemapi",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "notificationManager",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Notification.Notification",
+      "parameters": [
+        {
+          "名称": "request",
+          "类型": "NotificationRequest",
+          "必填": true,
+          "说明": "a notification."
+        },
+        {
+          "名称": "userId",
+          "类型": "number",
+          "必填": true,
+          "说明": "of subscriber receiving the notification."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "The callback of publish."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Not system application to call the interface."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "1600001",
+          "description": "Internal error."
+        },
+        {
+          "code": "1600002",
+          "description": "Marshalling or unmarshalling error."
+        },
+        {
+          "code": "1600003",
+          "description": "Failed to connect to the service."
+        },
+        {
+          "code": "1600004",
+          "description": "Notification disabled."
+        },
+        {
+          "code": "1600005",
+          "description": "Notification slot disabled."
+        },
+        {
+          "code": "1600007",
+          "description": "The notification does not exist."
+        },
+        {
+          "code": "1600008",
+          "description": "The user does not exist."
+        },
+        {
+          "code": "1600009",
+          "description": "The notification sending frequency reaches the upper limit."
+        },
+        {
+          "code": "1600012",
+          "description": "No memory space."
+        },
+        {
+          "code": "1600014",
+          "description": "No permission."
+        },
+        {
+          "code": "1600015",
+          "description": "The current notification status does not support duplicate configurations."
+        },
+        {
+          "code": "1600016",
+          "description": "The notification version for this update is too low."
+        },
+        {
+          "code": "2300007",
+          "description": "Network unreachable."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "publish",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Publishes a notification to the specified user. <br>2. Incorrect parameter types. 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.NOTIFICATION_CONTROLLER",
+        "@param { NotificationRequest } request - a notification.",
+        "@param { number } userId - of subscriber receiving the notification.",
+        "@returns { Promise<void> } The promise returned by the function.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Not system application to call the interface.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 1600001 - Internal error.",
+        "@throws { BusinessError } 1600002 - Marshalling or unmarshalling error.",
+        "@throws { BusinessError } 1600003 - Failed to connect to the service.",
+        "@throws { BusinessError } 1600004 - Notification disabled.",
+        "@throws { BusinessError } 1600005 - Notification slot disabled.",
+        "@throws { BusinessError } 1600007 - The notification does not exist.",
+        "@throws { BusinessError } 1600008 - The user does not exist.",
+        "@throws { BusinessError } 1600009 - The notification sending frequency reaches the upper limit.",
+        "@throws { BusinessError } 1600012 - No memory space.",
+        "@throws { BusinessError } 1600014 - No permission.",
+        "@throws { BusinessError } 1600015 - The current notification status does not support duplicate configurations.",
+        "@throws { BusinessError } 1600016 - The notification version for this update is too low.",
+        "@throws { BusinessError } 2300007 - Network unreachable.",
+        "@syscap SystemCapability.Notification.Notification",
+        "@systemapi",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "notificationManager",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Notification.Notification",
+      "parameters": [
+        {
+          "名称": "request",
+          "类型": "NotificationRequest",
+          "必填": true,
+          "说明": "a notification."
+        },
+        {
+          "名称": "userId",
+          "类型": "number",
+          "必填": true,
+          "说明": "of subscriber receiving the notification."
+        }
+      ],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Not system application to call the interface."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "1600001",
+          "description": "Internal error."
+        },
+        {
+          "code": "1600002",
+          "description": "Marshalling or unmarshalling error."
+        },
+        {
+          "code": "1600003",
+          "description": "Failed to connect to the service."
+        },
+        {
+          "code": "1600004",
+          "description": "Notification disabled."
+        },
+        {
+          "code": "1600005",
+          "description": "Notification slot disabled."
+        },
+        {
+          "code": "1600007",
+          "description": "The notification does not exist."
+        },
+        {
+          "code": "1600008",
+          "description": "The user does not exist."
+        },
+        {
+          "code": "1600009",
+          "description": "The notification sending frequency reaches the upper limit."
+        },
+        {
+          "code": "1600012",
+          "description": "No memory space."
+        },
+        {
+          "code": "1600014",
+          "description": "No permission."
+        },
+        {
+          "code": "1600015",
+          "description": "The current notification status does not support duplicate configurations."
+        },
+        {
+          "code": "1600016",
+          "description": "The notification version for this update is too low."
+        },
+        {
+          "code": "2300007",
+          "description": "Network unreachable."
+        }
+      ],
+      "版本": "API5.0"
+    },
+    {
+      "类型": "method",
+      "名称": "publishAsBundle",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Publishes a representative notification. <br>2. Incorrect parameter types. 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.NOTIFICATION_CONTROLLER and ohos.permission.NOTIFICATION_AGENT_CONTROLLER",
+        "@param { NotificationRequest } request - a notification.",
+        "@param { string } representativeBundle - bundle name of the representative",
+        "@param { number } userId - userid of the representative",
+        "@param { AsyncCallback<void> } callback - The callback of publishAsBundle.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Not system application to call the interface.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 1600001 - Internal error.",
+        "@throws { BusinessError } 1600002 - Marshalling or unmarshalling error.",
+        "@throws { BusinessError } 1600003 - Failed to connect to the service.",
+        "@throws { BusinessError } 1600004 - Notification disabled.",
+        "@throws { BusinessError } 1600005 - Notification slot disabled.",
+        "@throws { BusinessError } 1600007 - The notification does not exist.",
+        "@throws { BusinessError } 1600008 - The user does not exist.",
+        "@throws { BusinessError } 1600009 - The notification sending frequency reaches the upper limit.",
+        "@throws { BusinessError } 1600012 - No memory space.",
+        "@throws { BusinessError } 1600015 - The current notification status does not support duplicate configurations.",
+        "@throws { BusinessError } 1600016 - The notification version for this update is too low.",
+        "@throws { BusinessError } 2300007 - Network unreachable.",
+        "@syscap SystemCapability.Notification.Notification",
+        "@systemapi",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "notificationManager",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Notification.Notification",
+      "parameters": [
+        {
+          "名称": "request",
+          "类型": "NotificationRequest",
+          "必填": true,
+          "说明": "a notification."
+        },
+        {
+          "名称": "representativeBundle",
+          "类型": "string",
+          "必填": true,
+          "说明": "bundle name of the representative"
+        },
+        {
+          "名称": "userId",
+          "类型": "number",
+          "必填": true,
+          "说明": "userid of the representative"
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "The callback of publishAsBundle."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Not system application to call the interface."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "1600001",
+          "description": "Internal error."
+        },
+        {
+          "code": "1600002",
+          "description": "Marshalling or unmarshalling error."
+        },
+        {
+          "code": "1600003",
+          "description": "Failed to connect to the service."
+        },
+        {
+          "code": "1600004",
+          "description": "Notification disabled."
+        },
+        {
+          "code": "1600005",
+          "description": "Notification slot disabled."
+        },
+        {
+          "code": "1600007",
+          "description": "The notification does not exist."
+        },
+        {
+          "code": "1600008",
+          "description": "The user does not exist."
+        },
+        {
+          "code": "1600009",
+          "description": "The notification sending frequency reaches the upper limit."
+        },
+        {
+          "code": "1600012",
+          "description": "No memory space."
+        },
+        {
+          "code": "1600015",
+          "description": "The current notification status does not support duplicate configurations."
+        },
+        {
+          "code": "1600016",
+          "description": "The notification version for this update is too low."
+        },
+        {
+          "code": "2300007",
+          "description": "Network unreachable."
+        }
+      ],
+      "版本": "API5.0"
+    }
+  ]
+}

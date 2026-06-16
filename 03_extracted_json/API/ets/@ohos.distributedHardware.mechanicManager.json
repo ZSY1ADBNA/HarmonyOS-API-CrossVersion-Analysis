@@ -1,0 +1,770 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.MechanicKit",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "namespace",
+      "名称": "mechanicManager",
+      "所属模块": "@kit.MechanicKit",
+      "功能描述": "Provides capabilities for controlling and interacting with mechanical devices connected to this device. The capabilities cover connection management, control, and monitoring.",
+      "注释信息": [
+        "@namespace mechanicManager",
+        "@syscap SystemCapability.Mechanic.Core",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "@kit.MechanicKit",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Mechanic.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Subscribes to device attachment state change events.",
+      "注释信息": [
+        "@param { 'attachStateChange' } type Event type.",
+        "@param { Callback<AttachStateChangeInfo> } callback Callback used to return the state change.",
+        "@throws { BusinessError } 33300001 - Service exception.",
+        "@syscap SystemCapability.Mechanic.Core",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "mechanicManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Mechanic.Core",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'attachStateChange'",
+          "必填": true,
+          "说明": "Event type."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<AttachStateChangeInfo>",
+          "必填": true,
+          "说明": "Callback used to return the state change."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "33300001",
+          "description": "Service exception."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unsubscribes from device attachment state change events.",
+      "注释信息": [
+        "@param { 'attachStateChange' } type Event type.",
+        "@param { Callback<AttachStateChangeInfo> } [callback] Callback used to return the state change.",
+        "@throws { BusinessError } 33300001 - Service exception.",
+        "@syscap SystemCapability.Mechanic.Core",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "mechanicManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Mechanic.Core",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'attachStateChange'",
+          "必填": true,
+          "说明": "Event type."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "Callback<AttachStateChangeInfo> } [callback] Callback used to return the state change."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "33300001",
+          "description": "Service exception."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getAttachedMechDevices",
+      "返回值": "MechInfo[]",
+      "所属模块": "未知模块",
+      "功能描述": "Obtain the list of connected mechanical devices.",
+      "注释信息": [
+        "@returns { MechInfo[] } List of connected mechanical devices.",
+        "@throws { BusinessError } 33300001 - Service exception.",
+        "@syscap SystemCapability.Mechanic.Core",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "mechanicManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Mechanic.Core",
+      "parameters": [],
+      "return_description": "List of connected mechanical devices.",
+      "error_codes": [
+        {
+          "code": "33300001",
+          "description": "Service exception."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "setCameraTrackingEnabled",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Enables or disables camera tracking.",
+      "注释信息": [
+        "@param { boolean } isEnabled Whether to enable camera tracking.",
+        "@throws { BusinessError } 33300001 - Service exception.",
+        "@throws { BusinessError } 33300002 - Device not connected.",
+        "@throws { BusinessError } 33300003 - Feature not supported.",
+        "@syscap SystemCapability.Mechanic.Core",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "mechanicManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Mechanic.Core",
+      "parameters": [
+        {
+          "名称": "isEnabled",
+          "类型": "boolean",
+          "必填": true,
+          "说明": "Whether to enable camera tracking."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "33300001",
+          "description": "Service exception."
+        },
+        {
+          "code": "33300002",
+          "description": "Device not connected."
+        },
+        {
+          "code": "33300003",
+          "description": "Feature not supported."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getCameraTrackingEnabled",
+      "返回值": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Checks whether camera tracking is enabled for this mechanical device. the opposite.",
+      "注释信息": [
+        "@returns { boolean } Enabled status. The value true means that camera tracking is enabled, and false means",
+        "@throws { BusinessError } 33300001 - Service exception.",
+        "@throws { BusinessError } 33300002 - Device not connected.",
+        "@syscap SystemCapability.Mechanic.Core",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "mechanicManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Mechanic.Core",
+      "parameters": [],
+      "return_description": "Enabled status. The value true means that camera tracking is enabled, and false means",
+      "error_codes": [
+        {
+          "code": "33300001",
+          "description": "Service exception."
+        },
+        {
+          "code": "33300002",
+          "description": "Device not connected."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Subscribes to tracking events.",
+      "注释信息": [
+        "@param { 'trackingStateChange' } type Event type.",
+        "@param { Callback<TrackingEventInfo> } callback Callback used to return the tracking event information.",
+        "@throws { BusinessError } 33300001 - Service exception.",
+        "@syscap SystemCapability.Mechanic.Core",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "mechanicManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Mechanic.Core",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'trackingStateChange'",
+          "必填": true,
+          "说明": "Event type."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<TrackingEventInfo>",
+          "必填": true,
+          "说明": "Callback used to return the tracking event information."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "33300001",
+          "description": "Service exception."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unsubscribes from tracking events.",
+      "注释信息": [
+        "@param { 'trackingStateChange' } type Event type.",
+        "@param { Callback<TrackingEventInfo> } [callback] Callback used to return the tracking event information.",
+        "@throws { BusinessError } 33300001 - Service exception.",
+        "@syscap SystemCapability.Mechanic.Core",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "mechanicManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Mechanic.Core",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'trackingStateChange'",
+          "必填": true,
+          "说明": "Event type."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "Callback<TrackingEventInfo> } [callback] Callback used to return the tracking event information."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "33300001",
+          "description": "Service exception."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getCameraTrackingLayout",
+      "返回值": "CameraTrackingLayout",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the camera tracking layout of this mechanical device.",
+      "注释信息": [
+        "@returns { CameraTrackingLayout } Camera tracking layout obtained.",
+        "@throws { BusinessError } 33300001 - Service exception.",
+        "@throws { BusinessError } 33300002 - Device not connected.",
+        "@syscap SystemCapability.Mechanic.Core",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "mechanicManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Mechanic.Core",
+      "parameters": [],
+      "return_description": "Camera tracking layout obtained.",
+      "error_codes": [
+        {
+          "code": "33300001",
+          "description": "Service exception."
+        },
+        {
+          "code": "33300002",
+          "description": "Device not connected."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "MechInfo",
+      "所属模块": "未知模块",
+      "功能描述": "Mechanical device information.",
+      "注释信息": [
+        "@typedef MechInfo",
+        "@syscap SystemCapability.Mechanic.Core",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "mechanicManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Mechanic.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "mechId",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "ID of the mechanical device.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.Mechanic.Core",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "MechInfo",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Mechanic.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "mechDeviceType",
+      "属性类型": "MechDeviceType",
+      "所属模块": "未知模块",
+      "功能描述": "Type of the mechanical device.",
+      "注释信息": [
+        "@type { MechDeviceType }",
+        "@syscap SystemCapability.Mechanic.Core",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "MechInfo",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Mechanic.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "mechName",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Name of the mechanical device.",
+      "注释信息": [
+        "@type { string }",
+        "@syscap SystemCapability.Mechanic.Core",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "MechInfo",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Mechanic.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "TrackingEventInfo",
+      "所属模块": "未知模块",
+      "功能描述": "Tracking event callback info.",
+      "注释信息": [
+        "@typedef TrackingEventInfo",
+        "@syscap SystemCapability.Mechanic.Core",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "mechanicManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Mechanic.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "event",
+      "属性类型": "TrackingEvent",
+      "所属模块": "未知模块",
+      "功能描述": "Tracking event.",
+      "注释信息": [
+        "@type { TrackingEvent } Tracking event.",
+        "@syscap SystemCapability.Mechanic.Core",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "TrackingEventInfo",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Mechanic.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "AttachStateChangeInfo",
+      "所属模块": "未知模块",
+      "功能描述": "Callback information about the device attachment state change.",
+      "注释信息": [
+        "@typedef AttachStateChangeInfo",
+        "@syscap SystemCapability.Mechanic.Core",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "mechanicManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Mechanic.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "state",
+      "属性类型": "AttachState",
+      "所属模块": "未知模块",
+      "功能描述": "Device attachment state.",
+      "注释信息": [
+        "@type { AttachState }",
+        "@syscap SystemCapability.Mechanic.Core",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "AttachStateChangeInfo",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Mechanic.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "mechInfo",
+      "属性类型": "MechInfo",
+      "所属模块": "未知模块",
+      "功能描述": "Mechanical device information.",
+      "注释信息": [
+        "@type { MechInfo }",
+        "@syscap SystemCapability.Mechanic.Core",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "AttachStateChangeInfo",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Mechanic.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "TrackingEvent",
+      "所属模块": "未知模块",
+      "功能描述": "Enumerates the tracking events.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.Mechanic.Core",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "mechanicManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Mechanic.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CAMERA_TRACKING_USER_ENABLED",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "Camera tracking enabled by user.",
+      "注释信息": [
+        "@syscap SystemCapability.Mechanic.Core",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "TrackingEvent",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Mechanic.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CAMERA_TRACKING_USER_DISABLED",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Camera tracking disabled by user.",
+      "注释信息": [
+        "@syscap SystemCapability.Mechanic.Core",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "TrackingEvent",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Mechanic.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CAMERA_TRACKING_LAYOUT_CHANGED",
+      "值": "2",
+      "所属模块": "未知模块",
+      "功能描述": "Camera tracking layout changed. You can call getCameraTrackingLayout to obtain the new layout.",
+      "注释信息": [
+        "@syscap SystemCapability.Mechanic.Core",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "TrackingEvent",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Mechanic.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "MechDeviceType",
+      "所属模块": "未知模块",
+      "功能描述": "Enumerates the mechanical device types.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.Mechanic.Core",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "mechanicManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Mechanic.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "GIMBAL_DEVICE",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "Gimbal device.",
+      "注释信息": [
+        "@syscap SystemCapability.Mechanic.Core",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "MechDeviceType",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Mechanic.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "AttachState",
+      "所属模块": "未知模块",
+      "功能描述": "Device attach states.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.Mechanic.Core",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "mechanicManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Mechanic.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "ATTACHED",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "Device attached.",
+      "注释信息": [
+        "@syscap SystemCapability.Mechanic.Core",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "AttachState",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Mechanic.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "DETACHED",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Device detached.",
+      "注释信息": [
+        "@syscap SystemCapability.Mechanic.Core",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "AttachState",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Mechanic.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "CameraTrackingLayout",
+      "所属模块": "未知模块",
+      "功能描述": "Enumerates the camera tracking layouts.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.Mechanic.Core",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "mechanicManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Mechanic.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "DEFAULT",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "Default layout.",
+      "注释信息": [
+        "@syscap SystemCapability.Mechanic.Core",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "CameraTrackingLayout",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Mechanic.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "LEFT",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Left-side layout.",
+      "注释信息": [
+        "@syscap SystemCapability.Mechanic.Core",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "CameraTrackingLayout",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Mechanic.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "MIDDLE",
+      "值": "2",
+      "所属模块": "未知模块",
+      "功能描述": "Middle layout.",
+      "注释信息": [
+        "@syscap SystemCapability.Mechanic.Core",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "CameraTrackingLayout",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Mechanic.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "RIGHT",
+      "值": "3",
+      "所属模块": "未知模块",
+      "功能描述": "Right-side layout.",
+      "注释信息": [
+        "@syscap SystemCapability.Mechanic.Core",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "CameraTrackingLayout",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Mechanic.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    }
+  ]
+}

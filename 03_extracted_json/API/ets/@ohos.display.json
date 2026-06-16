@@ -1,0 +1,4004 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.ArkUI",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "namespace",
+      "名称": "display",
+      "所属模块": "@kit.ArkUI",
+      "功能描述": "Interface of display manager.",
+      "注释信息": [
+        "@namespace display",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "@kit.ArkUI",
+      "since_version": "11",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getDefaultDisplay",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Obtain the default display.",
+      "注释信息": [
+        "@param { AsyncCallback<Display> } callback the result of display",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@since 7",
+        "@deprecated since 9",
+        "@useinstead ohos.display#getDefaultDisplaySync"
+      ],
+      "层级": 1,
+      "上级": "display",
+      "since_version": "7",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<Display>",
+          "必填": true,
+          "说明": "the result of display"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getDefaultDisplay",
+      "返回值": "Promise<Display>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtain the default display.",
+      "注释信息": [
+        "@returns { Promise<Display> } the result of display",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@since 7",
+        "@deprecated since 9",
+        "@useinstead ohos.display#getDefaultDisplaySync"
+      ],
+      "层级": 1,
+      "上级": "display",
+      "since_version": "7",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [],
+      "return_description": "the result of display",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getDefaultDisplaySync",
+      "返回值": "Display",
+      "所属模块": "未知模块",
+      "功能描述": "Obtain the default display.",
+      "注释信息": [
+        "@returns { Display } the result of display",
+        "@throws { BusinessError } 1400001 - Invalid display or screen. Possible cause: Display is not created or destroyed.",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "display",
+      "since_version": "11",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [],
+      "return_description": "the result of display",
+      "error_codes": [
+        {
+          "code": "1400001",
+          "description": "Invalid display or screen. Possible cause: Display is not created or destroyed."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getPrimaryDisplaySync",
+      "返回值": "Display",
+      "所属模块": "未知模块",
+      "功能描述": "Obtain the primary display. For devices other than 2in1 devices, the Display object obtained is the built-in screen. For 2in1 devices with an external screen, the Display object obtained is the primary screen. For 2in1 devices without an external screen, the Display object obtained is the built-in screen.",
+      "注释信息": [
+        "@returns { Display } the result of primary display",
+        "@throws { BusinessError } 1400001 - Invalid display or screen. Possible cause: Invalid display id.",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 1,
+      "上级": "display",
+      "since_version": "14",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [],
+      "return_description": "the result of primary display",
+      "error_codes": [
+        {
+          "code": "1400001",
+          "description": "Invalid display or screen. Possible cause: Invalid display id."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getDisplayByIdSync",
+      "返回值": "Display",
+      "所属模块": "未知模块",
+      "功能描述": "Obtain the target display. 2. Incorrect parameter types. 3. Parameter verification failed. Display is null, display id corresponding display does not exist.",
+      "注释信息": [
+        "@param { number } displayId Display id to query. This parameter should be greater than or equal to 0.",
+        "@returns { Display } the result of display",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 1400003 - This display manager service works abnormally. Possible causes:",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "display",
+      "since_version": "12",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [
+        {
+          "名称": "displayId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Display id to query. This parameter should be greater than or equal to 0."
+        }
+      ],
+      "return_description": "the result of display",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "1400003",
+          "description": "This display manager service works abnormally. Possible causes:"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getAllDisplay",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Obtain all displays.",
+      "注释信息": [
+        "@param { AsyncCallback<Array<Display>> } callback the result of all displays",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@since 7",
+        "@deprecated since 9",
+        "@useinstead ohos.display#getAllDisplays"
+      ],
+      "层级": 1,
+      "上级": "display",
+      "since_version": "7",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<Array<Display>>",
+          "必填": true,
+          "说明": "the result of all displays"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getAllDisplay",
+      "返回值": "Promise<Array<Display>>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtain all displays.",
+      "注释信息": [
+        "@returns { Promise<Array<Display>> } the result of all displays",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@since 7",
+        "@deprecated since 9",
+        "@useinstead ohos.display#getAllDisplays"
+      ],
+      "层级": 1,
+      "上级": "display",
+      "since_version": "7",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [],
+      "return_description": "the result of all displays",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getAllDisplays",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Obtain all displays.",
+      "注释信息": [
+        "@param { AsyncCallback<Array<Display>> } callback the result of all displays",
+        "@throws { BusinessError } 1400001 - Invalid display or screen.",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "display",
+      "since_version": "12",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<Array<Display>>",
+          "必填": true,
+          "说明": "the result of all displays"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "1400001",
+          "description": "Invalid display or screen."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getAllDisplays",
+      "返回值": "Promise<Array<Display>>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtain all displays.",
+      "注释信息": [
+        "@returns { Promise<Array<Display>> } the result of all displays",
+        "@throws { BusinessError } 1400001 - Invalid display or screen.",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "display",
+      "since_version": "12",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [],
+      "return_description": "the result of all displays",
+      "error_codes": [
+        {
+          "code": "1400001",
+          "description": "Invalid display or screen."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getAllDisplayPhysicalResolution",
+      "返回值": "Promise<Array<DisplayPhysicalResolution>>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtain all display physical resolution",
+      "注释信息": [
+        "@returns { Promise<Array<DisplayPhysicalResolution>> } the result of all display physical resolution",
+        "@throws { BusinessError } 1400003 - This display manager service works abnormally.",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "display",
+      "since_version": "12",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [],
+      "return_description": "the result of all display physical resolution",
+      "error_codes": [
+        {
+          "code": "1400003",
+          "description": "This display manager service works abnormally."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Register the callback for display changes. 2. Incorrect parameter types.",
+      "注释信息": [
+        "@param { 'add' | 'remove' | 'change' } type the event of display change",
+        "@param { Callback<number> } callback the display id of changed",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "display",
+      "since_version": "20",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'add' | 'remove' | 'change'",
+          "必填": true,
+          "说明": "the event of display change"
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<number>",
+          "必填": true,
+          "说明": "the display id of changed"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "onChangeWithAttribute",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Register the callback for changes of display specified attributes. due to limited device capabilities. Possible causes: Internal IPC error.",
+      "注释信息": [
+        "@param { Array<string> } displayAttributeOption - The display attributes requiring callback",
+        "@param { Callback<number> } callback - Callback used to return the display id of changed",
+        "@throws { BusinessError } 801 - Capability not supported. Function onChangeWithAttribute can not work correctly",
+        "@throws { BusinessError } 1400003 - This display manager service works abnormally.",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 23"
+      ],
+      "层级": 1,
+      "上级": "display",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [
+        {
+          "名称": "displayAttributeOption",
+          "类型": "Array<string>",
+          "必填": true,
+          "说明": "The display attributes requiring callback"
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<number>",
+          "必填": true,
+          "说明": "Callback used to return the display id of changed"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "801",
+          "description": "Capability not supported. Function onChangeWithAttribute can not work correctly"
+        },
+        {
+          "code": "1400003",
+          "description": "This display manager service works abnormally."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unregister the callback for display changes. 2. Incorrect parameter types.",
+      "注释信息": [
+        "@param { 'add' | 'remove' | 'change' } type the event of display change event",
+        "@param { Callback<number> } [callback] the display id of changed",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "display",
+      "since_version": "20",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'add' | 'remove' | 'change'",
+          "必填": true,
+          "说明": "the event of display change event"
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "Callback<number> } [callback] the display id of changed"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "isFoldable",
+      "返回值": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Check whether the device is foldable.",
+      "注释信息": [
+        "@returns { boolean } true means the device is foldable.",
+        "@throws { BusinessError } 1400003 - This display manager service works abnormally.",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "display",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "true means the device is foldable.",
+      "error_codes": [
+        {
+          "code": "1400003",
+          "description": "This display manager service works abnormally."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getFoldStatus",
+      "返回值": "FoldStatus",
+      "所属模块": "未知模块",
+      "功能描述": "Get the current fold status of the foldable device.",
+      "注释信息": [
+        "@returns { FoldStatus } fold status of device.",
+        "@throws { BusinessError } 1400003 - This display manager service works abnormally.",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "display",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "fold status of device.",
+      "error_codes": [
+        {
+          "code": "1400003",
+          "description": "This display manager service works abnormally."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Register the callback for fold status changes. <br>2. Incorrect parameter types.",
+      "注释信息": [
+        "@param { 'foldStatusChange' } type the event of fold status changes",
+        "@param { Callback<FoldStatus> } callback Callback used to return the current fold status of device",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 1400003 - This display manager service works abnormally.",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "display",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'foldStatusChange'",
+          "必填": true,
+          "说明": "the event of fold status changes"
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<FoldStatus>",
+          "必填": true,
+          "说明": "Callback used to return the current fold status of device"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "1400003",
+          "description": "This display manager service works abnormally."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unregister the callback for fold status changes. <br>2. Incorrect parameter types.",
+      "注释信息": [
+        "@param { 'foldStatusChange' } type the event of fold status changes",
+        "@param { Callback<FoldStatus> } [callback] Callback used to return the current fold status of device",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 1400003 - This display manager service works abnormally.",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "display",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'foldStatusChange'",
+          "必填": true,
+          "说明": "the event of fold status changes"
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "Callback<FoldStatus> } [callback] Callback used to return the current fold status of device"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "1400003",
+          "description": "This display manager service works abnormally."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Register the callback for fold angle changes. 2. Incorrect parameter types.",
+      "注释信息": [
+        "@param { 'foldAngleChange' } type the event of fold angle changes.",
+        "@param { Callback<Array<number>> } callback Callback used to return the current fold angle of device.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 1400003 - This display manager service works abnormally.",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "display",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'foldAngleChange'",
+          "必填": true,
+          "说明": "the event of fold angle changes."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<Array<number>>",
+          "必填": true,
+          "说明": "Callback used to return the current fold angle of device."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "1400003",
+          "description": "This display manager service works abnormally."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unregister the callback for fold angle changes. 2. Incorrect parameter types.",
+      "注释信息": [
+        "@param { 'foldAngleChange' } type the event of fold angle changes.",
+        "@param { Callback<Array<number>> } [callback] Callback used to return the current fold angle of device.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 1400003 - This display manager service works abnormally.",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "display",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'foldAngleChange'",
+          "必填": true,
+          "说明": "the event of fold angle changes."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "Callback<Array<number>> } [callback] Callback used to return the current fold angle of device."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "1400003",
+          "description": "This display manager service works abnormally."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Register the callback for device capture status changes. <br>2. Incorrect parameter types.",
+      "注释信息": [
+        "@param { 'captureStatusChange' } type the event of capture status changes.",
+        "@param { Callback<boolean> } callback Callback used to return the device capture status.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 1400003 - This display manager service works abnormally.",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "display",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'captureStatusChange'",
+          "必填": true,
+          "说明": "the event of capture status changes."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<boolean>",
+          "必填": true,
+          "说明": "Callback used to return the device capture status."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "1400003",
+          "description": "This display manager service works abnormally."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unregister the callback for device capture status changes. <br>2. Incorrect parameter types.",
+      "注释信息": [
+        "@param { 'captureStatusChange' } type the event of capture status changes.",
+        "@param { Callback<boolean> } callback Callback used to return the device capture status.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 1400003 - This display manager service works abnormally.",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "display",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'captureStatusChange'",
+          "必填": true,
+          "说明": "the event of capture status changes."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<boolean>",
+          "必填": true,
+          "说明": "Callback used to return the device capture status."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "1400003",
+          "description": "This display manager service works abnormally."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "isCaptured",
+      "返回值": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Check whether the device is captured, projected, or recorded.",
+      "注释信息": [
+        "@returns { boolean } true means the device is captured, projected, or recorded.",
+        "@throws { BusinessError } 1400003 - This display manager service works abnormally.",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "display",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "true means the device is captured, projected, or recorded.",
+      "error_codes": [
+        {
+          "code": "1400003",
+          "description": "This display manager service works abnormally."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getFoldDisplayMode",
+      "返回值": "FoldDisplayMode",
+      "所属模块": "未知模块",
+      "功能描述": "Get the display mode of the foldable device.",
+      "注释信息": [
+        "@returns { FoldDisplayMode } display mode of the foldable device.",
+        "@throws { BusinessError } 1400003 - This display manager service works abnormally.",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "display",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "display mode of the foldable device.",
+      "error_codes": [
+        {
+          "code": "1400003",
+          "description": "This display manager service works abnormally."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Register the callback for fold display mode changes. <br>2. Incorrect parameter types.",
+      "注释信息": [
+        "@param { 'foldDisplayModeChange' } type the event of fold display mode changes",
+        "@param { Callback<FoldDisplayMode> } callback Callback used to return the current fold display mode",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 1400003 - This display manager service works abnormally.",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "display",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'foldDisplayModeChange'",
+          "必填": true,
+          "说明": "the event of fold display mode changes"
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<FoldDisplayMode>",
+          "必填": true,
+          "说明": "Callback used to return the current fold display mode"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "1400003",
+          "description": "This display manager service works abnormally."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unregister the callback for fold display mode changes. <br>2. Incorrect parameter types.",
+      "注释信息": [
+        "@param { 'foldDisplayModeChange' } type the event of fold display mode changes",
+        "@param { Callback<FoldDisplayMode> } [callback] Callback used to return the current fold display mode",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 1400003 - This display manager service works abnormally.",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "display",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'foldDisplayModeChange'",
+          "必填": true,
+          "说明": "the event of fold display mode changes"
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "Callback<FoldDisplayMode> } [callback] Callback used to return the current fold display mode"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "1400003",
+          "description": "This display manager service works abnormally."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getCurrentFoldCreaseRegion",
+      "返回值": "FoldCreaseRegion",
+      "所属模块": "未知模块",
+      "功能描述": "Get the fold crease region in the current display mode.",
+      "注释信息": [
+        "@returns { FoldCreaseRegion } fold crease region in the current display mode.",
+        "@throws { BusinessError } 1400003 - This display manager service works abnormally.",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "display",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "fold crease region in the current display mode.",
+      "error_codes": [
+        {
+          "code": "1400003",
+          "description": "This display manager service works abnormally."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "createVirtualScreen",
+      "返回值": "Promise<number>",
+      "所属模块": "未知模块",
+      "功能描述": "Create virtual screen. 2. Incorrect parameter types.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_VIRTUAL_SCREEN",
+        "@param { VirtualScreenConfig } config Indicates the options of the virtual screen.",
+        "@returns { Promise<number> } Promise used to return the created virtual screen id",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission required to call the API.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 801 - Capability not supported.function createVirtualScreen can not work correctly due to limited device capabilities.",
+        "@throws { BusinessError } 1400001 - Invalid display or screen.",
+        "@syscap  SystemCapability.Window.SessionManager",
+        "@since 16"
+      ],
+      "层级": 1,
+      "上级": "display",
+      "since_version": "16",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [
+        {
+          "名称": "config",
+          "类型": "VirtualScreenConfig",
+          "必填": true,
+          "说明": "Indicates the options of the virtual screen."
+        }
+      ],
+      "return_description": "Promise used to return the created virtual screen id",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission required to call the API."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported.function createVirtualScreen can not work correctly due to limited device capabilities."
+        },
+        {
+          "code": "1400001",
+          "description": "Invalid display or screen."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "destroyVirtualScreen",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Destroy virtual screen. 2. Incorrect parameter types.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_VIRTUAL_SCREEN",
+        "@param { number } screenId Indicates the screen id of the virtual screen.",
+        "@returns { Promise<void> } Promise that returns no value.",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission required to call the API.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 801 - Capability not supported.function destroyVirtualScreen can not work correctly due to limited device capabilities.",
+        "@throws { BusinessError } 1400001 - Invalid display or screen.",
+        "@throws { BusinessError } 1400003 - This display manager service works abnormally.",
+        "@syscap  SystemCapability.Window.SessionManager",
+        "@since 16"
+      ],
+      "层级": 1,
+      "上级": "display",
+      "since_version": "16",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [
+        {
+          "名称": "screenId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the screen id of the virtual screen."
+        }
+      ],
+      "return_description": "Promise that returns no value.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission required to call the API."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported.function destroyVirtualScreen can not work correctly due to limited device capabilities."
+        },
+        {
+          "code": "1400001",
+          "description": "Invalid display or screen."
+        },
+        {
+          "code": "1400003",
+          "description": "This display manager service works abnormally."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "setVirtualScreenSurface",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Set surface for the virtual screen. 2. Incorrect parameter types.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_VIRTUAL_SCREEN",
+        "@param { number } screenId Indicates the screen id of the virtual screen.",
+        "@param { string } surfaceId Indicates the surface id.",
+        "@returns { Promise<void> } Promise that returns no value",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission required to call the API.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 801 - Capability not supported.function setVirtualScreenSurface can not work correctly due to limited device capabilities.",
+        "@throws { BusinessError } 1400001 - Invalid display or screen.",
+        "@throws { BusinessError } 1400003 - This display manager service works abnormally.",
+        "@syscap  SystemCapability.Window.SessionManager",
+        "@since 16"
+      ],
+      "层级": 1,
+      "上级": "display",
+      "since_version": "16",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [
+        {
+          "名称": "screenId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the screen id of the virtual screen."
+        },
+        {
+          "名称": "surfaceId",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates the surface id."
+        }
+      ],
+      "return_description": "Promise that returns no value",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission required to call the API."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported.function setVirtualScreenSurface can not work correctly due to limited device capabilities."
+        },
+        {
+          "code": "1400001",
+          "description": "Invalid display or screen."
+        },
+        {
+          "code": "1400003",
+          "description": "This display manager service works abnormally."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "makeUnique",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Make screen as unique-screen 2. Incorrect parameter types. 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_VIRTUAL_SCREEN",
+        "@param { number } screenId Indicates the unique screen id. It's type should be int.",
+        "@returns { Promise<void> } Promise that returns no value",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission required to call the API.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 801 - Capability not supported.function makeUnique can not work correctly due to limited device capabilities.",
+        "@throws { BusinessError } 1400001 - Invalid display or screen.",
+        "@throws { BusinessError } 1400003 - This display manager service works abnormally.",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@since 16"
+      ],
+      "层级": 1,
+      "上级": "display",
+      "since_version": "16",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [
+        {
+          "名称": "screenId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the unique screen id. It's type should be int."
+        }
+      ],
+      "return_description": "Promise that returns no value",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission required to call the API."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported.function makeUnique can not work correctly due to limited device capabilities."
+        },
+        {
+          "code": "1400001",
+          "description": "Invalid display or screen."
+        },
+        {
+          "code": "1400003",
+          "description": "This display manager service works abnormally."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "convertGlobalToRelativeCoordinate",
+      "返回值": "RelativePosition",
+      "所属模块": "未知模块",
+      "功能描述": "Convert global coordinates to relative coordinates. If not specified,use the display where the coodinates are located.",
+      "注释信息": [
+        "@param { Position } position - The global coordinates to be converted.",
+        "@param { number } [displayId] - The optional display id indicate the display relative to.",
+        "@returns { RelativePosition } The relative coordinates.",
+        "@throws { BusinessError } 1400003 - This display manager service works abnormally.",
+        "@throws { BusinessError } 1400004 - Parameter error. Possible cause: 1. Invalid parameter range.",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "display",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [
+        {
+          "名称": "position",
+          "类型": "Position",
+          "必填": true,
+          "说明": "The global coordinates to be converted."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "number } [displayId] - The optional display id indicate the display relative to."
+        }
+      ],
+      "return_description": "The relative coordinates.",
+      "error_codes": [
+        {
+          "code": "1400003",
+          "description": "This display manager service works abnormally."
+        },
+        {
+          "code": "1400004",
+          "description": "Parameter error. Possible cause: 1. Invalid parameter range."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "convertRelativeToGlobalCoordinate",
+      "返回值": "Position",
+      "所属模块": "未知模块",
+      "功能描述": "Convert relative coordinates to global coordinates.",
+      "注释信息": [
+        "@param { RelativePosition } relativePosition - The relative coordinates to be converted.",
+        "@returns { Position } The global coordinates.",
+        "@throws { BusinessError } 1400003 - This display manager service works abnormally.",
+        "@throws { BusinessError } 1400004 - Parameter error. Possible cause: 1. Invalid parameter range.",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "display",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [
+        {
+          "名称": "relativePosition",
+          "类型": "RelativePosition",
+          "必填": true,
+          "说明": "The relative coordinates to be converted."
+        }
+      ],
+      "return_description": "The global coordinates.",
+      "error_codes": [
+        {
+          "code": "1400003",
+          "description": "This display manager service works abnormally."
+        },
+        {
+          "code": "1400004",
+          "description": "Parameter error. Possible cause: 1. Invalid parameter range."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getBrightnessInfo",
+      "返回值": "BrightnessInfo",
+      "所属模块": "未知模块",
+      "功能描述": "Obtain the display brightnessInfo.",
+      "注释信息": [
+        "@param { number } displayId Display id to query. This parameter should be greater than or equal to 0.",
+        "@returns { BrightnessInfo } The current brightnessInfo of the display.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 1400003 - This display manager service works abnormally.",
+        "@throws { BusinessError } 1400004 - Parameter error. Possible cause: 1. Invalid parameter range.",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 1,
+      "上级": "display",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [
+        {
+          "名称": "displayId",
+          "类型": "number",
+          "必填": true,
+          "说明": "Display id to query. This parameter should be greater than or equal to 0."
+        }
+      ],
+      "return_description": "The current brightnessInfo of the display.",
+      "error_codes": [
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "1400003",
+          "description": "This display manager service works abnormally."
+        },
+        {
+          "code": "1400004",
+          "description": "Parameter error. Possible cause: 1. Invalid parameter range."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "所属模块": "未知模块",
+      "功能描述": "Defines the brightness callback.",
+      "注释信息": [
+        "@typedef {function}",
+        "@param { T1 } data1 - the data will be used in the callback.",
+        "@param { T2 } data2 - the data will be used in the callback.",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@since 22"
+      ],
+      "层级": 1,
+      "上级": "display",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Register the callback for brightness info changes. brightness info.",
+      "注释信息": [
+        "@param { 'brightnessInfoChange' } type - the event of display brightness info changes.",
+        "@param { BrightnessCallback<number, BrightnessInfo> } callback - Callback used to return the display corresponding",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 1400003 - This display manager service works abnormally.",
+        "@throws { BusinessError } 1400004 - Parameter error. Possible cause: 1. Invalid parameter range.",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 1,
+      "上级": "display",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'brightnessInfoChange'",
+          "必填": true,
+          "说明": "the event of display brightness info changes."
+        },
+        {
+          "名称": "callback",
+          "类型": "BrightnessCallback<number, BrightnessInfo>",
+          "必填": true,
+          "说明": "Callback used to return the display corresponding"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "1400003",
+          "description": "This display manager service works abnormally."
+        },
+        {
+          "code": "1400004",
+          "description": "Parameter error. Possible cause: 1. Invalid parameter range."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unregister the callback for brightness info changes. brightness info. If not provided, all callbacks for the given event type will be removed.",
+      "注释信息": [
+        "@param { 'brightnessInfoChange' } type - the event of display brightness info changes.",
+        "@param { BrightnessCallback<number, BrightnessInfo> } [callback] - Callback used to return the display corresponding",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 1400003 - This display manager service works abnormally.",
+        "@throws { BusinessError } 1400004 - Parameter error. Possible cause: 1. Invalid parameter range.",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 1,
+      "上级": "display",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'brightnessInfoChange'",
+          "必填": true,
+          "说明": "the event of display brightness info changes."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "BrightnessCallback<number, BrightnessInfo> } [callback] - Callback used to return the display corresponding"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "1400003",
+          "description": "This display manager service works abnormally."
+        },
+        {
+          "code": "1400004",
+          "description": "Parameter error. Possible cause: 1. Invalid parameter range."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "VirtualScreenConfig",
+      "所属模块": "未知模块",
+      "功能描述": "The parameter for creating virtual screen.",
+      "注释信息": [
+        "@interface VirtualScreenConfig",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@since 16"
+      ],
+      "层级": 2,
+      "上级": "display",
+      "since_version": "16",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "name",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the name of the virtual screen.",
+      "注释信息": [
+        "@type { string }",
+        "@syscap  SystemCapability.Window.SessionManager",
+        "@since 16"
+      ],
+      "层级": 2,
+      "上级": "VirtualScreenConfig",
+      "since_version": "16",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "width",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the width of the virtual screen.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@since 16"
+      ],
+      "层级": 2,
+      "上级": "VirtualScreenConfig",
+      "since_version": "16",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "height",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the height of the virtual screen.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@since 16"
+      ],
+      "层级": 2,
+      "上级": "VirtualScreenConfig",
+      "since_version": "16",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "density",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the density of the virtual screen.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@since 16"
+      ],
+      "层级": 2,
+      "上级": "VirtualScreenConfig",
+      "since_version": "16",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "surfaceId",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the surface id of the virtual screen.",
+      "注释信息": [
+        "@type { string }",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@since 16"
+      ],
+      "层级": 2,
+      "上级": "VirtualScreenConfig",
+      "since_version": "16",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "supportsFocus",
+      "属性类型": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates whether the virtual screen supports focus.",
+      "注释信息": [
+        "@type { ?boolean }",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "VirtualScreenConfig",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "FoldStatus",
+      "所属模块": "未知模块",
+      "功能描述": "Enumerates the fold status. For dual-fold axis devices, when oriented with the charging port at the bottom, the hinges are identified from right to left as the first and second fold axes, respectively.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "display",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "FOLD_STATUS_UNKNOWN",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "Fold Status Unknown.",
+      "注释信息": [
+        "@syscap SystemCapability.Window.SessionManager",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "FoldStatus",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "FOLD_STATUS_EXPANDED",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Fold Status Expanded. For dual-fold axis devices, the first fold axis is fully open, and the second fold axis is folded.",
+      "注释信息": [
+        "@syscap SystemCapability.Window.SessionManager",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "FoldStatus",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "FOLD_STATUS_FOLDED",
+      "值": "2",
+      "所属模块": "未知模块",
+      "功能描述": "Fold Status Folded. For dual-fold axis devices, the first fold axis is folded, and the second fold axis is folded.",
+      "注释信息": [
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "FoldStatus",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "FOLD_STATUS_HALF_FOLDED",
+      "值": "3",
+      "所属模块": "未知模块",
+      "功能描述": "Fold Status Half Folded. Somehow between fully open and completely closed. For dual-fold axis devices, the first fold axis is half-folded, and the second fold axis is folded.",
+      "注释信息": [
+        "@syscap SystemCapability.Window.SessionManager",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "FoldStatus",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "FOLD_STATUS_EXPANDED_WITH_SECOND_EXPANDED",
+      "值": "11",
+      "所属模块": "未知模块",
+      "功能描述": "Fold Status Expanded With Second Expanded.",
+      "注释信息": [
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "FoldStatus",
+      "since_version": "15",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "FOLD_STATUS_EXPANDED_WITH_SECOND_HALF_FOLDED",
+      "值": "21",
+      "所属模块": "未知模块",
+      "功能描述": "Fold Status Expanded With Second Half Folded.",
+      "注释信息": [
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "FoldStatus",
+      "since_version": "15",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "FOLD_STATUS_FOLDED_WITH_SECOND_EXPANDED",
+      "值": "12",
+      "所属模块": "未知模块",
+      "功能描述": "Fold Status Folded With Second Expanded.",
+      "注释信息": [
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "FoldStatus",
+      "since_version": "15",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "FOLD_STATUS_FOLDED_WITH_SECOND_HALF_FOLDED",
+      "值": "22",
+      "所属模块": "未知模块",
+      "功能描述": "Fold Status Folded With Second Half Folded.",
+      "注释信息": [
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "FoldStatus",
+      "since_version": "15",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "FOLD_STATUS_HALF_FOLDED_WITH_SECOND_EXPANDED",
+      "值": "13",
+      "所属模块": "未知模块",
+      "功能描述": "Fold Status Half Folded With Second Expanded.",
+      "注释信息": [
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "FoldStatus",
+      "since_version": "15",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "FOLD_STATUS_HALF_FOLDED_WITH_SECOND_HALF_FOLDED",
+      "值": "23",
+      "所属模块": "未知模块",
+      "功能描述": "Fold Status Half Folded With Second Half Folded.",
+      "注释信息": [
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "FoldStatus",
+      "since_version": "15",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "FoldDisplayMode",
+      "所属模块": "未知模块",
+      "功能描述": "Enumerates the fold display mode.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "display",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "FOLD_DISPLAY_MODE_UNKNOWN",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "Unknown Display.",
+      "注释信息": [
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "FoldDisplayMode",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "FOLD_DISPLAY_MODE_FULL",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Full Display.",
+      "注释信息": [
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "FoldDisplayMode",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "FOLD_DISPLAY_MODE_MAIN",
+      "值": "2",
+      "所属模块": "未知模块",
+      "功能描述": "Main Display.",
+      "注释信息": [
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "FoldDisplayMode",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "FOLD_DISPLAY_MODE_SUB",
+      "值": "3",
+      "所属模块": "未知模块",
+      "功能描述": "Sub Display.",
+      "注释信息": [
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "FoldDisplayMode",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "FOLD_DISPLAY_MODE_COORDINATION",
+      "所属模块": "未知模块",
+      "功能描述": "Coordination Display.",
+      "注释信息": [
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "FoldDisplayMode",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "DisplayState",
+      "所属模块": "未知模块",
+      "功能描述": "Enumerates the display states.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "display",
+      "since_version": "12",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "STATE_UNKNOWN",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "Unknown.",
+      "注释信息": [
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "DisplayState",
+      "since_version": "12",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "STATE_OFF",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Screen off.",
+      "注释信息": [
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "DisplayState",
+      "since_version": "12",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "STATE_ON",
+      "值": "2",
+      "所属模块": "未知模块",
+      "功能描述": "Screen on.",
+      "注释信息": [
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "DisplayState",
+      "since_version": "12",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "STATE_DOZE",
+      "值": "3",
+      "所属模块": "未知模块",
+      "功能描述": "Doze, but it will update for some important system messages.",
+      "注释信息": [
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "DisplayState",
+      "since_version": "12",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "STATE_DOZE_SUSPEND",
+      "值": "4",
+      "所属模块": "未知模块",
+      "功能描述": "Doze and not update.",
+      "注释信息": [
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "DisplayState",
+      "since_version": "12",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "STATE_VR",
+      "值": "5",
+      "所属模块": "未知模块",
+      "功能描述": "VR node.",
+      "注释信息": [
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "DisplayState",
+      "since_version": "12",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "STATE_ON_SUSPEND",
+      "值": "6",
+      "所属模块": "未知模块",
+      "功能描述": "Screen on and not update.",
+      "注释信息": [
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "DisplayState",
+      "since_version": "12",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "Orientation",
+      "所属模块": "未知模块",
+      "功能描述": "Enumerates the display orientation.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "display",
+      "since_version": "12",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "PORTRAIT",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "Indicate that the display content is in portrait mode.",
+      "注释信息": [
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "Orientation",
+      "since_version": "12",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "LANDSCAPE",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Indicate that the display content is in landscape mode.",
+      "注释信息": [
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "Orientation",
+      "since_version": "12",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "PORTRAIT_INVERTED",
+      "值": "2",
+      "所属模块": "未知模块",
+      "功能描述": "Indicate that the display content is in the opposite direction of the portrait mode.",
+      "注释信息": [
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "Orientation",
+      "since_version": "12",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "LANDSCAPE_INVERTED",
+      "值": "3",
+      "所属模块": "未知模块",
+      "功能描述": "Indicate that the display content is in the opposite direction of the landscape mode.",
+      "注释信息": [
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "Orientation",
+      "since_version": "12",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "DisplaySourceMode",
+      "所属模块": "未知模块",
+      "功能描述": "Indicate the source mode of the display",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 19"
+      ],
+      "层级": 2,
+      "上级": "display",
+      "since_version": "19",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "NONE",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "Indicate that the display is not in use.",
+      "注释信息": [
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 19"
+      ],
+      "层级": 2,
+      "上级": "DisplaySourceMode",
+      "since_version": "19",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "MAIN",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Indicate that the display is the main display.",
+      "注释信息": [
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 19"
+      ],
+      "层级": 2,
+      "上级": "DisplaySourceMode",
+      "since_version": "19",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "MIRROR",
+      "值": "2",
+      "所属模块": "未知模块",
+      "功能描述": "Indicate that the display is in mirror mode.",
+      "注释信息": [
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 19"
+      ],
+      "层级": 2,
+      "上级": "DisplaySourceMode",
+      "since_version": "19",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "EXTEND",
+      "值": "3",
+      "所属模块": "未知模块",
+      "功能描述": "Indicate that the display is in extend mode.",
+      "注释信息": [
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 19"
+      ],
+      "层级": 2,
+      "上级": "DisplaySourceMode",
+      "since_version": "19",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "ALONE",
+      "值": "4",
+      "所属模块": "未知模块",
+      "功能描述": "Indicate that the display stands alone.",
+      "注释信息": [
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 19"
+      ],
+      "层级": 2,
+      "上级": "DisplaySourceMode",
+      "since_version": "19",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "CornerType",
+      "所属模块": "未知模块",
+      "功能描述": "Enumerates the type of round corner.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "display",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "TOP_LEFT",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "The round corner in the top left.",
+      "注释信息": [
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "CornerType",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "TOP_RIGHT",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "The round corner in the top right.",
+      "注释信息": [
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "CornerType",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "BOTTOM_RIGHT",
+      "值": "2",
+      "所属模块": "未知模块",
+      "功能描述": "The round corner in the bottom right.",
+      "注释信息": [
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "CornerType",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "BOTTOM_LEFT",
+      "值": "3",
+      "所属模块": "未知模块",
+      "功能描述": "The round corner in the bottom left.",
+      "注释信息": [
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "CornerType",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "RoundedCorner",
+      "所属模块": "未知模块",
+      "功能描述": "Round corner information of display.",
+      "注释信息": [
+        "@interface RoundedCorner",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "display",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "type",
+      "属性类型": "CornerType",
+      "所属模块": "未知模块",
+      "功能描述": "The type of round corner.",
+      "注释信息": [
+        "@type { CornerType }",
+        "@readonly",
+        "@syscap  SystemCapability.Window.SessionManager",
+        "@stagemodelonly",
+        "@atomicservice",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "RoundedCorner",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "position",
+      "属性类型": "Position",
+      "所属模块": "未知模块",
+      "功能描述": "The center coordinates of round corner.",
+      "注释信息": [
+        "@type { Position }",
+        "@readonly",
+        "@syscap  SystemCapability.Window.SessionManager",
+        "@stagemodelonly",
+        "@atomicservice",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "RoundedCorner",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "radius",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "The radius of round corner.",
+      "注释信息": [
+        "@type { number }",
+        "@readonly",
+        "@syscap  SystemCapability.Window.SessionManager",
+        "@stagemodelonly",
+        "@atomicservice",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "RoundedCorner",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "ScreenShape",
+      "所属模块": "未知模块",
+      "功能描述": "Enumerates the screen shape.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@crossplatform",
+        "@since 18"
+      ],
+      "层级": 2,
+      "上级": "display",
+      "since_version": "18",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "RECTANGLE",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "The screen shape is rectangle.",
+      "注释信息": [
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@crossplatform",
+        "@since 18"
+      ],
+      "层级": 2,
+      "上级": "ScreenShape",
+      "since_version": "18",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "ROUND",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "The screen shape is round.",
+      "注释信息": [
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@crossplatform",
+        "@since 18"
+      ],
+      "层级": 2,
+      "上级": "ScreenShape",
+      "since_version": "18",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "FoldCreaseRegion",
+      "所属模块": "未知模块",
+      "功能描述": "Fold Crease Region",
+      "注释信息": [
+        "@interface FoldCreaseRegion",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "display",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "displayId",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "The display ID is used to identify the screen where the crease is located.",
+      "注释信息": [
+        "@type { number }",
+        "@readonly",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "FoldCreaseRegion",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "creaseRects",
+      "属性类型": "Array<Rect>",
+      "所属模块": "未知模块",
+      "功能描述": "Crease Region.",
+      "注释信息": [
+        "@type { Array<Rect> }",
+        "@readonly",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "FoldCreaseRegion",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "BrightnessInfo",
+      "所属模块": "未知模块",
+      "功能描述": "Display Brightness Info.",
+      "注释信息": [
+        "@interface BrightnessInfo",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "display",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "sdrNits",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Standard Dynamic Range.",
+      "注释信息": [
+        "@type { number }",
+        "@readonly",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "BrightnessInfo",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "currentHeadroom",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Current Brightness Dynamic Margin.",
+      "注释信息": [
+        "@type { number }",
+        "@readonly",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "BrightnessInfo",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "maxHeadroom",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Current Maximum Brightness Margin.",
+      "注释信息": [
+        "@type { number }",
+        "@readonly",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "BrightnessInfo",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "Rect",
+      "所属模块": "未知模块",
+      "功能描述": "Rectangle",
+      "注释信息": [
+        "@interface Rect",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "display",
+      "since_version": "12",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "left",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "The X-axis coordinate of the upper left vertex of the rectangle, in pixels.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "Rect",
+      "since_version": "12",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "top",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "The Y-axis coordinate of the upper left vertex of the rectangle, in pixels.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "Rect",
+      "since_version": "12",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "width",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Width of the rectangle, in pixels.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "Rect",
+      "since_version": "12",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "height",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Height of the rectangle, in pixels.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "Rect",
+      "since_version": "12",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "WaterfallDisplayAreaRects",
+      "所属模块": "未知模块",
+      "功能描述": "Curved area rects of the waterfall display.",
+      "注释信息": [
+        "@interface WaterfallDisplayAreaRects",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "display",
+      "since_version": "12",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "left",
+      "属性类型": "Rect",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the size of left side curved area of the waterfall screen.",
+      "注释信息": [
+        "@type { Rect }",
+        "@readonly",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "WaterfallDisplayAreaRects",
+      "since_version": "12",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "right",
+      "属性类型": "Rect",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the size of right side curved area of the waterfall screen.",
+      "注释信息": [
+        "@type { Rect }",
+        "@readonly",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "WaterfallDisplayAreaRects",
+      "since_version": "12",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "top",
+      "属性类型": "Rect",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the size of top side curved area of the waterfall screen.",
+      "注释信息": [
+        "@type { Rect }",
+        "@readonly",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "WaterfallDisplayAreaRects",
+      "since_version": "12",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "bottom",
+      "属性类型": "Rect",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the size of bottom side curved area of the waterfall screen.",
+      "注释信息": [
+        "@type { Rect }",
+        "@readonly",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "WaterfallDisplayAreaRects",
+      "since_version": "12",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "CutoutInfo",
+      "所属模块": "未知模块",
+      "功能描述": "Cutout information of the display.",
+      "注释信息": [
+        "@interface CutoutInfo",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "display",
+      "since_version": "12",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "boundingRects",
+      "属性类型": "Array<Rect>",
+      "所属模块": "未知模块",
+      "功能描述": "Bounding rectangles of the cutout areas of the display.",
+      "注释信息": [
+        "@type { Array<Rect> }",
+        "@readonly",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "CutoutInfo",
+      "since_version": "12",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "waterfallDisplayAreaRects",
+      "属性类型": "WaterfallDisplayAreaRects",
+      "所属模块": "未知模块",
+      "功能描述": "Rectangles of curved parts on each side of a waterfall display.",
+      "注释信息": [
+        "@type { WaterfallDisplayAreaRects }",
+        "@readonly",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "CutoutInfo",
+      "since_version": "12",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "DisplayPhysicalResolution",
+      "所属模块": "未知模块",
+      "功能描述": "Define display physical resolution.",
+      "注释信息": [
+        "@interface DisplayPhysicalResolution",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "display",
+      "since_version": "12",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "foldDisplayMode",
+      "属性类型": "FoldDisplayMode",
+      "所属模块": "未知模块",
+      "功能描述": "fold display mode.",
+      "注释信息": [
+        "@type { FoldDisplayMode }",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "DisplayPhysicalResolution",
+      "since_version": "12",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "physicalWidth",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Display physical width, in pixels.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "DisplayPhysicalResolution",
+      "since_version": "12",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "physicalHeight",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Display physical height, in pixels.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "DisplayPhysicalResolution",
+      "since_version": "12",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "Display",
+      "所属模块": "未知模块",
+      "功能描述": "Define properties of the display. They cannot be updated automatically.",
+      "注释信息": [
+        "@interface Display",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "display",
+      "since_version": "11",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "id",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Display ID.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "Display",
+      "since_version": "12",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "name",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Display name.",
+      "注释信息": [
+        "@type { string }",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "Display",
+      "since_version": "12",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "alive",
+      "属性类型": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Whether the display is alive.",
+      "注释信息": [
+        "@type { boolean }",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "Display",
+      "since_version": "12",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "state",
+      "属性类型": "DisplayState",
+      "所属模块": "未知模块",
+      "功能描述": "The state of display.",
+      "注释信息": [
+        "@type { DisplayState }",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "Display",
+      "since_version": "12",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "refreshRate",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Refresh rate, in Hz.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "Display",
+      "since_version": "12",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "rotation",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "An enumeration value for rotation degrees of the display. The value 0 indicates that the screen of the display rotates clockwise by 0°. The value 1 indicates that the screen of the display rotates clockwise by 90°. The value 2 indicates that the screen of the display rotates clockwise by 180°. The value 3 indicates that the screen of the display rotates clockwise by 270°.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Display",
+      "since_version": "11",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "width",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Display width, in pixels.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Display",
+      "since_version": "11",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "height",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Display height, in pixels.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Display",
+      "since_version": "11",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "availableWidth",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Display available width, in pixels.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "Display",
+      "since_version": "12",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "availableHeight",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Display available height, in pixels.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "Display",
+      "since_version": "12",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "densityDPI",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Display resolution, that is, the number of pixels per inch.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "Display",
+      "since_version": "12",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "orientation",
+      "属性类型": "Orientation",
+      "所属模块": "未知模块",
+      "功能描述": "Display orientation.",
+      "注释信息": [
+        "@type { Orientation }",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "Display",
+      "since_version": "12",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "densityPixels",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Display density, in pixels. which is the scaling coefficient between physical pixels and logical pixels. The value for a low-resolution display is 1.0.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Display",
+      "since_version": "11",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "scaledDensity",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Text scale density of the display.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "Display",
+      "since_version": "12",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "xDPI",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "DPI on the x-axis.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "Display",
+      "since_version": "20",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "yDPI",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "DPI on the y-axis.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "Display",
+      "since_version": "20",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "screenShape",
+      "属性类型": "ScreenShape",
+      "所属模块": "未知模块",
+      "功能描述": "The shape of screen",
+      "注释信息": [
+        "@type { ?ScreenShape }",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@atomicservice",
+        "@since 18"
+      ],
+      "层级": 2,
+      "上级": "Display",
+      "since_version": "18",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "colorSpaces",
+      "属性类型": "Array<colorSpaceManager.ColorSpace>",
+      "所属模块": "未知模块",
+      "功能描述": "All supported color spaces.",
+      "注释信息": [
+        "@type { Array<colorSpaceManager.ColorSpace> }",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "Display",
+      "since_version": "12",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "hdrFormats",
+      "属性类型": "Array<hdrCapability.HDRFormat>",
+      "所属模块": "未知模块",
+      "功能描述": "All supported HDR formats.",
+      "注释信息": [
+        "@type { Array<hdrCapability.HDRFormat> }",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "Display",
+      "since_version": "12",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "sourceMode",
+      "属性类型": "DisplaySourceMode",
+      "所属模块": "未知模块",
+      "功能描述": "The source mode of display",
+      "注释信息": [
+        "@type { ?DisplaySourceMode }",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 19"
+      ],
+      "层级": 2,
+      "上级": "Display",
+      "since_version": "19",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "x",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "The X-axis coordinate of the top-left corner of the display relative to the main display.",
+      "注释信息": [
+        "@type { ?number }",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 19"
+      ],
+      "层级": 2,
+      "上级": "Display",
+      "since_version": "19",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "y",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "The Y-axis coordinate of the top-left corner of the display relative to the main display.",
+      "注释信息": [
+        "@type { ?number }",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 19"
+      ],
+      "层级": 2,
+      "上级": "Display",
+      "since_version": "19",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "supportedRefreshRates",
+      "属性类型": "Array<number>",
+      "所属模块": "未知模块",
+      "功能描述": "All supported refresh rates.",
+      "注释信息": [
+        "@type { ?Array<number> }",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "Display",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getRoundedCorner",
+      "返回值": "Array<RoundedCorner>",
+      "所属模块": "未知模块",
+      "功能描述": "Get information about all the rounded corners.",
+      "注释信息": [
+        "@returns { Array<RoundedCorner> } The rounded corners.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 1400001 - Invalid display or screen.",
+        "@throws { BusinessError } 1400003 - This display manager service works abnormally.",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "Display",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "The rounded corners.",
+      "error_codes": [
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "1400001",
+          "description": "Invalid display or screen."
+        },
+        {
+          "code": "1400003",
+          "description": "This display manager service works abnormally."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getCutoutInfo",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Obtain the cutout info of the display. 1. This display is abnormal. 2. Internal task error.",
+      "注释信息": [
+        "@param { AsyncCallback<CutoutInfo> } callback",
+        "@throws { BusinessError } 1400001 - Invalid display or screen. Possible cause:",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "Display",
+      "since_version": "12",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<CutoutInfo>",
+          "必填": true,
+          "说明": ""
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "1400001",
+          "description": "Invalid display or screen. Possible cause:"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getCutoutInfo",
+      "返回值": "Promise<CutoutInfo>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtain the cutout info of the display.",
+      "注释信息": [
+        "@returns { Promise<CutoutInfo> }",
+        "@throws { BusinessError } 1400001 - Invalid display or screen.",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "Display",
+      "since_version": "12",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "1400001",
+          "description": "Invalid display or screen."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getAvailableArea",
+      "返回值": "Promise<Rect>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtain the available area of the display. 1. This display is abnormal. 2. Internal task error.",
+      "注释信息": [
+        "@returns { Promise<Rect> }",
+        "@throws { BusinessError } 801 - Capability not supported. Failed to call the API due to limited device capabilities.",
+        "@throws { BusinessError } 1400001 - Invalid display or screen. Possible cause:",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "Display",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "801",
+          "description": "Capability not supported. Failed to call the API due to limited device capabilities."
+        },
+        {
+          "code": "1400001",
+          "description": "Invalid display or screen. Possible cause:"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getLiveCreaseRegion",
+      "返回值": "FoldCreaseRegion",
+      "所属模块": "未知模块",
+      "功能描述": "Get the live crease region in the current display mode.",
+      "注释信息": [
+        "@returns { FoldCreaseRegion } Fold crease region in the current display mode.",
+        "@throws { BusinessError } 801 - Capability not supported. Failed to call the API due to limited device capabilities.",
+        "@throws { BusinessError } 1400003 - This display manager service works abnormally.",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "Display",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "Fold crease region in the current display mode.",
+      "error_codes": [
+        {
+          "code": "801",
+          "description": "Capability not supported. Failed to call the API due to limited device capabilities."
+        },
+        {
+          "code": "1400003",
+          "description": "This display manager service works abnormally."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Register the callback for available area changes. <br>2. Incorrect parameter types.",
+      "注释信息": [
+        "@param { 'availableAreaChange' } type - the event of available area changes",
+        "@param { Callback<Rect> } callback - Callback used to return the available area",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 801 - Capability not supported. Failed to call the API due to limited device capabilities.",
+        "@throws { BusinessError } 1400003 - This display manager service works abnormally.",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "Display",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'availableAreaChange'",
+          "必填": true,
+          "说明": "the event of available area changes"
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<Rect>",
+          "必填": true,
+          "说明": "Callback used to return the available area"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported. Failed to call the API due to limited device capabilities."
+        },
+        {
+          "code": "1400003",
+          "description": "This display manager service works abnormally."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unregister the callback for available area changes. <br>2. Incorrect parameter types.",
+      "注释信息": [
+        "@param { 'availableAreaChange' } type - the event of available area changes",
+        "@param { Callback<Rect> } [callback] - Callback used to return the available area",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 801 - Capability not supported. Failed to call the API due to limited device capabilities.",
+        "@throws { BusinessError } 1400003 - This display manager service works abnormally.",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "Display",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'availableAreaChange'",
+          "必填": true,
+          "说明": "the event of available area changes"
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "Callback<Rect> } [callback] - Callback used to return the available area"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported. Failed to call the API due to limited device capabilities."
+        },
+        {
+          "code": "1400003",
+          "description": "This display manager service works abnormally."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getDisplayCapability",
+      "返回值": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Get current display capability, including foldstatus, displaymode, rotation, and orientation information.",
+      "注释信息": [
+        "@returns { string } Indicates the current foldstatus, displaymode, rotation, and orientation information.",
+        "@throws { BusinessError } 801 - Capability not supported.Function getDisplayCapability can not work correctly due to limited device capabilities.",
+        "@throws { BusinessError } 1400001 - Invalid display or screen.",
+        "@throws { BusinessError } 1400003 - This display manager service works abnormally.",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 18",
+        "@test"
+      ],
+      "层级": 2,
+      "上级": "Display",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "Indicates the current foldstatus, displaymode, rotation, and orientation information.",
+      "error_codes": [
+        {
+          "code": "801",
+          "description": "Capability not supported.Function getDisplayCapability can not work correctly due to limited device capabilities."
+        },
+        {
+          "code": "1400001",
+          "description": "Invalid display or screen."
+        },
+        {
+          "code": "1400003",
+          "description": "This display manager service works abnormally."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "Position",
+      "所属模块": "未知模块",
+      "功能描述": "Coordinates of a point.",
+      "注释信息": [
+        "@interface Position",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "display",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "x",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the x-axis coordinates",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "Position",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "y",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the y-axis coordinates",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "Position",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "RelativePosition",
+      "所属模块": "未知模块",
+      "功能描述": "Coordinates of a point relative to specified display.",
+      "注释信息": [
+        "@interface RelativePosition",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "display",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "displayId",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the display.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "RelativePosition",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "position",
+      "属性类型": "Position",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the coordinates relative to the display.",
+      "注释信息": [
+        "@type { Position }",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "RelativePosition",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    }
+  ]
+}

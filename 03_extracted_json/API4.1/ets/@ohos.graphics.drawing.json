@@ -1,0 +1,932 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.ArkGraphics.2D",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "namespace",
+      "名称": "drawing",
+      "所属模块": "@kit.ArkGraphics.2D",
+      "功能描述": "Provides functions such as 2D graphics rendering, text drawing, and image display.",
+      "注释信息": [
+        "@namespace drawing",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "@kit.ArkGraphics.2D",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "enum",
+      "名称": "BlendMode",
+      "所属模块": "未知模块",
+      "功能描述": "Enumerate blending modes for colors. Blend is a operation that use 4 components(red, green, blue, alpha) to generate a new color from two colors(source, destination).",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "drawing",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CLEAR",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "Disable 4 regions(red, green, blue, alpha)",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "BlendMode",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "SRC",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Use components of the source",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "BlendMode",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "DST",
+      "值": "2",
+      "所属模块": "未知模块",
+      "功能描述": "Use components of the destination",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "BlendMode",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "SRC_OVER",
+      "值": "3",
+      "所属模块": "未知模块",
+      "功能描述": "The source is placed above the destination.",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "BlendMode",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "DST_OVER",
+      "值": "4",
+      "所属模块": "未知模块",
+      "功能描述": "The Destination is placed above the source.",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "BlendMode",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "SRC_IN",
+      "值": "5",
+      "所属模块": "未知模块",
+      "功能描述": "Use source replaces the destination, and will not exceed the boundaries of the destination",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "BlendMode",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "DST_IN",
+      "值": "6",
+      "所属模块": "未知模块",
+      "功能描述": "Use destination, and will not exceed the boundaries of the source",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "BlendMode",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "SRC_OUT",
+      "值": "7",
+      "所属模块": "未知模块",
+      "功能描述": "Source is use in outside of the boundaries of the destination.",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "BlendMode",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "DST_OUT",
+      "值": "8",
+      "所属模块": "未知模块",
+      "功能描述": "Destination is use in outside of the boundaries of the source.",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "BlendMode",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "SRC_ATOP",
+      "值": "9",
+      "所属模块": "未知模块",
+      "功能描述": "Source which overlaps the destination will replaces the destination.",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "BlendMode",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "DST_ATOP",
+      "值": "10",
+      "所属模块": "未知模块",
+      "功能描述": "Destination which overlaps the source will replaces the source.",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "BlendMode",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "XOR",
+      "值": "11",
+      "所属模块": "未知模块",
+      "功能描述": "Combine regions where source and destination do not overlap.",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "BlendMode",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "PLUS",
+      "值": "12",
+      "所属模块": "未知模块",
+      "功能描述": "The sum of the source and destination.",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "BlendMode",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "MODULATE",
+      "值": "13",
+      "所属模块": "未知模块",
+      "功能描述": "All components are multiplied.",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "BlendMode",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "SCREEN",
+      "值": "14",
+      "所属模块": "未知模块",
+      "功能描述": "Multiply the complement values of the background and source color values, and then complement the result.",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "BlendMode",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "OVERLAY",
+      "值": "15",
+      "所属模块": "未知模块",
+      "功能描述": "Multiplies or screens the colors, depending on destination",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "BlendMode",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "DARKEN",
+      "值": "16",
+      "所属模块": "未知模块",
+      "功能描述": "Choose a darker background and source color.",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "BlendMode",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "LIGHTEN",
+      "值": "17",
+      "所属模块": "未知模块",
+      "功能描述": "Choose a lighter background and source color.",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "BlendMode",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COLOR_DODGE",
+      "值": "18",
+      "所属模块": "未知模块",
+      "功能描述": "Brightens destination color to reflect the source color.",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "BlendMode",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COLOR_BURN",
+      "值": "19",
+      "所属模块": "未知模块",
+      "功能描述": "Darkens destination color to reflect the source color.",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "BlendMode",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "HARD_LIGHT",
+      "值": "20",
+      "所属模块": "未知模块",
+      "功能描述": "Multiplies or screens the colors, depending on source",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "BlendMode",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "SOFT_LIGHT",
+      "值": "21",
+      "所属模块": "未知模块",
+      "功能描述": "Lightens or Darkens the colors, depending on the source.",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "BlendMode",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "DIFFERENCE",
+      "值": "22",
+      "所属模块": "未知模块",
+      "功能描述": "Subtract the darker of the two colors from the brighter color.",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "BlendMode",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "EXCLUSION",
+      "值": "23",
+      "所属模块": "未知模块",
+      "功能描述": "Produces an effect similar to difference mode, but with lower contrast.",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "BlendMode",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "MULTIPLY",
+      "值": "24",
+      "所属模块": "未知模块",
+      "功能描述": "Multiply the source color by the destination color and replace the destination.",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "BlendMode",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "HUE",
+      "值": "25",
+      "所属模块": "未知模块",
+      "功能描述": "Use the hue of the source and the saturation and brightness of the destination.",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "BlendMode",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "SATURATION",
+      "值": "26",
+      "所属模块": "未知模块",
+      "功能描述": "Use the saturation of the source and the hue and brightness of the destination.",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "BlendMode",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COLOR",
+      "值": "27",
+      "所属模块": "未知模块",
+      "功能描述": "Use the hue and saturation of the source and the brightness of the destination.",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "BlendMode",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "LUMINOSITY",
+      "值": "28",
+      "所属模块": "未知模块",
+      "功能描述": "Use the brightness of the source and the hue and saturation of the destination.",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "BlendMode",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "class",
+      "名称": "Path",
+      "所属模块": "未知模块",
+      "功能描述": "Describes a path object.",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "drawing",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "moveTo",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Sets the start point of a path",
+      "注释信息": [
+        "@param { number } x - Indicates the x coordinate of the start point.",
+        "@param { number } y - Indicates the y coordinate of the start point.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Path",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [
+        {
+          "名称": "x",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the x coordinate of the start point."
+        },
+        {
+          "名称": "y",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the y coordinate of the start point."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error."
+        }
+      ],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "lineTo",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Draws a line segment from the last point of a path to the target point.",
+      "注释信息": [
+        "@param { number } x - Indicates the x coordinate of the target point.",
+        "@param { number } y - Indicates the y coordinate of the target point.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Path",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [
+        {
+          "名称": "x",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the x coordinate of the target point."
+        },
+        {
+          "名称": "y",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the y coordinate of the target point."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error."
+        }
+      ],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "arcTo",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "This is done by using angle arc mode. In this mode, a rectangle that encloses an ellipse is specified first, and then a start angle and a sweep angle are specified. The arc is a portion of the ellipse defined by the start angle and the sweep angle. By default, a line segment from the last point of the path to the start point of the arc is also added.",
+      "注释信息": [
+        "@param { number } x1 - Indicates the x coordinate of the upper left corner of the rectangle.",
+        "@param { number } y1 - Indicates the y coordinate of the upper left corner of the rectangle.",
+        "@param { number } x2 - Indicates the x coordinate of the lower right corner of the rectangle.",
+        "@param { number } y2 - Indicates the y coordinate of the lower right corner of the rectangle.",
+        "@param { number } startDeg - Indicates the start angle, in degrees.",
+        "@param { number } sweepDeg - Indicates the angle to sweep, in degrees.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Path",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [
+        {
+          "名称": "x1",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the x coordinate of the upper left corner of the rectangle."
+        },
+        {
+          "名称": "y1",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the y coordinate of the upper left corner of the rectangle."
+        },
+        {
+          "名称": "x2",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the x coordinate of the lower right corner of the rectangle."
+        },
+        {
+          "名称": "y2",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the y coordinate of the lower right corner of the rectangle."
+        },
+        {
+          "名称": "startDeg",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the start angle, in degrees."
+        },
+        {
+          "名称": "sweepDeg",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the angle to sweep, in degrees."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error."
+        }
+      ],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "quadTo",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Draws a quadratic Bezier curve from the last point of a path to the target point.",
+      "注释信息": [
+        "@param { number } ctrlX - Indicates the x coordinate of the control point.",
+        "@param { number } ctrlY - Indicates the y coordinate of the control point.",
+        "@param { number } endX - Indicates the x coordinate of the target point.",
+        "@param { number } endY - Indicates the y coordinate of the target point.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Path",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [
+        {
+          "名称": "ctrlX",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the x coordinate of the control point."
+        },
+        {
+          "名称": "ctrlY",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the y coordinate of the control point."
+        },
+        {
+          "名称": "endX",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the x coordinate of the target point."
+        },
+        {
+          "名称": "endY",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the y coordinate of the target point."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error."
+        }
+      ],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "cubicTo",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Draws a cubic Bezier curve from the last point of a path to the target point.",
+      "注释信息": [
+        "@param { number } ctrlX1 - Indicates the x coordinate of the first control point.",
+        "@param { number } ctrlY1 - Indicates the y coordinate of the first control point.",
+        "@param { number } ctrlX2 - Indicates the x coordinate of the second control point.",
+        "@param { number } ctrlY2 - Indicates the y coordinate of the second control point.",
+        "@param { number } endX - Indicates the x coordinate of the target point.",
+        "@param { number } endY - Indicates the y coordinate of the target point.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Path",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [
+        {
+          "名称": "ctrlX1",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the x coordinate of the first control point."
+        },
+        {
+          "名称": "ctrlY1",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the y coordinate of the first control point."
+        },
+        {
+          "名称": "ctrlX2",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the x coordinate of the second control point."
+        },
+        {
+          "名称": "ctrlY2",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the y coordinate of the second control point."
+        },
+        {
+          "名称": "endX",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the x coordinate of the target point."
+        },
+        {
+          "名称": "endY",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the y coordinate of the target point."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error."
+        }
+      ],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "close",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Closes a path. A line segment from the start point to the last point of the path is added.",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Path",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    },
+    {
+      "类型": "method",
+      "名称": "reset",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Resets path data.",
+      "注释信息": [
+        "@syscap SystemCapability.Graphics.Drawing",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Path",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Graphics.Drawing",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API4.1"
+    }
+  ]
+}

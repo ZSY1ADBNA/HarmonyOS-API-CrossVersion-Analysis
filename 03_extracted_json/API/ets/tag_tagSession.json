@@ -1,0 +1,617 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.ConnectivityKit",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "TagSession",
+      "所属模块": "@kit.ConnectivityKit",
+      "功能描述": "Controls tag read and write. <p>Classes for different types of tags inherit from this abstract class to control connections to tags, read data from tags, and write data to tags.",
+      "注释信息": [
+        "@typedef TagSession",
+        "@syscap SystemCapability.Communication.NFC.Tag",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "@kit.ConnectivityKit",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Communication.NFC.Tag",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getTagInfo",
+      "返回值": "tag.TagInfo",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the tag information.",
+      "注释信息": [
+        "@permission ohos.permission.NFC_TAG",
+        "@returns { tag.TagInfo } Returns the tag information, which is a {@link TagInfo} object.",
+        "@syscap SystemCapability.Communication.NFC.Tag",
+        "@since 7",
+        "@deprecated since 9",
+        "@useinstead ohos.nfc.tag/tag#getTagInfo"
+      ],
+      "层级": 1,
+      "上级": "TagSession",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Communication.NFC.Tag",
+      "parameters": [],
+      "return_description": "Returns the tag information, which is a {@link TagInfo} object.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "connectTag",
+      "返回值": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Connects to a tag. <p>This method must be called before data is read from or written to the tag.",
+      "注释信息": [
+        "@permission ohos.permission.NFC_TAG",
+        "@returns { boolean } Returns {@code true} if the connection is set up; returns {@code false} otherwise.",
+        "@syscap SystemCapability.Communication.NFC.Tag",
+        "@since 7",
+        "@deprecated since 9",
+        "@useinstead tagSession.TagSession#connect"
+      ],
+      "层级": 1,
+      "上级": "TagSession",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Communication.NFC.Tag",
+      "parameters": [],
+      "return_description": "Returns {@code true} if the connection is set up; returns {@code false} otherwise.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "connect",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Connects to a tag. Must be called before data is read from or written to the tag.",
+      "注释信息": [
+        "@permission ohos.permission.NFC_TAG",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 3100201 - The tag running state is abnormal in the service.",
+        "@syscap SystemCapability.Communication.NFC.Tag",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "TagSession",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Communication.NFC.Tag",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "3100201",
+          "description": "The tag running state is abnormal in the service."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "reset",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Resets a connection with a tag and restores the default timeout duration for writing data to the tag.",
+      "注释信息": [
+        "@permission ohos.permission.NFC_TAG",
+        "@syscap SystemCapability.Communication.NFC.Tag",
+        "@since 7",
+        "@deprecated since 9",
+        "@useinstead tagSession.TagSession#resetConnection"
+      ],
+      "层级": 1,
+      "上级": "TagSession",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Communication.NFC.Tag",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "resetConnection",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Resets a connection with a tag and restores the default timeout duration for writing data to the tag.",
+      "注释信息": [
+        "@permission ohos.permission.NFC_TAG",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 3100201 - The tag running state is abnormal in the service.",
+        "@syscap SystemCapability.Communication.NFC.Tag",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "TagSession",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Communication.NFC.Tag",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "3100201",
+          "description": "The tag running state is abnormal in the service."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "isTagConnected",
+      "返回值": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Checks whether a connection has been set up with a tag. returns {@code false} otherwise.",
+      "注释信息": [
+        "@returns { boolean } Returns {@code true} if a connection has been set up with the tag;",
+        "@syscap SystemCapability.Communication.NFC.Tag",
+        "@since 7",
+        "@deprecated since 9",
+        "@useinstead tagSession.TagSession#isConnected"
+      ],
+      "层级": 1,
+      "上级": "TagSession",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Communication.NFC.Tag",
+      "parameters": [],
+      "return_description": "Returns {@code true} if a connection has been set up with the tag;",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "isConnected",
+      "返回值": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Checks whether a connection has been set up with a tag.",
+      "注释信息": [
+        "@returns { boolean } Returns true if tag connected, otherwise false.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@syscap SystemCapability.Communication.NFC.Tag",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "TagSession",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Communication.NFC.Tag",
+      "parameters": [],
+      "return_description": "Returns true if tag connected, otherwise false.",
+      "error_codes": [
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "setSendDataTimeout",
+      "返回值": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Sets the timeout duration (ms) for sending data to a tag. <p>If data is not sent to the tag within the duration, data sending fails.",
+      "注释信息": [
+        "@permission ohos.permission.NFC_TAG",
+        "@param { number } timeout Indicates the timeout duration to be set.",
+        "@returns { boolean } Returns {@code true} if the setting is successful; returns {@code false} otherwise.",
+        "@syscap SystemCapability.Communication.NFC.Tag",
+        "@since 7",
+        "@deprecated since 9",
+        "@useinstead tagSession.TagSession#setTimeout"
+      ],
+      "层级": 1,
+      "上级": "TagSession",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Communication.NFC.Tag",
+      "parameters": [
+        {
+          "名称": "timeout",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the timeout duration to be set."
+        }
+      ],
+      "return_description": "Returns {@code true} if the setting is successful; returns {@code false} otherwise.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "setTimeout",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Sets the timeout duration (ms) for sending data to a tag. <br> 1. Mandatory parameters are left unspecified. <br> 2. Incorrect parameters types. <br> 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.NFC_TAG",
+        "@param { number } timeout Indicates the timeout duration to be set.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - The parameter check failed. Possible causes:",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 3100201 - The tag running state is abnormal in the service.",
+        "@syscap SystemCapability.Communication.NFC.Tag",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "TagSession",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Communication.NFC.Tag",
+      "parameters": [
+        {
+          "名称": "timeout",
+          "类型": "number",
+          "必填": true,
+          "说明": "Indicates the timeout duration to be set."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "The parameter check failed. Possible causes:"
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "3100201",
+          "description": "The tag running state is abnormal in the service."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getSendDataTimeout",
+      "返回值": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Queries the timeout duration (ms) for sending data to a tag.",
+      "注释信息": [
+        "@permission ohos.permission.NFC_TAG",
+        "@returns { number } Returns the timeout duration.",
+        "@syscap SystemCapability.Communication.NFC.Tag",
+        "@since 7",
+        "@deprecated since 9",
+        "@useinstead tagSession.TagSession#getTimeout"
+      ],
+      "层级": 1,
+      "上级": "TagSession",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Communication.NFC.Tag",
+      "parameters": [],
+      "return_description": "Returns the timeout duration.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getTimeout",
+      "返回值": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the timeout duration (ms) for sending data to a tag.",
+      "注释信息": [
+        "@permission ohos.permission.NFC_TAG",
+        "@returns { number } Returns the timeout duration.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 3100201 - The tag running state is abnormal in the service.",
+        "@syscap SystemCapability.Communication.NFC.Tag",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "TagSession",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Communication.NFC.Tag",
+      "parameters": [],
+      "return_description": "Returns the timeout duration.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "3100201",
+          "description": "The tag running state is abnormal in the service."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "sendData",
+      "返回值": "Promise<number[]>",
+      "所属模块": "未知模块",
+      "功能描述": "Writes data to a tag. data fails to be written to the tag.",
+      "注释信息": [
+        "@permission ohos.permission.NFC_TAG",
+        "@param { number[] } data Indicates the data to be written to the tag.",
+        "@returns { Promise<number[]> } Returns bytes received in response. Or bytes with a length of 0 if the",
+        "@syscap SystemCapability.Communication.NFC.Tag",
+        "@since 7",
+        "@deprecated since 9",
+        "@useinstead tagSession.TagSession#transmit"
+      ],
+      "层级": 1,
+      "上级": "TagSession",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Communication.NFC.Tag",
+      "parameters": [
+        {
+          "名称": "data",
+          "类型": "number[]",
+          "必填": true,
+          "说明": "Indicates the data to be written to the tag."
+        }
+      ],
+      "return_description": "Returns bytes received in response. Or bytes with a length of 0 if the",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "sendData",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Writes data to a tag. data fails to be written to the tag.",
+      "注释信息": [
+        "@permission ohos.permission.NFC_TAG",
+        "@param { number[] } data Indicates the data to be written to the tag.",
+        "@param { AsyncCallback<number[]> } callback The callback.",
+        "@syscap SystemCapability.Communication.NFC.Tag",
+        "@since 7",
+        "@deprecated since 9",
+        "@useinstead tagSession.TagSession#transmit"
+      ],
+      "层级": 1,
+      "上级": "TagSession",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Communication.NFC.Tag",
+      "parameters": [
+        {
+          "名称": "data",
+          "类型": "number[]",
+          "必填": true,
+          "说明": "Indicates the data to be written to the tag."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<number[]>",
+          "必填": true,
+          "说明": "The callback."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "transmit",
+      "返回值": "Promise<number[]>",
+      "所属模块": "未知模块",
+      "功能描述": "Writes data to a tag. data fails to be written to the tag. <br> 1. Mandatory parameters are left unspecified. <br> 2. Incorrect parameters types. <br> 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.NFC_TAG",
+        "@param { number[] } data Indicates the data to be written to the tag.",
+        "@returns { Promise<number[]> } Returns bytes received in response. Or bytes with a length of 0 if the",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - The parameter check failed. Possible causes:",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 3100201 - The tag running state is abnormal in the service.",
+        "@throws { BusinessError } 3100204 - The tag I/O operation failed.",
+        "@syscap SystemCapability.Communication.NFC.Tag",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "TagSession",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Communication.NFC.Tag",
+      "parameters": [
+        {
+          "名称": "data",
+          "类型": "number[]",
+          "必填": true,
+          "说明": "Indicates the data to be written to the tag."
+        }
+      ],
+      "return_description": "Returns bytes received in response. Or bytes with a length of 0 if the",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "The parameter check failed. Possible causes:"
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "3100201",
+          "description": "The tag running state is abnormal in the service."
+        },
+        {
+          "code": "3100204",
+          "description": "The tag I/O operation failed."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "transmit",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Writes data to a tag. <br> 1. Mandatory parameters are left unspecified. <br> 2. Incorrect parameters types. <br> 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.NFC_TAG",
+        "@param { number[] } data Indicates the data to be written to the tag.",
+        "@param { AsyncCallback<number[]> } callback The callback.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 401 - The parameter check failed. Possible causes:",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 3100201 - The tag running state is abnormal in the service.",
+        "@throws { BusinessError } 3100204 - The tag I/O operation failed.",
+        "@syscap SystemCapability.Communication.NFC.Tag",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "TagSession",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Communication.NFC.Tag",
+      "parameters": [
+        {
+          "名称": "data",
+          "类型": "number[]",
+          "必填": true,
+          "说明": "Indicates the data to be written to the tag."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<number[]>",
+          "必填": true,
+          "说明": "The callback."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "401",
+          "description": "The parameter check failed. Possible causes:"
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "3100201",
+          "description": "The tag running state is abnormal in the service."
+        },
+        {
+          "code": "3100204",
+          "description": "The tag I/O operation failed."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getMaxSendLength",
+      "返回值": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Queries the maximum length of data that can be sent to a tag.",
+      "注释信息": [
+        "@permission ohos.permission.NFC_TAG",
+        "@returns { number } Returns the maximum length of the data to be sent to the tag.",
+        "@syscap SystemCapability.Communication.NFC.Tag",
+        "@since 7",
+        "@deprecated since 9",
+        "@useinstead tagSession.TagSession#getMaxTransmitSize"
+      ],
+      "层级": 1,
+      "上级": "TagSession",
+      "since_version": "7",
+      "system_capability": "SystemCapability.Communication.NFC.Tag",
+      "parameters": [],
+      "return_description": "Returns the maximum length of the data to be sent to the tag.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getMaxTransmitSize",
+      "返回值": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains the maximum length of data that can be sent to a tag.",
+      "注释信息": [
+        "@permission ohos.permission.NFC_TAG",
+        "@returns { number } Returns the maximum length of the data to be sent to the tag.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 3100201 - The tag running state is abnormal in the service.",
+        "@syscap SystemCapability.Communication.NFC.Tag",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "TagSession",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Communication.NFC.Tag",
+      "parameters": [],
+      "return_description": "Returns the maximum length of the data to be sent to the tag.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "3100201",
+          "description": "The tag running state is abnormal in the service."
+        }
+      ],
+      "版本": "API"
+    }
+  ]
+}

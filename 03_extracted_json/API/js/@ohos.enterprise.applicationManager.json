@@ -1,0 +1,1938 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.MDMKit",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "namespace",
+      "名称": "applicationManager",
+      "所属模块": "@kit.MDMKit",
+      "功能描述": "This module provides the capability to manage the applications of the enterprise devices.",
+      "注释信息": [
+        "@namespace applicationManager",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "@kit.MDMKit",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "KioskFeature",
+      "所属模块": "未知模块",
+      "功能描述": "Enum for Kiosk Feature.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "applicationManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "ALLOW_NOTIFICATION_CENTER",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Allow notification center.",
+      "注释信息": [
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "KioskFeature",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "ALLOW_CONTROL_CENTER",
+      "值": "2",
+      "所属模块": "未知模块",
+      "功能描述": "Allow control center.",
+      "注释信息": [
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "KioskFeature",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "addDisallowedRunningBundlesSync",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Add appid list of bundles that is disallowed to run in the device. This function can be called by a super administrator. The admin must have the corresponding permission. The size of the array after setting cannot be greater than 200. 2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.ENTERPRISE_MANAGE_APPLICATION",
+        "@param { Want } admin - admin indicates the enterprise admin extension ability information.",
+        "@param { Array<string> } appIds - appIds or appIdentifiers of the bundle are disallowed to run.",
+        "@param { number } [accountId] - accountId indicates the account ID.",
+        "@throws { BusinessError } 9200001 - The application is not an administrator application of the device.",
+        "@throws { BusinessError } 9200002 - The administrator application does not have permission to manage the device.",
+        "@throws { BusinessError } 9200010 - A conflict policy has been configured.",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission required to call the API.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 21"
+      ],
+      "层级": 1,
+      "上级": "applicationManager",
+      "since_version": "21",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [
+        {
+          "名称": "admin",
+          "类型": "Want",
+          "必填": true,
+          "说明": "admin indicates the enterprise admin extension ability information."
+        },
+        {
+          "名称": "appIds",
+          "类型": "Array<string>",
+          "必填": true,
+          "说明": "appIds or appIdentifiers of the bundle are disallowed to run."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "number } [accountId] - accountId indicates the account ID."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "9200001",
+          "description": "The application is not an administrator application of the device."
+        },
+        {
+          "code": "9200002",
+          "description": "The administrator application does not have permission to manage the device."
+        },
+        {
+          "code": "9200010",
+          "description": "A conflict policy has been configured."
+        },
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission required to call the API."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "removeDisallowedRunningBundlesSync",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Remove appid list of bundles that is disallowed to run in the device. This function can be called by a super administrator. The admin must have the corresponding permission. The size of the array after setting cannot be greater than 200. 2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.ENTERPRISE_MANAGE_APPLICATION",
+        "@param { Want } admin - admin indicates the enterprise admin extension ability information.",
+        "@param { Array<string> } appIds - appIds or appIdentifiers of the bundle are disallowed to run.",
+        "@param { number } [accountId] - accountId indicates the user ID.",
+        "@throws { BusinessError } 9200001 - The application is not an administrator application of the device.",
+        "@throws { BusinessError } 9200002 - The administrator application does not have permission to manage the device.",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission required to call the API.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 21"
+      ],
+      "层级": 1,
+      "上级": "applicationManager",
+      "since_version": "21",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [
+        {
+          "名称": "admin",
+          "类型": "Want",
+          "必填": true,
+          "说明": "admin indicates the enterprise admin extension ability information."
+        },
+        {
+          "名称": "appIds",
+          "类型": "Array<string>",
+          "必填": true,
+          "说明": "appIds or appIdentifiers of the bundle are disallowed to run."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "number } [accountId] - accountId indicates the user ID."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "9200001",
+          "description": "The application is not an administrator application of the device."
+        },
+        {
+          "code": "9200002",
+          "description": "The administrator application does not have permission to manage the device."
+        },
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission required to call the API."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getDisallowedRunningBundlesSync",
+      "返回值": "Array<string>",
+      "所属模块": "未知模块",
+      "功能描述": "Get appIds or appIdentifiers list of bundles that is disallowed to run in the device. This function can be called by a super administrator. The admin must have the corresponding permission. 2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.ENTERPRISE_MANAGE_APPLICATION",
+        "@param { Want } admin - admin indicates the enterprise admin extension ability information.",
+        "@param { number } [accountId] - accountId indicates the user ID.",
+        "@returns { Array<string> } ids of the bundle are disallowed to run.",
+        "@throws { BusinessError } 9200001 - The application is not an administrator application of the device.",
+        "@throws { BusinessError } 9200002 - The administrator application does not have permission to manage the device.",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission required to call the API.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 21"
+      ],
+      "层级": 1,
+      "上级": "applicationManager",
+      "since_version": "21",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [
+        {
+          "名称": "admin",
+          "类型": "Want",
+          "必填": true,
+          "说明": "admin indicates the enterprise admin extension ability information."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "number } [accountId] - accountId indicates the user ID."
+        }
+      ],
+      "return_description": "ids of the bundle are disallowed to run.",
+      "error_codes": [
+        {
+          "code": "9200001",
+          "description": "The application is not an administrator application of the device."
+        },
+        {
+          "code": "9200002",
+          "description": "The administrator application does not have permission to manage the device."
+        },
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission required to call the API."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "addAutoStartApps",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Adds auto start applications. This function can be called by a super administrator. The admin must have the corresponding permission. The bundleName and abilityName of the want cannot be non-exist. The size of the array after setting cannot be greater than 10. 2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.ENTERPRISE_MANAGE_APPLICATION",
+        "@param { Want } admin - admin indicates the enterprise admin extension ability information.",
+        "@param { Array<Want> } autoStartApps - autoStartApps indicates the information of auto start app ability.",
+        "@throws { BusinessError } 9200001 - The application is not an administrator application of the device.",
+        "@throws { BusinessError } 9200002 - The administrator application does not have permission to manage the device.",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission required to call the API.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "applicationManager",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [
+        {
+          "名称": "admin",
+          "类型": "Want",
+          "必填": true,
+          "说明": "admin indicates the enterprise admin extension ability information."
+        },
+        {
+          "名称": "autoStartApps",
+          "类型": "Array<Want>",
+          "必填": true,
+          "说明": "autoStartApps indicates the information of auto start app ability."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "9200001",
+          "description": "The application is not an administrator application of the device."
+        },
+        {
+          "code": "9200002",
+          "description": "The administrator application does not have permission to manage the device."
+        },
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission required to call the API."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "addAutoStartApps",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Adds auto start applications which are not allowed to modify their auto start settings. This function can be called by a super administrator. The admin must have the corresponding permission. The bundleName and abilityName of the want cannot be non-exist. The size of the array after setting cannot be greater than 10. disallowed to modify their auto start setting.",
+      "注释信息": [
+        "@permission ohos.permission.ENTERPRISE_MANAGE_APPLICATION",
+        "@param { Want } admin - admin indicates the enterprise admin extension ability information.",
+        "@param { Array<Want> } autoStartApps - autoStartApps indicates the information of auto start app ability.",
+        "@param { number } accountId - accountId indicates the local ID of the OS account.",
+        "@param { boolean } disallowModify - disallowModify specifies whether the applications are",
+        "@throws { BusinessError } 9200001 - The application is not an administrator application of the device.",
+        "@throws { BusinessError } 9200002 - The administrator application does not have permission to manage the device.",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission required to call the API.",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "applicationManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [
+        {
+          "名称": "admin",
+          "类型": "Want",
+          "必填": true,
+          "说明": "admin indicates the enterprise admin extension ability information."
+        },
+        {
+          "名称": "autoStartApps",
+          "类型": "Array<Want>",
+          "必填": true,
+          "说明": "autoStartApps indicates the information of auto start app ability."
+        },
+        {
+          "名称": "accountId",
+          "类型": "number",
+          "必填": true,
+          "说明": "accountId indicates the local ID of the OS account."
+        },
+        {
+          "名称": "disallowModify",
+          "类型": "boolean",
+          "必填": true,
+          "说明": "disallowModify specifies whether the applications are"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "9200001",
+          "description": "The application is not an administrator application of the device."
+        },
+        {
+          "code": "9200002",
+          "description": "The administrator application does not have permission to manage the device."
+        },
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission required to call the API."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "removeAutoStartApps",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Removes auto start applications. This function can be called by a super administrator. The admin must have the corresponding permission. The bundleName and abilityName of the want cannot be non-exist. The size of the array after setting cannot be greater 10. 2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.ENTERPRISE_MANAGE_APPLICATION",
+        "@param { Want } admin - admin indicates the enterprise admin extension ability information.",
+        "@param { Array<Want> } autoStartApps - autoStartApps indicates the information of auto start app ability.",
+        "@throws { BusinessError } 9200001 - The application is not an administrator application of the device.",
+        "@throws { BusinessError } 9200002 - The administrator application does not have permission to manage the device.",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission required to call the API.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "applicationManager",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [
+        {
+          "名称": "admin",
+          "类型": "Want",
+          "必填": true,
+          "说明": "admin indicates the enterprise admin extension ability information."
+        },
+        {
+          "名称": "autoStartApps",
+          "类型": "Array<Want>",
+          "必填": true,
+          "说明": "autoStartApps indicates the information of auto start app ability."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "9200001",
+          "description": "The application is not an administrator application of the device."
+        },
+        {
+          "code": "9200002",
+          "description": "The administrator application does not have permission to manage the device."
+        },
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission required to call the API."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "removeAutoStartApps",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Removes auto start applications. This function can be called by a super administrator. The admin must have the corresponding permission. The bundleName and abilityName of the want cannot be non-exist. The size of the array after setting cannot be greater 10.",
+      "注释信息": [
+        "@permission ohos.permission.ENTERPRISE_MANAGE_APPLICATION",
+        "@param { Want } admin - admin indicates the enterprise admin extension ability information.",
+        "@param { Array<Want> } autoStartApps - autoStartApps indicates the information of auto start app ability.",
+        "@param { number } accountId - accountId indicates the local ID of the OS account.",
+        "@throws { BusinessError } 9200001 - The application is not an administrator application of the device.",
+        "@throws { BusinessError } 9200002 - The administrator application does not have permission to manage the device.",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission required to call the API.",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "applicationManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [
+        {
+          "名称": "admin",
+          "类型": "Want",
+          "必填": true,
+          "说明": "admin indicates the enterprise admin extension ability information."
+        },
+        {
+          "名称": "autoStartApps",
+          "类型": "Array<Want>",
+          "必填": true,
+          "说明": "autoStartApps indicates the information of auto start app ability."
+        },
+        {
+          "名称": "accountId",
+          "类型": "number",
+          "必填": true,
+          "说明": "accountId indicates the local ID of the OS account."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "9200001",
+          "description": "The application is not an administrator application of the device."
+        },
+        {
+          "code": "9200002",
+          "description": "The administrator application does not have permission to manage the device."
+        },
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission required to call the API."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getAutoStartApps",
+      "返回值": "Array<Want>",
+      "所属模块": "未知模块",
+      "功能描述": "Gets information of auto start applications. This function can be called by a super administrator. The admin must have the corresponding permission. 2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.ENTERPRISE_MANAGE_APPLICATION",
+        "@param { Want } admin - admin indicates the enterprise admin extension ability information.",
+        "@returns { Array<Want> } the information of auto start applications.",
+        "@throws { BusinessError } 9200001 - The application is not an administrator application of the device.",
+        "@throws { BusinessError } 9200002 - The administrator application does not have permission to manage the device.",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission required to call the API.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "applicationManager",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [
+        {
+          "名称": "admin",
+          "类型": "Want",
+          "必填": true,
+          "说明": "admin indicates the enterprise admin extension ability information."
+        }
+      ],
+      "return_description": "the information of auto start applications.",
+      "error_codes": [
+        {
+          "code": "9200001",
+          "description": "The application is not an administrator application of the device."
+        },
+        {
+          "code": "9200002",
+          "description": "The administrator application does not have permission to manage the device."
+        },
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission required to call the API."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getAutoStartApps",
+      "返回值": "Array<Want>",
+      "所属模块": "未知模块",
+      "功能描述": "Gets information of auto start applications. This function can be called by a super administrator. The admin must have the corresponding permission.",
+      "注释信息": [
+        "@permission ohos.permission.ENTERPRISE_MANAGE_APPLICATION",
+        "@param { Want } admin - admin indicates the enterprise admin extension ability information.",
+        "@param { number } accountId - accountId indicates the local ID of the OS account.",
+        "@returns { Array<Want> } the information of auto start applications.",
+        "@throws { BusinessError } 9200001 - The application is not an administrator application of the device.",
+        "@throws { BusinessError } 9200002 - The administrator application does not have permission to manage the device.",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission required to call the API.",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "applicationManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [
+        {
+          "名称": "admin",
+          "类型": "Want",
+          "必填": true,
+          "说明": "admin indicates the enterprise admin extension ability information."
+        },
+        {
+          "名称": "accountId",
+          "类型": "number",
+          "必填": true,
+          "说明": "accountId indicates the local ID of the OS account."
+        }
+      ],
+      "return_description": "the information of auto start applications.",
+      "error_codes": [
+        {
+          "code": "9200001",
+          "description": "The application is not an administrator application of the device."
+        },
+        {
+          "code": "9200002",
+          "description": "The administrator application does not have permission to manage the device."
+        },
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission required to call the API."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "isModifyAutoStartAppsDisallowed",
+      "返回值": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Checks whether the specified application is allowed to modify its auto start setting. This function can be called by a super administrator. The admin must have the corresponding permission. The bundleName and abilityName of the want cannot be non-exist.",
+      "注释信息": [
+        "@permission ohos.permission.ENTERPRISE_MANAGE_APPLICATION",
+        "@param { Want } admin - admin indicates the enterprise admin extension ability information.",
+        "@param { Want } autoStartApp - autoStartApp indicates the information of auto start app ability to be checked.",
+        "@param { number } accountId - accountId indicates the local ID of the OS account.",
+        "@returns { boolean } true indicates the application is not allowed to modify its auto start setting.",
+        "@throws { BusinessError } 9200001 - The application is not an administrator application of the device.",
+        "@throws { BusinessError } 9200002 - The administrator application does not have permission to manage the device.",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission required to call the API.",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "applicationManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [
+        {
+          "名称": "admin",
+          "类型": "Want",
+          "必填": true,
+          "说明": "admin indicates the enterprise admin extension ability information."
+        },
+        {
+          "名称": "autoStartApp",
+          "类型": "Want",
+          "必填": true,
+          "说明": "autoStartApp indicates the information of auto start app ability to be checked."
+        },
+        {
+          "名称": "accountId",
+          "类型": "number",
+          "必填": true,
+          "说明": "accountId indicates the local ID of the OS account."
+        }
+      ],
+      "return_description": "true indicates the application is not allowed to modify its auto start setting.",
+      "error_codes": [
+        {
+          "code": "9200001",
+          "description": "The application is not an administrator application of the device."
+        },
+        {
+          "code": "9200002",
+          "description": "The administrator application does not have permission to manage the device."
+        },
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission required to call the API."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "addKeepAliveApps",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Adds the keep alive applications. This function can be called by a super administrator. The admin must have the corresponding permission. alive list. required to call the API 2.Incorrect parameter types;3.Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.ENTERPRISE_MANAGE_APPLICATION",
+        "@param { Want } admin - admin indicates the enterprise admin extension ability information.",
+        "@param { Array<string> } bundleNames - bundleNames indicates the bundle names of applications added to the keep",
+        "@param { number } accountId - accountId indicates the local ID of the OS account.",
+        "@throws { BusinessError } 9200001 - The application is not an administrator application of the device.",
+        "@throws { BusinessError } 9200002 - The administrator application does not have permission to manage the device.",
+        "@throws { BusinessError } 9200010 - A conflict policy has been configured.",
+        "@throws { BusinessError } 9201005 - Add keep alive applications failed.",
+        "@throws { BusinessError } 201 - Permission verification failed.The application does not have the permission",
+        "@throws { BusinessError } 401 - Parameter error.Possible causes: 1.Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 801 - Capability not supported. Failed to call the API due to limited device capabilities.",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 14"
+      ],
+      "层级": 1,
+      "上级": "applicationManager",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [
+        {
+          "名称": "admin",
+          "类型": "Want",
+          "必填": true,
+          "说明": "admin indicates the enterprise admin extension ability information."
+        },
+        {
+          "名称": "bundleNames",
+          "类型": "Array<string>",
+          "必填": true,
+          "说明": "bundleNames indicates the bundle names of applications added to the keep"
+        },
+        {
+          "名称": "accountId",
+          "类型": "number",
+          "必填": true,
+          "说明": "accountId indicates the local ID of the OS account."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "9200001",
+          "description": "The application is not an administrator application of the device."
+        },
+        {
+          "code": "9200002",
+          "description": "The administrator application does not have permission to manage the device."
+        },
+        {
+          "code": "9200010",
+          "description": "A conflict policy has been configured."
+        },
+        {
+          "code": "9201005",
+          "description": "Add keep alive applications failed."
+        },
+        {
+          "code": "201",
+          "description": "Permission verification failed.The application does not have the permission"
+        },
+        {
+          "code": "401",
+          "description": "Parameter error.Possible causes: 1.Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported. Failed to call the API due to limited device capabilities."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "addKeepAliveApps",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Adds keep alive applications which are not allowed to modify their keep alive settings. This function can be called by a super administrator. The admin must have the corresponding permission. alive list. are disallowed to modify their keep alive setting. required to call the API",
+      "注释信息": [
+        "@permission ohos.permission.ENTERPRISE_MANAGE_APPLICATION",
+        "@param { Want } admin - admin indicates the enterprise admin extension ability information.",
+        "@param { Array<string> } bundleNames - bundleNames indicates the bundle names of applications added to the keep",
+        "@param { number } accountId - accountId indicates the local ID of the OS account.",
+        "@param { boolean } disallowModify - disallowModify specifies whether the applications",
+        "@throws { BusinessError } 9200001 - The application is not an administrator application of the device.",
+        "@throws { BusinessError } 9200002 - The administrator application does not have permission to manage the device.",
+        "@throws { BusinessError } 9200010 - A conflict policy has been configured.",
+        "@throws { BusinessError } 9201005 - Add keep alive applications failed.",
+        "@throws { BusinessError } 201 - Permission verification failed.The application does not have the permission",
+        "@throws { BusinessError } 801 - Capability not supported. Failed to call the API due to limited device capabilities.",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "applicationManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [
+        {
+          "名称": "admin",
+          "类型": "Want",
+          "必填": true,
+          "说明": "admin indicates the enterprise admin extension ability information."
+        },
+        {
+          "名称": "bundleNames",
+          "类型": "Array<string>",
+          "必填": true,
+          "说明": "bundleNames indicates the bundle names of applications added to the keep"
+        },
+        {
+          "名称": "accountId",
+          "类型": "number",
+          "必填": true,
+          "说明": "accountId indicates the local ID of the OS account."
+        },
+        {
+          "名称": "disallowModify",
+          "类型": "boolean",
+          "必填": true,
+          "说明": "disallowModify specifies whether the applications"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "9200001",
+          "description": "The application is not an administrator application of the device."
+        },
+        {
+          "code": "9200002",
+          "description": "The administrator application does not have permission to manage the device."
+        },
+        {
+          "code": "9200010",
+          "description": "A conflict policy has been configured."
+        },
+        {
+          "code": "9201005",
+          "description": "Add keep alive applications failed."
+        },
+        {
+          "code": "201",
+          "description": "Permission verification failed.The application does not have the permission"
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported. Failed to call the API due to limited device capabilities."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "removeKeepAliveApps",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Removes the keep alive applications. This function can be called by a super administrator. The admin must have the corresponding permission. alive list. required to call the API 2.Incorrect parameter types;3.Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.ENTERPRISE_MANAGE_APPLICATION",
+        "@param { Want } admin - admin indicates the enterprise admin extension ability information.",
+        "@param { Array<string> } bundleNames - bundleNames indicates the bundle names of applications removed from the keep",
+        "@param { number } accountId - accountId indicates the local ID of the OS account.",
+        "@throws { BusinessError } 9200001 - The application is not an administrator application of the device.",
+        "@throws { BusinessError } 9200002 - The administrator application does not have permission to manage the device.",
+        "@throws { BusinessError } 201 - Permission verification failed.The application does not have the permission",
+        "@throws { BusinessError } 401 - Parameter error.Possible causes: 1.Mandatory parameters are left unspecified;",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 14"
+      ],
+      "层级": 1,
+      "上级": "applicationManager",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [
+        {
+          "名称": "admin",
+          "类型": "Want",
+          "必填": true,
+          "说明": "admin indicates the enterprise admin extension ability information."
+        },
+        {
+          "名称": "bundleNames",
+          "类型": "Array<string>",
+          "必填": true,
+          "说明": "bundleNames indicates the bundle names of applications removed from the keep"
+        },
+        {
+          "名称": "accountId",
+          "类型": "number",
+          "必填": true,
+          "说明": "accountId indicates the local ID of the OS account."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "9200001",
+          "description": "The application is not an administrator application of the device."
+        },
+        {
+          "code": "9200002",
+          "description": "The administrator application does not have permission to manage the device."
+        },
+        {
+          "code": "201",
+          "description": "Permission verification failed.The application does not have the permission"
+        },
+        {
+          "code": "401",
+          "description": "Parameter error.Possible causes: 1.Mandatory parameters are left unspecified;"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getKeepAliveApps",
+      "返回值": "Array<string>",
+      "所属模块": "未知模块",
+      "功能描述": "Gets the keep alive applications. This function can be called by a super administrator. The admin must have the corresponding permission. required to call the API 2.Incorrect parameter types;3.Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.ENTERPRISE_MANAGE_APPLICATION",
+        "@param { Want } admin - admin indicates the enterprise admin extension ability information.",
+        "@param { number } accountId - accountId indicates the local ID of the OS account.",
+        "@returns { Array<string> } the bundle names of keep alive applications.",
+        "@throws { BusinessError } 9200001 - The application is not an administrator application of the device.",
+        "@throws { BusinessError } 9200002 - The administrator application does not have permission to manage the device.",
+        "@throws { BusinessError } 201 - Permission verification failed.The application does not have the permission",
+        "@throws { BusinessError } 401 - Parameter error.Possible causes: 1.Mandatory parameters are left unspecified;",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 14"
+      ],
+      "层级": 1,
+      "上级": "applicationManager",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [
+        {
+          "名称": "admin",
+          "类型": "Want",
+          "必填": true,
+          "说明": "admin indicates the enterprise admin extension ability information."
+        },
+        {
+          "名称": "accountId",
+          "类型": "number",
+          "必填": true,
+          "说明": "accountId indicates the local ID of the OS account."
+        }
+      ],
+      "return_description": "the bundle names of keep alive applications.",
+      "error_codes": [
+        {
+          "code": "9200001",
+          "description": "The application is not an administrator application of the device."
+        },
+        {
+          "code": "9200002",
+          "description": "The administrator application does not have permission to manage the device."
+        },
+        {
+          "code": "201",
+          "description": "Permission verification failed.The application does not have the permission"
+        },
+        {
+          "code": "401",
+          "description": "Parameter error.Possible causes: 1.Mandatory parameters are left unspecified;"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "addUserNonStopApps",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Adds the list of applications that user not stop. This function can be called by a super administrator. The admin must have the corresponding permission. the list of application instance. The application does not have the permission required to call the API.",
+      "注释信息": [
+        "@permission ohos.permission.ENTERPRISE_MANAGE_APPLICATION",
+        "@param { Want } admin - admin indicates the enterprise admin extension ability information.",
+        "@param { Array<common.ApplicationInstance> } applicationInstances - applicationInstances indicates",
+        "@throws { BusinessError } 9200001 - The application is not an administrator application of the device.",
+        "@throws { BusinessError } 9200002 - The administrator application does not have permission to manage the device.",
+        "@throws { BusinessError } 9200012 - Parameter verification failed.",
+        "@throws { BusinessError } 201 - Permission verification failed.",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 22"
+      ],
+      "层级": 1,
+      "上级": "applicationManager",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [
+        {
+          "名称": "admin",
+          "类型": "Want",
+          "必填": true,
+          "说明": "admin indicates the enterprise admin extension ability information."
+        },
+        {
+          "名称": "applicationInstances",
+          "类型": "Array<common.ApplicationInstance>",
+          "必填": true,
+          "说明": "applicationInstances indicates"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "9200001",
+          "description": "The application is not an administrator application of the device."
+        },
+        {
+          "code": "9200002",
+          "description": "The administrator application does not have permission to manage the device."
+        },
+        {
+          "code": "9200012",
+          "description": "Parameter verification failed."
+        },
+        {
+          "code": "201",
+          "description": "Permission verification failed."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "removeUserNonStopApps",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Removes applications from the list that user not stop. This function can be called by a super administrator. The admin must have the corresponding permission. the list of application instance. The application does not have the permission required to call the API.",
+      "注释信息": [
+        "@permission ohos.permission.ENTERPRISE_MANAGE_APPLICATION",
+        "@param { Want } admin - admin indicates the enterprise admin extension ability information.",
+        "@param { Array<common.ApplicationInstance> } applicationInstances - applicationInstances indicates",
+        "@throws { BusinessError } 9200001 - The application is not an administrator application of the device.",
+        "@throws { BusinessError } 9200002 - The administrator application does not have permission to manage the device.",
+        "@throws { BusinessError } 9200012 - Parameter verification failed.",
+        "@throws { BusinessError } 201 - Permission verification failed.",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 22"
+      ],
+      "层级": 1,
+      "上级": "applicationManager",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [
+        {
+          "名称": "admin",
+          "类型": "Want",
+          "必填": true,
+          "说明": "admin indicates the enterprise admin extension ability information."
+        },
+        {
+          "名称": "applicationInstances",
+          "类型": "Array<common.ApplicationInstance>",
+          "必填": true,
+          "说明": "applicationInstances indicates"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "9200001",
+          "description": "The application is not an administrator application of the device."
+        },
+        {
+          "code": "9200002",
+          "description": "The administrator application does not have permission to manage the device."
+        },
+        {
+          "code": "9200012",
+          "description": "Parameter verification failed."
+        },
+        {
+          "code": "201",
+          "description": "Permission verification failed."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getUserNonStopApps",
+      "返回值": "Array<common.ApplicationInstance>",
+      "所属模块": "未知模块",
+      "功能描述": "Gets the list of applications that user not stop. This function can be called by a super administrator. The admin must have the corresponding permission. The application does not have the permission required to call the API.",
+      "注释信息": [
+        "@permission ohos.permission.ENTERPRISE_MANAGE_APPLICATION",
+        "@param { Want } admin - admin indicates the enterprise admin extension ability information.",
+        "@returns { Array<common.ApplicationInstance> } returns the list of application instance.",
+        "@throws { BusinessError } 9200001 - The application is not an administrator application of the device.",
+        "@throws { BusinessError } 9200002 - The administrator application does not have permission to manage the device.",
+        "@throws { BusinessError } 201 - Permission verification failed.",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 22"
+      ],
+      "层级": 1,
+      "上级": "applicationManager",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [
+        {
+          "名称": "admin",
+          "类型": "Want",
+          "必填": true,
+          "说明": "admin indicates the enterprise admin extension ability information."
+        }
+      ],
+      "return_description": "returns the list of application instance.",
+      "error_codes": [
+        {
+          "code": "9200001",
+          "description": "The application is not an administrator application of the device."
+        },
+        {
+          "code": "9200002",
+          "description": "The administrator application does not have permission to manage the device."
+        },
+        {
+          "code": "201",
+          "description": "Permission verification failed."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "addFreezeExemptedApps",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Adds freeze exempted applications list. This function can be called by a super administrator. The admin must have the corresponding permission. the list of application instance. required to call the API",
+      "注释信息": [
+        "@permission ohos.permission.ENTERPRISE_MANAGE_APPLICATION",
+        "@param { Want } admin - admin indicates the enterprise admin extension ability information.",
+        "@param { Array<common.ApplicationInstance> } applicationInstances - applicationInstances indicates",
+        "@throws { BusinessError } 9200001 - The application is not an administrator application of the device.",
+        "@throws { BusinessError } 9200002 - The administrator application does not have permission to manage the device.",
+        "@throws { BusinessError } 9200012 - Parameter verification failed.",
+        "@throws { BusinessError } 201 - Permission verification failed.The application does not have the permission",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 22"
+      ],
+      "层级": 1,
+      "上级": "applicationManager",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [
+        {
+          "名称": "admin",
+          "类型": "Want",
+          "必填": true,
+          "说明": "admin indicates the enterprise admin extension ability information."
+        },
+        {
+          "名称": "applicationInstances",
+          "类型": "Array<common.ApplicationInstance>",
+          "必填": true,
+          "说明": "applicationInstances indicates"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "9200001",
+          "description": "The application is not an administrator application of the device."
+        },
+        {
+          "code": "9200002",
+          "description": "The administrator application does not have permission to manage the device."
+        },
+        {
+          "code": "9200012",
+          "description": "Parameter verification failed."
+        },
+        {
+          "code": "201",
+          "description": "Permission verification failed.The application does not have the permission"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "removeFreezeExemptedApps",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Removes applications from the freeze exempted list. This function can be called by a super administrator. The admin must have the corresponding permission. the list of application instance. The application does not have the permission required to call the API.",
+      "注释信息": [
+        "@permission ohos.permission.ENTERPRISE_MANAGE_APPLICATION",
+        "@param { Want } admin - admin indicates the enterprise admin extension ability information.",
+        "@param  { Array<common.ApplicationInstance> } applicationInstances - applicationInstances indicates",
+        "@throws { BusinessError } 9200001 - The application is not an administrator application of the device.",
+        "@throws { BusinessError } 9200002 - The administrator application does not have permission to manage the device.",
+        "@throws { BusinessError } 9200012 - Parameter verification failed.",
+        "@throws { BusinessError } 201 - Permission verification failed.",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 22"
+      ],
+      "层级": 1,
+      "上级": "applicationManager",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [
+        {
+          "名称": "admin",
+          "类型": "Want",
+          "必填": true,
+          "说明": "admin indicates the enterprise admin extension ability information."
+        },
+        {
+          "名称": "applicationInstances",
+          "类型": "Array<common.ApplicationInstance>",
+          "必填": true,
+          "说明": "applicationInstances indicates"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "9200001",
+          "description": "The application is not an administrator application of the device."
+        },
+        {
+          "code": "9200002",
+          "description": "The administrator application does not have permission to manage the device."
+        },
+        {
+          "code": "9200012",
+          "description": "Parameter verification failed."
+        },
+        {
+          "code": "201",
+          "description": "Permission verification failed."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getFreezeExemptedApps",
+      "返回值": "Array<common.ApplicationInstance>",
+      "所属模块": "未知模块",
+      "功能描述": "Gets the list of freeze exempted applications. This function can be called by a super administrator. The admin must have the corresponding permission. The application does not have the permission required to call the API.",
+      "注释信息": [
+        "@permission ohos.permission.ENTERPRISE_MANAGE_APPLICATION",
+        "@param { Want } admin - admin indicates the enterprise admin extension ability information.",
+        "@returns { Array<common.ApplicationInstance> } returns the list of application instance.",
+        "@throws { BusinessError } 9200001 - The application is not an administrator application of the device.",
+        "@throws { BusinessError } 9200002 - The administrator application does not have permission to manage the device.",
+        "@throws { BusinessError } 201 - Permission verification failed.",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 22"
+      ],
+      "层级": 1,
+      "上级": "applicationManager",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [
+        {
+          "名称": "admin",
+          "类型": "Want",
+          "必填": true,
+          "说明": "admin indicates the enterprise admin extension ability information."
+        }
+      ],
+      "return_description": "returns the list of application instance.",
+      "error_codes": [
+        {
+          "code": "9200001",
+          "description": "The application is not an administrator application of the device."
+        },
+        {
+          "code": "9200002",
+          "description": "The administrator application does not have permission to manage the device."
+        },
+        {
+          "code": "201",
+          "description": "Permission verification failed."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "isModifyKeepAliveAppsDisallowed",
+      "返回值": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Checks whether the specified application is allowed to modify its keep alive setting. This function can be called by a super administrator. The admin must have the corresponding permission.",
+      "注释信息": [
+        "@permission ohos.permission.ENTERPRISE_MANAGE_APPLICATION",
+        "@param { Want } admin - admin indicates the enterprise admin extension ability information.",
+        "@param { number } accountId - accountId indicates the local ID of the OS account.",
+        "@param { string } bundleName - bundleName indicates the bundle name of application to be checked.",
+        "@returns { boolean } true indicates the application is not allowed to modify its keep alive setting.",
+        "@throws { BusinessError } 9200001 - The application is not an administrator application of the device.",
+        "@throws { BusinessError } 9200002 - The administrator application does not have permission to manage the device.",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission required to call the API.",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "applicationManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [
+        {
+          "名称": "admin",
+          "类型": "Want",
+          "必填": true,
+          "说明": "admin indicates the enterprise admin extension ability information."
+        },
+        {
+          "名称": "accountId",
+          "类型": "number",
+          "必填": true,
+          "说明": "accountId indicates the local ID of the OS account."
+        },
+        {
+          "名称": "bundleName",
+          "类型": "string",
+          "必填": true,
+          "说明": "bundleName indicates the bundle name of application to be checked."
+        }
+      ],
+      "return_description": "true indicates the application is not allowed to modify its keep alive setting.",
+      "error_codes": [
+        {
+          "code": "9200001",
+          "description": "The application is not an administrator application of the device."
+        },
+        {
+          "code": "9200002",
+          "description": "The administrator application does not have permission to manage the device."
+        },
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission required to call the API."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "clearUpApplicationData",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Clear up application data. This function can be called by a super administrator. The admin must have the corresponding permission. required to call the API",
+      "注释信息": [
+        "@permission ohos.permission.ENTERPRISE_MANAGE_APPLICATION",
+        "@param { Want } admin - admin indicates the enterprise admin extension ability information.",
+        "@param { string } bundleName - bundleName indicates the bundle name of application.",
+        "@param { number } appIndex - appIndex indicates the index of bundle.",
+        "@param { number } accountId - accountId indicates the local ID of the OS account.",
+        "@throws { BusinessError } 9200001 - The application is not an administrator application of the device.",
+        "@throws { BusinessError } 9200002 - The administrator application does not have permission to manage the device.",
+        "@throws { BusinessError } 201 - Permission verification failed.The application does not have the permission",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "applicationManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [
+        {
+          "名称": "admin",
+          "类型": "Want",
+          "必填": true,
+          "说明": "admin indicates the enterprise admin extension ability information."
+        },
+        {
+          "名称": "bundleName",
+          "类型": "string",
+          "必填": true,
+          "说明": "bundleName indicates the bundle name of application."
+        },
+        {
+          "名称": "appIndex",
+          "类型": "number",
+          "必填": true,
+          "说明": "appIndex indicates the index of bundle."
+        },
+        {
+          "名称": "accountId",
+          "类型": "number",
+          "必填": true,
+          "说明": "accountId indicates the local ID of the OS account."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "9200001",
+          "description": "The application is not an administrator application of the device."
+        },
+        {
+          "code": "9200002",
+          "description": "The administrator application does not have permission to manage the device."
+        },
+        {
+          "code": "201",
+          "description": "Permission verification failed.The application does not have the permission"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "setAllowedKioskApps",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Set applications allowed running in kiosk mode. This function can be called by a super administrator. The admin must have the corresponding permission. required to call the API.",
+      "注释信息": [
+        "@permission ohos.permission.ENTERPRISE_SET_KIOSK",
+        "@param { Want } admin - admin indicates the enterprise admin extension ability information.",
+        "@param { Array<string> } appIdentifiers - appIdentifiers indicates the appIdentifiers of applications.",
+        "@throws { BusinessError } 9200001 - The application is not an administrator application of the device.",
+        "@throws { BusinessError } 9200002 - The administrator application does not have permission to manage the device.",
+        "@throws { BusinessError } 201 - Permission verification failed.The application does not have the permission",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "applicationManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [
+        {
+          "名称": "admin",
+          "类型": "Want",
+          "必填": true,
+          "说明": "admin indicates the enterprise admin extension ability information."
+        },
+        {
+          "名称": "appIdentifiers",
+          "类型": "Array<string>",
+          "必填": true,
+          "说明": "appIdentifiers indicates the appIdentifiers of applications."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "9200001",
+          "description": "The application is not an administrator application of the device."
+        },
+        {
+          "code": "9200002",
+          "description": "The administrator application does not have permission to manage the device."
+        },
+        {
+          "code": "201",
+          "description": "Permission verification failed.The application does not have the permission"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getAllowedKioskApps",
+      "返回值": "Array<string>",
+      "所属模块": "未知模块",
+      "功能描述": "Get applications allowed running in kiosk mode. This function can be called by a super administrator. The admin must have the corresponding permission. required to call the API",
+      "注释信息": [
+        "@permission ohos.permission.ENTERPRISE_SET_KIOSK",
+        "@param { Want } admin - admin indicates the enterprise admin extension ability information.",
+        "@returns { Array<string> } the appIdentifiers of applications that allowed running in kiosk mode.",
+        "@throws { BusinessError } 9200001 - The application is not an administrator application of the device.",
+        "@throws { BusinessError } 9200002 - The administrator application does not have permission to manage the device.",
+        "@throws { BusinessError } 201 - Permission verification failed.The application does not have the permission",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "applicationManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [
+        {
+          "名称": "admin",
+          "类型": "Want",
+          "必填": true,
+          "说明": "admin indicates the enterprise admin extension ability information."
+        }
+      ],
+      "return_description": "the appIdentifiers of applications that allowed running in kiosk mode.",
+      "error_codes": [
+        {
+          "code": "9200001",
+          "description": "The application is not an administrator application of the device."
+        },
+        {
+          "code": "9200002",
+          "description": "The administrator application does not have permission to manage the device."
+        },
+        {
+          "code": "201",
+          "description": "Permission verification failed.The application does not have the permission"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "isAppKioskAllowed",
+      "返回值": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Check target application allowed running in kiosk mode.",
+      "注释信息": [
+        "@param { string } appIdentifier - appIdentifier indicates the appIdentifier of application.",
+        "@returns { boolean } true means the application allowed running in kiosk mode, otherwise false.",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "applicationManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [
+        {
+          "名称": "appIdentifier",
+          "类型": "string",
+          "必填": true,
+          "说明": "appIdentifier indicates the appIdentifier of application."
+        }
+      ],
+      "return_description": "true means the application allowed running in kiosk mode, otherwise false.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "setKioskFeatures",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Sets kiosk feature in kiosk mode. This function can be called by a super administrator. The admin must have the corresponding permission. required to call the API.",
+      "注释信息": [
+        "@permission ohos.permission.ENTERPRISE_SET_KIOSK",
+        "@param { Want } admin - admin indicates the enterprise admin extension ability information.",
+        "@param { Array<KioskFeature> } features - kiosk feature to allow custom ui.",
+        "@throws { BusinessError } 9200001 - The application is not an administrator application of the device.",
+        "@throws { BusinessError } 9200002 - The administrator application does not have permission to manage the device.",
+        "@throws { BusinessError } 9200012 - Parameter verification failed.",
+        "@throws { BusinessError } 201 - Permission verification failed.The application does not have the permission",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "applicationManager",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [
+        {
+          "名称": "admin",
+          "类型": "Want",
+          "必填": true,
+          "说明": "admin indicates the enterprise admin extension ability information."
+        },
+        {
+          "名称": "features",
+          "类型": "Array<KioskFeature>",
+          "必填": true,
+          "说明": "kiosk feature to allow custom ui."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "9200001",
+          "description": "The application is not an administrator application of the device."
+        },
+        {
+          "code": "9200002",
+          "description": "The administrator application does not have permission to manage the device."
+        },
+        {
+          "code": "9200012",
+          "description": "Parameter verification failed."
+        },
+        {
+          "code": "201",
+          "description": "Permission verification failed.The application does not have the permission"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "addAllowedRunningBundles",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Add appidentify list of bundles that is allowed to run in the device. This function can be called by a super administrator. The admin must have the corresponding permission. The size of the array after setting cannot be greater than 200.",
+      "注释信息": [
+        "@permission ohos.permission.ENTERPRISE_MANAGE_APPLICATION",
+        "@param { Want } admin - admin indicates the enterprise admin extension ability information.",
+        "@param { Array<string> } appIdentifiers - appIdentifiers of the bundle are allowed to run.",
+        "@param { number } accountId - accountId indicates the account ID.",
+        "@throws { BusinessError } 9200001 - The application is not an administrator application of the device.",
+        "@throws { BusinessError } 9200002 - The administrator application does not have permission to manage the device.",
+        "@throws { BusinessError } 9200010 - A conflict policy has been configured.",
+        "@throws { BusinessError } 9200012 - Parameter verification failed.",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission required to call the API.",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 21"
+      ],
+      "层级": 1,
+      "上级": "applicationManager",
+      "since_version": "21",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [
+        {
+          "名称": "admin",
+          "类型": "Want",
+          "必填": true,
+          "说明": "admin indicates the enterprise admin extension ability information."
+        },
+        {
+          "名称": "appIdentifiers",
+          "类型": "Array<string>",
+          "必填": true,
+          "说明": "appIdentifiers of the bundle are allowed to run."
+        },
+        {
+          "名称": "accountId",
+          "类型": "number",
+          "必填": true,
+          "说明": "accountId indicates the account ID."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "9200001",
+          "description": "The application is not an administrator application of the device."
+        },
+        {
+          "code": "9200002",
+          "description": "The administrator application does not have permission to manage the device."
+        },
+        {
+          "code": "9200010",
+          "description": "A conflict policy has been configured."
+        },
+        {
+          "code": "9200012",
+          "description": "Parameter verification failed."
+        },
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission required to call the API."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "removeAllowedRunningBundles",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Remove appidentify list of bundles that is allowed to run in the device. This function can be called by a super administrator. The admin must have the corresponding permission. The size of the array after setting cannot be greater than 200.",
+      "注释信息": [
+        "@permission ohos.permission.ENTERPRISE_MANAGE_APPLICATION",
+        "@param { Want } admin - admin indicates the enterprise admin extension ability information.",
+        "@param { Array<string> } appIdentifiers - appIdentifiers of the bundle are allowed to run.",
+        "@param { number } accountId - accountId indicates the account ID.",
+        "@throws { BusinessError } 9200001 - The application is not an administrator application of the device.",
+        "@throws { BusinessError } 9200002 - The administrator application does not have permission to manage the device.",
+        "@throws { BusinessError } 9200012 - Parameter verification failed.",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission required to call the API.",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 21"
+      ],
+      "层级": 1,
+      "上级": "applicationManager",
+      "since_version": "21",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [
+        {
+          "名称": "admin",
+          "类型": "Want",
+          "必填": true,
+          "说明": "admin indicates the enterprise admin extension ability information."
+        },
+        {
+          "名称": "appIdentifiers",
+          "类型": "Array<string>",
+          "必填": true,
+          "说明": "appIdentifiers of the bundle are allowed to run."
+        },
+        {
+          "名称": "accountId",
+          "类型": "number",
+          "必填": true,
+          "说明": "accountId indicates the account ID."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "9200001",
+          "description": "The application is not an administrator application of the device."
+        },
+        {
+          "code": "9200002",
+          "description": "The administrator application does not have permission to manage the device."
+        },
+        {
+          "code": "9200012",
+          "description": "Parameter verification failed."
+        },
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission required to call the API."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getAllowedRunningBundles",
+      "返回值": "Array<string>",
+      "所属模块": "未知模块",
+      "功能描述": "Get appIdentify list of bundles that is allowed to run in the device. This function can be called by a super administrator. The admin must have the corresponding permission.",
+      "注释信息": [
+        "@permission ohos.permission.ENTERPRISE_MANAGE_APPLICATION",
+        "@param { Want } admin - admin indicates the enterprise admin extension ability information.",
+        "@param { number } accountId - accountId indicates the account ID.",
+        "@returns { Array<string> } appIdentifiers of the bundle are allowed to run.",
+        "@throws { BusinessError } 9200001 - The application is not an administrator application of the device.",
+        "@throws { BusinessError } 9200002 - The administrator application does not have permission to manage the device.",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission required to call the API.",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 21"
+      ],
+      "层级": 1,
+      "上级": "applicationManager",
+      "since_version": "21",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [
+        {
+          "名称": "admin",
+          "类型": "Want",
+          "必填": true,
+          "说明": "admin indicates the enterprise admin extension ability information."
+        },
+        {
+          "名称": "accountId",
+          "类型": "number",
+          "必填": true,
+          "说明": "accountId indicates the account ID."
+        }
+      ],
+      "return_description": "appIdentifiers of the bundle are allowed to run.",
+      "error_codes": [
+        {
+          "code": "9200001",
+          "description": "The application is not an administrator application of the device."
+        },
+        {
+          "code": "9200002",
+          "description": "The administrator application does not have permission to manage the device."
+        },
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission required to call the API."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "setAbilityDisabled",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Sets whether to disable a specified ability. The admin must have the corresponding permission. The application does not have the permission required to call the API.",
+      "注释信息": [
+        "@permission ohos.permission.ENTERPRISE_MANAGE_APPLICATION",
+        "@param { Want } admin - admin indicates the enterprise admin extension ability information.",
+        "@param { string } bundleName - bundleName indicates the name of bundle.",
+        "@param { number } accountId - accountId indicates the ID of OS account.",
+        "@param { string } abilityName - abilityName indicates the simplified class name of ability.",
+        "@param { boolean } isDisabled - The value true means to disable it, and the value false means to enable it.",
+        "@throws { BusinessError } 9200001 - The application is not an administrator application of the device.",
+        "@throws { BusinessError } 9200002 - The administrator application does not have permission to manage the device.",
+        "@throws { BusinessError } 9200012 - Parameter verification failed.",
+        "@throws { BusinessError } 201 - Permission verification failed.",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 1,
+      "上级": "applicationManager",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [
+        {
+          "名称": "admin",
+          "类型": "Want",
+          "必填": true,
+          "说明": "admin indicates the enterprise admin extension ability information."
+        },
+        {
+          "名称": "bundleName",
+          "类型": "string",
+          "必填": true,
+          "说明": "bundleName indicates the name of bundle."
+        },
+        {
+          "名称": "accountId",
+          "类型": "number",
+          "必填": true,
+          "说明": "accountId indicates the ID of OS account."
+        },
+        {
+          "名称": "abilityName",
+          "类型": "string",
+          "必填": true,
+          "说明": "abilityName indicates the simplified class name of ability."
+        },
+        {
+          "名称": "isDisabled",
+          "类型": "boolean",
+          "必填": true,
+          "说明": "The value true means to disable it, and the value false means to enable it."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "9200001",
+          "description": "The application is not an administrator application of the device."
+        },
+        {
+          "code": "9200002",
+          "description": "The administrator application does not have permission to manage the device."
+        },
+        {
+          "code": "9200012",
+          "description": "Parameter verification failed."
+        },
+        {
+          "code": "201",
+          "description": "Permission verification failed."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "isAbilityDisabled",
+      "返回值": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Checks whether a specified ability is disabled. The admin must have the corresponding permission. The application does not have the permission required to call the API.",
+      "注释信息": [
+        "@permission ohos.permission.ENTERPRISE_MANAGE_APPLICATION",
+        "@param { Want } admin - admin indicates the enterprise admin extension ability information.",
+        "@param { string } bundleName - bundleName indicates the name of bundle.",
+        "@param { number } accountId - accountId indicates the ID of OS account.",
+        "@param { string } abilityName - abilityName indicates the simplified class name of ability.",
+        "@returns { boolean } returns true if the ability is disabled; returns false otherwise.",
+        "@throws { BusinessError } 9200001 - The application is not an administrator application of the device.",
+        "@throws { BusinessError } 9200002 - The administrator application does not have permission to manage the device.",
+        "@throws { BusinessError } 9200012 - Parameter verification failed.",
+        "@throws { BusinessError } 201 - Permission verification failed.",
+        "@syscap SystemCapability.Customization.EnterpriseDeviceManager",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 1,
+      "上级": "applicationManager",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Customization.EnterpriseDeviceManager",
+      "parameters": [
+        {
+          "名称": "admin",
+          "类型": "Want",
+          "必填": true,
+          "说明": "admin indicates the enterprise admin extension ability information."
+        },
+        {
+          "名称": "bundleName",
+          "类型": "string",
+          "必填": true,
+          "说明": "bundleName indicates the name of bundle."
+        },
+        {
+          "名称": "accountId",
+          "类型": "number",
+          "必填": true,
+          "说明": "accountId indicates the ID of OS account."
+        },
+        {
+          "名称": "abilityName",
+          "类型": "string",
+          "必填": true,
+          "说明": "abilityName indicates the simplified class name of ability."
+        }
+      ],
+      "return_description": "returns true if the ability is disabled; returns false otherwise.",
+      "error_codes": [
+        {
+          "code": "9200001",
+          "description": "The application is not an administrator application of the device."
+        },
+        {
+          "code": "9200002",
+          "description": "The administrator application does not have permission to manage the device."
+        },
+        {
+          "code": "9200012",
+          "description": "Parameter verification failed."
+        },
+        {
+          "code": "201",
+          "description": "Permission verification failed."
+        }
+      ],
+      "版本": "API"
+    }
+  ]
+}

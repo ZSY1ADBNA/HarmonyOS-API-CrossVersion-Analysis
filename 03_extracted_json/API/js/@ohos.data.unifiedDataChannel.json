@@ -1,0 +1,3509 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.ArkData",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "namespace",
+      "名称": "unifiedDataChannel",
+      "所属模块": "@kit.ArkData",
+      "功能描述": "As a part of the Unified Data Management Framework (UDMF), the unifiedDataChannel module provides unified data channels and standard data access interfaces for many-to-many data sharing across applications. It also provides definitions for uniform data types, such as text and image, to streamline data interaction between different applications and minimize the workload of data type adaptation. Although the UDMF does not parse user data, you are advised not to transfer sensitive personal data or privacy data due to low-level security of storage path.",
+      "注释信息": [
+        "@namespace unifiedDataChannel",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 1,
+      "上级": "@kit.ArkData",
+      "since_version": "14",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "ShareOptions",
+      "所属模块": "未知模块",
+      "功能描述": "Types of scope that UnifiedData can be used.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "unifiedDataChannel",
+      "since_version": "12",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "IN_APP",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "IN_APP indicates that only use in the same app is allowed.",
+      "注释信息": [
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "ShareOptions",
+      "since_version": "12",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CROSS_APP",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "CROSS_APP indicates that use in any app in this device is allowed.",
+      "注释信息": [
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "ShareOptions",
+      "since_version": "12",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "type_alias",
+      "名称": "GetDelayData",
+      "所属模块": "未知模块",
+      "功能描述": "Indicated delay get UnifiedData",
+      "注释信息": [
+        "@typedef {function} GetDelayData",
+        "@param { string } type - the type of UnifiedData required.",
+        "@returns { UnifiedData } Return the UnifiedData required.",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "unifiedDataChannel",
+      "since_version": "12",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "Return the UnifiedData required.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "type_alias",
+      "名称": "ValueType",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates type of value.",
+      "注释信息": [
+        "@typedef {number | string | boolean | image.PixelMap | Want | ArrayBuffer | object | null | undefined}",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 1,
+      "上级": "unifiedDataChannel",
+      "since_version": "14",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "class",
+      "名称": "UnifiedDataProperties",
+      "所属模块": "未知模块",
+      "功能描述": "Describe the unified data properties.",
+      "注释信息": [
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "unifiedDataChannel",
+      "since_version": "12",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "extras",
+      "属性类型": "Record<string, object>",
+      "所属模块": "未知模块",
+      "功能描述": "extra property data. key-value pairs.",
+      "注释信息": [
+        "@type { ?Record<string, object> }",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "UnifiedDataProperties",
+      "since_version": "12",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "tag",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "the user-defined tag of a UnifiedData object.",
+      "注释信息": [
+        "@type { ?string }",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "UnifiedDataProperties",
+      "since_version": "12",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "timestamp",
+      "属性类型": "Date",
+      "所属模块": "未知模块",
+      "功能描述": "a timestamp, which indicates when data is written.",
+      "注释信息": [
+        "@type { ?Date }",
+        "@readonly",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "UnifiedDataProperties",
+      "since_version": "12",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "shareOptions",
+      "属性类型": "ShareOptions",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the scope of clipboard data which can be used. If it is not set or is incorrectly set, The default value is CrossDevice.",
+      "注释信息": [
+        "@type { ?ShareOptions }",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "UnifiedDataProperties",
+      "since_version": "12",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "getDelayData",
+      "属性类型": "GetDelayData",
+      "所属模块": "未知模块",
+      "功能描述": "Indicated delay get UnifiedData.",
+      "注释信息": [
+        "@type { ?GetDelayData }",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 2,
+      "上级": "UnifiedDataProperties",
+      "since_version": "12",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "class",
+      "名称": "UnifiedData",
+      "所属模块": "未知模块",
+      "功能描述": "Describe the unified data.",
+      "注释信息": [
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "unifiedDataChannel",
+      "since_version": "14",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "constructor",
+      "返回值": "UnifiedData",
+      "所属模块": "未知模块",
+      "功能描述": "Create unified data with a record <br>2.Incorrect parameters types.",
+      "注释信息": [
+        "@param { UnifiedRecord } record - Record will add into unified data.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:1.Mandatory parameters are left unspecified;",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "UnifiedData",
+      "since_version": "14",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [
+        {
+          "名称": "record",
+          "类型": "UnifiedRecord",
+          "必填": true,
+          "说明": "Record will add into unified data."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:1.Mandatory parameters are left unspecified;"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "constructor",
+      "返回值": "UnifiedData",
+      "所属模块": "未知模块",
+      "功能描述": "Create a empty unified data.",
+      "注释信息": [
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "UnifiedData",
+      "since_version": "14",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "addRecord",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Add a record into unified data <br>2.Incorrect parameters types.",
+      "注释信息": [
+        "@param { UnifiedRecord } record - Record will add into unified data.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:1.Mandatory parameters are left unspecified;",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "UnifiedData",
+      "since_version": "14",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [
+        {
+          "名称": "record",
+          "类型": "UnifiedRecord",
+          "必填": true,
+          "说明": "Record will add into unified data."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:1.Mandatory parameters are left unspecified;"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getRecords",
+      "返回值": "Array<UnifiedRecord>",
+      "所属模块": "未知模块",
+      "功能描述": "Get all records of unified data",
+      "注释信息": [
+        "@returns { Array<UnifiedRecord> } Return the records of unified data",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "UnifiedData",
+      "since_version": "14",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "Return the records of unified data",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "hasType",
+      "返回值": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Checks whether this UnifiedData object contains the specified data type, including the data types added by using the addEntry function. For file types, if the type set of UnifiedData contains general.jpeg, true is returned when the hasType API is called to check whether the general.image type is included, because the general.jpeg type belongs to the general.image type. <br>2.Incorrect parameters types.",
+      "注释信息": [
+        "@param { string } type - indicates to query data type.",
+        "@returns { boolean } if having mimeType in UnifiedData returns true, else returns false.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:1.Mandatory parameters are left unspecified;",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "UnifiedData",
+      "since_version": "14",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "string",
+          "必填": true,
+          "说明": "indicates to query data type."
+        }
+      ],
+      "return_description": "if having mimeType in UnifiedData returns true, else returns false.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:1.Mandatory parameters are left unspecified;"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getTypes",
+      "返回值": "Array<string>",
+      "所属模块": "未知模块",
+      "功能描述": "UTD types of all content in the UnifiedData.",
+      "注释信息": [
+        "@returns { Array<string> } type of array",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "UnifiedData",
+      "since_version": "14",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "type of array",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "所属模块": "未知模块",
+      "功能描述": "UnifiedData properties.",
+      "注释信息": [
+        "@returns { UnifiedDataProperties } Properties of all data records in a unified data.",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@atomicservice",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "UnifiedData",
+      "since_version": "23",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "Properties of all data records in a unified data.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "所属模块": "未知模块",
+      "功能描述": "UnifiedData properties.",
+      "注释信息": [
+        "@param { UnifiedDataProperties } Properties of all data records in a unified data.",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@atomicservice",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "UnifiedData",
+      "since_version": "23",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "class",
+      "名称": "Summary",
+      "所属模块": "未知模块",
+      "功能描述": "Summarizes the data information of the unifiedData object, including the data type and size.",
+      "注释信息": [
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "unifiedDataChannel",
+      "since_version": "11",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "所属模块": "未知模块",
+      "功能描述": "A map for each type and data size, key is data type, value is the corresponding data size",
+      "注释信息": [
+        "@returns { Record<string, number> } Type and size information of data",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@atomicservice",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "Summary",
+      "since_version": "23",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "Type and size information of data",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "所属模块": "未知模块",
+      "功能描述": "A map for each type and data size, key is data type, value is the corresponding data size",
+      "注释信息": [
+        "@param { Record<string, number> } Type and size information of data",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@atomicservice",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "Summary",
+      "since_version": "23",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "所属模块": "未知模块",
+      "功能描述": "Total data size of data in Bytes",
+      "注释信息": [
+        "@returns { number } Total size information of data",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@atomicservice",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "Summary",
+      "since_version": "23",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "Total size information of data",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "所属模块": "未知模块",
+      "功能描述": "Total data size of data in Bytes",
+      "注释信息": [
+        "@param { number } Total size information of data",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@atomicservice",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "Summary",
+      "since_version": "23",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the overview information of unifiedData.",
+      "注释信息": [
+        "@returns { Record<string, number> } Key represents the data type, and value represents the corresponding data size.",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@atomicservice",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "Summary",
+      "since_version": "23",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "Key represents the data type, and value represents the corresponding data size.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "class",
+      "名称": "UnifiedRecord",
+      "所属模块": "未知模块",
+      "功能描述": "An abstract definition of the data content supported by the UDMF. A UnifiedRecord object contains one or more data records, for example, a text record, an image record, or an HTML record. Since API version 15, different styles of the same content can be added to a UnifiedRecord object. Data users can obtain the corresponding styles as required.",
+      "注释信息": [
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "unifiedDataChannel",
+      "since_version": "14",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getType",
+      "返回值": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Get type of unified record",
+      "注释信息": [
+        "@returns { string } Return the type of unified data",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "UnifiedRecord",
+      "since_version": "14",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "Return the type of unified data",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "constructor",
+      "返回值": "UnifiedRecord",
+      "所属模块": "未知模块",
+      "功能描述": "Create unified record.",
+      "注释信息": [
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "UnifiedRecord",
+      "since_version": "14",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "constructor",
+      "返回值": "UnifiedRecord",
+      "所属模块": "未知模块",
+      "功能描述": "Create unified record by type and value. object, parameter type must be pixel-map or want UTD type. <br>2.Incorrect parameters types; <br>3.Parameter verification failed.",
+      "注释信息": [
+        "@param { string } type - indicates to data type of unified record. It can not be empty. When type of value is",
+        "@param { ValueType } value - indicates to value of unified record.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:1.Mandatory parameters are left unspecified;",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "UnifiedRecord",
+      "since_version": "14",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "string",
+          "必填": true,
+          "说明": "indicates to data type of unified record. It can not be empty. When type of value is"
+        },
+        {
+          "名称": "value",
+          "类型": "ValueType",
+          "必填": true,
+          "说明": "indicates to value of unified record."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:1.Mandatory parameters are left unspecified;"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getValue",
+      "返回值": "ValueType",
+      "所属模块": "未知模块",
+      "功能描述": "Get the value of unified record.",
+      "注释信息": [
+        "@returns { ValueType } Return the value of unified record.",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "UnifiedRecord",
+      "since_version": "14",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "Return the value of unified record.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getTypes",
+      "返回值": "Array<string>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtains all the data types in the data record. This API can be called using the UnifiedRecord object to query all data types in the record, including the data types added using the addEntry function.",
+      "注释信息": [
+        "@returns { Array<string> } Return the types of unified record.",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@atomicservice",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "UnifiedRecord",
+      "since_version": "15",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "Return the types of unified record.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "addEntry",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Adds data of a specified data type and content to the current data record. You can use this API to add different data types and contents to the same data. <br>2.Incorrect parameters types.",
+      "注释信息": [
+        "@param { string } type - type of entry.",
+        "@param { ValueType } value - value of entry.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:1.Mandatory parameters are left unspecified;",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@atomicservice",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "UnifiedRecord",
+      "since_version": "15",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "string",
+          "必填": true,
+          "说明": "type of entry."
+        },
+        {
+          "名称": "value",
+          "类型": "ValueType",
+          "必填": true,
+          "说明": "value of entry."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:1.Mandatory parameters are left unspecified;"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getEntry",
+      "返回值": "ValueType",
+      "所属模块": "未知模块",
+      "功能描述": "Get an entry from unified record <br>2.Incorrect parameters types.",
+      "注释信息": [
+        "@param { string } type - type of entry want to get.",
+        "@returns { ValueType } Return the value corresponding to the type.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:1.Mandatory parameters are left unspecified;",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@atomicservice",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "UnifiedRecord",
+      "since_version": "15",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "string",
+          "必填": true,
+          "说明": "type of entry want to get."
+        }
+      ],
+      "return_description": "Return the value corresponding to the type.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:1.Mandatory parameters are left unspecified;"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "getEntries",
+      "返回值": "Record<string, ValueType>",
+      "所属模块": "未知模块",
+      "功能描述": "Get entries from unified record",
+      "注释信息": [
+        "@returns { Record<string, ValueType> } Return all entries in the record.",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@atomicservice",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "UnifiedRecord",
+      "since_version": "15",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "Return all entries in the record.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "class",
+      "名称": "Text",
+      "父类": "UnifiedRecord",
+      "所属模块": "未知模块",
+      "功能描述": "Describe the unified text data",
+      "注释信息": [
+        "@extends UnifiedRecord",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "unifiedDataChannel",
+      "since_version": "14",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "details",
+      "属性类型": "Record<string, string>",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the details of unified text",
+      "注释信息": [
+        "@type { ?Record<string, string> }",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "Text",
+      "since_version": "14",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "class",
+      "名称": "PlainText",
+      "父类": "Text",
+      "所属模块": "未知模块",
+      "功能描述": "Describe the unified plain text data",
+      "注释信息": [
+        "@extends Text",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "unifiedDataChannel",
+      "since_version": "14",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the content of text",
+      "注释信息": [
+        "@returns { string } the content of text",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "PlainText",
+      "since_version": "23",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "the content of text",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the content of text",
+      "注释信息": [
+        "@param { string } the content of text",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "PlainText",
+      "since_version": "23",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "abstract",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the abstract of text",
+      "注释信息": [
+        "@type { ?string }",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "PlainText",
+      "since_version": "14",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "class",
+      "名称": "Hyperlink",
+      "父类": "Text",
+      "所属模块": "未知模块",
+      "功能描述": "Describe the unified link data",
+      "注释信息": [
+        "@extends Text",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "unifiedDataChannel",
+      "since_version": "14",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the url of a link",
+      "注释信息": [
+        "@returns { string } the url of a link",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "Hyperlink",
+      "since_version": "23",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "the url of a link",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the url of a link",
+      "注释信息": [
+        "@param { string } the url of a link",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "Hyperlink",
+      "since_version": "23",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "description",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the description of a link",
+      "注释信息": [
+        "@type { ?string }",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "Hyperlink",
+      "since_version": "14",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "class",
+      "名称": "HTML",
+      "父类": "Text",
+      "所属模块": "未知模块",
+      "功能描述": "Describe the unified html data",
+      "注释信息": [
+        "@extends Text",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "unifiedDataChannel",
+      "since_version": "14",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the content of html, with html tags",
+      "注释信息": [
+        "@returns { string } the content of html.",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "HTML",
+      "since_version": "23",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "the content of html.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the content of html, with html tags",
+      "注释信息": [
+        "@param { string } the content of html.",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "HTML",
+      "since_version": "23",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "plainContent",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the plain content of html",
+      "注释信息": [
+        "@type { ?string }",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "HTML",
+      "since_version": "14",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "class",
+      "名称": "File",
+      "父类": "UnifiedRecord",
+      "所属模块": "未知模块",
+      "功能描述": "Describe the unified file data",
+      "注释信息": [
+        "@extends UnifiedRecord",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "unifiedDataChannel",
+      "since_version": "14",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "details",
+      "属性类型": "Record<string, string>",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the details of unified File",
+      "注释信息": [
+        "@type { ?Record<string, string> }",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "File",
+      "since_version": "14",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the uri of file",
+      "注释信息": [
+        "@returns { string } the uri of file.",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "File",
+      "since_version": "23",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "the uri of file.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the uri of file",
+      "注释信息": [
+        "@param { string } the uri of file.",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "File",
+      "since_version": "23",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "class",
+      "名称": "Image",
+      "父类": "File",
+      "所属模块": "未知模块",
+      "功能描述": "Describe the unified image data",
+      "注释信息": [
+        "@extends File",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "unifiedDataChannel",
+      "since_version": "14",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the uri of image",
+      "注释信息": [
+        "@returns { string } the uri of image.",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "Image",
+      "since_version": "23",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "the uri of image.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the uri of image",
+      "注释信息": [
+        "@param { string } the uri of image.",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "Image",
+      "since_version": "23",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "class",
+      "名称": "Video",
+      "父类": "File",
+      "所属模块": "未知模块",
+      "功能描述": "Describe the unified video data",
+      "注释信息": [
+        "@extends File",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "unifiedDataChannel",
+      "since_version": "14",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the uri of video",
+      "注释信息": [
+        "@returns { string } the uri of video.",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "Video",
+      "since_version": "23",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "the uri of video.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the uri of video",
+      "注释信息": [
+        "@param { string } the uri of video.",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "Video",
+      "since_version": "23",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "class",
+      "名称": "Audio",
+      "父类": "File",
+      "所属模块": "未知模块",
+      "功能描述": "Describe the unified audio data",
+      "注释信息": [
+        "@extends File",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "unifiedDataChannel",
+      "since_version": "14",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the uri of audio",
+      "注释信息": [
+        "@returns { string } the uri of audio.",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "Audio",
+      "since_version": "23",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "the uri of audio.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the uri of audio",
+      "注释信息": [
+        "@param { string } the uri of audio.",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "Audio",
+      "since_version": "23",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "class",
+      "名称": "Folder",
+      "父类": "File",
+      "所属模块": "未知模块",
+      "功能描述": "Describe the unified folder data",
+      "注释信息": [
+        "@extends File",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "unifiedDataChannel",
+      "since_version": "14",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the uri of folder",
+      "注释信息": [
+        "@returns { string } the uri of folder",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "Folder",
+      "since_version": "23",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "the uri of folder",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the uri of folder",
+      "注释信息": [
+        "@param { string } the uri of folder",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "Folder",
+      "since_version": "23",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "class",
+      "名称": "SystemDefinedRecord",
+      "父类": "UnifiedRecord",
+      "所属模块": "未知模块",
+      "功能描述": "Describe system defined type data(this kind of data is provided and bound to OpenHarmony, also can be parsed by system provided API)",
+      "注释信息": [
+        "@extends UnifiedRecord",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "unifiedDataChannel",
+      "since_version": "11",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "details",
+      "属性类型": "Record<string, number | string | Uint8Array>",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the details of system defined data",
+      "注释信息": [
+        "@type { ?Record<string, number | string | Uint8Array> }",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "SystemDefinedRecord",
+      "since_version": "11",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "class",
+      "名称": "SystemDefinedForm",
+      "父类": "SystemDefinedRecord",
+      "所属模块": "未知模块",
+      "功能描述": "Describe system defined form data(this kind of data is provided and bound to OpenHarmony, also can be parsed by system provided API)",
+      "注释信息": [
+        "@extends SystemDefinedRecord",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "unifiedDataChannel",
+      "since_version": "11",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the id of form",
+      "注释信息": [
+        "@returns { number } the id of form.",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@atomicservice",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "SystemDefinedForm",
+      "since_version": "23",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "the id of form.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the id of form",
+      "注释信息": [
+        "@param { number } the id of form.",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@atomicservice",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "SystemDefinedForm",
+      "since_version": "23",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the name of form",
+      "注释信息": [
+        "@returns { string } the name of form.",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@atomicservice",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "SystemDefinedForm",
+      "since_version": "23",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "the name of form.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the name of form",
+      "注释信息": [
+        "@param { string } the name of form.",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@atomicservice",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "SystemDefinedForm",
+      "since_version": "23",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the bundle name of form",
+      "注释信息": [
+        "@returns { string } the bundle name of form.",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@atomicservice",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "SystemDefinedForm",
+      "since_version": "23",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "the bundle name of form.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the bundle name of form",
+      "注释信息": [
+        "@param { string } the bundle name of form.",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@atomicservice",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "SystemDefinedForm",
+      "since_version": "23",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the ability name of form",
+      "注释信息": [
+        "@returns { string } the ability name of form.",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@atomicservice",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "SystemDefinedForm",
+      "since_version": "23",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "the ability name of form.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the ability name of form.",
+      "注释信息": [
+        "@param { string } the ability name of form",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@atomicservice",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "SystemDefinedForm",
+      "since_version": "23",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the module of form",
+      "注释信息": [
+        "@returns { string } the module of form.",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@atomicservice",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "SystemDefinedForm",
+      "since_version": "23",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "the module of form.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the module of form",
+      "注释信息": [
+        "@param { string } the module of form.",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@atomicservice",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "SystemDefinedForm",
+      "since_version": "23",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "class",
+      "名称": "SystemDefinedAppItem",
+      "父类": "SystemDefinedRecord",
+      "所属模块": "未知模块",
+      "功能描述": "Describe system defined app item data(this kind of data is provided and bound to OpenHarmony, also can be parsed by system provided API)",
+      "注释信息": [
+        "@extends SystemDefinedRecord",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "unifiedDataChannel",
+      "since_version": "11",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the app id",
+      "注释信息": [
+        "@returns { string } the app id.",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@atomicservice",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "SystemDefinedAppItem",
+      "since_version": "23",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "the app id.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the app id",
+      "注释信息": [
+        "@param { string } the app id.",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@atomicservice",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "SystemDefinedAppItem",
+      "since_version": "23",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the app name",
+      "注释信息": [
+        "@returns { string } the app name.",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@atomicservice",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "SystemDefinedAppItem",
+      "since_version": "23",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "the app name.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the app name",
+      "注释信息": [
+        "@param { string } the app name.",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@atomicservice",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "SystemDefinedAppItem",
+      "since_version": "23",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the id of app icon. This field can be sourced from BMS or customized as needed.",
+      "注释信息": [
+        "@returns { string } the id of app icon",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "SystemDefinedAppItem",
+      "since_version": "23",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "the id of app icon",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the id of app icon. This field can be sourced from BMS or customized as needed.",
+      "注释信息": [
+        "@param { string } the id of app icon",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "SystemDefinedAppItem",
+      "since_version": "23",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the id of app label. This field can be sourced from BMS or customized as needed.",
+      "注释信息": [
+        "@returns { string } the id of app label",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "SystemDefinedAppItem",
+      "since_version": "23",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "the id of app label",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the id of app label. This field can be sourced from BMS or customized as needed.",
+      "注释信息": [
+        "@param { string } the id of app label",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@stagemodelonly",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "SystemDefinedAppItem",
+      "since_version": "23",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the bundle name of app",
+      "注释信息": [
+        "@returns { string } the bundle name of app.",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@atomicservice",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "SystemDefinedAppItem",
+      "since_version": "23",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "the bundle name of app.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the bundle name of app",
+      "注释信息": [
+        "@param { string } the bundle name of app.",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@atomicservice",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "SystemDefinedAppItem",
+      "since_version": "23",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the ability name of app",
+      "注释信息": [
+        "@returns { string } the ability name of app.",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@atomicservice",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "SystemDefinedAppItem",
+      "since_version": "23",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "the ability name of app.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the ability name of app",
+      "注释信息": [
+        "@param { string } the ability name of app.",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@atomicservice",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "SystemDefinedAppItem",
+      "since_version": "23",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "class",
+      "名称": "SystemDefinedPixelMap",
+      "父类": "SystemDefinedRecord",
+      "所属模块": "未知模块",
+      "功能描述": "Describe system defined pixel map data(this kind of data is provided and bound to OpenHarmony, also can be parsed by system provided API)",
+      "注释信息": [
+        "@extends SystemDefinedRecord",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "unifiedDataChannel",
+      "since_version": "11",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the raw data of pixel map",
+      "注释信息": [
+        "@returns { Uint8Array } the raw data of pixel map.",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@atomicservice",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "SystemDefinedPixelMap",
+      "since_version": "23",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "the raw data of pixel map.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the raw data of pixel map",
+      "注释信息": [
+        "@param { Uint8Array } the raw data of pixel map.",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@atomicservice",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "SystemDefinedPixelMap",
+      "since_version": "23",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "class",
+      "名称": "ApplicationDefinedRecord",
+      "父类": "UnifiedRecord",
+      "所属模块": "未知模块",
+      "功能描述": "Describe application defined data(this kind of data is provided and bound to OpenHarmony, also can be parsed by system provided API)",
+      "注释信息": [
+        "@extends UnifiedRecord",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "unifiedDataChannel",
+      "since_version": "11",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the type of data, should always be started with 'ApplicationDefined.', will return error otherwise",
+      "注释信息": [
+        "@returns { string } the type of data",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@atomicservice",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "ApplicationDefinedRecord",
+      "since_version": "23",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "the type of data",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the type of data, should always be started with 'ApplicationDefined.', will return error otherwise",
+      "注释信息": [
+        "@param { string } the type of data",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@atomicservice",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "ApplicationDefinedRecord",
+      "since_version": "23",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the raw data of application defined data",
+      "注释信息": [
+        "@returns { Uint8Array } the raw data",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@atomicservice",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "ApplicationDefinedRecord",
+      "since_version": "23",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "the raw data",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the raw data of application defined data",
+      "注释信息": [
+        "@param { Uint8Array } the raw data",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@atomicservice",
+        "@since 23"
+      ],
+      "层级": 2,
+      "上级": "ApplicationDefinedRecord",
+      "since_version": "23",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "Intention",
+      "所属模块": "未知模块",
+      "功能描述": "Describe the sharing channel that UDMF support",
+      "注释信息": [
+        "@enum { string }",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "unifiedDataChannel",
+      "since_version": "11",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "DATA_HUB",
+      "值": "'DataHub'",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the intention of data hub",
+      "注释信息": [
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 2,
+      "上级": "Intention",
+      "since_version": "11",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "DRAG",
+      "值": "'Drag'",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the intention of drag",
+      "注释信息": [
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@stagemodelonly",
+        "@since 14"
+      ],
+      "层级": 2,
+      "上级": "Intention",
+      "since_version": "14",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "SYSTEM_SHARE",
+      "值": "'SystemShare'",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates a system sharing channel.",
+      "注释信息": [
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@stagemodelonly",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "Intention",
+      "since_version": "20",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "PICKER",
+      "值": "'Picker'",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates a Picker channel.",
+      "注释信息": [
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@stagemodelonly",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "Intention",
+      "since_version": "20",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "MENU",
+      "值": "'Menu'",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates a menu channel.",
+      "注释信息": [
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@stagemodelonly",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "Intention",
+      "since_version": "20",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "Visibility",
+      "所属模块": "未知模块",
+      "功能描述": "Describe the visibility range of data",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "unifiedDataChannel",
+      "since_version": "20",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "ALL",
+      "所属模块": "未知模块",
+      "功能描述": "The visibility level that specifies that any hap or native can be obtained.",
+      "注释信息": [
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@stagemodelonly",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "Visibility",
+      "since_version": "20",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "OWN_PROCESS",
+      "所属模块": "未知模块",
+      "功能描述": "The visibility level that specifies that only data providers can be obtained.",
+      "注释信息": [
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@stagemodelonly",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "Visibility",
+      "since_version": "20",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "Options",
+      "所属模块": "未知模块",
+      "功能描述": "Describe the optional arguments of data operation",
+      "注释信息": [
+        "@interface { Options }",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "unifiedDataChannel",
+      "since_version": "20",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "intention",
+      "属性类型": "Intention",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the target Intention",
+      "注释信息": [
+        "@type { ?Intention }",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "Options",
+      "since_version": "20",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "key",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the unique identifier of target UnifiedData",
+      "注释信息": [
+        "@type { ?string }",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "Options",
+      "since_version": "20",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "visibility",
+      "属性类型": "Visibility",
+      "所属模块": "未知模块",
+      "功能描述": "Represents the visibility range of data. This parameter is used only when data is inserted.",
+      "注释信息": [
+        "@type { ?Visibility }",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "Options",
+      "since_version": "20",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "FileConflictOptions",
+      "所属模块": "未知模块",
+      "功能描述": "Defines the types of file conflict options when getting data from the UDMF.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@atomicservice",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "unifiedDataChannel",
+      "since_version": "15",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "OVERWRITE",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "Overwrite when destUri has file with same name.",
+      "注释信息": [
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@atomicservice",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "FileConflictOptions",
+      "since_version": "15",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "SKIP",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Skip when destUri has file with same name.",
+      "注释信息": [
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@atomicservice",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "FileConflictOptions",
+      "since_version": "15",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "ProgressIndicator",
+      "所属模块": "未知模块",
+      "功能描述": "Defines the types of progress indicator when getting data from the UDMF.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@atomicservice",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "unifiedDataChannel",
+      "since_version": "15",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "NONE",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "Getting data without system default progress indicator.",
+      "注释信息": [
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@atomicservice",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "ProgressIndicator",
+      "since_version": "15",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "DEFAULT",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Getting data with system default progress indicator.",
+      "注释信息": [
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@atomicservice",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "ProgressIndicator",
+      "since_version": "15",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum",
+      "名称": "ListenerStatus",
+      "所属模块": "未知模块",
+      "功能描述": "Defines the listener status of obtaining progress and data.",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@atomicservice",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "unifiedDataChannel",
+      "since_version": "15",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "FINISHED",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the finished status.",
+      "注释信息": [
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@atomicservice",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "ListenerStatus",
+      "since_version": "15",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "PROCESSING",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that processing is still in progress.",
+      "注释信息": [
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@atomicservice",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "ListenerStatus",
+      "since_version": "15",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "CANCELED",
+      "值": "2",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the process has been canceled.",
+      "注释信息": [
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@atomicservice",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "ListenerStatus",
+      "since_version": "15",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "INNER_ERROR",
+      "值": "200",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that an internal error has occurred.",
+      "注释信息": [
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@atomicservice",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "ListenerStatus",
+      "since_version": "15",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "INVALID_PARAMETERS",
+      "值": "201",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that the GetDataParams contains invalid parameters.",
+      "注释信息": [
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@atomicservice",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "ListenerStatus",
+      "since_version": "15",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "DATA_NOT_FOUND",
+      "值": "202",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that no data is obtained.",
+      "注释信息": [
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@atomicservice",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "ListenerStatus",
+      "since_version": "15",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "SYNC_FAILED",
+      "值": "203",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that an error occurred in the synchronization process.",
+      "注释信息": [
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@atomicservice",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "ListenerStatus",
+      "since_version": "15",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "COPY_FILE_FAILED",
+      "值": "204",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates that an error occurred during file copying.",
+      "注释信息": [
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@atomicservice",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "ListenerStatus",
+      "since_version": "15",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "ProgressInfo",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the progress information.",
+      "注释信息": [
+        "@interface ProgressInfo",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@atomicservice",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "unifiedDataChannel",
+      "since_version": "15",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "progress",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the UDMF processing progress.",
+      "注释信息": [
+        "@type { number }",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@atomicservice",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "ProgressInfo",
+      "since_version": "15",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "status",
+      "属性类型": "ListenerStatus",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the status of obtaining progress and data.",
+      "注释信息": [
+        "@type { ListenerStatus }",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@atomicservice",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "ProgressInfo",
+      "since_version": "15",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "type_alias",
+      "名称": "DataProgressListener",
+      "所属模块": "未知模块",
+      "功能描述": "A listener callback function that fetches progress info and data.",
+      "注释信息": [
+        "@typedef { function } DataProgressListener",
+        "@param { ProgressInfo } progressInfo - the progress information.",
+        "@param { UnifiedData | null } data - Data obtained when the progress reaches 100%.",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@atomicservice",
+        "@since 15"
+      ],
+      "层级": 1,
+      "上级": "unifiedDataChannel",
+      "since_version": "15",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "GetDataParams",
+      "所属模块": "未知模块",
+      "功能描述": "Represents the get data parameters when getting data from udmf.",
+      "注释信息": [
+        "@interface GetDataParams",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@atomicservice",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "unifiedDataChannel",
+      "since_version": "15",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "progressIndicator",
+      "属性类型": "ProgressIndicator",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates whether to use default system progress indicator.",
+      "注释信息": [
+        "@type { ProgressIndicator }",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@atomicservice",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "GetDataParams",
+      "since_version": "15",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "dataProgressListener",
+      "属性类型": "DataProgressListener",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates progress and data listener when getting unified data.",
+      "注释信息": [
+        "@type { DataProgressListener }",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@atomicservice",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "GetDataParams",
+      "since_version": "15",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "destUri",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the dest path uri where copy file will be copied to sandbox of application.",
+      "注释信息": [
+        "@type { string }",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@atomicservice",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "GetDataParams",
+      "since_version": "15",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "fileConflictOptions",
+      "属性类型": "FileConflictOptions",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates file conflict options when dest path has file with same name.",
+      "注释信息": [
+        "@type { FileConflictOptions }",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@atomicservice",
+        "@since 15"
+      ],
+      "层级": 2,
+      "上级": "GetDataParams",
+      "since_version": "15",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "acceptableInfo",
+      "属性类型": "DataLoadInfo",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the supported data information.",
+      "注释信息": [
+        "@type { ?DataLoadInfo }",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "GetDataParams",
+      "since_version": "20",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "DataLoadInfo",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates data loading information.",
+      "注释信息": [
+        "@interface DataLoadInfo",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "unifiedDataChannel",
+      "since_version": "20",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "types",
+      "属性类型": "Set<string>",
+      "所属模块": "未知模块",
+      "功能描述": "Represents the data type or supported types to load. <br>This parameter is mandatory when used by the data provider.",
+      "注释信息": [
+        "@type { ?Set<string> }",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "DataLoadInfo",
+      "since_version": "20",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "recordCount",
+      "属性类型": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the maximum number of data records to be loaded.",
+      "注释信息": [
+        "@type { ?number }",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "DataLoadInfo",
+      "since_version": "20",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "type_alias",
+      "名称": "DataLoadHandler",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the callback function for loading data.",
+      "注释信息": [
+        "@typedef { function } DataLoadHandler",
+        "@param { DataLoadInfo } acceptableInfo Indicates the type and number of data that can be accepted by the receiver.",
+        "@returns { UnifiedData | null } the {@link UnifiedData} object to be loaded.",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "unifiedDataChannel",
+      "since_version": "20",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "the {@link UnifiedData} object to be loaded.",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "type_alias",
+      "名称": "DelayedDataLoadHandler",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the callback function for deferred and non-blocking data loading. that can be accepted by the receiver. that needs to be loaded.",
+      "注释信息": [
+        "@typedef { function } DelayedDataLoadHandler",
+        "@param { DataLoadInfo } [acceptableInfo] - Indicates the type and number of data",
+        "@returns { Promise<UnifiedData | null> } - Asynchronously return the {@link UnifiedData} object",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@stagemodelonly",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 1,
+      "上级": "unifiedDataChannel",
+      "since_version": "22",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "- Asynchronously return the {@link UnifiedData} object",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "interface",
+      "名称": "DataLoadParams",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates data loading params.",
+      "注释信息": [
+        "@interface DataLoadParams",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "unifiedDataChannel",
+      "since_version": "20",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "loadHandler",
+      "属性类型": "DataLoadHandler",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the callback function for loading data.",
+      "注释信息": [
+        "@type { DataLoadHandler }",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "DataLoadParams",
+      "since_version": "20",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "dataLoadInfo",
+      "属性类型": "DataLoadInfo",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates data loading information.",
+      "注释信息": [
+        "@type { DataLoadInfo }",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 2,
+      "上级": "DataLoadParams",
+      "since_version": "20",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "delayedDataLoadHandler",
+      "属性类型": "DelayedDataLoadHandler",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the callback function for deferred and non-blocking data loading. This handler is optional. If it is provided, it will take precedence over the synchronous DataLoadHandler (i.e., DataLoadHandler will be ignored).",
+      "注释信息": [
+        "@type { ?DelayedDataLoadHandler }",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@stagemodelonly",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 2,
+      "上级": "DataLoadParams",
+      "since_version": "22",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "insertData",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Insert data into unified data channel by Intention <br>2.Incorrect parameters types.",
+      "注释信息": [
+        "@param { Options } options - fill the intention field to indicate the target {@link Intention}.",
+        "@param { UnifiedData } data - {@link UnifiedData} data object to insert into target intention.",
+        "@param { AsyncCallback<string> } callback - {string}: the unique identifier.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:1.Mandatory parameters are left unspecified;",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "unifiedDataChannel",
+      "since_version": "11",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [
+        {
+          "名称": "options",
+          "类型": "Options",
+          "必填": true,
+          "说明": "fill the intention field to indicate the target {@link Intention}."
+        },
+        {
+          "名称": "data",
+          "类型": "UnifiedData",
+          "必填": true,
+          "说明": "{@link UnifiedData} data object to insert into target intention."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<string>",
+          "必填": true,
+          "说明": "{string}: the unique identifier."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:1.Mandatory parameters are left unspecified;"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "insertData",
+      "返回值": "Promise<string>",
+      "所属模块": "未知模块",
+      "功能描述": "Insert data into unified data channel by Intention <br>2.Incorrect parameters types.",
+      "注释信息": [
+        "@param { Options } options - fill the intention field to indicate the target {@link Intention}.",
+        "@param { UnifiedData } data - {@link UnifiedData} data object to insert into target intention.",
+        "@returns { Promise<string> } {string}: the unique identifier.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:1.Mandatory parameters are left unspecified;",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "unifiedDataChannel",
+      "since_version": "11",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [
+        {
+          "名称": "options",
+          "类型": "Options",
+          "必填": true,
+          "说明": "fill the intention field to indicate the target {@link Intention}."
+        },
+        {
+          "名称": "data",
+          "类型": "UnifiedData",
+          "必填": true,
+          "说明": "{@link UnifiedData} data object to insert into target intention."
+        }
+      ],
+      "return_description": "{string}: the unique identifier.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:1.Mandatory parameters are left unspecified;"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "updateData",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Update data to unified data channel by Unique Identifier <br>2.Incorrect parameters types.",
+      "注释信息": [
+        "@param { Options } options - fill the unique identifier field to indicate the target {@link UnifiedData}.",
+        "@param { UnifiedData } data - {@link UnifiedData} data object to update the target data.",
+        "@param { AsyncCallback<void> } callback - the callback of updateData.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:1.Mandatory parameters are left unspecified;",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "unifiedDataChannel",
+      "since_version": "11",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [
+        {
+          "名称": "options",
+          "类型": "Options",
+          "必填": true,
+          "说明": "fill the unique identifier field to indicate the target {@link UnifiedData}."
+        },
+        {
+          "名称": "data",
+          "类型": "UnifiedData",
+          "必填": true,
+          "说明": "{@link UnifiedData} data object to update the target data."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "the callback of updateData."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:1.Mandatory parameters are left unspecified;"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "updateData",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Update data to unified data channel by Unique Identifier <br>2.Incorrect parameters types.",
+      "注释信息": [
+        "@param { Options } options - fill the unique identifier field to indicate the target {@link UnifiedData}.",
+        "@param { UnifiedData } data - {@link UnifiedData} data object to update the target data.",
+        "@returns { Promise<void> } the promise returned by the function.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:1.Mandatory parameters are left unspecified;",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "unifiedDataChannel",
+      "since_version": "11",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [
+        {
+          "名称": "options",
+          "类型": "Options",
+          "必填": true,
+          "说明": "fill the unique identifier field to indicate the target {@link UnifiedData}."
+        },
+        {
+          "名称": "data",
+          "类型": "UnifiedData",
+          "必填": true,
+          "说明": "{@link UnifiedData} data object to update the target data."
+        }
+      ],
+      "return_description": "the promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:1.Mandatory parameters are left unspecified;"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "queryData",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Query data of unified data channel by Intention or Unique Identifier or {@link UnifiedData}. array. <br>2.Incorrect parameters types.",
+      "注释信息": [
+        "@param { Options } options - fill the intention or unique identifier field to indicate the target {@link Intention}",
+        "@param { AsyncCallback<Array<UnifiedData>> } callback - {Array<UnifiedData>}: the target {@link UnifiedData} object",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:1.Mandatory parameters are left unspecified;",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "unifiedDataChannel",
+      "since_version": "11",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [
+        {
+          "名称": "options",
+          "类型": "Options",
+          "必填": true,
+          "说明": "fill the intention or unique identifier field to indicate the target {@link Intention}"
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<Array<UnifiedData>>",
+          "必填": true,
+          "说明": "{Array<UnifiedData>}: the target {@link UnifiedData} object"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:1.Mandatory parameters are left unspecified;"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "queryData",
+      "返回值": "Promise<Array<UnifiedData>>",
+      "所属模块": "未知模块",
+      "功能描述": "Query data of unified data channel by Intention or Unique Identifier or {@link UnifiedData}. <br>2.Incorrect parameters types.",
+      "注释信息": [
+        "@param { Options } options - fill the intention or unique identifier field to indicate the target {@link Intention}",
+        "@returns { Promise<Array<UnifiedData>> } {Array<UnifiedData>}: the target {@link UnifiedData} object array.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:1.Mandatory parameters are left unspecified;",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "unifiedDataChannel",
+      "since_version": "11",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [
+        {
+          "名称": "options",
+          "类型": "Options",
+          "必填": true,
+          "说明": "fill the intention or unique identifier field to indicate the target {@link Intention}"
+        }
+      ],
+      "return_description": "{Array<UnifiedData>}: the target {@link UnifiedData} object array.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:1.Mandatory parameters are left unspecified;"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "deleteData",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Delete data of unified data channel by Intention or Unique Identifier or {@link UnifiedData}. object array. <br>2.Incorrect parameters types.",
+      "注释信息": [
+        "@param { Options } options - fill the intention or unique identifier field to indicate the target {@link Intention}",
+        "@param { AsyncCallback<Array<UnifiedData>> } callback - {Array<UnifiedData>}: the deleted {@link UnifiedData}",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:1.Mandatory parameters are left unspecified;",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "unifiedDataChannel",
+      "since_version": "11",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [
+        {
+          "名称": "options",
+          "类型": "Options",
+          "必填": true,
+          "说明": "fill the intention or unique identifier field to indicate the target {@link Intention}"
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<Array<UnifiedData>>",
+          "必填": true,
+          "说明": "{Array<UnifiedData>}: the deleted {@link UnifiedData}"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:1.Mandatory parameters are left unspecified;"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "deleteData",
+      "返回值": "Promise<Array<UnifiedData>>",
+      "所属模块": "未知模块",
+      "功能描述": "Delete data of unified data channel by Intention or Unique Identifier or {@link UnifiedData}. <br>2.Incorrect parameters types.",
+      "注释信息": [
+        "@param { Options } options - fill the intention or unique identifier field to indicate the target {@link Intention}",
+        "@returns { Promise<Array<UnifiedData>> } {Array<UnifiedData>}: the deleted {@link UnifiedData} object array.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:1.Mandatory parameters are left unspecified;",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "unifiedDataChannel",
+      "since_version": "11",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [
+        {
+          "名称": "options",
+          "类型": "Options",
+          "必填": true,
+          "说明": "fill the intention or unique identifier field to indicate the target {@link Intention}"
+        }
+      ],
+      "return_description": "{Array<UnifiedData>}: the deleted {@link UnifiedData} object array.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:1.Mandatory parameters are left unspecified;"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "setAppShareOptions",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Sets the ShareOptions for the application data. Currently, only the drag-and-drop data channel is supported. intention. required to call the API. 2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_UDMF_APP_SHARE_OPTION",
+        "@param { Intention } intention - Describe the sharing channel that UDMF support. Currently only supports DRAG",
+        "@param { ShareOptions } shareOptions - Types of scope that UnifiedData can be used.",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 20400001 - Settings already exist. To reconfigure, remove the existing sharing options.",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@stagemodelonly",
+        "@since 14"
+      ],
+      "层级": 1,
+      "上级": "unifiedDataChannel",
+      "since_version": "14",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [
+        {
+          "名称": "intention",
+          "类型": "Intention",
+          "必填": true,
+          "说明": "Describe the sharing channel that UDMF support. Currently only supports DRAG"
+        },
+        {
+          "名称": "shareOptions",
+          "类型": "ShareOptions",
+          "必填": true,
+          "说明": "Types of scope that UnifiedData can be used."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission"
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "20400001",
+          "description": "Settings already exist. To reconfigure, remove the existing sharing options."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "removeAppShareOptions",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Remove app sharing options. intention. required to call the API. 2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.MANAGE_UDMF_APP_SHARE_OPTION",
+        "@param { Intention } intention - Describe the sharing channel that UDMF support. Currently only supports DRAG",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@stagemodelonly",
+        "@since 14"
+      ],
+      "层级": 1,
+      "上级": "unifiedDataChannel",
+      "since_version": "14",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [
+        {
+          "名称": "intention",
+          "类型": "Intention",
+          "必填": true,
+          "说明": "Describe the sharing channel that UDMF support. Currently only supports DRAG"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission"
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "convertRecordsToEntries",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Converts the provided data into a multi-style data structure, which is useful when the original data uses multiple records to represent different styles of the same data. This API is used only when the following rules are met: 1.The number of records in data is greater than 2.The value of unifiedData.properties.tag is records_to_entries_data_format. 2. Incorrect parameter types.",
+      "注释信息": [
+        "@param { UnifiedData } data - {@link UnifiedData} Data represents the data that needs to be converted.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@syscap SystemCapability.DistributedDataManager.UDMF.Core",
+        "@stagemodelonly",
+        "@atomicservice",
+        "@since 17"
+      ],
+      "层级": 1,
+      "上级": "unifiedDataChannel",
+      "since_version": "17",
+      "system_capability": "SystemCapability.DistributedDataManager.UDMF.Core",
+      "parameters": [
+        {
+          "名称": "data",
+          "类型": "UnifiedData",
+          "必填": true,
+          "说明": "{@link UnifiedData} Data represents the data that needs to be converted."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        }
+      ],
+      "版本": "API"
+    }
+  ]
+}

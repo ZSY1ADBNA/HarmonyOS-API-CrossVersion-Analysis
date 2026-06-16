@@ -1,0 +1,207 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.PerformanceAnalysisKit",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "namespace",
+      "名称": "hiTraceChain",
+      "所属模块": "@kit.PerformanceAnalysisKit",
+      "功能描述": "Provides APIs to implement call chain tracing throughout a service process. With HiTrace, you can quickly obtain the run log for the call chain of a specified service process and locate faults in cross-device, cross-process, or cross-thread communications.",
+      "注释信息": [
+        "@namespace hiTraceChain",
+        "@syscap SystemCapability.HiviewDFX.HiTrace",
+        "@since 8"
+      ],
+      "层级": 1,
+      "上级": "@kit.PerformanceAnalysisKit",
+      "since_version": "8",
+      "system_capability": "SystemCapability.HiviewDFX.HiTrace",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "enum",
+      "名称": "HiTraceFlag",
+      "所属模块": "未知模块",
+      "功能描述": "Enumerate trace flag",
+      "注释信息": [
+        "@enum { number }",
+        "@syscap SystemCapability.HiviewDFX.HiTrace",
+        "@since 8"
+      ],
+      "层级": 2,
+      "上级": "hiTraceChain",
+      "since_version": "8",
+      "system_capability": "SystemCapability.HiviewDFX.HiTrace",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "DEFAULT",
+      "值": "0",
+      "所属模块": "未知模块",
+      "功能描述": "Default value",
+      "注释信息": [
+        "@syscap SystemCapability.HiviewDFX.HiTrace",
+        "@since 8"
+      ],
+      "层级": 2,
+      "上级": "HiTraceFlag",
+      "since_version": "8",
+      "system_capability": "SystemCapability.HiviewDFX.HiTrace",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "INCLUDE_ASYNC",
+      "值": "1",
+      "所属模块": "未知模块",
+      "功能描述": "Trace sync and async call. default: trace sync call only.",
+      "注释信息": [
+        "@syscap SystemCapability.HiviewDFX.HiTrace",
+        "@since 8"
+      ],
+      "层级": 2,
+      "上级": "HiTraceFlag",
+      "since_version": "8",
+      "system_capability": "SystemCapability.HiviewDFX.HiTrace",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "DONOT_CREATE_SPAN",
+      "值": "1 << 1",
+      "所属模块": "未知模块",
+      "功能描述": "Do not create child span. default: create child span.",
+      "注释信息": [
+        "@syscap SystemCapability.HiviewDFX.HiTrace",
+        "@since 8"
+      ],
+      "层级": 2,
+      "上级": "HiTraceFlag",
+      "since_version": "8",
+      "system_capability": "SystemCapability.HiviewDFX.HiTrace",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "TP_INFO",
+      "值": "1 << 2",
+      "所属模块": "未知模块",
+      "功能描述": "Output tracepoint info in span. default: do not output tracepoint info.",
+      "注释信息": [
+        "@syscap SystemCapability.HiviewDFX.HiTrace",
+        "@since 8"
+      ],
+      "层级": 2,
+      "上级": "HiTraceFlag",
+      "since_version": "8",
+      "system_capability": "SystemCapability.HiviewDFX.HiTrace",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "NO_BE_INFO",
+      "值": "1 << 3",
+      "所属模块": "未知模块",
+      "功能描述": "Do not output begin and end info. default: output begin and end info.",
+      "注释信息": [
+        "@syscap SystemCapability.HiviewDFX.HiTrace",
+        "@since 8"
+      ],
+      "层级": 2,
+      "上级": "HiTraceFlag",
+      "since_version": "8",
+      "system_capability": "SystemCapability.HiviewDFX.HiTrace",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "DISABLE_LOG",
+      "值": "1 << 4",
+      "所属模块": "未知模块",
+      "功能描述": "Do not add id to log. default: add id to log.",
+      "注释信息": [
+        "@syscap SystemCapability.HiviewDFX.HiTrace",
+        "@since 8"
+      ],
+      "层级": 2,
+      "上级": "HiTraceFlag",
+      "since_version": "8",
+      "system_capability": "SystemCapability.HiviewDFX.HiTrace",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "FAILURE_TRIGGER",
+      "值": "1 << 5",
+      "所属模块": "未知模块",
+      "功能描述": "The trace is triggered by fault.",
+      "注释信息": [
+        "@syscap SystemCapability.HiviewDFX.HiTrace",
+        "@since 8"
+      ],
+      "层级": 2,
+      "上级": "HiTraceFlag",
+      "since_version": "8",
+      "system_capability": "SystemCapability.HiviewDFX.HiTrace",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.1"
+    },
+    {
+      "类型": "enum_member",
+      "名称": "D2D_TP_INFO",
+      "值": "1 << 6",
+      "所属模块": "未知模块",
+      "功能描述": "Output device-to-device tracepoint info in span only. default: do not output device-to-device tracepoint info.",
+      "注释信息": [
+        "@syscap SystemCapability.HiviewDFX.HiTrace",
+        "@since 8"
+      ],
+      "层级": 2,
+      "上级": "HiTraceFlag",
+      "since_version": "8",
+      "system_capability": "SystemCapability.HiviewDFX.HiTrace",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API5.1"
+    }
+  ]
+}

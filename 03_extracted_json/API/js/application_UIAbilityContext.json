@@ -1,0 +1,3780 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.AbilityKit",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "class",
+      "名称": "UIAbilityContext",
+      "父类": "Context",
+      "所属模块": "@kit.AbilityKit",
+      "功能描述": "The context of an ability. It allows access to ability-specific resources.",
+      "注释信息": [
+        "@extends Context",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@stagemodelonly",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "@kit.AbilityKit",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "abilityInfo",
+      "属性类型": "AbilityInfo",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates configuration information about an ability.",
+      "注释信息": [
+        "@type { AbilityInfo }",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@stagemodelonly",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "UIAbilityContext",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "currentHapModuleInfo",
+      "属性类型": "HapModuleInfo",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates configuration information about the module.",
+      "注释信息": [
+        "@type { HapModuleInfo }",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@stagemodelonly",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "UIAbilityContext",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "config",
+      "属性类型": "Configuration",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates configuration information.",
+      "注释信息": [
+        "@type { Configuration }",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@stagemodelonly",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "UIAbilityContext",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "property",
+      "名称": "windowStage",
+      "属性类型": "window.WindowStage",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates windowStage information. Exists from onWindowStageCreate lifecycle, does not exist from onWindowStageDestroy lifecycle.",
+      "注释信息": [
+        "@type { window.WindowStage }",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@stagemodelonly",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 21"
+      ],
+      "层级": 1,
+      "上级": "UIAbilityContext",
+      "since_version": "21",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "startAbility",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Starts a new ability. If the caller application is in foreground, you can use this method to start ability; If the caller application is in the background, you need to apply for permission:ohos.permission.START_ABILITIES_FROM_BACKGROUND. If the target ability is visible, you can start the target ability; If the target ability is invisible, you need to apply for permission:ohos.permission.START_INVISIBLE_ABILITY to start target invisible ability. If the target ability is in cross-device, you need to apply for permission:ohos.permission.DISTRIBUTED_DATASYNC.",
+      "注释信息": [
+        "@param { Want } want - Indicates the ability to start.",
+        "@param { AsyncCallback<void> } callback - The callback of startAbility.",
+        "@throws { BusinessError } 201 - The application does not have permission to call the interface.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.",
+        "@throws { BusinessError } 16000001 - The specified ability does not exist.",
+        "@throws { BusinessError } 16000002 - Incorrect ability type.",
+        "@throws { BusinessError } 16000004 - Cannot start an invisible component.",
+        "@throws { BusinessError } 16000005 - The specified process does not have the permission.",
+        "@throws { BusinessError } 16000006 - Cross-user operations are not allowed.",
+        "@throws { BusinessError } 16000008 - The crowdtesting application expires.",
+        "@throws { BusinessError } 16000009 - An ability cannot be started or stopped in Wukong mode.",
+        "@throws { BusinessError } 16000010 - The call with the continuation and prepare continuation flag is forbidden.",
+        "@throws { BusinessError } 16000011 - The context does not exist.",
+        "@throws { BusinessError } 16000012 - The application is controlled.",
+        "@throws { BusinessError } 16000013 - The application is controlled by EDM.",
+        "@throws { BusinessError } 16000018 - Redirection to a third-party application is not allowed in API version greater than 11.",
+        "@throws { BusinessError } 16000019 - No matching ability is found.",
+        "@throws { BusinessError } 16000050 - Internal error.",
+        "@throws { BusinessError } 16000053 - The ability is not on the top of the UI.",
+        "@throws { BusinessError } 16000055 - Installation-free timed out.",
+        "@throws { BusinessError } 16000071 - App clone is not supported.",
+        "@throws { BusinessError } 16000072 - App clone or multi-instance is not supported.",
+        "@throws { BusinessError } 16000073 - The app clone index is invalid.",
+        "@throws { BusinessError } 16000076 - The app instance key is invalid.",
+        "@throws { BusinessError } 16000077 - The number of app instances reaches the limit.",
+        "@throws { BusinessError } 16000078 - The multi-instance is not supported.",
+        "@throws { BusinessError } 16000079 - The APP_INSTANCE_KEY cannot be specified.",
+        "@throws { BusinessError } 16000080 - Creating a new instance is not supported.",
+        "@throws { BusinessError } 16200001 - The caller has been released.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@stagemodelonly",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 1,
+      "上级": "UIAbilityContext",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "want",
+          "类型": "Want",
+          "必填": true,
+          "说明": "Indicates the ability to start."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "The callback of startAbility."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "The application does not have permission to call the interface."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types."
+        },
+        {
+          "code": "16000001",
+          "description": "The specified ability does not exist."
+        },
+        {
+          "code": "16000002",
+          "description": "Incorrect ability type."
+        },
+        {
+          "code": "16000004",
+          "description": "Cannot start an invisible component."
+        },
+        {
+          "code": "16000005",
+          "description": "The specified process does not have the permission."
+        },
+        {
+          "code": "16000006",
+          "description": "Cross-user operations are not allowed."
+        },
+        {
+          "code": "16000008",
+          "description": "The crowdtesting application expires."
+        },
+        {
+          "code": "16000009",
+          "description": "An ability cannot be started or stopped in Wukong mode."
+        },
+        {
+          "code": "16000010",
+          "description": "The call with the continuation and prepare continuation flag is forbidden."
+        },
+        {
+          "code": "16000011",
+          "description": "The context does not exist."
+        },
+        {
+          "code": "16000012",
+          "description": "The application is controlled."
+        },
+        {
+          "code": "16000013",
+          "description": "The application is controlled by EDM."
+        },
+        {
+          "code": "16000018",
+          "description": "Redirection to a third-party application is not allowed in API version greater than 11."
+        },
+        {
+          "code": "16000019",
+          "description": "No matching ability is found."
+        },
+        {
+          "code": "16000050",
+          "description": "Internal error."
+        },
+        {
+          "code": "16000053",
+          "description": "The ability is not on the top of the UI."
+        },
+        {
+          "code": "16000055",
+          "description": "Installation-free timed out."
+        },
+        {
+          "code": "16000071",
+          "description": "App clone is not supported."
+        },
+        {
+          "code": "16000072",
+          "description": "App clone or multi-instance is not supported."
+        },
+        {
+          "code": "16000073",
+          "description": "The app clone index is invalid."
+        },
+        {
+          "code": "16000076",
+          "description": "The app instance key is invalid."
+        },
+        {
+          "code": "16000077",
+          "description": "The number of app instances reaches the limit."
+        },
+        {
+          "code": "16000078",
+          "description": "The multi-instance is not supported."
+        },
+        {
+          "code": "16000079",
+          "description": "The APP_INSTANCE_KEY cannot be specified."
+        },
+        {
+          "code": "16000080",
+          "description": "Creating a new instance is not supported."
+        },
+        {
+          "code": "16200001",
+          "description": "The caller has been released."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "startAbility",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Starts a new ability. If the caller application is in foreground, you can use this method to start ability; If the caller application is in the background, you need to apply for permission:ohos.permission.START_ABILITIES_FROM_BACKGROUND. If the target ability is visible, you can start the target ability; If the target ability is invisible, you need to apply for permission:ohos.permission.START_INVISIBLE_ABILITY to start target invisible ability. If the target ability is in cross-device, you need to apply for permission:ohos.permission.DISTRIBUTED_DATASYNC.",
+      "注释信息": [
+        "@param { Want } want - Indicates the ability to start.",
+        "@param { StartOptions } options - Indicates the start options.",
+        "@param { AsyncCallback<void> } callback - The callback of startAbility.",
+        "@throws { BusinessError } 201 - The application does not have permission to call the interface.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.",
+        "@throws { BusinessError } 801 - Capability not support.",
+        "@throws { BusinessError } 16000001 - The specified ability does not exist.",
+        "@throws { BusinessError } 16000004 - Cannot start an invisible component.",
+        "@throws { BusinessError } 16000005 - The specified process does not have the permission.",
+        "@throws { BusinessError } 16000006 - Cross-user operations are not allowed.",
+        "@throws { BusinessError } 16000008 - The crowdtesting application expires.",
+        "@throws { BusinessError } 16000009 - An ability cannot be started or stopped in Wukong mode.",
+        "@throws { BusinessError } 16000011 - The context does not exist.",
+        "@throws { BusinessError } 16000012 - The application is controlled.",
+        "@throws { BusinessError } 16000013 - The application is controlled by EDM.",
+        "@throws { BusinessError } 16000018 - Redirection to a third-party application is not allowed in API version greater than 11.",
+        "@throws { BusinessError } 16000019 - No matching ability is found.",
+        "@throws { BusinessError } 16000050 - Internal error.",
+        "@throws { BusinessError } 16000053 - The ability is not on the top of the UI.",
+        "@throws { BusinessError } 16000055 - Installation-free timed out.",
+        "@throws { BusinessError } 16000067 - The StartOptions check failed.",
+        "@throws { BusinessError } 16000068 - The ability is already running.",
+        "@throws { BusinessError } 16000071 - App clone is not supported.",
+        "@throws { BusinessError } 16000072 - App clone or multi-instance is not supported.",
+        "@throws { BusinessError } 16000073 - The app clone index is invalid.",
+        "@throws { BusinessError } 16000076 - The app instance key is invalid.",
+        "@throws { BusinessError } 16000077 - The number of app instances reaches the limit.",
+        "@throws { BusinessError } 16000078 - The multi-instance is not supported.",
+        "@throws { BusinessError } 16000079 - The APP_INSTANCE_KEY cannot be specified.",
+        "@throws { BusinessError } 16000080 - Creating a new instance is not supported.",
+        "@throws { BusinessError } 16200001 - The caller has been released.",
+        "@throws { BusinessError } 16300003 - The target application is not the current application.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@stagemodelonly",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 18"
+      ],
+      "层级": 1,
+      "上级": "UIAbilityContext",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "want",
+          "类型": "Want",
+          "必填": true,
+          "说明": "Indicates the ability to start."
+        },
+        {
+          "名称": "options",
+          "类型": "StartOptions",
+          "必填": true,
+          "说明": "Indicates the start options."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "The callback of startAbility."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "The application does not have permission to call the interface."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types."
+        },
+        {
+          "code": "801",
+          "description": "Capability not support."
+        },
+        {
+          "code": "16000001",
+          "description": "The specified ability does not exist."
+        },
+        {
+          "code": "16000004",
+          "description": "Cannot start an invisible component."
+        },
+        {
+          "code": "16000005",
+          "description": "The specified process does not have the permission."
+        },
+        {
+          "code": "16000006",
+          "description": "Cross-user operations are not allowed."
+        },
+        {
+          "code": "16000008",
+          "description": "The crowdtesting application expires."
+        },
+        {
+          "code": "16000009",
+          "description": "An ability cannot be started or stopped in Wukong mode."
+        },
+        {
+          "code": "16000011",
+          "description": "The context does not exist."
+        },
+        {
+          "code": "16000012",
+          "description": "The application is controlled."
+        },
+        {
+          "code": "16000013",
+          "description": "The application is controlled by EDM."
+        },
+        {
+          "code": "16000018",
+          "description": "Redirection to a third-party application is not allowed in API version greater than 11."
+        },
+        {
+          "code": "16000019",
+          "description": "No matching ability is found."
+        },
+        {
+          "code": "16000050",
+          "description": "Internal error."
+        },
+        {
+          "code": "16000053",
+          "description": "The ability is not on the top of the UI."
+        },
+        {
+          "code": "16000055",
+          "description": "Installation-free timed out."
+        },
+        {
+          "code": "16000067",
+          "description": "The StartOptions check failed."
+        },
+        {
+          "code": "16000068",
+          "description": "The ability is already running."
+        },
+        {
+          "code": "16000071",
+          "description": "App clone is not supported."
+        },
+        {
+          "code": "16000072",
+          "description": "App clone or multi-instance is not supported."
+        },
+        {
+          "code": "16000073",
+          "description": "The app clone index is invalid."
+        },
+        {
+          "code": "16000076",
+          "description": "The app instance key is invalid."
+        },
+        {
+          "code": "16000077",
+          "description": "The number of app instances reaches the limit."
+        },
+        {
+          "code": "16000078",
+          "description": "The multi-instance is not supported."
+        },
+        {
+          "code": "16000079",
+          "description": "The APP_INSTANCE_KEY cannot be specified."
+        },
+        {
+          "code": "16000080",
+          "description": "Creating a new instance is not supported."
+        },
+        {
+          "code": "16200001",
+          "description": "The caller has been released."
+        },
+        {
+          "code": "16300003",
+          "description": "The target application is not the current application."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "startAbility",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Starts a new ability. If the caller application is in foreground, you can use this method to start ability; If the caller application is in the background, you need to apply for permission:ohos.permission.START_ABILITIES_FROM_BACKGROUND. If the target ability is visible, you can start the target ability; If the target ability is invisible, you need to apply for permission:ohos.permission.START_INVISIBLE_ABILITY to start target invisible ability. If the target ability is in cross-device, you need to apply for permission:ohos.permission.DISTRIBUTED_DATASYNC.",
+      "注释信息": [
+        "@param { Want } want - Indicates the ability to start.",
+        "@param { StartOptions } [options] - Indicates the start options.",
+        "@returns { Promise<void> } The promise returned by the function.",
+        "@throws { BusinessError } 201 - The application does not have permission to call the interface.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.",
+        "@throws { BusinessError } 801 - Capability not support.",
+        "@throws { BusinessError } 16000001 - The specified ability does not exist.",
+        "@throws { BusinessError } 16000002 - Incorrect ability type.",
+        "@throws { BusinessError } 16000004 - Cannot start an invisible component.",
+        "@throws { BusinessError } 16000005 - The specified process does not have the permission.",
+        "@throws { BusinessError } 16000006 - Cross-user operations are not allowed.",
+        "@throws { BusinessError } 16000008 - The crowdtesting application expires.",
+        "@throws { BusinessError } 16000009 - An ability cannot be started or stopped in Wukong mode.",
+        "@throws { BusinessError } 16000010 - The call with the continuation and prepare continuation flag is forbidden.",
+        "@throws { BusinessError } 16000011 - The context does not exist.",
+        "@throws { BusinessError } 16000012 - The application is controlled.",
+        "@throws { BusinessError } 16000013 - The application is controlled by EDM.",
+        "@throws { BusinessError } 16000018 - Redirection to a third-party application is not allowed in API version greater than 11.",
+        "@throws { BusinessError } 16000019 - No matching ability is found.",
+        "@throws { BusinessError } 16000050 - Internal error.",
+        "@throws { BusinessError } 16000053 - The ability is not on the top of the UI.",
+        "@throws { BusinessError } 16000055 - Installation-free timed out.",
+        "@throws { BusinessError } 16000067 - The StartOptions check failed.",
+        "@throws { BusinessError } 16000068 - The ability is already running.",
+        "@throws { BusinessError } 16000071 - App clone is not supported.",
+        "@throws { BusinessError } 16000072 - App clone or multi-instance is not supported.",
+        "@throws { BusinessError } 16000073 - The app clone index is invalid.",
+        "@throws { BusinessError } 16000076 - The app instance key is invalid.",
+        "@throws { BusinessError } 16000077 - The number of app instances reaches the limit.",
+        "@throws { BusinessError } 16000078 - The multi-instance is not supported.",
+        "@throws { BusinessError } 16000079 - The APP_INSTANCE_KEY cannot be specified.",
+        "@throws { BusinessError } 16000080 - Creating a new instance is not supported.",
+        "@throws { BusinessError } 16200001 - The caller has been released.",
+        "@throws { BusinessError } 16300003 - The target application is not the current application.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@stagemodelonly",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 18"
+      ],
+      "层级": 1,
+      "上级": "UIAbilityContext",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "want",
+          "类型": "Want",
+          "必填": true,
+          "说明": "Indicates the ability to start."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "StartOptions } [options] - Indicates the start options."
+        }
+      ],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "The application does not have permission to call the interface."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types."
+        },
+        {
+          "code": "801",
+          "description": "Capability not support."
+        },
+        {
+          "code": "16000001",
+          "description": "The specified ability does not exist."
+        },
+        {
+          "code": "16000002",
+          "description": "Incorrect ability type."
+        },
+        {
+          "code": "16000004",
+          "description": "Cannot start an invisible component."
+        },
+        {
+          "code": "16000005",
+          "description": "The specified process does not have the permission."
+        },
+        {
+          "code": "16000006",
+          "description": "Cross-user operations are not allowed."
+        },
+        {
+          "code": "16000008",
+          "description": "The crowdtesting application expires."
+        },
+        {
+          "code": "16000009",
+          "description": "An ability cannot be started or stopped in Wukong mode."
+        },
+        {
+          "code": "16000010",
+          "description": "The call with the continuation and prepare continuation flag is forbidden."
+        },
+        {
+          "code": "16000011",
+          "description": "The context does not exist."
+        },
+        {
+          "code": "16000012",
+          "description": "The application is controlled."
+        },
+        {
+          "code": "16000013",
+          "description": "The application is controlled by EDM."
+        },
+        {
+          "code": "16000018",
+          "description": "Redirection to a third-party application is not allowed in API version greater than 11."
+        },
+        {
+          "code": "16000019",
+          "description": "No matching ability is found."
+        },
+        {
+          "code": "16000050",
+          "description": "Internal error."
+        },
+        {
+          "code": "16000053",
+          "description": "The ability is not on the top of the UI."
+        },
+        {
+          "code": "16000055",
+          "description": "Installation-free timed out."
+        },
+        {
+          "code": "16000067",
+          "description": "The StartOptions check failed."
+        },
+        {
+          "code": "16000068",
+          "description": "The ability is already running."
+        },
+        {
+          "code": "16000071",
+          "description": "App clone is not supported."
+        },
+        {
+          "code": "16000072",
+          "description": "App clone or multi-instance is not supported."
+        },
+        {
+          "code": "16000073",
+          "description": "The app clone index is invalid."
+        },
+        {
+          "code": "16000076",
+          "description": "The app instance key is invalid."
+        },
+        {
+          "code": "16000077",
+          "description": "The number of app instances reaches the limit."
+        },
+        {
+          "code": "16000078",
+          "description": "The multi-instance is not supported."
+        },
+        {
+          "code": "16000079",
+          "description": "The APP_INSTANCE_KEY cannot be specified."
+        },
+        {
+          "code": "16000080",
+          "description": "Creating a new instance is not supported."
+        },
+        {
+          "code": "16200001",
+          "description": "The caller has been released."
+        },
+        {
+          "code": "16300003",
+          "description": "The target application is not the current application."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "openLink",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Starts a new ability by implicit want. If the caller application is in foreground, you can use this method to start ability;If the caller application is in the background, you need to apply for permission:ohos.permission.START_ABILITIES_FROM_BACKGROUND. If the target ability is visible, you can start the target ability; If the target ability is invisible, you need to apply for permission:ohos.permission.START_INVISIBLE_ABILITY to start target invisible ability. If the target ability is in cross-device, you need to apply for permission:ohos.permission.DISTRIBUTED_DATASYNC. 2.Incorrect parameter types.",
+      "注释信息": [
+        "@param { string } link - Indicates the ability to start.",
+        "@param { OpenLinkOptions } [options] - Indicates the open link options.",
+        "@param { AsyncCallback<AbilityResult> } [callback] - The callback is used to return the ability result.",
+        "@returns { Promise<void> } The promise returned by the function.",
+        "@throws { BusinessError } 201 - The application does not have permission to call the interface.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1.Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 16000001 - The specified ability does not exist.",
+        "@throws { BusinessError } 16000002 - Incorrect ability type.",
+        "@throws { BusinessError } 16000004 - Cannot start an invisible component.",
+        "@throws { BusinessError } 16000005 - The specified process does not have the permission.",
+        "@throws { BusinessError } 16000006 - Cross-user operations are not allowed.",
+        "@throws { BusinessError } 16000008 - The crowdtesting application expires.",
+        "@throws { BusinessError } 16000009 - An ability cannot be started or stopped in Wukong mode.",
+        "@throws { BusinessError } 16000010 - The call with the continuation and prepare continuation flag is forbidden.",
+        "@throws { BusinessError } 16000011 - The context does not exist.",
+        "@throws { BusinessError } 16000012 - The application is controlled.",
+        "@throws { BusinessError } 16000013 - The application is controlled by EDM.",
+        "@throws { BusinessError } 16000019 - No matching ability is found.",
+        "@throws { BusinessError } 16200001 - The caller has been released.",
+        "@throws { BusinessError } 16000053 - The ability is not on the top of the UI.",
+        "@throws { BusinessError } 16000136 - The UIAbility is prohibited from launching itself via App Linking.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@stagemodelonly",
+        "@atomicservice",
+        "@since 23"
+      ],
+      "层级": 1,
+      "上级": "UIAbilityContext",
+      "since_version": "23",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "link",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates the ability to start."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "AsyncCallback<AbilityResult> } [callback] - The callback is used to return the ability result."
+        }
+      ],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "The application does not have permission to call the interface."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1.Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "16000001",
+          "description": "The specified ability does not exist."
+        },
+        {
+          "code": "16000002",
+          "description": "Incorrect ability type."
+        },
+        {
+          "code": "16000004",
+          "description": "Cannot start an invisible component."
+        },
+        {
+          "code": "16000005",
+          "description": "The specified process does not have the permission."
+        },
+        {
+          "code": "16000006",
+          "description": "Cross-user operations are not allowed."
+        },
+        {
+          "code": "16000008",
+          "description": "The crowdtesting application expires."
+        },
+        {
+          "code": "16000009",
+          "description": "An ability cannot be started or stopped in Wukong mode."
+        },
+        {
+          "code": "16000010",
+          "description": "The call with the continuation and prepare continuation flag is forbidden."
+        },
+        {
+          "code": "16000011",
+          "description": "The context does not exist."
+        },
+        {
+          "code": "16000012",
+          "description": "The application is controlled."
+        },
+        {
+          "code": "16000013",
+          "description": "The application is controlled by EDM."
+        },
+        {
+          "code": "16000019",
+          "description": "No matching ability is found."
+        },
+        {
+          "code": "16200001",
+          "description": "The caller has been released."
+        },
+        {
+          "code": "16000053",
+          "description": "The ability is not on the top of the UI."
+        },
+        {
+          "code": "16000136",
+          "description": "The UIAbility is prohibited from launching itself via App Linking."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "startAbilityByCall",
+      "返回值": "Promise<Caller>",
+      "所属模块": "未知模块",
+      "功能描述": "Get the caller object of the startup capability in cross-device. If the caller application is in foreground, you can use this method to start ability; If the caller application is in the background, you need to apply for permission:ohos.permission.START_ABILITIES_FROM_BACKGROUND. If the target ability is visible, you can start the target ability; If the target ability is invisible, you need to apply for permission:ohos.permission.START_INVISIBLE_ABILITY to start target invisible ability. If the target ability is in cross-device, you need to apply for permission:ohos.permission.DISTRIBUTED_DATASYNC. 2.Sending restart message to system service failed. 3.System service failed to communicate with dependency module. 4.Non-system applications are only allowed to call this interface across devices, not on the current device.",
+      "注释信息": [
+        "@permission ohos.permission.DISTRIBUTED_DATASYNC",
+        "@param { Want } want - Indicates the ability to start.",
+        "@returns { Promise<Caller> } Returns the Caller interface.",
+        "@throws { BusinessError } 201 - The application does not have permission to call the interface.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.",
+        "@throws { BusinessError } 16000001 - The specified ability does not exist.",
+        "@throws { BusinessError } 16000002 - Incorrect ability type.",
+        "@throws { BusinessError } 16000004 - Cannot start an invisible component.",
+        "@throws { BusinessError } 16000006 - Cross-user operations are not allowed.",
+        "@throws { BusinessError } 16000008 - The crowdtesting application expires.",
+        "@throws { BusinessError } 16000011 - The context does not exist.",
+        "@throws { BusinessError } 16000012 - The application is controlled.",
+        "@throws { BusinessError } 16000013 - The application is controlled by EDM.",
+        "@throws { BusinessError } 16000018 - Redirection to a third-party application is not allowed in API version greater than 11.",
+        "@throws { BusinessError } 16000050 - Internal error. Possible causes: 1.Connect to system service failed.",
+        "@throws { BusinessError } 16000071 - App clone is not supported.",
+        "@throws { BusinessError } 16000072 - App clone or multi-instance is not supported.",
+        "@throws { BusinessError } 16000073 - The app clone index is invalid.",
+        "@throws { BusinessError } 16000076 - The app instance key is invalid.",
+        "@throws { BusinessError } 16000077 - The number of app instances reaches the limit.",
+        "@throws { BusinessError } 16000078 - The multi-instance is not supported.",
+        "@throws { BusinessError } 16000079 - The APP_INSTANCE_KEY cannot be specified.",
+        "@throws { BusinessError } 16000080 - Creating a new instance is not supported.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@stagemodelonly",
+        "@since 14"
+      ],
+      "层级": 1,
+      "上级": "UIAbilityContext",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "want",
+          "类型": "Want",
+          "必填": true,
+          "说明": "Indicates the ability to start."
+        }
+      ],
+      "return_description": "Returns the Caller interface.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "The application does not have permission to call the interface."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types."
+        },
+        {
+          "code": "16000001",
+          "description": "The specified ability does not exist."
+        },
+        {
+          "code": "16000002",
+          "description": "Incorrect ability type."
+        },
+        {
+          "code": "16000004",
+          "description": "Cannot start an invisible component."
+        },
+        {
+          "code": "16000006",
+          "description": "Cross-user operations are not allowed."
+        },
+        {
+          "code": "16000008",
+          "description": "The crowdtesting application expires."
+        },
+        {
+          "code": "16000011",
+          "description": "The context does not exist."
+        },
+        {
+          "code": "16000012",
+          "description": "The application is controlled."
+        },
+        {
+          "code": "16000013",
+          "description": "The application is controlled by EDM."
+        },
+        {
+          "code": "16000018",
+          "description": "Redirection to a third-party application is not allowed in API version greater than 11."
+        },
+        {
+          "code": "16000050",
+          "description": "Internal error. Possible causes: 1.Connect to system service failed."
+        },
+        {
+          "code": "16000071",
+          "description": "App clone is not supported."
+        },
+        {
+          "code": "16000072",
+          "description": "App clone or multi-instance is not supported."
+        },
+        {
+          "code": "16000073",
+          "description": "The app clone index is invalid."
+        },
+        {
+          "code": "16000076",
+          "description": "The app instance key is invalid."
+        },
+        {
+          "code": "16000077",
+          "description": "The number of app instances reaches the limit."
+        },
+        {
+          "code": "16000078",
+          "description": "The multi-instance is not supported."
+        },
+        {
+          "code": "16000079",
+          "description": "The APP_INSTANCE_KEY cannot be specified."
+        },
+        {
+          "code": "16000080",
+          "description": "Creating a new instance is not supported."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "startAbilityForResult",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Starts an ability and returns the execution result when the ability is destroyed. If the caller application is in foreground, you can use this method to start ability; If the caller application is in the background, you need to apply for permission:ohos.permission.START_ABILITIES_FROM_BACKGROUND. If the target ability is visible, you can start the target ability; If the target ability is invisible, you need to apply for permission:ohos.permission.START_INVISIBLE_ABILITY to start target invisible ability. If the target ability is in cross-device, you need to apply for permission:ohos.permission.DISTRIBUTED_DATASYNC.",
+      "注释信息": [
+        "@param { Want } want - Indicates the ability to start.",
+        "@param { AsyncCallback<AbilityResult> } callback - The callback is used to return the result of startAbility.",
+        "@throws { BusinessError } 201 - The application does not have permission to call the interface.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.",
+        "@throws { BusinessError } 16000001 - The specified ability does not exist.",
+        "@throws { BusinessError } 16000002 - Incorrect ability type.",
+        "@throws { BusinessError } 16000004 - Cannot start an invisible component.",
+        "@throws { BusinessError } 16000005 - The specified process does not have the permission.",
+        "@throws { BusinessError } 16000006 - Cross-user operations are not allowed.",
+        "@throws { BusinessError } 16000008 - The crowdtesting application expires.",
+        "@throws { BusinessError } 16000009 - An ability cannot be started or stopped in Wukong mode.",
+        "@throws { BusinessError } 16000010 - The call with the continuation and prepare continuation flag is forbidden.",
+        "@throws { BusinessError } 16000011 - The context does not exist.",
+        "@throws { BusinessError } 16000012 - The application is controlled.",
+        "@throws { BusinessError } 16000013 - The application is controlled by EDM.",
+        "@throws { BusinessError } 16000018 - Redirection to a third-party application is not allowed in API version greater than 11.",
+        "@throws { BusinessError } 16000019 - No matching ability is found.",
+        "@throws { BusinessError } 16000050 - Internal error.",
+        "@throws { BusinessError } 16000053 - The ability is not on the top of the UI.",
+        "@throws { BusinessError } 16000055 - Installation-free timed out.",
+        "@throws { BusinessError } 16000071 - App clone is not supported.",
+        "@throws { BusinessError } 16000072 - App clone or multi-instance is not supported.",
+        "@throws { BusinessError } 16000073 - The app clone index is invalid.",
+        "@throws { BusinessError } 16000076 - The app instance key is invalid.",
+        "@throws { BusinessError } 16000077 - The number of app instances reaches the limit.",
+        "@throws { BusinessError } 16000078 - The multi-instance is not supported.",
+        "@throws { BusinessError } 16000079 - The APP_INSTANCE_KEY cannot be specified.",
+        "@throws { BusinessError } 16000080 - Creating a new instance is not supported.",
+        "@throws { BusinessError } 16200001 - The caller has been released.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@stagemodelonly",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 18"
+      ],
+      "层级": 1,
+      "上级": "UIAbilityContext",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "want",
+          "类型": "Want",
+          "必填": true,
+          "说明": "Indicates the ability to start."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<AbilityResult>",
+          "必填": true,
+          "说明": "The callback is used to return the result of startAbility."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "The application does not have permission to call the interface."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types."
+        },
+        {
+          "code": "16000001",
+          "description": "The specified ability does not exist."
+        },
+        {
+          "code": "16000002",
+          "description": "Incorrect ability type."
+        },
+        {
+          "code": "16000004",
+          "description": "Cannot start an invisible component."
+        },
+        {
+          "code": "16000005",
+          "description": "The specified process does not have the permission."
+        },
+        {
+          "code": "16000006",
+          "description": "Cross-user operations are not allowed."
+        },
+        {
+          "code": "16000008",
+          "description": "The crowdtesting application expires."
+        },
+        {
+          "code": "16000009",
+          "description": "An ability cannot be started or stopped in Wukong mode."
+        },
+        {
+          "code": "16000010",
+          "description": "The call with the continuation and prepare continuation flag is forbidden."
+        },
+        {
+          "code": "16000011",
+          "description": "The context does not exist."
+        },
+        {
+          "code": "16000012",
+          "description": "The application is controlled."
+        },
+        {
+          "code": "16000013",
+          "description": "The application is controlled by EDM."
+        },
+        {
+          "code": "16000018",
+          "description": "Redirection to a third-party application is not allowed in API version greater than 11."
+        },
+        {
+          "code": "16000019",
+          "description": "No matching ability is found."
+        },
+        {
+          "code": "16000050",
+          "description": "Internal error."
+        },
+        {
+          "code": "16000053",
+          "description": "The ability is not on the top of the UI."
+        },
+        {
+          "code": "16000055",
+          "description": "Installation-free timed out."
+        },
+        {
+          "code": "16000071",
+          "description": "App clone is not supported."
+        },
+        {
+          "code": "16000072",
+          "description": "App clone or multi-instance is not supported."
+        },
+        {
+          "code": "16000073",
+          "description": "The app clone index is invalid."
+        },
+        {
+          "code": "16000076",
+          "description": "The app instance key is invalid."
+        },
+        {
+          "code": "16000077",
+          "description": "The number of app instances reaches the limit."
+        },
+        {
+          "code": "16000078",
+          "description": "The multi-instance is not supported."
+        },
+        {
+          "code": "16000079",
+          "description": "The APP_INSTANCE_KEY cannot be specified."
+        },
+        {
+          "code": "16000080",
+          "description": "Creating a new instance is not supported."
+        },
+        {
+          "code": "16200001",
+          "description": "The caller has been released."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "startAbilityForResult",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Starts an ability and returns the execution result when the ability is destroyed. If the caller application is in foreground, you can use this method to start ability; If the caller application is in the background, you need to apply for permission:ohos.permission.START_ABILITIES_FROM_BACKGROUND. If the target ability is visible, you can start the target ability; If the target ability is invisible, you need to apply for permission:ohos.permission.START_INVISIBLE_ABILITY to start target invisible ability. If the target ability is in cross-device, you need to apply for permission:ohos.permission.DISTRIBUTED_DATASYNC.",
+      "注释信息": [
+        "@param { Want } want - Indicates the ability to start.",
+        "@param { StartOptions } options - Indicates the start options.",
+        "@param { AsyncCallback<AbilityResult> } callback - The callback is used to return the result of startAbility.",
+        "@throws { BusinessError } 201 - The application does not have permission to call the interface.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.",
+        "@throws { BusinessError } 16000001 - The specified ability does not exist.",
+        "@throws { BusinessError } 16000004 - Cannot start an invisible component.",
+        "@throws { BusinessError } 16000005 - The specified process does not have the permission.",
+        "@throws { BusinessError } 16000006 - Cross-user operations are not allowed.",
+        "@throws { BusinessError } 16000008 - The crowdtesting application expires.",
+        "@throws { BusinessError } 16000009 - An ability cannot be started or stopped in Wukong mode.",
+        "@throws { BusinessError } 16000011 - The context does not exist.",
+        "@throws { BusinessError } 16000012 - The application is controlled.",
+        "@throws { BusinessError } 16000013 - The application is controlled by EDM.",
+        "@throws { BusinessError } 16000018 - Redirection to a third-party application is not allowed in API version greater than 11.",
+        "@throws { BusinessError } 16000019 - No matching ability is found.",
+        "@throws { BusinessError } 16000050 - Internal error.",
+        "@throws { BusinessError } 16000053 - The ability is not on the top of the UI.",
+        "@throws { BusinessError } 16000055 - Installation-free timed out.",
+        "@throws { BusinessError } 16000071 - App clone is not supported.",
+        "@throws { BusinessError } 16000072 - App clone or multi-instance is not supported.",
+        "@throws { BusinessError } 16000073 - The app clone index is invalid.",
+        "@throws { BusinessError } 16000076 - The app instance key is invalid.",
+        "@throws { BusinessError } 16000077 - The number of app instances reaches the limit.",
+        "@throws { BusinessError } 16000078 - The multi-instance is not supported.",
+        "@throws { BusinessError } 16000079 - The APP_INSTANCE_KEY cannot be specified.",
+        "@throws { BusinessError } 16000080 - Creating a new instance is not supported.",
+        "@throws { BusinessError } 16200001 - The caller has been released.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@stagemodelonly",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 18"
+      ],
+      "层级": 1,
+      "上级": "UIAbilityContext",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "want",
+          "类型": "Want",
+          "必填": true,
+          "说明": "Indicates the ability to start."
+        },
+        {
+          "名称": "options",
+          "类型": "StartOptions",
+          "必填": true,
+          "说明": "Indicates the start options."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<AbilityResult>",
+          "必填": true,
+          "说明": "The callback is used to return the result of startAbility."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "The application does not have permission to call the interface."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types."
+        },
+        {
+          "code": "16000001",
+          "description": "The specified ability does not exist."
+        },
+        {
+          "code": "16000004",
+          "description": "Cannot start an invisible component."
+        },
+        {
+          "code": "16000005",
+          "description": "The specified process does not have the permission."
+        },
+        {
+          "code": "16000006",
+          "description": "Cross-user operations are not allowed."
+        },
+        {
+          "code": "16000008",
+          "description": "The crowdtesting application expires."
+        },
+        {
+          "code": "16000009",
+          "description": "An ability cannot be started or stopped in Wukong mode."
+        },
+        {
+          "code": "16000011",
+          "description": "The context does not exist."
+        },
+        {
+          "code": "16000012",
+          "description": "The application is controlled."
+        },
+        {
+          "code": "16000013",
+          "description": "The application is controlled by EDM."
+        },
+        {
+          "code": "16000018",
+          "description": "Redirection to a third-party application is not allowed in API version greater than 11."
+        },
+        {
+          "code": "16000019",
+          "description": "No matching ability is found."
+        },
+        {
+          "code": "16000050",
+          "description": "Internal error."
+        },
+        {
+          "code": "16000053",
+          "description": "The ability is not on the top of the UI."
+        },
+        {
+          "code": "16000055",
+          "description": "Installation-free timed out."
+        },
+        {
+          "code": "16000071",
+          "description": "App clone is not supported."
+        },
+        {
+          "code": "16000072",
+          "description": "App clone or multi-instance is not supported."
+        },
+        {
+          "code": "16000073",
+          "description": "The app clone index is invalid."
+        },
+        {
+          "code": "16000076",
+          "description": "The app instance key is invalid."
+        },
+        {
+          "code": "16000077",
+          "description": "The number of app instances reaches the limit."
+        },
+        {
+          "code": "16000078",
+          "description": "The multi-instance is not supported."
+        },
+        {
+          "code": "16000079",
+          "description": "The APP_INSTANCE_KEY cannot be specified."
+        },
+        {
+          "code": "16000080",
+          "description": "Creating a new instance is not supported."
+        },
+        {
+          "code": "16200001",
+          "description": "The caller has been released."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "startAbilityForResult",
+      "返回值": "Promise<AbilityResult>",
+      "所属模块": "未知模块",
+      "功能描述": "Starts an ability and returns the execution result when the ability is destroyed. If the caller application is in foreground, you can use this method to start ability; If the caller application is in the background, you need to apply for permission:ohos.permission.START_ABILITIES_FROM_BACKGROUND. If the target ability is visible, you can start the target ability; If the target ability is invisible, you need to apply for permission:ohos.permission.START_INVISIBLE_ABILITY to start target invisible ability. If the target ability is in cross-device, you need to apply for permission:ohos.permission.DISTRIBUTED_DATASYNC.",
+      "注释信息": [
+        "@param { Want } want - Indicates the ability to start.",
+        "@param { StartOptions } [options] - Indicates the start options.",
+        "@returns { Promise<AbilityResult> } Returns the result of startAbility.",
+        "@throws { BusinessError } 201 - The application does not have permission to call the interface.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.",
+        "@throws { BusinessError } 16000001 - The specified ability does not exist.",
+        "@throws { BusinessError } 16000002 - Incorrect ability type.",
+        "@throws { BusinessError } 16000004 - Cannot start an invisible component.",
+        "@throws { BusinessError } 16000005 - The specified process does not have the permission.",
+        "@throws { BusinessError } 16000006 - Cross-user operations are not allowed.",
+        "@throws { BusinessError } 16000008 - The crowdtesting application expires.",
+        "@throws { BusinessError } 16000009 - An ability cannot be started or stopped in Wukong mode.",
+        "@throws { BusinessError } 16000010 - The call with the continuation and prepare continuation flag is forbidden.",
+        "@throws { BusinessError } 16000011 - The context does not exist.",
+        "@throws { BusinessError } 16000012 - The application is controlled.",
+        "@throws { BusinessError } 16000013 - The application is controlled by EDM.",
+        "@throws { BusinessError } 16000018 - Redirection to a third-party application is not allowed in API version greater than 11.",
+        "@throws { BusinessError } 16000019 - No matching ability is found.",
+        "@throws { BusinessError } 16000050 - Internal error.",
+        "@throws { BusinessError } 16000053 - The ability is not on the top of the UI.",
+        "@throws { BusinessError } 16000055 - Installation-free timed out.",
+        "@throws { BusinessError } 16000071 - App clone is not supported.",
+        "@throws { BusinessError } 16000072 - App clone or multi-instance is not supported.",
+        "@throws { BusinessError } 16000073 - The app clone index is invalid.",
+        "@throws { BusinessError } 16000076 - The app instance key is invalid.",
+        "@throws { BusinessError } 16000077 - The number of app instances reaches the limit.",
+        "@throws { BusinessError } 16000078 - The multi-instance is not supported.",
+        "@throws { BusinessError } 16000079 - The APP_INSTANCE_KEY cannot be specified.",
+        "@throws { BusinessError } 16000080 - Creating a new instance is not supported.",
+        "@throws { BusinessError } 16200001 - The caller has been released.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@stagemodelonly",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 18"
+      ],
+      "层级": 1,
+      "上级": "UIAbilityContext",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "want",
+          "类型": "Want",
+          "必填": true,
+          "说明": "Indicates the ability to start."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "StartOptions } [options] - Indicates the start options."
+        }
+      ],
+      "return_description": "Returns the result of startAbility.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "The application does not have permission to call the interface."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types."
+        },
+        {
+          "code": "16000001",
+          "description": "The specified ability does not exist."
+        },
+        {
+          "code": "16000002",
+          "description": "Incorrect ability type."
+        },
+        {
+          "code": "16000004",
+          "description": "Cannot start an invisible component."
+        },
+        {
+          "code": "16000005",
+          "description": "The specified process does not have the permission."
+        },
+        {
+          "code": "16000006",
+          "description": "Cross-user operations are not allowed."
+        },
+        {
+          "code": "16000008",
+          "description": "The crowdtesting application expires."
+        },
+        {
+          "code": "16000009",
+          "description": "An ability cannot be started or stopped in Wukong mode."
+        },
+        {
+          "code": "16000010",
+          "description": "The call with the continuation and prepare continuation flag is forbidden."
+        },
+        {
+          "code": "16000011",
+          "description": "The context does not exist."
+        },
+        {
+          "code": "16000012",
+          "description": "The application is controlled."
+        },
+        {
+          "code": "16000013",
+          "description": "The application is controlled by EDM."
+        },
+        {
+          "code": "16000018",
+          "description": "Redirection to a third-party application is not allowed in API version greater than 11."
+        },
+        {
+          "code": "16000019",
+          "description": "No matching ability is found."
+        },
+        {
+          "code": "16000050",
+          "description": "Internal error."
+        },
+        {
+          "code": "16000053",
+          "description": "The ability is not on the top of the UI."
+        },
+        {
+          "code": "16000055",
+          "description": "Installation-free timed out."
+        },
+        {
+          "code": "16000071",
+          "description": "App clone is not supported."
+        },
+        {
+          "code": "16000072",
+          "description": "App clone or multi-instance is not supported."
+        },
+        {
+          "code": "16000073",
+          "description": "The app clone index is invalid."
+        },
+        {
+          "code": "16000076",
+          "description": "The app instance key is invalid."
+        },
+        {
+          "code": "16000077",
+          "description": "The number of app instances reaches the limit."
+        },
+        {
+          "code": "16000078",
+          "description": "The multi-instance is not supported."
+        },
+        {
+          "code": "16000079",
+          "description": "The APP_INSTANCE_KEY cannot be specified."
+        },
+        {
+          "code": "16000080",
+          "description": "Creating a new instance is not supported."
+        },
+        {
+          "code": "16200001",
+          "description": "The caller has been released."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "terminateSelf",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Destroys this Page ability.",
+      "注释信息": [
+        "@param { AsyncCallback<void> } callback - The callback of terminateSelf.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.",
+        "@throws { BusinessError } 16000009 - An ability cannot be started or stopped in Wukong mode.",
+        "@throws { BusinessError } 16000011 - The context does not exist.",
+        "@throws { BusinessError } 16000050 - Internal error.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@stagemodelonly",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "UIAbilityContext",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "The callback of terminateSelf."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types."
+        },
+        {
+          "code": "16000009",
+          "description": "An ability cannot be started or stopped in Wukong mode."
+        },
+        {
+          "code": "16000011",
+          "description": "The context does not exist."
+        },
+        {
+          "code": "16000050",
+          "description": "Internal error."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "terminateSelf",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Destroys this Page ability.",
+      "注释信息": [
+        "@returns { Promise<void> } The promise returned by the function.",
+        "@throws { BusinessError } 16000009 - An ability cannot be started or stopped in Wukong mode.",
+        "@throws { BusinessError } 16000011 - The context does not exist.",
+        "@throws { BusinessError } 16000050 - Internal error.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@stagemodelonly",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "UIAbilityContext",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "16000009",
+          "description": "An ability cannot be started or stopped in Wukong mode."
+        },
+        {
+          "code": "16000011",
+          "description": "The context does not exist."
+        },
+        {
+          "code": "16000050",
+          "description": "Internal error."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "terminateSelfWithResult",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Destroys the Page ability while returning the specified result code and data to the caller.",
+      "注释信息": [
+        "@param { AbilityResult } parameter - Indicates the result to return.",
+        "@param { AsyncCallback<void> } callback - The callback of terminateSelfWithResult.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.",
+        "@throws { BusinessError } 16000009 - An ability cannot be started or stopped in Wukong mode.",
+        "@throws { BusinessError } 16000011 - The context does not exist.",
+        "@throws { BusinessError } 16000050 - Internal error.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@stagemodelonly",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "UIAbilityContext",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "parameter",
+          "类型": "AbilityResult",
+          "必填": true,
+          "说明": "Indicates the result to return."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "The callback of terminateSelfWithResult."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types."
+        },
+        {
+          "code": "16000009",
+          "description": "An ability cannot be started or stopped in Wukong mode."
+        },
+        {
+          "code": "16000011",
+          "description": "The context does not exist."
+        },
+        {
+          "code": "16000050",
+          "description": "Internal error."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "terminateSelfWithResult",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Destroys the Page ability while returning the specified result code and data to the caller.",
+      "注释信息": [
+        "@param { AbilityResult } parameter - Indicates the result to return.",
+        "@returns { Promise<void> } The promise returned by the function.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.",
+        "@throws { BusinessError } 16000009 - An ability cannot be started or stopped in Wukong mode.",
+        "@throws { BusinessError } 16000011 - The context does not exist.",
+        "@throws { BusinessError } 16000050 - Internal error.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@stagemodelonly",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "UIAbilityContext",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "parameter",
+          "类型": "AbilityResult",
+          "必填": true,
+          "说明": "Indicates the result to return."
+        }
+      ],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types."
+        },
+        {
+          "code": "16000009",
+          "description": "An ability cannot be started or stopped in Wukong mode."
+        },
+        {
+          "code": "16000011",
+          "description": "The context does not exist."
+        },
+        {
+          "code": "16000050",
+          "description": "Internal error."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "backToCallerAbilityWithResult",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Return to caller application with specified result code and data while not destroying current ability. If the current application is in the background, you need to apply for permission:ohos.permission.START_ABILITIES_FROM_BACKGROUND.",
+      "注释信息": [
+        "@param { AbilityResult } abilityResult - Indicates the result to return.",
+        "@param { string } requestCode - Indicates the request code of caller ability.",
+        "@returns { Promise<void> } The promise returned by the function.",
+        "@throws { BusinessError } 201 - The application does not have permission to call the interface.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.",
+        "@throws { BusinessError } 16000009 - An ability cannot be started or stopped in Wukong mode.",
+        "@throws { BusinessError } 16000011 - The context does not exist.",
+        "@throws { BusinessError } 16000050 - Internal error.",
+        "@throws { BusinessError } 16000074 - The caller does not exist.",
+        "@throws { BusinessError } 16000075 - BackToCaller is not supported.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@stagemodelonly",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "UIAbilityContext",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "abilityResult",
+          "类型": "AbilityResult",
+          "必填": true,
+          "说明": "Indicates the result to return."
+        },
+        {
+          "名称": "requestCode",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates the request code of caller ability."
+        }
+      ],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "The application does not have permission to call the interface."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types."
+        },
+        {
+          "code": "16000009",
+          "description": "An ability cannot be started or stopped in Wukong mode."
+        },
+        {
+          "code": "16000011",
+          "description": "The context does not exist."
+        },
+        {
+          "code": "16000050",
+          "description": "Internal error."
+        },
+        {
+          "code": "16000074",
+          "description": "The caller does not exist."
+        },
+        {
+          "code": "16000075",
+          "description": "BackToCaller is not supported."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "connectServiceExtensionAbility",
+      "返回值": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Connects the current ability to an service extension ability. If the target service extension ability is visible, you can connect the target service extension ability; If the target service extension ability is invisible, you need to apply for permission:ohos.permission.START_INVISIBLE_ABILITY to connect target invisible service extension ability. If the target service extension ability is in cross-device, you need to apply for permission:ohos.permission.DISTRIBUTED_DATASYNC.",
+      "注释信息": [
+        "@param { Want } want - The element name of the service ability",
+        "@param { ConnectOptions } options - The remote object instance",
+        "@returns { number } Returns the number code of the ability connected",
+        "@throws { BusinessError } 201 - The application does not have permission to call the interface.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.",
+        "@throws { BusinessError } 16000001 - The specified ability does not exist.",
+        "@throws { BusinessError } 16000002 - Incorrect ability type.",
+        "@throws { BusinessError } 16000004 - Cannot start an invisible component.",
+        "@throws { BusinessError } 16000005 - The specified process does not have the permission.",
+        "@throws { BusinessError } 16000006 - Cross-user operations are not allowed.",
+        "@throws { BusinessError } 16000008 - The crowdtesting application expires.",
+        "@throws { BusinessError } 16000011 - The context does not exist.",
+        "@throws { BusinessError } 16000050 - Internal error.",
+        "@throws { BusinessError } 16000053 - The ability is not on the top of the UI.",
+        "@throws { BusinessError } 16000055 - Installation-free timed out.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@stagemodelonly",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "UIAbilityContext",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "want",
+          "类型": "Want",
+          "必填": true,
+          "说明": "The element name of the service ability"
+        },
+        {
+          "名称": "options",
+          "类型": "ConnectOptions",
+          "必填": true,
+          "说明": "The remote object instance"
+        }
+      ],
+      "return_description": "Returns the number code of the ability connected",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "The application does not have permission to call the interface."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types."
+        },
+        {
+          "code": "16000001",
+          "description": "The specified ability does not exist."
+        },
+        {
+          "code": "16000002",
+          "description": "Incorrect ability type."
+        },
+        {
+          "code": "16000004",
+          "description": "Cannot start an invisible component."
+        },
+        {
+          "code": "16000005",
+          "description": "The specified process does not have the permission."
+        },
+        {
+          "code": "16000006",
+          "description": "Cross-user operations are not allowed."
+        },
+        {
+          "code": "16000008",
+          "description": "The crowdtesting application expires."
+        },
+        {
+          "code": "16000011",
+          "description": "The context does not exist."
+        },
+        {
+          "code": "16000050",
+          "description": "Internal error."
+        },
+        {
+          "code": "16000053",
+          "description": "The ability is not on the top of the UI."
+        },
+        {
+          "code": "16000055",
+          "description": "Installation-free timed out."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "disconnectServiceExtensionAbility",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Disconnect an ability from a service extension, in contrast to {@link connectAbility}.",
+      "注释信息": [
+        "@param { number } connection - The number code of the ability connected",
+        "@param { AsyncCallback<void> } callback - The callback of disconnectAbility.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.",
+        "@throws { BusinessError } 16000011 - The context does not exist.",
+        "@throws { BusinessError } 16000050 - Internal error.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@stagemodelonly",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "UIAbilityContext",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "connection",
+          "类型": "number",
+          "必填": true,
+          "说明": "The number code of the ability connected"
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "The callback of disconnectAbility."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types."
+        },
+        {
+          "code": "16000011",
+          "description": "The context does not exist."
+        },
+        {
+          "code": "16000050",
+          "description": "Internal error."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "disconnectServiceExtensionAbility",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Disconnect an ability from a service extension, in contrast to {@link connectAbility}.",
+      "注释信息": [
+        "@param { number } connection - The number code of the ability connected",
+        "@returns { Promise<void> } The promise returned by the function.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.",
+        "@throws { BusinessError } 16000011 - The context does not exist.",
+        "@throws { BusinessError } 16000050 - Internal error.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@stagemodelonly",
+        "@since 9"
+      ],
+      "层级": 1,
+      "上级": "UIAbilityContext",
+      "since_version": "9",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "connection",
+          "类型": "number",
+          "必填": true,
+          "说明": "The number code of the ability connected"
+        }
+      ],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types."
+        },
+        {
+          "code": "16000011",
+          "description": "The context does not exist."
+        },
+        {
+          "code": "16000050",
+          "description": "Internal error."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "setMissionLabel",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Set mission label of current ability.",
+      "注释信息": [
+        "@param { string } label - The label of ability that showed in recent missions.",
+        "@param { AsyncCallback<void> } callback - The callback of setMissionLabel.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.",
+        "@throws { BusinessError } 16000011 - The context does not exist.",
+        "@throws { BusinessError } 16000050 - Internal error.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@stagemodelonly",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "UIAbilityContext",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "label",
+          "类型": "string",
+          "必填": true,
+          "说明": "The label of ability that showed in recent missions."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "The callback of setMissionLabel."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types."
+        },
+        {
+          "code": "16000011",
+          "description": "The context does not exist."
+        },
+        {
+          "code": "16000050",
+          "description": "Internal error."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "setMissionLabel",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Set mission label of current ability.",
+      "注释信息": [
+        "@param { string } label - The label of ability that showed in recent missions.",
+        "@returns { Promise<void> } The promise returned by the function.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.",
+        "@throws { BusinessError } 16000011 - The context does not exist.",
+        "@throws { BusinessError } 16000050 - Internal error.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@stagemodelonly",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "UIAbilityContext",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "label",
+          "类型": "string",
+          "必填": true,
+          "说明": "The label of ability that showed in recent missions."
+        }
+      ],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types."
+        },
+        {
+          "code": "16000011",
+          "description": "The context does not exist."
+        },
+        {
+          "code": "16000050",
+          "description": "Internal error."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "setMissionContinueState",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Set mission continue state of current ability.",
+      "注释信息": [
+        "@param { AbilityConstant.ContinueState } state - The mission continue state of current ability.",
+        "@param { AsyncCallback<void> } callback - The callback of setMissionContinueState.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.",
+        "@throws { BusinessError } 16000011 - The context does not exist.",
+        "@throws { BusinessError } 16000050 - Internal error.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@stagemodelonly",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "UIAbilityContext",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "state",
+          "类型": "AbilityConstant.ContinueState",
+          "必填": true,
+          "说明": "The mission continue state of current ability."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "The callback of setMissionContinueState."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types."
+        },
+        {
+          "code": "16000011",
+          "description": "The context does not exist."
+        },
+        {
+          "code": "16000050",
+          "description": "Internal error."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "setMissionContinueState",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Set mission continue state of current ability.",
+      "注释信息": [
+        "@param { AbilityConstant.ContinueState } state - The mission continue state of current ability.",
+        "@returns { Promise<void> } The promise returned by the function.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.",
+        "@throws { BusinessError } 16000011 - The context does not exist.",
+        "@throws { BusinessError } 16000050 - Internal error.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@stagemodelonly",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "UIAbilityContext",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "state",
+          "类型": "AbilityConstant.ContinueState",
+          "必填": true,
+          "说明": "The mission continue state of current ability."
+        }
+      ],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types."
+        },
+        {
+          "code": "16000011",
+          "description": "The context does not exist."
+        },
+        {
+          "code": "16000050",
+          "description": "Internal error."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "restoreWindowStage",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Restore window stage data in ability continuation",
+      "注释信息": [
+        "@param { LocalStorage } localStorage - the storage data used to restore window stage",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.",
+        "@throws { BusinessError } 16000011 - The context does not exist.",
+        "@throws { BusinessError } 16000050 - Internal error.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@stagemodelonly",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "UIAbilityContext",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "localStorage",
+          "类型": "LocalStorage",
+          "必填": true,
+          "说明": "the storage data used to restore window stage"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types."
+        },
+        {
+          "code": "16000011",
+          "description": "The context does not exist."
+        },
+        {
+          "code": "16000050",
+          "description": "Internal error."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "isTerminating",
+      "返回值": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Check to see ability is in terminating state.",
+      "注释信息": [
+        "@returns { boolean } Returns true when ability is in terminating state, else returns false.",
+        "@throws { BusinessError } 16000011 - The context does not exist.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@stagemodelonly",
+        "@atomicservice",
+        "@since 11"
+      ],
+      "层级": 1,
+      "上级": "UIAbilityContext",
+      "since_version": "11",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [],
+      "return_description": "Returns true when ability is in terminating state, else returns false.",
+      "error_codes": [
+        {
+          "code": "16000011",
+          "description": "The context does not exist."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "requestDialogService",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Starts a service extension ability that supports modal dialog. If the caller application is in foreground, you can use this method to start service extension ability; If the caller application is in the background, you need to apply for permission:ohos.permission.START_ABILITIES_FROM_BACKGROUND. If the target service extension ability is visible, you can start the target service extension ability; If the target service extension ability is invisible, you need to apply for permission:ohos.permission.START_INVISIBLE_ABILITY to start target invisible service extension ability.",
+      "注释信息": [
+        "@param { Want } want - Indicates the dialog service to start.",
+        "@param { AsyncCallback<dialogRequest.RequestResult> } result - The callback is used to return the request result.",
+        "@throws { BusinessError } 201 - The application does not have permission to call the interface.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.",
+        "@throws { BusinessError } 16000001 - The specified ability does not exist.",
+        "@throws { BusinessError } 16000002 - Incorrect ability type.",
+        "@throws { BusinessError } 16000004 - Cannot start an invisible component.",
+        "@throws { BusinessError } 16000005 - The specified process does not have the permission.",
+        "@throws { BusinessError } 16000006 - Cross-user operations are not allowed.",
+        "@throws { BusinessError } 16000008 - The crowdtesting application expires.",
+        "@throws { BusinessError } 16000009 - An ability cannot be started or stopped in Wukong mode.",
+        "@throws { BusinessError } 16000010 - The call with the continuation and prepare continuation flag is forbidden.",
+        "@throws { BusinessError } 16000011 - The context does not exist.",
+        "@throws { BusinessError } 16000012 - The application is controlled.",
+        "@throws { BusinessError } 16000013 - The application is controlled by EDM.",
+        "@throws { BusinessError } 16000050 - Internal error.",
+        "@throws { BusinessError } 16000053 - The ability is not on the top of the UI.",
+        "@throws { BusinessError } 16000055 - Installation-free timed out.",
+        "@throws { BusinessError } 16200001 - The caller has been released.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@stagemodelonly",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "UIAbilityContext",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "want",
+          "类型": "Want",
+          "必填": true,
+          "说明": "Indicates the dialog service to start."
+        },
+        {
+          "名称": "result",
+          "类型": "AsyncCallback<dialogRequest.RequestResult>",
+          "必填": true,
+          "说明": "The callback is used to return the request result."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "The application does not have permission to call the interface."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types."
+        },
+        {
+          "code": "16000001",
+          "description": "The specified ability does not exist."
+        },
+        {
+          "code": "16000002",
+          "description": "Incorrect ability type."
+        },
+        {
+          "code": "16000004",
+          "description": "Cannot start an invisible component."
+        },
+        {
+          "code": "16000005",
+          "description": "The specified process does not have the permission."
+        },
+        {
+          "code": "16000006",
+          "description": "Cross-user operations are not allowed."
+        },
+        {
+          "code": "16000008",
+          "description": "The crowdtesting application expires."
+        },
+        {
+          "code": "16000009",
+          "description": "An ability cannot be started or stopped in Wukong mode."
+        },
+        {
+          "code": "16000010",
+          "description": "The call with the continuation and prepare continuation flag is forbidden."
+        },
+        {
+          "code": "16000011",
+          "description": "The context does not exist."
+        },
+        {
+          "code": "16000012",
+          "description": "The application is controlled."
+        },
+        {
+          "code": "16000013",
+          "description": "The application is controlled by EDM."
+        },
+        {
+          "code": "16000050",
+          "description": "Internal error."
+        },
+        {
+          "code": "16000053",
+          "description": "The ability is not on the top of the UI."
+        },
+        {
+          "code": "16000055",
+          "description": "Installation-free timed out."
+        },
+        {
+          "code": "16200001",
+          "description": "The caller has been released."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "requestDialogService",
+      "返回值": "Promise<dialogRequest.RequestResult>",
+      "所属模块": "未知模块",
+      "功能描述": "Starts a service extension ability that supports modal dialog. If the caller application is in foreground, you can use this method to start service extension ability; If the caller application is in the background, you need to apply for permission:ohos.permission.START_ABILITIES_FROM_BACKGROUND. If the target service extension ability is visible, you can start the target service extension ability; If the target service extension ability is invisible, you need to apply for permission:ohos.permission.START_INVISIBLE_ABILITY to start target invisible service extension ability.",
+      "注释信息": [
+        "@param { Want } want - Indicates the dialog service to start.",
+        "@returns { Promise<dialogRequest.RequestResult> } Returns the request result.",
+        "@throws { BusinessError } 201 - The application does not have permission to call the interface.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.",
+        "@throws { BusinessError } 16000001 - The specified ability does not exist.",
+        "@throws { BusinessError } 16000002 - Incorrect ability type.",
+        "@throws { BusinessError } 16000004 - Cannot start an invisible component.",
+        "@throws { BusinessError } 16000005 - The specified process does not have the permission.",
+        "@throws { BusinessError } 16000006 - Cross-user operations are not allowed.",
+        "@throws { BusinessError } 16000008 - The crowdtesting application expires.",
+        "@throws { BusinessError } 16000009 - An ability cannot be started or stopped in Wukong mode.",
+        "@throws { BusinessError } 16000010 - The call with the continuation and prepare continuation flag is forbidden.",
+        "@throws { BusinessError } 16000011 - The context does not exist.",
+        "@throws { BusinessError } 16000012 - The application is controlled.",
+        "@throws { BusinessError } 16000013 - The application is controlled by EDM.",
+        "@throws { BusinessError } 16000050 - Internal error.",
+        "@throws { BusinessError } 16000053 - The ability is not on the top of the UI.",
+        "@throws { BusinessError } 16000055 - Installation-free timed out.",
+        "@throws { BusinessError } 16200001 - The caller has been released.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@stagemodelonly",
+        "@since 10"
+      ],
+      "层级": 1,
+      "上级": "UIAbilityContext",
+      "since_version": "10",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "want",
+          "类型": "Want",
+          "必填": true,
+          "说明": "Indicates the dialog service to start."
+        }
+      ],
+      "return_description": "Returns the request result.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "The application does not have permission to call the interface."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types."
+        },
+        {
+          "code": "16000001",
+          "description": "The specified ability does not exist."
+        },
+        {
+          "code": "16000002",
+          "description": "Incorrect ability type."
+        },
+        {
+          "code": "16000004",
+          "description": "Cannot start an invisible component."
+        },
+        {
+          "code": "16000005",
+          "description": "The specified process does not have the permission."
+        },
+        {
+          "code": "16000006",
+          "description": "Cross-user operations are not allowed."
+        },
+        {
+          "code": "16000008",
+          "description": "The crowdtesting application expires."
+        },
+        {
+          "code": "16000009",
+          "description": "An ability cannot be started or stopped in Wukong mode."
+        },
+        {
+          "code": "16000010",
+          "description": "The call with the continuation and prepare continuation flag is forbidden."
+        },
+        {
+          "code": "16000011",
+          "description": "The context does not exist."
+        },
+        {
+          "code": "16000012",
+          "description": "The application is controlled."
+        },
+        {
+          "code": "16000013",
+          "description": "The application is controlled by EDM."
+        },
+        {
+          "code": "16000050",
+          "description": "Internal error."
+        },
+        {
+          "code": "16000053",
+          "description": "The ability is not on the top of the UI."
+        },
+        {
+          "code": "16000055",
+          "description": "Installation-free timed out."
+        },
+        {
+          "code": "16200001",
+          "description": "The caller has been released."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "reportDrawnCompleted",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Report to system when the ability is drawn completed.",
+      "注释信息": [
+        "@param { AsyncCallback<void> } callback - The callback of startAbility.",
+        "@throws { BusinessError } 16000011 - The context does not exist.",
+        "@throws { BusinessError } 16000050 - Internal error.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@stagemodelonly",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "UIAbilityContext",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "The callback of startAbility."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "16000011",
+          "description": "The context does not exist."
+        },
+        {
+          "code": "16000050",
+          "description": "Internal error."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "startAbilityByType",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Starts the UIAbility or UIExtensionAbility by type. If the caller application is in the background, it is not allowed to call this interface. <br>2.Incorrect parameter types.",
+      "注释信息": [
+        "@param { string } type - The type of target ability.",
+        "@param { Record<string, Object> } wantParam - Indicates the want parameter.",
+        "@param { AbilityStartCallback } abilityStartCallback - Indicates the abilityStartCallback.",
+        "@param { AsyncCallback<void> } callback - The callback of startAbility.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1.Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 16000050 - Internal error.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@stagemodelonly",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "UIAbilityContext",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "string",
+          "必填": true,
+          "说明": "The type of target ability."
+        },
+        {
+          "名称": "wantParam",
+          "类型": "Record<string, Object>",
+          "必填": true,
+          "说明": "Indicates the want parameter."
+        },
+        {
+          "名称": "abilityStartCallback",
+          "类型": "AbilityStartCallback",
+          "必填": true,
+          "说明": "Indicates the abilityStartCallback."
+        },
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<void>",
+          "必填": true,
+          "说明": "The callback of startAbility."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1.Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "16000050",
+          "description": "Internal error."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "startAbilityByType",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Starts the UIAbility or UIExtensionAbility by type. If the caller application is in the background, it is not allowed to call this interface. <br>2.Incorrect parameter types.",
+      "注释信息": [
+        "@param { string } type - The type of target ability.",
+        "@param { Record<string, Object> } wantParam - Indicates the want parameter.",
+        "@param { AbilityStartCallback } abilityStartCallback - Indicates the abilityStartCallback.",
+        "@returns { Promise<void> } The promise returned by the function.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1.Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 16000050 - Internal error.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@stagemodelonly",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "UIAbilityContext",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "string",
+          "必填": true,
+          "说明": "The type of target ability."
+        },
+        {
+          "名称": "wantParam",
+          "类型": "Record<string, Object>",
+          "必填": true,
+          "说明": "Indicates the want parameter."
+        },
+        {
+          "名称": "abilityStartCallback",
+          "类型": "AbilityStartCallback",
+          "必填": true,
+          "说明": "Indicates the abilityStartCallback."
+        }
+      ],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1.Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "16000050",
+          "description": "Internal error."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "openAtomicService",
+      "返回值": "Promise<AbilityResult>",
+      "所属模块": "未知模块",
+      "功能描述": "Full-screen pop-us startup atomic service.",
+      "注释信息": [
+        "@param { string } appId - Globally unique identifier of an application, which is allocated by the cloud.",
+        "@param { AtomicServiceOptions } [options] - Indicates the atomic service start options.",
+        "@returns { Promise<AbilityResult> } Returns the result of openAtomicService.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types.",
+        "@throws { BusinessError } 16000002 - Incorrect ability type.",
+        "@throws { BusinessError } 16000003 - The specified ID does not exist.",
+        "@throws { BusinessError } 16000004 - Cannot start an invisible component.",
+        "@throws { BusinessError } 16000011 - The context does not exist.",
+        "@throws { BusinessError } 16000012 - The application is controlled.",
+        "@throws { BusinessError } 16000050 - Internal error.",
+        "@throws { BusinessError } 16000053 - The ability is not on the top of the UI.",
+        "@throws { BusinessError } 16000055 - Installation-free timed out.",
+        "@throws { BusinessError } 16200001 - The caller has been released.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@stagemodelonly",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "UIAbilityContext",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "appId",
+          "类型": "string",
+          "必填": true,
+          "说明": "Globally unique identifier of an application, which is allocated by the cloud."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "AtomicServiceOptions } [options] - Indicates the atomic service start options."
+        }
+      ],
+      "return_description": "Returns the result of openAtomicService.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1.Mandatory parameters are left unspecified. 2.Incorrect parameter types."
+        },
+        {
+          "code": "16000002",
+          "description": "Incorrect ability type."
+        },
+        {
+          "code": "16000003",
+          "description": "The specified ID does not exist."
+        },
+        {
+          "code": "16000004",
+          "description": "Cannot start an invisible component."
+        },
+        {
+          "code": "16000011",
+          "description": "The context does not exist."
+        },
+        {
+          "code": "16000012",
+          "description": "The application is controlled."
+        },
+        {
+          "code": "16000050",
+          "description": "Internal error."
+        },
+        {
+          "code": "16000053",
+          "description": "The ability is not on the top of the UI."
+        },
+        {
+          "code": "16000055",
+          "description": "Installation-free timed out."
+        },
+        {
+          "code": "16200001",
+          "description": "The caller has been released."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "moveAbilityToBackground",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Move current ability to background.",
+      "注释信息": [
+        "@returns { Promise<void> } Returns the result of moveAbilityToBackground.",
+        "@throws { BusinessError } 16000011 - The context does not exist.",
+        "@throws { BusinessError } 16000050 - Internal error.",
+        "@throws { BusinessError } 16000061 - Operation not supported.",
+        "@throws { BusinessError } 16000065 - The API can be called only when the ability is running in the foreground.",
+        "@throws { BusinessError } 16000066 - An ability cannot switch to the foreground or background in Wukong mode.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@stagemodelonly",
+        "@atomicservice",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "UIAbilityContext",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [],
+      "return_description": "Returns the result of moveAbilityToBackground.",
+      "error_codes": [
+        {
+          "code": "16000011",
+          "description": "The context does not exist."
+        },
+        {
+          "code": "16000050",
+          "description": "Internal error."
+        },
+        {
+          "code": "16000061",
+          "description": "Operation not supported."
+        },
+        {
+          "code": "16000065",
+          "description": "The API can be called only when the ability is running in the foreground."
+        },
+        {
+          "code": "16000066",
+          "description": "An ability cannot switch to the foreground or background in Wukong mode."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "showAbility",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Show current ability. The ability needs to be started by UIAbilityContext.startAbility with input parameter options.processMode setting to NEW_PROCESS_ATTACH_TO_STATUS_BAR_ITEM or ATTACH_TO_STATUS_BAR_ITEM.",
+      "注释信息": [
+        "@returns { Promise<void> } The promise returned by the function.",
+        "@throws { BusinessError } 801 - Capability not support.",
+        "@throws { BusinessError } 16000050 - Internal error.",
+        "@throws { BusinessError } 16000067 - The StartOptions check failed.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@stagemodelonly",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "UIAbilityContext",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "801",
+          "description": "Capability not support."
+        },
+        {
+          "code": "16000050",
+          "description": "Internal error."
+        },
+        {
+          "code": "16000067",
+          "description": "The StartOptions check failed."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "hideAbility",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Hide current ability. The ability needs to be started by UIAbilityContext.startAbility with input parameter options.processMode setting to NEW_PROCESS_ATTACH_TO_STATUS_BAR_ITEM or ATTACH_TO_STATUS_BAR_ITEM.",
+      "注释信息": [
+        "@returns { Promise<void> } The promise returned by the function.",
+        "@throws { BusinessError } 801 - Capability not support.",
+        "@throws { BusinessError } 16000050 - Internal error.",
+        "@throws { BusinessError } 16000067 - The StartOptions check failed.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@stagemodelonly",
+        "@since 12"
+      ],
+      "层级": 1,
+      "上级": "UIAbilityContext",
+      "since_version": "12",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "801",
+          "description": "Capability not support."
+        },
+        {
+          "code": "16000050",
+          "description": "Internal error."
+        },
+        {
+          "code": "16000067",
+          "description": "The StartOptions check failed."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "setRestoreEnabled",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Set whether restoration is enabled when the UIAbility is switched back from the background. back from the background.",
+      "注释信息": [
+        "@param { boolean } enabled - The flag that indicates whether restoration is enabled when the UIAbility is switched",
+        "@throws { BusinessError } 401 - If the input parameter is not valid parameter.",
+        "@throws { BusinessError } 16000011 - The context does not exist.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@stagemodelonly",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 1,
+      "上级": "UIAbilityContext",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "enabled",
+          "类型": "boolean",
+          "必填": true,
+          "说明": "The flag that indicates whether restoration is enabled when the UIAbility is switched"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "If the input parameter is not valid parameter."
+        },
+        {
+          "code": "16000011",
+          "description": "The context does not exist."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "startUIServiceExtensionAbility",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Starts a UI service extension ability. If the target UI service extension ability is visible, you can start the target UI service extension ability; If the target UI service extension ability is invisible, you need to apply for permission:ohos.permission.START_INVISIBLE_ABILITY to start target invisible UI service extension ability. 2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { Want } want - Indicates the want info to start.",
+        "@returns { Promise<void> } The promise returned by the function.",
+        "@throws { BusinessError } 201 - The application does not have permission to call the interface.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 16000001 - The specified ability does not exist.",
+        "@throws { BusinessError } 16000002 - Incorrect ability type.",
+        "@throws { BusinessError } 16000004 - Cannot start an invisible component.",
+        "@throws { BusinessError } 16000005 - The specified process does not have the permission.",
+        "@throws { BusinessError } 16000008 - The crowdtesting application expires.",
+        "@throws { BusinessError } 16000011 - The context does not exist.",
+        "@throws { BusinessError } 16000012 - The application is controlled.",
+        "@throws { BusinessError } 16000013 - The application is controlled by EDM.",
+        "@throws { BusinessError } 16000019 - No matching ability is found.",
+        "@throws { BusinessError } 16000050 - Internal error.",
+        "@throws { BusinessError } 16200001 - The caller has been released.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@stagemodelonly",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 1,
+      "上级": "UIAbilityContext",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "want",
+          "类型": "Want",
+          "必填": true,
+          "说明": "Indicates the want info to start."
+        }
+      ],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "The application does not have permission to call the interface."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "16000001",
+          "description": "The specified ability does not exist."
+        },
+        {
+          "code": "16000002",
+          "description": "Incorrect ability type."
+        },
+        {
+          "code": "16000004",
+          "description": "Cannot start an invisible component."
+        },
+        {
+          "code": "16000005",
+          "description": "The specified process does not have the permission."
+        },
+        {
+          "code": "16000008",
+          "description": "The crowdtesting application expires."
+        },
+        {
+          "code": "16000011",
+          "description": "The context does not exist."
+        },
+        {
+          "code": "16000012",
+          "description": "The application is controlled."
+        },
+        {
+          "code": "16000013",
+          "description": "The application is controlled by EDM."
+        },
+        {
+          "code": "16000019",
+          "description": "No matching ability is found."
+        },
+        {
+          "code": "16000050",
+          "description": "Internal error."
+        },
+        {
+          "code": "16200001",
+          "description": "The caller has been released."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "connectUIServiceExtensionAbility",
+      "返回值": "Promise<UIServiceProxy>",
+      "所属模块": "未知模块",
+      "功能描述": "Connects to a UI service extension ability. If the target UI service extension ability is visible, you can connect the target UI service extension ability; If the target UI service extension ability is invisible, you need to apply for permission:ohos.permission.START_INVISIBLE_ABILITY to connect target invisible UI service extension ability. 2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { Want } want - Indicates the want info to connect.",
+        "@param { UIServiceExtensionConnectCallback } callback - The callback of connection.",
+        "@returns { Promise<UIServiceProxy> } The promise to get UIServiceProxy.",
+        "@throws { BusinessError } 201 - The application does not have permission to call the interface.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 16000001 - The specified ability does not exist.",
+        "@throws { BusinessError } 16000002 - Incorrect ability type.",
+        "@throws { BusinessError } 16000004 - Cannot start an invisible component.",
+        "@throws { BusinessError } 16000005 - The specified process does not have the permission.",
+        "@throws { BusinessError } 16000008 - The crowdtesting application expires.",
+        "@throws { BusinessError } 16000011 - The context does not exist.",
+        "@throws { BusinessError } 16000013 - The application is controlled by EDM.",
+        "@throws { BusinessError } 16000050 - Internal error.",
+        "@throws { BusinessError } 16000055 - Installation-free timed out.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@stagemodelonly",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 1,
+      "上级": "UIAbilityContext",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "want",
+          "类型": "Want",
+          "必填": true,
+          "说明": "Indicates the want info to connect."
+        },
+        {
+          "名称": "callback",
+          "类型": "UIServiceExtensionConnectCallback",
+          "必填": true,
+          "说明": "The callback of connection."
+        }
+      ],
+      "return_description": "The promise to get UIServiceProxy.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "The application does not have permission to call the interface."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "16000001",
+          "description": "The specified ability does not exist."
+        },
+        {
+          "code": "16000002",
+          "description": "Incorrect ability type."
+        },
+        {
+          "code": "16000004",
+          "description": "Cannot start an invisible component."
+        },
+        {
+          "code": "16000005",
+          "description": "The specified process does not have the permission."
+        },
+        {
+          "code": "16000008",
+          "description": "The crowdtesting application expires."
+        },
+        {
+          "code": "16000011",
+          "description": "The context does not exist."
+        },
+        {
+          "code": "16000013",
+          "description": "The application is controlled by EDM."
+        },
+        {
+          "code": "16000050",
+          "description": "Internal error."
+        },
+        {
+          "code": "16000055",
+          "description": "Installation-free timed out."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "disconnectUIServiceExtensionAbility",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Disconnects from a UI service extension, in contrast to {@link connectUIServiceExtensionAbility}. 2. Incorrect parameter types; 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { UIServiceProxy } proxy - The UI service proxy return by connectUIServiceExtensionAbility.",
+        "@returns { Promise<void> } The promise returned by the function.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;",
+        "@throws { BusinessError } 16000011 - The context does not exist.",
+        "@throws { BusinessError } 16000050 - Internal error.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@stagemodelonly",
+        "@atomicservice",
+        "@since 14"
+      ],
+      "层级": 1,
+      "上级": "UIAbilityContext",
+      "since_version": "14",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "proxy",
+          "类型": "UIServiceProxy",
+          "必填": true,
+          "说明": "The UI service proxy return by connectUIServiceExtensionAbility."
+        }
+      ],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;"
+        },
+        {
+          "code": "16000011",
+          "description": "The context does not exist."
+        },
+        {
+          "code": "16000050",
+          "description": "Internal error."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "setAbilityInstanceInfo",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Set label and icon for current ability instance. You need to apply for permission:ohos.permission.SET_ABILITY_INSTANCE_INFO to call this function. 2.Incorrect parameter types. 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.SET_ABILITY_INSTANCE_INFO",
+        "@param { string } label - The label of ability to be displayed in the Task Center and shortcut bar.",
+        "@param { image.PixelMap } icon - The icon of ability to be displayed in the Task Center and shortcut bar.",
+        "@returns { Promise<void> } The promise returned by the function.",
+        "@throws { BusinessError } 201 - The application does not have permission to call the interface.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1.Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 16000011 - The context does not exist.",
+        "@throws { BusinessError } 16000050 - Internal error.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@stagemodelonly",
+        "@since 15"
+      ],
+      "层级": 1,
+      "上级": "UIAbilityContext",
+      "since_version": "15",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "label",
+          "类型": "string",
+          "必填": true,
+          "说明": "The label of ability to be displayed in the Task Center and shortcut bar."
+        },
+        {
+          "名称": "icon",
+          "类型": "image.PixelMap",
+          "必填": true,
+          "说明": "The icon of ability to be displayed in the Task Center and shortcut bar."
+        }
+      ],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "The application does not have permission to call the interface."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1.Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "16000011",
+          "description": "The context does not exist."
+        },
+        {
+          "code": "16000050",
+          "description": "Internal error."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "revokeDelegator",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Revoke delegator.",
+      "注释信息": [
+        "@returns { Promise<void> } The promise returned by the function.",
+        "@throws { BusinessError } 801 - Capability not support.",
+        "@throws { BusinessError } 16000011 - The context does not exist.",
+        "@throws { BusinessError } 16000050 - Internal error.",
+        "@throws { BusinessError } 16000065 - The API can be called only when the ability is running in the foreground.",
+        "@throws { BusinessError } 16000084 - Only DelegatorAbility is allowed to call this API, and only once.",
+        "@throws { BusinessError } 16000085 - An error occurred during the interaction between the ability and window.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@stagemodelonly",
+        "@since 17"
+      ],
+      "层级": 1,
+      "上级": "UIAbilityContext",
+      "since_version": "17",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "801",
+          "description": "Capability not support."
+        },
+        {
+          "code": "16000011",
+          "description": "The context does not exist."
+        },
+        {
+          "code": "16000050",
+          "description": "Internal error."
+        },
+        {
+          "code": "16000065",
+          "description": "The API can be called only when the ability is running in the foreground."
+        },
+        {
+          "code": "16000084",
+          "description": "Only DelegatorAbility is allowed to call this API, and only once."
+        },
+        {
+          "code": "16000085",
+          "description": "An error occurred during the interaction between the ability and window."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "setColorMode",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Set colorMode of uiability.",
+      "注释信息": [
+        "@param { ConfigurationConstant.ColorMode } colorMode - Color mode.",
+        "@throws { BusinessError } 16000011 - The context does not exist.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@stagemodelonly",
+        "@atomicservice",
+        "@since 18"
+      ],
+      "层级": 1,
+      "上级": "UIAbilityContext",
+      "since_version": "18",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "colorMode",
+          "类型": "ConfigurationConstant.ColorMode",
+          "必填": true,
+          "说明": "Color mode."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "16000011",
+          "description": "The context does not exist."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "startAppServiceExtensionAbility",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Starts a new app service extension ability. If the target app service extension ability is invisible, you need to apply for permission:ohos.permission.START_INVISIBLE_ABILITY to start target invisible app service extension ability.",
+      "注释信息": [
+        "@param { Want } want - Indicates the want info to start.",
+        "@returns { Promise<void> } The promise returned by the function.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 16000001 - The specified ability does not exist.",
+        "@throws { BusinessError } 16000002 - Incorrect ability type.",
+        "@throws { BusinessError } 16000004 - Cannot start an invisible component.",
+        "@throws { BusinessError } 16000005 - The specified process does not have the permission.",
+        "@throws { BusinessError } 16000006 - Cross-user operations are not allowed.",
+        "@throws { BusinessError } 16000008 - The crowdtesting application expires.",
+        "@throws { BusinessError } 16000011 - The context does not exist.",
+        "@throws { BusinessError } 16000012 - The application is controlled.",
+        "@throws { BusinessError } 16000013 - The application is controlled by EDM.",
+        "@throws { BusinessError } 16000019 - No matching ability is found.",
+        "@throws { BusinessError } 16000050 - Internal error.",
+        "@throws { BusinessError } 16000200 - The caller is not in the appIdentifierAllowList of the target application.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@stagemodelonly",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "UIAbilityContext",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "want",
+          "类型": "Want",
+          "必填": true,
+          "说明": "Indicates the want info to start."
+        }
+      ],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "16000001",
+          "description": "The specified ability does not exist."
+        },
+        {
+          "code": "16000002",
+          "description": "Incorrect ability type."
+        },
+        {
+          "code": "16000004",
+          "description": "Cannot start an invisible component."
+        },
+        {
+          "code": "16000005",
+          "description": "The specified process does not have the permission."
+        },
+        {
+          "code": "16000006",
+          "description": "Cross-user operations are not allowed."
+        },
+        {
+          "code": "16000008",
+          "description": "The crowdtesting application expires."
+        },
+        {
+          "code": "16000011",
+          "description": "The context does not exist."
+        },
+        {
+          "code": "16000012",
+          "description": "The application is controlled."
+        },
+        {
+          "code": "16000013",
+          "description": "The application is controlled by EDM."
+        },
+        {
+          "code": "16000019",
+          "description": "No matching ability is found."
+        },
+        {
+          "code": "16000050",
+          "description": "Internal error."
+        },
+        {
+          "code": "16000200",
+          "description": "The caller is not in the appIdentifierAllowList of the target application."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "stopAppServiceExtensionAbility",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Stops an app service extension ability. If the target app service extension ability is invisible, you need to apply for permission:ohos.permission.START_INVISIBLE_ABILITY to stop target invisible app service extension ability.",
+      "注释信息": [
+        "@param { Want } want - Indicates the want info to start.",
+        "@returns { Promise<void> } The promise returned by the function.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 16000001 - The specified ability does not exist.",
+        "@throws { BusinessError } 16000002 - Incorrect ability type.",
+        "@throws { BusinessError } 16000004 - Cannot start an invisible component.",
+        "@throws { BusinessError } 16000005 - The specified process does not have the permission.",
+        "@throws { BusinessError } 16000006 - Cross-user operations are not allowed.",
+        "@throws { BusinessError } 16000011 - The context does not exist.",
+        "@throws { BusinessError } 16000050 - Internal error.",
+        "@throws { BusinessError } 16000200 - The caller is not in the appIdentifierAllowList of the target application.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@stagemodelonly",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "UIAbilityContext",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "want",
+          "类型": "Want",
+          "必填": true,
+          "说明": "Indicates the want info to start."
+        }
+      ],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "16000001",
+          "description": "The specified ability does not exist."
+        },
+        {
+          "code": "16000002",
+          "description": "Incorrect ability type."
+        },
+        {
+          "code": "16000004",
+          "description": "Cannot start an invisible component."
+        },
+        {
+          "code": "16000005",
+          "description": "The specified process does not have the permission."
+        },
+        {
+          "code": "16000006",
+          "description": "Cross-user operations are not allowed."
+        },
+        {
+          "code": "16000011",
+          "description": "The context does not exist."
+        },
+        {
+          "code": "16000050",
+          "description": "Internal error."
+        },
+        {
+          "code": "16000200",
+          "description": "The caller is not in the appIdentifierAllowList of the target application."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "connectAppServiceExtensionAbility",
+      "返回值": "number",
+      "所属模块": "未知模块",
+      "功能描述": "Connects current ability to an app service extension ability. If the target app service extension ability is invisible, you need to apply for permission:ohos.permission.START_INVISIBLE_ABILITY to connect target invisible app service extension ability.",
+      "注释信息": [
+        "@param { Want } want - The element name of the app service ability",
+        "@param { ConnectOptions } callback - The callback for obtaining the connection result",
+        "@returns { number } Returns the number code of the ability connected",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 16000001 - The specified ability does not exist.",
+        "@throws { BusinessError } 16000002 - Incorrect ability type.",
+        "@throws { BusinessError } 16000004 - Cannot start an invisible component.",
+        "@throws { BusinessError } 16000005 - The specified process does not have the permission.",
+        "@throws { BusinessError } 16000006 - Cross-user operations are not allowed.",
+        "@throws { BusinessError } 16000008 - The crowdtesting application expires.",
+        "@throws { BusinessError } 16000011 - The context does not exist.",
+        "@throws { BusinessError } 16000050 - Internal error.",
+        "@throws { BusinessError } 16000201 - The target service has not been started yet.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@stagemodelonly",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "UIAbilityContext",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "want",
+          "类型": "Want",
+          "必填": true,
+          "说明": "The element name of the app service ability"
+        },
+        {
+          "名称": "callback",
+          "类型": "ConnectOptions",
+          "必填": true,
+          "说明": "The callback for obtaining the connection result"
+        }
+      ],
+      "return_description": "Returns the number code of the ability connected",
+      "error_codes": [
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "16000001",
+          "description": "The specified ability does not exist."
+        },
+        {
+          "code": "16000002",
+          "description": "Incorrect ability type."
+        },
+        {
+          "code": "16000004",
+          "description": "Cannot start an invisible component."
+        },
+        {
+          "code": "16000005",
+          "description": "The specified process does not have the permission."
+        },
+        {
+          "code": "16000006",
+          "description": "Cross-user operations are not allowed."
+        },
+        {
+          "code": "16000008",
+          "description": "The crowdtesting application expires."
+        },
+        {
+          "code": "16000011",
+          "description": "The context does not exist."
+        },
+        {
+          "code": "16000050",
+          "description": "Internal error."
+        },
+        {
+          "code": "16000201",
+          "description": "The target service has not been started yet."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "disconnectAppServiceExtensionAbility",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Disconnect current ability from an app service extension, in contrast to {@link connectAppServiceExtensionAbility}.",
+      "注释信息": [
+        "@param { number } connection - The number code of the ability connected",
+        "@returns { Promise<void> } The promise returned by the function.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 16000011 - The context does not exist.",
+        "@throws { BusinessError } 16000050 - Internal error.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@stagemodelonly",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "UIAbilityContext",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "connection",
+          "类型": "number",
+          "必填": true,
+          "说明": "The number code of the ability connected"
+        }
+      ],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "16000011",
+          "description": "The context does not exist."
+        },
+        {
+          "code": "16000050",
+          "description": "Internal error."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "setOnNewWantSkipScenarios",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "The onNewWant callback is not triggered when a UIAbility's lifecycle is driven by scenarios. For scenarios, refer to {@link contextConstant.Scenarios}.",
+      "注释信息": [
+        "@param { number } scenarios - The number code of the scenarios.",
+        "@returns { Promise<void> } The promise returned by the function.",
+        "@throws { BusinessError } 16000050 - Internal error. Possible causes: Connection to service failed.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@stagemodelonly",
+        "@atomicservice",
+        "@since 20"
+      ],
+      "层级": 1,
+      "上级": "UIAbilityContext",
+      "since_version": "20",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "scenarios",
+          "类型": "number",
+          "必填": true,
+          "说明": "The number code of the scenarios."
+        }
+      ],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "16000050",
+          "description": "Internal error. Possible causes: Connection to service failed."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "startSelfUIAbilityInCurrentProcess",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Launch the application's own UIAbility in the current process. If the launchMode of UIAbility is specified, you can set specified flag. you can set specifiedFlag by this param, and system will not call onAcceptWant. does not support startup.",
+      "注释信息": [
+        "@param { Want } want - Indicates the ability to start.",
+        "@param { string } specifiedFlag - If the launchType of target UIAbility is specified,",
+        "@param { StartOptions } [options] - Indicates the start options.",
+        "@returns { Promise<void> } The promise returned by the function.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 16000001 - The specified ability does not exist.",
+        "@throws { BusinessError } 16000008 - The crowdtesting application expires.",
+        "@throws { BusinessError } 16000009 - An ability cannot be started or stopped in Wukong mode.",
+        "@throws { BusinessError } 16000011 - The context does not exist.",
+        "@throws { BusinessError } 16000050 - Internal error. Connect to system service failed.",
+        "@throws { BusinessError } 16000053 - The ability is not on the top of the UI.",
+        "@throws { BusinessError } 16000122 - The target component is blocked by the system module and",
+        "@throws { BusinessError } 16000123 - Implicit startup is not supported.",
+        "@throws { BusinessError } 16000124 - Starting a remote UIAbility is not supported.",
+        "@throws { BusinessError } 16000130 - The UIAbility not belong to caller.",
+        "@throws { BusinessError } 16000131 - The UIAbility is already exist, can not start again.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@stagemodelonly",
+        "@since 22"
+      ],
+      "层级": 1,
+      "上级": "UIAbilityContext",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "want",
+          "类型": "Want",
+          "必填": true,
+          "说明": "Indicates the ability to start."
+        },
+        {
+          "名称": "specifiedFlag",
+          "类型": "string",
+          "必填": true,
+          "说明": "If the launchType of target UIAbility is specified,"
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "StartOptions } [options] - Indicates the start options."
+        }
+      ],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "16000001",
+          "description": "The specified ability does not exist."
+        },
+        {
+          "code": "16000008",
+          "description": "The crowdtesting application expires."
+        },
+        {
+          "code": "16000009",
+          "description": "An ability cannot be started or stopped in Wukong mode."
+        },
+        {
+          "code": "16000011",
+          "description": "The context does not exist."
+        },
+        {
+          "code": "16000050",
+          "description": "Internal error. Connect to system service failed."
+        },
+        {
+          "code": "16000053",
+          "description": "The ability is not on the top of the UI."
+        },
+        {
+          "code": "16000122",
+          "description": "The target component is blocked by the system module and"
+        },
+        {
+          "code": "16000123",
+          "description": "Implicit startup is not supported."
+        },
+        {
+          "code": "16000124",
+          "description": "Starting a remote UIAbility is not supported."
+        },
+        {
+          "code": "16000130",
+          "description": "The UIAbility not belong to caller."
+        },
+        {
+          "code": "16000131",
+          "description": "The UIAbility is already exist, can not start again."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "restartApp",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Restart current application process. If the destination UIAbility is the same as the caller ability, the caller window will be reused as the destination window. Otherwise, the caller window will be destroyed after navigating to the destination window.",
+      "注释信息": [
+        "@param { Want } want - Indicates the ability to start.",
+        "@returns { Promise<void> } The promise returned by the function.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 16000011 - The context does not exist.",
+        "@throws { BusinessError } 16000050 - Connect to system server error.",
+        "@throws { BusinessError } 16000063 - The target to restart does not belong to the caller or is not a UIAbility.",
+        "@throws { BusinessError } 16000064 - Restart too frequently.",
+        "@throws { BusinessError } 16000065 - The API can be called only when the ability is focused.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@stagemodelonly",
+        "@atomicservice",
+        "@since 22"
+      ],
+      "层级": 1,
+      "上级": "UIAbilityContext",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "want",
+          "类型": "Want",
+          "必填": true,
+          "说明": "Indicates the ability to start."
+        }
+      ],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "16000011",
+          "description": "The context does not exist."
+        },
+        {
+          "code": "16000050",
+          "description": "Connect to system server error."
+        },
+        {
+          "code": "16000063",
+          "description": "The target to restart does not belong to the caller or is not a UIAbility."
+        },
+        {
+          "code": "16000064",
+          "description": "Restart too frequently."
+        },
+        {
+          "code": "16000065",
+          "description": "The API can be called only when the ability is focused."
+        }
+      ],
+      "版本": "API"
+    },
+    {
+      "类型": "method",
+      "名称": "setMissionWindowIcon",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Set the main window icon for the current UIAbility. 2.System service failed to communicate with dependency module.",
+      "注释信息": [
+        "@param { image.PixelMap } windowIcon - The icon of ability main window.",
+        "@returns { Promise<void> } The promise returned by the function.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 16000050 - Internal error. 1. Connect to system service failed;",
+        "@throws { BusinessError } 16000135 - The main window of this ability not exist.",
+        "@syscap SystemCapability.Ability.AbilityRuntime.Core",
+        "@stagemodelonly",
+        "@since 22"
+      ],
+      "层级": 1,
+      "上级": "UIAbilityContext",
+      "since_version": "22",
+      "system_capability": "SystemCapability.Ability.AbilityRuntime.Core",
+      "parameters": [
+        {
+          "名称": "windowIcon",
+          "类型": "image.PixelMap",
+          "必填": true,
+          "说明": "The icon of ability main window."
+        }
+      ],
+      "return_description": "The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "16000050",
+          "description": "Internal error. 1. Connect to system service failed;"
+        },
+        {
+          "code": "16000135",
+          "description": "The main window of this ability not exist."
+        }
+      ],
+      "版本": "API"
+    }
+  ]
+}
