@@ -3,7 +3,7 @@ import sys, json, os, re
 from pathlib import Path
 from flask import Flask, jsonify, request, render_template
 from neo4j import GraphDatabase
-import anthropic
+from openai import OpenAI
 
 app = Flask(__name__)
 
@@ -318,7 +318,6 @@ SYSTEM_PROMPT = """你是 HarmonyOS API 跨版本分析助手。你通过 Neo4j 
 - 新增：new版有但old版没有的
 - 删除：old版有但new版没有的
 示例Cypher：
-```cypher
 MATCH (n_old {sdk_version: 'API5.0'})
 WHERE n_old.type IN ['class','interface','enum']
 WITH collect(DISTINCT n_old.name + '|' + labels(n_old)[0] + '|' + coalesce(n_old.parent_name,'')) AS old_keys
@@ -327,7 +326,6 @@ WHERE n_new.type IN ['class','interface','enum']
   AND NOT (n_new.name + '|' + labels(n_new)[0] + '|' + coalesce(n_new.parent_name,'')) IN old_keys
 RETURN labels(n_new)[0] AS type, n_new.name AS name, n_new.module AS module, n_new.description AS desc
 ORDER BY module, type, name
-```
 
 ## 查询规则
 1. 所有查询必须带 sdk_version 过滤
@@ -353,17 +351,17 @@ client = None
 def get_client():
     global client
     if client is None:
-        api_key = os.environ.get("ANTHROPIC_API_KEY", "")
+        api_key = os.environ.get("DEEPSEEK_API_KEY", "")
         if not api_key:
             # Try .env file
             env_file = Path(__file__).parent / ".env"
             if env_file.exists():
                 for line in env_file.read_text(encoding='utf-8').splitlines():
-                    if line.startswith("ANTHROPIC_API_KEY="):
+                    if line.startswith("DEEPSEEK_API_KEY="):
                         api_key = line.split("=", 1)[1].strip().strip('"').strip("'")
         if not api_key:
             return None
-        client = anthropic.Anthropic(api_key=api_key)
+        client = OpenAI(api_key=api_key, base_url="https://api.deepseek.com")
     return client
 
 
@@ -378,28 +376,26 @@ def api_chat():
     c = get_client()
     if c is None:
         return jsonify({
-            "answer": "⚠️ 未配置 AI。请在项目目录创建 `.env` 文件，写入：\n```\nANTHROPIC_API_KEY=sk-ant-你的密钥\n```\n获取密钥：https://console.anthropic.com/",
+            "answer": "⚠️ 未配置 AI。请在项目目录创建 `.env` 文件，写入：\n```\nDEEPSEEK_API_KEY=sk-你的DeepSeek密钥\n```\n获取密钥：https://platform.deepseek.com/api_keys",
             "cypher": None, "results": None
         })
 
-    # Build messages for Claude
-    messages = []
-    # Include recent history (last 6 turns)
+    # Build messages
+    messages = [{"role": "system", "content": SYSTEM_PROMPT}]
     for h in history[-12:]:
         messages.append({"role": h["role"], "content": h["content"]})
     messages.append({"role": "user", "content": msg})
 
     try:
-        resp = c.messages.create(
-            model="claude-haiku-4-5-20251001",
+        resp = c.chat.completions.create(
+            model="deepseek-chat",
             max_tokens=1024,
-            system=SYSTEM_PROMPT,
             messages=messages,
         )
 
-        raw = resp.content[0].text.strip()
+        raw = resp.choices[0].message.content.strip()
 
-        # Parse JSON from response (handle markdown code blocks)
+        # Parse JSON from response
         json_match = re.search(r'```(?:json)?\s*(\{.*?\})\s*```', raw, re.DOTALL)
         if json_match:
             raw = json_match.group(1)
