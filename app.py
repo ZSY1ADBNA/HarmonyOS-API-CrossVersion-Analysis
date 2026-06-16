@@ -448,8 +448,8 @@ def api_chat():
         if json_match:
             raw = json_match.group(1)
         parsed = json.loads(raw)
-        cypher = parsed.get("cypher", "").strip()
-        answer = parsed.get("answer", "")
+        cypher = (parsed.get("cypher") or "").strip()
+        answer = parsed.get("answer") or ""
 
         # Execute cypher if provided
         results = None
