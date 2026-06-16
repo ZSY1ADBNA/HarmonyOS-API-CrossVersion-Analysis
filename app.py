@@ -5,6 +5,11 @@ from flask import Flask, jsonify, request, render_template
 from neo4j import GraphDatabase
 import urllib.request
 
+# AI backend: "deepseek" (primary) | "ollama" (fallback) | "none"
+AI_MODE = "deepseek"
+OLLAMA_URL = "http://localhost:11434/v1/chat/completions"
+OLLAMA_MODEL = "qwen3:4b"
+
 app = Flask(__name__)
 
 NEO4J_URI = "bolt://127.0.0.1:7687"
@@ -361,32 +366,58 @@ def load_api_key():
     return DEEPSEEK_API_KEY
 
 
-def call_deepseek(messages, max_tokens=1024):
-    """Call DeepSeek API via urllib (handles Windows SSL issues)."""
-    api_key = DEEPSEEK_API_KEY or load_api_key()
-    if not api_key:
-        return None
-
+def call_ai(messages, max_tokens=1024, retries=3):
+    """Call AI with retry — DeepSeek primary, Ollama fallback."""
     ctx = ssl.create_default_context()
     ctx.check_hostname = False
     ctx.verify_mode = ssl.CERT_NONE
 
-    data = json.dumps({
-        "model": "deepseek-chat",
-        "messages": messages,
-        "max_tokens": max_tokens,
-    }).encode("utf-8")
+    if AI_MODE == "ollama":
+        data = json.dumps({
+            "model": OLLAMA_MODEL,
+            "messages": messages,
+            "max_tokens": max_tokens,
+            "stream": False,
+        }).encode("utf-8")
+        try:
+            req = urllib.request.Request(OLLAMA_URL, data=data,
+                headers={"Content-Type": "application/json"})
+            resp = urllib.request.urlopen(req, timeout=120, context=ctx)
+            return json.loads(resp.read())
+        except Exception:
+            pass  # fall through to DeepSeek
 
-    req = urllib.request.Request(
-        "https://api.deepseek.com/v1/chat/completions",
-        data=data,
-        headers={
-            "Authorization": f"Bearer {api_key}",
-            "Content-Type": "application/json",
-        },
-    )
-    resp = urllib.request.urlopen(req, timeout=60, context=ctx)
-    return json.loads(resp.read())
+    if AI_MODE in ("deepseek", "ollama"):
+        api_key = DEEPSEEK_API_KEY or load_api_key()
+        if not api_key:
+            return None
+
+        data = json.dumps({
+            "model": "deepseek-chat",
+            "messages": messages,
+            "max_tokens": max_tokens,
+        }).encode("utf-8")
+
+        import time
+        last_err = None
+        for attempt in range(retries):
+            try:
+                req = urllib.request.Request(
+                    "https://api.deepseek.com/v1/chat/completions",
+                    data=data,
+                    headers={
+                        "Authorization": f"Bearer {api_key}",
+                        "Content-Type": "application/json",
+                    })
+                resp = urllib.request.urlopen(req, timeout=60, context=ctx)
+                return json.loads(resp.read())
+            except Exception as e:
+                last_err = e
+                if attempt < retries - 1:
+                    time.sleep(2)
+        print(f"DeepSeek failed after {retries} retries: {last_err}")
+
+    return None
 
 
 @app.route("/api/chat", methods=["POST"])
@@ -397,14 +428,6 @@ def api_chat():
     if not msg:
         return jsonify({"error": "消息不能为空"}), 400
 
-    if not DEEPSEEK_API_KEY:
-        load_api_key()
-    if not DEEPSEEK_API_KEY:
-        return jsonify({
-            "answer": "⚠️ 未配置 AI。请在项目目录创建 `.env` 文件，写入：\n```\nDEEPSEEK_API_KEY=sk-你的DeepSeek密钥\n```\n获取密钥：https://platform.deepseek.com/api_keys",
-            "cypher": None, "results": None
-        })
-
     # Build messages
     messages = [{"role": "system", "content": SYSTEM_PROMPT}]
     for h in history[-12:]:
@@ -412,7 +435,12 @@ def api_chat():
     messages.append({"role": "user", "content": msg})
 
     try:
-        resp = call_deepseek(messages)
+        resp = call_ai(messages)
+        if resp is None:
+            return jsonify({
+                "answer": "⚠️ AI 未就绪。请任选其一：\n1. **Ollama 离线**（推荐）：安装 `ollama` 后运行 `ollama pull qwen3:4b`\n2. **DeepSeek API**：在 `.env` 中配置 `DEEPSEEK_API_KEY=sk-你的密钥`",
+                "cypher": None, "results": None
+            })
         raw = resp["choices"][0]["message"]["content"].strip()
 
         # Parse JSON from response
