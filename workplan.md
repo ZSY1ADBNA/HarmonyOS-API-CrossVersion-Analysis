@@ -89,10 +89,10 @@
 
 - 目标/范围：补充 API 推荐目标和勾选规则，检查仓库、数据库、图谱网站并形成可接续计划；本轮改文档。
 - 负责人：本次执行 AI（Codex）；验收人待确认。
-- 状态：部分完成，现场检查阻塞；文档待验收。
+- 状态：文档已获用户合并授权；现场检查仍阻塞，整项未完成。
 - 分支：docs/api-recommendation-goal-workplan；基线 131a142074d68a322aafbfef9ac3f3d77b85caa2。
 - 成果：README、CONTRIBUTING、AGENTS、CLAUDE、本文件及 docs/project-goal.md。
-- 发布记录：文档提交 9de0097981b89cce79394232157dc1276f9be336；PR：https://github.com/ZSY1ADBNA/HarmonyOS-API-CrossVersion-Analysis/pull/2 ，待审阅，未合并。文档链接检查通过。
+- 发布记录：文档提交 9de0097981b89cce79394232157dc1276f9be336；PR：https://github.com/ZSY1ADBNA/HarmonyOS-API-CrossVersion-Analysis/pull/2 。用户于 2026-10-05 明确授权合并该文档 PR；合入结果以 PR 状态及 master 历史为准。文档链接检查通过。
 - [x] 核对仓库当前 AI 查询流程。效果：确认先生成回答再查数据库、未二次基于检索回答，查询限制仅提示词、null 查询处理缺陷；证据 app.py 的 SYSTEM_PROMPT、run_cypher、api_chat（基线见上）；2026-10-05，静态检查。
 - [x] 抽查推荐相关数据字段。效果：API6.0 的 @ohos.bluetooth.access.json 有 31 条节点，含参数等结构化字段；对照 _run_import.py，确认导入字段需补充核对；不是完整数据质量验收。
 - [x] 检查网页代码入口。效果：模板已有 AI 面板与查询结果展示，主要例子仍是版本比较；尚未定义推荐卡片和可追溯证据展示；证据 templates/index.html。
@@ -100,7 +100,7 @@
 - [x] 制定目标导向后续计划。效果：按现场基线 → 查询只读控制 → 数据完整性 → 检索 → 证据推荐 → 网站 → 验收排序，任务见下。
 - [ ] 执行与自查全部完成。数据库/在线实查未完成，不能勾选整项完成。
 - [ ] 验收人确认。尚未确认。
-- 下一步：审阅 PR #2；有权限成员提供只读现场结果后补全 BASE-001，本任务继续记录，其他成员不重复已完成静态核对。
+- 下一步：按用户授权合并 PR #2；有权限成员提供只读现场结果后补全 BASE-001。文档合并不代表数据库/网站实查已完成。
 - 最后更新：2026-10-05（Asia/Shanghai）。
 - 未更新产物：业务代码、正式 JSON、图谱、报告、部署均未改。
 
