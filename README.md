@@ -45,6 +45,7 @@
 ├── 04_analysis_queries/
 │   ├── cross_version_analysis.cypher  # 13类Cypher分析查询
 │   └── run_analysis.py               # 自动化分析脚本
+├── 05_rag_retrieval/                  # 需求检索原型与召回评估（实验，见目录内 README）
 ├── _run_import.py                     # Neo4j批量导入脚本
 ├── batch_extract.py                   # JSON批量提取脚本
 ├── extract_api_info.py               # API信息提取器
