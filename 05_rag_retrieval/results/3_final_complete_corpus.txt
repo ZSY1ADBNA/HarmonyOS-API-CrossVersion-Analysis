@@ -1,0 +1,26 @@
+  （本语料无版本标签，以下版本约束题剔除出分母: ['C1', 'C3']）
+
+====================================================================================================
+【③ 参考：同一检索器跑完整语料】语料=corpus_complete.jsonl 模式=zh
+====================================================================================================
+ID   类别             期望答案                                        首个命中位次   Top1 实际返回
+----------------------------------------------------------------------------------------------------
+A1   A-明确功能需求       notificationManager::notificationManag          @1   @ohos.notificationManager::notificationManag
+A2   A-明确功能需求       http::createHttp / http::http                   @7   @ohos.util.json::json
+A3   A-明确功能需求       preferences::getPreferences / preferen          @4   @ohos.i18n::i18n
+A4   A-明确功能需求       fs::readTextSync / fs::openSync / fs::          @2   @ohos.file.fs::ReadTextOptions
+A5   A-明确功能需求       abilityAccessCtrl::requestPermissionsF          @1   @ohos.abilityAccessCtrl::abilityAccessCtrl
+A6   A-明确功能需求       router::pushUrl / router::router / UIC          @1   @ohos.router::pushUrl
+A7   A-明确功能需求       promptAction::showToast / prompt::show          @1   @ohos.prompt::showToast
+A8   A-明确功能需求       vibrator::startVibration / vibrator::v          @1   @ohos.vibrator::vibrator
+B1   B-口语模糊         camera::getCameraManager / camera::cam         @62   @ohos.userIAM.userAuth::userAuth
+B2   B-口语模糊         window::setWindowBrightness / window::          @3   @system.brightness::Brightness
+B3   B-口语模糊         connection::getDefaultNet / connection          @1   @ohos.net.connection::connection
+B4   B-口语模糊         relationalStore::relationalStore / rel          @2   data_rdb_resultSet::ResultSet
+C4   C-版本约束         access::access / access::getState / co          @4   @ohos.bluetooth::bluetooth
+D1   D-选型对比         preferences::preferences / preferences          @1   @ohos.data.relationalStore::relationalStore
+D2   D-选型对比         fs::openSync / fs::readTextSync / fs::          @3   @ohos.file.fs::File
+----------------------------------------------------------------------------------------------------
+  可召回题数 15   Recall@1=7/15 (47%)   Recall@3=11/15 (73%)   Recall@5=13/15 (87%)   Recall@10=14/15 (93%)   MRR=0.622
+  应无匹配题的 top1 分数: ['C2=0', 'E1=0', 'E2=1.6']
+  可召回题 top1 分数 中位/最小: 12.46 / 4.64   未命中题 top1 分数: []
