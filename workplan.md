@@ -204,7 +204,9 @@
 - 状态：待验收（PR 待仓库方审阅）。
 - 验收条件（建议值，由仓库方确认后生效）：代码在无服务器数据库的环境下能复现 `results/` 中的结果；
   20 题测试集与输出一致；目录 README 中「未验证 / 已知限制」被确认或补充。
-- 分支/提交：`feat/rag-retrieval-baseline`；提交与 PR 见下。
+- 分支/提交：`feat/rag-retrieval-baseline`；PR：https://github.com/ZSY1ADBNA/HarmonyOS-API-CrossVersion-Analysis/pull/3 。
+  说明：该分支推在 fork `Sadami3066/HarmonyOS-API-CrossVersion-Analysis` 上（当前账号是协作者但非仓库所有者，
+  细粒度 token 无法向他人仓库写入；classic token 可写）。如需改为仓库内分支请告知。
 - 已完成步骤与成果：
   - 建语料：`03_extracted_json/` 摊平为 60,033 条（API4.1~6.0）+ 26,735 条（`API/` 目录）。
   - 建检索器 `retrieve.py`：BM25F 分字段打分、中文受控词表（约 90 条）、类型与族入口先验、两层弃答判定。
