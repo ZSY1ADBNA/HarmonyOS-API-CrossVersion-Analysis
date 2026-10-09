@@ -1,6 +1,6 @@
 # 工作计划与交接
 
-最后更新：2026-10-05（Asia/Shanghai）。技术检查基线：3a7a99e9fd0293fdf159bdf9f1789c7243e39bf0。本轮只做 GitHub 静态检查，未检查成员本地数据库或未提交工作。
+最后更新：2026-10-09（Asia/Shanghai）。技术检查基线：35e72f782fd3c4e618b0b904b9f669f5b3f5dd2c。
 
 ## 项目目标
 
@@ -221,3 +221,41 @@
 - 未更新产物：业务代码、正式 JSON、数据库、报告和部署未变；六个工程步骤均未因本次文档发布标完成。
 - 下一步：团队按总体计划步骤 01 固定两版本样本与部署代码，步骤 02 并行收集问题并核对参考答案；原工程任务保持未完成。
 - 最后更新：2026-10-07（Asia/Shanghai）。
+
+## DOC-05A 官方说明文档 RAG 检索库与多版本属性检索（黄宇鹏）
+
+- 目标与范围：按照总体计划 1.0 步骤 05A，完成官方 Markdown 说明文档（official/ 目录）结构化解析与切块、构建支持名称/关键词/条件检索及跨版本属性对比的 SQLite+FTS5 RAG 库；免除全版本自动化 diff 引擎，通过多版本 API 属性对账直接支撑大模型对比。首期以 v6.0.0.1-Release 与 v6.1-LTS 小样本入库与检索验证。
+- 负责人/验收人：负责人：黄宇鹏；验收人：待确认；本次执行 AI 为 Antigravity。状态：待验收（执行与自查已完成）。
+- 验收条件：
+  1. 解析官方 Markdown 文档并结构化切块，完整保留名称、签名、起始版本（since）、废弃标记、权限、系统能力、参数、返回值、错误码及上下文；
+  2. 构建独立的 SQLite + FTS5 检索数据库，支持按 API 名称、全文关键词（中文/英文/技术词）、条件过滤（版本、Kit、权限等）检索；
+  3. 支持同一 API 在不同版本间属性联合检索与侧重对比（side-by-side），输出易于大模型直接分析的结构化/Markdown 证据；
+  4. 具备完备单元与集成测试套件，执行真实测试通过。
+- 已完成步骤、涉及文件与成果：
+  - [x] 1. 数据模型与 Markdown 解析器增强（doc_rag/models.py, doc_rag/parser.py）：修复冒号置于粗体内部（如 `**参数：**`、`**返回值：**`、`**错误码：**`、`**系统能力：**`、`**需要权限：**`）导致的字段漏提取缺陷；新增独立 Interface/Class/Struct 文档（如 `AudioRenderer.md`）容器层级识别，将成员方法与属性正确归属父类；新增 C-API 结构体成员变量解析，避免将方法参数表误判为属性。
+  - [x] 2. 独立 SQLite + FTS5 索引库实现与优化入库（doc_rag/indexer.py）：搭建 doc_chunks 结构表与 doc_chunks_fts 虚表，定制中英文与技术标识符分词器（CJK unigram+bigram），支持本地目录与直接读取 zip 归档入库。效果：网络、音频、通知三 Kit 共 6,582 块结构化入库完成。
+  - [x] 3. 多维度检索与跨版本属性精准对比引擎（doc_rag/retriever.py）：实现查询输入规范化（支持 `createHttp()`、`http.createHttp`）、嵌套父子属性精准查询（`AudioRenderer.state`），彻底移除 `compare_api_across_versions` 中过度宽松的 `LIKE %clean_name%` 模糊匹配，消除跨 API 脏召回（如查 `createHttp` 不再混入 `createHttpResponseCache`）；增强 FTS5 操作符与特殊符号安全转义机制。
+  - [x] 4. CLI 入口脚本（ingest_official_docs.py, query_official_docs.py）：支持批量导入、交互查询与 JSON 输出。
+  - [x] 5. 自动化测试套件（test_official_doc_rag.py）：扩展至 18 项测试（覆盖 C-API 声明、冒号位置容错、独立 Interface 容器层级、FTS 符号容错、精确对比与属性增量等），实跑 100% 通过（Ran 18 tests in 7.010s, OK）。
+- 分支/提交/PR、本地未提交改动：
+  - 任务分支：feat/doc-rag-05a；基线：master 35e72f782fd3c4e618b0b904b9f669f5b3f5dd2c；PR：https://github.com/ZSY1ADBNA/HarmonyOS-API-CrossVersion-Analysis/pull/6 。
+  - 新增/优化文件：doc_rag/__init__.py, doc_rag/models.py, doc_rag/parser.py, doc_rag/indexer.py, doc_rag/retriever.py, ingest_official_docs.py, query_official_docs.py, test_official_doc_rag.py, docs/official-doc-ingestion-audit.md。
+- 验证环境、输入、命令与工作目录：
+  - 环境：Linux, Python 3.13.12, SQLite 3 (内置 FTS5)
+  - 工作目录：/home/whywood/project/HarmonyOS-API-CrossVersion-Analysis
+  - 测试命令：python3 test_official_doc_rag.py -v
+  - 检索命令：python3 query_official_docs.py --name "createHttp()" --version v6.0.0.1-Release；python3 query_official_docs.py --name "AudioRenderer.state"；python3 query_official_docs.py --compare createHttp；python3 query_official_docs.py --compare HttpRequestOptions
+- 预期结果、实际结果、证据：
+  - 预期：测试 18/18 全部通过；准确识别带括号与模块前缀的 API；版本对比精确聚焦目标 API 及其属性，无无关 API 干扰。
+  - 实际结果：测试 18/18 全部通过；`AudioRenderer.state` 准确召回所属类与属性；`createHttp` 跨版本对比严格隔离 `createHttpResponseCache`；`HttpRequestOptions` 准确识别 6.1 新增 4 项属性；FTS 极端符号输入无异常。
+- 决定及原因、阻塞及所需信息：
+  - 决定：采用内置 SQLite FTS5，完全无外部 C 扩展或模型依赖，保证轻量、零依赖与可重现；官方大 zip 采用 zipfile 流式读取，无需解压 300MB+ 占用额外磁盘；大模型直接基于两版本属性对比检索结果进行差异总结，免除全版本自动化 diff 引擎。
+  - 全量入库决策：对 4 个大版本全量 13,887 个 Markdown 审计完成，明确不试图用单一通用脚本解决全部 52 个 Kit 的所有排版差异；后续其他 Kit 与版本入库由对应 Agent 结合模块特征按需编写或适配专用脚本，重点防范主键碰撞、零切块丢失、C-API 拦截与 FTS5 无索引扫描性能陷阱。已形成专属指引文档 docs/official-doc-ingestion-audit.md 并在 AGENTS.md、README.md、步骤 05 说明中建立入口。
+  - 阻塞：无。
+- 尚未更新的数据或报告：
+  - 本次任务不修改现有图谱与 03_extracted_json 数据，图谱网站与分析报告保持原有状态。
+- 下一步（具体文件和动作）：
+  - 提交当前任务分支 feat/doc-rag-05a 并创建面向 master 的 PR。
+  - 配合步骤 05B（智能体调用）将 DocRetriever 包装为 Agent Tool（如 LangChain Tool 或标准函数），为大模型提供 API 属性与文档查证支撑。
+- 最后更新时间（时区）、进展记录：
+  - 2026-10-09（Asia/Shanghai）：完成 05A 官方文档深度审查与缺陷修复，18 项测试全部通过；完成 4 版本 13,887 文件全量压力审计与缺陷归因，发布 docs/official-doc-ingestion-audit.md 并接入主线文档入口。

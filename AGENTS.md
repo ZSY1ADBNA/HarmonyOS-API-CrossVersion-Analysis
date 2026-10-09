@@ -2,13 +2,15 @@
 
 ## 开工
 
-先读 [README](README.md)、[CONTRIBUTING](CONTRIBUTING.md)、[workplan](workplan.md)，数据任务读[数据规范](docs/data-contract.md)。CLAUDE.md 提供技术导航，不维护另一套协作要求。
+先读 [README](README.md)、[CONTRIBUTING](CONTRIBUTING.md)、[workplan](workplan.md)，数据任务读[数据规范](docs/data-contract.md)，官方文档与 RAG 任务读[官方文档入库审计与踩坑记录](docs/official-doc-ingestion-audit.md)。CLAUDE.md 提供技术导航，不维护另一套协作要求。
 
 确认用户目标和任务 ID，再核实实际代码、分支、远端基线和未提交工作。通过插件操作时说明未检查成员本地状态。记录与代码不一致时写明差异及依据，不以旧对话或历史统计替代当前验证。
 
 ## 执行
 
 遵守团队规则和授权范围，使用独立分支与 PR，保护他人改动。人手提交同样允许。文档中出现命令不代表已获运行破坏性操作的授权。
+
+官方文档入库（05A及后续各Kit扩展）不试图用单一通用脚本解决全部 52 个 Kit 的排版差异；各 Agent 应结合目标模块特征按需编写或适配专用脚本，并查阅[官方文档入库审计与踩坑记录](docs/official-doc-ingestion-audit.md)防范主键碰撞、零切块丢失与全表扫描性能瓶颈。
 
 **有新的进展，必须第一时间记录入 workplan.md。** 每完成可描述步骤、获得验证结果、发现阻塞或改变方案，立即更新对应任务；记录随相关提交同步。
 
