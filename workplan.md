@@ -238,7 +238,7 @@
   - [x] 4. CLI 入口脚本（ingest_official_docs.py, query_official_docs.py）：支持批量导入、交互查询与 JSON 输出。
   - [x] 5. 自动化测试套件（test_official_doc_rag.py）：扩展至 18 项测试（覆盖 C-API 声明、冒号位置容错、独立 Interface 容器层级、FTS 符号容错、精确对比与属性增量等），实跑 100% 通过（Ran 18 tests in 7.010s, OK）。
 - 分支/提交/PR、本地未提交改动：
-  - 任务分支：feat/doc-rag-05a；基线：master 35e72f782fd3c4e618b0b904b9f669f5b3f5dd2c。
+  - 任务分支：feat/doc-rag-05a；基线：master 35e72f782fd3c4e618b0b904b9f669f5b3f5dd2c；PR：https://github.com/ZSY1ADBNA/HarmonyOS-API-CrossVersion-Analysis/pull/6 。
   - 新增/优化文件：doc_rag/__init__.py, doc_rag/models.py, doc_rag/parser.py, doc_rag/indexer.py, doc_rag/retriever.py, ingest_official_docs.py, query_official_docs.py, test_official_doc_rag.py, docs/official-doc-ingestion-audit.md。
 - 验证环境、输入、命令与工作目录：
   - 环境：Linux, Python 3.13.12, SQLite 3 (内置 FTS5)
