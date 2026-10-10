@@ -11,10 +11,11 @@
 ## DELIVERY-001 两项成果提交与 Draft PR
 
 - 用户于 2026-10-10 明确授权新建分支、分别提交两项成果、推送并创建中文 Draft PR；不合并 master。分支 docs/user-questions-data-review，基线 35e72f782fd3c4e618b0b904b9f669f5b3f5dd2c。
-- 进展：题集已在提交 a465681 单独提交；数据反馈与两个审计附件另作提交。本分支只包含四份成果和相关 workplan 记录；原工作区的阅读记录、旧题集和历史复核未上传且保留。
+- 进展：题集已在提交 775777b 单独提交；数据反馈与两个审计附件在 b245e0e 单独提交。本分支只包含四份成果和相关 workplan 记录；原工作区的阅读记录、旧题集和历史复核未上传且保留。
 - 验证：保留用户题集正文，审计附件仅规范换行为 LF；隔离检查通过。仅有文档及审计材料变化，正式业务代码、JSON 数据、数据库、报告与部署未变；未检查其他成员本地状态。
 - 下一步：检查最终差异后推送并创建中文 Draft PR，补充实际发布状态；人工核查与正式项目验收保持未完成。
-- [x] 上传及 Draft PR 创建完成（2026-10-10）：题集提交 a465681、数据反馈与审计附件提交 8d6ab2f 均已推送；[PR #7：提交用户模拟题集与 OpenHarmony 数据问题反馈](https://github.com/ZSY1ADBNA/HarmonyOS-API-CrossVersion-Analysis/pull/7) 已创建并关联当前对话，目标 master，标题和说明为中文，状态 Draft、未合并。差异为四份成果与 workplan 共五文件，检查通过；本条发布交接另作记录提交。
+- [x] 上传及 Draft PR 创建完成（2026-10-10）：题集提交 775777b、数据反馈与审计附件提交 b245e0e 均已推送；[PR #7：提交用户模拟题集与 OpenHarmony 数据问题反馈](https://github.com/ZSY1ADBNA/HarmonyOS-API-CrossVersion-Analysis/pull/7) 已创建并关联当前对话，目标 master，标题和说明为中文，状态 Draft、未合并。差异为四份成果与 workplan 共五文件，检查通过；本条发布交接另作记录提交。
+- 作者归属修正（2026-10-10）：原 a465681/8d6ab2f/8629149 未关联 GitHub 用户；经用户确认并授权，使用 Zhihua-lab 账号的 ID 型 noreply 邮箱重写为 775777b/b245e0e/3601605。修正前后成果 tree 一致，以明确旧 SHA 的 force-with-lease 保护远端并发修改；GitHub API 已确认三个远端提交的 author 与 committer 均关联 Zhihua-lab。此后交接提交沿用相同归属；master 未修改。Contributors 统计仍取决于后续合入默认分支，本次不代合并。
 - 当前状态：成果已上传，等待人工核查；验收确认未勾选。原工作区保留此前未提交草稿和进度记录，上传 worktree 仅保留本次相关提交。下一步由团队在 PR 核对题集与问题证据，补充实际 SDK/声明和隔离数据库验证，完成时间待安排。
 
 ## REVIEW-002 用户模拟题集交付（步骤 02）
