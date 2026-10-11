@@ -19,7 +19,7 @@
 1. [CONTRIBUTING.md](CONTRIBUTING.md)：团队操作、提交与验证。
 2. [AGENTS.md](AGENTS.md)：AI 开工、执行与交接。
 3. [workplan.md](workplan.md)：任务、成果、验证证据、阻塞与下一步。
-4. 数据任务查阅[数据规范](docs/data-contract.md)，技术导航见 [CLAUDE.md](CLAUDE.md)。
+4. 数据任务查阅[数据规范](docs/data-contract.md)，官方文档入库与 RAG 任务查阅[官方文档入库审计与踩坑记录](docs/official-doc-ingestion-audit.md)，技术导航见 [CLAUDE.md](CLAUDE.md)。
 
 有新的进展，必须第一时间记录入 workplan.md。其他 AI 不一定自动读取这些文档；无法访问仓库时，由成员提供文档、当前代码与未提交补丁。
 
