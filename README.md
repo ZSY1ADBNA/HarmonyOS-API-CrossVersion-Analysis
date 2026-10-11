@@ -14,6 +14,8 @@
 
 [余镕熙与张舒阳工作计划](docs/official-data-delivery/工作计划.md)：五个目标发行的官方资料、API 提取、数据库与下游交付，共十个步骤。附[流程图 PNG](docs/official-data-delivery/流程图.png)和[流程图 SVG](docs/official-data-delivery/流程图.svg)。计划发布与工程执行、最终验收分别记录。
 
+[余镕熙文档与示例采集交付说明](docs/official-data-delivery/文档与示例采集交付.md)提供固定来源、文件核验、全领域扫描和下游交付边界。实际状态见workplan与来源/扫描报告。
+
 ## 协作与 AI 接手入口
 
 新成员或新 AI 按顺序阅读：
