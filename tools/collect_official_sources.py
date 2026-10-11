@@ -275,7 +275,7 @@ def collect(record, root, transport='archive', reverify=False):
                         request=urllib.request.Request(url,headers={'User-Agent':'OpenHarmony-Verified-Delivery'})
                         deadline=time.monotonic()+180
                         with urllib.request.urlopen(request,timeout=30) as response, partial.open('wb') as output:
-                            while raw:=response.read(1024*1024):
+                            while raw:=response.read1(1024*1024):
                                 output.write(raw)
                                 if time.monotonic()>deadline: raise TimeoutError('Archive download exceeded 180 seconds')
                     if not zipfile.is_zipfile(partial): raise ValueError('Downloaded response is not a ZIP archive')

@@ -5,7 +5,7 @@ import subprocess
 from pathlib import Path
 import tempfile
 import unittest
-from unittest.mock import patch
+from unittest.mock import patch, MagicMock
 import zipfile
 
 from collect_official_sources import collect, write_json, import_source_lock, acquire_blob_batch, reusable_collection, file_sha256, save_collection_receipt, recover_collection_record
@@ -187,6 +187,18 @@ class MaterialsTests(unittest.TestCase):
                 result=collect(source,Path(temporary),'archive')
             self.assertEqual(result['status'],'collection_failed')
             self.assertEqual(len(attempts),2)
+
+    def test_urllib_budget_is_checked_without_waiting_to_fill_large_buffer(self):
+        with self.temporary_directory() as temporary:
+            response=MagicMock(); response.__enter__.return_value=response
+            response.read1.return_value=b'x'
+            source={'source_id':'fixture','kind':'samples','status':'locked','repository_name':'test','commit':'a'*40}
+            with patch('collect_official_sources.urllib.request.urlopen',return_value=response),patch('collect_official_sources.time.monotonic',side_effect=[0,181,0,181]),patch('collect_official_sources.time.sleep'):
+                result=collect(source,Path(temporary),'urllib')
+            self.assertEqual(result['status'],'collection_failed')
+            self.assertIn('180 seconds',result['error'])
+            response.read.assert_not_called()
+            self.assertEqual(response.read1.call_count,2)
 
     def test_object_specific_rejection_splits_and_preserves_other_objects(self):
         fetched=[]
