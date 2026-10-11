@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>HarmonyOS API 跨版本分析平台</title>
-<script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/vis-network@9.1.6/dist/vis-network.min.js"></script>
-<link href="https://cdn.jsdelivr.net/npm/vis-network@9.1.6/dist/vis-network.min.css" rel="stylesheet">
+<script src="https://cdn.bootcdn.net/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/vis/4.21.0/vis.min.js"></script>
+<link href="https://cdn.bootcdn.net/ajax/libs/vis/4.21.0/vis.min.css" rel="stylesheet">
 <style>
 :root {
   --bg: #0a0a1a;
@@ -249,6 +249,21 @@ footer { text-align: center; padding: 20px; color: var(--text-dim); font-size: 1
 .chat-input-bar button:disabled { opacity: 0.4; cursor: not-allowed; }
 .chat-input-bar button:hover:not(:disabled) { opacity: 0.85; }
 
+/* ── Agent step trace ── */
+.agent-steps { margin: 8px 0; }
+.agent-step {
+  margin: 6px 0; padding: 8px 10px; font-size: 11px;
+  background: rgba(0,0,0,0.25); border-left: 2px solid var(--accent);
+  border-radius: 6px;
+}
+.agent-step.error { border-left-color: #ff4d6a; }
+.agent-step-head { color: var(--text); font-weight: 600; }
+.agent-step-args {
+  color: var(--text-dim); font-family: 'Consolas','Courier New',monospace;
+  font-size: 10px; word-break: break-all; margin: 4px 0;
+}
+.agent-step-error { color: #ff4d6a; margin-top: 4px; }
+
 /* ── Typing dots ── */
 .typing-dots { display: flex; gap: 4px; padding: 4px 0; }
 .typing-dots span {
@@ -386,14 +401,14 @@ footer { text-align: center; padding: 20px; color: var(--text-dim); font-size: 1
       <div>你好！我是 HarmonyOS API 分析助手。你可以直接问我：</div>
     </div>
     <div class="suggestions">
-      <button onclick="askSuggestion(this)">API5.0比4.1多了哪些类？</button>
-      <button onclick="askSuggestion(this)">API6.0最大的10个模块</button>
+      <button onclick="askSuggestion(this)">API6.1比6.0多了哪些类？</button>
+      <button onclick="askSuggestion(this)">API6.1最大的10个模块</button>
       <button onclick="askSuggestion(this)">蓝牙模块各版本的变化</button>
-      <button onclick="askSuggestion(this)">从4.1到6.0删除了哪些API？</button>
+      <button onclick="askSuggestion(this)">从4.1到6.1删除了哪些API？</button>
     </div>
   </div>
   <div class="chat-input-bar">
-    <textarea id="chatInput" rows="2" placeholder="输入你的问题，如：API5.1比5.0多了哪些模块？"
+    <textarea id="chatInput" rows="2" placeholder="输入你的问题，如：API6.1比6.0多了哪些模块？"
               onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();sendMessage()}"></textarea>
     <button id="sendBtn" onclick="sendMessage()">发送</button>
   </div>
@@ -784,10 +799,10 @@ function clearChat() {
       <div>对话已清空。有什么想了解的吗？</div>
     </div>
     <div class="suggestions">
-      <button onclick="askSuggestion(this)">API5.0比4.1多了哪些类？</button>
-      <button onclick="askSuggestion(this)">API6.0最大的10个模块</button>
+      <button onclick="askSuggestion(this)">API6.1比6.0多了哪些类？</button>
+      <button onclick="askSuggestion(this)">API6.1最大的10个模块</button>
       <button onclick="askSuggestion(this)">蓝牙模块各版本的变化</button>
-      <button onclick="askSuggestion(this)">从4.1到6.0删除了哪些API？</button>
+      <button onclick="askSuggestion(this)">从4.1到6.1删除了哪些API？</button>
     </div>`;
 }
 
@@ -824,11 +839,16 @@ async function sendMessage() {
   chatHistory.push({ role: 'user', content: msg });
 
   try {
+    // Agent 多轮推理可能 30–90s，150s 超时防 typing 无限转圈
+    const ctrl = new AbortController();
+    const timer = setTimeout(() => ctrl.abort(), 150000);
     const resp = await fetch('/api/chat', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ message: msg, history: chatHistory })
+      body: JSON.stringify({ message: msg, history: chatHistory }),
+      signal: ctrl.signal
     });
+    clearTimeout(timer);
     const data = await resp.json();
 
     // Remove typing
@@ -837,29 +857,29 @@ async function sendMessage() {
     // Build assistant response
     let html = `<div class="chat-msg assistant"><div class="label">🤖 AI 助手</div>`;
 
+    // Agent 推理轨迹（新增）
+    if (data.steps && data.steps.length) {
+      html += `<div class="agent-steps">` + data.steps.map(renderStep).join('') + `</div>`;
+    }
+
     if (data.answer) {
       html += `<div>${formatAnswer(data.answer)}</div>`;
     }
 
-    // Cypher block
-    if (data.cypher) {
-      const cypherId = 'cypher-' + Date.now();
-      html += `<span class="toggle-cypher" onclick="document.getElementById('${cypherId}').classList.toggle('show');this.textContent=this.textContent.includes('查看')?'收起查询':'查看Cypher查询'">查看Cypher查询</span>`;
-      html += `<div class="cypher-block" id="${cypherId}">${escapeHtml(data.cypher)}</div>`;
-    }
-
-    // Results table (if any)
-    if (data.results && Array.isArray(data.results) && data.results.length > 0) {
-      const keys = Object.keys(data.results[0]).filter(k => !k.startsWith('_'));
-      html += `<div class="result-summary">📋 查询结果 (${data.results.length} 条)</div>`;
-      html += `<table class="result-table"><thead><tr>${keys.map(k => `<th>${k}</th>`).join('')}</tr></thead><tbody>`;
-      data.results.slice(0, 10).forEach(row => {
-        html += `<tr>${keys.map(k => `<td>${escapeHtml(String(row[k]||'').slice(0,60))}</td>`).join('')}</tr>`;
-      });
-      if (data.results.length > 10) html += `<tr><td colspan="${keys.length}" style="color:var(--text-dim);text-align:center">... 还有 ${data.results.length - 10} 条</td></tr>`;
-      html += `</tbody></table>`;
-    } else if (data.results && data.results._error) {
-      html += `<div style="font-size:11px;color:#ff4d6a;margin-top:4px">查询错误: ${escapeHtml(data.results._error)}</div>`;
+    // 旧单发模式渲染（无轨迹时兜底）
+    if (!data.steps || !data.steps.length) {
+      // Cypher block
+      if (data.cypher) {
+        const cypherId = 'cypher-' + Date.now();
+        html += `<span class="toggle-cypher" onclick="document.getElementById('${cypherId}').classList.toggle('show');this.textContent=this.textContent.includes('查看')?'收起查询':'查看Cypher查询'">查看Cypher查询</span>`;
+        html += `<div class="cypher-block" id="${cypherId}">${escapeHtml(data.cypher)}</div>`;
+      }
+      // Results table (if any)
+      if (data.results && Array.isArray(data.results) && data.results.length > 0) {
+        html += renderResultTable(data.results);
+      } else if (data.results && data.results._error) {
+        html += `<div style="font-size:11px;color:#ff4d6a;margin-top:4px">查询错误: ${escapeHtml(data.results._error)}</div>`;
+      }
     }
 
     html += `</div>`;
@@ -869,7 +889,8 @@ async function sendMessage() {
 
   } catch (e) {
     document.getElementById(typingId)?.remove();
-    body.innerHTML += `<div class="chat-msg assistant"><div class="label">🤖 AI 助手</div>❌ 请求失败：${escapeHtml(e.message)}</div>`;
+    const errMsg = e.name === 'AbortError' ? '请求超时（Agent 推理超过 150 秒），请稍后重试' : e.message;
+    body.innerHTML += `<div class="chat-msg assistant"><div class="label">🤖 AI 助手</div>❌ 请求失败：${escapeHtml(errMsg)}</div>`;
   }
 
   body.scrollTop = body.scrollHeight;
@@ -897,6 +918,40 @@ function formatAnswer(text) {
   html = html.replace(/\n• /g, '\n<br/>• ');
   html = html.replace(/\n- /g, '\n<br/>- ');
   html = html.replace(/\n(\d+)\. /g, '\n<br/>$1. ');
+  return html;
+}
+
+// ── Agent 轨迹渲染 ──
+
+function renderResultTable(rows, maxRows = 10) {
+  if (!rows || !Array.isArray(rows) || rows.length === 0) return '';
+  const keys = Object.keys(rows[0]).filter(k => !k.startsWith('_'));
+  let html = `<div class="result-summary">📋 查询结果 (${rows.length} 条)</div>`;
+  html += `<table class="result-table"><thead><tr>${keys.map(k => `<th>${k}</th>`).join('')}</tr></thead><tbody>`;
+  rows.slice(0, maxRows).forEach(row => {
+    html += `<tr>${keys.map(k => `<td>${escapeHtml(String(row[k]||'').slice(0,60))}</td>`).join('')}</tr>`;
+  });
+  if (rows.length > maxRows) html += `<tr><td colspan="${keys.length}" style="color:var(--text-dim);text-align:center">... 还有 ${rows.length - maxRows} 条</td></tr>`;
+  html += `</tbody></table>`;
+  return html;
+}
+
+function renderStep(step, idx) {
+  const headIcon = step.ok ? '🔧' : '⚠️';
+  const cypherId = `step-cypher-${idx}-${Date.now()}`;
+  let html = `<div class="agent-step ${step.ok ? '' : 'error'}">`;
+  html += `<div class="agent-step-head">${headIcon} 调用工具 <code>${escapeHtml(step.tool)}</code></div>`;
+  if (step.args && Object.keys(step.args).length) {
+    html += `<div class="agent-step-args">${escapeHtml(JSON.stringify(step.args))}</div>`;
+  }
+  if (step.cypher) {
+    html += `<span class="toggle-cypher" onclick="document.getElementById('${cypherId}').classList.toggle('show');this.textContent=this.textContent.includes('查看')?'收起查询':'查看Cypher查询'">查看Cypher查询</span>`;
+    html += `<div class="cypher-block" id="${cypherId}">${escapeHtml(step.cypher)}</div>`;
+  }
+  if (step.error) html += `<div class="agent-step-error">${escapeHtml(step.error)}</div>`;
+  if (step.result_summary) html += `<div class="result-summary">${escapeHtml(step.result_summary)}</div>`;
+  if (step.rows && Array.isArray(step.rows) && step.rows.length) html += renderResultTable(step.rows);
+  html += `</div>`;
   return html;
 }
 

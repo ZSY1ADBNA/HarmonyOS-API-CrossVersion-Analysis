@@ -1,0 +1,555 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.ArkUI",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.1"
+    },
+    {
+      "类型": "namespace",
+      "名称": "uiExtensionHost",
+      "所属模块": "@kit.ArkUI",
+      "功能描述": "uiExtensionHost.",
+      "注释信息": [
+        "@namespace uiExtensionHost",
+        "@syscap SystemCapability.ArkUI.ArkUI.Full",
+        "@systemapi",
+        "@since 11 dynamic",
+        "@since 23 static"
+      ],
+      "层级": 1,
+      "上级": "@kit.ArkUI",
+      "since_version": "11 dynamic",
+      "system_capability": "SystemCapability.ArkUI.ArkUI.Full",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.1"
+    },
+    {
+      "类型": "interface",
+      "名称": "UIExtensionHostWindowProxy",
+      "所属模块": "未知模块",
+      "功能描述": "Transition Controller",
+      "注释信息": [
+        "@interface UIExtensionHostWindowProxy",
+        "@syscap SystemCapability.ArkUI.ArkUI.Full",
+        "@systemapi",
+        "@since 11 dynamic",
+        "@since 23 static"
+      ],
+      "层级": 2,
+      "上级": "uiExtensionHost",
+      "since_version": "11 dynamic",
+      "system_capability": "SystemCapability.ArkUI.ArkUI.Full",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.1"
+    },
+    {
+      "类型": "method",
+      "名称": "getWindowAvoidArea",
+      "返回值": "window.AvoidArea",
+      "所属模块": "未知模块",
+      "功能描述": "Get the avoid area",
+      "注释信息": [
+        "@param { window.AvoidAreaType } type - Type of the area",
+        "@returns { window.AvoidArea } Area where the window cannot be displayed.",
+        "@throws { BusinessError } 401 - Parameter error.",
+        "@syscap SystemCapability.ArkUI.ArkUI.Full",
+        "@systemapi",
+        "@since 11 dynamic",
+        "@since 23 static"
+      ],
+      "层级": 2,
+      "上级": "UIExtensionHostWindowProxy",
+      "since_version": "11 dynamic",
+      "system_capability": "SystemCapability.ArkUI.ArkUI.Full",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "window.AvoidAreaType",
+          "必填": true,
+          "说明": "Type of the area"
+        }
+      ],
+      "return_description": "Area where the window cannot be displayed.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error."
+        }
+      ],
+      "版本": "API6.1"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Register the callback of avoidAreaChange <br> 1. Mandatory parameters are left unspecified. <br> 2. Incorrect parameters types. <br> 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { 'avoidAreaChange' } type - The value is fixed at 'avoidAreaChange', indicating the event of changes to the avoid area.",
+        "@param { Callback<{ type: window.AvoidAreaType, area: window.AvoidArea }> } callback - Callback used to return the area.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@syscap SystemCapability.ArkUI.ArkUI.Full",
+        "@systemapi",
+        "@since 11 dynamic"
+      ],
+      "层级": 2,
+      "上级": "UIExtensionHostWindowProxy",
+      "since_version": "11 dynamic",
+      "system_capability": "SystemCapability.ArkUI.ArkUI.Full",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'avoidAreaChange'",
+          "必填": true,
+          "说明": "The value is fixed at 'avoidAreaChange', indicating the event of changes to the avoid area."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "Callback<{ type: window.AvoidAreaType, area: window.AvoidArea }> } callback - Callback used to return the area."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        }
+      ],
+      "版本": "API6.1"
+    },
+    {
+      "类型": "method",
+      "名称": "onAvoidAreaChange",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Register the callback of avoidAreaChange - Callback used to return the area.",
+      "注释信息": [
+        "@param { Callback<uiExtension.AvoidAreaInfo> } callback",
+        "@syscap SystemCapability.ArkUI.ArkUI.Full",
+        "@systemapi",
+        "@since 23 static"
+      ],
+      "层级": 2,
+      "上级": "UIExtensionHostWindowProxy",
+      "since_version": "23 static",
+      "system_capability": "SystemCapability.ArkUI.ArkUI.Full",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "Callback<uiExtension.AvoidAreaInfo>",
+          "必填": true,
+          "说明": ""
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.1"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unregister the callback of avoidAreaChange <br> 1. Mandatory parameters are left unspecified. <br> 2. Incorrect parameters types. <br> 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { 'avoidAreaChange' } type - The value is fixed at 'avoidAreaChange', indicating the event of changes to the avoid area.",
+        "@param { Callback<{ type: window.AvoidAreaType, area: window.AvoidArea }> } callback - Callback used to return the area.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@syscap SystemCapability.ArkUI.ArkUI.Full",
+        "@systemapi",
+        "@since 11 dynamic"
+      ],
+      "层级": 2,
+      "上级": "UIExtensionHostWindowProxy",
+      "since_version": "11 dynamic",
+      "system_capability": "SystemCapability.ArkUI.ArkUI.Full",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'avoidAreaChange'",
+          "必填": true,
+          "说明": "The value is fixed at 'avoidAreaChange', indicating the event of changes to the avoid area."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "Callback<{ type: window.AvoidAreaType, area: window.AvoidArea }> } callback - Callback used to return the area."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        }
+      ],
+      "版本": "API6.1"
+    },
+    {
+      "类型": "method",
+      "名称": "offAvoidAreaChange",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unregister the callback of avoidAreaChange - Unregister the callback function. If not provided, all callbacks for the given event type will be removed.",
+      "注释信息": [
+        "@param { Callback<uiExtension.AvoidAreaInfo> } [callback]",
+        "@syscap SystemCapability.ArkUI.ArkUI.Full",
+        "@systemapi",
+        "@since 23 static"
+      ],
+      "层级": 2,
+      "上级": "UIExtensionHostWindowProxy",
+      "since_version": "23 static",
+      "system_capability": "SystemCapability.ArkUI.ArkUI.Full",
+      "parameters": [
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "Callback<uiExtension.AvoidAreaInfo> } [callback]"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.1"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Subscribes to the component (EmbeddedComponent or UIExtensionComponent) size change event. indicating the component (EmbeddedComponent or UIExtensionComponent) size change event. UIExtensionComponent) size. <br> 1. Mandatory parameters are left unspecified. <br> 2. Incorrect parameters types. <br> 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { 'windowSizeChange' } type - The value is fixed at 'windowSizeChange',",
+        "@param { Callback<window.Size> } callback - Callback used to return the component (EmbeddedComponent or",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@syscap SystemCapability.ArkUI.ArkUI.Full",
+        "@systemapi",
+        "@since 11 dynamic"
+      ],
+      "层级": 2,
+      "上级": "UIExtensionHostWindowProxy",
+      "since_version": "11 dynamic",
+      "system_capability": "SystemCapability.ArkUI.ArkUI.Full",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'windowSizeChange'",
+          "必填": true,
+          "说明": "The value is fixed at 'windowSizeChange',"
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<window.Size>",
+          "必填": true,
+          "说明": "Callback used to return the component (EmbeddedComponent or"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        }
+      ],
+      "版本": "API6.1"
+    },
+    {
+      "类型": "method",
+      "名称": "onWindowSizeChange",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Subscribes to the component (EmbeddedComponent or UIExtensionComponent) size change event.",
+      "注释信息": [
+        "@param { Callback<window.Size> } callback - Callback used to return the window size.",
+        "@syscap SystemCapability.ArkUI.ArkUI.Full",
+        "@systemapi",
+        "@since 23 static"
+      ],
+      "层级": 2,
+      "上级": "UIExtensionHostWindowProxy",
+      "since_version": "23 static",
+      "system_capability": "SystemCapability.ArkUI.ArkUI.Full",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "Callback<window.Size>",
+          "必填": true,
+          "说明": "Callback used to return the window size."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.1"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unsubscribes from the component (EmbeddedComponent or UIExtensionComponent) size change event. indicating the component (EmbeddedComponent or UIExtensionComponent) size change event. If not provided, all callbacks for the given event type will be removed. <br> 1. Mandatory parameters are left unspecified. <br> 2. Incorrect parameters types. <br> 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { 'windowSizeChange' } type - The value is fixed at 'windowSizeChange',",
+        "@param { Callback<window.Size> } [callback] - Unregister the callback function.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@syscap SystemCapability.ArkUI.ArkUI.Full",
+        "@systemapi",
+        "@since 11 dynamic"
+      ],
+      "层级": 2,
+      "上级": "UIExtensionHostWindowProxy",
+      "since_version": "11 dynamic",
+      "system_capability": "SystemCapability.ArkUI.ArkUI.Full",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'windowSizeChange'",
+          "必填": true,
+          "说明": "The value is fixed at 'windowSizeChange',"
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "Callback<window.Size> } [callback] - Unregister the callback function."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        }
+      ],
+      "版本": "API6.1"
+    },
+    {
+      "类型": "method",
+      "名称": "offWindowSizeChange",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unsubscribes from the component (EmbeddedComponent or UIExtensionComponent) size change event. If not provided, all callbacks for the given event type will be removed.",
+      "注释信息": [
+        "@param { Callback<window.Size> } [callback] - Unregister the callback function.",
+        "@syscap SystemCapability.ArkUI.ArkUI.Full",
+        "@systemapi",
+        "@since 23 static"
+      ],
+      "层级": 2,
+      "上级": "UIExtensionHostWindowProxy",
+      "since_version": "23 static",
+      "system_capability": "SystemCapability.ArkUI.ArkUI.Full",
+      "parameters": [
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "Callback<window.Size> } [callback] - Unregister the callback function."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.1"
+    },
+    {
+      "类型": "property",
+      "名称": "properties",
+      "属性类型": "UIExtensionHostWindowProxyProperties",
+      "所属模块": "未知模块",
+      "功能描述": "The properties of the UIExtension window",
+      "注释信息": [
+        "@type { UIExtensionHostWindowProxyProperties }",
+        "@syscap SystemCapability.ArkUI.ArkUI.Full",
+        "@systemapi",
+        "@since 11 dynamic",
+        "@since 23 static"
+      ],
+      "层级": 2,
+      "上级": "UIExtensionHostWindowProxy",
+      "since_version": "11 dynamic",
+      "system_capability": "SystemCapability.ArkUI.ArkUI.Full",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.1"
+    },
+    {
+      "类型": "method",
+      "名称": "hideNonSecureWindows",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Hide the non-secure windows. When called by modal UIExtension and shouldHide == false, the \"ohos.permission.ALLOW_SHOW_NON_SECURE_WINDOWS\" permission is required. <br> 1. Mandatory parameters are left unspecified. <br> 2. Incorrect parameters types. <br> 3. Parameter verification failed. <br> 1. Permission denied. Interface caller does not have permission \"ohos.permission.ALLOW_SHOW_NON_SECURE_WINDOWS\". <br> 2. The UIExtension window proxy is abnormal.",
+      "注释信息": [
+        "@permission ohos.permission.ALLOW_SHOW_NON_SECURE_WINDOWS",
+        "@param { boolean } shouldHide - Hide the non-secure windows if true, otherwise means the opposite.",
+        "@returns { Promise<void> } - The promise returned by the function.",
+        "@throws { BusinessError } 202 - Permission verification failed. A non-system application calls a system API.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 1300002 - Abnormal state. Possible causes:",
+        "@throws { BusinessError } 1300003 - This window manager service works abnormally.",
+        "@syscap SystemCapability.ArkUI.ArkUI.Full",
+        "@systemapi",
+        "@since 12 dynamic",
+        "@since 23 static"
+      ],
+      "层级": 2,
+      "上级": "UIExtensionHostWindowProxy",
+      "since_version": "12 dynamic",
+      "system_capability": "SystemCapability.ArkUI.ArkUI.Full",
+      "parameters": [
+        {
+          "名称": "shouldHide",
+          "类型": "boolean",
+          "必填": true,
+          "说明": "Hide the non-secure windows if true, otherwise means the opposite."
+        }
+      ],
+      "return_description": "- The promise returned by the function.",
+      "error_codes": [
+        {
+          "code": "202",
+          "description": "Permission verification failed. A non-system application calls a system API."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "1300002",
+          "description": "Abnormal state. Possible causes:"
+        },
+        {
+          "code": "1300003",
+          "description": "This window manager service works abnormally."
+        }
+      ],
+      "版本": "API6.1"
+    },
+    {
+      "类型": "method",
+      "名称": "createSubWindowWithOptions",
+      "返回值": "Promise<window.Window>",
+      "所属模块": "未知模块",
+      "功能描述": "Create sub window. <br> 1. Mandatory parameters are left unspecified. <br> 2. Incorrect parameters types. <br> 3. Parameter verification failed. <br> 1. The window is not created or destroyed. <br> 2. Internal task error.",
+      "注释信息": [
+        "@param { string } name - window name of sub window",
+        "@param { window.SubWindowOptions } subWindowOptions - options of sub window creation",
+        "@returns { Promise<window.Window> } Promise used to return the subwindow.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes:",
+        "@throws { BusinessError } 801 - Capability not supported. Failed to call the API due to limited device capabilities.",
+        "@throws { BusinessError } 1300002 - This window state is abnormal. Possible causes:",
+        "@syscap SystemCapability.ArkUI.ArkUI.Full",
+        "@systemapi",
+        "@StageModelOnly",
+        "@since 12 dynamic",
+        "@since 23 static"
+      ],
+      "层级": 2,
+      "上级": "UIExtensionHostWindowProxy",
+      "since_version": "12 dynamic",
+      "system_capability": "SystemCapability.ArkUI.ArkUI.Full",
+      "parameters": [
+        {
+          "名称": "name",
+          "类型": "string",
+          "必填": true,
+          "说明": "window name of sub window"
+        },
+        {
+          "名称": "subWindowOptions",
+          "类型": "window.SubWindowOptions",
+          "必填": true,
+          "说明": "options of sub window creation"
+        }
+      ],
+      "return_description": "Promise used to return the subwindow.",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes:"
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported. Failed to call the API due to limited device capabilities."
+        },
+        {
+          "code": "1300002",
+          "description": "This window state is abnormal. Possible causes:"
+        }
+      ],
+      "版本": "API6.1"
+    },
+    {
+      "类型": "method",
+      "名称": "createSubWindowWithOptions",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Create subwindow. subwindow. If true, when the creator goes to background, the subwindow will also go to background, when the creator returns to foreground, the subwindow will also return to foreground. If false, the subwindow will not change when the creator goes to background or returns to foreground. Failed to call the API due to limited device capabilities. 1. The window is not created or destroyed. 2. Internal task error.",
+      "注释信息": [
+        "@param { string } name - Name of the subwindow.",
+        "@param { window.SubWindowOptions } subWindowConfig - Configuration parameters for creating the subwindow.",
+        "@param { boolean } followCreatorLifecycle - Whether the lifecycle of the subwindow follows creator of",
+        "@returns { Promise<window.Window> } Promise used to return the subwindow.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 1300002 - This window state is abnormal. Possible causes:",
+        "@syscap SystemCapability.ArkUI.ArkUI.Full",
+        "@systemapi",
+        "@stagemodelonly",
+        "@since 22 dynamic",
+        "@since 23 static"
+      ],
+      "层级": 2,
+      "上级": "UIExtensionHostWindowProxy",
+      "since_version": "22 dynamic",
+      "system_capability": "SystemCapability.ArkUI.ArkUI.Full",
+      "parameters": [
+        {
+          "名称": "name",
+          "类型": "string",
+          "必填": true,
+          "说明": "Name of the subwindow."
+        },
+        {
+          "名称": "subWindowConfig",
+          "类型": "window.SubWindowOptions",
+          "必填": true,
+          "说明": "Configuration parameters for creating the subwindow."
+        },
+        {
+          "名称": "followCreatorLifecycle",
+          "类型": "boolean",
+          "必填": true,
+          "说明": "Whether the lifecycle of the subwindow follows creator of"
+        }
+      ],
+      "return_description": "Promise used to return the subwindow.",
+      "error_codes": [
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "1300002",
+          "description": "This window state is abnormal. Possible causes:"
+        }
+      ],
+      "版本": "API6.1"
+    }
+  ]
+}

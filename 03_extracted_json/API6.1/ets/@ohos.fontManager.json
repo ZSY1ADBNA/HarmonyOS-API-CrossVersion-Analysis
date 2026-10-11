@@ -1,0 +1,280 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.LocalizationKit",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.1"
+    },
+    {
+      "类型": "namespace",
+      "名称": "fontManager",
+      "所属模块": "@kit.LocalizationKit",
+      "功能描述": "Provides the capability of install and uninstall font.",
+      "注释信息": [
+        "@namespace fontManager",
+        "@syscap SystemCapability.Global.FontManager",
+        "@systemapi",
+        "@since 19 dynamic",
+        "@since 23 static"
+      ],
+      "层级": 1,
+      "上级": "@kit.LocalizationKit",
+      "since_version": "19 dynamic",
+      "system_capability": "SystemCapability.Global.FontManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.1"
+    },
+    {
+      "类型": "method",
+      "名称": "installFont",
+      "返回值": "Promise<int>",
+      "所属模块": "未知模块",
+      "功能描述": "Installs the specified path font. 0 - Install successful.",
+      "注释信息": [
+        "@permission ohos.permission.UPDATE_FONT",
+        "@param { string } path - path indicates the font path.",
+        "@returns { Promise<int> } - Number indicates the font installation result.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system application.",
+        "@throws { BusinessError } 31100101 - Font does not exist.",
+        "@throws { BusinessError } 31100102 - Font is not supported.",
+        "@throws { BusinessError } 31100103 - Font file copy failed.",
+        "@throws { BusinessError } 31100104 - Font file installed.",
+        "@throws { BusinessError } 31100105 - Exceeded maximum number of installed files.",
+        "@throws { BusinessError } 31100106 - Other error.",
+        "@syscap SystemCapability.Global.FontManager",
+        "@systemapi",
+        "@since 19 dynamic",
+        "@since 23 static"
+      ],
+      "层级": 1,
+      "上级": "fontManager",
+      "since_version": "19 dynamic",
+      "system_capability": "SystemCapability.Global.FontManager",
+      "parameters": [
+        {
+          "名称": "path",
+          "类型": "string",
+          "必填": true,
+          "说明": "path indicates the font path."
+        }
+      ],
+      "return_description": "- Number indicates the font installation result.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system application."
+        },
+        {
+          "code": "31100101",
+          "description": "Font does not exist."
+        },
+        {
+          "code": "31100102",
+          "description": "Font is not supported."
+        },
+        {
+          "code": "31100103",
+          "description": "Font file copy failed."
+        },
+        {
+          "code": "31100104",
+          "description": "Font file installed."
+        },
+        {
+          "code": "31100105",
+          "description": "Exceeded maximum number of installed files."
+        },
+        {
+          "code": "31100106",
+          "description": "Other error."
+        }
+      ],
+      "版本": "API6.1"
+    },
+    {
+      "类型": "method",
+      "名称": "uninstallFont",
+      "返回值": "Promise<int>",
+      "所属模块": "未知模块",
+      "功能描述": "Uninstalls the specified path font. 0 - Uninstall successful.",
+      "注释信息": [
+        "@permission ohos.permission.UPDATE_FONT",
+        "@param { string } fullName - fullName indicates the font name.",
+        "@returns { Promise<int> } - number indicates the font uninstallation result.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system application.",
+        "@throws { BusinessError } 31100107 - Font file does not exist.",
+        "@throws { BusinessError } 31100108 - Font file delete error.",
+        "@throws { BusinessError } 31100109 - Other error.",
+        "@syscap SystemCapability.Global.FontManager",
+        "@systemapi",
+        "@since 19 dynamic",
+        "@since 23 static"
+      ],
+      "层级": 1,
+      "上级": "fontManager",
+      "since_version": "19 dynamic",
+      "system_capability": "SystemCapability.Global.FontManager",
+      "parameters": [
+        {
+          "名称": "fullName",
+          "类型": "string",
+          "必填": true,
+          "说明": "fullName indicates the font name."
+        }
+      ],
+      "return_description": "- number indicates the font uninstallation result.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system application."
+        },
+        {
+          "code": "31100107",
+          "description": "Font file does not exist."
+        },
+        {
+          "code": "31100108",
+          "description": "Font file delete error."
+        },
+        {
+          "code": "31100109",
+          "description": "Other error."
+        }
+      ],
+      "版本": "API6.1"
+    },
+    {
+      "类型": "method",
+      "名称": "dataMigration",
+      "返回值": "int",
+      "所属模块": "未知模块",
+      "功能描述": "Font data migration.",
+      "注释信息": [
+        "@permission ohos.permission.UPDATE_FONT",
+        "@param { DataMigrationCallback } callback callback of dataMigration.",
+        "@returns { int } The call result.",
+        "@throws { BusinessError } 201 - Permission denied.",
+        "@throws { BusinessError } 202 - Non-system application.",
+        "@throws { BusinessError } 31100110 Call failed due to system error.",
+        "@throws { BusinessError } 31100111 Data migration is in progress.",
+        "@syscap SystemCapability.Global.FontManager",
+        "@systemapi",
+        "@since 23 dynamic&static"
+      ],
+      "层级": 1,
+      "上级": "fontManager",
+      "since_version": "23 dynamic&static",
+      "system_capability": "SystemCapability.Global.FontManager",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "DataMigrationCallback",
+          "必填": true,
+          "说明": "callback of dataMigration."
+        }
+      ],
+      "return_description": "The call result.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission denied."
+        },
+        {
+          "code": "202",
+          "description": "Non-system application."
+        },
+        {
+          "code": "31100110",
+          "description": ""
+        },
+        {
+          "code": "31100111",
+          "description": ""
+        }
+      ],
+      "版本": "API6.1"
+    },
+    {
+      "类型": "interface",
+      "名称": "DataMigrationProgress",
+      "所属模块": "未知模块",
+      "功能描述": "Provides the DataMigration progress information.",
+      "注释信息": [
+        "@interface DataMigrationProgress",
+        "@syscap SystemCapability.Global.FontManager",
+        "@systemapi",
+        "@since 23 dynamic&static"
+      ],
+      "层级": 2,
+      "上级": "fontManager",
+      "since_version": "23 dynamic&static",
+      "system_capability": "SystemCapability.Global.FontManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.1"
+    },
+    {
+      "类型": "property",
+      "名称": "timeRemaining",
+      "属性类型": "int",
+      "所属模块": "未知模块",
+      "功能描述": "The Estimated Time Remaining, expressed in seconds.",
+      "注释信息": [
+        "@type { int }",
+        "@syscap SystemCapability.Global.FontManager",
+        "@systemapi",
+        "@since 23 dynamic&static"
+      ],
+      "层级": 2,
+      "上级": "DataMigrationProgress",
+      "since_version": "23 dynamic&static",
+      "system_capability": "SystemCapability.Global.FontManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.1"
+    },
+    {
+      "类型": "property",
+      "名称": "progressPercentage",
+      "属性类型": "int",
+      "所属模块": "未知模块",
+      "功能描述": "The Progress Percentage.",
+      "注释信息": [
+        "@type { int } int",
+        "@syscap SystemCapability.Global.FontManager",
+        "@systemapi",
+        "@since 23 dynamic&static"
+      ],
+      "层级": 2,
+      "上级": "DataMigrationProgress",
+      "since_version": "23 dynamic&static",
+      "system_capability": "SystemCapability.Global.FontManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.1"
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 # 工作计划与交接
 
-最后更新：2026-10-09（Asia/Shanghai）。技术检查基线：35e72f782fd3c4e618b0b904b9f669f5b3f5dd2c。
+最后更新：2026-10-11（Asia/Shanghai）。技术检查基线：35e72f782fd3c4e618b0b904b9f669f5b3f5dd2c。
 
 ## 项目目标
 
@@ -9,7 +9,7 @@
 ## 当前概况
 
 源码、JSON、导入、查询、报告和网站入口已存在，见 [README](README.md) 与[数据规范](docs/data-contract.md)。
-- 默认分支 master；JSON 目录 API、API4.1、API5.0、API5.1、API6.0，API 来源待确认。
+- 默认分支 master；JSON 目录 API、API4.1、API5.0、API5.1、API6.0、API6.1，API 来源待确认。
 - 提取存在个人 Windows 路径；_run_import.py 会清空目标默认数据库。
 - 仓库尚无统一 Python/Neo4j 版本或依赖锁定。可用环境的实际版本待成员提供。
 - 2026-10-03 核对 19 个文件（主要脚本、文档、HTML及各数据目录一个 JSON），样本 UTF-8 字节长度与 blob 大小一致，无 BOM、LF；未遍历全部 JSON。
@@ -259,3 +259,22 @@
   - 配合步骤 05B（智能体调用）将 DocRetriever 包装为 Agent Tool（如 LangChain Tool 或标准函数），为大模型提供 API 属性与文档查证支撑。
 - 最后更新时间（时区）、进展记录：
   - 2026-10-09（Asia/Shanghai）：完成 05A 官方文档深度审查与缺陷修复，18 项测试全部通过；完成 4 版本 13,887 文件全量压力审计与缺陷归因，发布 docs/official-doc-ingestion-audit.md 并接入主线文档入口。
+
+## VER-001 API6.1 版本数据接入与全链路更新（任务一，张舒阳）
+
+- ID/标题、目标与范围：VER-001 下载 OpenHarmony 6.1 API 源文件，接入提取→JSON→导入→报告全链路，更新脚本与网页版本列表；即任务一。
+- 负责人/验收人、状态、验收条件：负责人：张舒阳（254358355，本机执行 + AI 辅助）；验收人：待确认。状态：已完成（张舒阳于 2026-10-11 勾选）；验收确认待执行。
+- 验收条件：API6.1 数据入库可查询；6.0→6.1 对比有真实结果；网页版本列表含 6.1。
+- 已完成步骤、涉及文件与成果：
+  - [x] 1. 源码获取。效果：确认 gitee 仓库 interface_sdk-js 已停更（最新 6.0-Release，weekly 分支止于 2025-09），官方迁移至 gitcode.com/openharmony/interface_sdk-js；本地 SDK 仓库添加 gitcode 远程并检出 OpenHarmony-6.1-Release，复制 902 个 .d.ts 到 01_source_files/API6.1（该目录被 .gitignore 忽略，不入库）。2026-10-11。
+  - [x] 2. 解析与增强。效果：902 个 JSON 提取+增强全部成功（03_extracted_json/API6.1，随提交入库）。2026-10-11。
+  - [x] 3. 导入图谱。效果：_run_import.py 断点续传增量导入，902 文件 OK、0 失败、99 秒；库内 API6.1 唯一节点 18,302、关系 24,823；总节点 77,778→99,679。2026-10-11。
+  - [x] 4. 版本列表更新。效果：app.py、agent.py、extract_versions.py、04_analysis_queries/run_analysis.py、templates/index.html、CLAUDE.md、README.md 均加入 API6.1。2026-10-11。
+  - [x] 5. 报告重生成。效果：修复 _gen_report.py 循环变量 d 遮蔽 driver 的 bug，重生成报告 3,551 行（原 2,847），含 6.0→6.1 全部对比分析。2026-10-11。
+- 分支/提交/PR、本地未提交改动：任务分支 feat/api6.1；提交与 PR 链接见仓库。本地敏感文件（server_creds.txt）与大体积部署包（*.tar.gz）不入库，已加入 .gitignore；deploy*.py、remote_deploy.py、import_progress.txt 保持未跟踪。
+- 验证环境、输入、命令与工作目录：Windows 11 本机；Neo4j 5.26.4 community（127.0.0.1:7687）；命令：git fetch/检出、python _run_import.py、python _gen_report.py；工作目录 C:\Users\MR\Desktop\HarmonyAPI_Project。
+- 预期结果、实际结果、证据：预期 6.1 数据入库并产生对比。实际：API6.1 节点 18,302（6.0 为 16,570，净增 1,732）、模块 70；6.0→6.1 类/接口/枚举 +363/-145（ArkUI +186 占一半以上），方法/属性 +1,647/-619；新模块 @kit.API10LessDeprecatedModules（21 节点：旧 File API、formInfo、hiAppEvent、wantAgent）；蓝牙 connection.d.ts 从 167 节点降至 15（BondState、ScanMode 等 20+ 类型移除，公共类型抽到新增 bluetooth.common 文件，已用 6.1 源码核实非解析失败）；AbilityKit 移除 AutoFill/UIService Extension、状态观察者系列等 24 个。网页实测：/api/versions 返回含 API6.1，/api/compare?old=API6.0&new=API6.1 返回真实对比，首页 HTTP 200。
+- 决定及原因、阻塞及所需信息：选 gitcode 因 gitee 仓库冻结无 6.1；选增量导入而非清库全量重导，避免无谓重导旧版本；6.1 与 6.1-LTS 之间选 Release 分支沿用既有惯例。阻塞：无。数据质量提示：方法/属性级 module 字段约 82% 为「未知模块」（6.0/6.1 相同），成员级变更无法按模块归因，报告 4.7 节已注明。
+- 尚未更新的数据或报告：在线部署（http://47.114.40.66:5000/）未更新；run_analysis.py 十项分析未重跑。
+- 下一步（具体文件和动作）：合并 feat/api6.1 PR 至 master；验收人确认后标已验收；如需 6.1-LTS 或 7.0 可沿用同一流程（gitcode 上已有分支）。
+- 最后更新时间（时区）、进展记录：2026-10-11（Asia/Shanghai）。当日完成全链路并勾选任务一。
