@@ -12,6 +12,8 @@
 
 [总体计划 1.0](docs/openharmony-query-plan/总体计划1.0.md)及六个步骤说明：从两版本小样本修复提取与入库，分批扩大范围，将跨版本信息和差异查询融入全过程。包含任务关系图、工作量建议及 28 道待核对候选题；实施状态与验收统一见 workplan.md。
 
+[余镕熙与张舒阳工作计划](docs/official-data-delivery/工作计划.md)：五个目标发行的官方资料、API 提取、数据库与下游交付，共十个步骤。附[流程图 PNG](docs/official-data-delivery/流程图.png)和[流程图 SVG](docs/official-data-delivery/流程图.svg)。计划发布与工程执行、最终验收分别记录。
+
 ## 协作与 AI 接手入口
 
 新成员或新 AI 按顺序阅读：
