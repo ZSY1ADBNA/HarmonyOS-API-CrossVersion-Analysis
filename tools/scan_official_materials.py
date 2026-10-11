@@ -8,10 +8,11 @@ import hashlib
 import json
 from pathlib import Path, PurePosixPath
 import re
+import time
 import zipfile
 from urllib.parse import unquote, urlsplit
 
-from collect_official_sources import filesystem_path, identity, write_json
+from collect_official_sources import filesystem_path, identity, write_json, file_sha256
 
 ROOT = Path(__file__).resolve().parents[1]
 CODE = {'.ets', '.ts', '.js', '.cpp', '.cc', '.c', '.h', '.hpp'}
@@ -25,7 +26,28 @@ def category(path):
     parts = path.split('/')
     return parts[1] if len(parts)>1 and parts[0]=='zh-cn' else 'repository_context'
 
-def scan(source, root):
+SCAN_VERSION=2
+
+def cached_scan(source, root):
+    folder=root/'sources'/source['source_id']
+    outdir=root/'structured'/'yu-materials'/source['source_id']
+    receipt=outdir/'scan-receipt.json'
+    archive=root/'archives'/f"{source['source_id']}.zip"
+    if not receipt.exists() or not archive.exists(): return None
+    try:
+        saved=json.loads(receipt.read_text(encoding='utf-8'))
+        provenance={key:source.get(key) for key in ('source_id','kind','repository','release_id','commit','body_status','archive_sha256')}
+        if saved.get('scan_version')!=SCAN_VERSION or saved.get('provenance')!=provenance: return None
+        if file_sha256(archive)!=saved['archive_sha256'] or file_sha256(folder/'files.jsonl')!=saved['ledger_sha256']: return None
+        if any(file_sha256(outdir/name)!=digest for name,digest in saved['outputs_sha256'].items()): return None
+        return json.loads((outdir/'report.json').read_text(encoding='utf-8'))
+    except (OSError,ValueError,KeyError): return None
+
+def scan(source, root, reverify=False):
+    started=time.perf_counter()
+    cached=None if reverify else cached_scan(source,root)
+    if cached is not None:
+        return {**cached,'performance':{'elapsed_seconds':round(time.perf_counter()-started,3),'scan_reused':True}}
     folder = root/'sources'/source['source_id']
     content = folder/'content'
     with (folder/'files.jsonl').open(encoding='utf-8') as ledger_file:
@@ -123,15 +145,26 @@ def scan(source, root):
             'commit':source['commit'],'body_status':source.get('body_status','unknown'),
             'counts':dict(counts),'project_roots_candidates':projects,'project_detection':'build_configuration_and_build_entry',
             'license_evidence':license_files,'failures':failures,'relative_links_requiring_review':len(unresolved_links),
-            'verification_passed':not failures,'semantic_parsing_verified':False,'build_verified':False}
+            'verification_passed':not failures,'semantic_parsing_verified':False,'build_verified':False,
+            'performance':{'elapsed_seconds':round(time.perf_counter()-started,3),'scan_reused':False}}
     write_json(outdir/'links-requiring-review.json',unresolved_links)
     write_json(outdir/'report.json',report)
+    if archive_path.exists():
+        archive_digest=file_sha256(archive_path)
+        # A mismatching source manifest must never seed a reusable scan.
+        if archive_digest==source.get('archive_sha256'):
+            write_json(outdir/'scan-receipt.json',{
+                'scan_version':SCAN_VERSION,
+                'provenance':{key:source.get(key) for key in ('source_id','kind','repository','release_id','commit','body_status','archive_sha256')},
+                'archive_sha256':archive_digest,'ledger_sha256':file_sha256(folder/'files.jsonl'),
+                'outputs_sha256':{name:file_sha256(outdir/name) for name in ('documents.jsonl','sample-files.jsonl','links-requiring-review.json','report.json')}})
     return report
 
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--root',type=Path,default=ROOT/'data/delivery')
     parser.add_argument('--report',type=Path,default=ROOT/'docs/official-data-delivery/materials-scan.json')
+    parser.add_argument('--reverify',action='store_true',help='Rescan every source even when all input/output fingerprints match')
     args=parser.parse_args()
     sources=json.loads((args.root/'sources.json').read_text(encoding='utf-8'))['sources']
     reports=[]
@@ -141,7 +174,7 @@ def main():
             reports.append({'source_id':source['source_id'],'kind':source['kind'],
                             'release_id':source['release_id'],'commit':source['commit'],
                             'status':'body_unavailable','verification_passed':False}); continue
-        report=scan(source,args.root); reports.append(report)
+        report=scan(source,args.root,args.reverify); reports.append(report)
         print(source['kind'],source['release_id'],report['counts'],flush=True)
         write_json(args.report,{'schema_version':1,'sources':reports,'all_targets_verified':False})
     complete=len(reports)==10 and all(r.get('verification_passed') for r in reports)

@@ -8,7 +8,7 @@ import unittest
 from unittest.mock import patch
 import zipfile
 
-from collect_official_sources import collect, write_json, import_source_lock
+from collect_official_sources import collect, write_json, import_source_lock, acquire_blob_batch, reusable_collection, file_sha256, save_collection_receipt, recover_collection_record
 from scan_official_materials import scan
 
 class MaterialsTests(unittest.TestCase):
@@ -162,5 +162,93 @@ class MaterialsTests(unittest.TestCase):
             self.assertEqual(record['body_status'],'unavailable')
             self.assertEqual(record['expected_archive_sha256'],source['archive_sha256'])
             with self.assertRaises(ValueError): import_source_lock(path,['samples'])
+
+    def test_network_failure_does_not_split_blob_batch(self):
+        fetched=[]
+        def git(*args,**kwargs):
+            if args[0]=='cat-file': return subprocess.CompletedProcess(args,0,stdout='a missing\nb missing\n')
+            fetched.append(args)
+            self.assertEqual(kwargs['timeout'],180)
+            raise subprocess.CalledProcessError(128,args,stderr='fatal: early EOF; TLS connection failed')
+        with self.assertRaises(subprocess.CalledProcessError): acquire_blob_batch(git,['a','b'])
+        self.assertEqual(len(fetched),1)
+
+    def test_archive_retry_has_one_bounded_retry_layer(self):
+        with self.temporary_directory() as temporary:
+            attempts=[]
+            def failed_download(args,**kwargs):
+                attempts.append(args)
+                self.assertEqual(kwargs['timeout'],200)
+                self.assertEqual(args[args.index('--retry')+1],'0')
+                self.assertEqual(args[args.index('--max-time')+1],'180')
+                raise subprocess.CalledProcessError(28,args)
+            source={'source_id':'fixture','kind':'samples','status':'locked','repository_name':'test','commit':'a'*40}
+            with patch('collect_official_sources.shutil.which',return_value='curl'),patch('collect_official_sources.subprocess.run',side_effect=failed_download),patch('collect_official_sources.time.sleep'):
+                result=collect(source,Path(temporary),'archive')
+            self.assertEqual(result['status'],'collection_failed')
+            self.assertEqual(len(attempts),2)
+
+    def test_object_specific_rejection_splits_and_preserves_other_objects(self):
+        fetched=[]
+        def git(*args,**kwargs):
+            if args[0]=='cat-file':
+                return subprocess.CompletedProcess(args,0,stdout=''.join(h+' missing\n' for h in kwargs['input'].splitlines()))
+            hashes=list(args[5:]); fetched.append(hashes)
+            if len(hashes)>1: raise subprocess.CalledProcessError(128,args,stderr='fatal: not our ref b')
+            return subprocess.CompletedProcess(args,0,stdout='')
+        acquire_blob_batch(git,['a','b'])
+        self.assertEqual(fetched,[['a','b'],['a'],['b']])
+
+    def test_collection_resume_rejects_changed_archive_ledger_and_commit(self):
+        with self.temporary_directory() as temporary:
+            root=Path(temporary)
+            source=self.fixture(root,'samples',{'LICENSE':b'License\n'})
+            write_json(root/'sources/fixture/inventory.json',{'commit':source['commit'],'files':[]})
+            (root/'archives').mkdir()
+            archive_path=root/'archives/fixture.zip'
+            with zipfile.ZipFile(archive_path,'w') as archive: archive.writestr('snapshot/LICENSE',b'License\n')
+            source.update(body_storage='verified_archive',archive_sha256=file_sha256(archive_path),file_count=1,archive_normalization='git_bytes_autocrlf_false_v1')
+            save_collection_receipt(source,root)
+            self.assertTrue(reusable_collection(source,root))
+            with patch('collect_official_sources.subprocess.run',side_effect=AssertionError('Resume must not start Git')):
+                result=collect(source,root,'git-batches')
+            self.assertTrue(result['performance']['verified_archive_reused'])
+            self.assertFalse(reusable_collection({**source,'commit':'b'*40},root))
+            ledger=root/'sources/fixture/files.jsonl'; original=ledger.read_bytes()
+            ledger.write_bytes(original+b'\n')
+            self.assertFalse(reusable_collection(source,root))
+            ledger.write_bytes(original)
+            with archive_path.open('ab') as stream: stream.write(b'tampered')
+            self.assertFalse(reusable_collection(source,root))
+
+    def test_scan_resume_rejects_modified_output_and_input(self):
+        with self.temporary_directory() as temporary:
+            root=Path(temporary); source=self.fixture(root,'docs',{'zh-cn/test.md':b'# Header\ntext'})
+            (root/'archives').mkdir(); archive_path=root/'archives/fixture.zip'
+            with zipfile.ZipFile(archive_path,'w') as archive: archive.writestr('snapshot/zh-cn/test.md',b'# Header\ntext')
+            source['archive_sha256']=file_sha256(archive_path)
+            first=scan(source,root); second=scan(source,root)
+            self.assertTrue(second['performance']['scan_reused'])
+            self.assertEqual(first['counts'],second['counts'])
+            output=root/'structured/yu-materials/fixture/documents.jsonl'
+            output.write_text('tampered',encoding='utf-8')
+            repaired=scan(source,root)
+            self.assertFalse(repaired['performance']['scan_reused'])
+            self.assertIn('Header',output.read_text(encoding='utf-8'))
+            with archive_path.open('ab') as stream: stream.write(b'changed archive')
+            self.assertFalse(scan(source,root)['performance']['scan_reused'])
+
+    def test_worker_result_recovers_stale_manifest_without_replacing_lock(self):
+        with self.temporary_directory() as temporary:
+            root=Path(temporary)
+            locked={'source_id':'fixed','kind':'samples','repository':'repo','release_id':'test','commit':'a'*40,'status':'locked','ref':'fixed-tag','expected_archive_sha256':'b'*64}
+            saved={**locked,'status':'collected','ref':'changed-ref','archive_sha256':'b'*64}
+            write_json(root/'verified-results/fixed.json',saved)
+            recovered=recover_collection_record(locked,root)
+            self.assertEqual(recovered['status'],'collected')
+            self.assertEqual(recovered['ref'],'fixed-tag')
+            self.assertEqual(recovered['expected_archive_sha256'],'b'*64)
+            write_json(root/'verified-results/fixed.json',{**saved,'commit':'c'*40})
+            self.assertEqual(recover_collection_record(locked,root),locked)
 
 if __name__=='__main__': unittest.main()

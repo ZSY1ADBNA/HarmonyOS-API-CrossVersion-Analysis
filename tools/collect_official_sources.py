@@ -104,8 +104,72 @@ def import_source_lock(path, kinds):
     if set(kinds)-{s['kind'] for s in records}: raise ValueError('Pinned source lock lacks requested kinds')
     return records
 
-def collect(record, root, transport='archive'):
+def file_sha256(path):
+    digest=hashlib.sha256()
+    with path.open('rb') as stream:
+        while raw:=stream.read(1024*1024): digest.update(raw)
+    return digest.hexdigest()
+
+def reusable_collection(record, root):
+    """Trust a previous full verification only while all its input bytes match."""
+    if record.get('status')!='collected' or record.get('body_status')!='complete' or record.get('body_storage')!='verified_archive':
+        return False
+    folder=root/'sources'/record['source_id']
+    receipt=folder/'verification-receipt.json'
+    if not receipt.exists(): return False
+    try:
+        saved=json.loads(receipt.read_text(encoding='utf-8'))
+        provenance={key:record.get(key) for key in ('source_id','kind','repository','release_id','commit','archive_normalization','file_count','archive_sha256')}
+        if saved.get('schema_version')!=1 or saved.get('provenance')!=provenance: return False
+        if record.get('expected_archive_sha256',record['archive_sha256'])!=record['archive_sha256']: return False
+        if record.get('expected_file_count',record['file_count'])!=record['file_count']: return False
+        paths={'archive':root/'archives'/f"{record['source_id']}.zip",'inventory':folder/'inventory.json','ledger':folder/'files.jsonl'}
+        return all(path.is_file() and file_sha256(path)==saved['sha256'][name] for name,path in paths.items())
+    except (OSError,ValueError,KeyError):
+        return False
+
+def save_collection_receipt(record, root):
+    if record.get('body_status')!='complete' or record.get('body_storage')!='verified_archive': return
+    folder=root/'sources'/record['source_id']
+    write_json(folder/'verification-receipt.json',{
+        'schema_version':1,
+        'provenance':{key:record.get(key) for key in ('source_id','kind','repository','release_id','commit','archive_normalization','file_count','archive_sha256')},
+        'sha256':{'archive':record['archive_sha256'],'inventory':file_sha256(folder/'inventory.json'),'ledger':file_sha256(folder/'files.jsonl')}})
+
+def recover_collection_record(record, root):
+    """Recover a worker's result if the aggregate progress file was not updated."""
+    if record.get('status')=='collected': return record
+    path=root/'verified-results'/f"{record['source_id']}.json"
+    if not path.exists(): return record
+    try:
+        saved=json.loads(path.read_text(encoding='utf-8'))
+        keys=('source_id','kind','repository','release_id','commit')
+        if saved.get('status')!='collected' or any(saved.get(k)!=record.get(k) for k in keys): return record
+        merged={**record,**saved}
+        for key in ('ref','expected_archive_sha256','expected_file_count'):
+            if key in record: merged[key]=record[key]
+        # collect still validates the receipt and all input hashes before reuse.
+        return merged
+    except (OSError,ValueError,KeyError): return record
+
+def acquire_blob_batch(git, batch):
+    check=git('cat-file','--batch-check',input=''.join(h+'\n' for h in batch),env={**os.environ,'GIT_NO_LAZY_FETCH':'1'})
+    batch=[line.split()[0] for line in check.stdout.splitlines() if line.endswith(' missing')]
+    if not batch: return
+    try:
+        git('fetch','--no-tags','--no-write-fetch-head','--no-filter','origin',*batch,timeout=180)
+    except subprocess.CalledProcessError as exc:
+        # Splitting a connectivity failure repeats the same failure for every object.
+        object_error=re.search(r'not our ref|unadvertised object|couldn.t find remote ref|does not allow request for unadvertised',exc.stderr or '',re.I)
+        if not object_error or len(batch)==1: raise
+        middle=len(batch)//2
+        acquire_blob_batch(git,batch[:middle]); acquire_blob_batch(git,batch[middle:])
+
+def collect(record, root, transport='archive', reverify=False):
+    started=time.perf_counter()
     if record['status']=='source_ref_unavailable': return record
+    if not reverify and transport=='git-batches' and reusable_collection(record,root):
+        return {**record,'performance':{'elapsed_seconds':round(time.perf_counter()-started,3),'verified_archive_reused':True}}
     source_id=record['source_id']
     folder=root/'sources'/source_id
     archive=root/'archives'/f'{source_id}.zip'
@@ -118,8 +182,9 @@ def collect(record, root, transport='archive'):
             checkout = root/('git-cache-v3' if transport=='git-batches' else 'git-cache-v2')/source_id
             checkout.mkdir(parents=True, exist_ok=True)
             def git(*args, **options):
+                timeout=options.pop('timeout',600)
                 return subprocess.run([GIT, '-C', str(checkout), '-c', 'http.sslBackend=openssl', '-c', 'core.quotepath=false', '-c', 'core.autocrlf=false', '-c', 'fetch.unpackLimit=1', '-c', 'gc.auto=0', '-c', 'maintenance.auto=false',
-                                       *args], capture_output=True, text=True, encoding='utf-8', check=True, timeout=600, **options)
+                                       *args], capture_output=True, text=True, encoding='utf-8', check=True, timeout=timeout, **options)
             if not (checkout/'.git').exists():
                 git('init')
                 previous = [root/cache/source_id/'.git/objects' for cache in ('git-cache','git-cache-v2')]
@@ -150,9 +215,9 @@ def collect(record, root, transport='archive'):
                 for attempt in range(2):
                     try:
                         if transport=='git-batches':
-                            git('fetch','--depth=1','--filter=blob:none','origin',record['ref'])
+                            git('fetch','--depth=1','--filter=blob:none','origin',record['ref'],timeout=180)
                         else:
-                            git('fetch', '--depth=1', record['repository']+'.git', record['ref'])
+                            git('fetch', '--depth=1', record['repository']+'.git', record['ref'],timeout=180)
                         if git('rev-parse','FETCH_HEAD^{commit}').stdout.strip() != record['commit']:
                             raise ValueError('Remote release ref moved; source lock retained')
                         break
@@ -179,18 +244,8 @@ def collect(record, root, transport='archive'):
                            env={**os.environ,'GIT_NO_LAZY_FETCH':'1'})
                 missing=[line.split()[0] for line in result.stdout.splitlines() if line.endswith(' missing')]
                 print(record['kind'],record['release_id'],'directory_complete',len(inventory),'missing_blobs',len(missing),flush=True)
-                def acquire(batch):
-                    check=git('cat-file','--batch-check',input=''.join(h+'\n' for h in batch),env={**os.environ,'GIT_NO_LAZY_FETCH':'1'})
-                    batch=[line.split()[0] for line in check.stdout.splitlines() if line.endswith(' missing')]
-                    if not batch: return
-                    try:
-                        git('fetch','--no-tags','--no-write-fetch-head','--no-filter','origin',*batch)
-                    except subprocess.CalledProcessError:
-                        if len(batch)==1: raise
-                        middle=len(batch)//2
-                        acquire(batch[:middle]); acquire(batch[middle:])
                 for offset in range(0,len(missing),200):
-                    acquire(missing[offset:offset+200])
+                    acquire_blob_batch(git,missing[offset:offset+200])
                     if offset%1000==0: print(record['kind'],record['release_id'],'blob_progress',min(offset+200,len(missing)),len(missing),flush=True)
             normalization='git_bytes_autocrlf_false_v1'
             if record.get('archive_normalization') != normalization or not (archive.exists() and zipfile.is_zipfile(archive)):
@@ -208,23 +263,26 @@ def collect(record, root, transport='archive'):
                       'inventory_file_count':len(inventory), 'submodules':submodules}
         if not archive.exists() or not zipfile.is_zipfile(archive):
             partial=archive.with_suffix('.part')
-            for attempt in range(3):
+            for attempt in range(2):
                 try:
                     curl = shutil.which('curl.exe') or shutil.which('curl')
                     if curl and transport != 'urllib':
-                        subprocess.run([curl,'--fail','--location','--http1.1','--retry','3',
-                                        '--retry-all-errors','--connect-timeout','30','--max-time','1200',
+                        subprocess.run([curl,'--fail','--location','--http1.1','--retry','0',
+                                        '--connect-timeout','10','--max-time','180','--speed-time','30','--speed-limit','1024',
                                         '--silent','--show-error','--output',str(partial),url],
-                                       check=True,timeout=5000)
+                                       check=True,timeout=200)
                     else:
                         request=urllib.request.Request(url,headers={'User-Agent':'OpenHarmony-Verified-Delivery'})
-                        with urllib.request.urlopen(request,timeout=180) as response, partial.open('wb') as output:
-                            shutil.copyfileobj(response,output,1024*1024)
+                        deadline=time.monotonic()+180
+                        with urllib.request.urlopen(request,timeout=30) as response, partial.open('wb') as output:
+                            while raw:=response.read(1024*1024):
+                                output.write(raw)
+                                if time.monotonic()>deadline: raise TimeoutError('Archive download exceeded 180 seconds')
                     if not zipfile.is_zipfile(partial): raise ValueError('Downloaded response is not a ZIP archive')
                     partial.replace(archive)
                     break
                 except Exception:
-                    if attempt==2: raise
+                    if attempt==1: raise
                     time.sleep(2+attempt)
         digest=hashlib.sha256()
         with archive.open('rb') as stream:
@@ -274,13 +332,17 @@ def collect(record, root, transport='archive'):
         ledger.with_suffix('.tmp').replace(ledger)
         licenses=[x['path'] for x in license_evidence]
         clean_record = {k:v for k,v in record.items() if k != 'error'}
-        return {**clean_record,'status':'collected','body_status':'complete_with_unresolved_dependencies' if pointers or record.get('submodules') else 'complete',
+        result={**clean_record,'status':'collected','body_status':'complete_with_unresolved_dependencies' if pointers or record.get('submodules') else 'complete',
                 'archive_url':url,'archive_sha256':digest.hexdigest(),
                 'archive_size':archive.stat().st_size,'content_root':str(folder/'content') if materialize else None,
                 'body_storage':'archive_and_files' if materialize else 'verified_archive',
                 'ledger':str(ledger),'file_count':count,'excluded_files':excluded,
                 'lfs_pointers':pointers,'lfs_expanded_files_verified':lfs_expanded,'license_files':licenses,'license_evidence':license_evidence,
-                'collected_at':datetime.now(timezone.utc).isoformat()}
+                'collected_at':datetime.now(timezone.utc).isoformat(),
+                'performance':{'elapsed_seconds':round(time.perf_counter()-started,3),'verified_archive_reused':False}}
+        save_collection_receipt(result,root)
+        write_json(root/'verified-results'/f'{source_id}.json',result)
+        return result
     except Exception as exc:
         error = (exc.stderr or str(exc)) if isinstance(exc,subprocess.CalledProcessError) else str(exc)
         inventory_path=folder/'inventory.json'
@@ -288,7 +350,8 @@ def collect(record, root, transport='archive'):
         return {**record,'status':'collection_failed','body_status':'verification_failed' if archive.exists() else 'unavailable',
                 'inventory_status':'complete' if directory and directory.get('commit')==record['commit'] else 'unavailable',
                 'inventory_file_count':len(directory['files']) if directory else None,
-                'error':error,'archive_url':url}
+                'error':error,'archive_url':url,
+                'performance':{'elapsed_seconds':round(time.perf_counter()-started,3),'verified_archive_reused':False}}
     finally:
         if blob_reader is not None: blob_reader.close()
 
@@ -298,7 +361,8 @@ def main():
     parser.add_argument('--lock-only',action='store_true')
     parser.add_argument('--workers',type=int,default=3)
     parser.add_argument('--kinds', nargs='+', choices=list(REPOS), default=list(REPOS))
-    parser.add_argument('--transport', choices=['archive','git','git-batches','urllib'], default='archive')
+    parser.add_argument('--transport', choices=['auto','archive','git','git-batches','urllib'], default='auto')
+    parser.add_argument('--reverify',action='store_true',help='Force full Git-tree and per-file validation even with a matching verification receipt')
     parser.add_argument('--releases', nargs='+', help='Optional exact release_id filter for resuming one source group')
     parser.add_argument('--lock',type=Path,help='Import the published fixed source lock in a fresh data root')
     args=parser.parse_args(); manifest=args.root/'sources.json'
@@ -319,8 +383,9 @@ def main():
         write_json(manifest,{'schema_version':1,'sources':records})
     print('Locked sources:',len(records),flush=True)
     if args.lock_only:return
+    records=[recover_collection_record(r,args.root) if r['kind'] in args.kinds and r.get('source_id') else r for r in records]
     with ThreadPoolExecutor(max_workers=max(1,min(args.workers,4))) as pool:
-        futures={pool.submit(collect,r,args.root,args.transport):i for i,r in enumerate(records) if r['kind'] in args.kinds and (not args.releases or r['release_id'] in args.releases)}
+        futures={pool.submit(collect,r,args.root,('git-batches' if r['kind'] in ('docs','samples') else 'archive') if args.transport=='auto' else args.transport,args.reverify):i for i,r in enumerate(records) if r['kind'] in args.kinds and (not args.releases or r['release_id'] in args.releases)}
         for future in as_completed(futures):
             record=future.result(); records[futures[future]]=record
             write_json(manifest,{'schema_version':1,'sources':records})
