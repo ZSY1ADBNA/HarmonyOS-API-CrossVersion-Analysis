@@ -319,7 +319,7 @@ def api_trend():
 SYSTEM_PROMPT = """你是 HarmonyOS API 跨版本分析助手。你通过 Neo4j 图数据库查询 API 变化数据。
 
 ## 数据库模型
-- 6个版本：API4.1, API5.0, API5.1, API6.0, API6.1
+- 5个版本：API4.1, API5.0, API5.1, API6.0, API6.1
 - 节点类型及属性：Module(name,sdk_version), Class(name,module,parent_name,description,since,sdk_version), Interface(同上), Enum(同上), Method(name,parent_name,module,return_type,sdk_version), Property(name,parent_name,module,property_type,sdk_version), TypeAlias, EnumMember, Struct, Namespace
 - 关系：(子节点)-[:HAS_PARENT]->(父节点), (节点)-[:BELONGS_TO_MODULE]->(Module)
 - 每个节点有 uid 属性，格式为 {version}::{parent}::{name}

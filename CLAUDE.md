@@ -18,7 +18,7 @@
 
 ## 模型与限制
 
-节点、关系、UID、数据字段和版本对应见[数据规范](docs/data-contract.md)。API4.1、API5.0、API5.1、API6.0、API6.1 是项目标签，API 目录来源待核实。注意：gitee 上的 interface_sdk-js 已停更（最新只到 6.0），官方仓库已迁移至 gitcode.com/openharmony/interface_sdk-js（6.1 起），本地 SDK 仓库已添加 gitcode 远程。
+节点、关系、UID、数据字段和版本对应见[数据规范](docs/data-contract.md)。API4.1、API5.0、API5.1、API6.0、API6.1 是项目标签。注意：gitee 上的 interface_sdk-js 已停更（最新只到 6.0），官方仓库已迁移至 gitcode.com/openharmony/interface_sdk-js（6.1 起），本地 SDK 仓库已添加 gitcode 远程。
 
 解析包含正则和状态机，复杂语法完整性未在本次运行验证。现有 UID 未包含模块和完整签名，旧 neo4j_import.py 不作为默认入口，现有入口也不是已验证无缺陷。
 

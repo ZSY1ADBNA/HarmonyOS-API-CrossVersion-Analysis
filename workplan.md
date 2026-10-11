@@ -9,7 +9,7 @@
 ## 当前概况
 
 源码、JSON、导入、查询、报告和网站入口已存在，见 [README](README.md) 与[数据规范](docs/data-contract.md)。
-- 默认分支 master；JSON 目录 API、API4.1、API5.0、API5.1、API6.0、API6.1，API 来源待确认。
+- 默认分支 master；JSON 目录 API4.1、API5.0、API5.1、API6.0、API6.1。
 - 提取存在个人 Windows 路径；_run_import.py 会清空目标默认数据库。
 - 仓库尚无统一 Python/Neo4j 版本或依赖锁定。可用环境的实际版本待成员提供。
 - 2026-10-03 核对 19 个文件（主要脚本、文档、HTML及各数据目录一个 JSON），样本 UTF-8 字节长度与 blob 大小一致，无 BOM、LF；未遍历全部 JSON。
@@ -268,7 +268,7 @@
 - 已完成步骤、涉及文件与成果：
   - [x] 1. 源码获取。效果：确认 gitee 仓库 interface_sdk-js 已停更（最新 6.0-Release，weekly 分支止于 2025-09），官方迁移至 gitcode.com/openharmony/interface_sdk-js；本地 SDK 仓库添加 gitcode 远程并检出 OpenHarmony-6.1-Release，复制 902 个 .d.ts 到 01_source_files/API6.1（该目录被 .gitignore 忽略，不入库）。2026-10-11。
   - [x] 2. 解析与增强。效果：902 个 JSON 提取+增强全部成功（03_extracted_json/API6.1，随提交入库）。2026-10-11。
-  - [x] 3. 导入图谱。效果：_run_import.py 断点续传增量导入，902 文件 OK、0 失败、99 秒；库内 API6.1 唯一节点 18,302、关系 24,823；总节点 77,778→99,679。2026-10-11。
+  - [x] 3. 导入图谱。效果：_run_import.py 断点续传增量导入，902 文件 OK、0 失败、99 秒；库内 API6.1 唯一节点 18,302、关系 24,823；总节点 77,778→96,080（含 API 目录 23,208，该目录已于 VER-002 移除）。2026-10-11。
   - [x] 4. 版本列表更新。效果：app.py、agent.py、extract_versions.py、04_analysis_queries/run_analysis.py、templates/index.html、CLAUDE.md、README.md 均加入 API6.1。2026-10-11。
   - [x] 5. 报告重生成。效果：修复 _gen_report.py 循环变量 d 遮蔽 driver 的 bug，重生成报告 3,551 行（原 2,847），含 6.0→6.1 全部对比分析。2026-10-11。
 - 分支/提交/PR、本地未提交改动：任务分支 feat/api6.1；提交与 PR 链接见仓库。本地敏感文件（server_creds.txt）与大体积部署包（*.tar.gz）不入库，已加入 .gitignore；deploy*.py、remote_deploy.py、import_progress.txt 保持未跟踪。
@@ -278,3 +278,19 @@
 - 尚未更新的数据或报告：在线部署（http://47.114.40.66:5000/）未更新；run_analysis.py 十项分析未重跑。
 - 下一步（具体文件和动作）：合并 feat/api6.1 PR 至 master；验收人确认后标已验收；如需 6.1-LTS 或 7.0 可沿用同一流程（gitcode 上已有分支）。
 - 最后更新时间（时区）、进展记录：2026-10-11（Asia/Shanghai）。当日完成全链路并勾选任务一。
+
+## VER-002 移除未标注版本的 API 目录
+
+- ID/标题、目标与范围：VER-002 从项目中删除最早的、未带版本标注的 API 目录（01_source_files/API 与 03_extracted_json/API，来源不明、从未在网页版本列表中展示），并同步清理图谱与文档。
+- 负责人/验收人、状态、验收条件：负责人：张舒阳（254358355，本机执行 + AI 辅助）；验收人：待确认。状态：已完成。验收条件：源文件/JSON/图谱/文档中不再出现未标注的 API 版本数据，其余 5 个版本数据完好。
+- 已完成步骤、涉及文件与成果：
+  - [x] 1. 删除源文件与 JSON。效果：rm 01_source_files/API（3,978 个 .d.ts，git 忽略目录）；git rm 03_extracted_json/API（1,250 个 JSON，et+js 两个子目录）。2026-10-11。
+  - [x] 2. 清理图谱。效果：MATCH (n {sdk_version:'API'}) DETACH DELETE n，删除 23,208 节点；总节点 96,080→72,872；剩余 API4.1 6,197 / API5.0 15,335 / API5.1 16,468 / API6.0 16,570 / API6.1 18,302。2026-10-11。
+  - [x] 3. 更新文档引用。效果：workplan 概况、CLAUDE.md、docs/data-contract.md（来源与版本一节补 6.1 映射并注明 API 目录移除）、app.py SYSTEM_PROMPT（6 个版本→5 个版本）；修正 VER-001 中总节点数笔误。DATA-001 等历史任务记录保持原样未改。2026-10-11。
+- 分支/提交/PR、本地未提交改动：随 feat/api6.1 分支提交（与 VER-001 同 PR）。import_progress.txt 中 API 前缀的进度行已清理（本地未跟踪文件）。
+- 验证环境、输入、命令与工作目录：Windows 11 本机；Neo4j 5.26.4 community；工作目录 C:\Users\MR\Desktop\HarmonyAPI_Project。
+- 预期结果、实际结果、证据：预期移除后 5 个版本数据不变。实际：删除前后各版本节点数一致（见步骤 2）；网页 /api/overview 与趋势查询均不含 API 版本（VERSIONS 列表本就未含）。
+- 决定及原因、阻塞及所需信息：该目录未带版本标注、来源待确认，不参与网页展示与报告；保留会造成数据源混乱，按成员要求移除。阻塞：无。
+- 尚未更新的数据或报告：报告与 README 的版本表本就不含 API 目录，无需重生成；如需追溯，该目录源码仍可从上游 SDK 仓库历史获取。
+- 下一步（具体文件和动作）：随 VER-001 的 PR 一并合并；验收人确认后标已验收。
+- 最后更新时间（时区）、进展记录：2026-10-11（Asia/Shanghai）。当日完成删除与清理。

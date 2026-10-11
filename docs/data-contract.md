@@ -15,8 +15,9 @@
 - OpenHarmony-5.0.3-Release → API5.0
 - OpenHarmony-5.1.0-Release → API5.1
 - OpenHarmony-6.0-Release → API6.0
+- OpenHarmony-6.1-Release → API6.1
 
-这些是项目标签，不等同 API Level。JSON 另有 API 目录，来源待确认，不能未经核实称为“最早版本”。
+这些是项目标签，不等同 API Level。原 JSON 目录中的 API 目录（来源待确认）已于 2026-10-11 移除，不再纳入分析。
 
 源码仅由本地 interface_sdk-js 路径指向；历史数据对应的上游 URL 与固定提交尚待补齐。生成记录应包含来源 URL、SHA、版本对应、范围、生成命令、解析器版本和许可。只记录可变分支名不足以复现。
 
