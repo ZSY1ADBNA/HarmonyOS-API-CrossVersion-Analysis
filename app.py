@@ -5,6 +5,12 @@ from flask import Flask, jsonify, request, render_template
 from neo4j import GraphDatabase
 import urllib.request
 
+# 确保优先导入项目目录的 agent.py（部分系统自带同名 agent 包会抢先占用模块名）
+import os as _os
+import sys as _sys
+_sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
+import agent
+
 # AI backend: "deepseek" (primary) | "ollama" (fallback) | "none"
 AI_MODE = "deepseek"
 OLLAMA_URL = "http://localhost:11434/v1/chat/completions"
@@ -17,7 +23,7 @@ NEO4J_USER = "neo4j"
 NEO4J_PASSWORD = "12345678"
 driver = GraphDatabase.driver(NEO4J_URI, auth=(NEO4J_USER, NEO4J_PASSWORD))
 
-VERSIONS = ["API4.1", "API5.0", "API5.1", "API6.0"]
+VERSIONS = ["API4.1", "API5.0", "API5.1", "API6.0", "API6.1"]
 
 
 def run_cypher(query, **params):
@@ -72,7 +78,7 @@ def api_versions():
 
 @app.route("/api/modules")
 def api_modules():
-    ver = request.args.get("version", "API6.0")
+    ver = request.args.get("version", "API6.1")
     rows = run_cypher("""
         MATCH (n {sdk_version: $ver})
         WHERE n.type IN ['class','interface','enum']
@@ -86,8 +92,8 @@ def api_modules():
 
 @app.route("/api/compare")
 def api_compare():
-    old_ver = request.args.get("old", "API5.0")
-    new_ver = request.args.get("new", "API5.1")
+    old_ver = request.args.get("old", "API6.0")
+    new_ver = request.args.get("new", "API6.1")
 
     # Common key set helper
     def key_set(ver):
@@ -135,8 +141,8 @@ def api_compare():
 
 @app.route("/api/compare-detail")
 def api_compare_detail():
-    old_ver = request.args.get("old", "API5.0")
-    new_ver = request.args.get("new", "API5.1")
+    old_ver = request.args.get("old", "API6.0")
+    new_ver = request.args.get("new", "API6.1")
     direction = request.args.get("direction", "added")  # added | removed
     page = int(request.args.get("page", 1))
     per_page = int(request.args.get("per_page", 50))
@@ -181,7 +187,7 @@ def api_compare_detail():
 
 @app.route("/api/graph")
 def api_graph():
-    ver = request.args.get("version", "API6.0")
+    ver = request.args.get("version", "API6.1")
     module = request.args.get("module", "")
     keyword = request.args.get("keyword", "")
     max_parents = int(request.args.get("max_parents", 30))
@@ -279,7 +285,7 @@ def api_graph():
 @app.route("/api/trend")
 def api_trend():
     rows = run_cypher("""
-        MATCH (n) WHERE n.sdk_version IN ['API4.1','API5.0','API5.1','API6.0']
+        MATCH (n) WHERE n.sdk_version IN ['API4.1','API5.0','API5.1','API6.0','API6.1']
           AND n.type IN ['class','interface','enum','method','property']
         RETURN n.sdk_version AS version,
                n.type AS type,
@@ -288,7 +294,7 @@ def api_trend():
     """)
 
     types = ["class", "interface", "enum", "method", "property"]
-    versions = ["API4.1", "API5.0", "API5.1", "API6.0"]
+    versions = ["API4.1", "API5.0", "API5.1", "API6.0", "API6.1"]
 
     # Build series per type
     series = {}
@@ -313,7 +319,7 @@ def api_trend():
 SYSTEM_PROMPT = """你是 HarmonyOS API 跨版本分析助手。你通过 Neo4j 图数据库查询 API 变化数据。
 
 ## 数据库模型
-- 5个版本：API4.1, API5.0, API5.1, API6.0
+- 6个版本：API4.1, API5.0, API5.1, API6.0, API6.1
 - 节点类型及属性：Module(name,sdk_version), Class(name,module,parent_name,description,since,sdk_version), Interface(同上), Enum(同上), Method(name,parent_name,module,return_type,sdk_version), Property(name,parent_name,module,property_type,sdk_version), TypeAlias, EnumMember, Struct, Namespace
 - 关系：(子节点)-[:HAS_PARENT]->(父节点), (节点)-[:BELONGS_TO_MODULE]->(Module)
 - 每个节点有 uid 属性，格式为 {version}::{parent}::{name}
@@ -366,8 +372,11 @@ def load_api_key():
     return DEEPSEEK_API_KEY
 
 
-def call_ai(messages, max_tokens=1024, retries=3):
-    """Call AI with retry — DeepSeek primary, Ollama fallback."""
+def call_ai(messages, max_tokens=1024, retries=3, tools=None):
+    """Call AI with retry — DeepSeek primary, Ollama fallback.
+
+    tools: OpenAI 兼容的函数调用工具列表（仅 DeepSeek 分支使用）。
+    """
     ctx = ssl.create_default_context()
     ctx.check_hostname = False
     ctx.verify_mode = ssl.CERT_NONE
@@ -392,11 +401,15 @@ def call_ai(messages, max_tokens=1024, retries=3):
         if not api_key:
             return None
 
-        data = json.dumps({
-            "model": "deepseek-chat",
+        model = os.environ.get("DEEPSEEK_MODEL", "deepseek-chat")
+        payload = {
+            "model": model,
             "messages": messages,
             "max_tokens": max_tokens,
-        }).encode("utf-8")
+        }
+        if tools:
+            payload["tools"] = tools
+        data = json.dumps(payload).encode("utf-8")
 
         import time
         last_err = None
@@ -409,10 +422,21 @@ def call_ai(messages, max_tokens=1024, retries=3):
                         "Authorization": f"Bearer {api_key}",
                         "Content-Type": "application/json",
                     })
-                resp = urllib.request.urlopen(req, timeout=60, context=ctx)
+                resp = urllib.request.urlopen(req, timeout=120, context=ctx)
                 return json.loads(resp.read())
             except Exception as e:
                 last_err = e
+                # thinking 模式下回传的 reasoning_content 可能导致 400：
+                # 首次失败后剥离一次并重试
+                if attempt == 0:
+                    stripped = False
+                    for m in messages:
+                        if isinstance(m, dict) and m.get("role") == "assistant" \
+                                and "reasoning_content" in m:
+                            m.pop("reasoning_content", None)
+                            stripped = True
+                    if stripped:
+                        data = json.dumps(payload).encode("utf-8")
                 if attempt < retries - 1:
                     time.sleep(2)
         print(f"DeepSeek failed after {retries} retries: {last_err}")
@@ -423,12 +447,23 @@ def call_ai(messages, max_tokens=1024, retries=3):
 @app.route("/api/chat", methods=["POST"])
 def api_chat():
     msg = request.json.get("message", "").strip()
-    history = request.json.get("history", [])  # [{role, content}]
+    history = [h for h in (request.json.get("history") or [])
+               if isinstance(h, dict) and h.get("role") in ("user", "assistant")
+               and h.get("content")]
 
     if not msg:
         return jsonify({"error": "消息不能为空"}), 400
 
-    # Build messages
+    # ── Agent 模式（仅 DeepSeek；Ollama 无可靠工具调用） ──
+    if AI_MODE == "deepseek" and (DEEPSEEK_API_KEY or load_api_key()):
+        try:
+            result = agent.run_agent(msg, history, call_ai)
+            if result is not None:
+                return jsonify(result)
+        except Exception as e:
+            print(f"Agent mode failed, falling back to single-shot: {e}")
+
+    # ── 单发 fallback（旧 JSON 模式，SYSTEM_PROMPT 保留） ──
     messages = [{"role": "system", "content": SYSTEM_PROMPT}]
     for h in history[-12:]:
         messages.append({"role": h["role"], "content": h["content"]})
@@ -438,6 +473,7 @@ def api_chat():
         resp = call_ai(messages)
         if resp is None:
             return jsonify({
+                "mode": "single",
                 "answer": "⚠️ AI 未就绪。请任选其一：\n1. **Ollama 离线**（推荐）：安装 `ollama` 后运行 `ollama pull qwen3:4b`\n2. **DeepSeek API**：在 `.env` 中配置 `DEEPSEEK_API_KEY=sk-你的密钥`",
                 "cypher": None, "results": None
             })
@@ -451,15 +487,14 @@ def api_chat():
         cypher = (parsed.get("cypher") or "").strip()
         answer = parsed.get("answer") or ""
 
-        # Execute cypher if provided
+        # Execute cypher if provided — 走只读护栏（公网防护）
         results = None
         if cypher and cypher.lower() != "null":
-            try:
-                results = run_cypher(cypher)
-            except Exception as e:
-                results = {"_error": str(e)}
+            safe = agent.safe_execute_cypher(cypher)
+            results = safe["rows"] if safe["ok"] else {"_error": safe["error"]}
 
         return jsonify({
+            "mode": "single",
             "answer": answer,
             "cypher": cypher if cypher.lower() != "null" else None,
             "results": results,
@@ -467,12 +502,14 @@ def api_chat():
 
     except json.JSONDecodeError:
         return jsonify({
+            "mode": "single",
             "answer": raw,
             "cypher": None,
             "results": None,
         })
     except Exception as e:
         return jsonify({
+            "mode": "single",
             "answer": f"❌ AI 请求失败：{str(e)}",
             "cypher": None,
             "results": None,

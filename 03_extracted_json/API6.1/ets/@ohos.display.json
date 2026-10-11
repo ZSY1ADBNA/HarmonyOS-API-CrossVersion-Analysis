@@ -1,0 +1,2576 @@
+{
+  "节点": [
+    {
+      "名称": "@kit.ArkUI",
+      "类型": "module",
+      "描述": "模块头结点，源自 @kit 注释",
+      "层级": 0,
+      "注释信息": [],
+      "since_version": "",
+      "system_capability": "",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.1"
+    },
+    {
+      "类型": "namespace",
+      "名称": "display",
+      "所属模块": "@kit.ArkUI",
+      "功能描述": "Interface of display manager.",
+      "注释信息": [
+        "@namespace display",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11 dynamic",
+        "@since 23 static"
+      ],
+      "层级": 1,
+      "上级": "@kit.ArkUI",
+      "since_version": "11 dynamic",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.1"
+    },
+    {
+      "类型": "method",
+      "名称": "getDefaultDisplay",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Obtain the default display.",
+      "注释信息": [
+        "@param { AsyncCallback<Display> } callback the result of display",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@since 7 dynamiconly",
+        "@deprecated since 9",
+        "@useinstead ohos.display#getDefaultDisplaySync"
+      ],
+      "层级": 1,
+      "上级": "display",
+      "since_version": "7 dynamiconly",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<Display>",
+          "必填": true,
+          "说明": "the result of display"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.1"
+    },
+    {
+      "类型": "method",
+      "名称": "getDefaultDisplay",
+      "返回值": "Promise<Display>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtain the default display.",
+      "注释信息": [
+        "@returns { Promise<Display> } the result of display",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@since 7 dynamiconly",
+        "@deprecated since 9",
+        "@useinstead ohos.display#getDefaultDisplaySync"
+      ],
+      "层级": 1,
+      "上级": "display",
+      "since_version": "7 dynamiconly",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [],
+      "return_description": "the result of display",
+      "error_codes": [],
+      "版本": "API6.1"
+    },
+    {
+      "类型": "method",
+      "名称": "getDefaultDisplaySync",
+      "返回值": "Display",
+      "所属模块": "未知模块",
+      "功能描述": "Obtain the default display.",
+      "注释信息": [
+        "@returns { Display } the result of display",
+        "@throws { BusinessError } 1400001 - Invalid display or screen. Possible cause: Display is not created or destroyed.",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 11 dynamic",
+        "@since 23 static"
+      ],
+      "层级": 1,
+      "上级": "display",
+      "since_version": "11 dynamic",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [],
+      "return_description": "the result of display",
+      "error_codes": [
+        {
+          "code": "1400001",
+          "description": "Invalid display or screen. Possible cause: Display is not created or destroyed."
+        }
+      ],
+      "版本": "API6.1"
+    },
+    {
+      "类型": "method",
+      "名称": "getPrimaryDisplaySync",
+      "返回值": "Display",
+      "所属模块": "未知模块",
+      "功能描述": "Obtain the primary display. For devices other than 2in1 devices, the Display object obtained is the built-in screen. For 2in1 devices with an external screen, the Display object obtained is the primary screen. For 2in1 devices without an external screen, the Display object obtained is the built-in screen.",
+      "注释信息": [
+        "@returns { Display } the result of primary display",
+        "@throws { BusinessError } 1400001 - Invalid display or screen. Possible cause: Invalid display id.",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 14 dynamic",
+        "@since 23 static"
+      ],
+      "层级": 1,
+      "上级": "display",
+      "since_version": "14 dynamic",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [],
+      "return_description": "the result of primary display",
+      "error_codes": [
+        {
+          "code": "1400001",
+          "description": "Invalid display or screen. Possible cause: Invalid display id."
+        }
+      ],
+      "版本": "API6.1"
+    },
+    {
+      "类型": "method",
+      "名称": "getDisplayByIdSync",
+      "返回值": "Display",
+      "所属模块": "未知模块",
+      "功能描述": "Obtain the target display. 2. Incorrect parameter types. 3. Parameter verification failed. Display is null, display id corresponding display does not exist.",
+      "注释信息": [
+        "@param { long } displayId Display id to query. This parameter should be greater than or equal to 0.",
+        "@returns { Display } the result of display",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 1400003 - This display manager service works abnormally. Possible causes:",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@atomicservice",
+        "@since 12 dynamic",
+        "@since 23 static"
+      ],
+      "层级": 1,
+      "上级": "display",
+      "since_version": "12 dynamic",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [
+        {
+          "名称": "displayId",
+          "类型": "long",
+          "必填": true,
+          "说明": "Display id to query. This parameter should be greater than or equal to 0."
+        }
+      ],
+      "return_description": "the result of display",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "1400003",
+          "description": "This display manager service works abnormally. Possible causes:"
+        }
+      ],
+      "版本": "API6.1"
+    },
+    {
+      "类型": "method",
+      "名称": "getAllDisplay",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Obtain all displays.",
+      "注释信息": [
+        "@param { AsyncCallback<Array<Display>> } callback the result of all displays",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@since 7 dynamiconly",
+        "@deprecated since 9",
+        "@useinstead ohos.display#getAllDisplays"
+      ],
+      "层级": 1,
+      "上级": "display",
+      "since_version": "7 dynamiconly",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<Array<Display>>",
+          "必填": true,
+          "说明": "the result of all displays"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.1"
+    },
+    {
+      "类型": "method",
+      "名称": "getAllDisplay",
+      "返回值": "Promise<Array<Display>>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtain all displays.",
+      "注释信息": [
+        "@returns { Promise<Array<Display>> } the result of all displays",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@since 7 dynamiconly",
+        "@deprecated since 9",
+        "@useinstead ohos.display#getAllDisplays"
+      ],
+      "层级": 1,
+      "上级": "display",
+      "since_version": "7 dynamiconly",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [],
+      "return_description": "the result of all displays",
+      "error_codes": [],
+      "版本": "API6.1"
+    },
+    {
+      "类型": "method",
+      "名称": "getAllDisplays",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Obtain all displays.",
+      "注释信息": [
+        "@param { AsyncCallback<Array<Display>> } callback the result of all displays",
+        "@throws { BusinessError } 1400001 - Invalid display or screen.",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@atomicservice",
+        "@since 12 dynamic",
+        "@since 23 static"
+      ],
+      "层级": 1,
+      "上级": "display",
+      "since_version": "12 dynamic",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "AsyncCallback<Array<Display>>",
+          "必填": true,
+          "说明": "the result of all displays"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "1400001",
+          "description": "Invalid display or screen."
+        }
+      ],
+      "版本": "API6.1"
+    },
+    {
+      "类型": "method",
+      "名称": "getAllDisplays",
+      "返回值": "Promise<Array<Display>>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtain all displays.",
+      "注释信息": [
+        "@returns { Promise<Array<Display>> } the result of all displays",
+        "@throws { BusinessError } 1400001 - Invalid display or screen.",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@atomicservice",
+        "@since 12 dynamic",
+        "@since 23 static"
+      ],
+      "层级": 1,
+      "上级": "display",
+      "since_version": "12 dynamic",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [],
+      "return_description": "the result of all displays",
+      "error_codes": [
+        {
+          "code": "1400001",
+          "description": "Invalid display or screen."
+        }
+      ],
+      "版本": "API6.1"
+    },
+    {
+      "类型": "method",
+      "名称": "getAllDisplayPhysicalResolution",
+      "返回值": "Promise<Array<DisplayPhysicalResolution>>",
+      "所属模块": "未知模块",
+      "功能描述": "Obtain all display physical resolution",
+      "注释信息": [
+        "@returns { Promise<Array<DisplayPhysicalResolution>> } the result of all display physical resolution",
+        "@throws { BusinessError } 1400003 - This display manager service works abnormally.",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@atomicservice",
+        "@since 12 dynamic",
+        "@since 23 static"
+      ],
+      "层级": 1,
+      "上级": "display",
+      "since_version": "12 dynamic",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [],
+      "return_description": "the result of all display physical resolution",
+      "error_codes": [
+        {
+          "code": "1400003",
+          "description": "This display manager service works abnormally."
+        }
+      ],
+      "版本": "API6.1"
+    },
+    {
+      "类型": "method",
+      "名称": "hasPrivateWindow",
+      "返回值": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Check whether there is a privacy window on the current display. <br>2. Incorrect parameter types. 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { long } displayId Display id to query. This parameter should be greater than or equal to 0.",
+        "@returns { boolean } true means there is a privacy window on the current display",
+        "@throws { BusinessError } 202 - Permission verification failed. A non-system application calls a system API.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 1400003 - This display manager service works abnormally.",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@systemapi Hide this for inner system use.",
+        "@since 9 dynamic",
+        "@since 23 static"
+      ],
+      "层级": 1,
+      "上级": "display",
+      "since_version": "9 dynamic",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [
+        {
+          "名称": "displayId",
+          "类型": "long",
+          "必填": true,
+          "说明": "Display id to query. This parameter should be greater than or equal to 0."
+        }
+      ],
+      "return_description": "true means there is a privacy window on the current display",
+      "error_codes": [
+        {
+          "code": "202",
+          "description": "Permission verification failed. A non-system application calls a system API."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "1400003",
+          "description": "This display manager service works abnormally."
+        }
+      ],
+      "版本": "API6.1"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Register the callback for display changes. 2. Incorrect parameter types.",
+      "注释信息": [
+        "@param { 'add' | 'remove' | 'change' } type the event of display change",
+        "@param { Callback<long> } callback the display id of changed",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20 dynamic"
+      ],
+      "层级": 1,
+      "上级": "display",
+      "since_version": "20 dynamic",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'add' | 'remove' | 'change'",
+          "必填": true,
+          "说明": "the event of display change"
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<long>",
+          "必填": true,
+          "说明": "the display id of changed"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        }
+      ],
+      "版本": "API6.1"
+    },
+    {
+      "类型": "method",
+      "名称": "onAdd",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Register the callback for display add events.",
+      "注释信息": [
+        "@param { Callback<long> } callback the display id of changed",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@crossplatform",
+        "@since 23 static"
+      ],
+      "层级": 1,
+      "上级": "display",
+      "since_version": "23 static",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "Callback<long>",
+          "必填": true,
+          "说明": "the display id of changed"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.1"
+    },
+    {
+      "类型": "method",
+      "名称": "onRemove",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Register the callback for display remove events.",
+      "注释信息": [
+        "@param { Callback<long> } callback the display id of changed",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@crossplatform",
+        "@since 23 static"
+      ],
+      "层级": 1,
+      "上级": "display",
+      "since_version": "23 static",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "Callback<long>",
+          "必填": true,
+          "说明": "the display id of changed"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.1"
+    },
+    {
+      "类型": "method",
+      "名称": "onChange",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Register the callback for display changes.",
+      "注释信息": [
+        "@param { Callback<long> } callback the display id of changed",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@crossplatform",
+        "@since 23 static"
+      ],
+      "层级": 1,
+      "上级": "display",
+      "since_version": "23 static",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "Callback<long>",
+          "必填": true,
+          "说明": "the display id of changed"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.1"
+    },
+    {
+      "类型": "method",
+      "名称": "onChangeWithAttribute",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Register the callback for changes of display specified attributes. due to limited device capabilities. Possible causes: Internal IPC error.",
+      "注释信息": [
+        "@param { Array<string> } displayAttributeOption - The display attributes requiring callback",
+        "@param { Callback<long> } callback - Callback used to return the display id of changed",
+        "@throws { BusinessError } 801 - Capability not supported. Function onChangeWithAttribute can not work correctly",
+        "@throws { BusinessError } 1400003 - This display manager service works abnormally.",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 23 dynamic&static"
+      ],
+      "层级": 1,
+      "上级": "display",
+      "since_version": "23 dynamic&static",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [
+        {
+          "名称": "displayAttributeOption",
+          "类型": "Array<string>",
+          "必填": true,
+          "说明": "The display attributes requiring callback"
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<long>",
+          "必填": true,
+          "说明": "Callback used to return the display id of changed"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "801",
+          "description": "Capability not supported. Function onChangeWithAttribute can not work correctly"
+        },
+        {
+          "code": "1400003",
+          "description": "This display manager service works abnormally."
+        }
+      ],
+      "版本": "API6.1"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unregister the callback for display changes. 2. Incorrect parameter types.",
+      "注释信息": [
+        "@param { 'add' | 'remove' | 'change' } type the event of display change event",
+        "@param { Callback<long> } [callback] the display id of changed",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20 dynamic"
+      ],
+      "层级": 1,
+      "上级": "display",
+      "since_version": "20 dynamic",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'add' | 'remove' | 'change'",
+          "必填": true,
+          "说明": "the event of display change event"
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "Callback<long> } [callback] the display id of changed"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        }
+      ],
+      "版本": "API6.1"
+    },
+    {
+      "类型": "method",
+      "名称": "offAdd",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unregister the callback for display add events. If not provided, all callbacks for the given event type will be removed.",
+      "注释信息": [
+        "@param { Callback<long> } [callback] - Unregister the callback function.",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@crossplatform",
+        "@since 23 static"
+      ],
+      "层级": 1,
+      "上级": "display",
+      "since_version": "23 static",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "Callback<long> } [callback] - Unregister the callback function."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.1"
+    },
+    {
+      "类型": "method",
+      "名称": "offRemove",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unregister the callback for display remove events. If not provided, all callbacks for the given event type will be removed.",
+      "注释信息": [
+        "@param { Callback<long> } [callback] - Unregister the callback function.",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@crossplatform",
+        "@since 23 static"
+      ],
+      "层级": 1,
+      "上级": "display",
+      "since_version": "23 static",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "Callback<long> } [callback] - Unregister the callback function."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.1"
+    },
+    {
+      "类型": "method",
+      "名称": "offChange",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unregister the callback for display changes. If not provided, all callbacks for the given event type will be removed.",
+      "注释信息": [
+        "@param { Callback<long> } [callback] - Unregister the callback function.",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@crossplatform",
+        "@since 23 static"
+      ],
+      "层级": 1,
+      "上级": "display",
+      "since_version": "23 static",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "Callback<long> } [callback] - Unregister the callback function."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.1"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Register the callback for private mode changes. 2. Incorrect parameter types.",
+      "注释信息": [
+        "@param { 'privateModeChange' } type the event of private mode changes",
+        "@param { Callback<boolean> } callback Callback used to return the result whether display is on private mode or not",
+        "@throws { BusinessError } 202 - Permission verification failed. A non-system application calls a system API.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@systemapi Hide this for inner system use.",
+        "@since 10 dynamic"
+      ],
+      "层级": 1,
+      "上级": "display",
+      "since_version": "10 dynamic",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'privateModeChange'",
+          "必填": true,
+          "说明": "the event of private mode changes"
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<boolean>",
+          "必填": true,
+          "说明": "Callback used to return the result whether display is on private mode or not"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "202",
+          "description": "Permission verification failed. A non-system application calls a system API."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        }
+      ],
+      "版本": "API6.1"
+    },
+    {
+      "类型": "method",
+      "名称": "onPrivateModeChange",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Register the callback for private mode changes.",
+      "注释信息": [
+        "@param { Callback<boolean> } callback Callback used to return the result whether display is on private mode or not",
+        "@throws { BusinessError } 202 - Permission verification failed. A non-system application calls a system API.",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@systemapi Hide this for inner system use.",
+        "@since 23 static"
+      ],
+      "层级": 1,
+      "上级": "display",
+      "since_version": "23 static",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "Callback<boolean>",
+          "必填": true,
+          "说明": "Callback used to return the result whether display is on private mode or not"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "202",
+          "description": "Permission verification failed. A non-system application calls a system API."
+        }
+      ],
+      "版本": "API6.1"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unregister the callback for private mode changes. 2. Incorrect parameter types.",
+      "注释信息": [
+        "@param { 'privateModeChange' } type the event of private mode changes",
+        "@param { Callback<boolean> } callback Callback used to return the result whether display is on private mode or not",
+        "@throws { BusinessError } 202 - Permission verification failed. A non-system application calls a system API.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@systemapi Hide this for inner system use.",
+        "@since 10 dynamic"
+      ],
+      "层级": 1,
+      "上级": "display",
+      "since_version": "10 dynamic",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'privateModeChange'",
+          "必填": true,
+          "说明": "the event of private mode changes"
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<boolean>",
+          "必填": true,
+          "说明": "Callback used to return the result whether display is on private mode or not"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "202",
+          "description": "Permission verification failed. A non-system application calls a system API."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        }
+      ],
+      "版本": "API6.1"
+    },
+    {
+      "类型": "method",
+      "名称": "offPrivateModeChange",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unregister the callback for private mode changes. If not provided, all callbacks for the given event type will be removed.",
+      "注释信息": [
+        "@param { Callback<boolean> } [callback] - Unregister the callback function.",
+        "@throws { BusinessError } 202 - Permission verification failed. A non-system application calls a system API.",
+        "@syscap SystemCapability.WindowManager.WindowManager.Core",
+        "@systemapi Hide this for inner system use.",
+        "@since 23 static"
+      ],
+      "层级": 1,
+      "上级": "display",
+      "since_version": "23 static",
+      "system_capability": "SystemCapability.WindowManager.WindowManager.Core",
+      "parameters": [
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "Callback<boolean> } [callback] - Unregister the callback function."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "202",
+          "description": "Permission verification failed. A non-system application calls a system API."
+        }
+      ],
+      "版本": "API6.1"
+    },
+    {
+      "类型": "method",
+      "名称": "isFoldable",
+      "返回值": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Check whether the device is foldable.",
+      "注释信息": [
+        "@returns { boolean } true means the device is foldable.",
+        "@throws { BusinessError } 1400003 - This display manager service works abnormally.",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20 dynamic",
+        "@since 23 static"
+      ],
+      "层级": 1,
+      "上级": "display",
+      "since_version": "20 dynamic",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "true means the device is foldable.",
+      "error_codes": [
+        {
+          "code": "1400003",
+          "description": "This display manager service works abnormally."
+        }
+      ],
+      "版本": "API6.1"
+    },
+    {
+      "类型": "method",
+      "名称": "getFoldStatus",
+      "返回值": "FoldStatus",
+      "所属模块": "未知模块",
+      "功能描述": "Get the current fold status of the foldable device.",
+      "注释信息": [
+        "@returns { FoldStatus } fold status of device.",
+        "@throws { BusinessError } 1400003 - This display manager service works abnormally.",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20 dynamic",
+        "@since 23 static"
+      ],
+      "层级": 1,
+      "上级": "display",
+      "since_version": "20 dynamic",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "fold status of device.",
+      "error_codes": [
+        {
+          "code": "1400003",
+          "description": "This display manager service works abnormally."
+        }
+      ],
+      "版本": "API6.1"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Register the callback for fold status changes. <br>2. Incorrect parameter types.",
+      "注释信息": [
+        "@param { 'foldStatusChange' } type the event of fold status changes",
+        "@param { Callback<FoldStatus> } callback Callback used to return the current fold status of device",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 1400003 - This display manager service works abnormally.",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20 dynamic"
+      ],
+      "层级": 1,
+      "上级": "display",
+      "since_version": "20 dynamic",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'foldStatusChange'",
+          "必填": true,
+          "说明": "the event of fold status changes"
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<FoldStatus>",
+          "必填": true,
+          "说明": "Callback used to return the current fold status of device"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "1400003",
+          "description": "This display manager service works abnormally."
+        }
+      ],
+      "版本": "API6.1"
+    },
+    {
+      "类型": "method",
+      "名称": "onFoldStatusChange",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Register the callback for fold status changes.",
+      "注释信息": [
+        "@param { Callback<FoldStatus> } callback Callback used to return the current fold status of device",
+        "@throws { BusinessError } 1400003 - This display manager service works abnormally.",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@crossplatform",
+        "@since 23 static"
+      ],
+      "层级": 1,
+      "上级": "display",
+      "since_version": "23 static",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "Callback<FoldStatus>",
+          "必填": true,
+          "说明": "Callback used to return the current fold status of device"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "1400003",
+          "description": "This display manager service works abnormally."
+        }
+      ],
+      "版本": "API6.1"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unregister the callback for fold status changes. <br>2. Incorrect parameter types.",
+      "注释信息": [
+        "@param { 'foldStatusChange' } type the event of fold status changes",
+        "@param { Callback<FoldStatus> } [callback] Callback used to return the current fold status of device",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 1400003 - This display manager service works abnormally.",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20 dynamic"
+      ],
+      "层级": 1,
+      "上级": "display",
+      "since_version": "20 dynamic",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'foldStatusChange'",
+          "必填": true,
+          "说明": "the event of fold status changes"
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "Callback<FoldStatus> } [callback] Callback used to return the current fold status of device"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "1400003",
+          "description": "This display manager service works abnormally."
+        }
+      ],
+      "版本": "API6.1"
+    },
+    {
+      "类型": "method",
+      "名称": "offFoldStatusChange",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unregister the callback for fold status changes. If not provided, all callbacks for the given event type will be removed.",
+      "注释信息": [
+        "@param { Callback<FoldStatus> } [callback] - Unregister the callback function.",
+        "@throws { BusinessError } 1400003 - This display manager service works abnormally.",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@crossplatform",
+        "@since 23 static"
+      ],
+      "层级": 1,
+      "上级": "display",
+      "since_version": "23 static",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "Callback<FoldStatus> } [callback] - Unregister the callback function."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "1400003",
+          "description": "This display manager service works abnormally."
+        }
+      ],
+      "版本": "API6.1"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Register the callback for fold angle changes. 2. Incorrect parameter types.",
+      "注释信息": [
+        "@param { 'foldAngleChange' } type the event of fold angle changes.",
+        "@param { Callback<Array<double>> } callback Callback used to return the current fold angle of device.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 1400003 - This display manager service works abnormally.",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20 dynamic"
+      ],
+      "层级": 1,
+      "上级": "display",
+      "since_version": "20 dynamic",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'foldAngleChange'",
+          "必填": true,
+          "说明": "the event of fold angle changes."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<Array<double>>",
+          "必填": true,
+          "说明": "Callback used to return the current fold angle of device."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "1400003",
+          "description": "This display manager service works abnormally."
+        }
+      ],
+      "版本": "API6.1"
+    },
+    {
+      "类型": "method",
+      "名称": "onFoldAngleChange",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Register the callback for fold angle changes.",
+      "注释信息": [
+        "@param { Callback<Array<double>> } callback Callback used to return the current fold angle of device.",
+        "@throws { BusinessError } 1400003 - This display manager service works abnormally.",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@crossplatform",
+        "@since 23 static"
+      ],
+      "层级": 1,
+      "上级": "display",
+      "since_version": "23 static",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "Callback<Array<double>>",
+          "必填": true,
+          "说明": "Callback used to return the current fold angle of device."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "1400003",
+          "description": "This display manager service works abnormally."
+        }
+      ],
+      "版本": "API6.1"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unregister the callback for fold angle changes. 2. Incorrect parameter types.",
+      "注释信息": [
+        "@param { 'foldAngleChange' } type the event of fold angle changes.",
+        "@param { Callback<Array<double>> } [callback] Callback used to return the current fold angle of device.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 1400003 - This display manager service works abnormally.",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20 dynamic"
+      ],
+      "层级": 1,
+      "上级": "display",
+      "since_version": "20 dynamic",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'foldAngleChange'",
+          "必填": true,
+          "说明": "the event of fold angle changes."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "Callback<Array<double>> } [callback] Callback used to return the current fold angle of device."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "1400003",
+          "description": "This display manager service works abnormally."
+        }
+      ],
+      "版本": "API6.1"
+    },
+    {
+      "类型": "method",
+      "名称": "offFoldAngleChange",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unregister the callback for fold angle changes. If not provided, all callbacks for the given event type will be removed.",
+      "注释信息": [
+        "@param { Callback<Array<double>> } [callback] - Unregister the callback function.",
+        "@throws { BusinessError } 1400003 - This display manager service works abnormally.",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@crossplatform",
+        "@since 23 static"
+      ],
+      "层级": 1,
+      "上级": "display",
+      "since_version": "23 static",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "Callback<Array<double>> } [callback] - Unregister the callback function."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "1400003",
+          "description": "This display manager service works abnormally."
+        }
+      ],
+      "版本": "API6.1"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Register the callback for device capture status changes. <br>2. Incorrect parameter types.",
+      "注释信息": [
+        "@param { 'captureStatusChange' } type the event of capture status changes.",
+        "@param { Callback<boolean> } callback Callback used to return the device capture status.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 1400003 - This display manager service works abnormally.",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 12 dynamic"
+      ],
+      "层级": 1,
+      "上级": "display",
+      "since_version": "12 dynamic",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'captureStatusChange'",
+          "必填": true,
+          "说明": "the event of capture status changes."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<boolean>",
+          "必填": true,
+          "说明": "Callback used to return the device capture status."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "1400003",
+          "description": "This display manager service works abnormally."
+        }
+      ],
+      "版本": "API6.1"
+    },
+    {
+      "类型": "method",
+      "名称": "onCaptureStatusChange",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Register the callback for device capture, casting, or recording status changes.",
+      "注释信息": [
+        "@param { Callback<boolean> } callback Callback used to return the device capture, casting, or recording status.",
+        "@throws { BusinessError } 1400003 - This display manager service works abnormally.",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@since 23 static"
+      ],
+      "层级": 1,
+      "上级": "display",
+      "since_version": "23 static",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "Callback<boolean>",
+          "必填": true,
+          "说明": "Callback used to return the device capture, casting, or recording status."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "1400003",
+          "description": "This display manager service works abnormally."
+        }
+      ],
+      "版本": "API6.1"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unregister the callback for device capture status changes. <br>2. Incorrect parameter types.",
+      "注释信息": [
+        "@param { 'captureStatusChange' } type the event of capture status changes.",
+        "@param { Callback<boolean> } callback Callback used to return the device capture status.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 1400003 - This display manager service works abnormally.",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 12 dynamic"
+      ],
+      "层级": 1,
+      "上级": "display",
+      "since_version": "12 dynamic",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'captureStatusChange'",
+          "必填": true,
+          "说明": "the event of capture status changes."
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<boolean>",
+          "必填": true,
+          "说明": "Callback used to return the device capture status."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "1400003",
+          "description": "This display manager service works abnormally."
+        }
+      ],
+      "版本": "API6.1"
+    },
+    {
+      "类型": "method",
+      "名称": "offCaptureStatusChange",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unregister the callback for device capture, casting, or recording status changes. If not provided, all callbacks for the given event type will be removed.",
+      "注释信息": [
+        "@param { Callback<boolean> } [callback] - Unregister the callback function.",
+        "@throws { BusinessError } 1400003 - This display manager service works abnormally.",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@since 23 static"
+      ],
+      "层级": 1,
+      "上级": "display",
+      "since_version": "23 static",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "Callback<boolean> } [callback] - Unregister the callback function."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "1400003",
+          "description": "This display manager service works abnormally."
+        }
+      ],
+      "版本": "API6.1"
+    },
+    {
+      "类型": "method",
+      "名称": "isCaptured",
+      "返回值": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Check whether the device is captured, projected, or recorded.",
+      "注释信息": [
+        "@returns { boolean } true means the device is captured, projected, or recorded.",
+        "@throws { BusinessError } 1400003 - This display manager service works abnormally.",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 12 dynamic",
+        "@since 23 static"
+      ],
+      "层级": 1,
+      "上级": "display",
+      "since_version": "12 dynamic",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "true means the device is captured, projected, or recorded.",
+      "error_codes": [
+        {
+          "code": "1400003",
+          "description": "This display manager service works abnormally."
+        }
+      ],
+      "版本": "API6.1"
+    },
+    {
+      "类型": "method",
+      "名称": "getFoldDisplayMode",
+      "返回值": "FoldDisplayMode",
+      "所属模块": "未知模块",
+      "功能描述": "Get the display mode of the foldable device.",
+      "注释信息": [
+        "@returns { FoldDisplayMode } display mode of the foldable device.",
+        "@throws { BusinessError } 1400003 - This display manager service works abnormally.",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20 dynamic",
+        "@since 23 static"
+      ],
+      "层级": 1,
+      "上级": "display",
+      "since_version": "20 dynamic",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "display mode of the foldable device.",
+      "error_codes": [
+        {
+          "code": "1400003",
+          "description": "This display manager service works abnormally."
+        }
+      ],
+      "版本": "API6.1"
+    },
+    {
+      "类型": "method",
+      "名称": "setFoldDisplayMode",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Change the display mode of the foldable device. <br>2. Incorrect parameter types.",
+      "注释信息": [
+        "@param { FoldDisplayMode } mode target display mode to change.",
+        "@throws { BusinessError } 202 - Permission verification failed. A non-system application calls a system API.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 1400003 - This display manager service works abnormally.",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@systemapi Hide this for inner system use.",
+        "@since 10 dynamic",
+        "@since 23 static"
+      ],
+      "层级": 1,
+      "上级": "display",
+      "since_version": "10 dynamic",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [
+        {
+          "名称": "mode",
+          "类型": "FoldDisplayMode",
+          "必填": true,
+          "说明": "target display mode to change."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "202",
+          "description": "Permission verification failed. A non-system application calls a system API."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "1400003",
+          "description": "This display manager service works abnormally."
+        }
+      ],
+      "版本": "API6.1"
+    },
+    {
+      "类型": "method",
+      "名称": "setFoldDisplayMode",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Change the display mode of the foldable device.",
+      "注释信息": [
+        "@param { FoldDisplayMode } mode target display mode to change.",
+        "@param { string } reason set display mode reason.",
+        "@throws { BusinessError } 202 - Permission verification failed. A non-system application calls a system API.",
+        "@throws { BusinessError } 1400003 - This display manager service works abnormally.",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@systemapi Hide this for inner system use.",
+        "@since 19 dynamic",
+        "@since 23 static"
+      ],
+      "层级": 1,
+      "上级": "display",
+      "since_version": "19 dynamic",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [
+        {
+          "名称": "mode",
+          "类型": "FoldDisplayMode",
+          "必填": true,
+          "说明": "target display mode to change."
+        },
+        {
+          "名称": "reason",
+          "类型": "string",
+          "必填": true,
+          "说明": "set display mode reason."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "202",
+          "description": "Permission verification failed. A non-system application calls a system API."
+        },
+        {
+          "code": "1400003",
+          "description": "This display manager service works abnormally."
+        }
+      ],
+      "版本": "API6.1"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Register the callback for fold display mode changes. <br>2. Incorrect parameter types.",
+      "注释信息": [
+        "@param { 'foldDisplayModeChange' } type the event of fold display mode changes",
+        "@param { Callback<FoldDisplayMode> } callback Callback used to return the current fold display mode",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 1400003 - This display manager service works abnormally.",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20 dynamic"
+      ],
+      "层级": 1,
+      "上级": "display",
+      "since_version": "20 dynamic",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'foldDisplayModeChange'",
+          "必填": true,
+          "说明": "the event of fold display mode changes"
+        },
+        {
+          "名称": "callback",
+          "类型": "Callback<FoldDisplayMode>",
+          "必填": true,
+          "说明": "Callback used to return the current fold display mode"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "1400003",
+          "description": "This display manager service works abnormally."
+        }
+      ],
+      "版本": "API6.1"
+    },
+    {
+      "类型": "method",
+      "名称": "onFoldDisplayModeChange",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Register the callback for fold display mode changes.",
+      "注释信息": [
+        "@param { Callback<FoldDisplayMode> } callback Callback used to return the current fold display mode",
+        "@throws { BusinessError } 1400003 - This display manager service works abnormally.",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@crossplatform",
+        "@since 23 static"
+      ],
+      "层级": 1,
+      "上级": "display",
+      "since_version": "23 static",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "Callback<FoldDisplayMode>",
+          "必填": true,
+          "说明": "Callback used to return the current fold display mode"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "1400003",
+          "description": "This display manager service works abnormally."
+        }
+      ],
+      "版本": "API6.1"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unregister the callback for fold display mode changes. <br>2. Incorrect parameter types.",
+      "注释信息": [
+        "@param { 'foldDisplayModeChange' } type the event of fold display mode changes",
+        "@param { Callback<FoldDisplayMode> } [callback] Callback used to return the current fold display mode",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 1400003 - This display manager service works abnormally.",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@crossplatform",
+        "@atomicservice",
+        "@since 20 dynamic"
+      ],
+      "层级": 1,
+      "上级": "display",
+      "since_version": "20 dynamic",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'foldDisplayModeChange'",
+          "必填": true,
+          "说明": "the event of fold display mode changes"
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "Callback<FoldDisplayMode> } [callback] Callback used to return the current fold display mode"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "1400003",
+          "description": "This display manager service works abnormally."
+        }
+      ],
+      "版本": "API6.1"
+    },
+    {
+      "类型": "method",
+      "名称": "offFoldDisplayModeChange",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unregister the callback for fold display mode changes. If not provided, all callbacks for the given event type will be removed.",
+      "注释信息": [
+        "@param { Callback<FoldDisplayMode> } [callback] - Unregister the callback function.",
+        "@throws { BusinessError } 1400003 - This display manager service works abnormally.",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@crossplatform",
+        "@since 23 static"
+      ],
+      "层级": 1,
+      "上级": "display",
+      "since_version": "23 static",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "Callback<FoldDisplayMode> } [callback] - Unregister the callback function."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "1400003",
+          "description": "This display manager service works abnormally."
+        }
+      ],
+      "版本": "API6.1"
+    },
+    {
+      "类型": "method",
+      "名称": "getCurrentFoldCreaseRegion",
+      "返回值": "FoldCreaseRegion",
+      "所属模块": "未知模块",
+      "功能描述": "Get the fold crease region in the current display mode.",
+      "注释信息": [
+        "@returns { FoldCreaseRegion } fold crease region in the current display mode.",
+        "@throws { BusinessError } 1400003 - This display manager service works abnormally.",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 12 dynamic",
+        "@since 23 static"
+      ],
+      "层级": 1,
+      "上级": "display",
+      "since_version": "12 dynamic",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "fold crease region in the current display mode.",
+      "error_codes": [
+        {
+          "code": "1400003",
+          "description": "This display manager service works abnormally."
+        }
+      ],
+      "版本": "API6.1"
+    },
+    {
+      "类型": "method",
+      "名称": "setFoldStatusLocked",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "set fold status locked or not. 2. Incorrect parameter types.",
+      "注释信息": [
+        "@param { boolean } locked - fold status is locked or not.",
+        "@throws { BusinessError } 202 - Permission verification failed. A non-system application calls a system API.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 1400003 - This display manager service works abnormally.",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@systemapi Hide this for inner system use.",
+        "@since 11 dynamic",
+        "@since 23 static"
+      ],
+      "层级": 1,
+      "上级": "display",
+      "since_version": "11 dynamic",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [
+        {
+          "名称": "locked",
+          "类型": "boolean",
+          "必填": true,
+          "说明": "fold status is locked or not."
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "202",
+          "description": "Permission verification failed. A non-system application calls a system API."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "1400003",
+          "description": "This display manager service works abnormally."
+        }
+      ],
+      "版本": "API6.1"
+    },
+    {
+      "类型": "method",
+      "名称": "createVirtualScreen",
+      "返回值": "Promise<long>",
+      "所属模块": "未知模块",
+      "功能描述": "Create virtual screen. 2. Incorrect parameter types.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_VIRTUAL_SCREEN",
+        "@param { VirtualScreenConfig } config Indicates the options of the virtual screen.",
+        "@returns { Promise<long> } Promise used to return the created virtual screen id",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission required to call the API.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 801 - Capability not supported.function createVirtualScreen can not work correctly due to limited device capabilities.",
+        "@throws { BusinessError } 1400001 - Invalid display or screen.",
+        "@syscap  SystemCapability.Window.SessionManager",
+        "@since 16 dynamic",
+        "@since 23 static"
+      ],
+      "层级": 1,
+      "上级": "display",
+      "since_version": "16 dynamic",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [
+        {
+          "名称": "config",
+          "类型": "VirtualScreenConfig",
+          "必填": true,
+          "说明": "Indicates the options of the virtual screen."
+        }
+      ],
+      "return_description": "Promise used to return the created virtual screen id",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission required to call the API."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported.function createVirtualScreen can not work correctly due to limited device capabilities."
+        },
+        {
+          "code": "1400001",
+          "description": "Invalid display or screen."
+        }
+      ],
+      "版本": "API6.1"
+    },
+    {
+      "类型": "method",
+      "名称": "destroyVirtualScreen",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Destroy virtual screen. 2. Incorrect parameter types.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_VIRTUAL_SCREEN",
+        "@param { long } screenId Indicates the screen id of the virtual screen.",
+        "@returns { Promise<void> } Promise that returns no value.",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission required to call the API.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 801 - Capability not supported.function destroyVirtualScreen can not work correctly due to limited device capabilities.",
+        "@throws { BusinessError } 1400001 - Invalid display or screen.",
+        "@throws { BusinessError } 1400003 - This display manager service works abnormally.",
+        "@syscap  SystemCapability.Window.SessionManager",
+        "@since 16 dynamic",
+        "@since 23 static"
+      ],
+      "层级": 1,
+      "上级": "display",
+      "since_version": "16 dynamic",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [
+        {
+          "名称": "screenId",
+          "类型": "long",
+          "必填": true,
+          "说明": "Indicates the screen id of the virtual screen."
+        }
+      ],
+      "return_description": "Promise that returns no value.",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission required to call the API."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported.function destroyVirtualScreen can not work correctly due to limited device capabilities."
+        },
+        {
+          "code": "1400001",
+          "description": "Invalid display or screen."
+        },
+        {
+          "code": "1400003",
+          "description": "This display manager service works abnormally."
+        }
+      ],
+      "版本": "API6.1"
+    },
+    {
+      "类型": "method",
+      "名称": "setVirtualScreenSurface",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Set surface for the virtual screen. 2. Incorrect parameter types.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_VIRTUAL_SCREEN",
+        "@param { long } screenId Indicates the screen id of the virtual screen.",
+        "@param { string } surfaceId Indicates the surface id.",
+        "@returns { Promise<void> } Promise that returns no value",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission required to call the API.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 801 - Capability not supported.function setVirtualScreenSurface can not work correctly due to limited device capabilities.",
+        "@throws { BusinessError } 1400001 - Invalid display or screen.",
+        "@throws { BusinessError } 1400003 - This display manager service works abnormally.",
+        "@syscap  SystemCapability.Window.SessionManager",
+        "@since 16 dynamic",
+        "@since 23 static"
+      ],
+      "层级": 1,
+      "上级": "display",
+      "since_version": "16 dynamic",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [
+        {
+          "名称": "screenId",
+          "类型": "long",
+          "必填": true,
+          "说明": "Indicates the screen id of the virtual screen."
+        },
+        {
+          "名称": "surfaceId",
+          "类型": "string",
+          "必填": true,
+          "说明": "Indicates the surface id."
+        }
+      ],
+      "return_description": "Promise that returns no value",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission required to call the API."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported.function setVirtualScreenSurface can not work correctly due to limited device capabilities."
+        },
+        {
+          "code": "1400001",
+          "description": "Invalid display or screen."
+        },
+        {
+          "code": "1400003",
+          "description": "This display manager service works abnormally."
+        }
+      ],
+      "版本": "API6.1"
+    },
+    {
+      "类型": "method",
+      "名称": "makeUnique",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Make screen as unique-screen 2. Incorrect parameter types. 3. Parameter verification failed.",
+      "注释信息": [
+        "@permission ohos.permission.ACCESS_VIRTUAL_SCREEN",
+        "@param { long } screenId Indicates the unique screen id. It's type should be int.",
+        "@returns { Promise<void> } Promise that returns no value",
+        "@throws { BusinessError } 201 - Permission verification failed. The application does not have the permission required to call the API.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 801 - Capability not supported.function makeUnique can not work correctly due to limited device capabilities.",
+        "@throws { BusinessError } 1400001 - Invalid display or screen.",
+        "@throws { BusinessError } 1400003 - This display manager service works abnormally.",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@since 16 dynamic",
+        "@since 23 static"
+      ],
+      "层级": 1,
+      "上级": "display",
+      "since_version": "16 dynamic",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [
+        {
+          "名称": "screenId",
+          "类型": "long",
+          "必填": true,
+          "说明": "Indicates the unique screen id. It's type should be int."
+        }
+      ],
+      "return_description": "Promise that returns no value",
+      "error_codes": [
+        {
+          "code": "201",
+          "description": "Permission verification failed. The application does not have the permission required to call the API."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported.function makeUnique can not work correctly due to limited device capabilities."
+        },
+        {
+          "code": "1400001",
+          "description": "Invalid display or screen."
+        },
+        {
+          "code": "1400003",
+          "description": "This display manager service works abnormally."
+        }
+      ],
+      "版本": "API6.1"
+    },
+    {
+      "类型": "method",
+      "名称": "addVirtualScreenBlocklist",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Add the list of window ids to the block list which won't display on the virtual screen 2. Incorrect parameter types. 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { Array<int> } windowIds - The list of window ids that do not want to display on the virtual screen",
+        "@returns { Promise<void> } Promise that returns no value",
+        "@throws { BusinessError } 202 - Permission verification failed. A non-system application calls a system API.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 801 - Capability not supported.Function addVirtualScreenBlocklist can not work correctly due to limited device capabilities.",
+        "@throws { BusinessError } 1400003 - This display manager service works abnormally.",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@systemapi Hide this for inner system use.",
+        "@since 18 dynamic",
+        "@since 23 static"
+      ],
+      "层级": 1,
+      "上级": "display",
+      "since_version": "18 dynamic",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [
+        {
+          "名称": "windowIds",
+          "类型": "Array<int>",
+          "必填": true,
+          "说明": "The list of window ids that do not want to display on the virtual screen"
+        }
+      ],
+      "return_description": "Promise that returns no value",
+      "error_codes": [
+        {
+          "code": "202",
+          "description": "Permission verification failed. A non-system application calls a system API."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported.Function addVirtualScreenBlocklist can not work correctly due to limited device capabilities."
+        },
+        {
+          "code": "1400003",
+          "description": "This display manager service works abnormally."
+        }
+      ],
+      "版本": "API6.1"
+    },
+    {
+      "类型": "method",
+      "名称": "removeVirtualScreenBlocklist",
+      "返回值": "Promise<void>",
+      "所属模块": "未知模块",
+      "功能描述": "Remove the list of window ids from the block list which won't display on the virtual screen 2. Incorrect parameter types. 3. Parameter verification failed.",
+      "注释信息": [
+        "@param { Array<int> } windowIds - The list of window ids that want to display on the virtual screen",
+        "@returns { Promise<void> } Promise that returns no value",
+        "@throws { BusinessError } 202 - Permission verification failed. A non-system application calls a system API.",
+        "@throws { BusinessError } 401 - Parameter error. Possible causes: 1. Mandatory parameters are left unspecified.",
+        "@throws { BusinessError } 801 - Capability not supported.Function removeVirtualScreenBlocklist can not work correctly due to limited device capabilities.",
+        "@throws { BusinessError } 1400003 - This display manager service works abnormally.",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@systemapi Hide this for inner system use.",
+        "@since 18 dynamic",
+        "@since 23 static"
+      ],
+      "层级": 1,
+      "上级": "display",
+      "since_version": "18 dynamic",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [
+        {
+          "名称": "windowIds",
+          "类型": "Array<int>",
+          "必填": true,
+          "说明": "The list of window ids that want to display on the virtual screen"
+        }
+      ],
+      "return_description": "Promise that returns no value",
+      "error_codes": [
+        {
+          "code": "202",
+          "description": "Permission verification failed. A non-system application calls a system API."
+        },
+        {
+          "code": "401",
+          "description": "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified."
+        },
+        {
+          "code": "801",
+          "description": "Capability not supported.Function removeVirtualScreenBlocklist can not work correctly due to limited device capabilities."
+        },
+        {
+          "code": "1400003",
+          "description": "This display manager service works abnormally."
+        }
+      ],
+      "版本": "API6.1"
+    },
+    {
+      "类型": "method",
+      "名称": "convertGlobalToRelativeCoordinate",
+      "返回值": "RelativePosition",
+      "所属模块": "未知模块",
+      "功能描述": "Convert global coordinates to relative coordinates. If not specified,use the display where the coodinates are located.",
+      "注释信息": [
+        "@param { Position } position - The global coordinates to be converted.",
+        "@param { long } [displayId] - The optional display id indicate the display relative to.",
+        "@returns { RelativePosition } The relative coordinates.",
+        "@throws { BusinessError } 1400003 - This display manager service works abnormally.",
+        "@throws { BusinessError } 1400004 - Parameter error. Possible cause: 1. Invalid parameter range.",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 20 dynamic",
+        "@since 23 static"
+      ],
+      "层级": 1,
+      "上级": "display",
+      "since_version": "20 dynamic",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [
+        {
+          "名称": "position",
+          "类型": "Position",
+          "必填": true,
+          "说明": "The global coordinates to be converted."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "long } [displayId] - The optional display id indicate the display relative to."
+        }
+      ],
+      "return_description": "The relative coordinates.",
+      "error_codes": [
+        {
+          "code": "1400003",
+          "description": "This display manager service works abnormally."
+        },
+        {
+          "code": "1400004",
+          "description": "Parameter error. Possible cause: 1. Invalid parameter range."
+        }
+      ],
+      "版本": "API6.1"
+    },
+    {
+      "类型": "method",
+      "名称": "convertRelativeToGlobalCoordinate",
+      "返回值": "Position",
+      "所属模块": "未知模块",
+      "功能描述": "Convert relative coordinates to global coordinates.",
+      "注释信息": [
+        "@param { RelativePosition } relativePosition - The relative coordinates to be converted.",
+        "@returns { Position } The global coordinates.",
+        "@throws { BusinessError } 1400003 - This display manager service works abnormally.",
+        "@throws { BusinessError } 1400004 - Parameter error. Possible cause: 1. Invalid parameter range.",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 20 dynamic",
+        "@since 23 static"
+      ],
+      "层级": 1,
+      "上级": "display",
+      "since_version": "20 dynamic",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [
+        {
+          "名称": "relativePosition",
+          "类型": "RelativePosition",
+          "必填": true,
+          "说明": "The relative coordinates to be converted."
+        }
+      ],
+      "return_description": "The global coordinates.",
+      "error_codes": [
+        {
+          "code": "1400003",
+          "description": "This display manager service works abnormally."
+        },
+        {
+          "code": "1400004",
+          "description": "Parameter error. Possible cause: 1. Invalid parameter range."
+        }
+      ],
+      "版本": "API6.1"
+    },
+    {
+      "类型": "method",
+      "名称": "getBrightnessInfo",
+      "返回值": "BrightnessInfo",
+      "所属模块": "未知模块",
+      "功能描述": "Obtain the display brightnessInfo.",
+      "注释信息": [
+        "@param { long } displayId Display id to query. This parameter should be greater than or equal to 0.",
+        "@returns { BrightnessInfo } The current brightnessInfo of the display.",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 1400003 - This display manager service works abnormally.",
+        "@throws { BusinessError } 1400004 - Parameter error. Possible cause: 1. Invalid parameter range.",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 22 dynamic",
+        "@since 23 static"
+      ],
+      "层级": 1,
+      "上级": "display",
+      "since_version": "22 dynamic",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [
+        {
+          "名称": "displayId",
+          "类型": "long",
+          "必填": true,
+          "说明": "Display id to query. This parameter should be greater than or equal to 0."
+        }
+      ],
+      "return_description": "The current brightnessInfo of the display.",
+      "error_codes": [
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "1400003",
+          "description": "This display manager service works abnormally."
+        },
+        {
+          "code": "1400004",
+          "description": "Parameter error. Possible cause: 1. Invalid parameter range."
+        }
+      ],
+      "版本": "API6.1"
+    },
+    {
+      "所属模块": "未知模块",
+      "功能描述": "Defines the Brightness callback.",
+      "注释信息": [
+        "@typedef {function}",
+        "@param { T1 } data1 - the data will be used in the callback.",
+        "@param { T2 } data2 - the data will be used in the callback.",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@since 22 dynamic",
+        "@since 23 static"
+      ],
+      "层级": 1,
+      "上级": "display",
+      "since_version": "22 dynamic",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.1"
+    },
+    {
+      "类型": "method",
+      "名称": "on",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Register the callback for brightness info changes. brightness info.",
+      "注释信息": [
+        "@param { 'brightnessInfoChange' } type - the event of display brightness info changes.",
+        "@param { BrightnessCallback<long, BrightnessInfo> } callback - Callback used to return the display corresponding",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 1400003 - This display manager service works abnormally.",
+        "@throws { BusinessError } 1400004 - Parameter error. Possible cause: 1. Invalid parameter range.",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 22 dynamic"
+      ],
+      "层级": 1,
+      "上级": "display",
+      "since_version": "22 dynamic",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'brightnessInfoChange'",
+          "必填": true,
+          "说明": "the event of display brightness info changes."
+        },
+        {
+          "名称": "callback",
+          "类型": "BrightnessCallback<long, BrightnessInfo>",
+          "必填": true,
+          "说明": "Callback used to return the display corresponding"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "1400003",
+          "description": "This display manager service works abnormally."
+        },
+        {
+          "code": "1400004",
+          "description": "Parameter error. Possible cause: 1. Invalid parameter range."
+        }
+      ],
+      "版本": "API6.1"
+    },
+    {
+      "类型": "method",
+      "名称": "off",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unregister the callback for brightness info changes. brightness info. If not provided, all callbacks for the given event type will be removed.",
+      "注释信息": [
+        "@param { 'brightnessInfoChange' } type - the event of display brightness info changes.",
+        "@param { BrightnessCallback<long, BrightnessInfo> } [callback] - Callback used to return the display corresponding",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 1400003 - This display manager service works abnormally.",
+        "@throws { BusinessError } 1400004 - Parameter error. Possible cause: 1. Invalid parameter range.",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@atomicservice",
+        "@since 22 dynamic"
+      ],
+      "层级": 1,
+      "上级": "display",
+      "since_version": "22 dynamic",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [
+        {
+          "名称": "type",
+          "类型": "'brightnessInfoChange'",
+          "必填": true,
+          "说明": "the event of display brightness info changes."
+        },
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "BrightnessCallback<long, BrightnessInfo> } [callback] - Callback used to return the display corresponding"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "1400003",
+          "description": "This display manager service works abnormally."
+        },
+        {
+          "code": "1400004",
+          "description": "Parameter error. Possible cause: 1. Invalid parameter range."
+        }
+      ],
+      "版本": "API6.1"
+    },
+    {
+      "类型": "method",
+      "名称": "onBrightnessInfoChange",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Register the callback for brightness info changes. corresponding brightness info.",
+      "注释信息": [
+        "@param { BrightnessCallback<long, BrightnessInfo> } callback - Callback used to return the display if and",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 1400003 - This display manager service works abnormally.",
+        "@throws { BusinessError } 1400004 - Parameter error. Possible cause: 1. Invalid parameter range.",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@since 23 static"
+      ],
+      "层级": 1,
+      "上级": "display",
+      "since_version": "23 static",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [
+        {
+          "名称": "callback",
+          "类型": "BrightnessCallback<long, BrightnessInfo>",
+          "必填": true,
+          "说明": "Callback used to return the display if and"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "1400003",
+          "description": "This display manager service works abnormally."
+        },
+        {
+          "code": "1400004",
+          "description": "Parameter error. Possible cause: 1. Invalid parameter range."
+        }
+      ],
+      "版本": "API6.1"
+    },
+    {
+      "类型": "method",
+      "名称": "offBrightnessInfoChange",
+      "返回值": "void",
+      "所属模块": "未知模块",
+      "功能描述": "Unregister the callback for brightness info changes. brightness info. If not provided, all callbacks for the given event type will be removed.",
+      "注释信息": [
+        "@param { BrightnessCallback<long, BrightnessInfo> } [callback] - Callback used to return the display corresponding",
+        "@throws { BusinessError } 801 - Capability not supported.",
+        "@throws { BusinessError } 1400003 - This display manager service works abnormally.",
+        "@throws { BusinessError } 1400004 - Parameter error. Possible cause: 1. Invalid parameter range.",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@since 23 static"
+      ],
+      "层级": 1,
+      "上级": "display",
+      "since_version": "23 static",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [
+        {
+          "名称": "{",
+          "类型": "any",
+          "必填": true,
+          "说明": "BrightnessCallback<long, BrightnessInfo> } [callback] - Callback used to return the display corresponding"
+        }
+      ],
+      "return_description": "",
+      "error_codes": [
+        {
+          "code": "801",
+          "description": "Capability not supported."
+        },
+        {
+          "code": "1400003",
+          "description": "This display manager service works abnormally."
+        },
+        {
+          "code": "1400004",
+          "description": "Parameter error. Possible cause: 1. Invalid parameter range."
+        }
+      ],
+      "版本": "API6.1"
+    },
+    {
+      "类型": "interface",
+      "名称": "VirtualScreenConfig",
+      "所属模块": "未知模块",
+      "功能描述": "The parameter for creating virtual screen.",
+      "注释信息": [
+        "@interface VirtualScreenConfig",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@since 16 dynamic",
+        "@since 23 static"
+      ],
+      "层级": 2,
+      "上级": "display",
+      "since_version": "16 dynamic",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.1"
+    },
+    {
+      "类型": "property",
+      "名称": "name",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the name of the virtual screen.",
+      "注释信息": [
+        "@type { string }",
+        "@syscap  SystemCapability.Window.SessionManager",
+        "@since 16 dynamic",
+        "@since 23 static"
+      ],
+      "层级": 2,
+      "上级": "VirtualScreenConfig",
+      "since_version": "16 dynamic",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.1"
+    },
+    {
+      "类型": "property",
+      "名称": "width",
+      "属性类型": "long",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the width of the virtual screen.",
+      "注释信息": [
+        "@type { long }",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@since 16 dynamic",
+        "@since 23 static"
+      ],
+      "层级": 2,
+      "上级": "VirtualScreenConfig",
+      "since_version": "16 dynamic",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.1"
+    },
+    {
+      "类型": "property",
+      "名称": "height",
+      "属性类型": "long",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the height of the virtual screen.",
+      "注释信息": [
+        "@type { long }",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@since 16 dynamic",
+        "@since 23 static"
+      ],
+      "层级": 2,
+      "上级": "VirtualScreenConfig",
+      "since_version": "16 dynamic",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.1"
+    },
+    {
+      "类型": "property",
+      "名称": "density",
+      "属性类型": "double",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the density of the virtual screen.",
+      "注释信息": [
+        "@type { double }",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@since 16 dynamic",
+        "@since 23 static"
+      ],
+      "层级": 2,
+      "上级": "VirtualScreenConfig",
+      "since_version": "16 dynamic",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.1"
+    },
+    {
+      "类型": "property",
+      "名称": "surfaceId",
+      "属性类型": "string",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates the surface id of the virtual screen.",
+      "注释信息": [
+        "@type { string }",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@since 16 dynamic",
+        "@since 23 static"
+      ],
+      "层级": 2,
+      "上级": "VirtualScreenConfig",
+      "since_version": "16 dynamic",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.1"
+    },
+    {
+      "类型": "property",
+      "名称": "supportsFocus",
+      "属性类型": "boolean",
+      "所属模块": "未知模块",
+      "功能描述": "Indicates whether the virtual screen supports focus.",
+      "注释信息": [
+        "@type { ?boolean }",
+        "@syscap SystemCapability.Window.SessionManager",
+        "@since 22 dynamic",
+        "@since 23 static"
+      ],
+      "层级": 2,
+      "上级": "VirtualScreenConfig",
+      "since_version": "22 dynamic",
+      "system_capability": "SystemCapability.Window.SessionManager",
+      "parameters": [],
+      "return_description": "",
+      "error_codes": [],
+      "版本": "API6.1"
+    }
+  ]
+}
