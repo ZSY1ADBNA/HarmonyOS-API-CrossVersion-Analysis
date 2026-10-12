@@ -6,6 +6,7 @@ import json
 from pathlib import Path
 import re
 import sqlite3
+import sys
 
 from collect_official_sources import ROOT
 
@@ -47,17 +48,20 @@ def search(connection,release,query=None,owner=None,name=None,kind=None,limit=10
     rows=connection.execute('SELECT e.payload FROM entities e'+join+' WHERE '+' AND '.join(filters)+' ORDER BY e.owner,e.kind,e.name,e.id LIMIT ?',values+[limit]).fetchall()
     fields=('record_id','evidence','kind','name','owner','line','end_line','context_start_line','signature',
             'parent_record_id','metadata','parent_metadata','declared_type','parameter_binding_status',
-            'api_identity_status','sdk_public_status')
+            'api_identity_status','sdk_public_status','optional','read_only','option_flag_source','description')
     return [{key:fact[key] for key in fields if key in fact} for (payload,) in rows for fact in [json.loads(payload)]]
 
 
 def main():
+    if hasattr(sys.stdout,'reconfigure'):sys.stdout.reconfigure(encoding='utf-8')
     p=argparse.ArgumentParser(description=__doc__)
-    p.add_argument('--database',type=Path)
+    location=p.add_mutually_exclusive_group()
+    location.add_argument('--database',type=Path)
+    location.add_argument('--batch-root',type=Path,default=ROOT/'data/delivery/structured/yu-semantic-pilot')
     p.add_argument('--release',required=True);p.add_argument('--query');p.add_argument('--owner');p.add_argument('--name')
-    p.add_argument('--kind',choices=['method','parameter','property','enum_member','component_attribute','component_constructor'])
+    p.add_argument('--kind',choices=['method','parameter','property','enum_member','component_attribute','component_constructor','config_interface'])
     p.add_argument('--limit',type=int,default=10);args=p.parse_args()
-    database=args.database or resolve_database(ROOT/'data/delivery/structured/yu-semantic-pilot')
+    database=args.database or resolve_database(args.batch_root)
     with closing(open_readonly(database)) as connection:
         results=search(connection,args.release,args.query,args.owner,args.name,args.kind,args.limit)
     print(json.dumps({'release_id':args.release,'results':results,'count':len(results),
