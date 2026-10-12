@@ -12,6 +12,7 @@ import subprocess
 import time
 import urllib.request
 import zipfile
+import uuid
 
 ROOT = Path(__file__).resolve().parents[1]
 GIT = shutil.which('git')
@@ -28,7 +29,7 @@ def filesystem_path(path):
 
 def write_json(path, value):
     path.parent.mkdir(parents=True,exist_ok=True)
-    temporary = path.with_suffix(path.suffix+'.tmp')
+    temporary = path.with_name(path.name+'.'+uuid.uuid4().hex+'.tmp')
     temporary.write_text(json.dumps(value,ensure_ascii=False,indent=2)+'\n',encoding='utf-8',newline='\n')
     for attempt in range(20):
         try:
@@ -293,6 +294,7 @@ def collect(record, root, transport='archive', reverify=False):
         seen = set()
         ledger=folder/'files.jsonl'
         count, excluded, pointers=0,0,[]
+        symlinks=[]
         lfs_expanded=0
         license_evidence=[]
         with zipfile.ZipFile(archive) as zip_file, ledger.with_suffix('.tmp').open('w',encoding='utf-8',newline='\n') as output:
@@ -304,11 +306,11 @@ def collect(record, root, transport='archive', reverify=False):
                 if not included(record['kind'],relative): excluded+=1; continue
                 if relative in seen: raise ValueError('Duplicate archive member: '+relative)
                 seen.add(relative)
-                if (member.external_attr >> 16) & 0o170000 == 0o120000:
-                    output.write(json.dumps({'path':relative,'status':'symlink_not_materialized'},ensure_ascii=False)+'\n'); continue
+                symlink=(member.external_attr >> 16) & 0o170000 == 0o120000
+                if symlink:symlinks.append(relative)
                 with zip_file.open(member) as input_file:
                     raw=input_file.read()
-                if materialize:
+                if materialize and not symlink:
                     target=filesystem_path(folder/'content'/Path(*parts[1:]))
                     target.parent.mkdir(parents=True,exist_ok=True)
                     target.write_bytes(raw)
@@ -326,18 +328,22 @@ def collect(record, root, transport='archive', reverify=False):
                 output.write(json.dumps({'path':relative,'size':len(raw),'sha256':hashlib.sha256(raw).hexdigest(),
                                           'git_blob_sha':expected[relative] if lfs_pointer is not None else blob,
                                           'payload_git_blob_sha':blob if lfs_pointer is not None else None,
-                                          'lfs_pointer_text':lfs_pointer,'status':'lfs_pointer' if relative in pointers else 'collected'},ensure_ascii=False)+'\n')
+                                          'lfs_pointer_text':lfs_pointer,'status':'symlink_not_materialized' if symlink else ('lfs_pointer' if relative in pointers else 'collected')},ensure_ascii=False)+'\n')
                 count+=1
         if expected is not None and seen != set(expected): raise ValueError('Archive file coverage differs from fixed Git tree')
+        if record.get('expected_archive_sha256') and record['expected_archive_sha256']!=digest.hexdigest():
+            raise ValueError('Archive fingerprint differs from imported lock')
+        if record.get('expected_file_count') is not None and record['expected_file_count']!=count:
+            raise ValueError('File count differs from imported lock')
         ledger.with_suffix('.tmp').replace(ledger)
         licenses=[x['path'] for x in license_evidence]
         clean_record = {k:v for k,v in record.items() if k != 'error'}
-        result={**clean_record,'status':'collected','body_status':'complete_with_unresolved_dependencies' if pointers or record.get('submodules') else 'complete',
+        result={**clean_record,'status':'collected','body_status':'complete_with_unresolved_dependencies' if pointers or symlinks or record.get('submodules') else 'complete',
                 'archive_url':url,'archive_sha256':digest.hexdigest(),
                 'archive_size':archive.stat().st_size,'content_root':str(folder/'content') if materialize else None,
                 'body_storage':'archive_and_files' if materialize else 'verified_archive',
                 'ledger':str(ledger),'file_count':count,'excluded_files':excluded,
-                'lfs_pointers':pointers,'lfs_expanded_files_verified':lfs_expanded,'license_files':licenses,'license_evidence':license_evidence,
+                'lfs_pointers':pointers,'symlinks_not_materialized':symlinks,'lfs_expanded_files_verified':lfs_expanded,'license_files':licenses,'license_evidence':license_evidence,
                 'collected_at':datetime.now(timezone.utc).isoformat(),
                 'performance':{'elapsed_seconds':round(time.perf_counter()-started,3),'verified_archive_reused':False}}
         save_collection_receipt(result,root)

@@ -10,16 +10,25 @@ import zipfile
 from collect_official_sources import ROOT, identity, write_json
 
 
-def heading_spans(text):
-    lines=text.splitlines(keepends=True); headings=[]; fence=None; stack=[]
-    for index,line in enumerate(lines):
-        marker=re.match(r'^\s*(`{3,}|~{3,})',line)
+def outside_fenced_lines(text):
+    """Mask examples while retaining original line offsets and source text."""
+    result=[]; fence=None
+    for line in text.splitlines(keepends=True):
+        marker=re.match(r'^\s*(`{3,}|~{3,})(.*)$',line.rstrip('\r\n'))
         if marker:
             value=marker[1]
             if fence is None: fence=value
-            elif value[0]==fence[0] and len(value)>=len(fence): fence=None
+            elif value[0]==fence[0] and len(value)>=len(fence) and not marker[2].strip(): fence=None
+            result.append(None)
             continue
-        if fence is not None: continue
+        result.append(line if fence is None else None)
+    return result
+
+
+def heading_spans(text):
+    lines=text.splitlines(keepends=True); headings=[]; stack=[]
+    for index,line in enumerate(outside_fenced_lines(text)):
+        if line is None: continue
         match=re.match(r'^(#{1,6})\s+(.+?)\s*$',line)
         if not match: continue
         level=len(match[1]);title=match[2]

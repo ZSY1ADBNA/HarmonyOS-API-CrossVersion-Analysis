@@ -38,6 +38,8 @@ def cached_scan(source, root):
         saved=json.loads(receipt.read_text(encoding='utf-8'))
         provenance={key:source.get(key) for key in ('source_id','kind','repository','release_id','commit','body_status','archive_sha256')}
         if saved.get('scan_version')!=SCAN_VERSION or saved.get('provenance')!=provenance: return None
+        if saved['archive_sha256']!=source.get('archive_sha256'):return None
+        if set(saved['outputs_sha256'])!={'documents.jsonl','sample-files.jsonl','links-requiring-review.json','report.json'}:return None
         if file_sha256(archive)!=saved['archive_sha256'] or file_sha256(folder/'files.jsonl')!=saved['ledger_sha256']: return None
         if any(file_sha256(outdir/name)!=digest for name,digest in saved['outputs_sha256'].items()): return None
         return json.loads((outdir/'report.json').read_text(encoding='utf-8'))

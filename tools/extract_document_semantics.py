@@ -12,10 +12,11 @@ import uuid
 import zipfile
 
 from collect_official_sources import ROOT, identity, write_json
-from pilot_document_structure import heading_spans, clean_heading
+from pilot_document_structure import heading_spans, clean_heading, outside_fenced_lines
 
 
 def metadata(text, heading='', allow_inline=False):
+    text=''.join(line or '\n' for line in outside_fenced_lines(text))
     result={}
     for name,label in [('permission','(?:需要)?权限'),('syscap','系统能力'),('since','起始版本')]:
         prefix='' if allow_inline else r'^\s*'
@@ -29,8 +30,11 @@ def metadata(text, heading='', allow_inline=False):
 
 
 def table_rows(text, first_line):
-    lines=text.splitlines(); headers=None; result=[]; warnings=[]; label=None
+    lines=outside_fenced_lines(text); headers=None; result=[]; warnings=[]; label=None
     for offset,line in enumerate(lines):
+        if line is None:
+            headers=None;label=None;continue
+        if re.match(r'^#{1,6}\s',line):label=None
         labeled=re.match(r'^\*\*([^*]+)\*\*',line)
         if labeled:label=labeled[1].strip().rstrip('：:')
         if not line.lstrip().startswith('|'):
@@ -52,6 +56,8 @@ def section_block(sections, index):
 
 
 def extract(text, evidence, adapter):
+    if adapter not in ('av_error_codes','audio_renderer','audio_capturer','arkui_button'):
+        raise ValueError('Unknown documentation adapter: '+adapter)
     sections=heading_spans(text);facts=[];warnings=[]
     def add(kind,name,owner,line,raw,signature=None,parent=None,meta=None,end=None):
         record={'record_id':identity(evidence['source_id'],evidence['path'],kind,line,name,signature),
@@ -63,13 +69,14 @@ def extract(text, evidence, adapter):
         for section in sections:
             title=clean_heading(section['heading'])
             if title=='枚举':
-                for offset,line in enumerate(section['text'].splitlines()):
+                for offset,line in enumerate(outside_fenced_lines(section['text'])):
+                    if line is None:continue
                     if '[OH_AVErrCode]' not in line or '{' not in line:continue
                     for match in re.finditer(r'\b(AV_ERR_[A-Z_]+)\s*=\s*([^,<}]+)',line):
                         add('enum_member',match[1],'OH_AVErrCode',section['start_line']+offset,line,match[2].strip(),meta=metadata(line,allow_inline=True))
             elif title=='OH_AVErrCode':
                 parent_meta=metadata(section['text'],section['heading'])
-                lines=section['text'].splitlines()
+                lines=[line.rstrip('\r\n') if line is not None else '' for line in outside_fenced_lines(section['text'])]
                 for offset,line in enumerate(lines):
                     match=re.match(r'^\|\s*(AV_ERR_[A-Z_]+)\s*=\s*([^|]+)\|',line)
                     if not match:continue
@@ -81,12 +88,16 @@ def extract(text, evidence, adapter):
         return facts,warnings
     audio_owners={'audio_renderer':'AudioRenderer','audio_capturer':'AudioCapturer'}
     audio_owner=audio_owners.get(adapter)
-    root_interface=bool(audio_owner and re.search(r'^#\s+(?:Interface|接口)\s*\('+audio_owner+r'\)',text,re.M))
     for index,section in enumerate(sections):
         title=clean_heading(section['heading'])
         ancestors=[clean_heading(h) for h in section['ancestors']]
         if audio_owner:
-            owned=root_interface or audio_owner in ancestors or title==audio_owner
+            containers=[]
+            for heading in ancestors+[title]:
+                declared=re.match(r'^(?:Interface|Class|Struct|接口|类)\s*\(([^)]+)\)',heading)
+                if declared:containers.append(declared[1])
+                elif heading==audio_owner:containers.append(heading)
+            owned=bool(containers) and containers[-1]==audio_owner
             owner=audio_owner
             property_scope=owned and (title==audio_owner or title=='属性')
         else:
@@ -112,7 +123,8 @@ def extract(text, evidence, adapter):
         # Declaration must start with this heading's name and include a typed argument
         # or return type. Chained example calls never satisfy this rule.
         declarations=[]
-        for offset,line in enumerate(section['text'].splitlines()):
+        for offset,line in enumerate(outside_fenced_lines(section['text'])):
+            if line is None:continue
             match=re.match(r'^\s*'+re.escape(name)+r'\s*\(.*\)\s*(?::.*)?$',line)
             if match and ':' in line:
                 declarations.append((section['start_line']+offset,line.strip()))
@@ -162,6 +174,20 @@ def ingest(connection, facts):
              name=excluded.name, owner=excluded.owner, signature=excluded.signature,payload=excluded.payload''',
              [(f['record_id'],f['evidence']['source_id'],f['evidence']['release_id'],f['kind'],f['name'],f['owner'],
                f['signature'],json.dumps(f,ensure_ascii=False)) for f in facts])
+
+
+def publish_batch(out, temporary, facts):
+    """Publish one complete generation through a single atomic manifest update."""
+    generation=out/'batches'/uuid.uuid4().hex
+    generation.mkdir(parents=True)
+    database=generation/'candidate-search.db'
+    candidates=generation/'candidates.jsonl'
+    candidates.write_text(''.join(json.dumps(f,ensure_ascii=False)+'\n' for f in facts),encoding='utf-8',newline='\n')
+    temporary.replace(database)
+    manifest={name:{'path':str(path.relative_to(out).as_posix()),'sha256':hashlib.sha256(path.read_bytes()).hexdigest()}
+              for name,path in [('database',database),('candidates',candidates)]}
+    write_json(out/'current.json',manifest)
+    return manifest
 
 
 def main():
@@ -233,10 +259,9 @@ def main():
         checks['unknown_release_empty']=unknown==0
         conn.commit()
     passed=all(checks.values())
-    database=out/'candidate-search.db'
-    if passed:temporary.replace(database)
-    candidate_file=out/'candidates.jsonl' if passed else temporary.with_suffix('.jsonl')
-    candidate_file.write_text(''.join(json.dumps(f,ensure_ascii=False)+'\n' for f in facts),encoding='utf-8',newline='\n')
+    if passed:publish_batch(out,temporary,facts)
+    else:
+        temporary.with_suffix('.jsonl').write_text(''.join(json.dumps(f,ensure_ascii=False)+'\n' for f in facts),encoding='utf-8',newline='\n')
     report={'schema_version':1,'inputs':inputs,'unique_document_inputs':len({(i['source_id'],i['path']) for i in inputs}),
             'counts':dict(Counter(f['kind'] for f in facts)),
             'warnings':warnings,'representative_gaps':gaps,'checks':checks,'passed':passed,
