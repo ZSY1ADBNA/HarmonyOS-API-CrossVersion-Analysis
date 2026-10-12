@@ -48,7 +48,8 @@ def search(connection,release,query=None,owner=None,name=None,kind=None,limit=10
     rows=connection.execute('SELECT e.payload FROM entities e'+join+' WHERE '+' AND '.join(filters)+' ORDER BY e.owner,e.kind,e.name,e.id LIMIT ?',values+[limit]).fetchall()
     fields=('record_id','evidence','kind','name','owner','line','end_line','context_start_line','signature',
             'parent_record_id','metadata','parent_metadata','declared_type','parameter_binding_status',
-            'api_identity_status','sdk_public_status','optional','read_only','option_flag_source','description')
+            'api_identity_status','sdk_public_status','optional','read_only','option_flag_source','description',
+            'enum_value','declaration_layout')
     return [{key:fact[key] for key in fields if key in fact} for (payload,) in rows for fact in [json.loads(payload)]]
 
 
@@ -59,7 +60,7 @@ def main():
     location.add_argument('--database',type=Path)
     location.add_argument('--batch-root',type=Path,default=ROOT/'data/delivery/structured/yu-semantic-pilot')
     p.add_argument('--release',required=True);p.add_argument('--query');p.add_argument('--owner');p.add_argument('--name')
-    p.add_argument('--kind',choices=['method','parameter','property','enum_member','component_attribute','component_constructor','config_interface'])
+    p.add_argument('--kind',choices=['method','parameter','property','enum_type','enum_member','component_attribute','component_constructor','config_interface'])
     p.add_argument('--limit',type=int,default=10);args=p.parse_args()
     database=args.database or resolve_database(args.batch_root)
     with closing(open_readonly(database)) as connection:
