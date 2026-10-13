@@ -40,7 +40,7 @@ def api_overview():
     rows = run_cypher("""
         MATCH (n) WHERE n.sdk_version IS NOT NULL
         RETURN n.sdk_version AS version,
-               labels(n)[0] AS label,
+               CASE n.type WHEN 'module' THEN 'Module' WHEN 'class' THEN 'Class' WHEN 'interface' THEN 'Interface' WHEN 'enum' THEN 'Enum' WHEN 'method' THEN 'Method' WHEN 'property' THEN 'Property' ELSE labels(n)[0] END AS label,
                count(n) AS cnt
         ORDER BY version, cnt DESC
     """)
@@ -184,11 +184,16 @@ def api_graph():
     ver = request.args.get("version", "API6.0")
     module = request.args.get("module", "")
     keyword = request.args.get("keyword", "")
-    max_parents = int(request.args.get("max_parents", 30))
+    try:
+        max_parents = int(request.args.get("max_parents", 30))
+    except (ValueError, TypeError):
+        return jsonify({"error": "max_parents must be an integer between 1 and 100"}), 400
+    if not 1 <= max_parents <= 100:
+        return jsonify({"error": "max_parents must be an integer between 1 and 100"}), 400
 
     # 1. 获取顶层节点（类/接口/枚举），可选过滤模块和关键词
     if keyword:
-        filter_clause = "AND (n.name CONTAINS $kw OR n.description CONTAINS $kw)"
+        filter_clause = "AND (n.name CONTAINS $kw OR n.description CONTAINS $kw OR EXISTS { MATCH (member)-[:HAS_PARENT]->(n) WHERE member.sdk_version=$ver AND member.name CONTAINS $kw })"
     else:
         filter_clause = ""
     if module:
@@ -198,23 +203,45 @@ def api_graph():
         MATCH (n {{sdk_version: $ver}})
         WHERE n.type IN ['class','interface','enum'] {filter_clause}
         WITH n, size([(n)<-[:HAS_PARENT]-(m) WHERE m.sdk_version=$ver|1]) AS member_count
-        RETURN n.uid AS id, n.name AS label, labels(n)[0] AS group,
+        RETURN n.uid AS id, n.name AS label, CASE n.type WHEN 'class' THEN 'Class' WHEN 'interface' THEN 'Interface' WHEN 'enum' THEN 'Enum' ELSE labels(n)[0] END AS group,
                n.type AS type, n.module AS module,
                COALESCE(n.description,'') AS description,
                COALESCE(n.since,'') AS since,
+               n.source_url AS source_url,
+               n.source_commit AS source_commit,
+               n.source_path AS source_path,
+               n.source_line AS source_line,
+               n.api_level AS api_level,
+               n.release_id AS release_id,
+               n.sdk_package_version AS sdk_package_version,
+               n.sdk_verification_status AS sdk_verification_status,
+               n.compile_verification_status AS compile_verification_status,
+               n.api_identity_status AS api_identity_status,
+               n.source_correction_status AS source_correction_status,
                member_count AS members
         ORDER BY members DESC
         LIMIT $max
     """, ver=ver, mod=module, kw=keyword, max=max_parents)
 
-    if not parent_nodes:
+    if not parent_nodes and not (keyword or module):
         parent_nodes = run_cypher("""
             MATCH (n {sdk_version: $ver})
             WHERE n.type IN ['class','interface','enum']
-            RETURN n.uid AS id, n.name AS label, labels(n)[0] AS group,
+            RETURN n.uid AS id, n.name AS label, CASE n.type WHEN 'class' THEN 'Class' WHEN 'interface' THEN 'Interface' WHEN 'enum' THEN 'Enum' ELSE labels(n)[0] END AS group,
                    n.type AS type, n.module AS module,
                    COALESCE(n.description,'') AS description,
                    COALESCE(n.since,'') AS since,
+               n.source_url AS source_url,
+               n.source_commit AS source_commit,
+               n.source_path AS source_path,
+               n.source_line AS source_line,
+               n.api_level AS api_level,
+               n.release_id AS release_id,
+               n.sdk_package_version AS sdk_package_version,
+               n.sdk_verification_status AS sdk_verification_status,
+               n.compile_verification_status AS compile_verification_status,
+               n.api_identity_status AS api_identity_status,
+               n.source_correction_status AS source_correction_status,
                    0 AS members
             ORDER BY rand() LIMIT $max
         """, ver=ver, max=max_parents)
@@ -230,15 +257,27 @@ def api_graph():
             MATCH (child)-[:HAS_PARENT]->(parent)
             WHERE parent.uid IN $pids AND child.sdk_version = $ver
               AND child.type IN ['method','property']
-            RETURN child.uid AS id, child.name AS label, labels(child)[0] AS group,
+            RETURN child.uid AS id, child.name AS label, CASE child.type WHEN 'method' THEN 'Method' WHEN 'property' THEN 'Property' ELSE labels(child)[0] END AS group,
                    child.type AS type, COALESCE(child.return_type, child.property_type, '') AS sig,
-                   parent.uid AS parent_id
+                   parent.uid AS parent_id,
+                   child.source_url AS source_url,
+                   child.source_commit AS source_commit,
+                   child.source_path AS source_path,
+                   child.source_line AS source_line,
+                   child.api_level AS api_level,
+                   child.release_id AS release_id,
+                   child.sdk_package_version AS sdk_package_version,
+                   child.sdk_verification_status AS sdk_verification_status,
+                   child.compile_verification_status AS compile_verification_status,
+                   child.api_identity_status AS api_identity_status,
+                   child.source_correction_status AS source_correction_status
             LIMIT 500
         """, pids=parent_ids, ver=ver)
         for r in child_rows:
             child_nodes.append({
                 "id": r["id"], "label": r["label"], "group": r["group"],
-                "type": r["type"], "sig": r["sig"], "isChild": True
+                "type": r["type"], "sig": r["sig"], "isChild": True,
+                **{key: r[key] for key in ('source_url', 'source_commit', 'source_path', 'source_line', 'api_level', 'release_id', 'sdk_package_version', 'sdk_verification_status', 'compile_verification_status', 'api_identity_status', 'source_correction_status')}
             })
             edges.append({"from": r["id"], "to": r["parent_id"], "label": ""})
 
