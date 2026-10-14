@@ -49,7 +49,7 @@ def search(connection,release,query=None,owner=None,name=None,kind=None,limit=10
     fields=('record_id','evidence','kind','name','owner','line','end_line','context_start_line','signature',
             'parent_record_id','metadata','parent_metadata','declared_type','parameter_binding_status',
             'api_identity_status','sdk_public_status','optional','read_only','option_flag_source','description',
-            'enum_value','declaration_layout')
+            'enum_value','declaration_layout','correction','sdk_declaration','source_declaration_status')
     return [{key:fact[key] for key in fields if key in fact} for (payload,) in rows for fact in [json.loads(payload)]]
 
 

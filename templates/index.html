@@ -266,6 +266,7 @@ footer { text-align: center; padding: 20px; color: var(--text-dim); font-size: 1
 </style>
 </head>
 <body>
+{% if isolated_test %}<div style="padding:12px;background:#17324a;color:#e6f5ff">隔离测试：OpenHarmony 4.1，两个核验样本；非团队共享环境。</div>{% endif %}
 
 <!-- ── Navigation ── -->
 <nav>
@@ -335,6 +336,7 @@ footer { text-align: center; padding: 20px; color: var(--text-dim); font-size: 1
       <span id="graphStats" style="font-size:11px;color:var(--text-dim);margin-left:8px"></span>
       <button id="freezeBtn" onclick="toggleFreeze()" style="background:rgba(255,255,255,0.06);color:var(--text-dim);border:1px solid var(--border);border-radius:8px;padding:6px 12px;cursor:pointer;font-size:11px;margin-left:auto">⏸ 冻结中</button>
     </div>
+    <div id="graphEvidence" style="font-size:12px;line-height:1.7;margin:10px 0"></div>
     <!-- Legend -->
     <div style="display:flex;gap:14px;margin-bottom:10px;flex-wrap:wrap;font-size:11px" id="graphLegend">
       <span style="color:#5e97f6">⬤ Module</span>
@@ -361,7 +363,7 @@ footer { text-align: center; padding: 20px; color: var(--text-dim); font-size: 1
   </div>
 </section>
 
-<footer>数据来源：Neo4j 知识图谱 · 4,432 个 JSON API 定义文件 · 5 个 SDK 版本</footer>
+<footer>数据来源：Neo4j知识图谱。请以当前查询结果和原文来源为准。</footer>
 
 </main>
 
@@ -574,6 +576,7 @@ function switchModuleTab(version, btn) {
 //  Section 4: Knowledge Graph
 // ═══════════════════════════════════════════
 let graphNetwork;
+let graphRequestSequence = 0;
 
 const GRAPH_COLORS = {
   Module:    { bg: '#5e97f6', border: '#82b1ff', text: '#fff', size: 28, font: '14px bold' },
@@ -585,17 +588,61 @@ const GRAPH_COLORS = {
 };
 
 async function loadGraph() {
+  const requestSequence = ++graphRequestSequence;
   const version = document.getElementById('graphVersion').value;
   const module = document.getElementById('graphModule').value;
   const keyword = document.getElementById('graphSearch').value.trim();
   const container = document.getElementById('graphContainer');
   container.innerHTML = '<div class="loading"><div class="spinner"></div></div>';
+  document.getElementById('graphEvidence').replaceChildren();
+  document.getElementById('graphStats').textContent = '查询中…';
 
   const params = new URLSearchParams({ version, max_parents: keyword ? 50 : 30 });
   if (module) params.set('module', module);
   if (keyword) params.set('keyword', keyword);
 
-  const data = await API(`/api/graph?${params}`);
+  let data;
+  try {
+    data = await API(`/api/graph?${params}`);
+    if (!data || !Array.isArray(data.nodes) || !Array.isArray(data.edges)) throw new Error('Invalid graph response');
+  } catch (_) {
+    if (requestSequence === graphRequestSequence) {
+      document.getElementById('graphStats').textContent = '查询失败';
+      document.getElementById('graphEvidence').textContent = '查询暂时失败，请稍后重试。';
+      container.replaceChildren();
+    }
+    return;
+  }
+  if (requestSequence !== graphRequestSequence) return;
+  const evidence = document.getElementById('graphEvidence');
+  evidence.replaceChildren();
+  const sourceNodes = data.nodes.filter(n => n.isChild && typeof n.source_url === 'string');
+  if (!data.nodes.length) evidence.textContent = '未找到匹配记录。';
+  else if (!sourceNodes.length) evidence.textContent = '当前结果尚无可追溯来源。';
+  sourceNodes.forEach(n => {
+    const row = document.createElement('div');
+    row.style.cssText = 'padding:8px 0;border-top:1px solid rgba(255,255,255,0.1)';
+    const label = document.createElement('span');
+    label.textContent = `${n.label} · ${n.release_id || '版本待核对'} · API ${n.api_level || '?'} `;
+    row.append(label);
+    try {
+      const url = new URL(n.source_url);
+      if (url.protocol === 'https:' && ['github.com','gitee.com'].includes(url.hostname) && /^\/openharmony\/(docs|interface_sdk-js|applications_app_samples)\/blob\/[0-9a-f]{40}\//.test(url.pathname)) {
+        const link = document.createElement('a');
+        link.href = url.href; link.target = '_blank'; link.rel = 'noopener noreferrer';
+        link.textContent = '查看官方原文';row.append(link);
+      }
+    } catch (_) {}
+    const status = document.createElement('div');
+    status.textContent = n.compile_verification_status === 'sample_passed'
+      ? '该版本的小样本代码已通过编译；设备功能尚未验证。'
+      : 'SDK及编译结果尚待核对。';
+    row.append(status);
+    if (n.api_identity_status === 'documentary_candidate') { const note=document.createElement('div'); note.textContent='当前为资料候选，正式API身份尚待核对。';row.append(note); }
+    if (n.source_correction_status === 'history_verified') { const note=document.createElement('div');note.textContent='文档异常已依据修改历史校正，官方原件保留。';row.append(note); }
+    evidence.append(row);
+  });
+
 
   document.getElementById('graphStats').textContent =
     `${data.nodes.length} 节点 · ${data.edges.length} 关系`;
@@ -604,19 +651,22 @@ async function loadGraph() {
     const c = GRAPH_COLORS[n.group] || { bg: '#888', border: '#aaa', text: '#fff', size: 16, font: '12px' };
     const isChild = n.isChild || n.group === 'Method' || n.group === 'Property';
     const size = isChild ? (c.size || 10) : (c.size || 22);
-    const sig = n.sig ? `<br/><span style="font-size:10px;opacity:0.7">${n.sig}</span>` : '';
+    const sig = n.sig ? `<br/><span style="font-size:10px;opacity:0.7">${escapeHtml(n.sig)}</span>` : '';
     const members = n.members > 0 ? `<br/>成员: <b>${n.members}</b>` : '';
-    const desc = n.description ? `<br/><span style="font-size:10px;opacity:0.7">${n.description.slice(0,80)}</span>` : '';
-    const since = n.since ? ` · @since ${n.since}` : '';
-    const mod = n.module ? `<br/>模块: ${n.module}` : '';
+    const desc = n.description ? `<br/><span style="font-size:10px;opacity:0.7">${escapeHtml(String(n.description).slice(0,80))}</span>` : '';
+    const since = n.since ? ` · @since ${escapeHtml(n.since)}` : '';
+    const mod = n.module ? `<br/>模块: ${escapeHtml(n.module)}` : '';
+    const source = typeof n.source_url === 'string' ? `<br/><span style="font-size:10px;word-break:break-all">来源：${escapeHtml(n.source_url)}</span>` : '';
+    const verified = n.compile_verification_status === 'sample_passed' ? '<br/>此版本的小样本代码已编译通过' : '';
+    const candidate = n.api_identity_status === 'documentary_candidate' ? '<br/>资料候选：正式API身份待核对' : '';
 
     return {
-      id: n.id, label: n.label, group: n.group,
-      title: `<div style="max-width:260px"><b style="font-size:14px">${n.label}</b>
-              <span style="font-size:10px;opacity:0.7">[${n.group}]${since}</span>
-              ${mod}${members}${sig}${desc}</div>`,
+      id: n.id, label: n.group === 'Module' ? String(n.label).split('.').join('.\n') : n.label, group: n.group,
+      title: `<div style="max-width:260px"><b style="font-size:14px">${escapeHtml(n.label)}</b>
+              <span style="font-size:10px;opacity:0.7">[${escapeHtml(n.group)}]${since}</span>
+              ${mod}${members}${sig}${desc}${source}${verified}${candidate}</div>`,
       color: { background: c.bg, border: c.border, highlight: { background: c.bg, border: '#fff' } },
-      font: { color: c.text, size: parseInt(c.font) || 12, face: 'Microsoft YaHei' },
+      font: { color: isChild ? '#e6f5ff' : c.text, size: parseInt(c.font) || 12, face: 'Microsoft YaHei' },
       size: size,
       shape: n.group === 'Module' ? 'diamond' : (isChild ? 'dot' : 'box'),
       borderWidth: n.group === 'Module' ? 3 : (isChild ? 1 : 2),
@@ -718,6 +768,7 @@ function onGraphFilterChange() {
 async function updateGraphModuleDropdown() {
   const version = document.getElementById('graphVersion').value;
   const modules = await API(`/api/modules?version=${version}`);
+  if (version !== document.getElementById('graphVersion').value) return;
   const msel = document.getElementById('graphModule');
   const currentVal = msel.value;
   msel.innerHTML = '<option value="">全部模块</option>';
