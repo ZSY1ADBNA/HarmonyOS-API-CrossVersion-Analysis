@@ -17,7 +17,7 @@ def save(project,path,text):
     target.write_text(text,encoding='utf-8',newline='\n')
 
 
-def summarize(project,sdk,deveco,returncode,output,timed_out=False):
+def summarize(project,sdk,deveco,returncode,output,timed_out=False,api_level=11,sdk_version='4.1.7.5'):
     output=re.sub(r'\x1b\[[0-9;]*m','',output)
     artifacts=[{'path':p.relative_to(project).as_posix(),'sha256':digest(p)} for p in (project/'entry/build').rglob('*.abc')]
     task_finished=bool(re.search(r'Finished[^\r\n]*CompileArkTS',output))
@@ -29,16 +29,16 @@ def summarize(project,sdk,deveco,returncode,output,timed_out=False):
     for name,path,key in [('deveco',deveco/'product-info.json','version'),('hvigor',deveco/'tools/hvigor/hvigor/package.json','version'),('hvigor_plugin',deveco/'tools/hvigor/hvigor-ohos-plugin/package.json','version')]:
         if path.exists():tools[name]=json.loads(path.read_text(encoding='utf-8'))[key]
     sources=[{'path':p.relative_to(project).as_posix(),'sha256':digest(p)} for p in (project/'entry/src').rglob('*.ets')]
-    return {'scope':'Real Hvigor CompileArkTS task; no device or shared database test','sdk_version':'4.1.7.5','api_level':11,
+    return {'scope':'Real Hvigor CompileArkTS task; no device or shared database test','sdk_version':sdk_version,'api_level':api_level,
             'tool_versions':tools,'source_files':sources,'return_code':returncode,'timed_out':timed_out,'compile_task_finished':task_finished,
             'compiled_artifacts':artifacts,'compile_task_succeeded':succeeded,'output_tail':output[-5000:],'device_runtime_verified':False}
 
 
-def prepare(project,sdk):
+def prepare(project,sdk,api_level=11):
     save(project,'hvigorfile.js',"module.exports = { system: require(process.env.HVIGOR_OHOS_PLUGIN_PATH).appTasks };\n")
     save(project,'entry/hvigorfile.js',"module.exports = { system: require(process.env.HVIGOR_OHOS_PLUGIN_PATH).hapTasks };\n")
     save(project,'hvigor/hvigor-config.json5',json.dumps({'modelVersion':'5.0.0','dependencies':{},'execution':{'daemon':False,'incremental':False,'parallel':False}},indent=2)+'\n')
-    save(project,'build-profile.json5',json.dumps({'app':{'signingConfigs':[],'products':[{'name':'default','compileSdkVersion':11,'compatibleSdkVersion':11,'targetSdkVersion':11,'runtimeOS':'OpenHarmony'}],'buildModeSet':[{'name':'debug'},{'name':'release'}]},'modules':[{'name':'entry','srcPath':'./entry','targets':[{'name':'default','applyToProducts':['default']}]}]},indent=2)+'\n')
+    save(project,'build-profile.json5',json.dumps({'app':{'signingConfigs':[],'products':[{'name':'default','compileSdkVersion':api_level,'compatibleSdkVersion':api_level,'targetSdkVersion':api_level,'runtimeOS':'OpenHarmony'}],'buildModeSet':[{'name':'debug'},{'name':'release'}]},'modules':[{'name':'entry','srcPath':'./entry','targets':[{'name':'default','applyToProducts':['default']}]}]},indent=2)+'\n')
     save(project,'entry/build-profile.json5',json.dumps({'apiType':'stageMode','buildOption':{},'targets':[{'name':'default','runtimeOS':'OpenHarmony'}]},indent=2)+'\n')
     save(project,'oh-package.json5',json.dumps({'modelVersion':'5.0.0','name':'sdk-probe','version':'1.0.0','dependencies':{}},indent=2)+'\n')
     save(project,'entry/oh-package.json5',json.dumps({'name':'entry','version':'1.0.0','dependencies':{}},indent=2)+'\n')
@@ -51,17 +51,18 @@ def prepare(project,sdk):
     png=b'\x89PNG\r\n\x1a\n'+chunk(b'IHDR',struct.pack('>IIBBBBB',32,32,8,6,0,0,0))+chunk(b'IDAT',zlib.compress((b'\0'+b'\x30\x60\xa0\xff'*32)*32))+chunk(b'IEND',b'')
     if icon.exists() and icon.read_bytes()!=png:raise ValueError('Existing icon differs')
     icon.write_bytes(png)
-    save(project,'entry/src/main/module.json5',json.dumps({'module':{'name':'entry','type':'entry','mainElement':'EntryAbility','deviceTypes':['default'],'deliveryWithInstall':True,'installationFree':False,'pages':'$profile:main_pages','abilities':[{'name':'EntryAbility','srcEntrance':'./ets/entryability/EntryAbility.ets','startWindowIcon':'$media:app_icon','startWindowBackground':'$color:start_window_background','exported':True,'skills':[{'entities':['entity.system.home'],'actions':['action.system.home']}]}]}},indent=2)+'\n')
+    ability_entry_key='srcEntry' if api_level==15 else 'srcEntrance'
+    save(project,'entry/src/main/module.json5',json.dumps({'module':{'name':'entry','type':'entry','mainElement':'EntryAbility','deviceTypes':['default'],'deliveryWithInstall':True,'installationFree':False,'pages':'$profile:main_pages','abilities':[{'name':'EntryAbility',ability_entry_key:'./ets/entryability/EntryAbility.ets','startWindowIcon':'$media:app_icon','startWindowBackground':'$color:start_window_background','exported':True,'skills':[{'entities':['entity.system.home'],'actions':['action.system.home']}]}]}},indent=2)+'\n')
     save(project,'entry/src/main/resources/base/profile/main_pages.json',json.dumps({'src':['pages/Index']})+'\n')
     save(project,'entry/src/main/ets/entryability/EntryAbility.ets',"import UIAbility from '@ohos.app.ability.UIAbility';\nimport window from '@ohos.window';\nexport default class EntryAbility extends UIAbility {\n  onWindowStageCreate(stage: window.WindowStage): void { stage.loadContent('pages/Index'); }\n}\n")
     save(project,'entry/src/main/ets/pages/Index.ets',"import audio from '@ohos.multimedia.audio';\nconst streamInfo: audio.AudioStreamInfo = {\n  samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,\n  channels: audio.AudioChannel.CHANNEL_2,\n  sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,\n  encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW,\n  channelLayout: audio.AudioChannelLayout.CH_LAYOUT_STEREO\n};\n@Entry\n@Component\nstruct Index {\n  build() {\n    Column() {\n      Button('API 11 fontSize').fontSize(16)\n      Text('Channels: ' + streamInfo.channels)\n    }\n  }\n}\n")
 
 
-def run(project,sdk,deveco,prepare_source=True,report_path=None):
+def run(project,sdk,deveco,prepare_source=True,report_path=None,api_level=11,sdk_version='4.1.7.5'):
     for component in ['ets','js','toolchains']:
-        metadata=json.loads((sdk/'11'/component/'oh-uni-package.json').read_text(encoding='utf-8'))
-        if metadata['version']!='4.1.7.5' or str(metadata['apiVersion'])!='11':raise ValueError('Incomplete or wrong SDK component')
-    if prepare_source:prepare(project,sdk)
+        metadata=json.loads((sdk/str(api_level)/component/'oh-uni-package.json').read_text(encoding='utf-8'))
+        if metadata['version']!=sdk_version or str(metadata['apiVersion'])!=str(api_level):raise ValueError('Incomplete or wrong SDK component')
+    if prepare_source:prepare(project,sdk,api_level)
     node=deveco/'tools/node/node.exe';cli=deveco/'tools/hvigor/hvigor/bin/hvigor.js'
     # Resolve the IDE's packaged name and subpaths only within this process.
     save(project,'resolve-bundled-hvigor.cjs',"const Module = require('module');\nconst path = require('path');\nconst original = Module._resolveFilename;\nconst installed = "+json.dumps((deveco/'tools/hvigor/hvigor').as_posix())+";\nModule._resolveFilename = function(name, ...args) {\n  if (name === '@ohos/hvigor') name = installed;\n  else if (name.startsWith('@ohos/hvigor/')) name = path.join(installed, name.slice('@ohos/hvigor/'.length));\n  return original.call(this, name, ...args);\n};\n")
@@ -74,7 +75,7 @@ def run(project,sdk,deveco,prepare_source=True,report_path=None):
     except subprocess.TimeoutExpired as exc:
         timed_out=True;returncode=None;raw=(exc.stdout or b'')+(exc.stderr or b'')
     output=raw.decode('utf-8',errors='replace');(project/'build-output.log').write_text(output,encoding='utf-8')
-    report=summarize(project,sdk,deveco,returncode,output,timed_out)
+    report=summarize(project,sdk,deveco,returncode,output,timed_out,api_level,sdk_version)
     write_json(report_path or ROOT/'docs/official-data-delivery/sdk-build-probe.json',report);print(json.dumps(report,ensure_ascii=False));return report
 
 

@@ -64,6 +64,8 @@ def unpack_components(component_dir,sdk_root,expected_hashes):
     if len(names) not in (3,5) or kinds not in ({'ets','js','toolchains'},{'ets','js','toolchains','native','previewer'}):raise ValueError('Expected verified SDK component set')
     if any(PurePosixPath(n).name!=n or '\\' in n or ':' in n for n in names):raise ValueError('Unsafe component filename')
     components=[component_dir/n for n in sorted(names)]
+    resolved_root=sdk_root.resolve()
+    checked_parents=set()
     for archive in components:
         if archive.name not in expected_hashes or digest(archive)!=expected_hashes[archive.name]:raise ValueError('Cached component differs from verified parent archive')
         with zipfile.ZipFile(archive) as z:
@@ -71,23 +73,28 @@ def unpack_components(component_dir,sdk_root,expected_hashes):
             for info in z.infolist():
                 path=PurePosixPath(info.filename)
                 target=sdk_root.joinpath(*path.parts)
-                if path.is_absolute() or '..' in path.parts or '\\' in info.orig_filename or not target.resolve().is_relative_to(sdk_root.resolve()):raise ValueError('Unsafe SDK extraction path')
+                if path.is_absolute() or '..' in path.parts or '\\' in info.orig_filename or ':' in info.orig_filename:raise ValueError('Unsafe SDK extraction path')
                 if ((info.external_attr>>16)&0o170000)==0o120000:raise ValueError('SDK symlink not materialized')
                 if info.is_dir():continue
+                if target.parent not in checked_parents:
+                    if not target.parent.resolve().is_relative_to(resolved_root):raise ValueError('Unsafe SDK extraction path')
+                    target.parent.mkdir(parents=True,exist_ok=True)
+                    checked_parents.add(target.parent)
+                if target.is_symlink():raise ValueError('Existing SDK file symlink preserved')
                 raw=z.read(info)
                 if target.exists():
                     if target.read_bytes()!=raw:raise ValueError('Existing SDK file differs; preserved')
                 else:
-                    target.parent.mkdir(parents=True,exist_ok=True);target.write_bytes(raw)
+                    target.write_bytes(raw)
 
 
-def cache_build_components(archive,component_dir):
+def cache_build_components(archive,component_dir,sdk_version='4.1.7.5',archive_sha=None):
     """Stream all five Windows components from the pinned official archive."""
-    if digest(archive)!=EXPECTED_SHA:raise ValueError('Official SDK archive fingerprint mismatch')
+    if digest(archive)!=(archive_sha or EXPECTED_SHA):raise ValueError('Official SDK archive fingerprint mismatch')
     component_dir.mkdir(parents=True,exist_ok=True)
-    names={f'{kind}-windows-x64-4.1.7.5-Release.zip' for kind in ['ets','js','toolchains','native','previewer']}
+    names={f'{kind}-windows-x64-{sdk_version}-Release.zip' for kind in ['ets','js','toolchains','native','previewer']}
     hashes={}
-    with tarfile.open(archive,'r|gz') as t:
+    with tarfile.open(archive,'r|gz',bufsize=1024*1024) as t:
         for member in t:
             name=PurePosixPath(member.name).name
             if member.name!='ohos-sdk/windows/'+name or name not in names:continue

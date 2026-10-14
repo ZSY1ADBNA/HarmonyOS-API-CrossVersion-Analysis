@@ -30,14 +30,14 @@ def audit():
         raw = (BASE/'mapping-baseline'/f'{key}.json').read_bytes()
         if blob(raw) != expected:
             raise ValueError('Pinned legacy input differs: '+key)
-        legacy[key] = json.loads(raw)['�ڵ�']
+        legacy[key] = json.loads(raw)['节点']
     tree = ast.parse((ROOT/'_run_import.py').read_text(encoding='utf-8'))
     function = next(n for n in tree.body if isinstance(n, ast.FunctionDef) and n.name == 'make_uid')
     namespace = {}
     exec(compile(ast.Module(body=[function], type_ignores=[]), '<pure make_uid>', 'exec'), namespace)
     uid = namespace['make_uid']
     checks = {
-        'legacy_button_only_module': len(legacy['button']) == 1 and legacy['button'][0]['����'] == 'module',
+        'legacy_button_only_module': len(legacy['button']) == 1 and legacy['button'][0]['类型'] == 'module',
         'legacy_type_collision_reproduced': uid('method', 'same', 'API4.1', 'Owner') == uid('property', 'same', 'API4.1', 'Owner'),
         'name_map_scope_loss_static': 'name_to_uid[props["name"]] = props["uid"]' in ast.get_source_segment((ROOT/'_run_import.py').read_text(encoding='utf-8'), next(n for n in tree.body if isinstance(n, ast.FunctionDef) and n.name == 'batch_import_file')),
     }
@@ -53,10 +53,10 @@ def audit():
         checks[name+'_parsed_declaration'] = bool(actual and all(actual[k] == d[k] for k in ['signature','optional','kind','declared_type']))
         checks[name+'_exact_signature'] = text.splitlines()[d['line']-1].strip() == d['signature']
         checks[name+'_owner_scope'] = ('declare class ButtonAttribute' in text if name == 'fontSize' else 'declare namespace audio' in text and 'interface AudioStreamInfo' in text and 'export default audio' in text)
-        old = [n for n in legacy['button' if name == 'fontSize' else 'audio'] if n.get('����') == name and n.get('�ϼ�') == d['owner']]
+        old = [n for n in legacy['button' if name == 'fontSize' else 'audio'] if n.get('名称') == name and n.get('上级') == d['owner']]
         if name == 'channelLayout':
             checks['legacy_audio_unique_match'] = len(old) == 1
-            checks['legacy_audio_type_matches'] = len(old) == 1 and old[0].get('��������') == d['declared_type']
+            checks['legacy_audio_type_matches'] = len(old) == 1 and old[0].get('属性类型') == d['declared_type']
         records.append({'name': name, 'module': module, 'owner': d['owner'],
                         'signature': d['signature'], 'optional': d['optional'],
                         'sample_identity': identity(module, d), 'sdk_evidence': d['evidence'],

@@ -23,23 +23,23 @@ def plan_bridge(records, legacy, release=RELEASE):
     for record in records:
         kind = 'method' if record['name'] == 'fontSize' else 'property'
         expected_type = 'ButtonAttribute' if kind == 'method' else 'AudioChannelLayout'
-        named = [n for n in legacy[record['name']] if n.get('����') == record['name']]
-        selected = [n for n in named if n.get('�ϼ�') == record['owner']]
+        named = [n for n in legacy[record['name']] if n.get('名称') == record['name']]
+        selected = [n for n in named if n.get('上级') == record['owner']]
         if named and not selected:
             raise ValueError('Legacy owner conflicts; absence not established')
         if len(selected) > 1:
             raise ValueError('Ambiguous legacy records')
         old = selected[0] if selected else None
         if old:
-            if old.get('����') != kind or old.get('�汾') != 'API4.1':
+            if old.get('类型') != kind or old.get('版本') != 'API4.1':
                 raise ValueError('Legacy kind or release conflicts')
-            if old.get('����ģ��') not in (None, '', 'δ֪ģ��', record['module']):
+            if old.get('所属模块') not in (None, '', '未知模块', record['module']):
                 raise ValueError('Legacy module conflicts')
-            if old.get('ǩ��') not in (None, '', record['signature']):
+            if old.get('签名') not in (None, '', record['signature']):
                 raise ValueError('Legacy signature conflicts')
             if 'optional' in old and (type(old['optional']) is not bool or old['optional'] != record['optional']):
                 raise ValueError('Legacy optionality conflicts')
-            type_key = '����ֵ' if kind == 'method' else '��������'
+            type_key = '返回值' if kind == 'method' else '属性类型'
             if old.get(type_key) != expected_type:
                 raise ValueError('Legacy declared type conflicts')
         plan.append({'name':record['name'], 'action':'add_shadow_and_link_legacy' if old else 'add_shadow_missing_legacy',
@@ -88,7 +88,7 @@ def main():
         raw = (BASE/'mapping-baseline'/f'{key}.json').read_bytes()
         if blob(raw) != PINNED[key]:
             raise ValueError('Legacy pinned file changed')
-        legacy[name] = json.loads(raw)['�ڵ�']
+        legacy[name] = json.loads(raw)['节点']
     plan = plan_bridge(records,legacy)
     checks = {'fontSize_missing_legacy_additive':plan[0]['action']=='add_shadow_missing_legacy',
               'channelLayout_existing_legacy_additive':plan[1]['action']=='add_shadow_and_link_legacy'}
@@ -107,7 +107,7 @@ def main():
                     old = plan[1]['legacy']
                     tx.run('CREATE (n:DeliveryBridgeProbe {uid:$uid,legacy_json:$body})',uid=BATCH+':legacy:channelLayout',body=json.dumps(old,ensure_ascii=False)).consume()
                     if scenario == 'changed_legacy':
-                        changed = dict(old,��������='Constructed concurrent edit')
+                        changed = dict(old,功能描述='Constructed concurrent edit')
                         tx.run('MATCH (n:DeliveryBridgeProbe {uid:$uid}) SET n.legacy_json=$body',uid=BATCH+':legacy:channelLayout',body=json.dumps(changed,ensure_ascii=False)).consume()
                     try:
                         apply_probe(tx,plan,fail_after_first=scenario=='injected_failure')
