@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>OpenHarmony 小样本查询</title><link rel="stylesheet" href="/search.css"><script src="/search.js" defer></script></head>
+<body><main>
+<p class="label">本地独立验证 · OpenHarmony</p>
+<h1>按需求查询 API</h1>
+<p>当前支持按钮字号与音频声道布局，覆盖 4.1（API 11）和 5.0.3（API 15）。结果来自已核验声明，尚未接入 AI 回答。</p>
+<form id="search-form">
+<label>你的需求<input id="message" name="message" maxlength="2000" required placeholder="例如：设置按钮字号"></label>
+<div class="versions"><label>目标版本<select id="release"><option value="">请选择版本</option><option>4.1</option><option>5.0.3</option></select></label>
+<label>比较到（可选）<select id="compare"><option value="">不比较</option><option>4.1</option><option>5.0.3</option></select></label></div>
+<button type="submit">查询证据</button> <button type="button" id="clear-context">清空上下文</button></form>
+<p class="note">可以先问功能再补版本，也可追问“换成5.0.3呢”或“默认值呢”。版本冲突时会先澄清。</p>
+<p id="context" class="note">尚未保存查询上下文。</p>
+<p id="status" role="status" aria-live="polite">请输入需求并选择版本。</p>
+<section id="results" aria-label="查询结果"></section>
+<p class="note">可选属性不代表有默认值。编译通过不代表设备运行已验证。未命中仅表示当前小样本没有匹配证据。</p>
+</main></body></html>
