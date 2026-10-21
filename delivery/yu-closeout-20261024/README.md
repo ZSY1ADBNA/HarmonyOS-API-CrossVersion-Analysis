@@ -4,7 +4,7 @@
 
 ## 队友三分钟接手
 
-本交付目前在 [PR #15](https://github.com/ZSY1ADBNA/HarmonyOS-API-CrossVersion-Analysis/pull/15) 的 `delivery/yu-closeout-20261024` 分支，尚未进入 `master`。从本页开始读；五文件的准确大小与 SHA256 查 [RELEASE.json](RELEASE.json)，实测与未测边界查 [ACCEPTANCE.json](ACCEPTANCE.json) 和 [LIMITS.md](LIMITS.md)。网盘访问详情由余镕熙单独交给接收者，不写进公开仓库。
+本交付的审阅记录见 [PR #15](https://github.com/ZSY1ADBNA/HarmonyOS-API-CrossVersion-Analysis/pull/15)；合并后的 `master` 入口为[本交付目录](https://github.com/ZSY1ADBNA/HarmonyOS-API-CrossVersion-Analysis/tree/master/delivery/yu-closeout-20261024)。从本页开始读；五文件的准确大小与 SHA256 查 [RELEASE.json](RELEASE.json)，实测与未测边界查 [ACCEPTANCE.json](ACCEPTANCE.json) 和 [LIMITS.md](LIMITS.md)。网盘访问详情由余镕熙单独交给接收者，不写进公开仓库。
 
 余镕熙已经交付：五个来源发行（4.1、5.0.3、5.1.0、6.0、6.1）的固定来源资料与追溯包；同版八数据库快照、32份锁定运行代码和只读六工具；包外接收校验器、13个实际请求例子与成员说明。本机新目录的八库指纹/SQLite/计数、56项定向回归、27个六工具HTTP场景及两条合成问题的真实模型页面查询已通过；代表构建覆盖41/42。上述是提供方验证，不代替接收成员环境验收、检索效果评测、完整页面接入、正式API身份映射或设备验证。
 
