@@ -11,7 +11,7 @@
 接收者按以下顺序操作：
 
 1. 从余镕熙私下提供的网盘入口下载 `DELIVERY.json`、`full-snapshot-v18-original-rebuild.zip` 和 `member-handoff-20261024.zip`；需追溯官方原件时再下载 `fixed-original-sources-20261024-v2.zip`。网盘内 `README.md` 是上传时的旧状态，以本页为准。
-2. 在各文件所在目录运行 `Get-FileHash .\\文件名 -Algorithm SHA256`，逐项对照 [RELEASE.json](RELEASE.json) 的字节数和 SHA256。任一文件不符就停止使用并告知余镕熙；网盘页面显示的四舍五入大小不能代替校验。
+2. 在各文件所在目录，分别运行 `Get-Item '.\文件名' | Select-Object Name,Length` 和 `Get-FileHash '.\文件名' -Algorithm SHA256`，逐项对照 [RELEASE.json](RELEASE.json) 的字节数和 SHA256。任一文件不符就停止使用并告知余镕熙；网盘页面显示的四舍五入大小不能代替校验。
 3. 将主运行包和成员补充包解压进同一个**全新目录**，确认有 `runtime/`、`snapshot/`、`verify_member_delivery.py`；不要把旧库或旧代码混入。按下文运行接收校验，保存 `receiver-check.json`。仅当退出成功且报告中的 `passed=true`、`complete=true` 时，再启动只读服务，访问 `/health` 和 `/tools`，并从 [cases.json](cases.json) 选一条本职相关请求做实际查询。
 4. 接收者本人填写补充包内的 [RECEIPT.json](RECEIPT.json) 模板：真实接收者与时间、是否下载完成、是否通过本机校验、`receiver-check.json` 的 SHA256、发现的问题。将填好的回执和去凭据的校验报告交回余镕熙；检索评测、设备验证等独立字段只有实际完成后才改为 `true`。校验失败时保留失败阶段和报错，不填“通过”。
 
