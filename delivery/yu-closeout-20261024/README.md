@@ -2,6 +2,21 @@
 
 本目录提供同版只读运行代码、包外校验器和操作说明。下载状态、文件名、SHA256及支持范围见 RELEASE.json。百度网盘分享页可打开；文件名和显示大小已与本地清单核对，下载的 DELIVERY.json 与本地清单 SHA256 一致。分享链接和提取码由交付负责人向接收成员单独提供。三个大包的云端文件尚未经下载后逐字节核验，接收者须按清单自行验哈希。网盘内 README.md 仍保留上传时的“入口待提供”文字，以本页和 RELEASE.json 的当前交付状态为准。成员本人接收和评测单独记录。
 
+## 队友三分钟接手
+
+本交付目前在 [PR #15](https://github.com/ZSY1ADBNA/HarmonyOS-API-CrossVersion-Analysis/pull/15) 的 `delivery/yu-closeout-20261024` 分支，尚未进入 `master`。从本页开始读；五文件的准确大小与 SHA256 查 [RELEASE.json](RELEASE.json)，实测与未测边界查 [ACCEPTANCE.json](ACCEPTANCE.json) 和 [LIMITS.md](LIMITS.md)。网盘访问详情由余镕熙单独交给接收者，不写进公开仓库。
+
+余镕熙已经交付：五个来源发行（4.1、5.0.3、5.1.0、6.0、6.1）的固定来源资料与追溯包；同版八数据库快照、32份锁定运行代码和只读六工具；包外接收校验器、13个实际请求例子与成员说明。本机新目录的八库指纹/SQLite/计数、56项定向回归、27个六工具HTTP场景及两条合成问题的真实模型页面查询已通过；代表构建覆盖41/42。上述是提供方验证，不代替接收成员环境验收、检索效果评测、完整页面接入、正式API身份映射或设备验证。
+
+接收者按以下顺序操作：
+
+1. 从余镕熙私下提供的网盘入口下载 `DELIVERY.json`、`full-snapshot-v18-original-rebuild.zip` 和 `member-handoff-20261024.zip`；需追溯官方原件时再下载 `fixed-original-sources-20261024-v2.zip`。网盘内 `README.md` 是上传时的旧状态，以本页为准。
+2. 在各文件所在目录运行 `Get-FileHash .\\文件名 -Algorithm SHA256`，逐项对照 [RELEASE.json](RELEASE.json) 的字节数和 SHA256。任一文件不符就停止使用并告知余镕熙；网盘页面显示的四舍五入大小不能代替校验。
+3. 将主运行包和成员补充包解压进同一个**全新目录**，确认有 `runtime/`、`snapshot/`、`verify_member_delivery.py`；不要把旧库或旧代码混入。按下文运行接收校验，保存 `receiver-check.json`。仅当退出成功且报告中的 `passed=true`、`complete=true` 时，再启动只读服务，访问 `/health` 和 `/tools`，并从 [cases.json](cases.json) 选一条本职相关请求做实际查询。
+4. 接收者本人填写补充包内的 [RECEIPT.json](RECEIPT.json) 模板：真实接收者与时间、是否下载完成、是否通过本机校验、`receiver-check.json` 的 SHA256、发现的问题。将填好的回执和去凭据的校验报告交回余镕熙；检索评测、设备验证等独立字段只有实际完成后才改为 `true`。校验失败时保留失败阶段和报错，不填“通过”。
+
+验证后继续工作：黄宇鹏按 [HUANG.md](HUANG.md) 做检索效果评测，记录查询、预期、实际、来源和覆盖缺口；刘志华按 [LIU.md](LIU.md) 接六工具与聊天到完整AI/页面，另行验证成员环境及部署；张舒阳负责正式API提取与身份映射，不能把本包的候选关联当成正式映射。跨职责阻断按 [LIMITS.md](LIMITS.md) 记录并交给对应负责人；数据、来源或只读工具问题交余镕熙。成员各自完成的结果和回执应由本人记录，不能由提供方代签。
+
 ## 网盘五个文件的用途
 
 - `DELIVERY.json`：本次上传清单，列出三个 ZIP 的准确字节数和 SHA256，以及运行代码、数据的交付编号。下载后可先核对它本身，再用它核对大包；文件内上传时的云端状态是历史记录，以本页和 `RELEASE.json` 为准。
