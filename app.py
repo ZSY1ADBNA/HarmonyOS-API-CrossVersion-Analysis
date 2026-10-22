@@ -322,7 +322,7 @@ SYSTEM_PROMPT = """你是 HarmonyOS API 跨版本分析助手。你通过 Neo4j 
 - 5个版本：API4.1, API5.0, API5.1, API6.0, API6.1
 - 节点类型及属性：Module(name,sdk_version), Class(name,module,parent_name,description,since,sdk_version), Interface(同上), Enum(同上), Method(name,parent_name,module,return_type,sdk_version), Property(name,parent_name,module,property_type,sdk_version), TypeAlias, EnumMember, Struct, Namespace
 - 关系：(子节点)-[:HAS_PARENT]->(父节点), (节点)-[:BELONGS_TO_MODULE]->(Module)
-- 每个节点有 uid 属性，格式为 {version}::{parent}::{name}
+- 每个节点有 uid 属性，格式为 {version}::{module}::{type}::{parent}::{name}（无上级时省略 parent 段；Module 节点为 {version}::module::{name}；同键重载追加 #n）
 
 ## 跨版本对比方法
 比较两个版本的 API 变化，用 name+type+parent_name 组合键（不是uid）：

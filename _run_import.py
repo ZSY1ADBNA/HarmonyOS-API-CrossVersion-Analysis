@@ -4,6 +4,7 @@ import sys
 import json
 import time
 import re
+import hashlib
 import traceback
 from pathlib import Path
 from neo4j import GraphDatabase
@@ -31,10 +32,43 @@ def clear_database(tx):
     tx.run("MATCH (n) DETACH DELETE n")
 
 
-def make_uid(node_type, name, version, parent=""):
+def make_uid(node_type, name, version, module, parent=""):
+    if node_type == "module":
+        return f"{version}::module::{name}"
     if parent:
-        return f"{version}::{parent}::{name}"
-    return f"{version}::{name}"
+        return f"{version}::{module}::{node_type}::{parent}::{name}"
+    return f"{version}::{module}::{node_type}::{name}"
+
+
+def resolve_module_of(nodes):
+    """返回按父链解析所属模块的函数：节点自身无模块时沿 上级 链向上继承。"""
+    parent_of = {}
+    module_of = {}
+    for node in nodes:
+        name = node.get("名称") or node.get("签名")
+        if not name:
+            continue
+        parent_of[name] = node.get("上级", "")
+        m = node.get("所属模块", "")
+        if m and m != "未知模块":
+            module_of[name] = m
+        elif node.get("类型") == "module":
+            module_of[name] = name
+
+    def resolve(node):
+        m = node.get("所属模块", "")
+        if m and m != "未知模块":
+            return m
+        p = node.get("上级", "")
+        seen = set()
+        while p and p not in seen and p in parent_of:
+            if p in module_of:
+                return module_of[p]
+            seen.add(p)
+            p = parent_of[p]
+        return "未知模块"
+
+    return resolve
 
 
 def make_label(node_type):
@@ -48,6 +82,18 @@ def make_label(node_type):
     return mapping.get(node_type, "Unknown")
 
 
+def file_tag_for(rel_path: str) -> str:
+    """文件派生标识：unnamed/Unknown 构件按来源文件消歧，跨文件同键不合并。"""
+    return hashlib.sha1(rel_path.replace("\\", "/").encode("utf-8")).hexdigest()[:8]
+
+
+def disambiguate_uid(base_uid, node_type, name, file_tag):
+    """unnamed/Unknown 构件追加文件标识；模块根与具名节点保持原 uid(跨文件同键由 MERGE 合并/另行核实)。"""
+    if node_type == "Unknown" or name == "unnamed":
+        return f"{base_uid}@{file_tag}"
+    return base_uid
+
+
 def batch_import_file(session, file_path, version):
     try:
         with open(file_path, 'r', encoding='utf-8') as f:
@@ -56,14 +102,18 @@ def batch_import_file(session, file_path, version):
         if not nodes:
             return {"file": str(file_path), "status": "skip", "reason": "无节点", "version": version}
 
+        rel_path = str(Path(file_path).relative_to(JSON_ROOT))
+        file_tag = file_tag_for(rel_path)
+
         node_records = []
-        parent_map = {}
+        resolve_module = resolve_module_of(nodes)
+        uid_counts = {}
 
         for node in nodes:
             node_type = node.get("类型", "Unknown")
             name = node.get("名称") or node.get("签名", "unnamed")
             parent = node.get("上级", "")
-            module = node.get("所属模块", "")
+            module = name if node_type == "module" else resolve_module(node)
             level = node.get("层级", 0)
             description = node.get("功能描述", "")
             comments = node.get("注释信息", [])
@@ -71,8 +121,11 @@ def batch_import_file(session, file_path, version):
             since_version = node.get("since_version", "")
             syscap = node.get("system_capability", "")
 
-            uid = make_uid(node_type, name, version, parent)
-            parent_map[name] = parent
+            base_uid = make_uid(node_type, name, version, module, parent)
+            n = uid_counts.get(base_uid, 0) + 1
+            uid_counts[base_uid] = n
+            uid = base_uid if n == 1 else f"{base_uid}#{n}"
+            uid = disambiguate_uid(uid, node_type, name, file_tag)
             label = make_label(node_type)
 
             props = {
@@ -125,7 +178,7 @@ def batch_import_file(session, file_path, version):
                         "to_label": uid_to_label.get(parent_uid, "Unknown"),
                     })
 
-            if module and module != "未知模块" and module != uid:
+            if module and module != "未知模块":
                 if module not in name_to_uid and module not in module_nodes_created:
                     module_uid = f"{version}::module::{module}"
                     session.run("MERGE (m:Module {uid: $uid}) SET m.name = $name, m.type = 'module', m.sdk_version = $ver",
@@ -134,11 +187,12 @@ def batch_import_file(session, file_path, version):
                     uid_to_label[module_uid] = "Module"
                     module_nodes_created.add(module)
                 module_uid = name_to_uid.get(module, f"{version}::module::{module}")
-                relations.append({
-                    "from_uid": uid, "to_uid": module_uid, "rel_type": "BELONGS_TO_MODULE",
-                    "from_label": uid_to_label.get(uid, "Unknown"),
-                    "to_label": "Module",
-                })
+                if module_uid != uid:
+                    relations.append({
+                        "from_uid": uid, "to_uid": module_uid, "rel_type": "BELONGS_TO_MODULE",
+                        "from_label": uid_to_label.get(uid, "Unknown"),
+                        "to_label": "Module",
+                    })
 
         # 批量创建关系：按 (关系类型, 起标签, 终标签) 分组，带标签 MATCH 走索引
         groups = {}

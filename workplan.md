@@ -193,6 +193,27 @@
 - 下一步：先建可复现测试集，逐项补齐结果，最后请求部署/验收确认。
 - 未更新产物：本轮无部署、数据库迁移或业务代码修改。
 
+## UID-001 UID 格式重构：纳入模块/类型并消除重载合并（张舒阳）
+
+- ID/标题、目标与范围：重构 _run_import.py 的 uid 构造，纳入 版本/模块/类型/上级/名称 五要素；所属模块沿父链继承解析（替代 82%「未知模块」）；同文件同键（重载等）追加 #n 消歧，避免 MERGE 错误合并。关联 DATA-001（UID 碰撞验证）与 DATA-002（节点身份含版本、模块、类型）；完整签名语义区分仍留 DATA-002。
+- 负责人/验收人、状态、验收条件：负责人：张舒阳（254358355，本机执行 + AI 辅助）；验收人：待确认。状态：已完成（2026-10-22 张舒阳勾选全部步骤）；验收确认待执行。
+- 验收条件：全量 JSON 预检无跨文件 uid 碰撞；重导入库后各版本无重复 uid；同键重载保留为多个节点；6.0→6.1 对比与网页功能正常。
+- 已完成步骤、涉及文件与成果：
+  - [x] 1. 现状核查。效果：旧 uid 为 version::parent::name，类型参数未使用；@ohos.router.d.ts 中 pushUrl 4 个重载、back 2 个重载同父同名，旧格式下 MERGE 会合并为 1 个节点（数据丢失）；JSON 模块头节点 uid（version::name）与动态创建 Module 节点 uid（version::module::name）不一致，存在重复 Module 节点；method 节点有结构化 parameters 字段，call_signature 无名称（以签名兜底，天然唯一）。另发现 @ohos.router.json 提取遗漏全部函数（仅 4 节点），属提取覆盖缺口，留待后续任务。2026-10-18。
+  - [x] 2. 修改 _run_import.py。效果：新 make_uid(node_type, name, version, module, parent)——Module 节点 version::module::name，其余 version::module::type::parent::name（无上级省略 parent 段）；新增 resolve_module_of() 沿 上级 链继承模块；同文件同 base uid 第 2 次起追加 #n（确定性，断点续传安全）；props 的 module 字段写入解析后的有效模块；BELONGS_TO_MODULE 关系改为按 module_uid != uid 防自环（原 module != uid 为无效比较）。2026-10-18。2026-10-22 增补：unnamed/Unknown 构件 uid 追加 @文件标识8位（file_tag_for() 按 JSON_ROOT 相对路径 SHA1 前 8 位），消除跨文件同键错误合并；模块根与跨文件同名具名节点仍走 MERGE（声明合并，设计内）。
+  - [x] 3. 新增 _check_uids.py 预检脚本。效果：按新算法只读计算全部 JSON 的 uid，报告全局重复（跨文件碰撞）、重载消歧数量、各版本未知模块残留及样本。2026-10-18。2026-10-22 增补：碰撞分类报告——模块根跨文件同 uid（设计内合并）、unnamed/Unknown 构件碰撞、具名节点碰撞分别统计，完整清单写出 06_logs/uid_collisions_full.json；另新增 _check_graph.py（导入后图谱核对：总节点/各版本节点数/重复 uid/Unknown 与 unnamed 残留）与 _verify_extract_fix.py（提取修复小样本验证）。
+  - [x] 4. 同步文档。效果：app.py SYSTEM_PROMPT、CLAUDE.md、docs/data-contract.md 的 uid 格式说明已更新为五要素格式并注明 #n 消歧与预检入口。2026-10-18。
+  - [x] 5. 全量预检。效果（2026-10-22，_check_uids.py）：总记录 88,440；重载 base 5,112 个、#n 节点 9,453；未知模块 0（父链解析后全部有模块）；模块根设计内合并 190 个 uid/3,680 处记录；unnamed/Unknown 碰撞修复后为 0；具名节点跨文件碰撞 1,528 个 uid/3,194 处记录（如 DismissDialogAction 在 4 个 ArkUI 文件重复声明），属跨文件声明合并（设计内，MERGE 后属性以最后写入文件为准，完整区分留给 DATA-002/v2 的 declaration_id）。修复前旧预检显示 unnamed 跨文件碰撞（如 API6.1::@kit.ArkUI::Unknown::@kit.ArkUI::unnamed 136 文件同键），即本次 @文件标识 消歧的由来。
+  - [x] 6. 提取端「未知模块」根因修复。效果（2026-10-22）：队友审计复现根因——extract_api_info.py 的 extract_info(isIn=True) 不返回所属模块，内层成员全部填「未知模块」；已在内层 info 补父级分组传播（沿父链继承所属模块）。小样本验证（_verify_extract_fix.py，6.1 源码）：bluetooth.access 34 节点未知 32→0、bluetooth.connection 15 节点未知 13→0，节点数与名称顺序均不变。全量重提取留待后续任务（需重跑 _run_extract.py 再重导）。
+  - [x] 7. 全量重导与回归。效果（2026-10-22，修复后代码）：4,084/4,084 OK、0 失败、耗时 498.2s；处理记录 88,440 与预检一致。图谱：总节点 83,284（= 88,440 − 模块根合并 3,490 − 跨文件具名声明合并 1,666，与预检推算精确一致）；各版本 API4.1 7,354 / API5.0 17,327 / API5.1 18,633 / API6.0 19,230 / API6.1 20,740（旧方案 72,872，净增 10,412 来自重载/unnamed 保留）；重复 uid 查询无；#n 重载节点 9,397；unnamed/Unknown 节点全部带 @文件标识（跨文件不再合并）。冒烟：/api/versions 返回 5 版本含 6.1；/api/compare?old=API6.0&new=API6.1 返回真实对比（含按模块归因）。此前旧代码导入曾于 3,706/4,084 被中断，图谱为半成品，进度文件已备份为 import_progress.oldcode-interrupted-20261022.bak，该次数据已被本次全量重导替换。
+- 分支/提交/PR、本地未提交改动：尚未提交；改动文件 _run_import.py、_check_uids.py（新增）、_check_graph.py（新增）、_verify_extract_fix.py（新增）、extract_api_info.py、app.py、CLAUDE.md、docs/data-contract.md、workplan.md。另 2026-10-22 从 origin/master 摘入队友 PR #14 的 8 个 v2 身份文件（docs/api-identity-v2.md、tools/*、examples/*、docs/official-data-delivery/*，暂存未提交）。
+- 验证环境、输入、命令与工作目录：Windows 11 本机；Neo4j 5.26.4 community（127.0.0.1:7687）；命令：python _check_uids.py、python _verify_extract_fix.py、python _run_import.py、python _check_graph.py；工作目录 C:\Users\MR\Desktop\HarmonyAPI_Project。
+- 预期结果、实际结果、证据：预期重导后 5 版本节点总数与重导前基本一致（重复 Module 节点合并会小幅减少），无重复 uid，重载保留多节点，unnamed 构件按文件独立。实际：总节点 83,284（重导前 72,872，净增来自重载保留 9,397 个 #n 节点与 unnamed 按文件独立，模块根/跨文件同名具名声明合并小幅减少）；重复 uid 0；证据 06_logs/import_20261022_fixed.txt、06_logs/graph_check_20261022_fixed.txt、06_logs/check_uids_20261022_v2.txt、06_logs/flask_smoke_20261022.txt。
+- 决定及原因、阻塞及所需信息：重导前必须删除/移走 import_progress.txt，否则断点续传会跳过文件且不清库（新旧 uid 混存）。决定：unnamed/Unknown 构件用 @文件标识 消歧而非删除——它们含描述/注释信息，v2 契约也要求以 declaration 定位保留；跨文件同名具名节点视为声明合并，接受 MERGE SET 覆盖限制（属性以最后写入文件为准）并记录，完整区分留给 DATA-002/v2 的 declaration_id。另注：Neo4j 5.26 上 `=~` 正则匹配实测返回 False（'x@a7b71354' =~ '@[0-9a-f]{8}$'），验证查询改用 CONTAINS/ENDS WITH；app.py 若有用到 =~ 的查询需另行核对。阻塞：Bash 权限分类器间歇不可用（2026-10-22 会话多次中断命令执行，部分命令由成员手动执行）。
+- 尚未更新的数据或报告：正式 JSON 未重提取（提取修复需全量重跑 _run_extract.py 后生效）；报告未重生成；run_analysis.py 未重跑。
+- 下一步（具体文件和动作）：提交并推送 feat/api6.1（更新 PR #8）→ 提取修复全量重跑与数据对账（后续任务，需重跑 _run_extract.py + 重导）→ v2 身份旁路生成小样本（DATA-002/v2 契约）。
+- 最后更新时间（时区）、进展记录：2026-10-22（Asia/Shanghai）。当日同步队友 PR #14 的 API 身份 v2 契约，完成预检增强与分类、unnamed 构件 @文件标识 消歧、提取端父级分组传播修复及小样本验证（bluetooth.access 未知 32→0、connection 13→0，节点数与顺序不变）；修复后代码全量重导 4,084 文件成功并完成图谱核对与接口冒烟。
+
 ## 新任务固定字段
 
 - ID/标题、目标与范围：

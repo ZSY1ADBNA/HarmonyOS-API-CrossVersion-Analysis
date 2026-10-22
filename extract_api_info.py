@@ -617,6 +617,10 @@ def process_body(ts_code: str, api_info: dict, total_info: dict, deepth: int):
 
         inner_api_info['上级'] = current_info['名称']
 
+        # isIn=True 的 extract_info 不返回所属模块；沿父链继承，避免内层成员全部填「未知模块」
+        if inner_api_info.get('所属模块', '未知模块') == '未知模块':
+            inner_api_info['所属模块'] = api_info.get('所属模块', '未知模块')
+
         lines = inner_code.splitlines()
         member_lines = []
         brace_count = 0
