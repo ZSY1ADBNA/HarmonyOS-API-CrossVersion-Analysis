@@ -39,7 +39,7 @@
       "类型": "property",
       "名称": "context",
       "属性类型": "AbilityStageContext",
-      "所属模块": "未知模块",
+      "所属模块": "@kit.AbilityKit",
       "功能描述": "Defines the context of AbilityStage. The context is obtained in the callback invoked when initialization is performed during ability startup.",
       "注释信息": [
         "@type { AbilityStageContext }",
@@ -63,7 +63,7 @@
       "类型": "method",
       "名称": "onCreate",
       "返回值": "void",
-      "所属模块": "未知模块",
+      "所属模块": "@kit.AbilityKit",
       "功能描述": "Called when the application is created. <p>**NOTE**: <br>This API returns the result synchronously and does not support asynchronous callbacks. </p>",
       "注释信息": [
         "@syscap SystemCapability.Ability.AbilityRuntime.Core",
@@ -86,7 +86,7 @@
       "类型": "method",
       "名称": "onAcceptWant",
       "返回值": "string",
-      "所属模块": "未知模块",
+      "所属模块": "@kit.AbilityKit",
       "功能描述": "Called when a specified ability is started. <p>**NOTE**: <br>This API returns the result synchronously and does not support asynchronous callbacks. </p> ability is placed at the top of the stack. Otherwise, a new instance is created and started.",
       "注释信息": [
         "@param { Want } want - Want information about the target ability, such as the ability name and bundle name.",
@@ -117,7 +117,7 @@
       "类型": "method",
       "名称": "onAcceptWantAsync",
       "返回值": "Promise<string>",
-      "所属模块": "未知模块",
+      "所属模块": "@kit.AbilityKit",
       "功能描述": "Called back asynchronously upon starting specified ability. do not create a new instance and pull it back to the top of the stack. Otherwise, create a new instance and start it.",
       "注释信息": [
         "@param { Want } want - Indicates the want info of the started ability.",
@@ -148,7 +148,7 @@
       "类型": "method",
       "名称": "onNewProcessRequest",
       "返回值": "string",
-      "所属模块": "未知模块",
+      "所属模块": "@kit.AbilityKit",
       "功能描述": "Called when UIAbility or configured with the isolationProcess field UIExtensionAbility in the specified process is started. <p>**NOTE**: <br>This API returns the result synchronously and does not support asynchronous callbacks. </p> runs in the process. Otherwise, a new process is created and the ability runs in it.",
       "注释信息": [
         "@param { Want } want - Want information about the target ability, such as the ability name and bundle name.",
@@ -178,7 +178,7 @@
       "类型": "method",
       "名称": "onNewProcessRequestAsync",
       "返回值": "Promise<string>",
-      "所属模块": "未知模块",
+      "所属模块": "@kit.AbilityKit",
       "功能描述": "Called back asynchronously upon starting UIAbility or UIExtensionAbility in specified process. let the ability run in this process. Otherwise, create a new process.",
       "注释信息": [
         "@param { Want } want - Indicates the want info of the started ability.",
@@ -209,7 +209,7 @@
       "类型": "method",
       "名称": "onConfigurationUpdate",
       "返回值": "void",
-      "所属模块": "未知模块",
+      "所属模块": "@kit.AbilityKit",
       "功能描述": "Called when the global configuration is updated. <p>**NOTE**: <br>This API returns the result synchronously and does not support asynchronous callbacks. </p> configuration indicates the configuration of the environment where the application is running and includes the language and color mode.",
       "注释信息": [
         "@param { Configuration } newConfig - Callback invoked when the global configuration is updated. The global",
@@ -240,7 +240,7 @@
       "类型": "method",
       "名称": "onMemoryLevel",
       "返回值": "void",
-      "所属模块": "未知模块",
+      "所属模块": "@kit.AbilityKit",
       "功能描述": "Listens for changes in the system memory level status. When the system detects low memory resources, it will proactively invoke this callback. You can implement this callback to promptly release non-essential resources (such as cached data or temporary objects) upon receiving a memory shortage event, thereby preventing the application process from being forcibly terminated by the system. <p>**NOTE**: <br>This API returns the result synchronously and does not support asynchronous callbacks. </p> specified memory level is reached, a callback will be invoked and the system will start adjustment.",
       "注释信息": [
         "@param { AbilityConstant.MemoryLevel } level - Memory level that indicates the memory usage status. When the",
@@ -270,7 +270,7 @@
       "类型": "method",
       "名称": "onDestroy",
       "返回值": "void",
-      "所属模块": "未知模块",
+      "所属模块": "@kit.AbilityKit",
       "功能描述": "Called when the application is destroyed. This API is called during the normal lifecycle. If the application exits abnormally or is terminated, this API is not called. <p>**NOTE**: <br>This API returns the result synchronously and does not support asynchronous callbacks. </p>",
       "注释信息": [
         "@syscap SystemCapability.Ability.AbilityRuntime.Core",
@@ -292,7 +292,7 @@
       "类型": "method",
       "名称": "onPrepareTermination",
       "返回值": "AbilityConstant.PrepareTermination",
-      "所属模块": "未知模块",
+      "所属模块": "@kit.AbilityKit",
       "功能描述": "Called when the application is closed by the user, allowing the user to choose between immediate termination or cancellation. <p>**NOTE**: <br>This API returns the result synchronously and does not support asynchronous callbacks. <br>Currently, this API takes effect only on 2-in-1 devices. <br>This API is called only when the application exits normally. It is not called if the application is forcibly closed. <br>This API is not executed when {@link AbilityStage.onPrepareTerminationAsync} is implemented. </p>",
       "注释信息": [
         "@permission ohos.permission.PREPARE_APP_TERMINATE",
@@ -316,7 +316,7 @@
       "类型": "method",
       "名称": "onPrepareTerminationAsync",
       "返回值": "Promise<AbilityConstant.PrepareTermination>",
-      "所属模块": "未知模块",
+      "所属模块": "@kit.AbilityKit",
       "功能描述": "Called when the application is closed by the user, allowing the user to choose between immediate termination or cancellation. This API uses a promise to return the result. <p>**NOTE**: <br>Currently, this API takes effect only on 2-in-1 devices. <br>This API is called only when the application exits normally. It is not called if the application is forcibly closed. <br>If an asynchronous callback crashes, it will be handled as a timeout. If the application does not respond within 10 seconds, it will be terminated forcibly. </p>",
       "注释信息": [
         "@permission ohos.permission.PREPARE_APP_TERMINATE",

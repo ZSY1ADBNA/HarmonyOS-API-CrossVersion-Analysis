@@ -37,7 +37,7 @@
       "类型": "enum_member",
       "名称": "LOAD_ERROR",
       "值": "1",
-      "所属模块": "未知模块",
+      "所属模块": "@kit.MediaKit",
       "功能描述": "Load error.",
       "注释信息": [
         "@syscap SystemCapability.Multimedia.Media.SoundPool",
@@ -57,7 +57,7 @@
       "类型": "enum_member",
       "名称": "PLAY_ERROR",
       "值": "2",
-      "所属模块": "未知模块",
+      "所属模块": "@kit.MediaKit",
       "功能描述": "Play error.",
       "注释信息": [
         "@syscap SystemCapability.Multimedia.Media.SoundPool",
@@ -98,7 +98,7 @@
       "类型": "property",
       "名称": "errorCode",
       "属性类型": "T",
-      "所属模块": "未知模块",
+      "所属模块": "@kit.MediaKit",
       "功能描述": "Error code.",
       "注释信息": [
         "@type { T }",
@@ -119,7 +119,7 @@
       "类型": "property",
       "名称": "errorType",
       "属性类型": "ErrorType",
-      "所属模块": "未知模块",
+      "所属模块": "@kit.MediaKit",
       "功能描述": "Error type.",
       "注释信息": [
         "@type { ?ErrorType }",
@@ -140,7 +140,7 @@
       "类型": "property",
       "名称": "soundId",
       "属性类型": "int",
-      "所属模块": "未知模块",
+      "所属模块": "@kit.MediaKit",
       "功能描述": "Sound id, returned from SoundPool.load function.",
       "注释信息": [
         "@type { ?int }",
@@ -161,7 +161,7 @@
       "类型": "property",
       "名称": "streamId",
       "属性类型": "int",
-      "所属模块": "未知模块",
+      "所属模块": "@kit.MediaKit",
       "功能描述": "Stream id, returned from SoundPool.play function.",
       "注释信息": [
         "@type { ?int }",
@@ -202,7 +202,7 @@
       "类型": "property",
       "名称": "loop",
       "属性类型": "int",
-      "所属模块": "未知模块",
+      "所属模块": "@kit.MediaKit",
       "功能描述": "Number of loops. If this parameter is set to a value greater than or equal to 0, the number of times the content is actually played is the value of **loop** plus 1. If this parameter is set to a value less than 0, the content is played repeatedly. The default value is **0**, indicating that the content is played only once.",
       "注释信息": [
         "@type { ?int }",
@@ -223,7 +223,7 @@
       "类型": "property",
       "名称": "rate",
       "属性类型": "int",
-      "所属模块": "未知模块",
+      "所属模块": "@kit.MediaKit",
       "功能描述": "Playback rate. For details, see [AudioRendererRate]{@link #audio.AudioRendererRate}. Default value: **0**.",
       "注释信息": [
         "@type { ?int }",
@@ -244,7 +244,7 @@
       "类型": "property",
       "名称": "leftVolume",
       "属性类型": "double",
-      "所属模块": "未知模块",
+      "所属模块": "@kit.MediaKit",
       "功能描述": "Volume of the left channel. The value ranges from 0.0 to 1.0. Default value: **1.0**.",
       "注释信息": [
         "@type { ?double }",
@@ -265,7 +265,7 @@
       "类型": "property",
       "名称": "rightVolume",
       "属性类型": "double",
-      "所属模块": "未知模块",
+      "所属模块": "@kit.MediaKit",
       "功能描述": "Volume of the right channel. The value ranges from 0.0 to 1.0. (Currently, the volume cannot be set separately for the left and right channels. The volume set for the left channel is used.) Default value: **1.0**.",
       "注释信息": [
         "@type { ?double }",
@@ -286,7 +286,7 @@
       "类型": "property",
       "名称": "priority",
       "属性类型": "int",
-      "所属模块": "未知模块",
+      "所属模块": "@kit.MediaKit",
       "功能描述": "Playback priority. The value **0** means the lowest priority. A larger value indicates a higher priority. The value is an integer greater than or equal to 0. Default value: **0**.",
       "注释信息": [
         "@type { ?int }",
@@ -307,7 +307,7 @@
       "类型": "property",
       "名称": "parallelPlayFlag",
       "属性类型": "boolean",
-      "所属模块": "未知模块",
+      "所属模块": "@kit.MediaKit",
       "功能描述": "Whether the sound can be played in parallel with other active audio streams. The value **true** means that the sound can be played in parallel with other active audio streams, without preempting the audio focus, and **false** means the opposite. The default value is **false**. This is a system API.",
       "注释信息": [
         "@type { ?boolean }",
@@ -349,7 +349,7 @@
       "类型": "method",
       "名称": "load",
       "返回值": "void",
-      "所属模块": "未知模块",
+      "所属模块": "@kit.MediaKit",
       "功能描述": "Loads a sound. This API uses an asynchronous callback to obtain the sound ID. The input parameter **uri** is a string starting with fd://, which is generated based on the file descriptor (FD) obtained. This API cannot be used to load resources in the **rawfile** directory. Instead, use load(fd: int, offset: long, length: long, callback: AsyncCallback<int>): void or load(fd: int, offset: long, length: long): Promise<int>. *NOTE** After the resource handle (in the form of an FD) or path description (in the form of a URI) is transferred to the AVPlayer, do not use the resource handle or path description in read or write operations, including but not limited to transferring it to multiple AVPlayers. Competition occurs when multiple AVPlayers use the same resource handle or path description to read and write files at the same time, resulting in playback errors. greater than 0.",
       "注释信息": [
         "@param {string} uri - URI of the audio file to load. Generally, the URI starts with fd://.",
@@ -400,7 +400,7 @@
       "类型": "method",
       "名称": "load",
       "返回值": "Promise<int>",
-      "所属模块": "未知模块",
+      "所属模块": "@kit.MediaKit",
       "功能描述": "Loads a sound. This API uses a promise to obtain the sound ID. The input parameter **uri** is a starting with fd://, which is generated based on the FD obtained. This API cannot be used to load resources in the **rawfile** directory. Instead, use load(fd: int, offset: long, length: long, callback: AsyncCallback<int>): void or load(fd: int, offset: long, length: long): Promise<int>. *NOTE** After the resource handle (in the form of an FD) or path description (in the form of a URI) is transferred to the AVPlayer, do not use the resource handle or path description in read or write operations, including but not limited to transferring it to multiple AVPlayers. Competition occurs when multiple AVPlayers use the same resource handle or path description to read and write files at the same time, resulting in playback errors.",
       "注释信息": [
         "@param {string} uri - URI of the audio file to load. Generally, the URI starts with fd://.",
@@ -445,7 +445,7 @@
       "类型": "method",
       "名称": "load",
       "返回值": "void",
-      "所属模块": "未知模块",
+      "所属模块": "@kit.MediaKit",
       "功能描述": "Loads a sound. This API uses an asynchronous callback to obtain the sound ID. The input parameter **fd** can be manually input or automatically obtained by reading the embedded resource of the application. *NOTE** After the resource handle (in the form of an FD) or path description (in the form of a URI) is transferred to the AVPlayer, do not use the resource handle or path description in read or write operations, including but not limited to transferring it to multiple AVPlayers. Competition occurs when multiple AVPlayers use the same resource handle or path description to read and write files at the same time, resulting in playback errors. [resourceManager.getRawFd]{@link resourceManager.resourceManager.getRawFile}. An invalid value causes a failure to parse audio and video resources. An invalid value causes a failure to parse audio and video resources. A valid value must be greater than 0.",
       "注释信息": [
         "@param {int} fd - Resource handle, which is obtained by calling",
@@ -510,7 +510,7 @@
       "类型": "method",
       "名称": "load",
       "返回值": "Promise<int>",
-      "所属模块": "未知模块",
+      "所属模块": "@kit.MediaKit",
       "功能描述": "Loads a sound. This API uses a promise to obtain the sound ID. The input parameter **fd** can be manually input or automatically obtained by reading the embedded resource of the application. *NOTE** After the resource handle (in the form of an FD) or path description (in the form of a URI) is transferred to the AVPlayer, do not use the resource handle or path description in read or write operations, including but not limited to transferring it to multiple AVPlayers. Competition occurs when multiple AVPlayers use the same resource handle or path description to read and write files at the same time, resulting in playback errors. [resourceManager.getRawFd]{@link resourceManager.resourceManager.getRawFile}. An invalid value causes a failure to parse audio and video resources. An invalid value causes a failure to parse audio and video resources.",
       "注释信息": [
         "@param {int} fd - Resource handle, which is obtained by calling",
@@ -569,7 +569,7 @@
       "类型": "method",
       "名称": "play",
       "返回值": "void",
-      "所属模块": "未知模块",
+      "所属模块": "@kit.MediaKit",
       "功能描述": "Plays a sound. This API uses an asynchronous callback to obtain the audio stream ID. A valid value must be greater than 0. 2.Incorrect parameter types. 3.Parameter verification failed. Return by callback.",
       "注释信息": [
         "@param {int} soundID - Sound ID, which is obtained by calling **load()**.",
@@ -627,7 +627,7 @@
       "类型": "method",
       "名称": "play",
       "返回值": "void",
-      "所属模块": "未知模块",
+      "所属模块": "@kit.MediaKit",
       "功能描述": "Plays a sound. This API uses an asynchronous callback to obtain the audio stream ID. A valid value must be greater than 0. 2.Incorrect parameter types. 3.Parameter verification failed. Return by callback.",
       "注释信息": [
         "@param {int} soundID - Sound ID, which is obtained by calling **load()**.",
@@ -678,7 +678,7 @@
       "类型": "method",
       "名称": "play",
       "返回值": "Promise<int>",
-      "所属模块": "未知模块",
+      "所属模块": "@kit.MediaKit",
       "功能描述": "Plays a sound. This API uses a promise to obtain the audio stream ID. 2.Incorrect parameter types. 3.Parameter verification failed. Return by promise.",
       "注释信息": [
         "@param {int} soundID - Sound ID, which is obtained by calling **load()**.",
@@ -730,7 +730,7 @@
       "类型": "method",
       "名称": "stop",
       "返回值": "void",
-      "所属模块": "未知模块",
+      "所属模块": "@kit.MediaKit",
       "功能描述": "Stops playing a sound. This API uses an asynchronous callback to return the result. 2.Incorrect parameter types. 3.Parameter verification failed. Return by callback.",
       "注释信息": [
         "@param {int} streamID - Audio stream ID, which is obtained by calling **play()**.",
@@ -781,7 +781,7 @@
       "类型": "method",
       "名称": "stop",
       "返回值": "Promise<void>",
-      "所属模块": "未知模块",
+      "所属模块": "@kit.MediaKit",
       "功能描述": "Stops playing a sound. This API uses a promise to return the result. 2.Incorrect parameter types. 3.Parameter verification failed. Return by promise.",
       "注释信息": [
         "@param {int} streamID - Audio stream ID, which is obtained by calling **play()**.",
@@ -826,7 +826,7 @@
       "类型": "method",
       "名称": "setLoop",
       "返回值": "void",
-      "所属模块": "未知模块",
+      "所属模块": "@kit.MediaKit",
       "功能描述": "Sets the loop mode for an audio stream. This API uses an asynchronous callback to return the result. If this parameter is set to a value greater than or equal to 0, the number of times the content is actually played is the value of **loop** plus 1. If this parameter is set to a value less than 0, the content is played repeatedly. 2.Incorrect parameter types. 3.Parameter verification failed. Return by callback.",
       "注释信息": [
         "@param {int} streamID - Audio stream ID, which is obtained by calling **play()**.",
@@ -884,7 +884,7 @@
       "类型": "method",
       "名称": "setLoop",
       "返回值": "Promise<void>",
-      "所属模块": "未知模块",
+      "所属模块": "@kit.MediaKit",
       "功能描述": "Sets the loop mode for an audio stream. This API uses a promise to return the result. If this parameter is set to a value greater than or equal to 0, the number of times the content is actually played is the value of **loop** plus 1. If this parameter is set to a value less than 0, the content is played repeatedly. 2.Incorrect parameter types. 3.Parameter verification failed. Return by promise.",
       "注释信息": [
         "@param {int} streamID - Audio stream ID, which is obtained by calling **play()**.",
@@ -936,7 +936,7 @@
       "类型": "method",
       "名称": "setPriority",
       "返回值": "void",
-      "所属模块": "未知模块",
+      "所属模块": "@kit.MediaKit",
       "功能描述": "Sets the priority for an audio stream. This API uses an asynchronous callback to return the result. greater than or equal to 0. 2.Incorrect parameter types. 3.Parameter verification failed. Return by callback.",
       "注释信息": [
         "@param {int} streamID - Audio stream ID, which is obtained by calling **play()**.",
@@ -994,7 +994,7 @@
       "类型": "method",
       "名称": "setPriority",
       "返回值": "Promise<void>",
-      "所属模块": "未知模块",
+      "所属模块": "@kit.MediaKit",
       "功能描述": "Sets the priority for an audio stream. This API uses a promise to return the result. greater than or equal to 0. 2.Incorrect parameter types. 3.Parameter verification failed. Return by promise.",
       "注释信息": [
         "@param {int} streamID - Audio stream ID, which is obtained by calling **play()**.",
@@ -1046,7 +1046,7 @@
       "类型": "method",
       "名称": "setRate",
       "返回值": "void",
-      "所属模块": "未知模块",
+      "所属模块": "@kit.MediaKit",
       "功能描述": "Sets the playback rate for an audio stream. This API uses an asynchronous callback to return the result. 2.Incorrect parameter types. 3.Parameter verification failed. Return by callback.",
       "注释信息": [
         "@param {int} streamID - Audio stream ID, which is obtained by calling **play()**.",
@@ -1104,7 +1104,7 @@
       "类型": "method",
       "名称": "setRate",
       "返回值": "Promise<void>",
-      "所属模块": "未知模块",
+      "所属模块": "@kit.MediaKit",
       "功能描述": "Sets the playback rate for an audio stream. This API uses a promise to return the result. 2.Incorrect parameter types. 3.Parameter verification failed. Return by promise.",
       "注释信息": [
         "@param {int} streamID - Audio stream ID, which is obtained by calling **play()**.",
@@ -1156,7 +1156,7 @@
       "类型": "method",
       "名称": "setVolume",
       "返回值": "void",
-      "所属模块": "未知模块",
+      "所属模块": "@kit.MediaKit",
       "功能描述": "Sets the volume for an audio stream. This API uses an asynchronous callback to return the result. setting the volume for the right channel does not take effect. The volume set for the left channel is used. 2.Incorrect parameter types. 3.Parameter verification failed. Return by callback.",
       "注释信息": [
         "@param {int} streamID - Audio stream ID, which is obtained by calling **play()**.",
@@ -1221,7 +1221,7 @@
       "类型": "method",
       "名称": "setVolume",
       "返回值": "Promise<void>",
-      "所属模块": "未知模块",
+      "所属模块": "@kit.MediaKit",
       "功能描述": "Sets the volume for an audio stream. This API uses a promise to return the result. setting the volume for the right channel does not take effect. The volume set for the left channel is used. 2.Incorrect parameter types. 3.Parameter verification failed. Return by promise.",
       "注释信息": [
         "@param {int} streamID - Audio stream ID, which is obtained by calling **play()**.",
@@ -1280,7 +1280,7 @@
       "类型": "method",
       "名称": "setInterruptMode",
       "返回值": "void",
-      "所属模块": "未知模块",
+      "所属模块": "@kit.MediaKit",
       "功能描述": "Sets the interrupt mode for sound parallel play. The default mode is SoundInterruptMode.SAME_SOUND_INTERRUPT.",
       "注释信息": [
         "@param { media.SoundInterruptMode } interruptMode - the interrupt mode.",
@@ -1308,7 +1308,7 @@
       "类型": "method",
       "名称": "unload",
       "返回值": "void",
-      "所属模块": "未知模块",
+      "所属模块": "@kit.MediaKit",
       "功能描述": "Unloads a sound. This API uses an asynchronous callback to return the result.",
       "注释信息": [
         "@param {int} soundID - Sound ID, which is obtained by calling **load()**.",
@@ -1359,7 +1359,7 @@
       "类型": "method",
       "名称": "unload",
       "返回值": "Promise<void>",
-      "所属模块": "未知模块",
+      "所属模块": "@kit.MediaKit",
       "功能描述": "Unloads a sound. This API uses a promise to return the result.",
       "注释信息": [
         "@param {int} soundID - Sound ID, which is obtained by calling **load()**.",
@@ -1404,7 +1404,7 @@
       "类型": "method",
       "名称": "release",
       "返回值": "void",
-      "所属模块": "未知模块",
+      "所属模块": "@kit.MediaKit",
       "功能描述": "Releases this **SoundPool** instance. This API uses an asynchronous callback to return the result.",
       "注释信息": [
         "@param {AsyncCallback<void>} callback - Callback used to return the result.",
@@ -1438,7 +1438,7 @@
       "类型": "method",
       "名称": "release",
       "返回值": "Promise<void>",
-      "所属模块": "未知模块",
+      "所属模块": "@kit.MediaKit",
       "功能描述": "Releases this **SoundPool** instance. This API uses a promise to return the result.",
       "注释信息": [
         "@returns {Promise<void>} Promise that returns no value.",
@@ -1465,7 +1465,7 @@
       "类型": "method",
       "名称": "on",
       "返回值": "void",
-      "所属模块": "未知模块",
+      "所属模块": "@kit.MediaKit",
       "功能描述": "Subscribes to events indicating that a sound finishes loading. This event is triggered when a sound is loaded.",
       "注释信息": [
         "@param {'loadComplete'} type - Event type, which is **'loadComplete'** in this case.",
@@ -1499,7 +1499,7 @@
       "类型": "method",
       "名称": "onLoadComplete",
       "返回值": "void",
-      "所属模块": "未知模块",
+      "所属模块": "@kit.MediaKit",
       "功能描述": "Subscribes to events indicating that a sound finishes loading. This event is triggered when a sound is loaded.",
       "注释信息": [
         "@param {Callback<int>} callback - ID of the sound that has been loaded.",
@@ -1526,7 +1526,7 @@
       "类型": "method",
       "名称": "off",
       "返回值": "void",
-      "所属模块": "未知模块",
+      "所属模块": "@kit.MediaKit",
       "功能描述": "Unsubscribes from events indicating that a sound finishes loading.",
       "注释信息": [
         "@param {'loadComplete'} type - Event type. The value is fixed at **'loadComplete'**.",
@@ -1553,7 +1553,7 @@
       "类型": "method",
       "名称": "offLoadComplete",
       "返回值": "void",
-      "所属模块": "未知模块",
+      "所属模块": "@kit.MediaKit",
       "功能描述": "Unsubscribes from events indicating that a sound finishes loading.",
       "注释信息": [
         "@syscap SystemCapability.Multimedia.Media.SoundPool",
@@ -1572,7 +1572,7 @@
       "类型": "method",
       "名称": "on",
       "返回值": "void",
-      "所属模块": "未知模块",
+      "所属模块": "@kit.MediaKit",
       "功能描述": "Subscribes to events indicating the completion of audio playback and returns the stream ID of the audio that finishes playing. When only on('playFinished') or on('playFinishedWithStreamId') is subscribed to, the registered callback is triggered when the audio playback is complete. When both on('playFinished') and on('playFinishedWithStreamId') are subscribed to, the 'playFinishedWithStreamId' callback is triggered, but the 'playFinished' callback is not triggered, when the audio playback is complete. This event is triggered when an audio stream finishes playing, and the stream ID is returned. finishes playing.",
       "注释信息": [
         "@param {'playFinishedWithStreamId'} type - Event type, which is **'playFinishedWithStreamId'** in this case.",
@@ -1606,7 +1606,7 @@
       "类型": "method",
       "名称": "onPlayFinishedWithStreamId",
       "返回值": "void",
-      "所属模块": "未知模块",
+      "所属模块": "@kit.MediaKit",
       "功能描述": "Subscribes to events indicating the completion of audio playback and returns the stream ID of the audio that finishes playing. When only on('playFinished') or on('playFinishedWithStreamId') is subscribed to, the registered callback is triggered when the audio playback is complete. When both on('playFinished') and on('playFinishedWithStreamId') are subscribed to, the 'playFinishedWithStreamId' callback is triggered, but the 'playFinished' callback is not triggered, when the audio playback is complete. finishes playing.",
       "注释信息": [
         "@param {Callback<int>} callback - Callback used to return the result. Stream ID of the audio that",
@@ -1633,7 +1633,7 @@
       "类型": "method",
       "名称": "off",
       "返回值": "void",
-      "所属模块": "未知模块",
+      "所属模块": "@kit.MediaKit",
       "功能描述": "Unsubscribes from events indicating that a sound finishes playing.",
       "注释信息": [
         "@param {'playFinishedWithStreamId'} type - Event type. The value is fixed at **'playFinishedWithStreamId'**.",
@@ -1660,7 +1660,7 @@
       "类型": "method",
       "名称": "offPlayFinishedWithStreamId",
       "返回值": "void",
-      "所属模块": "未知模块",
+      "所属模块": "@kit.MediaKit",
       "功能描述": "Unsubscribes from events indicating that a sound finishes playing.",
       "注释信息": [
         "@syscap SystemCapability.Multimedia.Media.SoundPool",
@@ -1679,7 +1679,7 @@
       "类型": "method",
       "名称": "on",
       "返回值": "void",
-      "所属模块": "未知模块",
+      "所属模块": "@kit.MediaKit",
       "功能描述": "Subscribes to events indicating that a sound finishes playing. This event is triggered when a sound finishes playing.",
       "注释信息": [
         "@param {'playFinished'} type - Event type, which is **'playFinished'** in this case.",
@@ -1713,7 +1713,7 @@
       "类型": "method",
       "名称": "onPlayFinished",
       "返回值": "void",
-      "所属模块": "未知模块",
+      "所属模块": "@kit.MediaKit",
       "功能描述": "Subscribes to events indicating that a sound finishes playing. This event is triggered when a sound finishes playing.",
       "注释信息": [
         "@param {Callback<void>} callback - Callback used to return the result.",
@@ -1740,7 +1740,7 @@
       "类型": "method",
       "名称": "off",
       "返回值": "void",
-      "所属模块": "未知模块",
+      "所属模块": "@kit.MediaKit",
       "功能描述": "Unsubscribes from events indicating that a sound finishes playing.",
       "注释信息": [
         "@param {'playFinished'} type - Event type. The value is fixed at **'playFinished'**.",
@@ -1767,7 +1767,7 @@
       "类型": "method",
       "名称": "offPlayFinished",
       "返回值": "void",
-      "所属模块": "未知模块",
+      "所属模块": "@kit.MediaKit",
       "功能描述": "Unsubscribes from events indicating that a sound finishes playing.",
       "注释信息": [
         "@syscap SystemCapability.Multimedia.Media.SoundPool",
@@ -1786,7 +1786,7 @@
       "类型": "method",
       "名称": "on",
       "返回值": "void",
-      "所属模块": "未知模块",
+      "所属模块": "@kit.MediaKit",
       "功能描述": "Subscribes to error events of this **SoundPool** instance. This event is used only for error prompt. This event can be triggered by both user operations and the system.",
       "注释信息": [
         "@param {'error'} type - Event type, which is **'error'** in this case.",
@@ -1820,7 +1820,7 @@
       "类型": "method",
       "名称": "onError",
       "返回值": "void",
-      "所属模块": "未知模块",
+      "所属模块": "@kit.MediaKit",
       "功能描述": "Subscribes to error events of this **SoundPool** instance. This event is used only for error prompt. This event can be triggered by both user operations and the system.",
       "注释信息": [
         "@param {ErrorCallback} callback - Callback used to return the error code ID and error message.",
@@ -1847,7 +1847,7 @@
       "类型": "method",
       "名称": "off",
       "返回值": "void",
-      "所属模块": "未知模块",
+      "所属模块": "@kit.MediaKit",
       "功能描述": "Unsubscribes from error events of this **SoundPool** instance.",
       "注释信息": [
         "@param {'error'} type - Event type, which is **'error'** in this case.",
@@ -1874,7 +1874,7 @@
       "类型": "method",
       "名称": "offError",
       "返回值": "void",
-      "所属模块": "未知模块",
+      "所属模块": "@kit.MediaKit",
       "功能描述": "Unsubscribes from error events of this **SoundPool** instance.",
       "注释信息": [
         "@syscap SystemCapability.Multimedia.Media.SoundPool",
@@ -1893,7 +1893,7 @@
       "类型": "method",
       "名称": "on",
       "返回值": "void",
-      "所属模块": "未知模块",
+      "所属模块": "@kit.MediaKit",
       "功能描述": "Subscribes to errorOccurred events of this **SoundPool** instance.",
       "注释信息": [
         "@param { 'errorOccurred' } type - Type of the soundpool event to listen for.",
@@ -1927,7 +1927,7 @@
       "类型": "method",
       "名称": "onErrorOccurred",
       "返回值": "void",
-      "所属模块": "未知模块",
+      "所属模块": "@kit.MediaKit",
       "功能描述": "Subscribes to errorOccurred events of this **SoundPool** instance.",
       "注释信息": [
         "@param { Callback<ErrorInfo> } callback - Callback used to listen for soundpool errorOccurred events.",
@@ -1954,7 +1954,7 @@
       "类型": "method",
       "名称": "off",
       "返回值": "void",
-      "所属模块": "未知模块",
+      "所属模块": "@kit.MediaKit",
       "功能描述": "Unsubscribes from errorOccurred events of this **SoundPool** instance.",
       "注释信息": [
         "@param { 'errorOccurred' } type - Type of the soundpool event to listen for.",
@@ -1988,7 +1988,7 @@
       "类型": "method",
       "名称": "offErrorOccurred",
       "返回值": "void",
-      "所属模块": "未知模块",
+      "所属模块": "@kit.MediaKit",
       "功能描述": "Unsubscribes from errorOccurred events of this **SoundPool** instance.",
       "注释信息": [
         "@param { Callback<ErrorInfo> } [callback] - Callback used to listen for soundpool errorOccurred events.",
