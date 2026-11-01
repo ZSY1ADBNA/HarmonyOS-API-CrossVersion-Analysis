@@ -214,6 +214,27 @@
 - 下一步（具体文件和动作）：提交并推送 feat/api6.1（更新 PR #8）→ 提取修复全量重跑与数据对账（后续任务，需重跑 _run_extract.py + 重导）→ v2 身份旁路生成小样本（DATA-002/v2 契约）。
 - 最后更新时间（时区）、进展记录：2026-10-22（Asia/Shanghai）。当日同步队友 PR #14 的 API 身份 v2 契约，完成预检增强与分类、unnamed 构件 @文件标识 消歧、提取端父级分组传播修复及小样本验证（bluetooth.access 未知 32→0、connection 13→0，节点数与顺序不变）；修复后代码全量重导 4,084 文件成功并完成图谱核对与接口冒烟。
 
+## EXF-001 提取解析缺口修复与全量重提取（UID-001 续，张舒阳）
+
+- ID/标题、目标与范围：修复 extract_api_info.py 解析缺口——内联对象字面量属性（`confirm?: { ... }`）与跨行函数类型属性（`onStateChange?: (event: { ... }) => void`）此前使 process_body L618 抛 KeyError '名称'：在 single_decls 路径直接令整文件失败（API5.0 action_sheet.d.ts 自首次提取以来从未成功），在结构体块路径被 try/except 静默吞掉（整块其余成员丢弃）；随后全量重提取 5 版本 JSON、全量重导图谱并对账。
+- 负责人/验收人、状态、验收条件：负责人：张舒阳（254358355，本机执行 + AI 辅助）；验收人：待确认。状态：已完成（2026-11-01 勾选）；验收确认待执行。验收条件：全量提取 0 失败 0 块级报错；新旧 JSON 对账无回归；预检无跨文件 uid 碰撞、未知模块为 0；重导后图谱无重复 uid、5 版本可查询、接口冒烟正常。
+- 已完成步骤、涉及文件与成果：
+  - [x] 1. 根因定位。效果：API5.0 action_sheet.d.ts 的 `confirm?: { enabled?: boolean; ... }` 不匹配任何既有分支（is_property_declaration 字符类不含 `{`），current_info 无 名称/类型，处理内层成员时 L618 KeyError；该文件从未在 git 中出现过（git ls-files 无 API5.0 action_sheet.json，仅 4.1/5.1/6.0/6.1 有）。块级同类错误（alert_dialog、common 等）被 L769 try/except 吞掉，整块静默丢弃；grep 源码 `name: {` 132 处、`name?: (event: {` 19 处。2026-11-01。
+  - [x] 2. 修改 extract_api_info.py。效果：is_property_declaration 分支后新增两个分支——`name?: {` → property（属性类型 '{...}'，成员由后续循环解析为子节点）；`name?: (` → property（属性类型 'function'，参数内联对象成员为子节点）；single_decls 循环补 try/except（与结构体块循环容错一致，防止单构造令整文件失败）。2026-11-01。
+  - [x] 3. 全量重提取。效果（python _run_extract.py）：4,085/4,085 OK、0 失败、0 块级/声明级报错、88,599 节点（修复前 88,440，+159 恢复）、13.8s。2026-11-01。
+  - [x] 4. 新旧 JSON 对账。效果：git archive 导出 HEAD 版 4,084 个 JSON 逐一对比节点数——7 文件增益、0 损失、0 回归；API5.0 action_sheet.json 全新生成（0→45 节点）；common.json 四版本 +18/+21/+28/+26；alert_dialog 5.0 +14；particle 5.0 +5。2026-11-01。
+  - [x] 5. UID 预检（python _check_uids.py）。效果：总记录 88,599；重载 base 5,123、#n 节点 9,450；未知模块各版本 0（提取端父级分组传播在全量 JSON 生效）；unnamed/Unknown 碰撞 0；模块根设计内合并与具名跨文件声明合并 1,536（如 dataUriUtils 两文件声明，设计内）。2026-11-01。
+  - [x] 6. 全量重导（python _run_import.py，先移走 import_progress.txt）。效果：4,085/4,085 OK、0 失败、517.0s；处理记录 88,599、关系 169,024；图谱总节点 83,431（原 83,284，+147）；各版本 API4.1 7,352 / API5.0 17,403 / API5.1 18,653 / API6.0 19,257 / API6.1 20,766。2026-11-01。
+  - [x] 7. 图谱核对（python _check_graph.py）：重复 uid 无；#n 重载节点 9,394；unnamed 4,400、Unknown 4,335，全部带 @文件标识。接口冒烟：/api/versions 返回 5 版本；/api/compare?old=API6.0&new=API6.1 返回真实对比。抽查恢复节点：API5.0 confirm（属性类型 '{...}'，父链 @kit.ArkUI/AlertDialogParamWithConfirm/Colors）、API6.1 onStateChange 父级 PopupCommonOptions/CustomPopupOptions/SwipeActionItem 均完整可查询。2026-11-01。
+  - [x] 8. _check_graph.py 修复。效果：文件标识统计原用 CONTAINS '@' 把 @kit 模块名全部计入（误报 83,431），改为 `=~ '.*@[0-9a-f]{8}$'` 锚定末尾（此前 10-22 记录 =~ 返回 False 系 Java 全串匹配缺 `.*` 前缀，补后实测 4,400 精确）。2026-11-01。
+- 分支/提交/PR、本地未提交改动：分支 feat/api6.1；提交 052d5c5（提取器修复 + 3,832 个 JSON 重提取，含新增 API5.0 action_sheet.json）、df03838（_check_graph.py 修复）；fb92732（UID-001）已于当日推送成功，PR #8 已更新；待合并 master 后推送。敏感/临时文件（server_creds.txt、deploy*.py、import_progress*、*.tar.gz）保持未跟踪。
+- 验证环境、输入、命令与工作目录：Windows 11 本机；Neo4j 5.26.4 community（127.0.0.1:7687）；命令：python _run_extract.py、echo y | python enhance_json.py、python _check_uids.py、python _run_import.py、python _check_graph.py（凭据 NEO4J_PASSWORD 环境变量）、python app.py + curl 冒烟；工作目录 C:\Users\MR\Desktop\HarmonyAPI_Project。
+- 预期结果、实际结果、证据：预期修复后全量提取无失败、JSON 未知模块归零、对账无回归、重导后无重复 uid。实际全部达成（数字见各步骤）。证据：06_logs/extract_full_20261101_v2.log、extract_log_20261101_095505.txt、uid_collisions_full.json、import_20261101_v2.log、flask_smoke_20261101.log；旧 JSON 对账脚本输出（TEMP 目录）。
+- 决定及原因、阻塞及所需信息：决定——新分支恢复为 property 节点（'{...}'/'function' 属性类型）而非 Unknown，因为父级分组传播已就绪、子成员可挂父链；已知限制——`constructor(x: {...})` 参数内联对象成员仍不进子节点（方法节点走 parameters 字段模型，5 处，留待后续）；`name: [` 元组类型在函数参数中（6 处）属既有参数模型，非崩溃点。阻塞：无。
+- 尚未更新的数据或报告：跨版本分析报告未重生成（图谱净变化 +147 节点，报告数字需更新）；run_analysis.py 十项分析未重跑；在线部署（http://47.114.40.66:5000/）未更新；PR #8 尚未合并 master。
+- 下一步（具体文件和动作）：feat/api6.1 合并 origin/master（31 提交）并解决冲突 → 推送后请队友/负责人合 PR #8 → 重生成报告与 run_analysis.py → v2 身份旁路生成小样本（DATA-002/v2 契约）。
+- 最后更新时间（时区）、进展记录：2026-11-01（Asia/Shanghai）。当日定位并修复提取解析缺口，全量重提取 + 重导对账全链路完成，fb92732 推送成功（远端地址内嵌 token 失效，改用 Windows 凭据管理器认证）。
+
 ## 新任务固定字段
 
 - ID/标题、目标与范围：
