@@ -1,0 +1,31 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>OpenHarmony 官方证据查询</title>
+<style>body{font:16px/1.7 system-ui,sans-serif;background:#f4f6fa;color:#17243b;margin:0}main{max-width:980px;margin:36px auto;padding:24px}h1{font-size:28px}form,article,.notice{background:white;padding:22px;border:1px solid #dce2ec;border-radius:12px;margin:16px 0}label{display:inline-block;margin:0 16px 12px 0}select,input,button{font:inherit;padding:9px;border:1px solid #abb8cb;border-radius:6px}input{min-width:280px}button{background:#204f9e;color:white;cursor:pointer}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#f6f8fc;padding:12px}a{color:#164a97}small{color:#53647d}.error{color:#a52828}</style>
+<style>label[hidden]{display:none}</style>
+<main><h1>OpenHarmony 官方证据查询</h1><p>先选择源码发行，再查声明、文档或示例。结果保留官方出处与尚未确认的条件。</p>
+<div class="notice">当前展示工具事实。真实 AI 回答尚未验收；示例关联也不代表目标 SDK 已编译通过。</div>
+<form id="query-form"><label>发行版本 <select id="version"><option>4.1</option><option>5.0.3</option><option>5.1.0</option><option>6.0</option><option selected>6.1</option></select></label><label>查什么 <select id="tool"><option value="search">搜索</option><option value="detail">详情</option><option value="conditions">使用条件</option><option value="types">相关类型</option><option value="compare">版本比较</option><option value="examples">示例</option></select></label><label id="target-label" hidden>比较目标 <select id="target"><option>4.1</option><option selected>5.0.3</option><option>5.1.0</option><option>6.0</option><option>6.1</option></select></label><br><label>API 名称 <input id="query" value="createHttp" maxlength="256" required></label><button>查询官方证据</button></form>
+<p id="status" role="status">等待查询。</p><section id="results" aria-live="polite"></section>
+<script>
+const form=document.querySelector('form'),version=document.querySelector('#version'),tool=document.querySelector('#tool'),target=document.querySelector('#target'),results=document.querySelector('#results'),status=document.querySelector('#status');let epoch=0,controller;
+function clear(){epoch++;if(controller)controller.abort();results.replaceChildren();status.textContent='条件已改变，请重新查询。';}
+for(const node of [version,tool,target,document.querySelector('#query')])node.addEventListener('input',clear);
+tool.addEventListener('change',()=>document.querySelector('#target-label').hidden=tool.value!=='compare');
+function text(parent,tag,value){const el=document.createElement(tag);el.textContent=value;parent.append(el);return el;}
+function renderRecord(row,parent,release){if(row.results){const section=document.createElement('article');parent.append(section);text(section,'h2',row.release_id||release);for(const child of row.results)renderRecord(child,section,row.release_id||release);return;}
+const card=document.createElement('article');parent.append(card);text(card,'h2',row.name||row.api_name||row.path||'官方资料');text(card,'p','来源发行：'+(row.release_id||release));
+const original=row.original_declaration||row.raw_content||row.snippet||row.source_excerpt;if(original)text(card,'pre',typeof original==='string'?original:JSON.stringify(original,null,2));
+if(row.candidate_text)text(card,'pre','解析候选（未唯一定位原文）：\n'+row.candidate_text);
+if(row.jsdoc?.length)text(card,'pre',row.jsdoc.join('\n'));
+const links=new Set();function find(x){if(!x||typeof x!=='object')return;for(const [k,v] of Object.entries(x)){if(k==='source_url'&&typeof v==='string'&&/^https:\/\/github\.com\/openharmony\//.test(v))links.add(v);else if(typeof v==='object')find(v);}}find(row);
+for(const url of links){const a=text(card,'a','查看固定提交的官方原文');a.href=url;a.target='_blank';a.rel='noopener noreferrer';card.append(document.createElement('br'));}
+if(!links.size)text(card,'p','此记录未返回可直接打开的官方原文链接，请核对来源记录。');
+if(row.unknown_conditions?.length)text(card,'small','仍有未确认条件，包括正式API身份、SDK公开范围或目标编译条件。');}
+form.addEventListener('submit',async event=>{event.preventDefault();clear();const current=epoch;controller=new AbortController();status.textContent='正在核对官方证据…';const query=document.querySelector('#query').value;
+const args=tool.value==='compare'?{query,from_version:version.value,to_version:target.value,limit:4}:{query,version:version.value,limit:4};
+try{const response=await fetch('/tools/'+tool.value,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(args),signal:controller.signal});const body=await response.json();if(current!==epoch)return;if(!response.ok||!body.ok)throw Error(body.error?.message||'查询未完成');
+status.textContent='已核对来源发行：'+(Array.isArray(body.source_release)?body.source_release.join(' → '):body.source_release);
+const note=document.createElement('div');note.className='notice';results.append(note);text(note,'p','覆盖范围：'+body.coverage.map(x=>x.release_id+' / '+x.kind+'：'+x.declaration_facts+'条声明事实').join('；'));
+text(note,'p','正式逻辑身份与目标SDK适用条件仍待核验。结果截断状态：'+body.truncation_status);if(body.absence_conclusion)text(note,'p','当前索引无匹配不能证明API不存在，也不能单独证明新增或删除。');
+if(!(body.results||[]).length)text(results,'p','当前覆盖范围内没有匹配证据。');for(const row of body.results||[])renderRecord(row,results,body.source_release);
+}catch(error){if(current!==epoch||error.name==='AbortError')return;status.textContent='查询未完成：'+error.message;}});
+</script></main></html>

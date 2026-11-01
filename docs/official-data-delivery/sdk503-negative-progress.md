@@ -1,0 +1,15 @@
+# API15反向编译与合并收据
+
+2026-10-14，用户明确授权正常合并PR #11，并要求无论合并结果如何继续下一步。PR #11已合并到master，提交ba8ac9e86f89962a4d6fff728876b8dd56c61fb8；master最新提交与合并回执一致，父提交为原master32faf38ca6c547b679b60272d0cdd9efe843096d和任务头26371d1b1df5d6e09d7429707055e2e638cf79c8。合并树942e203bd60d06a62b8d9f3204c2037e34ceefd0包含逐项UTF8指纹核对的16文件成果。
+
+异常：最初Git ref与PR头不同步，带预期头校验的合并返回409；未放宽校验合并旧版本。PR列表确认新头后正常合并遇服务内部错误，先确认PR仍开放/master未变，再按允许的一次重试成功。未绕过分支保护、未强推。状态与检查任务均为0，未称CI通过；14项本地受影响回归和实际编译证据独立记录。未检查其他成员本地状态。
+
+## 下一步实际结果
+
+反向编译是故意调用目标SDK没有的字段，检查工具能否明确拒绝。先以已校验5.0.3正式ETS组件的完整ButtonAttribute父链确认minFontScale不存在，并核对AudioRendererInfo自身没有volumeMode；再分别创建独立API15工程。两例均出现目标Property does not exist on type诊断，未超时，退出码为非零，符合预期。正向工程源码及字节码指纹保持不变。
+
+音频首轮出现附带的any/unknown类型推断错误，已为unsupportedMode显式标注number，只重跑音频样例后该附带报错消失。ContentType/CONTENT_TYPE_MUSIC弃用警告仍单独保留，不能算成字段缺失原因。Button样例约76.836秒，修正后音频样例约13.914秒；负向样例构建失败是预期结果，不是设备运行验证。
+
+诊断匹配加固为完整字段名、完整所属类型名及独立诊断行，避免把AudioRendererInfoOther误认作AudioRendererInfo；针对性回归同时检查保存的实际编译诊断和错误归属反例。证据sdk503-negative-controls.json、sdk503-negative-minFontScale.json和sdk503-negative-volumeMode.json。
+
+本批在合并后的master上另建小范围分支和草稿PR保存反向证据，不自动合并该后续PR。接下来继续两个已选样本的证据查询与版本差异检查；不扩展全部Kit、不清库、不写共享/生产数据库，不执行设备安装。完整计划、SDK包和私有日志留本地。

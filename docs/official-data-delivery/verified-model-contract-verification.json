@@ -1,0 +1,124 @@
+{
+  "scope": "Offline contract and simulated providers; no real model/network/database call",
+  "passed": true,
+  "cases": [
+    {
+      "name": "valid_simulated",
+      "actual_status": "verified_evidence_order_selected",
+      "expected_status": "verified_evidence_order_selected",
+      "provider_calls": 1,
+      "checks": {
+        "expected_status": true,
+        "no_free_text_generation": true,
+        "original_explanation_unchanged": true,
+        "unknowns_preserved": true,
+        "server_owned_signature": true
+      },
+      "passed": true
+    },
+    {
+      "name": "missing_configuration",
+      "actual_status": "model_unavailable",
+      "expected_status": "model_unavailable",
+      "provider_calls": 0,
+      "checks": {
+        "expected_status": true,
+        "no_free_text_generation": true,
+        "original_explanation_unchanged": true
+      },
+      "passed": true
+    },
+    {
+      "name": "invented_fact",
+      "actual_status": "model_output_rejected",
+      "expected_status": "model_output_rejected",
+      "provider_calls": 1,
+      "checks": {
+        "expected_status": true,
+        "no_free_text_generation": true,
+        "original_explanation_unchanged": true
+      },
+      "passed": true
+    },
+    {
+      "name": "missing_comparison",
+      "actual_status": "model_output_rejected",
+      "expected_status": "model_output_rejected",
+      "provider_calls": 1,
+      "checks": {
+        "expected_status": true,
+        "no_free_text_generation": true,
+        "original_explanation_unchanged": true
+      },
+      "passed": true
+    },
+    {
+      "name": "extra_prose",
+      "actual_status": "model_output_rejected",
+      "expected_status": "model_output_rejected",
+      "provider_calls": 1,
+      "checks": {
+        "expected_status": true,
+        "no_free_text_generation": true,
+        "original_explanation_unchanged": true
+      },
+      "passed": true
+    },
+    {
+      "name": "replayed_reverse_direction",
+      "actual_status": "model_output_rejected",
+      "expected_status": "model_output_rejected",
+      "provider_calls": 1,
+      "checks": {
+        "expected_status": true,
+        "no_free_text_generation": true,
+        "original_explanation_unchanged": true
+      },
+      "passed": true
+    },
+    {
+      "name": "simulated_timeout",
+      "actual_status": "provider_failed",
+      "expected_status": "provider_failed",
+      "provider_calls": 1,
+      "checks": {
+        "expected_status": true,
+        "no_free_text_generation": true,
+        "original_explanation_unchanged": true
+      },
+      "passed": true
+    },
+    {
+      "name": "provider_mutation_isolated",
+      "actual_status": "verified_evidence_order_selected",
+      "expected_status": "verified_evidence_order_selected",
+      "provider_calls": 1,
+      "checks": {
+        "expected_status": true,
+        "no_free_text_generation": true,
+        "original_explanation_unchanged": true,
+        "unknowns_preserved": true,
+        "server_owned_signature": true
+      },
+      "passed": true
+    },
+    {
+      "name": "no_evidence",
+      "actual_status": "not_attempted",
+      "expected_status": "not_attempted",
+      "provider_calls": 0,
+      "checks": {
+        "expected_status": true,
+        "no_free_text_generation": true,
+        "original_explanation_unchanged": true
+      },
+      "passed": true
+    }
+  ],
+  "source_sha256": {
+    "tools/verified_model_contract.py": "f8041ed153557189f7e84bacd6e362c1d1208d9c311cb30a138b22a4d114ccd8",
+    "tools/test_verified_model_contract.py": "2220f870cec584aade8fae607fe77084bcb8462ee2cb26b330343a68f57e1336",
+    "tools/explain_verified_samples.py": "8c20ef28654c2847a56fad8654120d469b3bef5f4b53ac86fd00cbbd674f9f8c",
+    "docs/official-data-delivery/verified-sample-query-manifest.json": "772f12d86a97dd0b765d7669375532b35cca1a84c642e69cc7d757c5d6de29e4"
+  }
+}

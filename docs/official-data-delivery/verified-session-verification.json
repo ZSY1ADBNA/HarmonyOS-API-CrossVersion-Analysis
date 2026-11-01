@@ -1,0 +1,368 @@
+{
+  "scope": "Actual local multi-turn evidence lookup; no HTTP/browser/model call",
+  "passed": true,
+  "input_sha256": {
+    "verified-sample-query-manifest.json": "772f12d86a97dd0b765d7669375532b35cca1a84c642e69cc7d757c5d6de29e4",
+    "public-sdk-4.1-verification.json": "c3ac9dbd61cff38aa541ef4175bce20e5810cf50eebd91252a26082dee643276",
+    "public-sdk-5.0.3-samples.json": "a5214b77c00455f121a07b3b45f6028778578cb947bbe319e98b7f597e5885b9",
+    "sdk-build-probe.json": "50537fad8267cfc9da9cb598733a290a09dc24553efec51c3172bb8e15850b2d",
+    "sdk503-build-probe.json": "88b17cde98fe2714e70b26bacdf9f57f6393412715a794211b2d608dc303dbb3"
+  },
+  "inputs_unchanged": true,
+  "sequences": [
+    {
+      "name": "missing_then_switch",
+      "turns": [
+        {
+          "input": {
+            "message": "\u8bbe\u7f6e\u6309\u94ae\u5b57\u53f7"
+          },
+          "expected_status": "needs_version",
+          "actual_status": "needs_version",
+          "state": {
+            "schema_version": 1,
+            "message": "\u8bbe\u7f6e\u6309\u94ae\u5b57\u53f7",
+            "release": null,
+            "compare_with": null
+          },
+          "checks": {
+            "status": true,
+            "no_model_call": true
+          },
+          "passed": true
+        },
+        {
+          "input": {
+            "message": "4.1"
+          },
+          "expected_status": "verified_candidates_found",
+          "actual_status": "verified_candidates_found",
+          "state": {
+            "schema_version": 1,
+            "message": "\u8bbe\u7f6e\u6309\u94ae\u5b57\u53f7",
+            "release": "4.1",
+            "compare_with": null
+          },
+          "checks": {
+            "status": true,
+            "no_model_call": true,
+            "version": true
+          },
+          "passed": true
+        },
+        {
+          "input": {
+            "message": "\u90a35.0.3\u5462"
+          },
+          "expected_status": "verified_candidates_found",
+          "actual_status": "verified_candidates_found",
+          "state": {
+            "schema_version": 1,
+            "message": "\u8bbe\u7f6e\u6309\u94ae\u5b57\u53f7",
+            "release": "5.0.3",
+            "compare_with": null
+          },
+          "checks": {
+            "status": true,
+            "no_model_call": true,
+            "version": true
+          },
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "name": "reverse_compare",
+      "turns": [
+        {
+          "input": {
+            "message": "channelLayout",
+            "release": "4.1",
+            "compare_with": "5.0.3"
+          },
+          "expected_status": "verified_candidates_found",
+          "actual_status": "verified_candidates_found",
+          "state": {
+            "schema_version": 1,
+            "message": "channelLayout",
+            "release": "4.1",
+            "compare_with": "5.0.3"
+          },
+          "checks": {
+            "status": true,
+            "no_model_call": true
+          },
+          "passed": true
+        },
+        {
+          "input": {
+            "message": "\u53cd\u8fc7\u6765"
+          },
+          "expected_status": "verified_candidates_found",
+          "actual_status": "verified_candidates_found",
+          "state": {
+            "schema_version": 1,
+            "message": "channelLayout",
+            "release": "5.0.3",
+            "compare_with": "4.1"
+          },
+          "checks": {
+            "status": true,
+            "no_model_call": true,
+            "version": true
+          },
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "name": "unknown_no_stale",
+      "turns": [
+        {
+          "input": {
+            "message": "fontSize",
+            "release": "4.1"
+          },
+          "expected_status": "verified_candidates_found",
+          "actual_status": "verified_candidates_found",
+          "state": {
+            "schema_version": 1,
+            "message": "fontSize",
+            "release": "4.1",
+            "compare_with": null
+          },
+          "checks": {
+            "status": true,
+            "no_model_call": true
+          },
+          "passed": true
+        },
+        {
+          "input": {
+            "message": "\u6362\u62105.0\u5462"
+          },
+          "expected_status": "unsupported_release",
+          "actual_status": "unsupported_release",
+          "state": {
+            "schema_version": 1,
+            "message": "fontSize",
+            "release": null,
+            "compare_with": null
+          },
+          "checks": {
+            "status": true,
+            "no_model_call": true,
+            "no_stale_result": true
+          },
+          "passed": true
+        },
+        {
+          "input": {
+            "message": "\u5b83\u5462"
+          },
+          "expected_status": "needs_version",
+          "actual_status": "needs_version",
+          "state": {
+            "schema_version": 1,
+            "message": "fontSize",
+            "release": null,
+            "compare_with": null
+          },
+          "checks": {
+            "status": true,
+            "no_model_call": true
+          },
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "name": "new_topic_not_old_api",
+      "turns": [
+        {
+          "input": {
+            "message": "fontSize",
+            "release": "4.1"
+          },
+          "expected_status": "verified_candidates_found",
+          "actual_status": "verified_candidates_found",
+          "state": {
+            "schema_version": 1,
+            "message": "fontSize",
+            "release": "4.1",
+            "compare_with": null
+          },
+          "checks": {
+            "status": true,
+            "no_model_call": true
+          },
+          "passed": true
+        },
+        {
+          "input": {
+            "message": "\u6253\u5f00\u76f8\u673a"
+          },
+          "expected_status": "no_verified_match",
+          "actual_status": "no_verified_match",
+          "state": {
+            "schema_version": 1,
+            "message": "\u6253\u5f00\u76f8\u673a",
+            "release": "4.1",
+            "compare_with": null
+          },
+          "checks": {
+            "status": true,
+            "no_model_call": true
+          },
+          "passed": true
+        },
+        {
+          "input": {
+            "message": "\u90a35.0.3\u5462"
+          },
+          "expected_status": "no_verified_match",
+          "actual_status": "no_verified_match",
+          "state": {
+            "schema_version": 1,
+            "message": "\u6253\u5f00\u76f8\u673a",
+            "release": "5.0.3",
+            "compare_with": null
+          },
+          "checks": {
+            "status": true,
+            "no_model_call": true
+          },
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "name": "conditions_unknown",
+      "turns": [
+        {
+          "input": {
+            "message": "channelLayout",
+            "release": "4.1"
+          },
+          "expected_status": "verified_candidates_found",
+          "actual_status": "verified_candidates_found",
+          "state": {
+            "schema_version": 1,
+            "message": "channelLayout",
+            "release": "4.1",
+            "compare_with": null
+          },
+          "checks": {
+            "status": true,
+            "no_model_call": true
+          },
+          "passed": true
+        },
+        {
+          "input": {
+            "message": "\u9ed8\u8ba4\u503c\u5462"
+          },
+          "expected_status": "needs_more_evidence",
+          "actual_status": "needs_more_evidence",
+          "state": {
+            "schema_version": 1,
+            "message": "channelLayout",
+            "release": "4.1",
+            "compare_with": null
+          },
+          "checks": {
+            "status": true,
+            "no_model_call": true
+          },
+          "passed": true
+        },
+        {
+          "input": {
+            "message": "\u53ef\u4ee5\u76f4\u63a5\u66ff\u6362\u5417"
+          },
+          "expected_status": "needs_more_evidence",
+          "actual_status": "needs_more_evidence",
+          "state": {
+            "schema_version": 1,
+            "message": "channelLayout",
+            "release": "4.1",
+            "compare_with": null
+          },
+          "checks": {
+            "status": true,
+            "no_model_call": true
+          },
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "name": "comparison_direction_clarification",
+      "turns": [
+        {
+          "input": {
+            "message": "4.1\u548c5.0.3\u7684channelLayout\u5dee\u5f02"
+          },
+          "expected_status": "needs_comparison_direction",
+          "actual_status": "needs_comparison_direction",
+          "state": {
+            "schema_version": 1,
+            "message": "4.1\u548c5.0.3\u7684channelLayout\u5dee\u5f02",
+            "release": null,
+            "compare_with": null
+          },
+          "checks": {
+            "status": true,
+            "no_model_call": true,
+            "no_stale_result": true
+          },
+          "passed": true
+        },
+        {
+          "input": {
+            "message": "4.1"
+          },
+          "expected_status": "needs_comparison_versions",
+          "actual_status": "needs_comparison_versions",
+          "state": {
+            "schema_version": 1,
+            "message": "4.1\u548c5.0.3\u7684channelLayout\u5dee\u5f02",
+            "release": "4.1",
+            "compare_with": null
+          },
+          "checks": {
+            "status": true,
+            "no_model_call": true,
+            "no_stale_result": true
+          },
+          "passed": true
+        },
+        {
+          "input": {
+            "message": "4.1",
+            "compare_with": "5.0.3"
+          },
+          "expected_status": "verified_candidates_found",
+          "actual_status": "verified_candidates_found",
+          "state": {
+            "schema_version": 1,
+            "message": "4.1\u548c5.0.3\u7684channelLayout\u5dee\u5f02",
+            "release": "4.1",
+            "compare_with": "5.0.3"
+          },
+          "checks": {
+            "status": true,
+            "no_model_call": true
+          },
+          "passed": true
+        }
+      ],
+      "passed": true
+    }
+  ]
+}
