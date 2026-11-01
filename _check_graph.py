@@ -39,7 +39,8 @@ def main():
         u = s.run("MATCH (n) WHERE n.name = 'unnamed' RETURN count(n) AS c").single()["c"]
         lines.append(f"  {u}")
         lines.append("[含文件标识 @xxxxxxxx 的节点数(修复后应>0)]")
-        u = s.run("MATCH (n) WHERE n.uid CONTAINS '@' RETURN count(n) AS c").single()["c"]
+        # 注意:模块名也含 @(如 @kit.ArkUI),需锚定末尾 8 位十六进制,不能用 CONTAINS '@'
+        u = s.run("MATCH (n) WHERE n.uid =~ '.*@[0-9a-f]{8}$' RETURN count(n) AS c").single()["c"]
         lines.append(f"  {u}")
         lines.append("[含 #n 重载后缀的节点数]")
         u = s.run("MATCH (n) WHERE n.uid CONTAINS '#' RETURN count(n) AS c").single()["c"]
