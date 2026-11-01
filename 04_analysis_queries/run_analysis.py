@@ -76,7 +76,8 @@ def main():
               {from: 'API4.1', to: 'API5.0'},
               {from: 'API5.0', to: 'API5.1'},
               {from: 'API5.1', to: 'API6.0'},
-              {from: 'API4.1', to: 'API6.0'}
+              {from: 'API6.0', to: 'API6.1'},
+              {from: 'API4.1', to: 'API6.1'}
             ] AS pairs
             UNWIND pairs AS pair
             MATCH (n_old {sdk_version: pair.from})
@@ -121,14 +122,14 @@ def main():
             LIMIT 20
         """, "SystemCapability TOP20")
 
-        # 9. 最新版本(API6.0)中最大的模块
+        # 9. 最新版本(API6.1)中最大的模块
         run_query(session, """
-            MATCH (n {sdk_version: 'API6.0'})
+            MATCH (n {sdk_version: 'API6.1'})
             WHERE n.type IN ['class', 'interface', 'method', 'property', 'enum']
             RETURN n.module AS module, count(n) AS api_count
             ORDER BY api_count DESC
             LIMIT 20
-        """, "API6.0 模块规模 TOP20")
+        """, "API6.1 模块规模 TOP20")
 
         # 10. 仅在一个版本中存在的API（可能是实验性API）
         run_query(session, """

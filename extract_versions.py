@@ -9,11 +9,13 @@ PROJECT_ROOT = Path(r"C:\Users\MR\Desktop\HarmonyAPI_Project")
 SOURCE_ROOT = PROJECT_ROOT / "01_source_files"
 
 # 要提取的版本：Git分支 -> 项目目录名
+# 注：6.1 起官方仓库已迁至 gitcode.com（gitee 仓库停更于 6.0）
 VERSIONS = {
     "OpenHarmony-4.1-Release":    "API4.1",
     "OpenHarmony-5.0.3-Release":  "API5.0",
     "OpenHarmony-5.1.0-Release":  "API5.1",
     "OpenHarmony-6.0-Release":    "API6.0",
+    "OpenHarmony-6.1-Release":    "API6.1",
 }
 
 
@@ -45,8 +47,11 @@ def main():
             print(f"  检出失败: {result.stderr}")
             # 尝试从 origin 检出
             result = run_git("checkout", "-b", branch, f"origin/{branch}")
+        if result.returncode != 0:
+            # 尝试从 gitcode 检出（6.1 起官方仓库已迁移）
+            result = run_git("checkout", "-b", branch, f"gitcode/{branch}")
             if result.returncode != 0:
-                print(f"  从 origin 检出也失败，跳过")
+                print(f"  从 origin/gitcode 检出也失败，跳过")
                 continue
 
         # 2. 复制 api/ 目录

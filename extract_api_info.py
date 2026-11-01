@@ -543,6 +543,17 @@ def process_body(ts_code: str, api_info: dict, total_info: dict, deepth: int):
             current_info['类型'] = 'property'
             current_info['名称'], type_str = match.groups()
             current_info['属性类型'] = type_str.strip()
+    elif re.match(r'^(?:readonly\s+)?\w+\s*[?!]?\s*:\s*\{', lines[0].strip().rstrip(';')):
+        # 内联对象字面量类型属性（如 confirm?: { ... }）：作为 property 节点，成员由后续循环解析为子节点
+        current_info['类型'] = 'property'
+        current_info['名称'] = re.match(r'^(?:readonly\s+)?(\w+)', lines[0].strip()).group(1)
+        current_info['属性类型'] = '{...}'
+    elif re.match(r'^(?:readonly\s+)?\w+\s*[?!]?\s*:\s*\(', lines[0].strip()):
+        # 跨行函数类型属性（如 onStateChange?: (event: { ... }) => void）：作为 property 节点，
+        # 参数内联对象成员由后续循环解析为子节点
+        current_info['类型'] = 'property'
+        current_info['名称'] = re.match(r'^(?:readonly\s+)?(\w+)', lines[0].strip()).group(1)
+        current_info['属性类型'] = 'function'
     elif is_interface_function_signature(lines[0]):
         current_info['类型'] = 'call_signature'
         current_info['签名'] = lines[0].strip().rstrip(';')
@@ -616,6 +627,10 @@ def process_body(ts_code: str, api_info: dict, total_info: dict, deepth: int):
             inner_api_info['装饰器'] = decorator_lines
 
         inner_api_info['上级'] = current_info['名称']
+
+        # isIn=True 的 extract_info 不返回所属模块；沿父链继承，避免内层成员全部填「未知模块」
+        if inner_api_info.get('所属模块', '未知模块') == '未知模块':
+            inner_api_info['所属模块'] = api_info.get('所属模块', '未知模块')
 
         lines = inner_code.splitlines()
         member_lines = []
@@ -767,15 +782,19 @@ def simplify_api(file_path: str):
             traceback.print_exc()
 
     for decl in single_decls:
-        result = process_by_state_machine(decl)
-        if result is None:
-            continue
-        process_code, count = result
-        clean_decl = delete_annotation(count, decl)
-        clean_decl = remove_inline_annotations(clean_decl)
-        api_info = extract_info(kit_json, process_code, False)
-        api_info['上级'] = module_name
-        total_info = process_body(clean_decl, api_info, total_info, 1)
+        try:
+            result = process_by_state_machine(decl)
+            if result is None:
+                continue
+            process_code, count = result
+            clean_decl = delete_annotation(count, decl)
+            clean_decl = remove_inline_annotations(clean_decl)
+            api_info = extract_info(kit_json, process_code, False)
+            api_info['上级'] = module_name
+            total_info = process_body(clean_decl, api_info, total_info, 1)
+        except Exception as e:
+            print(f"[ERROR] 处理单声明时出错: {e}")
+            traceback.print_exc()
 
     return total_info
 

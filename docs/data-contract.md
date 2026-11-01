@@ -15,8 +15,9 @@
 - OpenHarmony-5.0.3-Release → API5.0
 - OpenHarmony-5.1.0-Release → API5.1
 - OpenHarmony-6.0-Release → API6.0
+- OpenHarmony-6.1-Release → API6.1
 
-这些是项目标签，不等同 API Level。JSON 另有 API 目录，来源待确认，不能未经核实称为“最早版本”。
+这些是项目标签，不等同 API Level。原 JSON 目录中的 API 目录（来源待确认）已于 2026-10-11 移除，不再纳入分析。
 
 源码仅由本地 interface_sdk-js 路径指向；历史数据对应的上游 URL 与固定提交尚待补齐。生成记录应包含来源 URL、SHA、版本对应、范围、生成命令、解析器版本和许可。只记录可变分支名不足以复现。
 
@@ -40,7 +41,7 @@
 - HAS_PARENT：成员 → 父节点。
 - BELONGS_TO_MODULE：节点 → 模块。
 
-普通 UID 为 version::parent::name 或 version::name，模块另有 version::module::module_name。普通 UID 未包含模块、完整签名或类型，存在跨模块同名和重载碰撞风险；名称映射也需验证。
+UID 为 version::module::type::parent::name（无上级省略 parent 段），Module 节点为 version::module::module_name；所属模块沿父链继承解析；同键重载按文件内出现顺序追加 #n（无语义，仅保证唯一）；unnamed/Unknown 构件追加 @文件标识8位，跨文件同键不合并；模块根与跨文件同名具名节点按 MERGE 合并（声明合并，属性以最后写入文件为准）。跨文件 uid 碰撞用 `python _check_uids.py` 预检；完整签名、重载语义区分及来源证据仍属后续要求。
 
 导入执行 MATCH (n) DETACH DELETE n，使用默认数据库且无选择参数。小样本必须核实隔离实例与输入范围。记录失败文件、图中实际数量、抽样属性和查询结果，不能把脚本累计处理条数当成实际图中数量。
 

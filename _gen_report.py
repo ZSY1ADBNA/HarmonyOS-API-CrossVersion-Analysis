@@ -62,7 +62,7 @@ with d.session() as s:
     lines = []
     lines.append('# HarmonyOS API 跨版本迁移变化分析报告')
     lines.append('')
-    lines.append('> 基于知识图谱分析，覆盖 API4.1、API5.0、API5.1、API6.0 四个版本')
+    lines.append('> 基于知识图谱分析，覆盖 API4.1、API5.0、API5.1、API6.0、API6.1 五个版本')
     lines.append('')
 
     # Version overview
@@ -87,14 +87,14 @@ with d.session() as s:
     for r in module_counts:
         if r['ver'] in ver_data: ver_data[r['ver']]['modules'] = r['cnt']
 
-    for ver in ['API4.1', 'API5.0', 'API5.1', 'API6.0']:
-        d = ver_data.get(ver, {})
-        ci = d.get('types', {})
+    for ver in ['API4.1', 'API5.0', 'API5.1', 'API6.0', 'API6.1']:
+        vd = ver_data.get(ver, {})
+        ci = vd.get('types', {})
         cls_iface = ci.get('Class', 0) + ci.get('Interface', 0)
         enum = ci.get('Enum', 0)
         method = ci.get('Method', 0)
         prop = ci.get('Property', 0)
-        lines.append(f'| {ver} | {d.get("total", 0):,} | {cls_iface} / {enum} | {method} / {prop} | {d.get("modules", 0)} |')
+        lines.append(f'| {ver} | {vd.get("total", 0):,} | {cls_iface} / {enum} | {method} / {prop} | {vd.get("modules", 0)} |')
 
     lines.append('')
 
@@ -103,6 +103,7 @@ with d.session() as s:
         ('API4.1', 'API5.0', '4.1 → 5.0', '大爆炸——框架创立期'),
         ('API5.0', 'API5.1', '5.0 → 5.1', '增量更新——圆弧手表适配'),
         ('API5.1', 'API6.0', '5.1 → 6.0', '架构重构——API体系换代'),
+        ('API6.0', 'API6.1', '6.0 → 6.1', '清理重组——废弃收纳与增量增强'),
     ]
 
     for old_ver, new_ver, label, desc in transitions:
@@ -166,12 +167,12 @@ with d.session() as s:
         lines.append('')
 
     # Final overview
-    lines.append('## 三、API6.0 最终模块版图')
+    lines.append('## 三、API6.1 最终模块版图')
     lines.append('')
     lines.append('| 排名 | 模块 | 类/接口/枚举 | 定位 |')
     lines.append('|------|------|-------------|------|')
     top_modules = s.run("""
-        MATCH (n {sdk_version: 'API6.0'})
+        MATCH (n {sdk_version: 'API6.1'})
         WHERE n.type IN ['class', 'interface', 'enum']
         WITH n.module AS module, count(n) AS cnt
         ORDER BY cnt DESC LIMIT 20
@@ -195,11 +196,12 @@ with d.session() as s:
     lines.append('')
     lines.append('## 四、架构演进关键洞察')
     lines.append('')
-    lines.append('### 4.1 三个阶段')
+    lines.append('### 4.1 四个阶段')
     lines.append('')
     lines.append('1. **API4.1→5.0 框架创立期**：ArkUI、AbilityKit、ArkWeb 三大核心框架从零建立，新增 1,729 个类/接口')
     lines.append('2. **API5.0→5.1 增量补全期**：新增圆弧组件体系（圆表适配），手势识别器独立化，3D几何具象化')
     lines.append('3. **API5.1→6.0 架构重构期**：AbilityKit 从继承模式转向意图装饰器模式，ArkUI 大规模清理命名规范，分布式能力独立成模块')
+    lines.append('4. **API6.0→6.1 清理重组期**：蓝牙/电池等模块大幅清理过时类型，废弃 API 集中收纳进新模块，ArkUI 继续扩张')
     lines.append('')
     lines.append('### 4.2 AbilityKit 的范式转移')
     lines.append('')
@@ -219,9 +221,38 @@ with d.session() as s:
     lines.append('标志着分布式能力从应用框架中解耦，成为独立的一级模块。')
     lines.append('`@kit.BasicServicesKit` 新增 `SelectionExtensionAbility`，文本选择能力独立化。')
     lines.append('')
+    lines.append('### 4.5 API6.0→6.1 的清理与重组')
+    lines.append('')
+    lines.append('6.0→6.1 净增 1,732 个节点（18,302 vs 16,570），类/接口/枚举 +363/-145，方法/属性 +1,647/-619。')
+    lines.append('本轮以清理为主、扩张为辅：')
+    lines.append('')
+    lines.append('- **蓝牙 API 大清洗**：`@ohos.bluetooth.connection` 文件从 167 个节点锐减至 15 个，')
+    lines.append('`BondState`、`ScanMode`、`PinType`、`DiscoveryResult` 等 20+ 个枚举/类被移除，')
+    lines.append('公共类型（`BluetoothAddress` 等）抽离到新增的 `bluetooth.common` 文件，接口定义更聚焦。')
+    lines.append('- **AbilityKit 持续精简**：`AutoFillExtensionAbility`、`UIServiceExtensionAbility`、')
+    lines.append('`InsightIntentExecutor` 及 `ApplicationStateObserver` 等状态观察者系列共 24 个类/接口被移除，')
+    lines.append('`Want` 由 Class 转为 Interface，能力边界进一步收敛。')
+    lines.append('- **ArkUI 继续扩张**：新增 186 个类/接口/枚举，占本轮新增的一半以上，')
+    lines.append('包括 `RenderNode`、`NodeController`、`ContentTransitionEffect`、`Font`、`Magnifier` 等渲染与特效能力，')
+    lines.append('以及 `SwiperController`、`TextAreaController`、`SearchController` 等一批组件控制器。')
+    lines.append('')
+    lines.append('### 4.6 废弃 API 集中收纳：@kit.API10LessDeprecatedModules')
+    lines.append('')
+    lines.append('6.1 唯一新出现的模块是 `@kit.API10LessDeprecatedModules`：')
+    lines.append('将 API10 及以上已废弃、但面向低版本应用的旧接口集中收纳，')
+    lines.append('包括旧文件 API（`File` 及 `FileReadTextOption` 等 15 个 `*Option` 接口）、')
+    lines.append('`formInfo`、`hiAppEvent`、`wantAgent` 命名空间等 21 个节点。')
+    lines.append('这标志着 OpenHarmony 开始以「废弃收纳模块」的方式管理向后兼容 API，')
+    lines.append('主 Kit 得以保持清爽，历史接口仍有明确归宿。')
+    lines.append('')
+    lines.append('### 4.7 数据质量提示')
+    lines.append('')
+    lines.append('方法/属性级别的模块归属在提取数据中大量缺失（6.0 与 6.1 均有约 82% 节点的 `module` 字段为「未知模块」），')
+    lines.append('成员级新增/删除（+1,647/-619）无法完全按模块归因；类/接口/枚举级别归属完整，结论以该级别为准。')
+    lines.append('')
     lines.append('---')
     lines.append('')
-    lines.append('*报告由 Neo4j 知识图谱自动生成，数据来源：4432 个 JSON API 定义文件*')
+    lines.append('*报告由 Neo4j 知识图谱自动生成，数据来源：5334 个 JSON API 定义文件*')
 
     with open('HarmonyOS_API_跨版本变化分析报告.md', 'w', encoding='utf-8') as f:
         f.write('\n'.join(lines))

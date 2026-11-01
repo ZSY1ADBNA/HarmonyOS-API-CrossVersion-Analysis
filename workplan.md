@@ -1,5 +1,6 @@
 # 工作计划与交接
 
+最后更新：2026-11-01（Asia/Shanghai，张舒阳 EXF-001）。技术检查基线：35e72f782fd3c4e618b0b904b9f669f5b3f5dd2c。
 ## YU-AUDIOCONFIG-20261012 音频配置类型扩展
 
 - 状态：本批执行与自查完成，待成员验收；用户要求每一步完成后检查和修复 bug，采用原文核对 → 专用适配 → 回归 → 五发行重跑 → 独立检索验证 → 发布核对。
@@ -95,8 +96,6 @@
 - 未更新：API原始资料、正式提取数据、RAG/Neo4j数据库及网站均不在本次文档提交范围。
 - 下一步：完成文档远端发布并记录提交/PR链接；工程实施沿既定计划继续，张舒阳的历史API文件及SDK尚未复制到当前电脑。
 
-最后更新：2026-10-09（Asia/Shanghai）。技术检查基线：35e72f782fd3c4e618b0b904b9f669f5b3f5dd2c。
-
 ## 项目目标
 
 制作用户需求驱动的 API 查询推荐工具：AI 结合 RAG 库检索，推荐一个或多个 API，说明差异、理由及适用条件。目标和现状依据见 [docs/project-goal.md](docs/project-goal.md)。任务完成并验证后勾选对应步骤，紧邻记录实际效果和证据；自查完成与验收确认分开。
@@ -104,7 +103,7 @@
 ## 当前概况
 
 源码、JSON、导入、查询、报告和网站入口已存在，见 [README](README.md) 与[数据规范](docs/data-contract.md)。
-- 默认分支 master；JSON 目录 API、API4.1、API5.0、API5.1、API6.0，API 来源待确认。
+- 默认分支 master；JSON 目录 API4.1、API5.0、API5.1、API6.0、API6.1。
 - 提取存在个人 Windows 路径；_run_import.py 会清空目标默认数据库。
 - 仓库尚无统一 Python/Neo4j 版本或依赖锁定。可用环境的实际版本待成员提供。
 - 2026-10-03 核对 19 个文件（主要脚本、文档、HTML及各数据目录一个 JSON），样本 UTF-8 字节长度与 blob 大小一致，无 BOM、LF；未遍历全部 JSON。
@@ -288,6 +287,48 @@
 - 下一步：先建可复现测试集，逐项补齐结果，最后请求部署/验收确认。
 - 未更新产物：本轮无部署、数据库迁移或业务代码修改。
 
+## UID-001 UID 格式重构：纳入模块/类型并消除重载合并（张舒阳）
+
+- ID/标题、目标与范围：重构 _run_import.py 的 uid 构造，纳入 版本/模块/类型/上级/名称 五要素；所属模块沿父链继承解析（替代 82%「未知模块」）；同文件同键（重载等）追加 #n 消歧，避免 MERGE 错误合并。关联 DATA-001（UID 碰撞验证）与 DATA-002（节点身份含版本、模块、类型）；完整签名语义区分仍留 DATA-002。
+- 负责人/验收人、状态、验收条件：负责人：张舒阳（254358355，本机执行 + AI 辅助）；验收人：待确认。状态：已完成（2026-10-22 张舒阳勾选全部步骤）；验收确认待执行。
+- 验收条件：全量 JSON 预检无跨文件 uid 碰撞；重导入库后各版本无重复 uid；同键重载保留为多个节点；6.0→6.1 对比与网页功能正常。
+- 已完成步骤、涉及文件与成果：
+  - [x] 1. 现状核查。效果：旧 uid 为 version::parent::name，类型参数未使用；@ohos.router.d.ts 中 pushUrl 4 个重载、back 2 个重载同父同名，旧格式下 MERGE 会合并为 1 个节点（数据丢失）；JSON 模块头节点 uid（version::name）与动态创建 Module 节点 uid（version::module::name）不一致，存在重复 Module 节点；method 节点有结构化 parameters 字段，call_signature 无名称（以签名兜底，天然唯一）。另发现 @ohos.router.json 提取遗漏全部函数（仅 4 节点），属提取覆盖缺口，留待后续任务。2026-10-18。
+  - [x] 2. 修改 _run_import.py。效果：新 make_uid(node_type, name, version, module, parent)——Module 节点 version::module::name，其余 version::module::type::parent::name（无上级省略 parent 段）；新增 resolve_module_of() 沿 上级 链继承模块；同文件同 base uid 第 2 次起追加 #n（确定性，断点续传安全）；props 的 module 字段写入解析后的有效模块；BELONGS_TO_MODULE 关系改为按 module_uid != uid 防自环（原 module != uid 为无效比较）。2026-10-18。2026-10-22 增补：unnamed/Unknown 构件 uid 追加 @文件标识8位（file_tag_for() 按 JSON_ROOT 相对路径 SHA1 前 8 位），消除跨文件同键错误合并；模块根与跨文件同名具名节点仍走 MERGE（声明合并，设计内）。
+  - [x] 3. 新增 _check_uids.py 预检脚本。效果：按新算法只读计算全部 JSON 的 uid，报告全局重复（跨文件碰撞）、重载消歧数量、各版本未知模块残留及样本。2026-10-18。2026-10-22 增补：碰撞分类报告——模块根跨文件同 uid（设计内合并）、unnamed/Unknown 构件碰撞、具名节点碰撞分别统计，完整清单写出 06_logs/uid_collisions_full.json；另新增 _check_graph.py（导入后图谱核对：总节点/各版本节点数/重复 uid/Unknown 与 unnamed 残留）与 _verify_extract_fix.py（提取修复小样本验证）。
+  - [x] 4. 同步文档。效果：app.py SYSTEM_PROMPT、CLAUDE.md、docs/data-contract.md 的 uid 格式说明已更新为五要素格式并注明 #n 消歧与预检入口。2026-10-18。
+  - [x] 5. 全量预检。效果（2026-10-22，_check_uids.py）：总记录 88,440；重载 base 5,112 个、#n 节点 9,453；未知模块 0（父链解析后全部有模块）；模块根设计内合并 190 个 uid/3,680 处记录；unnamed/Unknown 碰撞修复后为 0；具名节点跨文件碰撞 1,528 个 uid/3,194 处记录（如 DismissDialogAction 在 4 个 ArkUI 文件重复声明），属跨文件声明合并（设计内，MERGE 后属性以最后写入文件为准，完整区分留给 DATA-002/v2 的 declaration_id）。修复前旧预检显示 unnamed 跨文件碰撞（如 API6.1::@kit.ArkUI::Unknown::@kit.ArkUI::unnamed 136 文件同键），即本次 @文件标识 消歧的由来。
+  - [x] 6. 提取端「未知模块」根因修复。效果（2026-10-22）：队友审计复现根因——extract_api_info.py 的 extract_info(isIn=True) 不返回所属模块，内层成员全部填「未知模块」；已在内层 info 补父级分组传播（沿父链继承所属模块）。小样本验证（_verify_extract_fix.py，6.1 源码）：bluetooth.access 34 节点未知 32→0、bluetooth.connection 15 节点未知 13→0，节点数与名称顺序均不变。全量重提取留待后续任务（需重跑 _run_extract.py 再重导）。
+  - [x] 7. 全量重导与回归。效果（2026-10-22，修复后代码）：4,084/4,084 OK、0 失败、耗时 498.2s；处理记录 88,440 与预检一致。图谱：总节点 83,284（= 88,440 − 模块根合并 3,490 − 跨文件具名声明合并 1,666，与预检推算精确一致）；各版本 API4.1 7,354 / API5.0 17,327 / API5.1 18,633 / API6.0 19,230 / API6.1 20,740（旧方案 72,872，净增 10,412 来自重载/unnamed 保留）；重复 uid 查询无；#n 重载节点 9,397；unnamed/Unknown 节点全部带 @文件标识（跨文件不再合并）。冒烟：/api/versions 返回 5 版本含 6.1；/api/compare?old=API6.0&new=API6.1 返回真实对比（含按模块归因）。此前旧代码导入曾于 3,706/4,084 被中断，图谱为半成品，进度文件已备份为 import_progress.oldcode-interrupted-20261022.bak，该次数据已被本次全量重导替换。
+- 分支/提交/PR、本地未提交改动：尚未提交；改动文件 _run_import.py、_check_uids.py（新增）、_check_graph.py（新增）、_verify_extract_fix.py（新增）、extract_api_info.py、app.py、CLAUDE.md、docs/data-contract.md、workplan.md。另 2026-10-22 从 origin/master 摘入队友 PR #14 的 8 个 v2 身份文件（docs/api-identity-v2.md、tools/*、examples/*、docs/official-data-delivery/*，暂存未提交）。
+- 验证环境、输入、命令与工作目录：Windows 11 本机；Neo4j 5.26.4 community（127.0.0.1:7687）；命令：python _check_uids.py、python _verify_extract_fix.py、python _run_import.py、python _check_graph.py；工作目录 C:\Users\MR\Desktop\HarmonyAPI_Project。
+- 预期结果、实际结果、证据：预期重导后 5 版本节点总数与重导前基本一致（重复 Module 节点合并会小幅减少），无重复 uid，重载保留多节点，unnamed 构件按文件独立。实际：总节点 83,284（重导前 72,872，净增来自重载保留 9,397 个 #n 节点与 unnamed 按文件独立，模块根/跨文件同名具名声明合并小幅减少）；重复 uid 0；证据 06_logs/import_20261022_fixed.txt、06_logs/graph_check_20261022_fixed.txt、06_logs/check_uids_20261022_v2.txt、06_logs/flask_smoke_20261022.txt。
+- 决定及原因、阻塞及所需信息：重导前必须删除/移走 import_progress.txt，否则断点续传会跳过文件且不清库（新旧 uid 混存）。决定：unnamed/Unknown 构件用 @文件标识 消歧而非删除——它们含描述/注释信息，v2 契约也要求以 declaration 定位保留；跨文件同名具名节点视为声明合并，接受 MERGE SET 覆盖限制（属性以最后写入文件为准）并记录，完整区分留给 DATA-002/v2 的 declaration_id。另注：Neo4j 5.26 上 `=~` 正则匹配实测返回 False（'x@a7b71354' =~ '@[0-9a-f]{8}$'），验证查询改用 CONTAINS/ENDS WITH；app.py 若有用到 =~ 的查询需另行核对。阻塞：Bash 权限分类器间歇不可用（2026-10-22 会话多次中断命令执行，部分命令由成员手动执行）。
+- 尚未更新的数据或报告：正式 JSON 未重提取（提取修复需全量重跑 _run_extract.py 后生效）；报告未重生成；run_analysis.py 未重跑。
+- 下一步（具体文件和动作）：提交并推送 feat/api6.1（更新 PR #8）→ 提取修复全量重跑与数据对账（后续任务，需重跑 _run_extract.py + 重导）→ v2 身份旁路生成小样本（DATA-002/v2 契约）。
+- 最后更新时间（时区）、进展记录：2026-10-22（Asia/Shanghai）。当日同步队友 PR #14 的 API 身份 v2 契约，完成预检增强与分类、unnamed 构件 @文件标识 消歧、提取端父级分组传播修复及小样本验证（bluetooth.access 未知 32→0、connection 13→0，节点数与顺序不变）；修复后代码全量重导 4,084 文件成功并完成图谱核对与接口冒烟。
+
+## EXF-001 提取解析缺口修复与全量重提取（UID-001 续，张舒阳）
+
+- ID/标题、目标与范围：修复 extract_api_info.py 解析缺口——内联对象字面量属性（`confirm?: { ... }`）与跨行函数类型属性（`onStateChange?: (event: { ... }) => void`）此前使 process_body L618 抛 KeyError '名称'：在 single_decls 路径直接令整文件失败（API5.0 action_sheet.d.ts 自首次提取以来从未成功），在结构体块路径被 try/except 静默吞掉（整块其余成员丢弃）；随后全量重提取 5 版本 JSON、全量重导图谱并对账。
+- 负责人/验收人、状态、验收条件：负责人：张舒阳（254358355，本机执行 + AI 辅助）；验收人：待确认。状态：已完成（2026-11-01 勾选）；验收确认待执行。验收条件：全量提取 0 失败 0 块级报错；新旧 JSON 对账无回归；预检无跨文件 uid 碰撞、未知模块为 0；重导后图谱无重复 uid、5 版本可查询、接口冒烟正常。
+- 已完成步骤、涉及文件与成果：
+  - [x] 1. 根因定位。效果：API5.0 action_sheet.d.ts 的 `confirm?: { enabled?: boolean; ... }` 不匹配任何既有分支（is_property_declaration 字符类不含 `{`），current_info 无 名称/类型，处理内层成员时 L618 KeyError；该文件从未在 git 中出现过（git ls-files 无 API5.0 action_sheet.json，仅 4.1/5.1/6.0/6.1 有）。块级同类错误（alert_dialog、common 等）被 L769 try/except 吞掉，整块静默丢弃；grep 源码 `name: {` 132 处、`name?: (event: {` 19 处。2026-11-01。
+  - [x] 2. 修改 extract_api_info.py。效果：is_property_declaration 分支后新增两个分支——`name?: {` → property（属性类型 '{...}'，成员由后续循环解析为子节点）；`name?: (` → property（属性类型 'function'，参数内联对象成员为子节点）；single_decls 循环补 try/except（与结构体块循环容错一致，防止单构造令整文件失败）。2026-11-01。
+  - [x] 3. 全量重提取。效果（python _run_extract.py）：4,085/4,085 OK、0 失败、0 块级/声明级报错、88,599 节点（修复前 88,440，+159 恢复）、13.8s。2026-11-01。
+  - [x] 4. 新旧 JSON 对账。效果：git archive 导出 HEAD 版 4,084 个 JSON 逐一对比节点数——7 文件增益、0 损失、0 回归；API5.0 action_sheet.json 全新生成（0→45 节点）；common.json 四版本 +18/+21/+28/+26；alert_dialog 5.0 +14；particle 5.0 +5。2026-11-01。
+  - [x] 5. UID 预检（python _check_uids.py）。效果：总记录 88,599；重载 base 5,123、#n 节点 9,450；未知模块各版本 0（提取端父级分组传播在全量 JSON 生效）；unnamed/Unknown 碰撞 0；模块根设计内合并与具名跨文件声明合并 1,536（如 dataUriUtils 两文件声明，设计内）。2026-11-01。
+  - [x] 6. 全量重导（python _run_import.py，先移走 import_progress.txt）。效果：4,085/4,085 OK、0 失败、517.0s；处理记录 88,599、关系 169,024；图谱总节点 83,431（原 83,284，+147）；各版本 API4.1 7,352 / API5.0 17,403 / API5.1 18,653 / API6.0 19,257 / API6.1 20,766。2026-11-01。
+  - [x] 7. 图谱核对（python _check_graph.py）：重复 uid 无；#n 重载节点 9,394；unnamed 4,400、Unknown 4,335，全部带 @文件标识。接口冒烟：/api/versions 返回 5 版本；/api/compare?old=API6.0&new=API6.1 返回真实对比。抽查恢复节点：API5.0 confirm（属性类型 '{...}'，父链 @kit.ArkUI/AlertDialogParamWithConfirm/Colors）、API6.1 onStateChange 父级 PopupCommonOptions/CustomPopupOptions/SwipeActionItem 均完整可查询。2026-11-01。
+  - [x] 8. _check_graph.py 修复。效果：文件标识统计原用 CONTAINS '@' 把 @kit 模块名全部计入（误报 83,431），改为 `=~ '.*@[0-9a-f]{8}$'` 锚定末尾（此前 10-22 记录 =~ 返回 False 系 Java 全串匹配缺 `.*` 前缀，补后实测 4,400 精确）。2026-11-01。
+- 分支/提交/PR、本地未提交改动：分支 feat/api6.1；提交 052d5c5（提取器修复 + 3,832 个 JSON 重提取，含新增 API5.0 action_sheet.json）、df03838（_check_graph.py 修复）；fb92732（UID-001）已于当日推送成功，PR #8 已更新；待合并 master 后推送。敏感/临时文件（server_creds.txt、deploy*.py、import_progress*、*.tar.gz）保持未跟踪。
+- 验证环境、输入、命令与工作目录：Windows 11 本机；Neo4j 5.26.4 community（127.0.0.1:7687）；命令：python _run_extract.py、echo y | python enhance_json.py、python _check_uids.py、python _run_import.py、python _check_graph.py（凭据 NEO4J_PASSWORD 环境变量）、python app.py + curl 冒烟；工作目录 C:\Users\MR\Desktop\HarmonyAPI_Project。
+- 预期结果、实际结果、证据：预期修复后全量提取无失败、JSON 未知模块归零、对账无回归、重导后无重复 uid。实际全部达成（数字见各步骤）。证据：06_logs/extract_full_20261101_v2.log、extract_log_20261101_095505.txt、uid_collisions_full.json、import_20261101_v2.log、flask_smoke_20261101.log；旧 JSON 对账脚本输出（TEMP 目录）。
+- 决定及原因、阻塞及所需信息：决定——新分支恢复为 property 节点（'{...}'/'function' 属性类型）而非 Unknown，因为父级分组传播已就绪、子成员可挂父链；已知限制——`constructor(x: {...})` 参数内联对象成员仍不进子节点（方法节点走 parameters 字段模型，5 处，留待后续）；`name: [` 元组类型在函数参数中（6 处）属既有参数模型，非崩溃点。阻塞：无。
+- 尚未更新的数据或报告：跨版本分析报告未重生成（图谱净变化 +147 节点，报告数字需更新）；run_analysis.py 十项分析未重跑；在线部署（http://47.114.40.66:5000/）未更新；PR #8 尚未合并 master。
+- 下一步（具体文件和动作）：feat/api6.1 合并 origin/master（31 提交）并解决冲突 → 推送后请队友/负责人合 PR #8 → 重生成报告与 run_analysis.py → v2 身份旁路生成小样本（DATA-002/v2 契约）。
+- 最后更新时间（时区）、进展记录：2026-11-01（Asia/Shanghai）。当日定位并修复提取解析缺口，全量重提取 + 重导对账全链路完成，fb92732 推送成功（远端地址内嵌 token 失效，改用 Windows 凭据管理器认证）。
+
 ## 新任务固定字段
 
 - ID/标题、目标与范围：
@@ -354,3 +395,38 @@
   - 配合步骤 05B（智能体调用）将 DocRetriever 包装为 Agent Tool（如 LangChain Tool 或标准函数），为大模型提供 API 属性与文档查证支撑。
 - 最后更新时间（时区）、进展记录：
   - 2026-10-09（Asia/Shanghai）：完成 05A 官方文档深度审查与缺陷修复，18 项测试全部通过；完成 4 版本 13,887 文件全量压力审计与缺陷归因，发布 docs/official-doc-ingestion-audit.md 并接入主线文档入口。
+
+## VER-001 API6.1 版本数据接入与全链路更新（任务一，张舒阳）
+
+- ID/标题、目标与范围：VER-001 下载 OpenHarmony 6.1 API 源文件，接入提取→JSON→导入→报告全链路，更新脚本与网页版本列表；即任务一。
+- 负责人/验收人、状态、验收条件：负责人：张舒阳（254358355，本机执行 + AI 辅助）；验收人：待确认。状态：已完成（张舒阳于 2026-10-11 勾选）；验收确认待执行。
+- 验收条件：API6.1 数据入库可查询；6.0→6.1 对比有真实结果；网页版本列表含 6.1。
+- 已完成步骤、涉及文件与成果：
+  - [x] 1. 源码获取。效果：确认 gitee 仓库 interface_sdk-js 已停更（最新 6.0-Release，weekly 分支止于 2025-09），官方迁移至 gitcode.com/openharmony/interface_sdk-js；本地 SDK 仓库添加 gitcode 远程并检出 OpenHarmony-6.1-Release，复制 902 个 .d.ts 到 01_source_files/API6.1（该目录被 .gitignore 忽略，不入库）。2026-10-11。
+  - [x] 2. 解析与增强。效果：902 个 JSON 提取+增强全部成功（03_extracted_json/API6.1，随提交入库）。2026-10-11。
+  - [x] 3. 导入图谱。效果：_run_import.py 断点续传增量导入，902 文件 OK、0 失败、99 秒；库内 API6.1 唯一节点 18,302、关系 24,823；总节点 77,778→96,080（含 API 目录 23,208，该目录已于 VER-002 移除）。2026-10-11。
+  - [x] 4. 版本列表更新。效果：app.py、agent.py、extract_versions.py、04_analysis_queries/run_analysis.py、templates/index.html、CLAUDE.md、README.md 均加入 API6.1。2026-10-11。
+  - [x] 5. 报告重生成。效果：修复 _gen_report.py 循环变量 d 遮蔽 driver 的 bug，重生成报告 3,551 行（原 2,847），含 6.0→6.1 全部对比分析。2026-10-11。
+- 分支/提交/PR、本地未提交改动：任务分支 feat/api6.1；提交与 PR 链接见仓库。本地敏感文件（server_creds.txt）与大体积部署包（*.tar.gz）不入库，已加入 .gitignore；deploy*.py、remote_deploy.py、import_progress.txt 保持未跟踪。
+- 验证环境、输入、命令与工作目录：Windows 11 本机；Neo4j 5.26.4 community（127.0.0.1:7687）；命令：git fetch/检出、python _run_import.py、python _gen_report.py；工作目录 C:\Users\MR\Desktop\HarmonyAPI_Project。
+- 预期结果、实际结果、证据：预期 6.1 数据入库并产生对比。实际：API6.1 节点 18,302（6.0 为 16,570，净增 1,732）、模块 70；6.0→6.1 类/接口/枚举 +363/-145（ArkUI +186 占一半以上），方法/属性 +1,647/-619；新模块 @kit.API10LessDeprecatedModules（21 节点：旧 File API、formInfo、hiAppEvent、wantAgent）；蓝牙 connection.d.ts 从 167 节点降至 15（BondState、ScanMode 等 20+ 类型移除，公共类型抽到新增 bluetooth.common 文件，已用 6.1 源码核实非解析失败）；AbilityKit 移除 AutoFill/UIService Extension、状态观察者系列等 24 个。网页实测：/api/versions 返回含 API6.1，/api/compare?old=API6.0&new=API6.1 返回真实对比，首页 HTTP 200。
+- 决定及原因、阻塞及所需信息：选 gitcode 因 gitee 仓库冻结无 6.1；选增量导入而非清库全量重导，避免无谓重导旧版本；6.1 与 6.1-LTS 之间选 Release 分支沿用既有惯例。阻塞：无。数据质量提示：方法/属性级 module 字段约 82% 为「未知模块」（6.0/6.1 相同），成员级变更无法按模块归因，报告 4.7 节已注明。
+- 尚未更新的数据或报告：在线部署（http://47.114.40.66:5000/）未更新；run_analysis.py 十项分析未重跑。
+- 下一步（具体文件和动作）：合并 feat/api6.1 PR 至 master；验收人确认后标已验收；如需 6.1-LTS 或 7.0 可沿用同一流程（gitcode 上已有分支）。
+- 最后更新时间（时区）、进展记录：2026-10-11（Asia/Shanghai）。当日完成全链路并勾选任务一。
+
+## VER-002 移除未标注版本的 API 目录
+
+- ID/标题、目标与范围：VER-002 从项目中删除最早的、未带版本标注的 API 目录（01_source_files/API 与 03_extracted_json/API，来源不明、从未在网页版本列表中展示），并同步清理图谱与文档。
+- 负责人/验收人、状态、验收条件：负责人：张舒阳（254358355，本机执行 + AI 辅助）；验收人：待确认。状态：已完成。验收条件：源文件/JSON/图谱/文档中不再出现未标注的 API 版本数据，其余 5 个版本数据完好。
+- 已完成步骤、涉及文件与成果：
+  - [x] 1. 删除源文件与 JSON。效果：rm 01_source_files/API（3,978 个 .d.ts，git 忽略目录）；git rm 03_extracted_json/API（1,250 个 JSON，et+js 两个子目录）。2026-10-11。
+  - [x] 2. 清理图谱。效果：MATCH (n {sdk_version:'API'}) DETACH DELETE n，删除 23,208 节点；总节点 96,080→72,872；剩余 API4.1 6,197 / API5.0 15,335 / API5.1 16,468 / API6.0 16,570 / API6.1 18,302。2026-10-11。
+  - [x] 3. 更新文档引用。效果：workplan 概况、CLAUDE.md、docs/data-contract.md（来源与版本一节补 6.1 映射并注明 API 目录移除）、app.py SYSTEM_PROMPT（6 个版本→5 个版本）；修正 VER-001 中总节点数笔误。DATA-001 等历史任务记录保持原样未改。2026-10-11。
+- 分支/提交/PR、本地未提交改动：随 feat/api6.1 分支提交（与 VER-001 同 PR）。import_progress.txt 中 API 前缀的进度行已清理（本地未跟踪文件）。
+- 验证环境、输入、命令与工作目录：Windows 11 本机；Neo4j 5.26.4 community；工作目录 C:\Users\MR\Desktop\HarmonyAPI_Project。
+- 预期结果、实际结果、证据：预期移除后 5 个版本数据不变。实际：删除前后各版本节点数一致（见步骤 2）；网页 /api/overview 与趋势查询均不含 API 版本（VERSIONS 列表本就未含）。
+- 决定及原因、阻塞及所需信息：该目录未带版本标注、来源待确认，不参与网页展示与报告；保留会造成数据源混乱，按成员要求移除。阻塞：无。
+- 尚未更新的数据或报告：报告与 README 的版本表本就不含 API 目录，无需重生成；如需追溯，该目录源码仍可从上游 SDK 仓库历史获取。
+- 下一步（具体文件和动作）：随 VER-001 的 PR 一并合并；验收人确认后标已验收。
+- 最后更新时间（时区）、进展记录：2026-10-11（Asia/Shanghai）。当日完成删除与清理。

@@ -1,6 +1,6 @@
 # HarmonyOS API 跨版本迁移变化分析报告
 
-> 基于知识图谱分析，覆盖 API4.1、API5.0、API5.1、API6.0 四个版本
+> 基于知识图谱分析，覆盖 API4.1、API5.0、API5.1、API6.0、API6.1 五个版本
 
 ## 一、版本数据总览
 
@@ -10,6 +10,7 @@
 | API5.0 | 15,335 | 1762 / 543 | 4770 / 3974 | 71 |
 | API5.1 | 16,468 | 1887 / 570 | 5001 / 4363 | 71 |
 | API6.0 | 16,570 | 1906 / 557 | 5109 / 4547 | 72 |
+| API6.1 | 18,302 | 2057 / 624 | 5539 / 5145 | 70 |
 
 ## 二、4.1 → 5.0（大爆炸——框架创立期）
 
@@ -2791,38 +2792,713 @@
 | -Method | @kit.ArkWeb | -2 |
 | -Method | @kit.ArkUI | -1 |
 
-## 三、API6.0 最终模块版图
+## 二、6.0 → 6.1（清理重组——废弃收纳与增量增强）
+
+### 2.1 总览
+
+| 维度 | 新增 | 删除 | 净变化 |
+|------|------|------|--------|
+| 类/接口/枚举 | +363 | -145 | +218 |
+| 方法/属性 | +1647 | -619 | +1028 |
+
+### 2.2 新增类/接口/枚举（按模块）
+
+#### @kit.ArkUI (+186：Class 26 / Interface 110 / Enum 50)
+
+| 类型 | 名称 | 描述 |
+|------|------|------|
+| Class | ColorMetricsLinearGradient | ColorMetricsLinearGradient class |
+| Class | ConnectOptionsCollections | Define ConnectOptionsCollections class. To be used with globalConnect for collec |
+| Class | ContentTransitionEffect | Defines the content transition effect. |
+| Class | Font | class Font <p><strong>NOTE</strong>: <br>You must first use getFont() in UIConte |
+| Class | IndicatorComponentController | Provides methods for switching components. |
+| Class | LeadingMarginSpan | Defines LeadingMarginSpan. |
+| Class | ListItemSwipeActionManager | The swipe action manager. |
+| Class | LuminanceSampler | class Background luminance sampler. |
+| Class | Magnifier | Provides the method for magnifier capabilities. |
+| Class | NodeController | Defined the controller of node container.Provides lifecycle callbacks for the as |
+| Class | PanGestureOptions | Defines the PanGesture options. |
+| Class | ReactiveBuilderNode | Defines ReactiveBuilderNode. Implements a ReactiveBuilderNode, which can create  |
+| Class | ReactiveComponentContent | Defines ReactiveComponentContent. |
+| Class | RenderNode | Defines RenderNode. Contains node tree operations and render property operations |
+| Class | ResolvedUIContext | Defines the result of UIContext.resolveUIContext. This class is a subclass of UI |
+| Class | SearchController | Provides the method of switching the cursor position. |
+| Class | SpringProp | Customize spring properties. |
+| Class | SwiperController | Provides methods for switching components. |
+| Class | SymbolGlyphModifier | Defines SymbolGlyph Modifier |
+| Class | TextAreaController | Provides the method of switching the cursor position. |
+| Class | TextClockController | Provides a way to control the textclock status. |
+| Class | TextModifier | Defines Text Modifier |
+| Class | TextTimerController | Provides a way to control the process. |
+| Class | UIPickerComponentAttribute | Style the picker. |
+| Class | UIPickerComponentModifier | Defines Picker Modifier |
+| Class | UnionEffectContainerAttribute | Defines the UnionEffectContainer attribute functions. |
+| Enum | AxisType | Define the axis type of axis event. |
+| Enum | BadgePosition | Defines the badge position property. |
+| Enum | ButtonType | Provides a button component. |
+| Enum | CalendarAlign | The type of alignment between entry and calendar. |
+| Enum | CustomComponentLifecycleState | Enum for Lifecycle State type |
+| Enum | CustomKeyboardContinueFeature | Enum of CustomKeyboardContinueFeature |
+| Enum | DataPanelType | DataPanelType enum |
+| Enum | DialogAlignment | The alignment of dialog, |
+| Enum | DpiFollowStrategy | Enumeration of different types of DpiFollowStrategy. |
+| Enum | FormColorMode | Form color mode. |
+| Enum | FormDimension | Defines the FormDimension enum. |
+| Enum | GesturePriority | Creating an Object |
+| Enum | GridItemStyle | Defines the grid item style. |
+| Enum | IndexerAlign | indexer align property. |
+| Enum | InputType | Declare the type of input box |
+| Enum | ItemState | ItemState |
+| Enum | LevelMode | Define the display mode of all kind of dialog |
+| Enum | ListItemGroupStyle | Defines the list item group style. |
+| Enum | ListItemSwipeActionDirection | Declare enum ListItemSwipeActionDirection. |
+| Enum | LoadingProgressStyle | Load style of progress bar. |
+| Enum | MarqueeUpdatePolicy | Marquee scrolling policy after text update. |
+| Enum | MenuKeyboardAvoidMode | Define the mode of menu how to avoid keyboard. |
+| Enum | NodeRenderType | Render type of the node using for indicating that if the node will be shown on t |
+| Enum | PanDirection | Creating an Object |
+| Enum | PatternLockChallengeResult | The challenge result based on input pattern for control pattern lock component. |
+| Enum | PickerIndicatorType | PickerIndicatorType |
+| Enum | PresetFillType | Specify the number of columns for different responsive breakpoints. |
+| Enum | RadioIndicatorType | Defines the IndicatorType of Radio component |
+| Enum | RefreshStatus | The refresh status of the drop-down refresh. |
+| Enum | RenderStrategy | Enum for RenderStrategy. Define Graphics Rendering Strategy. |
+| Enum | ResolveStrategy | Enum of strategy of resolved UIContext. |
+| Enum | ResponseRegionSupportedTool | Defines the event tool type that support response region settings. |
+| Enum | RichEditorDeleteDirection | Defines delete text direction. |
+| Enum | RouteType | Declare the jump method. |
+| Enum | ScrollBarDirection | Content scroll direction. |
+| Enum | ScrollDirection | Enumerates the scrolling directions. |
+| Enum | ScrollSnapAnimationSpeed | Declare the speed scroll snap animation. |
+| Enum | ScrollState | Declare scroll status |
+| Enum | SeekMode | Seek mode. |
+| Enum | SelectStatus | CheckboxGroup SelectStatus |
+| Enum | SelectedMode | Enum for the mode of the tab bar when selected. |
+| Enum | SideBarContainerType | Sets the sidebar style of showing |
+| Enum | SliderStyle | Style of the slider thumb and track. |
+| Enum | Sticky | Declare item ceiling attribute. |
+| Enum | SystemProperties | Defining Environment variable enumeration value. |
+| Enum | TextContentAlign | Alignment of text. |
+| Enum | TextDataDetectorType | Defines the text data detector type. |
+| Enum | TextDirection | Defines text direction. |
+| Enum | ToggleType | Declare the type of status button |
+| Enum | VisibilityChangeReason | The reason of navDestination be shown or hidden. |
+| Interface | ASTCResource | Defines the resource which can use ASTC. |
+| Interface | AccessibilityActionOptions | Defines the struct of AccessibilityActionOptions that can affect operation under |
+| Interface | AccessibilitySpanOptions | Configuration for Accessibility . |
+| Interface | AnimationController | Define the data structure for PixelMap animations. |
+| Interface | AnimatorOptions | Defines the animator options. |
+| Interface | BackgroundLuminanceSamplingConfigs | Configuration parameters for background luminance sampling. |
+| Interface | BlankInterface | Create Blank. |
+| Interface | CacheCountInfo | Define cache count information. |
+| Interface | CalendarDay | Provides a monthly view component to display information such as date, shift bre |
+| Interface | CanvasParams | Defines the parameters for creating Canvas. |
+| Interface | CheckBoxGroupConfiguration | CheckBoxGroupConfiguration used by content modifier. |
+| Interface | CheckboxOptions | Defines the options of Checkbox. |
+| Interface | CircleOptions | Defines circle options for Circle component. |
+| Interface | ColorMetricsStop | ColorMetricsStop type |
+| Interface | ColumnSplitInterface | Defines the ColumnSplit component. |
+| Interface | ContainerSpanInterface | Span container interface. |
+| Interface | CounterInterface | Counter component, which provides corresponding increment or decrement counting  |
+| Interface | CustomComponentLifecycle | CustomComponent Lifecycle. It is used to monitor changes in the lifecycle of the |
+| Interface | CustomComponentLifecycleObserver | CustomComponent LifecycleObserver. When a user registers a custom component life |
+| Interface | CustomDialogControllerOptions | Defines the options of CustomDialogController. |
+| Interface | DatePickerResult | Defines the struct of DatePickerResult. |
+| Interface | DecoratorInfo | The UI component information associated with the object data. |
+| Interface | DividerInterface | Provides a divider component to separate different content blocks/content elemen |
+| Interface | DrawableDescriptorLoadedResult | The result of loading image. |
+| Interface | DrawableTabBarIndicator | Provide an interface for the style of a drawable indicator including margin top. |
+| Interface | EffectComponentInterface | Provides an Effect Component, which is invisible, but setting properties on this |
+| Interface | ElementInfo | The custom component and UI component information. For the V2 @Monitor or @Compu |
+| Interface | EllipseOptions | Ellipse constructor options. |
+| Interface | EmbeddedComponentInterface | Provide an interface for the EmbeddedComponent, which is used <br/>to render UI  |
+| Interface | FieldRegion | Defines particle field region params. |
+| Interface | FlexOptions | Describes the layout and alignment of child components within the Flex component |
+| Interface | FlowItemInterface | Mesh container for static fixed-size layout scenarios. |
+| Interface | FocusBoxStyle | Focus box style. |
+| Interface | FormLinkOptions | Defines the FormLink options. |
+| Interface | GaugeOptions | Defines Gauge constructor options. |
+| Interface | GestureGroupGestureHandlerOptions | Defines the GestureGroupGestureHandler options. |
+| Interface | GestureGroupInterface | Defines the GestureGroup interface. |
+| Interface | GridColColumnOption | Defines the option in number unit of grid-container child component. |
+| Interface | GridLayoutOptions | The options to help grid layout |
+| Interface | GridRowSizeOption | Defines the option in length unit of grid-row component. |
+| Interface | HorizontalAlignParam | Defines the horizontal align rule of relative container. |
+| Interface | HyperlinkInterface | Defines the hyperlink interface. |
+| Interface | ImageAlt | Set the placeholder image. |
+| Interface | ImageAnimatorInterface | Defines the ImageAnimator Interface. |
+| Interface | ImageSpanInterface | Provide image decoration in the text component. |
+| Interface | ItemFillPolicy | Define a responsive item layout suitable for WaterFlow, Grid, List,and Swiper co |
+| Interface | LayoutConstraint | Layout constraint, include the max size, the min size and the reference size for |
+| Interface | LazyVGridLayoutInterface | Defines the lazy vertical grid layout component. |
+| Interface | LeadingMarginSpanDrawInfo | Defines the LeadingMarginSpanDrawInfo interface. |
+| Interface | LongPressGestureHandlerOptions | Defines the LongPressGestureHandler options. |
+| Interface | LongPressGestureInterface | Defines LongPressGesture interface extends GestureInterface<LongPressGestureInte |
+| Interface | MarqueeOptions | Defines Marquee constructor options. Anonymous Object Rectification. |
+| Interface | MeasureOptions | Defines the options of MeasureText. |
+| Interface | MenuInterface | Defines the Menu Component. |
+| Interface | MenuItemGroupOptions | Defines the option of MenuItemGroup. |
+| Interface | MenuItemOptions | Defines the option of MenuItem. |
+| Interface | NavDestinationSwitchObserverOptions | Indicates the options of NavDestination switch. |
+| Interface | NavigationDividerStyle | Define the style of the Navigation divider. |
+| Interface | NodeContainerInterface | Defines the Interface of NodeContainer. To display the node build by an associat |
+| Interface | ObservedResult | The return result that defines whether the object data is observable. |
+| Interface | PanGestureHandlerOptions | Defines the PanGestureHandler options. |
+| Interface | PathOptions | Define options used to construct a path. |
+| Interface | PickerIndicatorStyle | Defines the options of Indicator style. |
+| Interface | PinchGestureHandlerOptions | Defines the PinchGestureHandler options. |
+| Interface | PinchGestureInterface | Defines PinchGesture interface extends GestureInterface<PinchGestureInterface>. |
+| Interface | PolygonOptions | Define options used to construct a polygon. |
+| Interface | PolylineOptions | Define options used to construct a polyline. |
+| Interface | QRCodeInterface | Provides an interface for generating QR codes. |
+| Interface | RRect | Round rect. |
+| Interface | RatingOptions | Define options used to construct a rating. |
+| Interface | RelativeContainerInterface | Provides ports for relativeContainer. |
+| Interface | RenderingContextOptions | Defines the options for rendering context. |
+| Interface | ResponseRegion | Defines the response region interface. |
+| Interface | RichTextInterface | Provides an interface for RichText component. |
+| Interface | RippleFieldOptions | Defines ripple field options. |
+| Interface | RootSceneSession | Defines the session of RootScene. |
+| Interface | RotationGestureHandlerOptions | Defines the RotationGestureHandler options. |
+| Interface | RotationGestureInterface | Defines RotationGesture interface extends GestureInterface<RotationGestureInterf |
+| Interface | RowOptions | Define options used to construct a row. |
+| Interface | RowSplitInterface | Provides interfaces for layout in the vertical direction. |
+| Interface | ScreenInterface | Defines the interface of Screen. |
+| Interface | SelectOption | The declare of selectOption. |
+| Interface | SelectedDragPreviewStyle | Selected drag preview style configuration. |
+| Interface | ShapeSize | Interface for shape size properties. |
+| Interface | SheetInfo | The information of sheet. |
+| Interface | StackOptions | Options used to construct the stack. |
+| Interface | StartLineInfo | Define start line info used in GridLayoutOptions. |
+| Interface | SurfaceConfig | Surface config. |
+| Interface | SurfaceRect | Surface Rectangle information. |
+| Interface | SwipeGestureHandlerOptions | Defines the SwipeGestureHandler options. |
+| Interface | SwipeGestureInterface | Defines SwipeGesture interface extends GestureInterface<SwipeGestureInterface>. |
+| Interface | SwiperContentInfo | The information returned when the Swiper content changes. |
+| Interface | SwiperItemInfo | The information of changed SwiperItem. |
+| Interface | SymbolGlyphInterface | Provides an interface for SymbolGlyph. |
+| Interface | SymbolSpanInterface | Provides an interface for SymbolSpan. |
+| Interface | TapGestureHandlerOptions | Defines the TapGestureHandler options. |
+| Interface | TextBackgroundStyle | Define the background style of span. |
+| Interface | TextOverflowOptions | Text overflow options. Anonymous Object Rectification. |
+| Interface | TextPickerRangeContent | Define the contents of each selector item. |
+| Interface | Theme | Defines the struct of Theme. |
+| Interface | TimePickerResult | Defines the struct of TimePickerResult. |
+| Interface | UIPickerComponentInterface | UIPickerComponentInterface |
+| Interface | UIPickerComponentOptions | Defines the options of Picker. |
+| Interface | UnionEffectContainerInterface | Provides a UnionEffectContainer Component that generates a component fusion effe |
+| Interface | UnionEffectContainerOptions | Defines the constructor options for UnionEffectContainer. |
+| Interface | VelocityFieldOptions | Defines velocity field options. |
+| Interface | VerticalAlignParam | Defines the vertical align rule of relative container. |
+| Interface | ViewportRect | Viewport bounding box. |
+| Interface | VoiceButtonOptions | Defines the voice button options. |
+| Interface | WindowSceneInterface | Defines the interface of WindowScene. |
+
+#### 未知模块 (+75：Class 6 / Interface 37 / Enum 32)
+
+| 类型 | 名称 | 描述 |
+|------|------|------|
+| Class | CommonController | The class used to control common dialog. |
+| Class | ContextRecoveryInfo | Context information of the exit status of PhotoPicker, which can be used for on- |
+| Class | DialogController | The class used to control dialog. |
+| Class | HashStream | Hash Stream. |
+| Class | Material | Define the class of material. |
+| Class | unnamed | Obtains the classification of this notification. |
+| Enum | AppPreloadType | Indicates the app preload type. |
+| Enum | AudioLoopbackEqualizerPreset | Enumerates audio loopback equalizer preset. |
+| Enum | AudioLoopbackReverbPreset | Enumerates audio loopback reverberation preset. |
+| Enum | BluetoothAddressType | Enum for the type of Bluetooth address. |
+| Enum | BluetoothRawAddressType | Enum for the type of Bluetooth raw address. The enum is used only when the {@lin |
+| Enum | BusinessId | Business identifiers supported by the companion device authentication service. D |
+| Enum | CacheStrategy | Cache strategy for resources. |
+| Enum | CollectStrategy | Enum indicates page information collection strategy. |
+| Enum | CommonState | Enum for state. |
+| Enum | DistanceRank | Enum for distance rank. |
+| Enum | DragStatus | Defines the Drag Status. |
+| Enum | ErrorCode | Error codes categorizing different types of cache download failures. |
+| Enum | ErrorCode | The error code of rpc. |
+| Enum | HuksExternalCryptoTag | Enumerates the tags used to invoke parameters. |
+| Enum | HuksExternalCryptoTagType | Enumerates the huks external crypto tag data types. |
+| Enum | HuksExternalPinAuthState | Enumerates the PIN auth states. |
+| Enum | InstanceType | Define the instance type of VM. |
+| Enum | MaterialType | Enum of the type of material. |
+| Enum | NavDestinationState | NavDestination state. |
+| Enum | PartialResultType | Provides stream output result type definition. |
+| Enum | Pattern | Enumerates the patterns allowed in the system pasteboard. |
+| Enum | PointerStyle | Enumerates mouse pointer styles. |
+| Enum | PositionRelativeToDoor | Enum for identification result inside and outside the door |
+| Enum | PowerKeyFilteringStrategy | Power key filtering strategy. |
+| Enum | ReportingMode | Enum for distance measurement result reporting modes. |
+| Enum | SessionCategory | Session category for different scenes. |
+| Enum | ShareOption | Types of scope that PasteData can be pasted. |
+| Enum | SslType | The secure communication protocol. |
+| Enum | SyncFolderState | Enumerates the syncFolder state of the cloud disk. |
+| Enum | TechnologyType | Enum for distance measurement technology types. |
+| Enum | ToastShowMode | Enum for the toast showMode. |
+| Enum | WantAgentFlags | Enumerates flags for using a WantAgent. |
+| Interface | AVMusicTemplateDescriptor | Description of the AVMusicTemplate. |
+| Interface | ActionMenuOptions |  |
+| Interface | ActionMenuSuccessResponse |  |
+| Interface | ApplicationInstance | Application instance data. |
+| Interface | AwarenessItem | Interface provides comprehensive page information, covering content, links, imag |
+| Interface | BaseDialogOptions | Dialog base options |
+| Interface | BluetoothAddress | Describe the type of Bluetooth address. |
+| Interface | Button |  |
+| Interface | ConnectionNativeInfo | Indicates connection information about web native messaging connection |
+| Interface | CustomDialogOptions | Dialog's custom content options |
+| Interface | DataMigrationProgress | Provides the DataMigration progress information. |
+| Interface | DialogOptions | Dialog options |
+| Interface | DistanceMeasurementConfigParams | Configuration parameters for the distance measurement interface |
+| Interface | DistanceMeasurementResponse | Interface for distance measurement result |
+| Interface | DoorPositionResponse | Interface for indoor or outdoor identify result |
+| Interface | DragAction | One drag action object for drag process |
+| Interface | DragAndDropInfo | Drag and drop information |
+| Interface | EdgeEffectOptions | Define EdgeEffect Options. |
+| Interface | EntityInfo | Interface provides detailed entity information for a page, including content, li |
+| Interface | FontOptions |  |
+| Interface | GraphicsMemorySummary | Graphics memory summary. |
+| Interface | HuksExternalCryptoParam | Defines the param field used in the APIs. |
+| Interface | ImageStyle | Style types supported by AI image generation models, like Graffiti, Watercolor. |
+| Interface | KeyOptions | Represents combination key options. |
+| Interface | LaunchParam | Defines the parameters for starting an ability. The parameter values are automat |
+| Interface | MaterialOptions | Define the interface containing various material parameters. |
+| Interface | OnscreenAwarenessCap | Interface for onscreen awareness capabilities, includes page content, page links |
+| Interface | OnscreenAwarenessInfo | Interface for onscreen awareness response info. |
+| Interface | OnscreenAwarenessOptions | Interface for scenario-specific screen information, provides parameters to acces |
+| Interface | PasteDataProperty | Defines the properties of all data records on the pasteboard, including the time |
+| Interface | PasteDataRecord | Paste data record. |
+| Interface | Policy | Identify Policy |
+| Interface | ShowDialogOptions |  |
+| Interface | ShowDialogSuccessResponse |  |
+| Interface | SnapshotRegion | Defines the target region information for snapshot taking. |
+| Interface | WebHeader | Defines the Web's request/response header. |
+| Interface | WindowRect | Window Rectangle |
+
+#### @kit.ArkWeb (+28：Class 3 / Interface 14 / Enum 11)
+
+| 类型 | 名称 | 描述 |
+|------|------|------|
+| Class | VerifyPinHandler | Passes the PIN code verify result through VerifyPinHandler#confirm |
+| Class | WebNativeMessagingExtensionAbility | class of web native messaging extension ability. |
+| Class | WebNativeMessagingExtensionContext | The context of web native messaging extension. It allows access to WebNativeMess |
+| Enum | BlankScreenDetectionMethod | The methods can be chosen to detect if current page is blank or nearly blank. |
+| Enum | CameraCaptureState | Indicates current camera capture state of current web page. |
+| Enum | ConsoleMessageSource | The source of console message. |
+| Enum | ContextMenuDataMediaType | Defines the context menu media type, related to {@link onContextMenuShow} method |
+| Enum | CredentialType | Enum type supplied to {@link CredentialType} when ClientAuthenticationHandler#co |
+| Enum | DetectedBlankScreenReason | Enum type supplied to {@link BlankScreenDetectionEventInfo} when onDetectedBlank |
+| Enum | MicrophoneCaptureState | Indicates current microphone capture state of current web page. |
+| Enum | NativeEmbedParamStatus | Enum type supplied to {@link NativeEmbedParamItem} when onNativeEmbedObjectParam |
+| Enum | NavigationPolicy | Enum type for navigationPolicy in OnWindowNewExtEvent. |
+| Enum | PinVerifyResult | Enum type supplied to {@link PinVerifyResult} when VerifyPinHandler#confirm bein |
+| Enum | WebRotateEffect | Enum type supplied to {@link rotateRenderEffect} for setting the effect of rotat |
+| Interface | AcceptableFileType | Define file selection type. |
+| Interface | BlankScreenDetails | The details of this blank screen detection result. |
+| Interface | BlankScreenDetectionConfig | The strategy of blank screen detection. |
+| Interface | BlankScreenDetectionEventInfo | Defines the blank screen detection event info. |
+| Interface | CameraCaptureStateChangeInfo | Defines the camera capture state change info. |
+| Interface | ConnectionInfo | Indicates connection information about web native messaging connection |
+| Interface | FirstScreenPaint | Defines the first screen paint info. |
+| Interface | MicrophoneCaptureStateChangeInfo | Defines the microphone capture state change info. |
+| Interface | NativeEmbedParamDataInfo | Defines the param data info. |
+| Interface | NativeEmbedParamItem | Defines the information of param element. |
+| Interface | OnWindowNewExtEvent | Defines the triggered callback when web page requires the user to create a windo |
+| Interface | UrlRegexRule | Defines the regular expression rule. |
+| Interface | VerifyPinEvent | Defines the event for PIN verification. |
+| Interface | WindowFeatures | Defines the window features info for window.open. |
+
+#### @kit.API10LessDeprecatedModules (+17：Class 1 / Interface 16 / Enum 0)
+
+| 类型 | 名称 | 描述 |
+|------|------|------|
+| Class | File |  |
+| Interface | FileAccessOption |  |
+| Interface | FileCopyOption |  |
+| Interface | FileDeleteOption |  |
+| Interface | FileGetOption |  |
+| Interface | FileListOption |  |
+| Interface | FileListResponse |  |
+| Interface | FileMkdirOption |  |
+| Interface | FileMoveOption |  |
+| Interface | FileReadArrayBufferOption |  |
+| Interface | FileReadArrayBufferResponse |  |
+| Interface | FileReadTextOption |  |
+| Interface | FileReadTextResponse |  |
+| Interface | FileResponse |  |
+| Interface | FileRmdirOption |  |
+| Interface | FileWriteArrayBufferOption |  |
+| Interface | FileWriteTextOption |  |
+
+#### @kit.ArkGraphics3D (+13：Class 1 / Interface 10 / Enum 2)
+
+| 类型 | 名称 | 描述 |
+|------|------|------|
+| Class | CylinderGeometry | Define a cylinder. |
+| Enum | PolygonMode | The enum of polygon mode. |
+| Enum | RenderingPipelineType | The enum of rendering pipeline type. |
+| Interface | CameraParameters | Camera creation parameters. Can be used to define extra options for camera creat |
+| Interface | ColorFringeSettings | Defines color fringe parameters. |
+| Interface | Effect | Effect resource. |
+| Interface | EffectParameters | The parameters for effect |
+| Interface | Mat4x4 | Defines Mat4x4 |
+| Interface | OcclusionMaterial | Occlusion material resource |
+| Interface | RenderConfiguration | Global render configuration control |
+| Interface | UnlitMaterial | Unlit material resource |
+| Interface | UnlitShadowAlphaMaterial | Unlit shadow alpha material resource |
+| Interface | VignetteSettings | Defines vignette parameters. |
+
+#### @kit.NotificationKit (+13：Class 2 / Interface 9 / Enum 2)
+
+| 类型 | 名称 | 描述 |
+|------|------|------|
+| Class | NotificationSubscriberExtensionAbility | class of notification subscriber extension ability. |
+| Class | NotificationSubscriberExtensionContext | Class inherited for the notification subscriber extension function. |
+| Enum | CoordinateSystemType | The coordinate type of a geofence. |
+| Enum | TriggerType | The type of a trigger condition. |
+| Interface | EnabledPriorityNotificationByBundleCallbackData | Describes the switch state to Restrict notification capability. |
+| Interface | EnabledPriorityNotificationCallbackData | Describes the main switch state for priority notification. |
+| Interface | Geofence | Defines a geofence. |
+| Interface | GrantedBundleInfo | The NotificationCommonDef module provides APIs for describing the GrantedBundleI |
+| Interface | NotificationExtensionContent | Describes the notification extension content. |
+| Interface | NotificationExtensionSubscriptionInfo | Describes the notification extension subscription info. |
+| Interface | NotificationInfo | The notification info describes the notification to be shared with third party w |
+| Interface | NotificationRequest | Defines a NotificationRequest instance. |
+| Interface | Trigger | Defines a TriggerCondition instance. |
+
+#### @kit.AbilityKit (+11：Class 6 / Interface 3 / Enum 2)
+
+| 类型 | 名称 | 描述 |
+|------|------|------|
+| Class | Ability | The class of an ability. |
+| Class | CompletionHandlerForAbilityStartCallback | A handler to handle the completion events of startAbilityByType. |
+| Class | Context | The Context module, inherited frome {@link BaseContext}, provides context for ab |
+| Class | ServiceExtensionContext | The context of service extension. It allows access to serviceExtension-specific  |
+| Class | StartOptions | StartOptions is the basic communication component of the system. |
+| Class | UIExtensionContentSession | class of ui extension content session. |
+| Enum | AbilityStartFailureCode | Specific failure codes indicating failure of startAbilityByType. |
+| Enum | AutoFillTriggerType | Auto fill service trigger type. |
+| Interface | BundleResourceInfo | Obtains resource information about a bundle |
+| Interface | InteropAbilityLifecycleCallback | The interop ability lifecycle callback. |
+| Interface | LauncherAbilityResourceInfo | Obtains resource information about a launcher ability |
+
+#### @kit.TestKit (+4：Class 0 / Interface 2 / Enum 2)
+
+| 类型 | 名称 | 描述 |
+|------|------|------|
+| Enum | ComponentEventType | Enumerates the component event types that can be listened on. |
+| Enum | WindowChangeType | Enumerates the window change types that can be listened on. |
+| Interface | ComponentEventOptions | Additional listening options of component event. |
+| Interface | WindowChangeOptions | Additional listening options of window change. |
+
+#### @kit.UniversalKeystoreKit (+4：Class 1 / Interface 2 / Enum 1)
+
+| 类型 | 名称 | 描述 |
+|------|------|------|
+| Class | CryptoExtensionAbility | Class to be override for external crypto extension ability. |
+| Enum | HuksCryptoExtensionResultCode | Enum for crypto extension ability result code, used by HuksCryptoExtensionResult |
+| Interface | HuksCryptoExtensionCertInfo | Represents the information of certificate. |
+| Interface | HuksCryptoExtensionResult | Represents the operation result of crypto extension. |
+
+#### @kit.AccessibilityKit (+2：Class 0 / Interface 1 / Enum 1)
+
+| 类型 | 名称 | 描述 |
+|------|------|------|
+| Enum | FocusMoveResultCode | The focus move result code. |
+| Interface | FocusMoveResult | Indicates focus move result. |
+
+#### @kit.ConnectivityKit (+2：Class 2 / Interface 0 / Enum 0)
+
+| 类型 | 名称 | 描述 |
+|------|------|------|
+| Class | PartnerAgentExtensionAbility | Class for the PartnerAgentExtensionAbility. Applications can use this ability to |
+| Class | PartnerAgentExtensionContext | Class for the context of the PartnerAgentExtensionAbility. |
+
+#### @kit.PerformanceAnalysisKit (+2：Class 2 / Interface 0 / Enum 0)
+
+| 类型 | 名称 | 描述 |
+|------|------|------|
+| Class | FaultLogExtensionAbility | Class of the FaultLog extension ability. |
+| Class | FaultLogExtensionContext | The context of FaultLog extension. |
+
+#### @kit.AudioKit (+1：Class 0 / Interface 1 / Enum 0)
+
+| 类型 | 名称 | 描述 |
+|------|------|------|
+| Interface | SystemSoundPlayer | Implements a system sound player that provides functions for loading, unloading, |
+
+#### @kit.BasicServicesKit (+1：Class 0 / Interface 1 / Enum 0)
+
+| 类型 | 名称 | 描述 |
+|------|------|------|
+| Interface | CommonEventSubscriber | The CommonEventSubscriber module provides APIs for describing the common event s |
+
+#### @kit.CoreFileKit (+1：Class 0 / Interface 1 / Enum 0)
+
+| 类型 | 名称 | 描述 |
+|------|------|------|
+| Interface | BundleVersion | Describe bundle version |
+
+#### @kit.FormKit (+1：Class 1 / Interface 0 / Enum 0)
+
+| 类型 | 名称 | 描述 |
+|------|------|------|
+| Class | FormExtensionContext | The context of form extension. It allows access to formExtension-specific resour |
+
+#### @kit.IMEKit (+1：Class 0 / Interface 1 / Enum 0)
+
+| 类型 | 名称 | 描述 |
+|------|------|------|
+| Interface | InputMethodExtraConfig | The extra config of edit box. |
+
+#### @kit.MDMKit (+1：Class 1 / Interface 0 / Enum 0)
+
+| 类型 | 名称 | 描述 |
+|------|------|------|
+| Class | EnterpriseAdminExtensionContext | The context of enterpriseAdmin extension. It allows access to enterpriseAdminExt |
+
+### 2.3 删除类/接口/枚举（按模块）
+
+#### 未知模块 (-69)
+
+| 类型 | 名称 | 描述 |
+|------|------|------|
+| Class | ListFrameNode | Define the List type of FrameNode. |
+| Class | Writable | Streams to which data can be written. |
+| Class | unnamed | Class of the device. |
+| Enum | ActionButtonType | Declares action button type. |
+| Enum | AnalysisType | Analysis type |
+| Enum | BlendMode | Enumerates the blend modes. A blend mode combines two colors (source color and d |
+| Enum | BluetoothTransport | Enum for the transport of a remote device |
+| Enum | BondState | The enum of bond state. |
+| Enum | BusinessType | This enumeration value is used to identify various types of business ability inf |
+| Enum | ComponentType | Indicates the ability component type. |
+| Enum | CompressFlushMode | CompressFlushMode |
+| Enum | CompressLevel | CompressLevel |
+| Enum | CompressMethod | The deflate compression method (the only one supported in this version). |
+| Enum | CompressStrategy | CompressStrategy |
+| Enum | ControlObject | Describes the control object. |
+| Enum | ControlType | Describes the control type. |
+| Enum | ControlTypeValue | Describes the control type value. |
+| Enum | DeviceChargeState | Enum for the charge state. |
+| Enum | DeviceType | Enum for the custom type of remote device. |
+| Enum | DynamicRangeType | Enumerates the formats for displaying media assets. |
+| Enum | ErrorCode | ErrorCode |
+| Enum | ExecuteMode | Enum for supported execute mode. |
+| Enum | JsRawHeapTrimLevel | Trimming level of raw heap snapshot. |
+| Enum | MemLevel | MemLevel |
+| Enum | OffsetReferencePoint | Define the reference point for offset. |
+| Enum | ParallelStrategy | ParallelStrategy |
+| Enum | PathDirection | Enumerates the directions of a closed contour. |
+| Enum | PhotoSubtype | Enumerates the PhotoAsset types. |
+| Enum | PhotoType | Enumerates media file types. |
+| Enum | PinType | Enum for the type of pairing to a remote device |
+| Enum | PositionType | Enumerates the file locations. |
+| Enum | RecommendationType | Enumerates the types of recommended images. |
+| Enum | ReturnStatus | Return codes for the compression/decompression functions. |
+| Enum | ScanMode | The enum of BR scan mode. |
+| Enum | StorageType | the storage type |
+| Enum | ThumbnailVisibility | Ability to access thumbnail |
+| Enum | UnbondCause | Enum for cause of unbond. |
+| Interface | AccountManager | Provides abilities for you to manage and perform operations on your OS accounts. |
+| Interface | AppAccountManager | Provides methods for managing application accounts. |
+| Interface | AutoSaveCallback | Auto save callback. |
+| Interface | BatteryInfo | Describes the contents of the battery information. |
+| Interface | BondStateParam | Describes the class of a bluetooth device. |
+| Interface | CacheDownloadOptions | Options of the cache download task. |
+| Interface | CertBlob | User certificate data. |
+| Interface | ContinuousTaskCancelInfo | The continuous task cancel info. |
+| Interface | ContinuousTaskNotification | The info of continuous task notification. |
+| Interface | ControlDeviceActionParams | Describes information about controlling the Bluetooth peripheral. |
+| Interface | DelaySuspendInfo | The info of delay suspend. |
+| Interface | DeviceClass | Describes the class of a bluetooth device. |
+| Interface | DeviceEncryptionStatus | The device encryption status. |
+| Interface | DialogAbilityInfo | Indicates the ability information displayed in the picker dialog, including bund |
+| Interface | DiscoveryResult | Describes the contents of the discovery results |
+| Interface | DistributedAccountAbility | Defines distributed account functions and interfaces. |
+| Interface | DownloadInfo | Download information of historical cache downloads. |
+| Interface | EventData | Describes data passed in the event. |
+| Interface | ExecuteParam | Param when execute insight intent. |
+| Interface | FormBindingData | Defines the createFormBindingData result interface. |
+| Interface | GlobalError | Defines GlobalError. |
+| Interface | GwpAsanOptions | GwpAsan Options. |
+| Interface | KeyboardController |  |
+| Interface | NetworkInfo | Network information of historical cache downloads. |
+| Interface | PerformanceInfo | Performance information of historical cache downloads. |
+| Interface | PinRequiredParam | Describes the bond key param. |
+| Interface | ResourceInfo | Resource information of historical cache downloads. |
+| Interface | SessionToken | Session token. Used to judge the legitimacy of the session. |
+| Interface | TouchEventReceiver | Defines the callback for touch (touchscreen) events. |
+| Interface | TransientTaskInfo | The callback info of transient task. |
+| Interface | TrustedPairedDevice | Describes device of cloud pair. |
+| Interface | TrustedPairedDevices | Describes the cloud pair device. |
+
+#### @kit.ArkUI (-44)
+
+| 类型 | 名称 | 描述 |
+|------|------|------|
+| Class | ChildrenMainSize | Indicates children main size. |
+| Class | Gesture | Defines Gesture interface. |
+| Class | PageTransitionEnter | Provides an interface to set transition style when a page enters. |
+| Class | PageTransitionExit | Provide an interface to set transition style when a page exits. |
+| Class | TypedFrameNode | Used to define the FrameNode type. |
+| Enum | HoverModeAreaType | Enumerates the type of area in hover mode. |
+| Interface | AlignRuleParam | Defines the align rule options of relative container. |
+| Interface | AsymmetricTransitionOption | Defines the option of asymmetric transition. |
+| Interface | BackgroundBrightnessOptions | Define BackgroundBrightness Options. |
+| Interface | Bindable | Defines a bindable property |
+| Interface | BorderRadiuses | Defines the border radius property. Anonymous Object Rectification |
+| Interface | ButtonLabelStyle | ButtonLabelStyle object. |
+| Interface | CalendarRequestedMonths | Defines the struct of CalendarRequestedMonths. |
+| Interface | Callback | Defines the basic callback. |
+| Interface | DateRange | Defines a range of dates. |
+| Interface | DynamicNode | Define DynamicNode. |
+| Interface | EdgeColors | Defines the border color property. Anonymous Object Rectification |
+| Interface | EdgeEffectOptions | Define EdgeEffect Options. |
+| Interface | EdgeOutlineStyles | Defines the outline style property. |
+| Interface | EdgeOutlineWidths | Defines the outline width property. |
+| Interface | EdgeStyles | Defines the border style property. Anonymous Object Rectification |
+| Interface | EdgeWidths | Defines the border width property. Anonymous Object Rectification |
+| Interface | FocusMovement | Defines the next focus item. |
+| Interface | GestureModifier | Defines the gesture modifier. |
+| Interface | ImageCompleteEvent | ImageCompleteEvent |
+| Interface | KeyframeAnimateParam | Defines the overall animation parameters of the keyframe animation. |
+| Interface | KeyframeState | Defines a keyframe state. |
+| Interface | LengthConstrain | Defines the length constrain property. Anonymous Object Rectification |
+| Interface | LightSource | LightSource info |
+| Interface | Offset | Defines the offset property. |
+| Interface | OutlineRadiuses | Defines the outline radius property. |
+| Interface | Padding | Defines the padding property. Anonymous Object Rectification |
+| Interface | ParticleOptions | Defines the ParticleOptions Interface. |
+| Interface | Particles | Defines the Particles interface. |
+| Interface | PointLightStyle | PointLightStyle info |
+| Interface | PopupButton | Defines the popup button. |
+| Interface | SelectionOptions | Defines the selection options. |
+| Interface | SubTabBarIndicatorStyle | Provide an interface for the style of an SubTabBar indicator including color, he |
+| Interface | SymbolGlyphModifier | Defines SymbolGlyph Modifier |
+| Interface | TabBarLabelStyle | TabBarLabelStyle object. |
+| Interface | TextModifier | Defines Text Modifier |
+| Interface | UIGestureEvent | Defines a UIGestureEvent which is used to set different gestures to target compo |
+| Interface | UIScrollableCommonEvent | Defines a UIScrollableCommonEvent which is used to set event to target component |
+| Interface | XComponentParameter | Defines the XComponent parameter interface. |
+
+#### @kit.AbilityKit (-24)
+
+| 类型 | 名称 | 描述 |
+|------|------|------|
+| Class | AbilityForegroundStateObserver | The ability foreground state observer. |
+| Class | AppForegroundStateObserver | The app foreground state observer. |
+| Class | ApplicationStateChangeCallback | The application state change callback. |
+| Class | ApplicationStateObserver | The application state observer. |
+| Class | AtomicServiceOptions | AtomicServiceOptions is the basic communication component of the system. |
+| Class | AutoFillExtensionAbility | The class of auto fill extension ability. |
+| Class | AutoFillExtensionContext | The context of auto fill extension. It allows access to AutoFillExtension-specif |
+| Class | EnvironmentCallback | The environment callback. |
+| Class | InsightIntentExecutor | The class of insight intent executor. |
+| Class | UIServiceExtensionAbility | The class of UI service extension ability. |
+| Class | UIServiceExtensionContext | The context of UI service extension. It allows access to UIServiceExtension-spec |
+| Class | Want | Want is a carrier for information transfer between objects (application componen |
+| Interface | AbilityFirstFrameStateObserver | The ability first frame state observer. |
+| Interface | AutoStartupCallback | The class of auto startup callback. |
+| Interface | CustomData | User defined data. When the modal window of AutoFillExtension needs to be raised |
+| Interface | DataAbilityHelper | DataAbilityHelper |
+| Interface | FillRequest | Fill request for automatic filling. |
+| Interface | OpenLinkOptions | Define the available options for openLink API. |
+| Interface | PageNodeInfo | Page node info for automatic filling. |
+| Interface | TriggerInfo | Provides the information required for triggering a WantAgent. |
+| Interface | UIServiceExtensionConnectCallback | UI service extension connect callback. |
+| Interface | UIServiceHostProxy | UI service host proxy. |
+| Interface | UIServiceProxy | UI service proxy. |
+| Interface | ViewData | View data for automatic filling. |
+
+#### @kit.ArkGraphics3D (-2)
+
+| 类型 | 名称 | 描述 |
+|------|------|------|
+| Enum | SceneResourceType | The enum of SceneResource type. |
+| Interface | SceneResourceParameters | The scene resource parameters type. |
+
+#### @kit.BasicServicesKit (-2)
+
+| 类型 | 名称 | 描述 |
+|------|------|------|
+| Interface | CommonEventData | Common event data. |
+| Interface | CommonEventPublishData | The CommonEventPublishData module provides APIs for defining common event conten |
+
+#### @kit.AccessibilityKit (-1)
+
+| 类型 | 名称 | 描述 |
+|------|------|------|
+| Class | AccessibilityExtensionContext | The accessibility extension context. Used to configure, query information, and i |
+
+#### @kit.ArkTS (-1)
+
+| 类型 | 名称 | 描述 |
+|------|------|------|
+| Class | List | List is implemented based on the singly linked list. Each node has a reference p |
+
+#### @kit.FormKit (-1)
+
+| 类型 | 名称 | 描述 |
+|------|------|------|
+| Class | LiveFormExtensionContext | The context of live form extension. It allows access to liveFormExtension-specif |
+
+#### @kit.NotificationKit (-1)
+
+| 类型 | 名称 | 描述 |
+|------|------|------|
+| Interface | NotificationTemplate | The NotificationTemplate module describes the notification template. |
+
+### 2.4 方法/属性变化
+
+| 类型 | 模块 | 变化量 |
+|------|------|--------|
+| +Property | 未知模块 | +887 |
+| +Method | 未知模块 | +701 |
+| +Property | @kit.ArkUI | +25 |
+| +Method | @kit.ArkUI | +20 |
+| +Method | @kit.DistributedServiceKit | +4 |
+| +Property | @kit.DataProtectionKit | +4 |
+| +Method | @kit.AbilityKit | +3 |
+| +Property | @kit.ConnectivityKit | +2 |
+| +Property | @kit.AbilityKit | +1 |
+| -Property | 未知模块 | -309 |
+| -Method | 未知模块 | -289 |
+| -Property | @kit.ArkUI | -12 |
+| -Method | @kit.ArkUI | -9 |
+
+## 三、API6.1 最终模块版图
 
 | 排名 | 模块 | 类/接口/枚举 | 定位 |
 |------|------|-------------|------|
-| 1 | @kit.ArkUI | 1396 | UI框架 |
-| 2 | 未知模块 | 388 |  |
-| 3 | @kit.AbilityKit | 188 | 应用框架 |
-| 4 | @kit.ArkWeb | 122 | WebView |
-| 5 | @kit.ArkGraphics3D | 60 | 3D图形 |
-| 6 | @kit.BasicServicesKit | 38 | 基础服务 |
-| 7 | @kit.NotificationKit | 33 | 通知系统 |
-| 8 | @kit.CoreFileKit | 32 | 文件系统 |
-| 9 | @kit.ArkTS | 29 | 语言运行时 |
-| 10 | @kit.InputKit | 26 | 输入 |
-| 11 | @kit.TestKit | 26 | 测试框架 |
+| 1 | @kit.ArkUI | 1538 | UI框架 |
+| 2 | 未知模块 | 394 |  |
+| 3 | @kit.AbilityKit | 175 | 应用框架 |
+| 4 | @kit.ArkWeb | 150 | WebView |
+| 5 | @kit.ArkGraphics3D | 71 | 3D图形 |
+| 6 | @kit.NotificationKit | 45 | 通知系统 |
+| 7 | @kit.BasicServicesKit | 37 | 基础服务 |
+| 8 | @kit.CoreFileKit | 33 | 文件系统 |
+| 9 | @kit.TestKit | 30 | 测试框架 |
+| 10 | @kit.ArkTS | 28 | 语言运行时 |
+| 11 | @kit.InputKit | 26 | 输入 |
 | 12 | @kit.SensorServiceKit | 24 | 传感器 |
-| 13 | @kit.ConnectivityKit | 18 | 连接/NFC |
-| 14 | @kit.AccessibilityKit | 14 | 无障碍 |
-| 15 | @kit.ArkData | 9 | 数据 |
-| 16 | @kit.LocationKit | 8 | 定位 |
-| 17 | @kit.FormKit | 6 | 卡片 |
-| 18 | @kit.IMEKit | 6 | 输入法 |
+| 13 | @kit.ConnectivityKit | 20 | 连接/NFC |
+| 14 | @kit.API10LessDeprecatedModules | 17 |  |
+| 15 | @kit.AccessibilityKit | 15 | 无障碍 |
+| 16 | @kit.ArkData | 9 | 数据 |
+| 17 | @kit.LocationKit | 8 | 定位 |
+| 18 | @kit.IMEKit | 7 | 输入法 |
 | 19 | @kit.MediaLibraryKit | 6 | 媒体库 |
-| 20 | @kit.AVSessionKit | 5 |  |
+| 20 | @kit.FormKit | 6 | 卡片 |
 
 ## 四、架构演进关键洞察
 
-### 4.1 三个阶段
+### 4.1 四个阶段
 
 1. **API4.1→5.0 框架创立期**：ArkUI、AbilityKit、ArkWeb 三大核心框架从零建立，新增 1,729 个类/接口
 2. **API5.0→5.1 增量补全期**：新增圆弧组件体系（圆表适配），手势识别器独立化，3D几何具象化
 3. **API5.1→6.0 架构重构期**：AbilityKit 从继承模式转向意图装饰器模式，ArkUI 大规模清理命名规范，分布式能力独立成模块
+4. **API6.0→6.1 清理重组期**：蓝牙/电池等模块大幅清理过时类型，废弃 API 集中收纳进新模块，ArkUI 继续扩张
 
 ### 4.2 AbilityKit 的范式转移
 
@@ -2842,6 +3518,35 @@ API5.1→6.0 中 `@kit.DistributedServiceKit` 首次独立出现（`DistributedE
 标志着分布式能力从应用框架中解耦，成为独立的一级模块。
 `@kit.BasicServicesKit` 新增 `SelectionExtensionAbility`，文本选择能力独立化。
 
+### 4.5 API6.0→6.1 的清理与重组
+
+6.0→6.1 净增 1,732 个节点（18,302 vs 16,570），类/接口/枚举 +363/-145，方法/属性 +1,647/-619。
+本轮以清理为主、扩张为辅：
+
+- **蓝牙 API 大清洗**：`@ohos.bluetooth.connection` 文件从 167 个节点锐减至 15 个，
+`BondState`、`ScanMode`、`PinType`、`DiscoveryResult` 等 20+ 个枚举/类被移除，
+公共类型（`BluetoothAddress` 等）抽离到新增的 `bluetooth.common` 文件，接口定义更聚焦。
+- **AbilityKit 持续精简**：`AutoFillExtensionAbility`、`UIServiceExtensionAbility`、
+`InsightIntentExecutor` 及 `ApplicationStateObserver` 等状态观察者系列共 24 个类/接口被移除，
+`Want` 由 Class 转为 Interface，能力边界进一步收敛。
+- **ArkUI 继续扩张**：新增 186 个类/接口/枚举，占本轮新增的一半以上，
+包括 `RenderNode`、`NodeController`、`ContentTransitionEffect`、`Font`、`Magnifier` 等渲染与特效能力，
+以及 `SwiperController`、`TextAreaController`、`SearchController` 等一批组件控制器。
+
+### 4.6 废弃 API 集中收纳：@kit.API10LessDeprecatedModules
+
+6.1 唯一新出现的模块是 `@kit.API10LessDeprecatedModules`：
+将 API10 及以上已废弃、但面向低版本应用的旧接口集中收纳，
+包括旧文件 API（`File` 及 `FileReadTextOption` 等 15 个 `*Option` 接口）、
+`formInfo`、`hiAppEvent`、`wantAgent` 命名空间等 21 个节点。
+这标志着 OpenHarmony 开始以「废弃收纳模块」的方式管理向后兼容 API，
+主 Kit 得以保持清爽，历史接口仍有明确归宿。
+
+### 4.7 数据质量提示
+
+方法/属性级别的模块归属在提取数据中大量缺失（6.0 与 6.1 均有约 82% 节点的 `module` 字段为「未知模块」），
+成员级新增/删除（+1,647/-619）无法完全按模块归因；类/接口/枚举级别归属完整，结论以该级别为准。
+
 ---
 
-*报告由 Neo4j 知识图谱自动生成，数据来源：4432 个 JSON API 定义文件*
+*报告由 Neo4j 知识图谱自动生成，数据来源：5334 个 JSON API 定义文件*
